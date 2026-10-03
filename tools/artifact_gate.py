@@ -16,7 +16,7 @@ from ci_admission import ROOT, confined, digest
 from deployment_receipts import content_hash
 
 FILES = ("base-lock.json", "sbom.spdx.json", "vulnerabilities.json", "container.json",
-         "provenance-verification.json", "build-metadata.json", "loaded-image.json")
+         "provenance-verification.json", "build-metadata.json", "loaded-image.json", "scan-input.json")
 
 
 def archive_hash(path: Path) -> str:
@@ -44,6 +44,11 @@ def evaluate(root: Path, commit: str) -> ArtifactReceipt:
     loaded = data["loaded-image.json"]
     if len(loaded) != 1 or loaded[0].get("Id") != config:
         raise ValueError("LOADED_IMAGE_NOT_QUALIFIED_ARTIFACT")
+    scan_input = data["scan-input.json"]
+    if scan_input.get("Digest") != image or scan_input.get("Architecture") != "arm64" or scan_input.get("Os") != "linux":
+        raise ValueError("SCANNER_IMAGE_IDENTITY_MISMATCH")
+    if data["vulnerabilities.json"].get("Metadata", {}).get("ImageID") != config:
+        raise ValueError("SCANNER_CONFIG_IDENTITY_MISMATCH")
     metadata = data["build-metadata.json"]
     if metadata.get("containerimage.config.digest") != config:
         raise ValueError("BUILD_METADATA_CONFIG_MISMATCH")

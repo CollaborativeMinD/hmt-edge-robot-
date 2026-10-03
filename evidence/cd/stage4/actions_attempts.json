@@ -1,0 +1,21 @@
+{
+  "attempts": [
+    {
+      "run_id": 37150740303,
+      "head_commit": "76d5e10314b1aca6dbd7fae06dae8a15eb0cb0ce",
+      "tested_merge_commit": "5e6cbcab86cde1397c83161bbb4371fa8fee892b",
+      "status": "FAIL",
+      "native_software": "PASS",
+      "image_build": "PASS",
+      "restricted_installed_container": "PASS",
+      "scanner": "FAIL_OCI_TAR_INPUT_UNSUPPORTED",
+      "signed_provenance": "NOT_RUN",
+      "qualification": "FAIL",
+      "artifact_id": 11283792627,
+      "run_url": "https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/runs/37150740303",
+      "rrca": "RRCA-CD4-33"
+    }
+  ],
+  "deployment": "HOLD",
+  "hardware": "HOLD"
+}

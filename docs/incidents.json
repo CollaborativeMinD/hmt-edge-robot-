@@ -230,5 +230,13 @@
     "remediation": "Create a separate locked no-dev non-editable environment; execute installed mission/analytics/stop/replay tracer; use no-dev non-editable /opt/venv in both Docker stages",
     "validation_test": "tests/test_artifact_evidence.py::test_scan_and_runtime_contradictions_are_rejected",
     "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CD4-33",
+    "observed_state": "Native build and restricted container passed, but Trivy rejected the OCI tar input",
+    "causal_evidence": "Actions run 37150740303 job111283936964: Trivy0.69.3 searched tar for Docker manifest.json and then treated OCI input as a directory; native OCI tar is not a supported input shape for this adapter",
+    "remediation": "Use skopeo preserve-digests conversion to a temporary OCI layout; bind scan Digest/platform and Trivy ImageID to original archive runtime/config before qualification; preserve rejected run artifact and rerun",
+    "validation_test": "tests/test_artifact_gate.py::test_contradictory_evidence_replaces_stale_pass",
+    "external_boundary": false
   }
 ]

@@ -28,7 +28,7 @@ def test_artifact_qualification_is_replayable_and_source_bound(tmp_path: Path, m
 
 
 @pytest.mark.parametrize("name,mutation", [
-    ("base-lock.json", {"python": "latest"}),
+    ("base-lock.json", {"python": "latest"}), ("scan-input.json", {"Digest": "wrong"}),
     ("sbom.spdx.json", {}), ("vulnerabilities.json", {}),
     ("container.json", {"status": "PASS", "uid": 0}),
     ("loaded-image.json", [{"Id": "sha256:" + "4" * 64}]),

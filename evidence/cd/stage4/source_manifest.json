@@ -19,7 +19,7 @@
     {
       "path": ".github/workflows/artifact.yml",
       "status": "new",
-      "sha256": "a54f9e898e661be225446edce160da922dfe9abb518580a70451889a6d5993dd",
+      "sha256": "1cc09088ed7d9fd044b65c5692f74e6744b21eec9c2beef1e650549087a37293",
       "baseline_blob": null,
       "mode": "100644"
     },
@@ -68,7 +68,7 @@
     {
       "path": "docs/cd/stage4.md",
       "status": "new",
-      "sha256": "1afdd9076c2cd33a6536d20d0c94a0bac190531047b5f559fbe303bc37cbbd23",
+      "sha256": "eebbf04ba98c1912de0f88f52144c68ae14ed1951dbf6534c4cbf0821ba36c7b",
       "baseline_blob": null,
       "mode": "100644"
     },
@@ -82,7 +82,7 @@
     {
       "path": "docs/incidents.json",
       "status": "modified",
-      "sha256": "a6f9ec7afb11e64e4041f36ac39ec41ece2323d095a0c0ec69aaf1fa3ee84756",
+      "sha256": "dabcc5db2e5b94bce371e4919fbbbf078d9b8b57a3b4e86478c2731497f3c164",
       "baseline_blob": "32363f47b78efcb68e1f3f2766fc4b5fd86aeb41",
       "mode": "100644"
     },
@@ -103,14 +103,14 @@
     {
       "path": "policy/artifact_admission.json",
       "status": "new",
-      "sha256": "a0eccd1c8563362f0c87511754bf7458a50270728cfe835ca5900f2c82b675b8",
+      "sha256": "20e0cca7ff14ddbdc47539c97451e05deeae85b9705ed51260c69d9e1e7adf8a",
       "baseline_blob": null,
       "mode": "100644"
     },
     {
       "path": "policy/ci_admission.json",
       "status": "modified",
-      "sha256": "c8df5d704564f44578124f537d6aa158111d89b47ccf9ec2c5e675c1ac1d4936",
+      "sha256": "fce3bfb77a8a0959f2e77e8b2c6d5e41caae4e5475c44b872b3e36e62ed23f36",
       "baseline_blob": "c3aec8b2dee86ebd6eac8c700bf653f6c04656fa",
       "mode": "100644"
     },
@@ -124,7 +124,7 @@
     {
       "path": "tests/artifact_support.py",
       "status": "new",
-      "sha256": "7a316780a08b98f5228c25753512d06e4772f0909b62f76140eee653b5f60c42",
+      "sha256": "68ce80c2f167657cede3d0bfc3f683254acdedb81171568ca69352e258064a78",
       "baseline_blob": null,
       "mode": "100644"
     },
@@ -159,7 +159,7 @@
     {
       "path": "tests/test_artifact_gate.py",
       "status": "new",
-      "sha256": "055c02440fe7311b25b338c7bae4845416f187a6061f5ce60feba296d76c8e04",
+      "sha256": "4afe247f1d85c09cebce29afe4c4324f928d035202569dc3778c4f90114a5897",
       "baseline_blob": null,
       "mode": "100644"
     },
@@ -215,7 +215,7 @@
     {
       "path": "tools/artifact_gate.py",
       "status": "new",
-      "sha256": "a9e2102cf46e8bf329a19410ecb6bdd2320ac8bd4b2f449f596fdfb9345e485b",
+      "sha256": "a4c6350221f3ea51e649a4987e445f769444c134b31b166c0ec9bd5380ff13ac",
       "baseline_blob": null,
       "mode": "100644"
     },

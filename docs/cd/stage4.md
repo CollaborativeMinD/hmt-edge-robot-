@@ -31,7 +31,9 @@ stopping, real-time timing, and native Pi acceptance are separate HOLD gates.
    no-new-privileges, bounded CPU/memory/PIDs, and ephemeral data/scratch mounts.
 7. Require verified synthetic motion, resident stop behavior, SQLite replay,
    DuckDB/Polars export parity, no paid calls, and installed-package lock parity.
-8. Scan that archive for OS/Python vulnerabilities and secrets; produce SPDX 2.3.
+8. Convert that archive to an OCI directory with digest preservation for Trivy
+   0.69.3. Bind the scanner manifest and config identities to the original OCI image.
+   Scan OS/Python vulnerabilities and secrets; produce SPDX 2.3.
    HIGH, CRITICAL, UNKNOWN severity, missing coverage, or any secret rejects.
    LOW/MEDIUM findings remain recorded, explicitly admitted only for this artifact
    qualification scope. No ignore-unfixed switch, waiver, or hidden allowlist exists.

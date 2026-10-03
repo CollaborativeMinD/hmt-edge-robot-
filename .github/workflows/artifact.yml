@@ -78,8 +78,10 @@ jobs:
       - name: Inventory and vulnerability scan of that same archive
         run: |
           TRIVY_IMAGE=$(python3 -c 'import json; print(json.load(open("evidence/cd/stage4/base-lock.json"))["trivy"])')
-          docker run --rm --mount "type=bind,src=$PWD/evidence/cd/stage4,dst=/evidence" "$TRIVY_IMAGE" image --input /evidence/image.oci.tar --format spdx-json --output /evidence/sbom.spdx.json --timeout 10m
-          docker run --rm --mount "type=bind,src=$PWD/evidence/cd/stage4,dst=/evidence" "$TRIVY_IMAGE" image --input /evidence/image.oci.tar --scanners vuln,secret --list-all-pkgs --format json --output /evidence/vulnerabilities.json --timeout 10m
+          skopeo copy --preserve-digests --override-arch arm64 --override-os linux oci-archive:evidence/cd/stage4/image.oci.tar "oci:$RUNNER_TEMP/hmt-scan:qualified"
+          skopeo inspect "oci:$RUNNER_TEMP/hmt-scan:qualified" > evidence/cd/stage4/scan-input.json
+          docker run --rm --mount "type=bind,src=$RUNNER_TEMP/hmt-scan,dst=/scan,readonly" --mount "type=bind,src=$PWD/evidence/cd/stage4,dst=/evidence" "$TRIVY_IMAGE" image --input /scan --format spdx-json --output /evidence/sbom.spdx.json --timeout 10m
+          docker run --rm --mount "type=bind,src=$RUNNER_TEMP/hmt-scan,dst=/scan,readonly" --mount "type=bind,src=$PWD/evidence/cd/stage4,dst=/evidence" "$TRIVY_IMAGE" image --input /scan --scanners vuln,secret --list-all-pkgs --format json --output /evidence/vulnerabilities.json --timeout 10m
       - uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a
         with:
           subject-path: evidence/cd/stage4/image.oci.tar

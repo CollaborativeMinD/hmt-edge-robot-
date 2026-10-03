@@ -47,12 +47,13 @@ def fixture(root: Path) -> Path:
     values = {"base-lock.json": {n: n + "@sha256:" + "2" * 64 for n in ("python", "uv", "trivy", "buildkit")},
         "sbom.spdx.json": {"spdxVersion": "SPDX-2.3", "packages": [{"name": "hmt-edge-robot", "versionInfo": "1.0.0"}]},
         "vulnerabilities.json": {"SchemaVersion": 2, "ArtifactType": "container_image",
-            "Results": [{"Class": "os-pkgs"}, {"Class": "lang-pkgs"}]},
+            "Metadata": {"ImageID": config}, "Results": [{"Class": "os-pkgs"}, {"Class": "lang-pkgs"}]},
         "container.json": {"status": "PASS", "platform": "aarch64", "uid": 10001,
             "paid_calls": 0, "resident_stopped": True, "events": 3, "replayed": 3,
             "packages": {"hmt-edge-robot": "1.0.0"}},
         "build-metadata.json": {"containerimage.config.digest": config},
-        "loaded-image.json": [{"Id": config}]}
+        "loaded-image.json": [{"Id": config}],
+        "scan-input.json": {"Digest": image, "Architecture": "arm64", "Os": "linux"}}
     for name, value in values.items():
         (destination / name).write_text(json.dumps(value))
     for name in ("pyproject.toml", "deploy/stage4/Dockerfile", ".dockerignore"):
