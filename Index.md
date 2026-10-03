@@ -19,3 +19,6 @@ scoped software profiles. `policy/hmt` preserves supplied declarations.
 `policy/deployment.json` and `policy/deployment_admission.json` bind stage-3 design.
 `deploy/stage3` holds dormant templates; `docs/cd/stage3.md` defines their limits.
 `evidence/cd/stage3/release_receipt.json` records design PASS and execution HOLD.
+
+`docs/cd/stage4.md` and `policy/artifact_admission.json` govern hosted ARM64
+artifact qualification. `evidence/cd/stage4` holds software campaign evidence.

@@ -1,0 +1,82 @@
+{
+  "attempts": [
+    {
+      "run_id": 37150740303,
+      "head_commit": "76d5e10314b1aca6dbd7fae06dae8a15eb0cb0ce",
+      "tested_merge_commit": "5e6cbcab86cde1397c83161bbb4371fa8fee892b",
+      "status": "FAIL",
+      "native_software": "PASS",
+      "image_build": "PASS",
+      "restricted_installed_container": "PASS",
+      "scanner": "FAIL_OCI_TAR_INPUT_UNSUPPORTED",
+      "signed_provenance": "NOT_RUN",
+      "qualification": "FAIL",
+      "artifact_id": 11283792627,
+      "run_url": "https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/runs/37150740303",
+      "rrca": "RRCA-CD4-33"
+    },
+    {
+      "run_id": 37151070400,
+      "head_commit": "91b36aad7a7c0715c0d2bf230a20fcec141240b0",
+      "tested_merge_commit": "1f5cc4bf8f458ef5b36e65d5e79abd9b785fddcf",
+      "status": "FAIL",
+      "native_software": "PASS",
+      "image_build": "PASS",
+      "restricted_installed_container": "PASS",
+      "scanner_collection": "PASS",
+      "security_disposition": "PENDING_UNSIGNED_PREQUALIFICATION",
+      "signed_provenance": "HOLD_PRIVATE_USER_REPOSITORY_NOT_SUPPORTED",
+      "qualification": "HOLD",
+      "run_url": "https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/runs/37151070400",
+      "rrca": "RRCA-CD4-34"
+    },
+    {
+      "run_id": 37151721865,
+      "head_commit": "a3404f3304043ed98b43f8eca5cb4be07786d9af",
+      "tested_merge_commit": "6bdb279a8cd26ebeccc8a6666d88812e9b808e76",
+      "status": "FAIL",
+      "native_software": "PASS",
+      "image_build": "PASS",
+      "restricted_installed_container": "PASS",
+      "scanner_collection": "PASS",
+      "scan_severity_counts": {
+        "LOW": 100,
+        "MEDIUM": 118,
+        "HIGH": 58,
+        "CRITICAL": 5,
+        "UNKNOWN": 1
+      },
+      "prequalification": "FAIL_BUILD_METADATA_CONFIG_MISMATCH",
+      "signing": "HOLD",
+      "qualification": "HOLD",
+      "run_url": "https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/runs/37151721865",
+      "rrca": [
+        "RRCA-CD4-35",
+        "RRCA-CD4-36"
+      ]
+    },
+    {
+      "run_id": 37152171398,
+      "head_commit": "638f1f850faeac60bfdb43851096f68a9a28ffd8",
+      "status": "FAIL",
+      "native_software": "PASS",
+      "image_build": "PASS",
+      "restricted_installed_container": "PASS",
+      "scanner_collection": "PASS",
+      "base": "python:3.12-slim-trixie",
+      "scan_severity_counts": {
+        "LOW": 61,
+        "MEDIUM": 65,
+        "HIGH": 45,
+        "UNKNOWN": 2
+      },
+      "prequalification": "FAIL_VULNERABILITY_NOT_ADMITTED",
+      "signing": "HOLD",
+      "qualification": "HOLD",
+      "run_url": "https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/runs/37152171398",
+      "rrca": "RRCA-CD4-37"
+    }
+  ],
+  "deployment": "HOLD",
+  "hardware": "HOLD"
+}

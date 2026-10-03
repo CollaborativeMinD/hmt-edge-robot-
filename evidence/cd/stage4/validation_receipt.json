@@ -1,0 +1,16 @@
+{
+  "software_status": "PASS",
+  "test_cases": 331,
+  "runtime_coverage": 97.73851590106007,
+  "artifact_branch_coverage": 93.11827956989248,
+  "native_image_build": "PASS",
+  "installed_native_sil": "PASS",
+  "artifact_promotion": "HOLD",
+  "security_disposition": "HOLD_44_HIGH_2_UNKNOWN_NO_LISTED_FIX",
+  "signed_provenance": "HOLD_PRIVATE_USER_REPOSITORY_NOT_SUPPORTED",
+  "deployment": "HOLD",
+  "hardware": "HOLD",
+  "requirements": 78,
+  "tested_head": "1d0ad63b3437bc6de250a971456d53472df80046",
+  "evidence": "final_campaign_receipt.json"
+}

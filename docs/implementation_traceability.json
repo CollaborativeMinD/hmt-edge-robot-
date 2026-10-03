@@ -1746,5 +1746,98 @@
     ],
     "analysis_id": "G-CD-NEGATIVE-018",
     "evidence_id": "evidence/cd/stage3/campaign.json"
+  },
+  {
+    "req_id": "REQ-CD4-01",
+    "module_id": "tools/artifact_design.py",
+    "runtime_partition": "supervisory SIL artifact",
+    "source_path": [
+      "tools/artifact_design.py",
+      ".github/workflows/artifact.yml",
+      "deploy/stage4/Dockerfile",
+      ".dockerignore"
+    ],
+    "contract_id": "policy/artifact_admission.json",
+    "safety_constraint_id": [
+      "DEPLOYMENT_HOLD",
+      "HARDWARE_HOLD",
+      "NO_PAID_INFERENCE"
+    ],
+    "test_id": [
+      "tests/test_artifact_design.py::test_artifact_design_admits_only_bound_input",
+      "tests/test_artifact_contracts.py::test_artifact_pass_cannot_authorize_deployment"
+    ],
+    "analysis_id": "G-ARTIFACT-DESIGN-019",
+    "evidence_id": "evidence/cd/stage4"
+  },
+  {
+    "req_id": "REQ-CD4-02",
+    "module_id": "tools/artifact_probe.py",
+    "runtime_partition": "supervisory SIL artifact",
+    "source_path": [
+      "tools/artifact_probe.py",
+      "tools/artifact_evidence.py",
+      ".github/workflows/artifact.yml"
+    ],
+    "contract_id": "policy/artifact_admission.json",
+    "safety_constraint_id": [
+      "DEPLOYMENT_HOLD",
+      "HARDWARE_HOLD",
+      "NO_PAID_INFERENCE"
+    ],
+    "test_id": [
+      "tests/test_artifact_evidence.py::test_scan_and_runtime_contradictions_are_rejected"
+    ],
+    "analysis_id": "G-ARTIFACT-RUNTIME-021",
+    "evidence_id": "evidence/cd/stage4"
+  },
+  {
+    "req_id": "REQ-CD4-03",
+    "module_id": "tools/artifact_oci.py",
+    "runtime_partition": "supervisory SIL artifact",
+    "source_path": [
+      "tools/artifact_oci.py",
+      "tools/artifact_verify.py",
+      "tools/artifact_evidence.py",
+      "tools/artifact_gate.py",
+      "tools/artifact_preflight.py"
+    ],
+    "contract_id": "policy/artifact_admission.json",
+    "safety_constraint_id": [
+      "DEPLOYMENT_HOLD",
+      "HARDWARE_HOLD",
+      "NO_PAID_INFERENCE"
+    ],
+    "test_id": [
+      "tests/test_artifact_gate.py::test_artifact_qualification_is_replayable_and_source_bound",
+      "tests/test_artifact_gate.py::test_signature_verification_failure_cannot_use_saved_json",
+      "tests/test_artifact_oci.py::test_unsafe_or_contradictory_archive_is_rejected",
+      "tests/test_artifact_preflight.py::test_unsigned_prequalification_never_promotes_artifact"
+    ],
+    "analysis_id": "G-ARTIFACT-NEGATIVE-020",
+    "evidence_id": "evidence/cd/stage4"
+  },
+  {
+    "req_id": "REQ-CD4-04",
+    "module_id": "tools/artifact_campaign.py",
+    "runtime_partition": "supervisory SIL artifact",
+    "source_path": [
+      "tools/artifact_campaign.py",
+      "tools/artifact_gate.py",
+      ".github/workflows/artifact.yml"
+    ],
+    "contract_id": "policy/artifact_admission.json",
+    "safety_constraint_id": [
+      "DEPLOYMENT_HOLD",
+      "HARDWARE_HOLD",
+      "NO_PAID_INFERENCE"
+    ],
+    "test_id": [
+      "tests/test_artifact_campaign.py::test_artifact_campaign_timeout_and_startup_failure_preserve_fail_closed_evidence",
+      "tests/test_artifact_gate.py::test_evidence_write_failure_blocks_completion",
+      "tests/test_artifact_verify.py::test_failed_hung_or_oversized_verifier_is_rejected"
+    ],
+    "analysis_id": "G-ARTIFACT-NEGATIVE-020",
+    "evidence_id": "evidence/cd/stage4"
   }
 ]

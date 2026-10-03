@@ -13,7 +13,8 @@
       "Durable observer alerts, witnessed transformations, exact resource optimizer and typed private API",
       "Phase 1 CI pre-install hash admission, lock freshness, readonly hosted CI and failure receipts",
       "Phase 2 read-only scaffoldctl and Truth Serum interfaces, policy inventory and repeatable tool qualification",
-      "26 oversized modules decomposed with public facades, typed owner-bound roles and human-approved policy promotion"
+      "26 oversized modules decomposed with public facades, typed owner-bound roles and human-approved policy promotion",
+      "Stage 4 native ARM64 OCI software artifact qualification with locked runtime, scans, signed provenance and fail-closed receipt"
     ],
     "risks": [
       "Physical driver, stopping calibration, MISRA/static memory and native target evidence remain HOLD",
@@ -23,7 +24,7 @@
       "Async probes require cooperative cancellation; empirical recovery statistics are not WCET guarantees",
       "Catalog completeness is confined to its managed BLOB domain; external infrastructure cannot be reclaimed",
       "scaffoldctl and Truth Serum archives remain HOLD candidates pending isolated requalification and host integration; branch protection is not attested",
-      "Policy package promoted for system-software validation; full tool engines, Docker builds and deployment remain HOLD."
+      "Policy package promoted for system-software validation; full tool engines and deployment remain HOLD; hosted artifact builds use independent stage-4 authority."
     ],
     "assumptions": [
       "Python 3.12+ Linux supervisory host",

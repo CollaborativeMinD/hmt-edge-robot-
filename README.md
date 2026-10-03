@@ -5,9 +5,9 @@
 Governed edge robotics, resident HMT, and evidence you can replay.
 
 [![CI](https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/tests-166_passing-2ea043?style=flat-square)](evidence/validation.json)
-[![Coverage](https://img.shields.io/badge/coverage-97.42%25-2ea043?style=flat-square)](evidence/coverage.json)
-[![Supervisory SIL](https://img.shields.io/badge/supervisory_SIL-PASS-2ea043?style=flat-square)](evidence/validation.json)
+[![Tests](https://img.shields.io/badge/tests-331_passing-2ea043?style=flat-square)](evidence/cd/stage4/validation_receipt.json)
+[![Coverage](https://img.shields.io/badge/coverage-97.74%25-2ea043?style=flat-square)](evidence/cd/stage4/validation_receipt.json)
+[![Supervisory SIL](https://img.shields.io/badge/supervisory_SIL-PASS-2ea043?style=flat-square)](evidence/cd/stage4/validation_receipt.json)
 [![Physical deployment](https://img.shields.io/badge/physical_deployment-HOLD-d29922?style=flat-square)](docs/compliance.md)
 
 [![Python](https://img.shields.io/badge/Python-3.12%2B-3776ab?style=flat-square&logo=python&logoColor=white)](pyproject.toml)
@@ -85,4 +85,12 @@ components are mapped explicitly; absent services are never reported as running.
 
 CI/CD phase 1 now binds tool admission and locked dependencies. See [the pipeline SOP](docs/ci_cd.md). Linux/Pi/K3s deployment remains HOLD.
 
-Phase 2 adds [policy assessment and scoped tool reuse](docs/ci_phase2.md). The [policy promotion continuation](docs/policy_promotion.md) resolves all 26 module HOLDs. Full tool engines, Docker builds, and deployment remain HOLD.
+Phase 2 adds [policy assessment and scoped tool reuse](docs/ci_phase2.md). The [policy promotion continuation](docs/policy_promotion.md) resolves all 26 module HOLDs. Full tool engines and deployment remain HOLD. Hosted Docker qualification is admitted in stage 4.
+
+Stage 4 adds [native ARM64 artifact qualification](docs/cd/stage4.md): locked OCI
+images, SBOMs, scans, installed SIL checks, and signed provenance. Pi/K3s deployment
+remains HOLD.
+
+**Artifact promotion: HOLD.** Native ARM64 build and installed SIL pass; remaining
+OS vulnerability findings and private-repository signing eligibility block promotion.
+See [the current campaign receipt](evidence/cd/stage4/final_campaign_receipt.json).

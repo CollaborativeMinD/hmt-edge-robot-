@@ -211,3 +211,11 @@ Inspect `evidence/cd/stage3/release_receipt.json`, `campaign.json`, `coverage.js
 and current ledger rows G-CD-CONTRACT-017/G-CD-NEGATIVE-018. Contract PASS coexists
 with release HOLD; no stage-3 receipt grants execution. Stop on alerts or input drift.
 Do not apply templates, replace the unbuilt image marker or unsuspend Flux here.
+
+## 12. Qualify the ARM64 artifact
+
+Follow `docs/cd/stage4.md`. Run cumulative validation; inspect G-ARTIFACT-DESIGN-019
+and G-ARTIFACT-NEGATIVE-020. Review the ARM64 artifact qualification Actions job.
+Download `arm64-artifact-<commit>` and inspect `qualification.json`, the OCI archive,
+SBOM, vulnerability report, base locks, installed-container report and signed provenance.
+Stop on failed/absent evidence. Artifact PASS never admits cluster or physical operation.

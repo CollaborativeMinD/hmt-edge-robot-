@@ -222,5 +222,53 @@
     "remediation": "Write fail-closed campaign evidence before spawn; use 60-second inner deadline and five-second bounded reap; atomically replace final result; test hangs, nonzero exits, success and spawn errors",
     "validation_test": "tests/test_deployment_campaign.py::test_campaign_timeout_and_startup_failure_preserve_fail_closed_evidence",
     "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CD4-32",
+    "observed_state": "Fresh installed SIL probe in the development environment was rejected for bundled development tools",
+    "causal_evidence": "artifact_probe identified pytest/Ruff/Pyrefly in the existing dev environment; runtime qualification cannot use that environment as the installed runtime candidate",
+    "remediation": "Create a separate locked no-dev non-editable environment; execute installed mission/analytics/stop/replay tracer; use no-dev non-editable /opt/venv in both Docker stages",
+    "validation_test": "tests/test_artifact_evidence.py::test_scan_and_runtime_contradictions_are_rejected",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CD4-33",
+    "observed_state": "Native build and restricted container passed, but Trivy rejected the OCI tar input",
+    "causal_evidence": "Actions run 37150740303 job111283936964: Trivy0.69.3 searched tar for Docker manifest.json and then treated OCI input as a directory; native OCI tar is not a supported input shape for this adapter",
+    "remediation": "Use skopeo preserve-digests conversion to a temporary OCI layout; bind scan Digest/platform and Trivy ImageID to original archive runtime/config before qualification; preserve rejected run artifact and rerun",
+    "validation_test": "tests/test_artifact_gate.py::test_contradictory_evidence_replaces_stale_pass",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CD4-34",
+    "observed_state": "GitHub refused signed attestation persistence after ARM64 build, restricted installed execution and scans completed",
+    "causal_evidence": "Actions run37151070400 job111284908844 returned Feature not available for user-owned private repositories from attestations#create; action token had documented id-token and attestations permissions",
+    "remediation": "Record provider entitlement HOLD and preserve private repository visibility; independently qualify unsigned image/scanner/software prerequisites while signed final artifact qualification stays held; no unsigned-to-signed promotion",
+    "validation_test": "tests/test_artifact_preflight.py::test_unsigned_prequalification_never_promotes_artifact",
+    "external_boundary": true
+  },
+  {
+    "incident_id": "RRCA-CD4-35",
+    "observed_state": "OCI artifact prequalification rejected missing containerimage.config.digest metadata",
+    "causal_evidence": "Native run37151721865 emitted BUILD_METADATA_CONFIG_MISMATCH although loaded/scanned config checks passed; OCI exporter metadata uses containerimage.digest for the exported root descriptor",
+    "remediation": "Bind exporter root digest to the archive root descriptor; retain independent config binding for loaded and scanned runtime; regression rejects inconsistent root digest",
+    "validation_test": "tests/test_artifact_gate.py::test_contradictory_evidence_replaces_stale_pass",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CD4-36",
+    "observed_state": "Bookworm image reported58 HIGH5 CRITICAL1 UNKNOWN findings",
+    "causal_evidence": "Trivy0.69.3 native run37151721865 emitted raw severity counts and blocking package/CVE IDs; all blocking entries had no listed fixed version",
+    "remediation": "Reject Bookworm candidate without ignore-unfixed or waivers; tracer newer DebianTrixie Python3.12 base with unchanged uv.lock and runtime; retain final qualification HOLD until security and provenance gates close",
+    "validation_test": "tests/test_artifact_evidence.py::test_scan_and_runtime_contradictions_are_rejected",
+    "external_boundary": true
+  },
+  {
+    "incident_id": "RRCA-CD4-37",
+    "observed_state": "Newer Trixie candidate had45 HIGH2 UNKNOWN findings; one HIGH had a listed package fix",
+    "causal_evidence": "Native run37152171398 Trivy output: libpcre2-8-0 version10.46-1~deb13u2 CVE-2026-103111 fixed10.46-1~deb13u3; all other blocking entries lacked listed fixes; OCI root identity repair reached security rejection VULNERABILITY_NOT_ADMITTED",
+    "remediation": "Pin package upgrade to10.46-1~deb13u3 and rerun installed/native/scanner evidence; keep unresolved vulnerabilities and signing entitlement held; no severity suppression or ignore-unfixed",
+    "validation_test": "tests/test_artifact_evidence.py::test_scan_and_runtime_contradictions_are_rejected",
+    "external_boundary": true
   }
 ]

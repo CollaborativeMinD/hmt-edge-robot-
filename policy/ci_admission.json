@@ -20,7 +20,7 @@
     "tools/policy_promotion.py": "c78413b55b1aae0ccbc2c9de656241b7c930347134e06f0bcd99bb3a5917acc0",
     "tools/profile_witnesses.py": "e7cf1c74688af43635f0f66cfac334f0d95e0f4a86716aa4f39df689aa353e95",
     "tools/tool_qualification.py": "459ad6c183c00aa0a1676669222ab7fec8b0eb36e74fa4a4265dcfff4ddf41bb",
-    "tools/validate.py": "e3da99ef5d7eda070f646c2cdda55cdc1c7e61613ea5fc18f2468c405f684073",
+    "tools/validate.py": "155bfc1dbc59e5ecec23782cc643fc8baa8d5f162c43b875b26eadbc2c88413d",
     "tools/validate_base.py": "5370d03a4dcfe9bb6997c3d57a93bf751762f682ceeb46b0e7a26011dda54e38",
     "tools/validate_execution.py": "bf41ff932d7135981c7253695b21744bbf788cd61eedb12eb063d9ae117397d1",
     "tools/validate_incidents.py": "00b620a6a4426a0c83db52b96c00c12c4ed6d0b61999c914d4274cb847533aa7",
@@ -29,7 +29,8 @@
     "tools/validate_report.py": "6075e90956abf851a91d36379c50954860f5cb21aba1794e713fb10793bffe06",
     "tools/validate_structure.py": "dee4faa972382d188aae4c736f586754e4c1329c45deb506a811bee1c6d5b47c",
     "uv.lock": "b1ce60e49dc526e19077ddc69fb91fc142f551e123c746a4ffbb88433d98998b",
-    "policy/deployment_admission.json": "12d81cfa712157a7b66d6b72f070a7bc5aaa0b3aa7f7eca20dd11e2c842961a3"
+    "policy/deployment_admission.json": "79880a4c21a63d148d47461a08e0b204b6de49b3c1b5be1abad569024b1c9a2b",
+    "policy/artifact_admission.json": "24c0a8f0b53ead02fe1c6785dddcf854f9fea2a5243baee36f15f3ab4c3ad558"
   },
   "tools": {
     "pyrefly": "1.3.2",
@@ -276,6 +277,15 @@
     "tools/deployment_io.py": "73d523ea6d49107c98cf873e5de39662fcecd319626553e082dd2285a9efdfa0",
     "tools/deployment_campaign.py": "ebbbe447dfcc75bc469deb29feba741885663952b8c9d84f334d253df49cd5e6",
     "tools/deployment_admission.py": "f6f66241be8dce0a0bbdbc426a655132c7d8edbafa8c4b51365e2db17b79da9e",
-    "tools/deployment_schemas.py": "6b7095c48756162e3994f91d43d8e95fea2de1d0478b51b3281be2136086447b"
+    "tools/deployment_schemas.py": "6b7095c48756162e3994f91d43d8e95fea2de1d0478b51b3281be2136086447b",
+    "tools/artifact_verify.py": "201fbdd38b385a1a63cecc027e14bd1e1d062cdec225b65b0b0fb9b852a1004b",
+    "tools/artifact_oci.py": "f3d6cf8e352747d1c28dafd3ae1e8057eeea65ca2711252dd4f05585b4dab234",
+    "tools/artifact_probe.py": "c9ab473c58acf48c011528e4192298d530839eb9caa819f633c1a46caaf0c0a8",
+    "tools/artifact_evidence.py": "64efd4d9051105cb9a5fa34c95f70fa4af49e277658e8f9b62c8b5f274fa6ccf",
+    "tools/artifact_gate.py": "cff7540836efc54a6fde8afce08b1a13fb736018dc7a7f2e198ed3f57353fa17",
+    "tools/artifact_campaign.py": "ea5371ab938d9c031520d7a9f4418f83885b8b8b522bd7b9520c45882b2a1eab",
+    "tools/artifact_contracts.py": "bd0ef7b5f0e260f47afbdce830286c00eb00ee4c1ca05d2c6275c78c0f1395a4",
+    "tools/artifact_design.py": "450e2ed39d61b07adea115877f06d90357aeb92aff949f31df73b67fb6d4024f",
+    "tools/artifact_preflight.py": "55a0f9a284af522c1f2929949b73cf5abdecd5ad1b1aed3fdfe6475c4f040c01"
   }
 }

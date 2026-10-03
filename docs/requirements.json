@@ -1200,6 +1200,75 @@
       ],
       "gate": "G-CD-NEGATIVE-018",
       "scope": "deployment design only"
+    },
+    {
+      "id": "REQ-CD4-01",
+      "kind": "functional",
+      "acceptance": "Admit reviewed hosted ARM64 artifact build scope and locked inputs without admitting target or deployment",
+      "source": [
+        "tools/artifact_design.py",
+        ".github/workflows/artifact.yml",
+        "deploy/stage4/Dockerfile",
+        ".dockerignore"
+      ],
+      "tests": [
+        "tests/test_artifact_design.py::test_artifact_design_admits_only_bound_input",
+        "tests/test_artifact_contracts.py::test_artifact_pass_cannot_authorize_deployment"
+      ],
+      "gate": "G-ARTIFACT-DESIGN-019",
+      "scope": "hosted ARM64 software artifact qualification"
+    },
+    {
+      "id": "REQ-CD4-02",
+      "kind": "functional",
+      "acceptance": "Execute installed SIL composition on native ARM64 with UID10001, no network, readonly root and bounded resources; require package-lock, replay and analytics parity",
+      "source": [
+        "tools/artifact_probe.py",
+        "tools/artifact_evidence.py",
+        ".github/workflows/artifact.yml"
+      ],
+      "tests": [
+        "tests/test_artifact_evidence.py::test_scan_and_runtime_contradictions_are_rejected"
+      ],
+      "gate": "G-ARTIFACT-RUNTIME-021",
+      "scope": "hosted ARM64 software artifact qualification"
+    },
+    {
+      "id": "REQ-CD4-03",
+      "kind": "functional",
+      "acceptance": "Reject missing/tampered OCI content, contradictory digests, incomplete scans, HIGH/CRITICAL/UNKNOWN findings, secrets or failed signed provenance; produce hash-bound artifact-only receipt",
+      "source": [
+        "tools/artifact_oci.py",
+        "tools/artifact_verify.py",
+        "tools/artifact_evidence.py",
+        "tools/artifact_gate.py",
+        "tools/artifact_preflight.py"
+      ],
+      "tests": [
+        "tests/test_artifact_gate.py::test_artifact_qualification_is_replayable_and_source_bound",
+        "tests/test_artifact_gate.py::test_signature_verification_failure_cannot_use_saved_json",
+        "tests/test_artifact_oci.py::test_unsafe_or_contradictory_archive_is_rejected",
+        "tests/test_artifact_preflight.py::test_unsigned_prequalification_never_promotes_artifact"
+      ],
+      "gate": "G-ARTIFACT-NEGATIVE-020",
+      "scope": "hosted ARM64 software artifact qualification"
+    },
+    {
+      "id": "REQ-CD4-04",
+      "kind": "nonfunctional",
+      "acceptance": "Bound campaign, signature and container deadlines; >=90 percent branch-aware artifact module coverage; fail-closed receipts, durable Actions evidence and failure annotations with deployment/HW HOLD",
+      "source": [
+        "tools/artifact_campaign.py",
+        "tools/artifact_gate.py",
+        ".github/workflows/artifact.yml"
+      ],
+      "tests": [
+        "tests/test_artifact_campaign.py::test_artifact_campaign_timeout_and_startup_failure_preserve_fail_closed_evidence",
+        "tests/test_artifact_gate.py::test_evidence_write_failure_blocks_completion",
+        "tests/test_artifact_verify.py::test_failed_hung_or_oversized_verifier_is_rejected"
+      ],
+      "gate": "G-ARTIFACT-NEGATIVE-020",
+      "scope": "hosted ARM64 software artifact qualification"
     }
   ]
 }

@@ -27,6 +27,8 @@ async def main() -> None:
     commands = [
         ("G-CI-013", "REQ-CI-01", [sys.executable, "tools/ci_admission.py"]),
         ("G-POLICY-014", "REQ-CI2-01", [sys.executable, "tools/policy_evaluation.py"]),
+        ("G-ARTIFACT-DESIGN-019", "REQ-CD4-01", [sys.executable, "tools/artifact_design.py"]),
+        ("G-ARTIFACT-NEGATIVE-020", "REQ-CD4-03/04", [sys.executable, "tools/artifact_campaign.py"]),
         ("G-CD-CONTRACT-017", "REQ-CD3-01/02", [sys.executable, "tools/deployment_gate.py"]),
         ("G-CD-NEGATIVE-018", "REQ-CD3-03/04", [sys.executable, "tools/deployment_campaign.py"]),
         ("G-PROFILE-015", "REQ-CI2-02", [sys.executable, "tools/ci_profiles.py"]),
