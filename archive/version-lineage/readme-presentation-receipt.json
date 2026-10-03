@@ -1,0 +1,19 @@
+{
+  "scope": "Root README presentation only; existing sealed build and v1.0.0 archive preserved",
+  "timestamp_utc": "2026-10-03T03:37:40.667446+00:00",
+  "base_commit": "57b2d8e313955ef598c7b7bf90d13ced6bb54f37",
+  "historical_source_manifest": "evidence/source_manifest.json",
+  "historical_readme_sha256": "461031e94e90bcd51ff86c12abde6d87859ff086f3ff6261b918ef8c21301640",
+  "updated_readme_sha256": "bb8c1a400b17bd3457d2ed219f2c9efcb65e569dfbc5d4f48f7fae9447d5e004",
+  "checks": {
+    "badge_snapshot_matches_committed_validation": true,
+    "relative_links_resolve": true,
+    "all_other_sealed_files_unchanged": true
+  },
+  "validation_snapshot": {
+    "tests": 78,
+    "combined_line_branch_coverage_percent": 97.39,
+    "software_status": "PASS",
+    "external_deployment_status": "HOLD"
+  }
+}
