@@ -1,0 +1,108 @@
+@prefix forge: <https://terminal-state.systems/ontology/forge#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+
+<https://terminal-state.systems/ontology/forge/phase_4_subtypes> a owl:Ontology ;
+    dct:title "Forge Federated Ontology Phase 4 Subtype Hardening" ;
+    dct:description "Subtype hardening layer that resolves broad_match and close_match field bindings into stricter semantic subtypes while preserving explicit rejected-generic lanes." ;
+    owl:versionInfo "1.0.0" ;
+    dct:creator "Chief Ontology Architect" .
+
+forge:CanonicalField a owl:Class ; rdfs:label "canonical_field" ; rdfs:subClassOf forge:ControlledTerm ; rdfs:comment "A canonical field term in the federated field registry." .
+forge:FieldSemanticSubtype a owl:Class ; rdfs:label "field_semantic_subtype" ; rdfs:comment "A stricter semantic subtype for canonical field hardening." .
+forge:hard_binds_to_subtype a owl:ObjectProperty ; rdfs:domain forge:CanonicalField ; rdfs:range forge:FieldSemanticSubtype ; rdfs:label "hard_binds_to_subtype" .
+forge:phase_4_binding_basis a owl:DatatypeProperty ; rdfs:domain forge:CanonicalField ; rdfs:range xsd:string ; rdfs:label "phase_4_binding_basis" .
+forge:phase_4_hardening_action a owl:DatatypeProperty ; rdfs:domain forge:CanonicalField ; rdfs:range xsd:string ; rdfs:label "phase_4_hardening_action" .
+forge:refined_mapping_disposition a owl:DatatypeProperty ; rdfs:domain forge:Mapping ; rdfs:range xsd:string ; rdfs:label "refined_mapping_disposition" .
+
+forge:RejectedGenericField a owl:Class ; rdfs:label "rejected_generic_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Explicitly rejected generic field that remains blocked from machine federation until specialized." .
+forge:IdentifierField a owl:Class ; rdfs:label "identifier_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Identifier-bearing field subtype." .
+forge:ArtifactIdentifierField a owl:Class ; rdfs:label "artifact_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for artifacts, baselines, packages, components, or governed records." .
+forge:StateIdentifierField a owl:Class ; rdfs:label "state_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for runtime states or safe states." .
+forge:EventIdentifierField a owl:Class ; rdfs:label "event_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for events, triggers, or signals treated as event tokens." .
+forge:TransitionIdentifierField a owl:Class ; rdfs:label "transition_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for transitions or transition groups." .
+forge:GateIdentifierField a owl:Class ; rdfs:label "gate_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for validation or escalation gates." .
+forge:ConstraintIdentifierField a owl:Class ; rdfs:label "constraint_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for constraint, invariant, or rule records." .
+forge:RiskIdentifierField a owl:Class ; rdfs:label "risk_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for risk, hazard, or mitigation records." .
+forge:ScenarioIdentifierField a owl:Class ; rdfs:label "scenario_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for scenario, wargame, or replay records." .
+forge:SignalIdentifierField a owl:Class ; rdfs:label "signal_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for electrical signals, rails, or telemetry channels." .
+forge:FaultIdentifierField a owl:Class ; rdfs:label "fault_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for faults, failures, or anomaly records." .
+forge:BusIdentifierField a owl:Class ; rdfs:label "bus_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for buses or communication lanes." .
+forge:TrustIdentifierField a owl:Class ; rdfs:label "trust_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for trust roots, trust functions, or trust claims." .
+forge:DatasetIdentifierField a owl:Class ; rdfs:label "dataset_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for datasets, corpora, or sample sets." .
+forge:BuildIdentifierField a owl:Class ; rdfs:label "build_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for builds, releases, or deployment packages." .
+forge:InterfaceIdentifierField a owl:Class ; rdfs:label "interface_identifier_field" ; rdfs:subClassOf forge:IdentifierField ; rdfs:comment "Identifier for interfaces, contracts, seams, or schemas." .
+forge:StatusField a owl:Class ; rdfs:label "status_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Status-bearing field subtype." .
+forge:ApprovalStatusField a owl:Class ; rdfs:label "approval_status_field" ; rdfs:subClassOf forge:StatusField ; rdfs:comment "Status field governed by approval lifecycle semantics." .
+forge:ValidationStatusField a owl:Class ; rdfs:label "validation_status_field" ; rdfs:subClassOf forge:StatusField ; rdfs:comment "Status field governed by validation or conformance semantics." .
+forge:ReviewStatusField a owl:Class ; rdfs:label "review_status_field" ; rdfs:subClassOf forge:StatusField ; rdfs:comment "Status field governed by review workflow semantics." .
+forge:RuntimeStateStatusField a owl:Class ; rdfs:label "runtime_state_status_field" ; rdfs:subClassOf forge:StatusField ; rdfs:comment "Status field governed by runtime or operational state semantics." .
+forge:RiskStatusField a owl:Class ; rdfs:label "risk_status_field" ; rdfs:subClassOf forge:StatusField ; rdfs:comment "Status field governed by risk posture semantics." .
+forge:DriftStatusField a owl:Class ; rdfs:label "drift_status_field" ; rdfs:subClassOf forge:StatusField ; rdfs:comment "Status field governed by drift assessment semantics." .
+forge:MappingDispositionField a owl:Class ; rdfs:label "mapping_disposition_field" ; rdfs:subClassOf forge:StatusField ; rdfs:comment "Status field governed by mapping or identity disposition semantics." .
+forge:ReferenceField a owl:Class ; rdfs:label "reference_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Reference-bearing field subtype." .
+forge:ArtifactReferenceField a owl:Class ; rdfs:label "artifact_reference_field" ; rdfs:subClassOf forge:ReferenceField ; rdfs:comment "Reference to governed artifacts, evidence, baselines, or packages." .
+forge:ConstraintReferenceField a owl:Class ; rdfs:label "constraint_reference_field" ; rdfs:subClassOf forge:ReferenceField ; rdfs:comment "Reference to constraints, invariants, or restricted terms." .
+forge:TopologyReferenceField a owl:Class ; rdfs:label "topology_reference_field" ; rdfs:subClassOf forge:ReferenceField ; rdfs:comment "Reference to topology, graph, node, or relationship records." .
+forge:ArchitectureReferenceField a owl:Class ; rdfs:label "architecture_reference_field" ; rdfs:subClassOf forge:ReferenceField ; rdfs:comment "Reference to architecture baselines, models, interfaces, or seams." .
+forge:EvidenceReferenceField a owl:Class ; rdfs:label "evidence_reference_field" ; rdfs:subClassOf forge:ReferenceField ; rdfs:comment "Reference to evidence payloads, logs, notebooks, or proof artifacts." .
+forge:ConstraintField a owl:Class ; rdfs:label "constraint_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Constraint-bearing field subtype." .
+forge:GraphConstraintField a owl:Class ; rdfs:label "graph_constraint_field" ; rdfs:subClassOf forge:ConstraintField ; rdfs:comment "Constraint field for graph, shape, or cardinality semantics." .
+forge:ControlConstraintField a owl:Class ; rdfs:label "control_constraint_field" ; rdfs:subClassOf forge:ConstraintField ; rdfs:comment "Constraint field for runtime state, actuation, fallback, or transition control." .
+forge:SafetyConstraintField a owl:Class ; rdfs:label "safety_constraint_field" ; rdfs:subClassOf forge:ConstraintField ; rdfs:comment "Constraint field for safety, hazard, or safe-state restriction." .
+forge:ThermalConstraintField a owl:Class ; rdfs:label "thermal_constraint_field" ; rdfs:subClassOf forge:ConstraintField ; rdfs:comment "Constraint field for thermal envelope bounds." .
+forge:PowerConstraintField a owl:Class ; rdfs:label "power_constraint_field" ; rdfs:subClassOf forge:ConstraintField ; rdfs:comment "Constraint field for electrical or power envelope bounds." .
+forge:DeploymentConstraintField a owl:Class ; rdfs:label "deployment_constraint_field" ; rdfs:subClassOf forge:ConstraintField ; rdfs:comment "Constraint field for containment, runtime, environment, or release restrictions." .
+forge:EnvelopeConstraintField a owl:Class ; rdfs:label "envelope_constraint_field" ; rdfs:subClassOf forge:ConstraintField ; rdfs:comment "Constraint field for physical or mission envelope bounds." .
+forge:TrustConstraintField a owl:Class ; rdfs:label "trust_constraint_field" ; rdfs:subClassOf forge:ConstraintField ; rdfs:comment "Constraint field for trust, integrity, or authority restrictions." .
+forge:RuntimeControlField a owl:Class ; rdfs:label "runtime_control_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Field subtype for runtime state or control semantics." .
+forge:StateControlField a owl:Class ; rdfs:label "state_control_field" ; rdfs:subClassOf forge:RuntimeControlField ; rdfs:comment "Field governing runtime state semantics." .
+forge:TransitionControlField a owl:Class ; rdfs:label "transition_control_field" ; rdfs:subClassOf forge:RuntimeControlField ; rdfs:comment "Field governing transition semantics." .
+forge:RecoveryControlField a owl:Class ; rdfs:label "recovery_control_field" ; rdfs:subClassOf forge:RuntimeControlField ; rdfs:comment "Field governing degrade, fallback, restart, or recovery semantics." .
+forge:SafeStateControlField a owl:Class ; rdfs:label "safe_state_control_field" ; rdfs:subClassOf forge:RuntimeControlField ; rdfs:comment "Field governing safe-state or fail-safe semantics." .
+forge:EvidenceField a owl:Class ; rdfs:label "evidence_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Field subtype for evidence and provenance semantics." .
+forge:ProvenanceField a owl:Class ; rdfs:label "provenance_field" ; rdfs:subClassOf forge:EvidenceField ; rdfs:comment "Field carrying provenance IDs, timestamps, hashes, or sequence metadata." .
+forge:EvidenceLocatorField a owl:Class ; rdfs:label "evidence_locator_field" ; rdfs:subClassOf forge:EvidenceField ; rdfs:comment "Field locating notebooks, files, paths, or source evidence." .
+forge:EvidenceQualityField a owl:Class ; rdfs:label "evidence_quality_field" ; rdfs:subClassOf forge:EvidenceField ; rdfs:comment "Field characterizing validation method, comparison method, or quality state of evidence." .
+forge:PhysicalMetricField a owl:Class ; rdfs:label "physical_metric_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Field subtype for physical and performance metrics." .
+forge:AerospaceMetricField a owl:Class ; rdfs:label "aerospace_metric_field" ; rdfs:subClassOf forge:PhysicalMetricField ; rdfs:comment "Field measuring flight, trajectory, or aerospace envelope behavior." .
+forge:ThermalMetricField a owl:Class ; rdfs:label "thermal_metric_field" ; rdfs:subClassOf forge:PhysicalMetricField ; rdfs:comment "Field measuring temperature, heat, or thermal operating state." .
+forge:PowerMetricField a owl:Class ; rdfs:label "power_metric_field" ; rdfs:subClassOf forge:PhysicalMetricField ; rdfs:comment "Field measuring voltage, current, wattage, power state, or electrical validity." .
+forge:MechanicalMetricField a owl:Class ; rdfs:label "mechanical_metric_field" ; rdfs:subClassOf forge:PhysicalMetricField ; rdfs:comment "Field measuring structure, mass, load, acceleration, vibration, or material response." .
+forge:PerformanceMetricField a owl:Class ; rdfs:label "performance_metric_field" ; rdfs:subClassOf forge:PhysicalMetricField ; rdfs:comment "Field measuring latency, divergence, throughput, or other system performance characteristics." .
+forge:RiskField a owl:Class ; rdfs:label "risk_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Field subtype for risk-bearing semantics." .
+forge:HazardField a owl:Class ; rdfs:label "hazard_field" ; rdfs:subClassOf forge:RiskField ; rdfs:comment "Field for hazard or anomaly posture." .
+forge:FailureModeField a owl:Class ; rdfs:label "failure_mode_field" ; rdfs:subClassOf forge:RiskField ; rdfs:comment "Field for faults, failure conditions, and recovery risk." .
+forge:SeverityField a owl:Class ; rdfs:label "severity_field" ; rdfs:subClassOf forge:RiskField ; rdfs:comment "Field for severity or mission-criticality assessment." .
+forge:BlastRadiusField a owl:Class ; rdfs:label "blast_radius_field" ; rdfs:subClassOf forge:RiskField ; rdfs:comment "Field for blast-radius or downstream impact scope." .
+forge:DivergenceRiskField a owl:Class ; rdfs:label "divergence_risk_field" ; rdfs:subClassOf forge:RiskField ; rdfs:comment "Field for divergence or fidelity-gap risk posture." .
+forge:OntologyField a owl:Class ; rdfs:label "ontology_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Field subtype for ontology and mapping governance." .
+forge:VocabularyBindingField a owl:Class ; rdfs:label "vocabulary_binding_field" ; rdfs:subClassOf forge:OntologyField ; rdfs:comment "Field for labels, vocabulary links, or concept binding semantics." .
+forge:MappingGovernanceField a owl:Class ; rdfs:label "mapping_governance_field" ; rdfs:subClassOf forge:OntologyField ; rdfs:comment "Field for identity, mapping, cardinality, or semantic governance semantics." .
+forge:ProvenanceGovernanceField a owl:Class ; rdfs:label "provenance_governance_field" ; rdfs:subClassOf forge:OntologyField ; rdfs:comment "Field for provenance, change, or trace semantics at governance level." .
+forge:TwinField a owl:Class ; rdfs:label "twin_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Field subtype for digital twin semantics." .
+forge:TwinTopologyField a owl:Class ; rdfs:label "twin_topology_field" ; rdfs:subClassOf forge:TwinField ; rdfs:comment "Field for topology-truth and structural twin semantics." .
+forge:TwinFidelityField a owl:Class ; rdfs:label "twin_fidelity_field" ; rdfs:subClassOf forge:TwinField ; rdfs:comment "Field for twin fidelity, divergence, or gap semantics." .
+forge:TwinReplayField a owl:Class ; rdfs:label "twin_replay_field" ; rdfs:subClassOf forge:TwinField ; rdfs:comment "Field for replay, perturbation, or scenario-stress semantics." .
+forge:TwinStateField a owl:Class ; rdfs:label "twin_state_field" ; rdfs:subClassOf forge:TwinField ; rdfs:comment "Field for model-state or twin-state semantics." .
+forge:IntegrityField a owl:Class ; rdfs:label "integrity_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Field subtype for trust and integrity semantics." .
+forge:TrustRootField a owl:Class ; rdfs:label "trust_root_field" ; rdfs:subClassOf forge:IntegrityField ; rdfs:comment "Field for trust roots, trust functions, or authority anchors." .
+forge:TelemetryIntegrityField a owl:Class ; rdfs:label "telemetry_integrity_field" ; rdfs:subClassOf forge:IntegrityField ; rdfs:comment "Field for telemetry validity, sequence integrity, or evidence integrity semantics." .
+forge:ElectricalIntegrityField a owl:Class ; rdfs:label "electrical_integrity_field" ; rdfs:subClassOf forge:IntegrityField ; rdfs:comment "Field for electrical validity and rail integrity semantics." .
+forge:BusIntegrityField a owl:Class ; rdfs:label "bus_integrity_field" ; rdfs:subClassOf forge:IntegrityField ; rdfs:comment "Field for bus-level integrity and correlation semantics." .
+forge:ReviewField a owl:Class ; rdfs:label "review_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Field subtype for review workflow semantics." .
+forge:ReviewDecisionField a owl:Class ; rdfs:label "review_decision_field" ; rdfs:subClassOf forge:ReviewField ; rdfs:comment "Field for review outcomes, recommendations, or requested actions." .
+forge:ApprovalActorField a owl:Class ; rdfs:label "approval_actor_field" ; rdfs:subClassOf forge:ReviewField ; rdfs:comment "Field for approver, reviewer, or owner actor semantics." .
+forge:DeploymentField a owl:Class ; rdfs:label "deployment_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Field subtype for deployment lifecycle semantics." .
+forge:ReleaseLifecycleField a owl:Class ; rdfs:label "release_lifecycle_field" ; rdfs:subClassOf forge:DeploymentField ; rdfs:comment "Field for build, deploy, runtime, environment, or release lifecycle semantics." .
+forge:ArtifactContextField a owl:Class ; rdfs:label "artifact_context_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Field subtype for classifying or contextualizing artifacts." .
+forge:ArtifactClassificationField a owl:Class ; rdfs:label "artifact_classification_field" ; rdfs:subClassOf forge:ArtifactContextField ; rdfs:comment "Field for component, subsystem, owner, package, or artifact classification semantics." .
+forge:MiscField a owl:Class ; rdfs:label "misc_field" ; rdfs:subClassOf forge:FieldSemanticSubtype ; rdfs:comment "Residual but governed field subtype." .
+forge:OperationalParameterField a owl:Class ; rdfs:label "operational_parameter_field" ; rdfs:subClassOf forge:MiscField ; rdfs:comment "Field for operational methods, strategies, policies, and execution parameters." .
+forge:PhysicalBoundField a owl:Class ; rdfs:label "physical_bound_field" ; rdfs:subClassOf forge:MiscField ; rdfs:comment "Field for nominal, degraded, prohibited, or allowable physical bounds." .
+forge:ComparativeAnalysisField a owl:Class ; rdfs:label "comparative_analysis_field" ; rdfs:subClassOf forge:MiscField ; rdfs:comment "Field for claimed, observed, compared, or differential analysis semantics." .
+forge:DomainDescriptorField a owl:Class ; rdfs:label "domain_descriptor_field" ; rdfs:subClassOf forge:MiscField ; rdfs:comment "Field for other governed domain descriptors not yet promoted to a stronger property class." .

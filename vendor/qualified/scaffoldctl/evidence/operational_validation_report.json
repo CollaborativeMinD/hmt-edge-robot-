@@ -1,0 +1,123 @@
+{
+  "checks": [
+    {
+      "detail": "scaffoldctl",
+      "gate": "REPOSITORY_TITLE",
+      "status": "PASS"
+    },
+    {
+      "detail": "paths=111",
+      "gate": "PATH_CASE_UNIQUE",
+      "status": "PASS"
+    },
+    {
+      "detail": "[]",
+      "gate": "PATH_POLICY",
+      "status": "PASS"
+    },
+    {
+      "detail": "README.md",
+      "gate": "ROOT_DOC_README.md_PRESENT",
+      "status": "PASS"
+    },
+    {
+      "detail": "lines=31",
+      "gate": "ROOT_DOC_README.md_LINES",
+      "status": "PASS"
+    },
+    {
+      "detail": "[]",
+      "gate": "ROOT_DOC_README.md_HEADINGS",
+      "status": "PASS"
+    },
+    {
+      "detail": "Start_here.md",
+      "gate": "ROOT_DOC_Start_here.md_PRESENT",
+      "status": "PASS"
+    },
+    {
+      "detail": "lines=34",
+      "gate": "ROOT_DOC_Start_here.md_LINES",
+      "status": "PASS"
+    },
+    {
+      "detail": "[]",
+      "gate": "ROOT_DOC_Start_here.md_HEADINGS",
+      "status": "PASS"
+    },
+    {
+      "detail": "Index.md",
+      "gate": "ROOT_DOC_Index.md_PRESENT",
+      "status": "PASS"
+    },
+    {
+      "detail": "lines=39",
+      "gate": "ROOT_DOC_Index.md_LINES",
+      "status": "PASS"
+    },
+    {
+      "detail": "[]",
+      "gate": "ROOT_DOC_Index.md_HEADINGS",
+      "status": "PASS"
+    },
+    {
+      "detail": "Agents.md.md",
+      "gate": "ORCHESTRATION_Agents.md.md_PRESENT",
+      "status": "PASS"
+    },
+    {
+      "detail": "Agents.md.md",
+      "gate": "ORCHESTRATION_Agents.md.md_LINES",
+      "status": "PASS"
+    },
+    {
+      "detail": "Humans.md",
+      "gate": "ORCHESTRATION_Humans.md_PRESENT",
+      "status": "PASS"
+    },
+    {
+      "detail": "Humans.md",
+      "gate": "ORCHESTRATION_Humans.md_LINES",
+      "status": "PASS"
+    },
+    {
+      "detail": "scaffoldctl",
+      "gate": "PROJECT_NAME",
+      "status": "PASS"
+    },
+    {
+      "detail": "{\"scaffoldctl\": \"scaffoldctl.cli:main\"}",
+      "gate": "CLI_NAME",
+      "status": "PASS"
+    },
+    {
+      "detail": "[]",
+      "gate": "JSON_PARSE",
+      "status": "PASS"
+    },
+    {
+      "detail": "[]",
+      "gate": "PYTHON_PARSE",
+      "status": "PASS"
+    },
+    {
+      "detail": "[]",
+      "gate": "POWER10_FUNCTION_LENGTH",
+      "status": "PASS"
+    },
+    {
+      "detail": "[]",
+      "gate": "PUBLIC_OPERATIONAL_NAMING",
+      "status": "PASS"
+    },
+    {
+      "detail": "[]",
+      "gate": "MARKDOWN_LINKS",
+      "status": "PASS"
+    }
+  ],
+  "failure_count": 0,
+  "repository": "scaffoldctl",
+  "root": ".",
+  "status": "PASS"
+}

@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+.env
+.secrets/
+secrets/
+build/
+dist/
+evidence/runtime/
+REPOSITORY_SEAL.json

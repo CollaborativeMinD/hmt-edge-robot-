@@ -1,0 +1,37 @@
+@prefix forge: <https://terminal-state.systems/ontology/forge#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+
+forge:phase_5_targeted_domain_refinement a forge:ReviewAction ; skos:prefLabel "phase_5_targeted_domain_refinement" ; dct:description "Phase 5 targeted domain refinement for residual generic lanes and explicit Edge DevSecOps field declaration coverage." .
+
+forge:EnvironmentReproducibilityField a owl:Class ; rdfs:subClassOf forge:DeploymentField ; skos:prefLabel "environment_reproducibility_field" ; dct:description "Environment reproducibility, bootstrap, lock, and parity governance fields." .
+
+forge:ConfigBoundaryField a owl:Class ; rdfs:subClassOf forge:DeploymentField ; skos:prefLabel "config_boundary_field" ; dct:description "Typed settings, config surface, and secret boundary governance fields." .
+
+forge:SeamContractField a owl:Class ; rdfs:subClassOf forge:RuntimeControlField ; skos:prefLabel "seam_contract_field" ; dct:description "Service seam, request/response contract, and ICD-alignment governance fields." .
+
+forge:ContainmentHardeningField a owl:Class ; rdfs:subClassOf forge:DeploymentField ; skos:prefLabel "containment_hardening_field" ; dct:description "Container hardening, image hygiene, and runtime posture governance fields." .
+
+forge:HealthSignalField a owl:Class ; rdfs:subClassOf forge:RuntimeControlField ; skos:prefLabel "health_signal_field" ; dct:description "Startup, readiness, liveness, and health-signal governance fields." .
+
+forge:OrchestrationReadinessField a owl:Class ; rdfs:subClassOf forge:DeploymentField ; skos:prefLabel "orchestration_readiness_field" ; dct:description "Deployment topology, orchestration readiness, and rollback governance fields." .
+
+forge:ReleaseTraceabilityField a owl:Class ; rdfs:subClassOf forge:DeploymentField ; skos:prefLabel "release_traceability_field" ; dct:description "Release traceability, provenance, checklist, and promotion governance fields." .
+
+forge:ElectricalIntegrityField a owl:Class ; rdfs:subClassOf forge:IntegrityField ; skos:prefLabel "electrical_integrity_field" ; dct:description "Electrical validity, rail/subsystem integrity, and escalation governance fields." .
+
+forge:TwinFidelityField a owl:Class ; rdfs:subClassOf forge:TwinField ; skos:prefLabel "twin_fidelity_field" ; dct:description "Digital-twin fidelity, divergence, and comparison governance fields." .
+
+forge:AcceptanceClauseField a owl:Class ; rdfs:subClassOf forge:ReviewField ; skos:prefLabel "acceptance_clause_field" ; dct:description "Structured Given/When/Then acceptance clause fields for adversarial or test scenarios." .
+
+forge:DependencyIntegrityField a owl:Class ; rdfs:subClassOf forge:DeploymentField ; skos:prefLabel "dependency_integrity_field" ; dct:description "Dependency, lock, version, and artifact hash integrity governance fields." .
+
+forge:LifecycleRegressionField a owl:Class ; rdfs:subClassOf forge:DeploymentField ; skos:prefLabel "lifecycle_regression_field" ; dct:description "Regression, rollback, and known-good lifecycle governance fields." .
+
+forge:DeploymentTopologyField a owl:Class ; rdfs:subClassOf forge:DeploymentField ; skos:prefLabel "deployment_topology_field" ; dct:description "Topology choice, dependency boundary, and shutdown/rollback topology governance fields." .
+

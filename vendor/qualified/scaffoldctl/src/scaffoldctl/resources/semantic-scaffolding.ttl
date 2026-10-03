@@ -1,0 +1,483 @@
+@prefix sc:   <urn:scaffoldctl:ontology:semantic-scaffolding#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+
+<urn:scaffoldctl:ontology:semantic-scaffolding>
+    a owl:Ontology ;
+    owl:versionIRI
+        <urn:scaffoldctl:ontology:semantic-scaffolding:1.0.0> ;
+    owl:versionInfo "1.0.0" ;
+    sc:provenanceId "prov_semantic_scaffolding_plan_20260803_v1_0_0" ;
+    sc:artifactDisposition "new" ;
+    sc:createdOn "2026-08-03"^^xsd:date ;
+    rdfs:label "scaffoldctl federated semantic scaffolding ontology" ;
+    rdfs:comment
+        "Canonical lifecycle, transition, repository-root, HMT Trifecta, and line-budget semantics for scaffoldctl." .
+
+sc:provenanceId
+    a owl:AnnotationProperty ;
+    rdfs:label "provenance identifier" ;
+    rdfs:comment "Identifies the governing provenance record for an ontology artifact." .
+
+sc:artifactDisposition
+    a owl:AnnotationProperty ;
+    rdfs:label "artifact disposition" ;
+    rdfs:comment "Classifies an artifact as new, modified, inherited, or blocked." .
+
+sc:createdOn
+    a owl:AnnotationProperty ;
+    rdfs:label "created on" ;
+    rdfs:comment "Records the artifact creation date." .
+
+sc:LifecycleState
+    a owl:Class ;
+    owl:disjointUnionOf (
+        sc:Uninitialized
+        sc:Planned
+        sc:ScaffoldedUnvalidated
+        sc:Validated
+        sc:Sealed
+        sc:Hold
+        sc:Fail
+        sc:Rejected
+    ) ;
+    rdfs:label "Lifecycle state" ;
+    rdfs:comment "A canonical state in the scaffoldctl repository lifecycle." .
+
+sc:Uninitialized
+    a owl:Class ;
+    rdfs:subClassOf sc:LifecycleState ;
+    rdfs:label "Uninitialized" ;
+    rdfs:comment "No governed scaffoldctl lifecycle plan or scaffold exists." .
+
+sc:Planned
+    a owl:Class ;
+    rdfs:subClassOf sc:LifecycleState ;
+    rdfs:label "Planned" ;
+    rdfs:comment "A governed scaffold plan exists, but repository scaffolding is not complete." .
+
+sc:ScaffoldedUnvalidated
+    a owl:Class ;
+    rdfs:subClassOf sc:LifecycleState ;
+    rdfs:label "Scaffolded, unvalidated" ;
+    rdfs:comment "Repository scaffolding exists but has not passed governed validation." .
+
+sc:Validated
+    a owl:Class ;
+    rdfs:subClassOf sc:LifecycleState ;
+    rdfs:label "Validated" ;
+    rdfs:comment "The scaffold satisfies every criterion assigned to its validation transition." .
+
+sc:Sealed
+    a owl:Class ;
+    rdfs:subClassOf sc:LifecycleState ;
+    rdfs:label "Sealed" ;
+    rdfs:comment "The validated scaffold has been sealed as a governed artifact." .
+
+sc:Hold
+    a owl:Class ;
+    rdfs:subClassOf sc:LifecycleState ;
+    rdfs:label "Hold" ;
+    rdfs:comment "Progress is paused because a resolvable condition blocks lawful advancement." .
+
+sc:Fail
+    a owl:Class ;
+    rdfs:subClassOf sc:LifecycleState ;
+    rdfs:label "Fail" ;
+    rdfs:comment "A required lifecycle gate did not pass." .
+
+sc:Rejected
+    a owl:Class ;
+    rdfs:subClassOf sc:LifecycleState ;
+    rdfs:label "Rejected" ;
+    rdfs:comment "The scaffold or transition is denied admission to the governed lifecycle." .
+
+sc:ValidationCriterion
+    a owl:Class ;
+    rdfs:label "Validation criterion" ;
+    rdfs:comment "A governed criterion that must be satisfied by a validation boundary." .
+
+sc:LifecycleTransition
+    a owl:Class ;
+    rdfs:label "Lifecycle transition" ;
+    rdfs:comment "A governed transition between two lifecycle-state instances." ;
+    rdfs:subClassOf
+        [
+            a owl:Restriction ;
+            owl:onProperty sc:hasTransitionSource ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass sc:LifecycleState
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty sc:hasTransitionTarget ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass sc:LifecycleState
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty sc:validatesAgainst ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass sc:ValidationCriterion
+        ] .
+
+sc:hasTransitionSource
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain sc:LifecycleTransition ;
+    rdfs:range sc:LifecycleState ;
+    rdfs:label "has transition source" ;
+    rdfs:comment "Relates a lifecycle transition to exactly one source-state instance." .
+
+sc:hasTransitionTarget
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain sc:LifecycleTransition ;
+    rdfs:range sc:LifecycleState ;
+    rdfs:label "has transition target" ;
+    rdfs:comment "Relates a lifecycle transition to exactly one target-state instance." .
+
+sc:validatesAgainst
+    a owl:ObjectProperty ;
+    rdfs:domain sc:LifecycleTransition ;
+    rdfs:range sc:ValidationCriterion ;
+    rdfs:label "validates against" ;
+    rdfs:comment "Relates a lifecycle transition to a criterion that must validate before advancement." .
+
+sc:RepositoryDirectory
+    a owl:Class ;
+    rdfs:label "Repository directory" ;
+    rdfs:comment "A directory contained within the scaffoldctl repository perimeter." .
+
+sc:RepositoryArtifact
+    a owl:Class ;
+    rdfs:label "Repository artifact" ;
+    rdfs:comment "A governed artifact contained within the scaffoldctl repository perimeter." .
+
+sc:RepositoryDocument
+    a owl:Class ;
+    rdfs:subClassOf sc:RepositoryArtifact ;
+    rdfs:label "Repository document" ;
+    rdfs:comment "A text document governed as a repository artifact." .
+
+sc:RepositoryStructuralInvariant
+    a owl:Class ;
+    rdfs:subClassOf sc:ValidationCriterion ;
+    rdfs:label "Repository structural invariant" ;
+    rdfs:comment "A validation criterion governing repository structure or required artifacts." .
+
+sc:LineBudgetInvariant
+    a owl:Class ;
+    rdfs:subClassOf sc:RepositoryStructuralInvariant ;
+    rdfs:label "Line-budget invariant" ;
+    rdfs:comment "A structural invariant that imposes an exclusive maximum line count." .
+
+sc:ReadmeDocument
+    a owl:Class ;
+    rdfs:subClassOf
+        sc:HMTTrifectaDocument ,
+        [
+            a owl:Restriction ;
+            owl:onProperty sc:canonicalRelativePath ;
+            owl:hasValue "README.md"
+        ] ;
+    rdfs:label "README.md document" ;
+    rdfs:comment "The HMT Trifecta document whose canonical root-relative path is README.md." .
+
+sc:StartHereDocument
+    a owl:Class ;
+    rdfs:subClassOf
+        sc:HMTTrifectaDocument ,
+        [
+            a owl:Restriction ;
+            owl:onProperty sc:canonicalRelativePath ;
+            owl:hasValue "Start_here.md"
+        ] ;
+    rdfs:label "Start_here.md document" ;
+    rdfs:comment "The HMT Trifecta document whose canonical root-relative path is Start_here.md." .
+
+sc:IndexDocument
+    a owl:Class ;
+    rdfs:subClassOf
+        sc:HMTTrifectaDocument ,
+        [
+            a owl:Restriction ;
+            owl:onProperty sc:canonicalRelativePath ;
+            owl:hasValue "Index.md"
+        ] ;
+    rdfs:label "Index.md document" ;
+    rdfs:comment "The HMT Trifecta document whose canonical root-relative path is Index.md." .
+
+sc:HMTTrifectaDocument
+    a owl:Class ;
+    owl:equivalentClass
+        [
+            a owl:Class ;
+            owl:unionOf (
+                sc:ReadmeDocument
+                sc:StartHereDocument
+                sc:IndexDocument
+            )
+        ] ;
+    rdfs:subClassOf
+        sc:RepositoryDocument ,
+        [
+            a owl:Restriction ;
+            owl:onProperty sc:canonicalRelativePath ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:string
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty sc:lineCount ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange sc:LineCountBelow100
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty sc:hasLineBudgetInvariant ;
+            owl:hasValue sc:HMTTrifectaLineBudget
+        ] ;
+    rdfs:label "HMT Trifecta document" ;
+    rdfs:comment "One of the three exact root documents required by the HMT Trifecta invariant." .
+
+[]
+    a owl:AllDisjointClasses ;
+    owl:members (
+        sc:ReadmeDocument
+        sc:StartHereDocument
+        sc:IndexDocument
+    ) .
+
+sc:RepositoryRootDirectory
+    a owl:Class ;
+    rdfs:subClassOf sc:RepositoryDirectory ;
+    rdfs:label "Repository root directory" ;
+    rdfs:comment "The single repository-root directory governed by scaffoldctl confinement law." .
+
+sc:HMTConformingRepositoryRootDirectory
+    a owl:Class ;
+    rdfs:subClassOf sc:RepositoryRootDirectory ;
+    owl:equivalentClass
+        [
+            a owl:Class ;
+            owl:intersectionOf (
+                sc:RepositoryRootDirectory
+                [
+                    a owl:Restriction ;
+                    owl:onProperty sc:hasHMTTrifectaDocument ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onClass sc:ReadmeDocument
+                ]
+                [
+                    a owl:Restriction ;
+                    owl:onProperty sc:hasHMTTrifectaDocument ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onClass sc:StartHereDocument
+                ]
+                [
+                    a owl:Restriction ;
+                    owl:onProperty sc:hasHMTTrifectaDocument ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onClass sc:IndexDocument
+                ]
+                [
+                    a owl:Restriction ;
+                    owl:onProperty sc:hasHMTTrifectaDocument ;
+                    owl:allValuesFrom sc:HMTTrifectaDocument
+                ]
+                [
+                    a owl:Restriction ;
+                    owl:onProperty sc:requiresStructuralInvariant ;
+                    owl:hasValue sc:HMTTrifectaPresenceInvariant
+                ]
+                [
+                    a owl:Restriction ;
+                    owl:onProperty sc:requiresStructuralInvariant ;
+                    owl:hasValue sc:HMTTrifectaLineBudget
+                ]
+            )
+        ] ;
+    rdfs:label "HMT-conforming repository root directory" ;
+    rdfs:comment "A repository root that satisfies the HMT Trifecta presence and line-budget invariants." .
+
+sc:containsArtifact
+    a owl:ObjectProperty ;
+    rdfs:domain sc:RepositoryDirectory ;
+    rdfs:range sc:RepositoryArtifact ;
+    rdfs:label "contains artifact" ;
+    rdfs:comment "Relates a repository directory to an artifact directly contained by it." .
+
+sc:hasHMTTrifectaDocument
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf sc:containsArtifact ;
+    rdfs:domain sc:RepositoryRootDirectory ;
+    rdfs:range sc:HMTTrifectaDocument ;
+    rdfs:label "has HMT Trifecta document" ;
+    rdfs:comment "Relates a repository root to one of its required HMT Trifecta documents." .
+
+sc:requiresStructuralInvariant
+    a owl:ObjectProperty ;
+    rdfs:domain sc:RepositoryRootDirectory ;
+    rdfs:range sc:RepositoryStructuralInvariant ;
+    rdfs:label "requires structural invariant" ;
+    rdfs:comment "Relates a repository root to a structural invariant it must satisfy." .
+
+sc:hasLineBudgetInvariant
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain sc:RepositoryDocument ;
+    rdfs:range sc:LineBudgetInvariant ;
+    rdfs:label "has line-budget invariant" ;
+    rdfs:comment "Relates a repository document to its governing line-budget invariant." .
+
+sc:canonicalRelativePath
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain sc:RepositoryArtifact ;
+    rdfs:range xsd:string ;
+    rdfs:label "canonical relative path" ;
+    rdfs:comment "Stores the exact, case-sensitive path relative to the repository root." .
+
+sc:lineCount
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain sc:RepositoryDocument ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "line count" ;
+    rdfs:comment "Stores a document's non-negative physical line count." .
+
+sc:maximumLineCountExclusive
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain sc:LineBudgetInvariant ;
+    rdfs:range xsd:positiveInteger ;
+    rdfs:label "maximum line count, exclusive" ;
+    rdfs:comment "Stores the first prohibited line count for a line-budget invariant." .
+
+sc:LineCountBelow100
+    a rdfs:Datatype ;
+    owl:equivalentClass
+        [
+            a rdfs:Datatype ;
+            owl:onDatatype xsd:nonNegativeInteger ;
+            owl:withRestrictions (
+                [ xsd:maxExclusive "100"^^xsd:nonNegativeInteger ]
+            )
+        ] ;
+    rdfs:label "Line count below 100" ;
+    rdfs:comment "The integer data range from 0 through 99 inclusive." .
+
+sc:HMTTrifectaPresenceInvariant
+    a owl:NamedIndividual , sc:RepositoryStructuralInvariant ;
+    rdfs:label "HMT Trifecta presence invariant" ;
+    rdfs:comment
+        "Requires exactly one root README.md, one root Start_here.md, and one root Index.md." .
+
+sc:HMTTrifectaLineBudget
+    a owl:NamedIndividual , sc:LineBudgetInvariant ;
+    sc:maximumLineCountExclusive "100"^^xsd:positiveInteger ;
+    rdfs:label "HMT Trifecta line budget" ;
+    rdfs:comment "Requires each HMT Trifecta document to contain fewer than 100 lines." .
+
+sc:RepositoryRootDirectoryShape
+    a sh:NodeShape ;
+    sh:targetClass sc:RepositoryRootDirectory ;
+    sh:severity sh:Violation ;
+    sh:property
+        [
+            sh:path sc:hasHMTTrifectaDocument ;
+            sh:nodeKind sh:IRI ;
+            sh:or (
+                [ sh:class sc:ReadmeDocument ]
+                [ sh:class sc:StartHereDocument ]
+                [ sh:class sc:IndexDocument ]
+            ) ;
+            sh:minCount 3 ;
+            sh:maxCount 3 ;
+            sh:message "A repository root must contain exactly the three governed HMT Trifecta documents."
+        ] ,
+        [
+            sh:path sc:hasHMTTrifectaDocument ;
+            sh:qualifiedValueShape [ sh:class sc:ReadmeDocument ] ;
+            sh:qualifiedValueShapesDisjoint true ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedMaxCount 1 ;
+            sh:message "A repository root must contain exactly one README.md document."
+        ] ,
+        [
+            sh:path sc:hasHMTTrifectaDocument ;
+            sh:qualifiedValueShape [ sh:class sc:StartHereDocument ] ;
+            sh:qualifiedValueShapesDisjoint true ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedMaxCount 1 ;
+            sh:message "A repository root must contain exactly one Start_here.md document."
+        ] ,
+        [
+            sh:path sc:hasHMTTrifectaDocument ;
+            sh:qualifiedValueShape [ sh:class sc:IndexDocument ] ;
+            sh:qualifiedValueShapesDisjoint true ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedMaxCount 1 ;
+            sh:message "A repository root must contain exactly one Index.md document."
+        ] .
+
+sc:HMTTrifectaDocumentShape
+    a sh:NodeShape ;
+    sh:targetClass sc:HMTTrifectaDocument ;
+    sh:targetClass sc:ReadmeDocument ;
+    sh:targetClass sc:StartHereDocument ;
+    sh:targetClass sc:IndexDocument ;
+    sh:severity sh:Violation ;
+    sh:property
+        [
+            sh:path sc:canonicalRelativePath ;
+            sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:message "An HMT Trifecta document must have exactly one canonical root-relative path."
+        ] ,
+        [
+            sh:path sc:lineCount ;
+            sh:datatype xsd:nonNegativeInteger ;
+            sh:maxExclusive "100"^^xsd:nonNegativeInteger ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:message "An HMT Trifecta document must have one line count from 0 through 99."
+        ] .
+
+sc:ReadmeDocumentShape
+    a sh:NodeShape ;
+    sh:targetClass sc:ReadmeDocument ;
+    sh:severity sh:Violation ;
+    sh:property
+        [
+            sh:path sc:canonicalRelativePath ;
+            sh:hasValue "README.md" ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:message "The README document path must be exactly README.md."
+        ] .
+
+sc:StartHereDocumentShape
+    a sh:NodeShape ;
+    sh:targetClass sc:StartHereDocument ;
+    sh:severity sh:Violation ;
+    sh:property
+        [
+            sh:path sc:canonicalRelativePath ;
+            sh:hasValue "Start_here.md" ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:message "The start-here document path must be exactly Start_here.md."
+        ] .
+
+sc:IndexDocumentShape
+    a sh:NodeShape ;
+    sh:targetClass sc:IndexDocument ;
+    sh:severity sh:Violation ;
+    sh:property
+        [
+            sh:path sc:canonicalRelativePath ;
+            sh:hasValue "Index.md" ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:message "The index document path must be exactly Index.md."
+        ] .

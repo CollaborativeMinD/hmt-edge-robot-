@@ -1,0 +1,811 @@
+@prefix forge: <https://terminal-state.systems/ontology/forge#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+
+forge:field_action_ref forge:refined_subtype forge:ArtifactReferenceField ; forge:refined_subtype_label "artifact_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened reference binding for governed artifacts" .
+
+forge:field_actuation_allowed forge:refined_subtype forge:ControlConstraintField ; forge:refined_subtype_label "control_constraint_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "constraint token implies runtime control semantics" .
+
+forge:field_actuation_limit forge:refined_subtype forge:ControlConstraintField ; forge:refined_subtype_label "control_constraint_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "constraint token implies runtime control semantics" .
+
+forge:field_actuator_enable_condition forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_actuator_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_actuator_state forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_affected_state_transition forge:refined_subtype forge:TransitionControlField ; forge:refined_subtype_label "transition_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "runtime-control token implies transition semantics" .
+
+forge:field_allocation_strategy forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_allowable_deflection_mm forge:refined_subtype forge:PhysicalBoundField ; forge:refined_subtype_label "physical_bound_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies bounded nominal/degraded/prohibited envelope semantics" .
+
+forge:field_allowable_peak_accel_g forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_allowed_actions forge:refined_subtype forge:ControlConstraintField ; forge:refined_subtype_label "control_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "constraint token implies runtime control semantics" .
+
+forge:field_allowed_artifacts forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_allowed_states forge:refined_subtype forge:ControlConstraintField ; forge:refined_subtype_label "control_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "constraint token implies runtime control semantics" .
+
+forge:field_alt_label forge:refined_subtype forge:VocabularyBindingField ; forge:refined_subtype_label "vocabulary_binding_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "ontology token implies vocabulary or concept binding semantics" .
+
+forge:field_ambient_c forge:refined_subtype forge:PhysicalBoundField ; forge:refined_subtype_label "physical_bound_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies bounded nominal/degraded/prohibited envelope semantics" .
+
+forge:field_analysis_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_analysis_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_anomaly_flag forge:refined_subtype forge:HazardField ; forge:refined_subtype_label "hazard_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened risk binding for hazard or anomaly semantics" .
+
+forge:field_applicability forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_approval_status forge:refined_subtype forge:ApprovalStatusField ; forge:refined_subtype_label "approval_status_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "status token implies approval or proposal lifecycle semantics" .
+
+forge:field_approver forge:refined_subtype forge:ApprovalActorField ; forge:refined_subtype_label "approval_actor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "review token implies approval actor semantics" .
+
+forge:field_architecture_ref forge:refined_subtype forge:ArchitectureReferenceField ; forge:refined_subtype_label "architecture_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "reference points to architecture or interface semantics" .
+
+forge:field_artifact_hash forge:refined_subtype forge:DependencyIntegrityField ; forge:refined_subtype_label "dependency_integrity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_artifact_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_artifact_type forge:refined_subtype forge:MappingGovernanceField ; forge:refined_subtype_label "mapping_governance_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "default hardened ontology binding for mapping and semantic governance semantics" .
+
+forge:field_assembly_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_base_image_ref forge:refined_subtype forge:ContainmentHardeningField ; forge:refined_subtype_label "containment_hardening_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_baseline_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_baseline_ref forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_batch_size forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_blast_radius forge:refined_subtype forge:BlastRadiusField ; forge:refined_subtype_label "blast_radius_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "risk token implies blast-radius semantics" .
+
+forge:field_bootstrap_status forge:refined_subtype forge:EnvironmentReproducibilityField ; forge:refined_subtype_label "environment_reproducibility_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_broader_ref forge:refined_subtype forge:ArtifactReferenceField ; forge:refined_subtype_label "artifact_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened reference binding for governed artifacts" .
+
+forge:field_build_id forge:refined_subtype forge:BuildIdentifierField ; forge:refined_subtype_label "build_identifier_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains build or deployment identifier semantics" .
+
+forge:field_build_stage_count forge:refined_subtype forge:ContainmentHardeningField ; forge:refined_subtype_label "containment_hardening_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_bus_id forge:refined_subtype forge:BusIdentifierField ; forge:refined_subtype_label "bus_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains bus identifier semantics" .
+
+forge:field_cable_path_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_candidate_logic_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_cardinality_rule forge:refined_subtype forge:GraphConstraintField ; forge:refined_subtype_label "graph_constraint_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "constraint token implies graph or shape semantics" .
+
+forge:field_cg_location_mm forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_cg_shift_risk forge:refined_subtype forge:HazardField ; forge:refined_subtype_label "hazard_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened risk binding for hazard or anomaly semantics" .
+
+forge:field_change_class forge:refined_subtype forge:ProvenanceGovernanceField ; forge:refined_subtype_label "provenance_governance_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "ontology token implies provenance-governance semantics" .
+
+forge:field_change_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_ci_parity_status forge:refined_subtype forge:EnvironmentReproducibilityField ; forge:refined_subtype_label "environment_reproducibility_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_circuit_break_trigger forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_claim_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_claimed_behavior forge:refined_subtype forge:TwinFidelityField ; forge:refined_subtype_label "twin_fidelity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_class_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_climb_rate_required forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_clock_state forge:refined_subtype forge:TwinStateField ; forge:refined_subtype_label "twin_state_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened twin binding for model-state semantics" .
+
+forge:field_comparison_method forge:refined_subtype forge:TwinFidelityField ; forge:refined_subtype_label "twin_fidelity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_compliance_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_component forge:refined_subtype forge:ArtifactClassificationField ; forge:refined_subtype_label "artifact_classification_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "artifact-context category hard-binds to artifact classification semantics" .
+
+forge:field_component_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_component_ids forge:refined_subtype forge:ArtifactClassificationField ; forge:refined_subtype_label "artifact_classification_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "artifact-context category hard-binds to artifact classification semantics" .
+
+forge:field_compression_applied forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_concept_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_concept_scheme_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_concern_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_condition_ref forge:refined_subtype forge:ArtifactReferenceField ; forge:refined_subtype_label "artifact_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened reference binding for governed artifacts" .
+
+forge:field_confidence_threshold forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_config_model_ref forge:refined_subtype forge:ConfigBoundaryField ; forge:refined_subtype_label "config_boundary_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_config_schema_ref forge:refined_subtype forge:ConfigBoundaryField ; forge:refined_subtype_label "config_boundary_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_conformance_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_connector_access_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_constraint_id forge:refined_subtype forge:ConstraintIdentifierField ; forge:refined_subtype_label "constraint_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains constraint or invariant identifier semantics" .
+
+forge:field_constraint_refs forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_constraint_type forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_consumer_component forge:refined_subtype forge:ArtifactClassificationField ; forge:refined_subtype_label "artifact_classification_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "artifact-context category hard-binds to artifact classification semantics" .
+
+forge:field_consumer_impact forge:refined_subtype forge:MappingGovernanceField ; forge:refined_subtype_label "mapping_governance_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "default hardened ontology binding for mapping and semantic governance semantics" .
+
+forge:field_container_id forge:refined_subtype forge:ContainmentHardeningField ; forge:refined_subtype_label "containment_hardening_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_contract_id forge:refined_subtype forge:InterfaceIdentifierField ; forge:refined_subtype_label "interface_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains interface or schema identifier semantics" .
+
+forge:field_contract_version forge:refined_subtype forge:SeamContractField ; forge:refined_subtype_label "seam_contract_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_control_authority_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_control_constraint_ref forge:refined_subtype forge:ConstraintReferenceField ; forge:refined_subtype_label "constraint_reference_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "reference points to constraint or invariant semantics" .
+
+forge:field_cooling_assumption forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_correlated_bus_id forge:refined_subtype forge:BusIdentifierField ; forge:refined_subtype_label "bus_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains bus identifier semantics" .
+
+forge:field_critical_frequency_hz forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_critical_mode forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_critical_temp_c forge:refined_subtype forge:ThermalMetricField ; forge:refined_subtype_label "thermal_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "metric token implies thermal measurement semantics" .
+
+forge:field_criticality forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_dataset_id forge:refined_subtype forge:DatasetIdentifierField ; forge:refined_subtype_label "dataset_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains dataset identifier semantics" .
+
+forge:field_datatype_or_nodekind forge:refined_subtype forge:MappingGovernanceField ; forge:refined_subtype_label "mapping_governance_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened ontology binding for mapping and semantic governance semantics" .
+
+forge:field_definition forge:refined_subtype forge:MappingGovernanceField ; forge:refined_subtype_label "mapping_governance_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened ontology binding for mapping and semantic governance semantics" .
+
+forge:field_deflection_limit forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_degraded_mode forge:refined_subtype forge:RecoveryControlField ; forge:refined_subtype_label "recovery_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "runtime-control token implies recovery or fallback semantics" .
+
+forge:field_degraded_range forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_delta_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_delta_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_denied_states forge:refined_subtype forge:ElectricalIntegrityField ; forge:refined_subtype_label "electrical_integrity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_dependency_ref forge:refined_subtype forge:DeploymentTopologyField ; forge:refined_subtype_label "deployment_topology_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_deployment_profile forge:refined_subtype forge:EnvironmentReproducibilityField ; forge:refined_subtype_label "environment_reproducibility_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_deployment_target forge:refined_subtype forge:DeploymentTopologyField ; forge:refined_subtype_label "deployment_topology_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_deployment_unit_id forge:refined_subtype forge:OrchestrationReadinessField ; forge:refined_subtype_label "orchestration_readiness_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_descent_rate_required forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_detection_method forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_deviation_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_deviation_reason forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_direction forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_disposition forge:refined_subtype forge:MappingDispositionField ; forge:refined_subtype_label "mapping_disposition_field" ; forge:hardening_action "retain_rejected_generic_field" ; forge:subtype_binding_basis "status token implies mapping or identity disposition semantics" .
+
+forge:field_divergence_value forge:refined_subtype forge:TwinFidelityField ; forge:refined_subtype_label "twin_fidelity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_domain_ref forge:refined_subtype forge:ArtifactReferenceField ; forge:refined_subtype_label "artifact_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened reference binding for governed artifacts" .
+
+forge:field_downstream_restriction forge:refined_subtype forge:ElectricalIntegrityField ; forge:refined_subtype_label "electrical_integrity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_downstream_review_required forge:refined_subtype forge:ReviewDecisionField ; forge:refined_subtype_label "review_decision_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened review binding for review actions or recommendations" .
+
+forge:field_downstream_signal forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_drift_metric forge:refined_subtype forge:TwinFidelityField ; forge:refined_subtype_label "twin_fidelity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_drift_status forge:refined_subtype forge:DriftStatusField ; forge:refined_subtype_label "drift_status_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "status token implies drift assessment semantics" .
+
+forge:field_drift_type forge:refined_subtype forge:TwinFidelityField ; forge:refined_subtype_label "twin_fidelity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_duckdb_table forge:refined_subtype forge:EvidenceLocatorField ; forge:refined_subtype_label "evidence_locator_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "evidence token implies evidence location or storage semantics" .
+
+forge:field_early_indicator forge:refined_subtype forge:HazardField ; forge:refined_subtype_label "hazard_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened risk binding for hazard or anomaly semantics" .
+
+forge:field_edge_runtime_ref forge:refined_subtype forge:TopologyReferenceField ; forge:refined_subtype_label "topology_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "reference points to topology or graph semantics" .
+
+forge:field_edge_value forge:refined_subtype forge:TwinFidelityField ; forge:refined_subtype_label "twin_fidelity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_effectiveness_assumption forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_electrical_valid forge:refined_subtype forge:ElectricalIntegrityField ; forge:refined_subtype_label "electrical_integrity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_enclosure_profile forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_energy_margin_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_entry_condition forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_entry_state forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_envelope_state forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_environment_id forge:refined_subtype forge:EnvironmentReproducibilityField ; forge:refined_subtype_label "environment_reproducibility_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_error_class forge:refined_subtype forge:MappingGovernanceField ; forge:refined_subtype_label "mapping_governance_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened ontology binding for mapping and semantic governance semantics" .
+
+forge:field_escalation_gate forge:refined_subtype forge:ElectricalIntegrityField ; forge:refined_subtype_label "electrical_integrity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_estimated_cost forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_event_id forge:refined_subtype forge:EventIdentifierField ; forge:refined_subtype_label "event_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains event identifier semantics" .
+
+forge:field_evidence_artifact forge:refined_subtype forge:EvidenceQualityField ; forge:refined_subtype_label "evidence_quality_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened evidence binding for validation and evidence quality semantics" .
+
+forge:field_evidence_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "phase_5_default_binding_for_new_field" ; forge:subtype_binding_basis "default phase_5 subtype binding for newly introduced canonical field" .
+
+forge:field_evidence_path forge:refined_subtype forge:EvidenceLocatorField ; forge:refined_subtype_label "evidence_locator_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "evidence token implies evidence location or storage semantics" .
+
+forge:field_evidence_source forge:refined_subtype forge:EvidenceLocatorField ; forge:refined_subtype_label "evidence_locator_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "evidence token implies evidence location or storage semantics" .
+
+forge:field_evidence_timestamp_utc forge:refined_subtype forge:ProvenanceField ; forge:refined_subtype_label "provenance_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "evidence token implies provenance, hash, or sequence semantics" .
+
+forge:field_exception_justification forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_exit_condition forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_expected_gate forge:refined_subtype forge:ComparativeAnalysisField ; forge:refined_subtype_label "comparative_analysis_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies comparison or observed-vs-expected semantics" .
+
+forge:field_expected_load_profile forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_expected_safe_state forge:refined_subtype forge:SafeStateControlField ; forge:refined_subtype_label "safe_state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "runtime-control token implies safe-state semantics" .
+
+forge:field_export_format forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_extra_policy forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_fail_condition forge:refined_subtype forge:ElectricalIntegrityField ; forge:refined_subtype_label "electrical_integrity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_failure_id forge:refined_subtype forge:FaultIdentifierField ; forge:refined_subtype_label "fault_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains fault identifier semantics" .
+
+forge:field_failure_mode forge:refined_subtype forge:FailureModeField ; forge:refined_subtype_label "failure_mode_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "risk token implies failure-mode semantics" .
+
+forge:field_failure_semantics_ref forge:refined_subtype forge:ArtifactReferenceField ; forge:refined_subtype_label "artifact_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened reference binding for governed artifacts" .
+
+forge:field_fall_threshold forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_fallback_activated forge:refined_subtype forge:RecoveryControlField ; forge:refined_subtype_label "recovery_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "runtime-control token implies recovery or fallback semantics" .
+
+forge:field_fallback_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_fallback_path forge:refined_subtype forge:RecoveryControlField ; forge:refined_subtype_label "recovery_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "runtime-control token implies recovery or fallback semantics" .
+
+forge:field_fallback_risk forge:refined_subtype forge:HazardField ; forge:refined_subtype_label "hazard_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened risk binding for hazard or anomaly semantics" .
+
+forge:field_fallback_sequence forge:refined_subtype forge:RecoveryControlField ; forge:refined_subtype_label "recovery_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "runtime-control token implies recovery or fallback semantics" .
+
+forge:field_fastener_type forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_fault_code forge:refined_subtype forge:FailureModeField ; forge:refined_subtype_label "failure_mode_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "risk token implies failure-mode semantics" .
+
+forge:field_fault_condition forge:refined_subtype forge:FailureModeField ; forge:refined_subtype_label "failure_mode_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "risk token implies failure-mode semantics" .
+
+forge:field_fault_id forge:refined_subtype forge:FaultIdentifierField ; forge:refined_subtype_label "fault_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains fault identifier semantics" .
+
+forge:field_fault_latched_state forge:refined_subtype forge:FailureModeField ; forge:refined_subtype_label "failure_mode_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "risk token implies failure-mode semantics" .
+
+forge:field_fault_signal_behavior forge:refined_subtype forge:FailureModeField ; forge:refined_subtype_label "failure_mode_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "risk token implies failure-mode semantics" .
+
+forge:field_fault_type forge:refined_subtype forge:FailureModeField ; forge:refined_subtype_label "failure_mode_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "risk token implies failure-mode semantics" .
+
+forge:field_feasibility_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_finding_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_forbidden_actions forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_forbidden_interpretations forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_gate_id forge:refined_subtype forge:GateIdentifierField ; forge:refined_subtype_label "gate_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains gate identifier semantics" .
+
+forge:field_generation_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_generator_stack forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_given forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_graph_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_guard_condition forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_guard_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_guard_type forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_health_endpoint_ref forge:refined_subtype forge:HealthSignalField ; forge:refined_subtype_label "health_signal_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_heap_allowed forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_hysteresis_band forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_icd_ref forge:refined_subtype forge:SeamContractField ; forge:refined_subtype_label "seam_contract_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_identity_status forge:refined_subtype forge:MappingDispositionField ; forge:refined_subtype_label "mapping_disposition_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "status token implies mapping or identity disposition semantics" .
+
+forge:field_image_ref forge:refined_subtype forge:ContainmentHardeningField ; forge:refined_subtype_label "containment_hardening_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_input_slice_ref forge:refined_subtype forge:ArtifactReferenceField ; forge:refined_subtype_label "artifact_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened reference binding for governed artifacts" .
+
+forge:field_inspection_requirement forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_integrity_check forge:refined_subtype forge:TelemetryIntegrityField ; forge:refined_subtype_label "telemetry_integrity_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened integrity binding for telemetry validity semantics" .
+
+forge:field_interface_id forge:refined_subtype forge:InterfaceIdentifierField ; forge:refined_subtype_label "interface_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains interface or schema identifier semantics" .
+
+forge:field_interface_ref forge:refined_subtype forge:ArchitectureReferenceField ; forge:refined_subtype_label "architecture_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "reference points to architecture or interface semantics" .
+
+forge:field_invariant_id forge:refined_subtype forge:ConstraintIdentifierField ; forge:refined_subtype_label "constraint_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains constraint or invariant identifier semantics" .
+
+forge:field_invariant_refs forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_isolation_scope forge:refined_subtype forge:TelemetryIntegrityField ; forge:refined_subtype_label "telemetry_integrity_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened integrity binding for telemetry validity semantics" .
+
+forge:field_justification forge:refined_subtype forge:MappingGovernanceField ; forge:refined_subtype_label "mapping_governance_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "default hardened ontology binding for mapping and semantic governance semantics" .
+
+forge:field_keep_out_zone_mm forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_latency_baseline_ms forge:refined_subtype forge:PerformanceMetricField ; forge:refined_subtype_label "performance_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "metric token implies system performance semantics" .
+
+forge:field_latency_current_ms forge:refined_subtype forge:PowerMetricField ; forge:refined_subtype_label "power_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "metric token implies electrical or power measurement semantics" .
+
+forge:field_latency_or_lag forge:refined_subtype forge:PerformanceMetricField ; forge:refined_subtype_label "performance_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "metric token implies system performance semantics" .
+
+forge:field_latency_p50_ms forge:refined_subtype forge:PerformanceMetricField ; forge:refined_subtype_label "performance_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "metric token implies system performance semantics" .
+
+forge:field_latency_p95_ms forge:refined_subtype forge:PerformanceMetricField ; forge:refined_subtype_label "performance_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "metric token implies system performance semantics" .
+
+forge:field_limit_load forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_liveness_status forge:refined_subtype forge:HealthSignalField ; forge:refined_subtype_label "health_signal_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_load_level forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_lockfile_hash forge:refined_subtype forge:DependencyIntegrityField ; forge:refined_subtype_label "dependency_integrity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_lower_bound forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_machine_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_mapping_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_mapping_type forge:refined_subtype forge:MappingGovernanceField ; forge:refined_subtype_label "mapping_governance_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "default hardened ontology binding for mapping and semantic governance semantics" .
+
+forge:field_mass_kg forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_material_pair forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_max_bank_deg forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_max_climb_rate forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_max_descent_rate forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_max_load_factor forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_max_retries forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_max_speed forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_memory_mb forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_metric_name forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_min_speed forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_mission_demand_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_mission_objective_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_mission_relevance forge:refined_subtype forge:ArtifactClassificationField ; forge:refined_subtype_label "artifact_classification_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "artifact-context category hard-binds to artifact classification semantics" .
+
+forge:field_mitigation_gate forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_model_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_model_name forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_module_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_monotonic_seq forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_mount_pattern forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_mount_type forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_mounting_scheme forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_namespace_iri forge:refined_subtype forge:MappingGovernanceField ; forge:refined_subtype_label "mapping_governance_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened ontology binding for mapping and semantic governance semantics" .
+
+forge:field_narrower_ref forge:refined_subtype forge:ArtifactReferenceField ; forge:refined_subtype_label "artifact_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened reference binding for governed artifacts" .
+
+forge:field_nominal_range forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_nominal_voltage_v forge:refined_subtype forge:PowerMetricField ; forge:refined_subtype_label "power_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "metric token implies electrical or power measurement semantics" .
+
+forge:field_normal_enable_condition forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_normal_mode forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_normal_temp_range_c forge:refined_subtype forge:ThermalConstraintField ; forge:refined_subtype_label "thermal_constraint_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "constraint token implies thermal envelope semantics" .
+
+forge:field_observed_result forge:refined_subtype forge:TwinFidelityField ; forge:refined_subtype_label "twin_fidelity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_ontology_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_openapi_export_ref forge:refined_subtype forge:SeamContractField ; forge:refined_subtype_label "seam_contract_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_operator_or_controller_ack forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_option_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_orchestration_status forge:refined_subtype forge:OrchestrationReadinessField ; forge:refined_subtype_label "orchestration_readiness_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_outer_dimensions_mm forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_output_schema_id forge:refined_subtype forge:InterfaceIdentifierField ; forge:refined_subtype_label "interface_identifier_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains interface or schema identifier semantics" .
+
+forge:field_output_summary forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_owner forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_pace_lane forge:refined_subtype forge:OrchestrationReadinessField ; forge:refined_subtype_label "orchestration_readiness_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_package_name forge:refined_subtype forge:ArtifactClassificationField ; forge:refined_subtype_label "artifact_classification_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "artifact-context category hard-binds to artifact classification semantics" .
+
+forge:field_parameter_name forge:refined_subtype forge:ArtifactClassificationField ; forge:refined_subtype_label "artifact_classification_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "artifact-context category hard-binds to artifact classification semantics" .
+
+forge:field_parity_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_parse_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_partition_type forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_path_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_persistence_path forge:refined_subtype forge:EvidenceLocatorField ; forge:refined_subtype_label "evidence_locator_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "evidence token implies evidence location or storage semantics" .
+
+forge:field_perturbation_profile forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_policy_version forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_power_state forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_predicted_failure_mode forge:refined_subtype forge:FailureModeField ; forge:refined_subtype_label "failure_mode_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "risk token implies failure-mode semantics" .
+
+forge:field_pref_label forge:refined_subtype forge:VocabularyBindingField ; forge:refined_subtype_label "vocabulary_binding_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "ontology token implies vocabulary or concept binding semantics" .
+
+forge:field_preload_or_retention_method forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_preprocess_pipeline_ref forge:refined_subtype forge:ArtifactReferenceField ; forge:refined_subtype_label "artifact_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened reference binding for governed artifacts" .
+
+forge:field_preprocess_ref forge:refined_subtype forge:ArtifactReferenceField ; forge:refined_subtype_label "artifact_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened reference binding for governed artifacts" .
+
+forge:field_probe_policy_ref forge:refined_subtype forge:HealthSignalField ; forge:refined_subtype_label "health_signal_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_producer_component forge:refined_subtype forge:ArtifactClassificationField ; forge:refined_subtype_label "artifact_classification_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "artifact-context category hard-binds to artifact classification semantics" .
+
+forge:field_prohibited_range forge:refined_subtype forge:SafetyConstraintField ; forge:refined_subtype_label "safety_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "constraint token implies safety or prohibited-state semantics" .
+
+forge:field_promotion_status forge:refined_subtype forge:ReleaseTraceabilityField ; forge:refined_subtype_label "release_traceability_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_prompt_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_proof_type forge:refined_subtype forge:EvidenceQualityField ; forge:refined_subtype_label "evidence_quality_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened evidence binding for validation and evidence quality semantics" .
+
+forge:field_property_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_property_path forge:refined_subtype forge:MappingGovernanceField ; forge:refined_subtype_label "mapping_governance_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened ontology binding for mapping and semantic governance semantics" .
+
+forge:field_proposal_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_proposal_status forge:refined_subtype forge:ApprovalStatusField ; forge:refined_subtype_label "approval_status_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "status token implies approval or proposal lifecycle semantics" .
+
+forge:field_protection_rating_target forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_protocol forge:refined_subtype forge:TelemetryIntegrityField ; forge:refined_subtype_label "telemetry_integrity_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened integrity binding for telemetry validity semantics" .
+
+forge:field_provenance_ref forge:refined_subtype forge:ReleaseTraceabilityField ; forge:refined_subtype_label "release_traceability_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_quality_flag forge:refined_subtype forge:ElectricalIntegrityField ; forge:refined_subtype_label "electrical_integrity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_quantization_mode forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_rail_id forge:refined_subtype forge:SignalIdentifierField ; forge:refined_subtype_label "signal_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains signal or rail identifier semantics" .
+
+forge:field_range_ref forge:refined_subtype forge:ArtifactReferenceField ; forge:refined_subtype_label "artifact_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened reference binding for governed artifacts" .
+
+forge:field_rate_limit forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_readiness_status forge:refined_subtype forge:HealthSignalField ; forge:refined_subtype_label "health_signal_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_recommended_action forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_recovery_action forge:refined_subtype forge:TelemetryIntegrityField ; forge:refined_subtype_label "telemetry_integrity_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened integrity binding for telemetry validity semantics" .
+
+forge:field_recovery_condition forge:refined_subtype forge:TelemetryIntegrityField ; forge:refined_subtype_label "telemetry_integrity_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened integrity binding for telemetry validity semantics" .
+
+forge:field_recovery_method forge:refined_subtype forge:TelemetryIntegrityField ; forge:refined_subtype_label "telemetry_integrity_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened integrity binding for telemetry validity semantics" .
+
+forge:field_recovery_priority forge:refined_subtype forge:TelemetryIntegrityField ; forge:refined_subtype_label "telemetry_integrity_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened integrity binding for telemetry validity semantics" .
+
+forge:field_recovery_state forge:refined_subtype forge:TelemetryIntegrityField ; forge:refined_subtype_label "telemetry_integrity_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened integrity binding for telemetry validity semantics" .
+
+forge:field_regression_status forge:refined_subtype forge:LifecycleRegressionField ; forge:refined_subtype_label "lifecycle_regression_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_rejection_reason forge:refined_subtype forge:MappingGovernanceField ; forge:refined_subtype_label "mapping_governance_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "default hardened ontology binding for mapping and semantic governance semantics" .
+
+forge:field_release_checklist_ref forge:refined_subtype forge:ReleaseTraceabilityField ; forge:refined_subtype_label "release_traceability_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_release_unit_id forge:refined_subtype forge:ReleaseTraceabilityField ; forge:refined_subtype_label "release_traceability_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_req_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_request_schema_ref forge:refined_subtype forge:SeamContractField ; forge:refined_subtype_label "seam_contract_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_required_fix forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_requirement_refs forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_reset_behavior forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_residual_risk forge:refined_subtype forge:HazardField ; forge:refined_subtype_label "hazard_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened risk binding for hazard or anomaly semantics" .
+
+forge:field_response_schema_ref forge:refined_subtype forge:SeamContractField ; forge:refined_subtype_label "seam_contract_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_restart_allowed forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_restart_attempted forge:refined_subtype forge:RecoveryControlField ; forge:refined_subtype_label "recovery_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "runtime-control token implies recovery or fallback semantics" .
+
+forge:field_restart_enable_condition forge:refined_subtype forge:RecoveryControlField ; forge:refined_subtype_label "recovery_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "runtime-control token implies recovery or fallback semantics" .
+
+forge:field_restart_rise_v forge:refined_subtype forge:RecoveryControlField ; forge:refined_subtype_label "recovery_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "runtime-control token implies recovery or fallback semantics" .
+
+forge:field_review_required forge:refined_subtype forge:ReviewDecisionField ; forge:refined_subtype_label "review_decision_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened review binding for review actions or recommendations" .
+
+forge:field_review_status forge:refined_subtype forge:ReviewStatusField ; forge:refined_subtype_label "review_status_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "status token implies review workflow semantics" .
+
+forge:field_rise_threshold forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_risk_class forge:refined_subtype forge:HazardField ; forge:refined_subtype_label "hazard_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened risk binding for hazard or anomaly semantics" .
+
+forge:field_rollback_constraint forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_rollback_point_ref forge:refined_subtype forge:OrchestrationReadinessField ; forge:refined_subtype_label "orchestration_readiness_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_rollback_ref forge:refined_subtype forge:LifecycleRegressionField ; forge:refined_subtype_label "lifecycle_regression_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_rule_set forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_rule_source forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_runtime_partition forge:refined_subtype forge:ReleaseLifecycleField ; forge:refined_subtype_label "release_lifecycle_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "deployment category hard-binds to release lifecycle semantics" .
+
+forge:field_runtime_user forge:refined_subtype forge:ContainmentHardeningField ; forge:refined_subtype_label "containment_hardening_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_runtime_version forge:refined_subtype forge:DependencyIntegrityField ; forge:refined_subtype_label "dependency_integrity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_safe_action forge:refined_subtype forge:SafeStateControlField ; forge:refined_subtype_label "safe_state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "runtime-control token implies safe-state semantics" .
+
+forge:field_safe_output_state forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_safe_recovery_option forge:refined_subtype forge:TelemetryIntegrityField ; forge:refined_subtype_label "telemetry_integrity_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened integrity binding for telemetry validity semantics" .
+
+forge:field_safe_state forge:refined_subtype forge:SafeStateControlField ; forge:refined_subtype_label "safe_state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "runtime-control token implies safe-state semantics" .
+
+forge:field_safe_state_on_fail forge:refined_subtype forge:SafeStateControlField ; forge:refined_subtype_label "safe_state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "runtime-control token implies safe-state semantics" .
+
+forge:field_safe_state_or_isolation forge:refined_subtype forge:TelemetryIntegrityField ; forge:refined_subtype_label "telemetry_integrity_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened integrity binding for telemetry validity semantics" .
+
+forge:field_safety_constraint_id forge:refined_subtype forge:ConstraintIdentifierField ; forge:refined_subtype_label "constraint_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains constraint or invariant identifier semantics" .
+
+forge:field_sample_window forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_sampling_method forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_sampling_rate_hz forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_sbom_ref forge:refined_subtype forge:ContainmentHardeningField ; forge:refined_subtype_label "containment_hardening_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_scenario_id forge:refined_subtype forge:ScenarioIdentifierField ; forge:refined_subtype_label "scenario_identifier_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains scenario or replay identifier semantics" .
+
+forge:field_schema_id forge:refined_subtype forge:InterfaceIdentifierField ; forge:refined_subtype_label "interface_identifier_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains interface or schema identifier semantics" .
+
+forge:field_schema_version forge:refined_subtype forge:MappingGovernanceField ; forge:refined_subtype_label "mapping_governance_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened ontology binding for mapping and semantic governance semantics" .
+
+forge:field_scope_boundary forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_score forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_seam_id forge:refined_subtype forge:SeamContractField ; forge:refined_subtype_label "seam_contract_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_seed forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_segment_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_selection_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_sensor_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_sensor_valid forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_service_access_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_service_name forge:refined_subtype forge:SeamContractField ; forge:refined_subtype_label "seam_contract_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_serviceability_assessment forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_severity forge:refined_subtype forge:SeverityField ; forge:refined_subtype_label "severity_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "risk token implies severity or mission-criticality semantics" .
+
+forge:field_shape_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_shutdown_behavior_ref forge:refined_subtype forge:HealthSignalField ; forge:refined_subtype_label "health_signal_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_shutdown_preference forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_signal_id forge:refined_subtype forge:SignalIdentifierField ; forge:refined_subtype_label "signal_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains signal or rail identifier semantics" .
+
+forge:field_signal_or_rail forge:refined_subtype forge:ElectricalIntegrityField ; forge:refined_subtype_label "electrical_integrity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_signal_or_rail_id forge:refined_subtype forge:SignalIdentifierField ; forge:refined_subtype_label "signal_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains signal or rail identifier semantics" .
+
+forge:field_source_framework forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_source_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_source_path forge:refined_subtype forge:ElectricalIntegrityField ; forge:refined_subtype_label "electrical_integrity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_source_revision forge:refined_subtype forge:ReleaseTraceabilityField ; forge:refined_subtype_label "release_traceability_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_source_state forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_source_term forge:refined_subtype forge:VocabularyBindingField ; forge:refined_subtype_label "vocabulary_binding_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "ontology token implies vocabulary or concept binding semantics" .
+
+forge:field_source_type forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_speed_required forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_stable_hold_ms forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_stack_bound forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_stakeholder_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_stall_or_loss_margin forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_state_id forge:refined_subtype forge:StateIdentifierField ; forge:refined_subtype_label "state_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains state identifier semantics" .
+
+forge:field_state_ids forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "retain_rejected_generic_field" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_stiffness_assessment forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_subsystem forge:refined_subtype forge:ElectricalIntegrityField ; forge:refined_subtype_label "electrical_integrity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_surface_or_channel forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_survivability_assessment forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_target_class forge:refined_subtype forge:MappingGovernanceField ; forge:refined_subtype_label "mapping_governance_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened ontology binding for mapping and semantic governance semantics" .
+
+forge:field_target_state forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_target_term forge:refined_subtype forge:VocabularyBindingField ; forge:refined_subtype_label "vocabulary_binding_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "ontology token implies vocabulary or concept binding semantics" .
+
+forge:field_temperature_c forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_test_evidence_ref forge:refined_subtype forge:ReleaseTraceabilityField ; forge:refined_subtype_label "release_traceability_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_test_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_test_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_then forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_thermal_constraint_link forge:refined_subtype forge:ThermalConstraintField ; forge:refined_subtype_label "thermal_constraint_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "constraint token implies thermal envelope semantics" .
+
+forge:field_thermal_state forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_throttle_indicator forge:refined_subtype forge:HazardField ; forge:refined_subtype_label "hazard_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened risk binding for hazard or anomaly semantics" .
+
+forge:field_throttle_risk_temp_c forge:refined_subtype forge:HazardField ; forge:refined_subtype_label "hazard_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened risk binding for hazard or anomaly semantics" .
+
+forge:field_throughput_baseline forge:refined_subtype forge:PerformanceMetricField ; forge:refined_subtype_label "performance_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "metric token implies system performance semantics" .
+
+forge:field_throughput_current forge:refined_subtype forge:PowerMetricField ; forge:refined_subtype_label "power_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "metric token implies electrical or power measurement semantics" .
+
+forge:field_throughput_units_per_sec forge:refined_subtype forge:PerformanceMetricField ; forge:refined_subtype_label "performance_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "metric token implies system performance semantics" .
+
+forge:field_timestamp_utc forge:refined_subtype forge:ProvenanceField ; forge:refined_subtype_label "provenance_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "evidence token implies provenance, hash, or sequence semantics" .
+
+forge:field_timing_fit_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_timing_ref forge:refined_subtype forge:ArtifactReferenceField ; forge:refined_subtype_label "artifact_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened reference binding for governed artifacts" .
+
+forge:field_topology_choice forge:refined_subtype forge:DeploymentTopologyField ; forge:refined_subtype_label "deployment_topology_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_traceability_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_training_dataset_ref forge:refined_subtype forge:ArtifactReferenceField ; forge:refined_subtype_label "artifact_reference_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened reference binding for governed artifacts" .
+
+forge:field_training_value forge:refined_subtype forge:TwinFidelityField ; forge:refined_subtype_label "twin_fidelity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_trajectory_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_transition_result forge:refined_subtype forge:TransitionControlField ; forge:refined_subtype_label "transition_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "runtime-control token implies transition semantics" .
+
+forge:field_transition_status forge:refined_subtype forge:ValidationStatusField ; forge:refined_subtype_label "validation_status_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened status binding for validation or conformance semantics" .
+
+forge:field_trigger forge:refined_subtype forge:ElectricalIntegrityField ; forge:refined_subtype_label "electrical_integrity_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_trigger_condition forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_trust_function forge:refined_subtype forge:TrustRootField ; forge:refined_subtype_label "trust_root_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "integrity token implies trust-root semantics" .
+
+forge:field_trust_id forge:refined_subtype forge:TrustIdentifierField ; forge:refined_subtype_label "trust_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "label pattern contains trust identifier semantics" .
+
+forge:field_turn_rate_required forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_ultimate_load forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_undefined_behavior_class forge:refined_subtype forge:MappingGovernanceField ; forge:refined_subtype_label "mapping_governance_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened ontology binding for mapping and semantic governance semantics" .
+
+forge:field_upper_bound forge:refined_subtype forge:EnvelopeConstraintField ; forge:refined_subtype_label "envelope_constraint_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened constraint binding for physical or mission envelope bounds" .
+
+forge:field_uv_disable_condition forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_uv_fall_v forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_uv_warn_v forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_validation_method forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_validation_status forge:refined_subtype forge:SeamContractField ; forge:refined_subtype_label "seam_contract_field" ; forge:hardening_action "phase_5_targeted_domain_refinement" ; forge:subtype_binding_basis "phase_5 targeted domain refinement based on package-local semantics and explicit field declaration coverage" .
+
+forge:field_vehicle_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_verification_method forge:refined_subtype forge:OperationalParameterField ; forge:refined_subtype_label "operational_parameter_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "misc token implies operational parameter semantics" .
+
+forge:field_version_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "retain_exact_match_and_bind_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_viewpoint_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+
+forge:field_violation_action forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_voltage_v forge:refined_subtype forge:PowerMetricField ; forge:refined_subtype_label "power_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "metric token implies electrical or power measurement semantics" .
+
+forge:field_volume_cm3 forge:refined_subtype forge:MechanicalMetricField ; forge:refined_subtype_label "mechanical_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened physical metric binding for structural or kinematic semantics" .
+
+forge:field_warning_mode forge:refined_subtype forge:StateControlField ; forge:refined_subtype_label "state_control_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened runtime-control binding for state semantics" .
+
+forge:field_warning_temp_c forge:refined_subtype forge:ThermalMetricField ; forge:refined_subtype_label "thermal_metric_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "metric token implies thermal measurement semantics" .
+
+forge:field_when forge:refined_subtype forge:DomainDescriptorField ; forge:refined_subtype_label "domain_descriptor_field" ; forge:hardening_action "resolve_close_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened misc binding for governed domain descriptors" .
+
+forge:field_workload_id forge:refined_subtype forge:ArtifactIdentifierField ; forge:refined_subtype_label "artifact_identifier_field" ; forge:hardening_action "resolve_broad_match_to_strict_subtype" ; forge:subtype_binding_basis "default hardened identifier binding for governed artifact-like records" .
+

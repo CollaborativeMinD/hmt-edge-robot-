@@ -1,0 +1,65 @@
+[build-system]
+requires = ["uv_build>=0.11.33,<0.12.0"]
+build-backend = "uv_build"
+
+[project]
+name = "scaffoldctl"
+version = "0.3.0"
+description = "Ontology-governed repository semantic-perimeter control plane"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "cryptography>=46,<47",
+  "duckdb>=1.5,<2",
+  "pydantic>=2.12,<3",
+  "rdflib>=7.1,<8",
+  "transitions>=0.9.2,<1",
+]
+
+[project.scripts]
+scaffoldctl = "scaffoldctl.cli:main"
+
+[dependency-groups]
+dev = [
+  "pyyaml>=6,<7",
+  "pytest>=8.4,<9",
+  "pytest-cov>=6.2,<7",
+  "ruff>=0.12,<1",
+]
+
+[tool.uv.build-backend]
+source-include = [
+  ".github/**",
+  "adapters/**",
+  "AGENTS.md",
+  "Agents.md.md",
+  "Humans.md",
+  "Index.md",
+  "README.md",
+  "Start_here.md",
+  "docs/**",
+  "scripts/**",
+  "tests/**",
+  "uv.lock",
+]
+source-exclude = ["/.git", "/.venv", "/dist", "/evidence", "/provenance"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers -q"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["scaffoldctl"]
+omit = ["src/scaffoldctl/__main__.py"]
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]

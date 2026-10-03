@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "profile_id": "HMT-CI-SUPPORT-02",
+  "scope": "managed_ci_support",
+  "docker_build": "HOLD",
+  "deployment": "HOLD",
+  "full_tool_admission": "HOLD",
+  "documents": {
+    "README.md": [
+      "## Run the cell",
+      "## Inside the cell",
+      "## Proof and lineage",
+      "## Acceptance boundary"
+    ],
+    "Start_here.md": [
+      "## Boundary",
+      "## First Action",
+      "## Validation"
+    ],
+    "Index.md": [
+      "## Boundary",
+      "## Governed Documents",
+      "## Registered Artifacts"
+    ]
+  },
+  "tool_interfaces": [
+    "scaffold-document-validator",
+    "truth-evidence-binding"
+  ],
+  "policy_sources": {
+    "policy/hmt/axioms/HMT_Axioms_Policy_v1.0.0.json": "a32f92ab9c090c25a8d19e5a8e17dd97ecb289ab1aab7f29c216b4f2bba982da",
+    "policy/hmt/axioms/HMT_Axioms_Policy_v1.0.0.md": "b67c1722bf0fb57495c6548e712b7ab6608f40943cc26f609fecb254c874cb68",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_Core.ttl": "d01595e2f9e549f51556964dc91a0ee7629d6fba3744fc78d86a5e3855c918f3",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_FieldMappingShapes.ttl": "ff38205edd816dca15266f30621d02bbfbf478067eaf78ea6c7e9efb9f00e346",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_FieldMappings.csv": "c1b47a632291f619f6b8e0f27c702a3b0107405d6f8a48d7b366006b5e97aa4b",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_FieldMappings.ttl": "ec97aa4642ed3ac1a4e5cb5708cb0ac1e34e73ebbb034cf2c2d52b8cefb343e7",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_FieldScheme.csv": "5c23d6e654b2978e5996985a503bb3d387dcbf7cd82e2aca6cb13ff610aa954e",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_FieldScheme.ttl": "c5b23b82a974768c4800d2642380204628e306dd2c7cbecd241702c7b9fbac4e",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_Refinement.ttl": "a18ac49996aecde07bed3b34e0973d65674549f650564ca26a15dd57c36eb323",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_RefinementShapes.ttl": "b910a9d43433bd3057935b2f06347af74b6ea075abca618fc85ecd3043f5779d",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_Shapes.ttl": "bc567c90e14dfdcb9e99523bf039118d7bb48d375a390f33635ca60c716d32ab",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_SourceInventory.csv": "125bf20659cf6f57e4bd2346198e93da45a45a48cc88017ac554232d1ee766bc",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_StatusScheme.ttl": "511012465781cd03c391317625b3d21429ce8f7053352b45d5680d9cc0c17f09",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_SubtypeBindings.csv": "463fb4b0adb5471f7d7dd26fc251985355a89794d3a95a14d9587d71a9e8f460",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_SubtypeBindings.ttl": "cf52295d72991c51988ea4e3402ad269197ded7ee37ea7b2b9dc9e15ffd8d7e9",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_SubtypeCore.ttl": "2de2b0ad9cd705946926e659a5ed34ca478b9d7ed00df5ad381d05d99f7f7861",
+    "policy/hmt/federated-ontology/Ontology_FederatedBaseline_SubtypeShapes.ttl": "2532a581c64fa54c19e15bdb595cb4c4cfb82523c976ce10d59fd9f35bc8851e",
+    "policy/hmt/federated-ontology/Ontology_MachineHandoff_Example.json": "ebdcd7b5652be4ba82709ff0c8cf914c6877afe7a958d8abd3e22de0dccf72ef",
+    "policy/hmt/federated-ontology/Ontology_MachineHandoff_Schema.json": "916f5a82442a85b18c941c760ee058bdc8b64a797667f088de4f92ac4beb3142",
+    "policy/hmt/finite-state-machine/default-pace-matrix_v1.json": "ad828451154d1778e9e5e3e026f3b8889a0d1338b8bdf84761870f5d35894e88",
+    "policy/hmt/finite-state-machine/matrix-contract.md": "a1dcb1f00527b4137c018d2677f7afd8b51af9143cb80ffca3be1a281c173f8f",
+    "policy/hmt/mcp/HMT_Baseline_MCP_Tools_v1.0.0.json": "ff34e5ed4e999e5c60ce84ba864ab1fe7d315f18b090f91d292f5c46e788face",
+    "policy/hmt/mcp/HMT_Baseline_MCP_Tools_v1.1.0.json": "49237cf5b0f6fa7153ea2e6c4e25039a3b67d07203c14850ade652a2493d4878",
+    "policy/hmt/mcp/HMT_Baseline_MCP_Tools_v1.1.0.md": "ef99beaa62aaf1420d0d22e1fa8859aeeb554016a4f6e1809fdf912af7f7f3cd",
+    "policy/hmt/mcp/HMT_Baseline_MCP_Tools_v1.2.0.json": "7b0d96e40ba3b678c7b2c463063052dd61a8781c97f2231a8b76de10fbf22be8",
+    "policy/hmt/mcp/HMT_Baseline_MCP_Tools_v1.2.0.md": "c10d9b0fca45ea68db9928ce7196084501987bcfc3b7fbb7f2d14ba99c425019",
+    "policy/hmt/mcp/HMT_Baseline_MCP_Tools_v1.3.0.json": "f655fe369257e663d29d17df4607dab161dc50f9ce97332be90a0ec93bc2fa40",
+    "policy/hmt/mcp/HMT_Baseline_MCP_Tools_v1.3.0.md": "2222a446d7fc662b94bce847945b12c4dcf4bab9cde57abc88594bf7c0880e64",
+    "policy/hmt/model-roles/HMT_Model_Roles_and_Convergence_Policy_v1.0.0.json": "ae4b024108a32717a5c2d93e0aa6f497bb5aaeb4c1cf186bbca002af1fe3afe1",
+    "policy/hmt/model-roles/HMT_Model_Roles_and_Convergence_Policy_v1.0.0.md": "d0e57331024f5e87e550abb0128c0696edee34a318aac9dacb438862a540f1af",
+    "policy/hmt/model-roles/HMT_Model_Roles_and_Convergence_Policy_v1.2.0.json": "38030c3d3ff5dbd736e50e54b31d06bc382d2267c6b1d4912503b4dc565fef0e",
+    "policy/hmt/model-roles/HMT_Model_Roles_and_Convergence_Policy_v1.2.0.md": "850a2aff0eb2132c361aa1b60da1fd580fdbb4985a8305c352da04372db3c6f0",
+    "policy/hmt/model-roles/model-roles-and-convergence-policy_v1.1.0.zip": "c936e6e5644bffc3f1f2b94ffd1108852c4504a6459f182247498678df05c9ab",
+    "policy/hmt/reuse-constraints/HMT_Reuse_Extension_and_Promotion_Policy_v1.0.0.json": "2e7e284fef8e7c57f54934335e456db54d6447527849cc19bf2d42f7c8f005f0",
+    "policy/hmt/reuse-constraints/HMT_Reuse_Extension_and_Promotion_Policy_v1.0.0.md": "6102072c7a3ccd6a44352eff1f223087027b10c90dae371cb2ab72816e247c98",
+    "policy/hmt/reuse-constraints/ref-transformation-bounds/HMT_Reference_Bounded_Transformation_Policy_v1.0.0.json": "51e4600681da747b0d8db208a27ec0d099e8dd4cb2eb2cf11374f3db409e8f49",
+    "policy/hmt/reuse-constraints/ref-transformation-bounds/HMT_Reference_Bounded_Transformation_Policy_v1.0.0.md": "4ae6e02a024a398f916d74b974d094dd9a384dad56f659b1a4d6bad54eead061",
+    "policy/hmt/reverse-rca/HMT_rrca_policy_v4.json": "dd20bbcf45cf1c1a9767df0a98b854d8ca3b0958c58336809162de53645c57af",
+    "policy/hmt/reverse-rca/HMT_rrca_policy_v4.md": "9e40b6b088a8196f959fba170403d0b6da8340a27ab1fe04a5843004e234076d",
+    "policy/hmt/test-and-admission/HMT_Executable_Testing_and_Continuous_Admission_Policy_v1.0.0.json": "bcc3fcbccf11d154f40ccf9a6d1472ae6740252a865227980f6b4b0ba948f871",
+    "policy/references/HMT_Model_Roles_and_Convergence_Policy_v1.1.0.json": "f5cd552c667fd9acf893215b493e1b88c8bba2f8cbd984d0769c1c8e854f69bc",
+    "policy/references/rrca_verification_and_validation_v4.md": "9e40b6b088a8196f959fba170403d0b6da8340a27ab1fe04a5843004e234076d",
+    "policy/references/system_prompt_baseline.xml": "77e1ccb6ec1710fbe63a3c361cd10ae3b26aa8c8595164a14208715ecf43ba42",
+    "policy/references/tooling_normalization.xml": "2680756ab5bbe5ce5dbb89338aa5bdc6be42745ade289949edbcf019f8526202"
+  },
+  "qualification_refs": {
+    "evidence/ci/phase2/qualification.json": "0797d7a753daa85f6a66fd8b92f80fba294973964c512261cbcedc4f14d8ef1b",
+    "evidence/ci/phase2/tracer_receipt.json": "18df2d4a93b8493703d58213f6a07b79464734f77d1f4253ca746e6ce3b6418a",
+    "evidence/ci/phase2/scaffold-tests.xml": "a8ae7fa635b5215cffd86fcac576ad6f0c0cb90af4846a8962bdb4355168c556",
+    "evidence/ci/phase2/truth-tests.xml": "a765e6baa23bc95900515f5a1f92df50942d4c319e3f5683320888367da1ae22",
+    "evidence/ci/phase2/scaffold-ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "evidence/ci/phase2/truth-ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "evidence/ci/phase2/truth-seal.log": "8d59f5e791c8b70be873edc6110e76a192e4f1b1c8babb62b66545a9a2dfd931"
+  }
+}

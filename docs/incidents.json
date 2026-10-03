@@ -126,5 +126,45 @@
     "remediation": "Narrow optional values; pass observed packets explicitly; type literal/action/DP containers; declare provider protocol; use model_validate/setattr for negative runtime boundaries; install locked upstream stubs; require zero warnings/errors",
     "validation_test": "G-TYPES-012; tests/test_typecheck_gate.py::test_pyrefly_rejects_invalid_return; G-RUNTIME-004",
     "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CI2-20",
+    "observed_state": "scaffoldctl standalone pytest collection missed adapters",
+    "causal_evidence": "pytest console invocation did not put source root on import path",
+    "remediation": "Use python -m pytest from qualified source root",
+    "validation_test": "tools/tool_qualification.py",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CI2-21",
+    "observed_state": "scaffoldctl lint and executable delivery tests failed",
+    "causal_evidence": "Archive contains four lint findings and executable resources stored as 0644",
+    "remediation": "Bounded import/context fixes and explicit 0755 source modes; 253 regressions pass",
+    "validation_test": "tools/tool_qualification.py",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CI2-22",
+    "observed_state": "Truth Serum seal verification reported environment debris",
+    "causal_evidence": "In-tree venv/cache introduced after extracting sealed archive",
+    "remediation": "Verify clean archive with external environment; preserve original 93-file seal",
+    "validation_test": "evidence/ci/phase2/truth-seal.log",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CI2-23",
+    "observed_state": "Full HMT axioms adoption is HOLD",
+    "causal_evidence": "New candidate policy adds module limit not enforced by inherited function-only gate",
+    "remediation": "Measure gaps and block full adoption; no silent waiver; bounded support profile only",
+    "validation_test": "tests/test_policy_evaluation.py::test_policy_inventory_and_full_adoption_hold",
+    "external_boundary": true
+  },
+  {
+    "incident_id": "RRCA-CI2-24",
+    "observed_state": "Full tool engine does not fit host repository",
+    "causal_evidence": "Truth engine fixes TS trace IDs; scaffold perimeter fixes policy/headings",
+    "remediation": "Reuse qualified read-only primitives with explicit non-claims and independent host traces",
+    "validation_test": "tests/test_ci_support.py::test_support_reuse_replay_and_no_promotion",
+    "external_boundary": true
   }
 ]

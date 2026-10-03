@@ -1,0 +1,72 @@
+{
+  "schema_id": "tss.pace_pavlovian_default_matrix",
+  "schema_version": "1.0.0",
+  "formula_family": "deterministic_pace_state_machine",
+  "equation_id": "FSM.PACE.DEFAULT.001",
+  "runtime_function": "evaluate_pace_state",
+  "evidence_gate": "G_PACE_PAVLOVIAN_MATRIX_CLEAR",
+  "pace_states": ["PRIMARY", "ALTERNATE", "CONTINGENCY", "EMERGENCY", "TERMINAL"],
+  "thresholds": {
+    "primary": {
+      "m_min_now_gte": 0.30,
+      "debt_weighted_lte": 1.0,
+      "rtp_lte": 0.60,
+      "tau_ttv_gte": 0.80,
+      "observer_confidence_gte": 0.85,
+      "terminal_pressure_lte": 0.20
+    },
+    "alternate": {
+      "m_min_now_gte": 0.15,
+      "debt_weighted_lte": 3.0,
+      "rtp_lte": 0.75,
+      "tau_ttv_gte": 0.65,
+      "observer_confidence_gte": 0.70,
+      "terminal_pressure_lte": 0.45
+    },
+    "contingency": {
+      "m_min_now_gte": 0.05,
+      "debt_weighted_lte": 6.0,
+      "rtp_lte": 0.90,
+      "tau_ttv_gte": 0.45,
+      "observer_confidence_gte": 0.55,
+      "terminal_pressure_lte": 0.75
+    }
+  },
+  "hard_overrides": {
+    "observer_confidence_floor": 0.25,
+    "evidence_hash_mismatch": "TERMINAL",
+    "safe_control_set_empty": "TERMINAL",
+    "rtp_gte_1": "TERMINAL",
+    "terminal_pressure_gte_1": "TERMINAL",
+    "gcb_zeroized": "EMERGENCY",
+    "observer_truth_collapse": "EMERGENCY",
+    "deadman_bound_failed": "TERMINAL",
+    "disturbance_bound_exceeded": "TERMINAL"
+  },
+  "hysteresis": {
+    "soft_demote_window": 3,
+    "soft_demote_required": 2,
+    "recovery_clear_required": 5,
+    "terminal_auto_recovery": false
+  },
+  "formula_trace": [
+    "FSM.PACE.DEFAULT.001",
+    "FSM.1",
+    "SAFE.1",
+    "APS.EQ.001",
+    "APS.EQ.002",
+    "APS.EQ.003",
+    "APS.EQ.005B",
+    "APS.EQ.006",
+    "APS.EQ.007",
+    "APS.EQ.008",
+    "APS.EQ.009",
+    "APS.EQ.010",
+    "RTI.1",
+    "RTI.5",
+    "TTV.1",
+    "TTV.2",
+    "CBF.1",
+    "HJI.1"
+  ]
+}

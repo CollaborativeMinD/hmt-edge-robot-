@@ -1,0 +1,73 @@
+{
+  "authority": {
+    "direct_actuation_authority": false,
+    "human_promotion_required": true,
+    "promotion_allowed": false
+  },
+  "environment": {
+    "complete_locked_environment": "unavailable",
+    "python": "3.12.13",
+    "ruff": "unavailable",
+    "uv": "0.11.33"
+  },
+  "normalization": {
+    "report": "evidence/operational_validation_report.json",
+    "report_sha256": "b1e86ae8c13b46c5a59ccbd3e9eee32f9fdcc4efce75ff16c35d176cacbdd702",
+    "status": "PASS"
+  },
+  "observations": [
+    {
+      "command": "python3 normalization_tools/validate_tool_repo.py work_repos/scaffoldctl scaffoldctl",
+      "detail": "Repository title, debris, directory, HMT, metadata, JSON, Python, naming, and Markdown-link gates passed.",
+      "gate": "OPERATIONAL_REPOSITORY_SURFACE",
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/workspace/scratch/76fc124e5f06/brimstone_crucible/.venv/lib/python3.12/site-packages python3 -m pytest -q -o addopts= -p no:cacheprovider tests/test_mcp_adapter.py",
+      "detail": "7 passed and 6 subtests passed.",
+      "gate": "MCP_ADAPTER_REGRESSION",
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/check_function_lengths.py",
+      "detail": "All production functions are at most 60 physical lines.",
+      "gate": "POWER10_FUNCTION_LENGTH",
+      "status": "PASS"
+    },
+    {
+      "command": "UV_CACHE_DIR=/tmp/scaffoldctl-uv-cache uv lock --check",
+      "detail": "Resolved 24 packages; lock check passed.",
+      "gate": "LOCK_INTEGRITY",
+      "status": "PASS"
+    },
+    {
+      "command": "UV_CACHE_DIR=/tmp/scaffoldctl-uv-cache uv sync --offline --dry-run --locked --all-groups",
+      "detail": "Would download 23 packages; the complete current 243-test, Ruff, and distribution lane cannot run offline.",
+      "gate": "FULL_LOCKED_RUNTIME_AVAILABILITY",
+      "status": "HOLD"
+    },
+    {
+      "command": "sha256sum provenance/sealed_source_release_v0_3_0/distributions/scaffoldctl-0.3.0-py3-none-any.whl provenance/sealed_source_release_v0_3_0/distributions/scaffoldctl-0.3.0.tar.gz",
+      "detail": "Historical wheel and sdist match the isolated closeout hashes; they do not attest to current source.",
+      "gate": "HISTORICAL_CLOSEOUT_CUSTODY",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 normalization_tools/validate_mcp_contracts.py work_repos",
+      "detail": "Common exact fields, integer epoch equality, present authority, bounds, subprocess firewall, and ceilings passed.",
+      "gate": "MCP_PLUS_INTERSECTION",
+      "status": "PASS"
+    }
+  ],
+  "qualification": {
+    "reason_codes": [
+      "CURRENT_DISTRIBUTION_REPRODUCIBILITY_NOT_RUN",
+      "FULL_LOCKED_DEPENDENCY_TEST_LANE_UNAVAILABLE",
+      "HUMAN_PROMOTION_PENDING",
+      "RUFF_0_16_1_UNAVAILABLE"
+    ],
+    "status": "HOLD"
+  },
+  "repository": "scaffoldctl",
+  "schema_id": "urn:terminal-state:tool-repository-validation-receipt:1.0"
+}

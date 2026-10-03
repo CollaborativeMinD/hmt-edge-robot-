@@ -3,8 +3,8 @@
   "reason_codes": [
     "CI_TOOLCHAIN_ADMITTED"
   ],
-  "policy_sha256": "4c73ec1e0ab9f5a9aa3c1b7b63d321cd0808bd1400b6abcfc92eb6dabc838765",
-  "lock_sha256": "0f121cae36b8ac839885a7307699e83d7ad6c446eb1528842750e7036c8d239a",
+  "policy_sha256": "8c4de31deb3d9b3bf4341d992dd6ac07716142a39e40283b8ee479eec443da6b",
+  "lock_sha256": "b1ce60e49dc526e19077ddc69fb91fc142f551e123c746a4ffbb88433d98998b",
   "target": {
     "os": "linux",
     "architecture": "aarch64",

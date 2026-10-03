@@ -1,0 +1,137 @@
+@prefix forge: <https://terminal-state.systems/ontology/forge#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+
+<https://terminal-state.systems/ontology/forge>
+    a owl:Ontology ;
+    dct:title "Forge Federated Ontology Baseline" ;
+    dct:description "Canonical federated baseline for specialist-agent knowledge packages, shared semantic classes, relation law, and cross-domain status normalization." ;
+    owl:versionInfo "1.0.0" ;
+    dct:creator "Chief Ontology Architect" .
+
+### Top-level classes
+forge:AgentRole a owl:Class ; rdfs:label "agent_role" ; rdfs:comment "A governed specialist or supervisory role in the Forge mesh." .
+forge:DomainPackage a owl:Class ; rdfs:label "domain_package" ; rdfs:comment "A role-specific knowledge-base package or governed prompt bundle." .
+forge:KnowledgeArtifact a owl:Class ; rdfs:label "knowledge_artifact" ; rdfs:comment "Any governed artifact produced, consumed, or referenced by agents." .
+forge:EvidenceRecord a owl:Class ; rdfs:subClassOf forge:KnowledgeArtifact ; rdfs:label "evidence_record" ; rdfs:comment "A traceable evidentiary artifact supporting validation, rejection, mapping, or review." .
+forge:Constraint a owl:Class ; rdfs:label "constraint" ; rdfs:comment "A bounded requirement, rule, envelope, or restriction with explicit semantic scope." .
+forge:ValidationGate a owl:Class ; rdfs:label "validation_gate" ; rdfs:comment "A formal gate that evaluates conformance or blocks unsafe promotion." .
+forge:Status a owl:Class ; rdfs:label "status" ; rdfs:comment "A governed status concept used to classify lifecycle, review, validation, runtime, or risk posture." .
+forge:Risk a owl:Class ; rdfs:label "risk" ; rdfs:comment "A bounded risk item with explicit severity, impact, and mitigation context." .
+forge:RuntimeBehavior a owl:Class ; rdfs:label "runtime_behavior" ; rdfs:comment "A governed runtime behavior, stateful activity, or system mode." .
+forge:PhysicalEnvelope a owl:Class ; rdfs:label "physical_envelope" ; rdfs:comment "A physical, thermal, power, or mechanical operating envelope." .
+forge:Mapping a owl:Class ; rdfs:label "mapping" ; rdfs:comment "A governed identity or semantic alignment claim between source and target terms or entities." .
+forge:Consumer a owl:Class ; rdfs:label "consumer" ; rdfs:comment "A downstream human, agent, service, or interface consumer affected by semantic decisions." .
+forge:ReviewAction a owl:Class ; rdfs:label "review_action" ; rdfs:comment "A review or approval activity with explicit disposition and provenance." .
+forge:ConceptScheme a owl:Class ; rdfs:subClassOf skos:ConceptScheme ; rdfs:label "concept_scheme" .
+forge:ControlledTerm a owl:Class ; rdfs:subClassOf skos:Concept ; rdfs:label "controlled_term" .
+forge:ProvenanceRecord a owl:Class ; rdfs:subClassOf forge:EvidenceRecord ; rdfs:label "provenance_record" .
+forge:RejectionRecord a owl:Class ; rdfs:subClassOf forge:EvidenceRecord ; rdfs:label "rejection_record" .
+
+### Artifact subclasses
+forge:BaselineArtifact a owl:Class ; rdfs:subClassOf forge:KnowledgeArtifact ; rdfs:label "baseline_artifact" .
+forge:MappingArtifact a owl:Class ; rdfs:subClassOf forge:KnowledgeArtifact ; rdfs:label "mapping_artifact" .
+forge:ShapeArtifact a owl:Class ; rdfs:subClassOf forge:KnowledgeArtifact ; rdfs:label "shape_artifact" .
+forge:RuntimeArtifact a owl:Class ; rdfs:subClassOf forge:KnowledgeArtifact ; rdfs:label "runtime_artifact" .
+forge:DeploymentArtifact a owl:Class ; rdfs:subClassOf forge:KnowledgeArtifact ; rdfs:label "deployment_artifact" .
+forge:TestArtifact a owl:Class ; rdfs:subClassOf forge:KnowledgeArtifact ; rdfs:label "test_artifact" .
+forge:RiskArtifact a owl:Class ; rdfs:subClassOf forge:KnowledgeArtifact ; rdfs:label "risk_artifact" .
+
+### Evidence subclasses
+forge:SemanticEvidence a owl:Class ; rdfs:subClassOf forge:EvidenceRecord ; rdfs:label "semantic_evidence" .
+forge:ValidationEvidence a owl:Class ; rdfs:subClassOf forge:EvidenceRecord ; rdfs:label "validation_evidence" .
+forge:RuntimeEvidence a owl:Class ; rdfs:subClassOf forge:EvidenceRecord ; rdfs:label "runtime_evidence" .
+forge:DeploymentEvidence a owl:Class ; rdfs:subClassOf forge:EvidenceRecord ; rdfs:label "deployment_evidence" .
+forge:TestEvidence a owl:Class ; rdfs:subClassOf forge:EvidenceRecord ; rdfs:label "test_evidence" .
+forge:ReviewEvidence a owl:Class ; rdfs:subClassOf forge:EvidenceRecord ; rdfs:label "review_evidence" .
+forge:ParityEvidence a owl:Class ; rdfs:subClassOf forge:EvidenceRecord ; rdfs:label "parity_evidence" .
+
+### Constraint subclasses
+forge:SemanticConstraint a owl:Class ; rdfs:subClassOf forge:Constraint ; rdfs:label "semantic_constraint" .
+forge:ShapeConstraint a owl:Class ; rdfs:subClassOf forge:Constraint ; rdfs:label "shape_constraint" .
+forge:InterfaceConstraint a owl:Class ; rdfs:subClassOf forge:Constraint ; rdfs:label "interface_constraint" .
+forge:ControlConstraint a owl:Class ; rdfs:subClassOf forge:Constraint ; rdfs:label "control_constraint" .
+forge:SafetyConstraint a owl:Class ; rdfs:subClassOf forge:Constraint ; rdfs:label "safety_constraint" .
+forge:PhysicalConstraint a owl:Class ; rdfs:subClassOf forge:Constraint ; rdfs:label "physical_constraint" .
+forge:ThermalConstraint a owl:Class ; rdfs:subClassOf forge:PhysicalConstraint ; rdfs:label "thermal_constraint" .
+forge:PowerConstraint a owl:Class ; rdfs:subClassOf forge:PhysicalConstraint ; rdfs:label "power_constraint" .
+forge:DeploymentConstraint a owl:Class ; rdfs:subClassOf forge:Constraint ; rdfs:label "deployment_constraint" .
+
+### Drift subclasses
+forge:Drift a owl:Class ; rdfs:label "drift" .
+forge:SemanticDrift a owl:Class ; rdfs:subClassOf forge:Drift ; rdfs:label "semantic_drift" .
+forge:SchemaDrift a owl:Class ; rdfs:subClassOf forge:Drift ; rdfs:label "schema_drift" .
+forge:ArchitectureDrift a owl:Class ; rdfs:subClassOf forge:Drift ; rdfs:label "architecture_drift" .
+forge:ExportDrift a owl:Class ; rdfs:subClassOf forge:Drift ; rdfs:label "export_drift" .
+forge:RuntimeDrift a owl:Class ; rdfs:subClassOf forge:Drift ; rdfs:label "runtime_drift" .
+forge:ModelBehaviorDrift a owl:Class ; rdfs:subClassOf forge:Drift ; rdfs:label "model_behavior_drift" .
+
+### Status subclasses
+forge:ApprovalStatus a owl:Class ; rdfs:subClassOf forge:Status ; rdfs:label "approval_status" .
+forge:ValidationStatus a owl:Class ; rdfs:subClassOf forge:Status ; rdfs:label "validation_status" .
+forge:RuntimeStateStatus a owl:Class ; rdfs:subClassOf forge:Status ; rdfs:label "runtime_state_status" .
+forge:ReviewStatus a owl:Class ; rdfs:subClassOf forge:Status ; rdfs:label "review_status" .
+forge:MappingDisposition a owl:Class ; rdfs:subClassOf forge:Status ; rdfs:label "mapping_disposition" .
+forge:DriftAssessmentStatus a owl:Class ; rdfs:subClassOf forge:Status ; rdfs:label "drift_assessment_status" .
+forge:RiskStatus a owl:Class ; rdfs:subClassOf forge:Status ; rdfs:label "risk_status" .
+
+### Core relations
+forge:governs_meaning_for a owl:ObjectProperty ; rdfs:domain forge:AgentRole ; rdfs:range owl:Thing ; rdfs:label "governs_meaning_for" .
+forge:defines_baseline_for a owl:ObjectProperty ; rdfs:domain forge:AgentRole ; rdfs:range forge:DomainPackage ; rdfs:label "defines_baseline_for" .
+forge:constrains a owl:ObjectProperty ; rdfs:domain forge:Constraint ; rdfs:range owl:Thing ; rdfs:label "constrains" .
+forge:validates a owl:ObjectProperty ; rdfs:domain forge:ValidationGate ; rdfs:range owl:Thing ; rdfs:label "validates" .
+forge:rejects a owl:ObjectProperty ; rdfs:domain forge:ReviewAction ; rdfs:range owl:Thing ; rdfs:label "rejects" .
+forge:maps_to a owl:ObjectProperty ; rdfs:domain forge:Mapping ; rdfs:range owl:Thing ; rdfs:label "maps_to" .
+forge:is_evidence_for a owl:ObjectProperty ; rdfs:domain forge:EvidenceRecord ; rdfs:range owl:Thing ; rdfs:label "is_evidence_for" .
+forge:is_consumer_of a owl:ObjectProperty ; rdfs:domain forge:Consumer ; rdfs:range forge:KnowledgeArtifact ; rdfs:label "is_consumer_of" .
+forge:inherits_constraint_from a owl:ObjectProperty ; rdfs:domain forge:Constraint ; rdfs:range forge:Constraint ; rdfs:label "inherits_constraint_from" .
+forge:degrades_to a owl:ObjectProperty ; rdfs:domain forge:RuntimeBehavior ; rdfs:range forge:RuntimeBehavior ; rdfs:label "degrades_to" .
+forge:conforms_to a owl:ObjectProperty ; rdfs:domain owl:Thing ; rdfs:range owl:Thing ; rdfs:label "conforms_to" .
+forge:violates a owl:ObjectProperty ; rdfs:domain owl:Thing ; rdfs:range forge:Constraint ; rdfs:label "violates" .
+forge:requires_review_by a owl:ObjectProperty ; rdfs:domain owl:Thing ; rdfs:range forge:AgentRole ; rdfs:label "requires_review_by" .
+forge:produces_artifact a owl:ObjectProperty ; rdfs:domain forge:AgentRole ; rdfs:range forge:KnowledgeArtifact ; rdfs:label "produces_artifact" .
+forge:has_status a owl:ObjectProperty ; rdfs:domain owl:Thing ; rdfs:range forge:Status ; rdfs:label "has_status" .
+forge:has_severity a owl:DatatypeProperty ; rdfs:domain owl:Thing ; rdfs:range xsd:string ; rdfs:label "has_severity" .
+forge:has_provenance a owl:ObjectProperty ; rdfs:domain owl:Thing ; rdfs:range forge:ProvenanceRecord ; rdfs:label "has_provenance" .
+forge:has_consumer_impact a owl:DatatypeProperty ; rdfs:domain owl:Thing ; rdfs:range xsd:string ; rdfs:label "has_consumer_impact" .
+forge:uses_concept_scheme a owl:ObjectProperty ; rdfs:domain forge:DomainPackage ; rdfs:range forge:ConceptScheme ; rdfs:label "uses_concept_scheme" .
+forge:has_controlled_term a owl:ObjectProperty ; rdfs:domain forge:ConceptScheme ; rdfs:range forge:ControlledTerm ; rdfs:label "has_controlled_term" .
+forge:source_term a owl:DatatypeProperty ; rdfs:domain forge:Mapping ; rdfs:range xsd:string ; rdfs:label "source_term" .
+forge:target_term a owl:DatatypeProperty ; rdfs:domain forge:Mapping ; rdfs:range xsd:string ; rdfs:label "target_term" .
+forge:mapping_type a owl:DatatypeProperty ; rdfs:domain forge:Mapping ; rdfs:range xsd:string ; rdfs:label "mapping_type" .
+forge:evidence_id a owl:DatatypeProperty ; rdfs:domain forge:EvidenceRecord ; rdfs:range xsd:string ; rdfs:label "evidence_id" .
+forge:artifact_id a owl:DatatypeProperty ; rdfs:domain forge:KnowledgeArtifact ; rdfs:range xsd:string ; rdfs:label "artifact_id" .
+forge:ontology_id a owl:DatatypeProperty ; rdfs:domain forge:KnowledgeArtifact ; rdfs:range xsd:string ; rdfs:label "ontology_id" .
+forge:version_id a owl:DatatypeProperty ; rdfs:domain forge:KnowledgeArtifact ; rdfs:range xsd:string ; rdfs:label "version_id" .
+forge:timestamp_utc a owl:DatatypeProperty ; rdfs:domain forge:EvidenceRecord ; rdfs:range xsd:dateTime ; rdfs:label "timestamp_utc" .
+forge:approval_status a owl:ObjectProperty ; rdfs:domain forge:ReviewAction ; rdfs:range forge:ApprovalStatus ; rdfs:label "approval_status" .
+forge:validation_status a owl:ObjectProperty ; rdfs:domain forge:ValidationGate ; rdfs:range forge:ValidationStatus ; rdfs:label "validation_status" .
+forge:review_status a owl:ObjectProperty ; rdfs:domain forge:ReviewAction ; rdfs:range forge:ReviewStatus ; rdfs:label "review_status" .
+forge:identity_status a owl:ObjectProperty ; rdfs:domain forge:Mapping ; rdfs:range forge:MappingDisposition ; rdfs:label "identity_status" .
+forge:drift_status a owl:ObjectProperty ; rdfs:domain forge:Drift ; rdfs:range forge:DriftAssessmentStatus ; rdfs:label "drift_status" .
+forge:risk_status a owl:ObjectProperty ; rdfs:domain forge:Risk ; rdfs:range forge:RiskStatus ; rdfs:label "risk_status" .
+forge:consumer_impact a owl:DatatypeProperty ; rdfs:domain owl:Thing ; rdfs:range xsd:string ; rdfs:label "consumer_impact" .
+forge:rejection_reason a owl:DatatypeProperty ; rdfs:domain forge:RejectionRecord ; rdfs:range xsd:string ; rdfs:label "rejection_reason" .
+forge:justification a owl:DatatypeProperty ; rdfs:domain forge:Mapping ; rdfs:range xsd:string ; rdfs:label "justification" .
+forge:change_class a owl:DatatypeProperty ; rdfs:domain forge:ProvenanceRecord ; rdfs:range xsd:string ; rdfs:label "change_class" .
+forge:artifact_type a owl:DatatypeProperty ; rdfs:domain forge:KnowledgeArtifact ; rdfs:range xsd:string ; rdfs:label "artifact_type" .
+
+### Domain packages
+forge:ontology_architect_package a forge:DomainPackage ; rdfs:label "ontology_architect_package" .
+forge:systems_architect_package a forge:DomainPackage ; rdfs:label "systems_architect_package" .
+forge:control_systems_package a forge:DomainPackage ; rdfs:label "control_systems_package" .
+forge:ml_systems_package a forge:DomainPackage ; rdfs:label "ml_systems_package" .
+forge:genai_systems_package a forge:DomainPackage ; rdfs:label "genai_systems_package" .
+forge:cyber_physical_integration_package a forge:DomainPackage ; rdfs:label "cyber_physical_integration_package" .
+forge:digital_transformation_package a forge:DomainPackage ; rdfs:label "digital_transformation_package" .
+forge:red_team_package a forge:DomainPackage ; rdfs:label "red_team_package" .
+forge:ee_package a forge:DomainPackage ; rdfs:label "ee_package" .
+forge:aerospace_package a forge:DomainPackage ; rdfs:label "aerospace_package" .
+forge:thermal_package a forge:DomainPackage ; rdfs:label "thermal_package" .
+forge:mechanical_materials_package a forge:DomainPackage ; rdfs:label "mechanical_materials_package" .
+forge:mechatronics_power_package a forge:DomainPackage ; rdfs:label "mechatronics_power_package" .
+forge:edge_devsecops_iac_package a forge:DomainPackage ; rdfs:label "edge_devsecops_iac_package" .

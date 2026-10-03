@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://truth-serum.local/contracts/machine_handoff.schema.json",
+  "title": "Ontology-governed machine handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["response"],
+  "properties": {
+    "response": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "agent_role",
+        "task_owned",
+        "implementation",
+        "risks",
+        "assumptions",
+        "follow_up_instructions",
+        "validation_status",
+        "artifact_refs",
+        "provenance_id"
+      ],
+      "properties": {
+        "agent_role": {"const": "edge_devsecops_iac"},
+        "task_owned": {"type": "string", "minLength": 1},
+        "implementation": {
+          "oneOf": [
+            {"type": "string", "minLength": 1},
+            {
+              "type": "array",
+              "items": {"type": "string", "minLength": 1},
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          ]
+        },
+        "risks": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "follow_up_instructions": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "validation_status": {"enum": ["pass", "hold", "fail"]},
+        "artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "provenance_id": {
+          "type": "string",
+          "pattern": "^prov_[a-z0-9][a-z0-9_]{2,95}$"
+        }
+      }
+    }
+  }
+}

@@ -11,7 +11,8 @@
       "USEA coverage-scoped effect attestation and bounded no-link file manifests",
       "AGC reference closure, atomic governed quarantine/restore/delete in a managed SQLite artifact domain",
       "Durable observer alerts, witnessed transformations, exact resource optimizer and typed private API",
-      "Phase 1 CI pre-install hash admission, lock freshness, readonly hosted CI and failure receipts"
+      "Phase 1 CI pre-install hash admission, lock freshness, readonly hosted CI and failure receipts",
+      "Phase 2 read-only scaffoldctl and Truth Serum interfaces, policy inventory and repeatable tool qualification"
     ],
     "risks": [
       "Physical driver, stopping calibration, MISRA/static memory and native target evidence remain HOLD",
@@ -20,7 +21,8 @@
       "File snapshots cannot certify full process effects; native process tracing and hardware verification are deferred to a qualified containerized deployment",
       "Async probes require cooperative cancellation; empirical recovery statistics are not WCET guarantees",
       "Catalog completeness is confined to its managed BLOB domain; external infrastructure cannot be reclaimed",
-      "scaffoldctl and Truth Serum archives remain HOLD candidates pending isolated requalification and host integration; branch protection is not attested"
+      "scaffoldctl and Truth Serum archives remain HOLD candidates pending isolated requalification and host integration; branch protection is not attested",
+      "Full policy adoption HOLD: 26 legacy module ceiling gaps; full tool engines remain HOLD for host-specific fit. Docker builds and deployment remain HOLD."
     ],
     "assumptions": [
       "Python 3.12+ Linux supervisory host",

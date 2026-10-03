@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://truth-serum.local/contracts/lane_result.schema.json",
+  "title": "Truth Serum lane result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "lane_id",
+    "status",
+    "required",
+    "tool",
+    "reason_codes",
+    "evidence_paths",
+    "findings"
+  ],
+  "properties": {
+    "lane_id": {"type": "string", "pattern": "^[a-z][a-z0-9-]{1,63}$"},
+    "status": {
+      "enum": ["PASS", "FAIL", "UNAVAILABLE", "ERROR", "NOT_APPLICABLE"]
+    },
+    "required": {"type": "boolean"},
+    "tool": {"type": "string", "minLength": 1, "maxLength": 80},
+    "reason_codes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/reason_code"},
+      "uniqueItems": true
+    },
+    "evidence_paths": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/repository_path"},
+      "uniqueItems": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/finding"}
+    }
+  },
+  "$defs": {
+    "reason_code": {
+      "type": "string",
+      "pattern": "^(PASS|HOLD|FAIL|ESCALATE|NOT_APPLICABLE)_[A-Z0-9_]+$"
+    },
+    "repository_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$"
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reason_code", "message", "path", "line", "route"],
+      "properties": {
+        "reason_code": {"$ref": "#/$defs/reason_code"},
+        "message": {"type": "string", "minLength": 1},
+        "path": {
+          "oneOf": [
+            {"$ref": "#/$defs/repository_path"},
+            {"type": "null"}
+          ]
+        },
+        "line": {"type": ["integer", "null"], "minimum": 1},
+        "route": {"enum": ["PASS", "HOLD", "FAIL", "ESCALATE"]}
+      }
+    }
+  }
+}

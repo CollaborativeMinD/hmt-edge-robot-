@@ -1,0 +1,392 @@
+{
+  "document_type": "hmt_reuse_extension_and_promotion_policy",
+  "document_schema_version": "1.0.0",
+  "policy_id": "HMT-REUSE-EXTENSION-PROMOTION",
+  "policy_version": "1.0.0",
+  "title": "HMT Reuse, Extension, and Promotion Policy",
+  "status": "CANDIDATE_FOR_HUMAN_ARCHITECT_PROMOTION",
+  "issued_at": "2026-09-05T20:16:00-10:00",
+  "authority": {
+    "policy_owner": "human_architect",
+    "promotion_authority": "human_architect_only",
+    "agent_waiver_authority": false,
+    "model_self_promotion": false,
+    "reuse_does_not_transfer_authority": true
+  },
+  "normative_terms": {
+    "SHALL": "mandatory",
+    "SHALL_NOT": "prohibited",
+    "SHOULD": "preferred_with_documented_deviation",
+    "MAY": "permitted",
+    "default_breach_disposition": "HOLD"
+  },
+  "principle": "Search before forge. Reuse known-good steel when it satisfies the mission; preserve the reasoning and invariants that made it lawful; engineer only the true unresolved delta; measure and validate that delta; promote repeated success into discoverable organizational capability.",
+  "organizational_learning_objective": "Prevent repeatedly solved engineering problems from remaining tribal knowledge. Once a solution survives materially distinct problem contexts, treat it as a candidate organizational capability that must be documented, versioned, evidenced, hosted, discoverable, and referenced by default.",
+  "scope": [
+    "hmt_repositories",
+    "hmt_packages",
+    "transformation_kernels",
+    "digital_twins",
+    "python_plants",
+    "field_cards",
+    "reference_implementations",
+    "policies",
+    "schemas",
+    "ontologies",
+    "mcp_tools",
+    "repository_specific_skills",
+    "simulation_harnesses",
+    "evidence_and_replay_assets",
+    "human_and_agent_operational_documentation"
+  ],
+  "governing_relationships": [
+    {
+      "policy_or_axiom": "HMT-AX-003",
+      "relationship": "Reuse or extension does not waive tracer-bullet admission."
+    },
+    {
+      "policy_or_axiom": "HMT-AX-004",
+      "relationship": "This policy operationalizes Reusable Steel into a governed lifecycle."
+    },
+    {
+      "policy_or_axiom": "HMT-AX-005",
+      "relationship": "Reusable capability must be self-explaining and discoverable without original-builder presence."
+    },
+    {
+      "policy_or_axiom": "HMT-AX-006",
+      "relationship": "Extension and promotion require cumulative regression and Reverse RCA closure."
+    },
+    {
+      "policy_or_axiom": "HMT-REFERENCE-BOUNDED-TRANSFORMATION",
+      "relationship": "reference_build is a strict enforcement mechanism for reference-bounded transformation; this policy is broader and also permits reasoning inheritance, composition, and alternate compliant implementations."
+    },
+    {
+      "policy_or_axiom": "HMT-MCP-BASELINE/1.3.0",
+      "relationship": "Reuse tooling does not alter the existing completion transaction or grant task-completion authority."
+    }
+  ],
+  "reuse_lifecycle": [
+    "DISCOVER",
+    "CLASSIFY",
+    "SELECT",
+    "TRACE_REASONING",
+    "IDENTIFY_TRUE_DELTA",
+    "TRACER_VALIDATE",
+    "IMPLEMENT_OR_COMPOSE",
+    "VERIFY_DELTA_AND_INVARIANTS",
+    "PUBLISH_RECEIPT",
+    "PROMOTE_OR_HOLD",
+    "HOST_AND_REGISTER",
+    "SUPERSEDE_EXPLICITLY"
+  ],
+  "reuse_dispositions": {
+    "REUSE_AS_IS": "Use the admitted capability without internal modification; bind it to the new mission through declared adapters/configuration only.",
+    "ADAPT": "Apply bounded interface, configuration, or representation changes while preserving the underlying capability and authority semantics.",
+    "EXTEND": "Add new behavior around or beneath an admitted capability while preserving inherited contracts and explicitly validating the added delta.",
+    "COMPOSE": "Combine two or more admitted capabilities through typed seams without silently merging authority or failure semantics.",
+    "SUPERSEDE": "Replace an older canonical capability only through explicit versioned promotion, migration guidance, and human disposition.",
+    "NO_FIT": "No admitted capability can satisfy the unresolved requirement without violating mission, invariant, authority, fidelity, or interface constraints."
+  },
+  "reuse_discovery_gate": {
+    "gate_id": "G-REUSE-DISCOVERY",
+    "required_before": [
+      "architecture_generation",
+      "new_framework_creation",
+      "new_kernel_creation",
+      "new_tool_creation",
+      "new_plant_creation",
+      "new_repository_specific_skill_creation",
+      "substantial_custom_implementation"
+    ],
+    "required_actions": [
+      "Inventory applicable admitted kernels, tools, plants, field cards, schemas, policies, ontologies, reference implementations, and prior evidence.",
+      "Record artifact identity, version, source location, and content hash for each selected candidate.",
+      "Record one reuse disposition for each materially applicable candidate.",
+      "Record rejection reason for any applicable candidate not selected.",
+      "Identify the unresolved mission-specific delta before authorizing new engineering.",
+      "Bind the selected steel and unresolved delta to the active mission/assignment."
+    ],
+    "prohibited_shortcuts": [
+      "skip_discovery_because_builder_prefers_custom_code",
+      "new_framework_by_default",
+      "silent_reimplementation_of_existing_capability",
+      "rejection_without_requirement_or_invariant_basis",
+      "reuse_claim_without_version_or_source_identity"
+    ],
+    "breach_reason_code": "HOLD_REUSE_DISCOVERY_INCOMPLETE"
+  },
+  "inheritance_modes": {
+    "STRUCTURAL_INHERITANCE": "Candidate preserves the admitted structure and applies an explicit bounded delta. Use reference_build when exact reference-bounded transformation is appropriate.",
+    "REASONING_INHERITANCE": "Candidate may have a different structure, but must preserve and trace the source requirements, invariants, assumptions, trade decisions, failure semantics, and non-claims that remain applicable.",
+    "COMPOSITION_INHERITANCE": "Candidate composes multiple admitted assets; each source keeps its lineage, authority boundary, qualification status, and failure semantics."
+  },
+  "true_delta_rule": {
+    "statement": "New engineering SHALL be limited to the smallest mission-specific delta that cannot be satisfied through REUSE_AS_IS, ADAPT, EXTEND, or COMPOSE.",
+    "required_delta_classification": [
+      "inherited",
+      "modified",
+      "new"
+    ],
+    "required_checks": [
+      "requirement_delta",
+      "invariant_delta",
+      "interface_delta",
+      "authority_delta",
+      "failure_semantics_delta",
+      "dependency_delta",
+      "qualification_delta",
+      "evidence_delta"
+    ],
+    "breach_reason_code": "HOLD_TRUE_DELTA_NOT_ISOLATED"
+  },
+  "no_fit_gate": {
+    "gate_id": "G-REUSE-NO-FIT",
+    "rule": "NO_FIT authorizes investigation of new steel, not unrestricted architecture generation.",
+    "required_evidence": [
+      "unmet_requirement_ids",
+      "applicable_invariant_ids",
+      "selected_candidate_assets_and_hashes",
+      "why_reuse_as_is_fails",
+      "why_adapt_fails",
+      "why_extend_fails",
+      "why_compose_fails",
+      "bounded_new_engineering_scope",
+      "tracer_plan"
+    ],
+    "insufficient_reasons": [
+      "builder_preference",
+      "model_preference",
+      "cleaner_to_start_over",
+      "new_framework_is_more_interesting",
+      "not_invented_here",
+      "no_time_to_inspect_existing_steel"
+    ],
+    "breach_reason_code": "HOLD_NEW_STEEL_NOT_JUSTIFIED"
+  },
+  "lineage_contract": {
+    "required_fields": [
+      "artifact_id",
+      "artifact_version",
+      "source_location",
+      "source_hash",
+      "owner_or_authority",
+      "applicable_requirements",
+      "applicable_invariants",
+      "assumptions",
+      "known_limitations",
+      "non_claims",
+      "authority_boundary",
+      "failure_semantics",
+      "qualification_status",
+      "verification_evidence_refs",
+      "supersession_status"
+    ],
+    "rule": "Copied code without preserved reasoning and evidence lineage is not compliant reuse. Different implementation shape is permitted when source reasoning and requirements remain traceable.",
+    "breach_reason_code": "HOLD_REUSE_LINEAGE_INCOMPLETE"
+  },
+  "reasoning_trace_contract": {
+    "required_question": "Which inherited requirements, invariants, assumptions, and prior decisions constrained this candidate, and how are they satisfied now?",
+    "acceptance_rule": "A candidate need not duplicate the source structure when its reasoning lineage is explicit, the resulting shape satisfies the governing requirements and invariants, and verification closes the delta.",
+    "documentation_expectation": "Documentation SHOULD read as build-time reasoning and evidence, not post-hoc inference from finished code."
+  },
+  "verification_and_consumption": {
+    "rules": [
+      "Reuse SHALL NOT waive mission-specific tracer validation.",
+      "Reuse SHALL NOT waive package tests, cumulative gates, Reverse RCA, scaffold verification, or human review where required.",
+      "Prior evidence MAY reduce rediscovery effort only after applicability to the new mission is explicitly checked.",
+      "Inherited capability failures discovered in a new mission SHALL route upstream through Reverse RCA and may trigger a shared-steel repair or qualification hold.",
+      "No reused capability gains operational authority merely because it was previously promoted elsewhere."
+    ],
+    "breach_reason_code": "HOLD_REUSE_QUALIFICATION_INCOMPLETE"
+  },
+  "promotion_to_organizational_capability": {
+    "gate_id": "G-REUSE-PROMOTION",
+    "trigger": "A local capability becomes a promotion candidate after it has solved at least two materially distinct problem contexts with evidence-backed verification and without unresolved authority or fidelity mismatch.",
+    "promotion_packet": [
+      "capability_summary",
+      "problem_contexts_and_distinguishing_features",
+      "versioned_artifact_and_hash",
+      "requirements_and_invariants",
+      "reuse_map",
+      "known_limitations_and_non_claims",
+      "cross_context_regression_receipts",
+      "reverse_rca_incident_summary",
+      "interface_and_adapter_contracts",
+      "operator_and_agent_documentation",
+      "hosting_location",
+      "discovery_registry_entry",
+      "supersession_or_coexistence_plan",
+      "human_architect_disposition"
+    ],
+    "promotion_outcomes": [
+      "PROMOTE_SHARED_STEEL",
+      "RETAIN_PROJECT_LOCAL",
+      "HOLD_FOR_MORE_EVIDENCE",
+      "REJECT_REUSE_CANDIDATE"
+    ],
+    "automatic_promotion": false,
+    "breach_reason_code": "HOLD_REUSE_PROMOTION_EVIDENCE_INCOMPLETE"
+  },
+  "hosting_and_discoverability": {
+    "rule": "A promoted reusable capability SHALL be hosted in an authoritative versioned location and discoverable through the normal human/agent discovery surface before it is treated as organizational steel.",
+    "minimum_publish_fields": [
+      "canonical_name",
+      "capability_class",
+      "version",
+      "source_location",
+      "content_hash",
+      "purpose",
+      "invocation_or_consumption_contract",
+      "authority_boundary",
+      "qualification_status",
+      "requirements_and_invariants",
+      "known_limitations",
+      "replacement_or_supersession_relationship"
+    ],
+    "unpublished_status": "UNPUBLISHED_STEEL",
+    "breach_reason_code": "HOLD_REUSABLE_CAPABILITY_NOT_DISCOVERABLE"
+  },
+  "supersession_policy": {
+    "rule": "Canonical reusable steel SHALL NOT be silently replaced or left ambiguous after a successor is promoted.",
+    "required_actions": [
+      "Assign a new version or new canonical capability ID.",
+      "Declare predecessor and successor relationship.",
+      "Declare compatibility and migration posture.",
+      "Preserve predecessor hashes and evidence.",
+      "Update discovery registries and references.",
+      "Do not delete historical evidence required for audit or replay."
+    ],
+    "lifecycle_states": [
+      "PROJECT_LOCAL",
+      "CANDIDATE_SHARED_STEEL",
+      "PROMOTED_SHARED_STEEL",
+      "DEPRECATED",
+      "SUPERSEDED",
+      "RETIRED",
+      "HOLD"
+    ],
+    "breach_reason_code": "HOLD_SUPERSESSION_AMBIGUOUS"
+  },
+  "reuse_receipt": {
+    "receipt_type": "HMT_REUSE_DECISION_RECEIPT",
+    "required_fields": [
+      "mission_or_project_id",
+      "timestamp",
+      "builder_or_agent_id",
+      "discovery_gate_status",
+      "candidate_assets",
+      "selected_assets",
+      "reuse_dispositions",
+      "rejected_assets_and_reasons",
+      "unresolved_true_delta",
+      "inheritance_modes",
+      "requirement_and_invariant_trace",
+      "artifact_manifest_inherited_modified_new",
+      "tracer_receipt_refs",
+      "verification_receipt_refs",
+      "rrca_refs",
+      "final_package_hash",
+      "disposition"
+    ],
+    "immutability": "append_only_or_content_addressed",
+    "receipt_is_not": [
+      "operational_authority",
+      "task_completion",
+      "human_approval",
+      "proof_of_universal_reusability"
+    ]
+  },
+  "requirements": [
+    {
+      "requirement_id": "HMT-REUSE-R01",
+      "rule": "Every substantial build SHALL execute the Reuse Discovery Gate before new architecture or implementation is admitted.",
+      "verification": "reuse_discovery_receipt_check"
+    },
+    {
+      "requirement_id": "HMT-REUSE-R02",
+      "rule": "Applicable existing steel SHALL receive an explicit reuse disposition and any rejection SHALL cite requirement, invariant, authority, fidelity, or interface evidence.",
+      "verification": "reuse_disposition_and_rejection_basis_check"
+    },
+    {
+      "requirement_id": "HMT-REUSE-R03",
+      "rule": "New engineering SHALL be limited to the identified true mission-specific delta.",
+      "verification": "inherited_modified_new_manifest_and_delta_check"
+    },
+    {
+      "requirement_id": "HMT-REUSE-R04",
+      "rule": "Reuse SHALL preserve source reasoning, requirements, invariants, authority boundaries, failure semantics, qualification status, and evidence lineage.",
+      "verification": "reuse_lineage_contract_check"
+    },
+    {
+      "requirement_id": "HMT-REUSE-R05",
+      "rule": "Different implementation shape MAY be admitted when reasoning lineage is preserved and the resulting artifact independently satisfies applicable requirements and invariants.",
+      "verification": "reasoning_inheritance_trace_and_verification"
+    },
+    {
+      "requirement_id": "HMT-REUSE-R06",
+      "rule": "NO_FIT SHALL be evidence-backed and SHALL only authorize the bounded new-steel scope required to close the unmet requirements.",
+      "verification": "no_fit_gate_check"
+    },
+    {
+      "requirement_id": "HMT-REUSE-R07",
+      "rule": "Reuse SHALL NOT bypass tracer, V&V, RRCA, cumulative gates, package tests, or required human review.",
+      "verification": "reuse_qualification_chain_check"
+    },
+    {
+      "requirement_id": "HMT-REUSE-R08",
+      "rule": "A repeatedly successful local solution SHALL enter promotion review rather than remain undocumented tribal knowledge.",
+      "verification": "cross_context_promotion_trigger_check"
+    },
+    {
+      "requirement_id": "HMT-REUSE-R09",
+      "rule": "Promoted steel SHALL be versioned, hosted, documented, discoverable, and linked to its evidence and supersession status.",
+      "verification": "shared_steel_registry_and_hosting_check"
+    },
+    {
+      "requirement_id": "HMT-REUSE-R10",
+      "rule": "Reuse, adaptation, extension, composition, and supersession SHALL NOT silently widen operational authority.",
+      "verification": "authority_delta_and_mission_binding_check"
+    }
+  ],
+  "stable_reason_codes": [
+    "HOLD_REUSE_DISCOVERY_INCOMPLETE",
+    "HOLD_TRUE_DELTA_NOT_ISOLATED",
+    "HOLD_NEW_STEEL_NOT_JUSTIFIED",
+    "HOLD_REUSE_LINEAGE_INCOMPLETE",
+    "HOLD_REUSE_QUALIFICATION_INCOMPLETE",
+    "HOLD_REUSE_PROMOTION_EVIDENCE_INCOMPLETE",
+    "HOLD_REUSABLE_CAPABILITY_NOT_DISCOVERABLE",
+    "HOLD_SUPERSESSION_AMBIGUOUS",
+    "HOLD_REUSE_AUTHORITY_WIDENING",
+    "REJECT_REIMPLEMENTATION_WITHOUT_EVIDENCE"
+  ],
+  "minimum_repository_reuse_packet": [
+    "reuse_discovery_receipt",
+    "reuse_map",
+    "artifact_manifest_inherited_modified_new",
+    "requirement_and_invariant_trace",
+    "admitted_tracer_bullet_receipt",
+    "delta_verification_receipt",
+    "cumulative_gate_ledger",
+    "reverse_rca_ledger",
+    "final_package_hash",
+    "human_architect_disposition_when_required"
+  ],
+  "exclusions": [
+    "This policy does not require literal template reuse when reasoning inheritance is the better engineering path.",
+    "This policy does not treat code copying alone as reuse.",
+    "This policy does not auto-promote a capability because it worked twice.",
+    "This policy does not grant operational authority, task completion, deployment, or activation.",
+    "This policy does not replace mission-specific architecture, physics, safety, cybersecurity, fidelity, or qualification requirements.",
+    "This policy does not prohibit novel engineering; it requires the unresolved novelty to be identified and justified."
+  ],
+  "change_control": {
+    "policy_change_requires_new_version": true,
+    "reuse_disposition_vocabulary_change_requires_new_version": true,
+    "promotion_threshold_change_requires_new_version": true,
+    "human_architect_approval_required": true,
+    "agent_may_self_promote_shared_steel": false,
+    "model_may_widen_authority": false,
+    "promotion_requires_preserved_hashes_and_lineage": true
+  }
+}

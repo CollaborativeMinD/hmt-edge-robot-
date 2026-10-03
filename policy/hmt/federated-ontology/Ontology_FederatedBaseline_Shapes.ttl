@@ -1,0 +1,212 @@
+@prefix forge: <https://terminal-state.systems/ontology/forge#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+forge:KnowledgeArtifactShape
+    a sh:NodeShape ;
+    sh:targetClass forge:KnowledgeArtifact ;
+    sh:property [
+        sh:path forge:artifact_id ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:artifact_type ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:version_id ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+    ] .
+
+forge:EvidenceRecordShape
+    a sh:NodeShape ;
+    sh:targetClass forge:EvidenceRecord ;
+    sh:property [
+        sh:path forge:evidence_id ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:timestamp_utc ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:is_evidence_for ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+    ] .
+
+forge:MappingShape
+    a sh:NodeShape ;
+    sh:targetClass forge:Mapping ;
+    sh:property [
+        sh:path forge:source_term ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:target_term ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:mapping_type ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in ( "exact_match" "close_match" "broad_match" "narrow_match" "rejected" ) ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:identity_status ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class forge:MappingDisposition ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:justification ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+    ] .
+
+forge:ReviewActionShape
+    a sh:NodeShape ;
+    sh:targetClass forge:ReviewAction ;
+    sh:property [
+        sh:path forge:approval_status ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class forge:ApprovalStatus ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:review_status ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class forge:ReviewStatus ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:has_provenance ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class forge:ProvenanceRecord ;
+        sh:severity sh:Violation ;
+    ] .
+
+forge:ValidationGateShape
+    a sh:NodeShape ;
+    sh:targetClass forge:ValidationGate ;
+    sh:property [
+        sh:path forge:validation_status ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class forge:ValidationStatus ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:validates ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+    ] .
+
+forge:DriftShape
+    a sh:NodeShape ;
+    sh:targetClass forge:Drift ;
+    sh:property [
+        sh:path forge:drift_status ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class forge:DriftAssessmentStatus ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:has_consumer_impact ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning ;
+    ] .
+
+forge:RiskShape
+    a sh:NodeShape ;
+    sh:targetClass forge:Risk ;
+    sh:property [
+        sh:path forge:risk_status ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class forge:RiskStatus ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:has_severity ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in ( "low" "moderate" "high" "critical" ) ;
+        sh:severity sh:Violation ;
+    ] .
+
+forge:MachineHandoffShape
+    a sh:NodeShape ;
+    sh:targetNode forge:machine_handoff_contract ;
+    sh:property [
+        sh:path forge:agent_role ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:task_owned ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:implementation ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:validation_status_text ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in ( "pass" "fail" "hold" ) ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path forge:provenance_id ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Violation ;
+    ] .

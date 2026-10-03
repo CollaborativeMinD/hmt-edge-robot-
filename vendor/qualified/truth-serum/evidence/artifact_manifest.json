@@ -1,0 +1,483 @@
+{
+  "artifacts": [
+    {
+      "disposition": "new",
+      "path": ".gitignore",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": ".python-version",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": ".yamllint",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "Agents.md",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "Index.md",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "README.md",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "Runbook.md",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "Start_here.md",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "architecture/interfaces.md",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "architecture/mission_invariants.md",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "architecture/namespace_compatibility.md",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "architecture/non_claims.md",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "architecture/reason_codes.json",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "architecture/requirements_traceability.md",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "architecture/system_data_flow.mmd",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "architecture/truth_serum.sysml",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "contracts/lane_policy.yaml",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "contracts/schemas/admission_report.schema.json",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "contracts/schemas/admission_trace.schema.json",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "contracts/schemas/evidence_claim.schema.json",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "contracts/schemas/lane_result.schema.json",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "contracts/schemas/machine_handoff.schema.json",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/BLUF.md",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/assumptions_register.json",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/blue_team_convergence.md",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/admission_report.json",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/admission_trace.jsonl",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/bandit.stderr.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/bandit.stdout.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/mypy.stderr.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/mypy.stdout.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/pip-audit.stderr.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/pip-audit.stdout.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/pylint.stderr.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/pylint.stdout.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/pytest.stderr.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/pytest.stdout.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/ruff.stderr.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/ruff.stdout.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/semgrep.stderr.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/semgrep.stdout.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/yamllint.stderr.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/closeout/runtime/raw/yamllint.stdout.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/constraints_register.json",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/machine_handoff.json",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/provenance.json",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/validation_report.json",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "fixtures/claim_source.txt",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "fixtures/release.evidence.jsonl",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "pyproject.toml",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "scaffold.policy.json",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "scripts/admit.sh",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "scripts/pre_commit.sh",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "scripts/verify.sh",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/__init__.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/cli.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/engine.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/evidence.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/external.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/external_exec.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/files.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/gates/__init__.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/gates/aperture.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/gates/architecture.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/gates/claim_contract.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/gates/claim_model.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/gates/claims.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/gates/data.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/gates/data_parse.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/gates/secrets.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/gates/shape.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/gates/shape_paths.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/gates/shell.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/lanes.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/models.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/output.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/policy.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/witness_json.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/witness_rules.yml",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "src/truth_serum_runtime/witnesses.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "tests/__init__.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "tests/_support.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "tests/test_cli_contract.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "tests/test_contracts_and_trace.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "tests/test_repository_gates.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "tests/test_seal_and_hygiene.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "tools/build_artifact_manifest.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "tools/repository_seal.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "tools/seal_contract.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "tools/seal_inventory.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "truth_serum.py",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "modified",
+      "path": "uv.lock",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "evidence/artifact_manifest.json",
+      "reason": "mission-assurance-rebuild"
+    },
+    {
+      "disposition": "new",
+      "path": "REPOSITORY_SEAL.json",
+      "reason": "mission-assurance-rebuild"
+    }
+  ],
+  "blocked_inputs": [
+    "candidate:contradictory-evidence-trees",
+    "candidate:stale-checksum-ledgers",
+    "candidate:fail-open-deployment-probes",
+    "candidate:unbounded-production-modules"
+  ],
+  "provenance_id": "prov_truth_serum_blue_closeout_v1_0_0",
+  "schema_id": "truth_serum.artifact_manifest",
+  "schema_version": "1.0.0"
+}

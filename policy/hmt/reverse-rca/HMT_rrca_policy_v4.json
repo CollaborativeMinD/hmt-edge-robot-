@@ -1,0 +1,130 @@
+{
+  "document_type": "hmt_rrca_policy",
+  "investigation_states": [
+    "INVESTIGATION_COMPLETE",
+    "INVESTIGATION_INCOMPLETE"
+  ],
+  "ledger_contracts": {
+    "cumulative_gate_ledger": {
+      "allowed_backends": [
+        "DuckDB",
+        "Polars",
+        "SQLite"
+      ],
+      "columns": [
+        "timestamp",
+        "task",
+        "gate_id",
+        "requirement",
+        "status",
+        "evidence_ref",
+        "evidence_hash_reason"
+      ],
+      "maximum_columns": 7,
+      "title": "Cumulative Gate Ledger"
+    },
+    "reverse_rca_ledger": {
+      "allowed_backends": [
+        "DuckDB",
+        "Polars",
+        "SQLite"
+      ],
+      "columns": [
+        "timestamp",
+        "incident_id",
+        "checkpoint",
+        "observed_state",
+        "causal_evidence",
+        "validation_test",
+        "disposition"
+      ],
+      "conditional_column": "sub_agent_task_attestation",
+      "maximum_columns_single_agent": 7,
+      "maximum_columns_with_sub_agents": 8,
+      "title": "Reverse RCA Ledger"
+    }
+  },
+  "policy_id": "HMT-RRCA-POLICY",
+  "policy_version": 4,
+  "remediation_states": [
+    "SOLUTION_CANDIDATE_APPLIED",
+    "REQUIRES_OPERATOR_ESCALATION"
+  ],
+  "requirements": [
+    {
+      "evidence": [
+        "tracer_receipt",
+        "task_plan",
+        "implementation_laws"
+      ],
+      "id": "RRCA-TRACER-001",
+      "shall": "Generate and assess a tracer bullet before a full system, plan, or feature build."
+    },
+    {
+      "evidence": [
+        "Runbook.md",
+        "Agents.md"
+      ],
+      "id": "RRCA-ROOT-002",
+      "shall": "Place SOP-style Runbook.md and orchestration/interception Agents.md at every edited or handoff package root."
+    },
+    {
+      "condition": "sub_agents_used",
+      "evidence": [
+        "reverse_rca_ledger.sub_agent_task_attestation"
+      ],
+      "id": "RRCA-SUBAGENT-003",
+      "shall": "Perform cross-spectrum contradiction checking and record sub-agent task attestation."
+    },
+    {
+      "evidence": [
+        "cumulative_gate_ledger"
+      ],
+      "id": "RRCA-CUMULATIVE-004",
+      "shall": "After each task item and at completion, rerun all previously passing gates."
+    },
+    {
+      "evidence": [
+        "reverse_rca_ledger",
+        "cumulative_gate_ledger"
+      ],
+      "id": "RRCA-STOP-005",
+      "shall": "Stop progression when a new change corrupts a previously good state; repair and regress before continuing."
+    },
+    {
+      "id": "RRCA-CAUSAL-006",
+      "prohibition": "Do not traverse speculatively beyond the last evidenced causal edge.",
+      "shall": "Traverse backward from the observed output through evidenced admission, authority, and causal edges to a reproducible initiating condition or explicit boundary."
+    },
+    {
+      "evidence": [
+        "regression_results"
+      ],
+      "id": "RRCA-REPAIR-007",
+      "shall": "Apply the bounded repair and validate forward through the previously broken causal chain using stable gate IDs."
+    },
+    {
+      "evidence": [
+        "reverse_rca_ledger"
+      ],
+      "id": "RRCA-LEDGER-008",
+      "shall": "Record every initiated investigation from observation through disposition in the Reverse RCA Ledger."
+    },
+    {
+      "disposition": "REQUIRES_OPERATOR_ESCALATION",
+      "id": "RRCA-ESCALATE-009",
+      "shall": "Escalate environmental limits, architectural drift, insufficient authority, and reality-bound consequences instead of widening scope."
+    }
+  ],
+  "schema_version": "4.0.0",
+  "source_document": "HMT_rrca_policy_v4.md",
+  "source_sha256": "9e40b6b088a8196f959fba170403d0b6da8340a27ab1fe04a5843004e234076d",
+  "stable_gate_examples": [
+    "G-ARCH-001",
+    "G-SCHEMA-002",
+    "G-AUTH-003",
+    "G-RUNTIME-004",
+    "G-REPLAY-005"
+  ],
+  "status": "ACTIVE"
+}

@@ -37,7 +37,7 @@ def exact_fields(value: dict[str, Any], names: set[str]) -> None:
 
 def evaluate(root: Path) -> dict[str, Any]:
     policy = json.loads(confined(root, str(POLICY)).read_text())
-    exact_fields(policy, {"schema_version", "target", "files", "tools", "candidates"})
+    exact_fields(policy, {"schema_version", "target", "files", "tools", "candidates", "qualified_sources"})
     if type(policy["schema_version"]) is not int or policy["schema_version"] != 1:
         raise ValueError("ADMISSION_SCHEMA_VERSION")
     if policy["target"] != {"os": "linux", "architecture": "aarch64", "orchestrator": "k3s", "deployment": "HOLD"}:
@@ -47,6 +47,12 @@ def evaluate(root: Path) -> dict[str, Any]:
     for name, expected in policy["files"].items():
         if digest(confined(root, name)) != expected:
             raise ValueError("ADMISSION_DIGEST_MISMATCH:" + name)
+    sources = policy["qualified_sources"]
+    if not isinstance(sources, dict) or not 1 <= len(sources) <= 256:
+        raise ValueError("QUALIFIED_SOURCE_BOUNDS")
+    for name, expected in sources.items():
+        if digest(confined(root, name)) != expected:
+            raise ValueError("QUALIFIED_SOURCE_DIGEST_MISMATCH:" + name)
     lock = tomllib.loads(confined(root, "uv.lock").read_text())
     packages = {entry["name"]: entry["version"] for entry in lock["package"]}
     if not isinstance(policy["tools"], dict) or set(policy["tools"]) != {"pyrefly", "ruff", "pytest", "pytest-cov", "marimo"}:

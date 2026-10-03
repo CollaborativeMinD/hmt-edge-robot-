@@ -1,0 +1,656 @@
+{
+  "architecture_decision": {
+    "classical_graph_core": "networkx_plus_duckdb_projection",
+    "convergence": "granite_semantic_review_plus_deterministic_reducer",
+    "cross_channel_witness": "semantic_overwatch_plus_deterministic_reducer",
+    "direct_actuation": "prohibited",
+    "embodied_multimodal_specialist": "qwen_drive_1_0_4b",
+    "embodied_planning_authority": "shadow_advisory_only",
+    "forecast_primary": "amazon_chronos_2",
+    "forecast_secondary_edge": "datadog_toto_2_0",
+    "learned_convergence_classifier": "removed",
+    "orchestrator": "lfm",
+    "semantic_supervisor": "ibm_granite_3_3_2b_instruct",
+    "timesfm": "prohibited_from_deployable_profiles"
+  },
+  "authority": "human_architect",
+  "baseline_impact": {
+    "authority_widening": "NONE",
+    "deterministic_reducer_changed": false,
+    "frozen_mcp_tool_count_after": 13,
+    "frozen_mcp_tool_count_before": 13,
+    "networkx_core_changed": false,
+    "new_general_mcp_tools": 0,
+    "qwen_drive_exposure": "internal_embodied_specialist_socket_only"
+  },
+  "change_record": {
+    "authority_widening": "NONE",
+    "change_id": "HMT-MODEL-ADD-QWEN-DRIVE-001",
+    "change_type": "ADDITIVE_MINOR_VERSION",
+    "summary": "Adds a revision-pinned Qwen-Drive embodied multimodal SHADOW specialist and updates the frozen MCP reference to v1.2.0."
+  },
+  "configuration_boundary": {
+    "configurable": [
+      "enabled_role_profile",
+      "checkpoint_identifier",
+      "checkpoint_revision",
+      "device",
+      "quantization",
+      "resource_ceilings",
+      "license_policy_id",
+      "local_model_path",
+      "offline_only"
+    ],
+    "not_configurable": [
+      "role_authority",
+      "reducer_rules",
+      "required_packet_fields",
+      "evidence_requirements",
+      "retry_ceilings",
+      "controlled_dispositions"
+    ]
+  },
+  "convergence_policy": {
+    "admission_failure_consumes_semantic_attempt": false,
+    "autonomous_semantic_rework_cycles": 2,
+    "completion_rule": "only_human_or_separately_admitted_authority_may_grant_done",
+    "escalate_on_semantic_review_attempt": 3,
+    "escalation_conditions": [
+      "third_semantic_review_failure",
+      "repeated_unresolved_finding",
+      "policy_ambiguity",
+      "model_runtime_failure",
+      "invalid_or_unverifiable_evidence"
+    ],
+    "implementation": "granite_semantic_re_review_plus_deterministic_retry_ceiling",
+    "scikit_learn_training": "removed",
+    "separate_counters": [
+      "admission_attempt_count",
+      "semantic_review_attempt_count"
+    ]
+  },
+  "current_qualification": {
+    "as_of_utc": "2026-09-04T03:17:20Z",
+    "critical_remote_lfs_hash_lock": "PASS",
+    "live_effect_authority": "PROHIBITED",
+    "local_model_bytes_safeguarded": "HOLD_EXTERNAL_EGRESS_UNAVAILABLE",
+    "local_runtime_inference": "HOLD_TARGET_CUDA_24G_NOT_AVAILABLE",
+    "official_benchmarks": "SOURCE_REPORTED_NOT_INDEPENDENTLY_REPRODUCED",
+    "overall": "CANDIDATE_SHADOW_HOLD_RUNTIME_AND_BYTE_SAFEGUARD",
+    "remote_hf_job_inference": "HOLD_HF_JOBS_PAYMENT_REQUIRED",
+    "upstream_metadata_and_license": "PASS"
+  },
+  "deployment_ladder": [
+    "OFFLINE_STATIC_INTEGRITY",
+    "OFFLINE_INFERENCE",
+    "RECORDED_DATA_REPLAY",
+    "LIVE_TELEMETRY_SHADOW",
+    "DIGITAL_TWIN_CLOSED_LOOP",
+    "HARDWARE_IN_LOOP_SHADOW",
+    "CONTROLLED_CLOSED_COURSE_SUPERVISED",
+    "SEPARATE_HUMAN_PROMOTION_REQUIRED"
+  ],
+  "descendant_model_policy": {
+    "evaluation_fixture_leakage_prohibited": true,
+    "full_regression_and_cross_channel_qualification_required": true,
+    "inherit_authority": false,
+    "new_model_identity_required": true,
+    "raw_production_exhaust_prohibited": true,
+    "required_reentry_state": "SHADOW",
+    "training_source_rule": "admitted_content_addressed_evidence_only"
+  },
+  "document_schema_version": "1.1.0",
+  "document_type": "hmt_model_roles_and_convergence_policy",
+  "effective_at": null,
+  "embodied_model_boundary": {
+    "command_seam": "BLOCK_UNTIL_SEPARATELY_HUMAN_PROMOTED",
+    "domain_transfer": {
+      "forklift_domain_status": "HOLD_UNQUALIFIED_TRANSFER",
+      "released_camera_layouts": "fixed_6_or_8_camera_surround_rigs",
+      "released_resolution": [
+        896,
+        512
+      ],
+      "required_requalification": [
+        "camera_geometry",
+        "calibration",
+        "indoor_lighting",
+        "load_occlusion",
+        "low_speed_kinematics",
+        "mechanical_health_channels",
+        "twin_and_hil"
+      ]
+    },
+    "license_policy": "apache_2_0_allowlisted",
+    "mode_conflict_resolution": {
+      "governing_rule": "planner_rl_reasoning_only_planner_sft_direct_or_reasoning",
+      "observed": "generic_demo_executes_direct_and_reasoning_with_attached_planner",
+      "reason": "adopt_stricter_upstream_readme_mode_guidance"
+    },
+    "model_id": "Qwen/Qwen-Drive-1.0-4B",
+    "model_revision": "28484089a7cc8c335cf5089fb0745cf7c49b6eaa",
+    "modes": {
+      "bev_perception": {
+        "authority": "observation_only",
+        "head": "perception"
+      },
+      "direct_planning": {
+        "authority": "candidate_only",
+        "head": "planner-sft"
+      },
+      "reasoning_planning_rl": {
+        "authority": "candidate_only",
+        "head": "planner-rl"
+      },
+      "reasoning_planning_sft": {
+        "authority": "candidate_only",
+        "head": "planner-sft"
+      },
+      "vqa": {
+        "authority": "advisory",
+        "head": null
+      }
+    },
+    "runtime_reference": {
+      "cuda": "12.8",
+      "dtype": "bfloat16",
+      "gpu_memory_gib_min_recommended": 24,
+      "python": "3.12",
+      "requirements_source": "QwenLM/Qwen-Drive-1.0@28091c1532e869bc7aee91fc0aef6b3e6fd0b2e0/requirements.txt"
+    },
+    "shared_vlm": "Qwen3.5-4B",
+    "source_repository": "QwenLM/Qwen-Drive-1.0",
+    "source_revision": "28091c1532e869bc7aee91fc0aef6b3e6fd0b2e0",
+    "trajectory_contract": {
+      "fields": [
+        "x_m",
+        "y_m",
+        "heading_rad"
+      ],
+      "frequency_hz": 10.0,
+      "horizon_seconds": 5.0,
+      "shape": [
+        "N",
+        50,
+        3
+      ]
+    }
+  },
+  "embodied_specialist_admission_order": [
+    "complete_local_safeguard_pull_and_full_hash",
+    "run_offline_vqa_and_planning_tracer_on_official_demo",
+    "run_bev_perception_tracer",
+    "bind_output_to_semantic_overwatch_without_tool_or_effect_authority",
+    "bind_candidate_trajectory_through_gcb_and_mcp_plus_admission",
+    "run_digital_twin_and_hardware_in_loop_shadow_campaigns",
+    "run_controlled_closed_course_supervised_campaign",
+    "human_architect_review_and_separate_promotion"
+  ],
+  "embodied_specialist_qualification_gates": [
+    "pinned_model_and_source_revision",
+    "apache_2_0_license_admission",
+    "full_model_byte_hash_verification",
+    "safetensors_header_and_tensor_inventory",
+    "official_demo_positive_path",
+    "malformed_scene_negative_path",
+    "missing_or_tampered_head_rejection",
+    "vqa_output_contract",
+    "bev_output_contract",
+    "direct_planning_output_contract",
+    "reasoning_planning_output_contract",
+    "text_bev_trajectory_consistency_witness",
+    "deterministic_seed_and_sampling_receipts",
+    "target_latency_and_resource_ceiling",
+    "network_egress_disabled_after_safeguard",
+    "digital_twin_shadow_replay",
+    "hardware_in_loop_shadow",
+    "controlled_closed_course_shadow",
+    "gcb_mcp_plus_semantic_overwatch_parity",
+    "no_actuator_or_authority_mutation",
+    "human_architect_promotion"
+  ],
+  "embodied_specialist_telemetry_required_fields": [
+    "transaction_id",
+    "mission_id",
+    "task_id",
+    "agent_id",
+    "model_revision",
+    "source_revision",
+    "mode",
+    "head",
+    "scene_id",
+    "input_hash",
+    "output_hash",
+    "reasoning_hash",
+    "perception_hash",
+    "trajectory_hash",
+    "trajectory_shape",
+    "seed",
+    "latency_ms",
+    "vram_peak_bytes",
+    "ram_peak_bytes",
+    "semantic_overwatch_events",
+    "twin_residuals",
+    "gcb_decision",
+    "deterministic_command_seam_decision",
+    "operator_disposition",
+    "final_disposition"
+  ],
+  "forecast_interface": {
+    "inputs": [
+      "validated_targets",
+      "past_covariates",
+      "optional_future_covariates",
+      "context_bound",
+      "horizon_bound",
+      "requested_quantiles"
+    ],
+    "invariants": [
+      "same_interface_across_backends",
+      "bounded_series_context_and_horizon",
+      "pure_tool_behavior",
+      "append_only_telemetry",
+      "fail_closed_license_gate"
+    ],
+    "outputs": [
+      "model_metadata",
+      "point_forecasts_when_supported",
+      "quantile_forecasts",
+      "input_hash",
+      "output_hash",
+      "validation_receipts"
+    ],
+    "profile_id": "forecast_tool_v1"
+  },
+  "frozen_references": [
+    {
+      "artifact": "HMT_Model_Roles_and_Convergence_Policy_v1.0.0.json",
+      "mutation": "forbidden",
+      "sha256": "ae4b024108a32717a5c2d93e0aa6f497bb5aaeb4c1cf186bbca002af1fe3afe1"
+    },
+    {
+      "artifact": "HMT_Baseline_MCP_Tools_v1.2.0.json",
+      "mutation": "forbidden",
+      "sha256": "7b0d96e40ba3b678c7b2c463063052dd61a8781c97f2231a8b76de10fbf22be8"
+    },
+    {
+      "artifact": "HMT_Axioms_Policy_v1.0.0.json",
+      "mutation": "forbidden",
+      "sha256": "a32f92ab9c090c25a8d19e5a8e17dd97ecb289ab1aab7f29c216b4f2bba982da"
+    },
+    {
+      "artifact": "HMT_rrca_policy_v4.json",
+      "mutation": "forbidden",
+      "sha256": "dd20bbcf45cf1c1a9767df0a98b854d8ca3b0958c58336809162de53645c57af"
+    }
+  ],
+  "issued_at": "2026-09-04T03:17:20Z",
+  "migration_order": [
+    "remove_timesfm_from_active_config_dependencies_registry_smoke_tests_and_fallbacks",
+    "bind_chronos_2_to_existing_forecast_interface_and_qualify",
+    "bind_toto_2_0_as_secondary_edge_and_run_identical_contract_suite",
+    "add_granite_3_3_2b_behind_completion_review_ingress_without_general_tool_exposure",
+    "add_immutable_review_packet_and_strict_result_validation",
+    "add_deterministic_reducer_separate_counters_and_escalation_ceiling",
+    "verify_cross_role_non_impersonation_and_no_operational_tool_access",
+    "run_complete_mission_to_validated_jsonl_tracer_before_promotion",
+    "safeguard_revision_pinned_qwen_drive_model_and_source_bytes",
+    "qualify_vqa_bev_planner_sft_and_reasoning_only_planner_rl_offline",
+    "bind_text_bev_trajectory_outputs_to_semantic_overwatch_and_graphbrain_evidence",
+    "run_recorded_replay_twin_hil_and_controlled_course_shadow_before_any_effect_promotion"
+  ],
+  "model_profiles": [
+    {
+      "backend": "amazon_chronos_2",
+      "capability_requirements": [
+        "univariate",
+        "multivariate",
+        "past_covariates",
+        "future_covariates",
+        "probabilistic_quantiles"
+      ],
+      "checkpoint": "amazon/chronos-2",
+      "deployment_status": "eligible_after_tracer_qualification",
+      "license_policy": "apache_2_0_allowlisted",
+      "profile_id": "forecast_primary",
+      "role": "primary"
+    },
+    {
+      "backend": "datadog_toto_2_0",
+      "capability_requirements": [
+        "multivariate",
+        "probabilistic_quantiles",
+        "configurable_checkpoint_size",
+        "same_forecast_tool_contract"
+      ],
+      "checkpoint_family": "Datadog/Toto-2.0",
+      "deployment_status": "eligible_after_tracer_qualification",
+      "license_policy": "apache_2_0_allowlisted",
+      "profile_id": "forecast_secondary_edge",
+      "role": "secondary_and_edge"
+    },
+    {
+      "authority_ceiling": "advisory_text_only",
+      "backend": "qwen_drive_1_0_4b",
+      "checkpoint": "Qwen/Qwen-Drive-1.0-4B",
+      "deployment_status": "HOLD_RUNTIME_QUALIFICATION",
+      "head": null,
+      "profile_id": "qwen_drive_vqa_shadow",
+      "revision": "28484089a7cc8c335cf5089fb0745cf7c49b6eaa",
+      "role": "driving_and_general_vqa_shadow"
+    },
+    {
+      "authority_ceiling": "observation_only",
+      "backend": "qwen_drive_1_0_4b",
+      "checkpoint": "Qwen/Qwen-Drive-1.0-4B",
+      "deployment_status": "HOLD_RUNTIME_QUALIFICATION",
+      "head": "perception",
+      "profile_id": "qwen_drive_bev_perception_shadow",
+      "revision": "28484089a7cc8c335cf5089fb0745cf7c49b6eaa",
+      "role": "explicit_3d_perception_shadow"
+    },
+    {
+      "authority_ceiling": "candidate_only",
+      "backend": "qwen_drive_1_0_4b",
+      "checkpoint": "Qwen/Qwen-Drive-1.0-4B",
+      "deployment_status": "HOLD_RUNTIME_QUALIFICATION",
+      "head": "planner-sft",
+      "profile_id": "qwen_drive_planner_sft_shadow",
+      "revision": "28484089a7cc8c335cf5089fb0745cf7c49b6eaa",
+      "role": "direct_and_reasoning_candidate_planning"
+    },
+    {
+      "authority_ceiling": "candidate_only",
+      "backend": "qwen_drive_1_0_4b",
+      "checkpoint": "Qwen/Qwen-Drive-1.0-4B",
+      "deployment_status": "HOLD_RUNTIME_QUALIFICATION",
+      "head": "planner-rl",
+      "profile_id": "qwen_drive_planner_rl_shadow",
+      "revision": "28484089a7cc8c335cf5089fb0745cf7c49b6eaa",
+      "role": "reasoning_conditioned_candidate_planning_only"
+    }
+  ],
+  "policy_id": "HMT-MODEL-ROLES-CONVERGENCE",
+  "policy_version": "1.1.0",
+  "prohibited_profiles": [
+    {
+      "archive_policy": "historical_receipts_only_as_NON_DEPLOYABLE_ARCHIVE",
+      "family": "TimesFM",
+      "prohibitions": [
+        "active_model_profile",
+        "runtime_download",
+        "deployable_dependency",
+        "fallback_selection",
+        "production_or_commercial_execution"
+      ],
+      "reason_code": "LICENSE_INCOMPATIBLE_WITH_DEPLOYABLE_HMT_PROFILE",
+      "stale_config_disposition": "REJECT_AND_LOG"
+    }
+  ],
+  "qualification_references": [
+    "https://huggingface.co/ibm-granite/granite-3.3-2b-instruct",
+    "https://huggingface.co/amazon/chronos-2",
+    "https://huggingface.co/Datadog/Toto-2.0-4m",
+    "https://huggingface.co/google/timesfm-3.0-pytorch/blob/main/LICENSE",
+    "https://huggingface.co/Qwen/Qwen-Drive-1.0-4B",
+    "https://github.com/QwenLM/Qwen-Drive-1.0/tree/28091c1532e869bc7aee91fc0aef6b3e6fd0b2e0",
+    "https://arxiv.org/abs/2609.00111"
+  ],
+  "reducer": {
+    "checks": [
+      "packet_hash_match",
+      "schema_exactness",
+      "complete_requirement_coverage",
+      "evidence_reference_validity",
+      "contradiction_resolution",
+      "reason_code_validity",
+      "retry_counter_bounds",
+      "policy_gate_satisfaction"
+    ],
+    "controlled_dispositions": [
+      "QUARANTINED",
+      "REWORK",
+      "REVIEW_READY",
+      "HUMAN_ESCALATION"
+    ],
+    "done_is_excluded": true,
+    "type": "deterministic",
+    "unknown_or_malformed_result": "QUARANTINED"
+  },
+  "roles": [
+    {
+      "authority_ceiling": "proposal_only",
+      "component_family": "LFM",
+      "duties": [
+        "interpret_admitted_mission",
+        "propose_task_decomposition",
+        "select_registered_tools",
+        "sequence_admitted_tool_calls",
+        "package_evidence_references"
+      ],
+      "forbidden": [
+        "approve_completion",
+        "grant_done",
+        "mutate_authority",
+        "bypass_policy",
+        "adjudicate_own_work",
+        "impersonate_semantic_supervisor"
+      ],
+      "profile_id": "lfm_orchestrator",
+      "role_id": "orchestrator"
+    },
+    {
+      "authority_ceiling": "advisory_findings_only",
+      "checkpoint": "ibm-granite/granite-3.3-2b-instruct",
+      "component_family": "IBM Granite",
+      "duties": [
+        "compare_completion_packet_to_user_request",
+        "compare_completion_packet_to_pinned_policy",
+        "compare_completion_packet_to_accepted_decomposition",
+        "classify_every_definition_of_done_requirement",
+        "identify_bounded_rework",
+        "recommend_nonbinding_disposition"
+      ],
+      "forbidden": [
+        "call_operational_tools",
+        "call_task_tools",
+        "call_authority_tools",
+        "mutate_task_board",
+        "mutate_graphrag",
+        "mutate_policy",
+        "mutate_evidence",
+        "retrieve_outside_packet",
+        "grant_done",
+        "override_reducer",
+        "convert_missing_evidence_to_pass"
+      ],
+      "profile_id": "granite_3_3_2b_instruct_supervisor",
+      "role_id": "semantic_supervisor"
+    },
+    {
+      "authority_ceiling": "controlled_disposition_only",
+      "component_family": "deterministic_code",
+      "duties": [
+        "validate_packet_hashes",
+        "validate_schema",
+        "validate_requirement_coverage",
+        "validate_evidence_references",
+        "validate_contradiction_flags",
+        "apply_retry_counters",
+        "apply_escalation_rules",
+        "emit_controlled_disposition"
+      ],
+      "forbidden": [
+        "infer_missing_semantics",
+        "grant_done",
+        "widen_policy",
+        "accept_unknown_fields"
+      ],
+      "profile_id": "deterministic_reducer",
+      "role_id": "state_disposition"
+    },
+    {
+      "authority_ceiling": "pure_tool_output",
+      "component_family": "config_swappable_forecasting_backend",
+      "duties": [
+        "bounded_forecasting",
+        "point_and_quantile_output_when_supported",
+        "input_output_hashing",
+        "append_only_telemetry",
+        "validated_evidence_emission"
+      ],
+      "forbidden": [
+        "authority_mutation",
+        "task_mutation",
+        "unbounded_input",
+        "unlicensed_profile_execution"
+      ],
+      "profile_id": "forecast_tool",
+      "role_id": "time_series_forecasting"
+    },
+    {
+      "authority_ceiling": "shadow_advisory_perception_and_trajectory_only",
+      "component_family": "Qwen-Drive",
+      "duties": [
+        "driving_vqa",
+        "explicit_bev_perception",
+        "candidate_trajectory_generation",
+        "cross_channel_evidence_emission",
+        "shadow_replay_support"
+      ],
+      "forbidden": [
+        "direct_actuator_calls",
+        "live_vehicle_control",
+        "task_state_mutation",
+        "authority_mutation",
+        "grant_done",
+        "self_promotion",
+        "training_corpus_admission",
+        "override_gcb",
+        "override_semantic_overwatch",
+        "override_digital_twin_or_hardware_gates"
+      ],
+      "profile_id": "qwen_drive_1_0_4b_shadow",
+      "role_id": "embodied_multimodal_driving_specialist"
+    }
+  ],
+  "scope": [
+    "hmt_quickstarter_repositories",
+    "embedded_mcp_control_planes",
+    "graphrag_evidence_paths",
+    "task_completion_review",
+    "bounded_time_series_forecasting",
+    "embodied_multimodal_perception",
+    "shadow_motion_planning",
+    "digital_twin_and_hil_qualification",
+    "semantic_overwatch_cross_channel_review"
+  ],
+  "semantic_result_contract": {
+    "additional_properties": false,
+    "coverage_rule": "exactly_one_finding_per_definition_of_done_requirement",
+    "failure_posture": "fail_closed",
+    "finding_required_fields": [
+      "requirement_id",
+      "verdict",
+      "evidence_refs",
+      "reason_code"
+    ],
+    "recommendation_is_binding": false,
+    "recommended_disposition_enum": [
+      "REVIEW_READY",
+      "REWORK",
+      "HUMAN_ESCALATION"
+    ],
+    "required_fields": [
+      "packet_id",
+      "packet_hash",
+      "model_profile_id",
+      "findings",
+      "unresolved_items",
+      "recommended_disposition"
+    ],
+    "verdict_enum": [
+      "SATISFIED",
+      "UNSATISFIED",
+      "CONTRADICTED",
+      "INSUFFICIENT_EVIDENCE"
+    ]
+  },
+  "status": "CANDIDATE_FOR_HUMAN_ARCHITECT_PROMOTION",
+  "supersedes_after_promotion": "HMT-MODEL-ROLES-CONVERGENCE/1.0.0",
+  "supervisor_review_packet": {
+    "additional_properties": false,
+    "immutability": "content_addressed",
+    "name": "SupervisorReviewPacket",
+    "required_fields": [
+      "packet_id",
+      "schema_version",
+      "created_at",
+      "content_hash",
+      "task_id",
+      "parent_mission_id",
+      "task_status",
+      "user_request",
+      "user_request_hash",
+      "pinned_policies",
+      "accepted_decomposition",
+      "definition_of_done",
+      "changed_artifacts",
+      "deterministic_receipts",
+      "evidence_excerpts",
+      "prior_findings",
+      "admission_attempt_count",
+      "semantic_review_attempt_count"
+    ],
+    "scope_rules": [
+      "task_scoped_only",
+      "stable_evidence_references_only",
+      "no_live_retrieval_by_supervisor",
+      "hash_all_mutable_payloads"
+    ]
+  },
+  "telemetry_invariants": [
+    "append_only",
+    "tuning_lane_read_only_to_authority",
+    "tuning_lane_read_only_to_task_state",
+    "training_records_from_admitted_content_addressed_packets_only"
+  ],
+  "telemetry_required_fields": [
+    "transaction_id",
+    "mission_id",
+    "task_id",
+    "attempt_id",
+    "packet_id",
+    "model_profile_id",
+    "policy_ids",
+    "checkpoint_revision",
+    "runtime",
+    "device",
+    "quantization",
+    "license_policy_result",
+    "input_hash",
+    "output_hash",
+    "admission_decision",
+    "semantic_findings",
+    "evidence_refs",
+    "reducer_decision",
+    "latency_ms",
+    "resource_observations",
+    "error",
+    "final_disposition"
+  ],
+  "title": "HMT Model Roles, Convergence, and Embodied Specialist Policy",
+  "tracer_qualification_gates": [
+    "local_initialization_and_bounded_execution",
+    "required_contract_output",
+    "deterministic_schema_rejection",
+    "fail_closed_error_behavior",
+    "complete_telemetry_and_content_addressed_lineage",
+    "network_egress_disabled_by_default",
+    "license_compatibility",
+    "target_device_resource_ceiling",
+    "replayable_golden_and_negative_cases",
+    "no_authority_or_task_state_mutation",
+    "documented_swap_and_rollback_points"
+  ]
+}

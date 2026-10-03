@@ -52,3 +52,8 @@ Phase 1 CI: critical inputs and tool versions are bound by `policy/ci_admission.
 Check uv lock freshness before locked installation. Reject unreviewed candidate promotion;
 never execute the retained candidate ZIPs or expose cluster/provider credentials in PR CI.
 Preserve existing gates and archive seals. Refer to `docs/ci_cd.md` for continuation boundaries.
+
+Phase 2 permits only the pinned read-only support interfaces in `policy/ci_support.json`.
+Qualified source copies are independently hash-bound before installation. Preserve original
+archives and record deltas. Assessment PASS never promotes a policy with unresolved HOLDs.
+No hook, lease, full-engine admission, Docker build, or deployment is admitted by this profile.

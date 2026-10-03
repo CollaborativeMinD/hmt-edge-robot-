@@ -1,0 +1,434 @@
+{
+  "baseline_id": "HMT-MCP-BASELINE",
+  "baseline_version": "1.3.0",
+  "canonical_tool_count": 14,
+  "change_control": {
+    "authority_widening_policy": "EXPLICIT_HUMAN_PROMOTION_REQUIRED",
+    "baseline_mutation_policy": "NEW_VERSION_REQUIRED",
+    "model_self_modification": "PROHIBITED",
+    "schema_implementation_drift": "HOLD",
+    "tool_removal_policy": "HUMAN_ARCHITECT_APPROVAL_REQUIRED"
+  },
+  "change_record": {
+    "change_id": "HMT-REFERENCE-BUILD-003",
+    "change_type": "ADDITIVE_MINOR_VERSION",
+    "authority": "human_architect_explicit_principle_build_order",
+    "authority_widening": "NO_RUNTIME_AUTHORITY_WIDENING",
+    "added_tools": [
+      "reference_build"
+    ],
+    "changed_tools": [],
+    "removed_tools": [],
+    "implementation_bundles": [
+      "hmt-reference-build-1.0.0"
+    ]
+  },
+  "completion_transaction": {
+    "entry_tool": "task_update",
+    "fixed_order": [
+      "validate_mission_authority_and_assignment",
+      "hash_submitted_package",
+      "run_truth_serum",
+      "check_reverse_rca_ledger",
+      "check_cumulative_gate_ledger",
+      "run_scaffoldctl",
+      "validate_package_test_manifest",
+      "run_bounded_package_tests",
+      "persist_immutable_receipt",
+      "verify_task_board",
+      "working_agreement",
+      "apply_review_quarantine_or_escalation_disposition",
+      "emit_corrective_feedback_if_rejected"
+    ],
+    "permitted_dispositions": [
+      "REVIEW",
+      "QUARANTINED",
+      "ESCALATED"
+    ],
+    "prohibited_behavior": [
+      "model_selected_firewall_bypass",
+      "missing_test_bypass",
+      "test_suppression",
+      "stale_test_receipt_review",
+      "task_update_self_promotion_to_done",
+      "unreceipted_task_mutation"
+    ]
+  },
+  "document_type": "hmt_baseline_mcp_tool_manifest",
+  "extension_policy": {
+    "repository_specific_skill_target": 5,
+    "repository_specific_skills_must_be": [
+      "executable",
+      "typed",
+      "bounded",
+      "auditable",
+      "repository_specific",
+      "independently_tested"
+    ],
+    "repository_specific_skills_must_not": [
+      "replace_a_baseline_tool",
+      "silently_widen_authority",
+      "duplicate_a_baseline_tool_under_a_new_name",
+      "exist_only_as_prose_instructions"
+    ]
+  },
+  "freeze_authority": "human_architect_explicit_order",
+  "frozen_at": null,
+  "internal_control_plane": [
+    "CORE_CAPABILITIES",
+    "TOOL_SCHEMAS",
+    "skills_df",
+    "_TOOL_FUNCS",
+    "_execute_tool",
+    "tool_routing_index",
+    "verify_capability_registry",
+    "resolve_agent_state",
+    "typed_task_board_store",
+    "append_only_execution_receipts"
+  ],
+  "schema_version": "1.2.0",
+  "source_lineage": {
+    "git_lane_source": "reusable mcp tool setup for git-lane skills.py",
+    "last_verified_source": "Agent Building Quickstarter Kit v10 - Control and GraphRAG_notebook.py",
+    "lineage_note": "v1.3.0 adds reference_build. The v1.2.0 thirteen-tool definitions, test firewall, corrective feedback and completion transaction are unchanged.",
+    "quickstarter_versions_reviewed": [
+      "v1",
+      "v2",
+      "v3",
+      "v4",
+      "v5",
+      "v6",
+      "v7",
+      "v8",
+      "v9",
+      "v10"
+    ],
+    "reference_build_source": "HMT_Transformation_Kernel_v4.0.0(7).zip"
+  },
+  "sovereign_adapter_interfaces": [
+    "truth-serum",
+    "scaffoldctl",
+    "rrca-build",
+    "sysml-build",
+    "control-build"
+  ],
+  "status": "CANDIDATE_FOR_HUMAN_ARCHITECT_PROMOTION",
+  "supersedes": "HMT-MCP-BASELINE/1.2.0",
+  "title": "HMT Baseline MCP Tool Surface v1.3.0 (Promotion Candidate)",
+  "tool_groups": [
+    {
+      "group_id": "repository_operations",
+      "tool_count": 4,
+      "tools": [
+        "list_files",
+        "read_file",
+        "write_file",
+        "run_command"
+      ]
+    },
+    {
+      "group_id": "task_control",
+      "tool_count": 6,
+      "tools": [
+        "tasks_list",
+        "task_get",
+        "task_update",
+        "task_create",
+        "working_agreement",
+        "verify_task_board"
+      ]
+    },
+    {
+      "group_id": "capability_discovery",
+      "tool_count": 1,
+      "tools": [
+        "list_skills"
+      ]
+    },
+    {
+      "group_id": "evidence_retrieval",
+      "tool_count": 1,
+      "tools": [
+        "memory_search"
+      ]
+    },
+    {
+      "group_id": "version_control",
+      "tool_count": 1,
+      "tools": [
+        "git_lane"
+      ]
+    },
+    {
+      "group_id": "reference_bounded_engineering",
+      "tool_count": 1,
+      "tools": [
+        "reference_build"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "effect": "observe",
+      "group": "repository_operations",
+      "mandatory_controls": [
+        "repository_root_containment",
+        "path_normalization",
+        "bounded_result_count",
+        "fail_closed_on_boundary_violation",
+        "execution_receipt"
+      ],
+      "name": "list_files",
+      "ordinal": 1,
+      "purpose": "List admitted files within the bounded repository root.",
+      "requires_mission_packet": true
+    },
+    {
+      "effect": "observe",
+      "group": "repository_operations",
+      "mandatory_controls": [
+        "repository_root_containment",
+        "path_normalization",
+        "secret_and_binary_rejection",
+        "bounded_input_bytes",
+        "execution_receipt"
+      ],
+      "name": "read_file",
+      "ordinal": 2,
+      "purpose": "Read an admitted text file from the bounded repository root.",
+      "requires_mission_packet": true
+    },
+    {
+      "effect": "mutate",
+      "group": "repository_operations",
+      "mandatory_controls": [
+        "repository_root_containment",
+        "path_normalization",
+        "authority_and_assignment_admission",
+        "bounded_write_bytes",
+        "content_hash",
+        "execution_receipt"
+      ],
+      "name": "write_file",
+      "ordinal": 3,
+      "purpose": "Create or update an admitted file within the bounded repository root.",
+      "requires_mission_packet": true
+    },
+    {
+      "effect": "execute",
+      "group": "repository_operations",
+      "mandatory_controls": [
+        "shell_false",
+        "command_allowlist",
+        "fixed_timeout",
+        "bounded_stdout_stderr",
+        "working_directory_containment",
+        "execution_receipt"
+      ],
+      "name": "run_command",
+      "ordinal": 4,
+      "purpose": "Execute an admitted deterministic command without a shell.",
+      "requires_mission_packet": true
+    },
+    {
+      "aliases": [
+        "task_board"
+      ],
+      "effect": "observe",
+      "group": "task_control",
+      "mandatory_controls": [
+        "authoritative_state_source",
+        "typed_task_rows",
+        "bounded_result_count",
+        "no_state_mutation"
+      ],
+      "name": "tasks_list",
+      "ordinal": 5,
+      "purpose": "Return authoritative task-board cards and lifecycle states.",
+      "requires_mission_packet": false
+    },
+    {
+      "effect": "mutate",
+      "group": "task_control",
+      "mandatory_controls": [
+        "authority_and_assignment_admission",
+        "single_task_claim",
+        "legal_state_transition",
+        "execution_receipt"
+      ],
+      "name": "task_get",
+      "ordinal": 6,
+      "purpose": "Claim one admitted unstarted task for the assigned agent.",
+      "requires_mission_packet": true
+    },
+    {
+      "effect": "mutate",
+      "group": "task_control",
+      "mandatory_controls": [
+        "authority_and_assignment_admission",
+        "package_hash",
+        "truth_serum_check",
+        "reverse_rca_check",
+        "cumulative_gate_check",
+        "scaffoldctl_check",
+        "strict_package_test_manifest",
+        "complete_test_inventory",
+        "no_test_suppressions",
+        "sandboxed_shell_false_test_execution",
+        "server_owned_test_execution_policy",
+        "bounded_test_resources",
+        "current_package_test_receipt",
+        "append_only_receipt",
+        "corrective_feedback_outbox",
+        "reverse_rca_resubmission",
+        "verify_task_board_coupling",
+        "working_agreement_coupling",
+        "no_self_promotion_to_done"
+      ],
+      "name": "task_update",
+      "ordinal": 7,
+      "purpose": "Submit progress through the coupled completion firewall, run all admitted package tests, and emit corrective feedback when rejected.",
+      "requires_mission_packet": true
+    },
+    {
+      "effect": "mutate",
+      "group": "task_control",
+      "mandatory_controls": [
+        "authority_and_assignment_admission",
+        "parent_task_reference_when_derived",
+        "reason_code_when_derived",
+        "bounded_task_creation",
+        "idempotency_key",
+        "execution_receipt"
+      ],
+      "name": "task_create",
+      "ordinal": 8,
+      "purpose": "Create an admitted follow-up or repair task without granting execution authority.",
+      "requires_mission_packet": true
+    },
+    {
+      "effect": "observe",
+      "group": "task_control",
+      "mandatory_controls": [
+        "authoritative_task_state",
+        "deterministic_priority_order",
+        "current_package_test_receipt_required_for_review",
+        "stale_or_failed_test_receipt_routes_repair",
+        "no_test_execution_authority",
+        "no_authority_grant",
+        "human_completion_confirmation"
+      ],
+      "name": "working_agreement",
+      "ordinal": 9,
+      "purpose": "Return the next lawful task-board action and require a current passing package-test receipt before review.",
+      "requires_mission_packet": false
+    },
+    {
+      "effect": "observe",
+      "group": "task_control",
+      "mandatory_controls": [
+        "stable_reason_codes",
+        "authoritative_task_state",
+        "no_state_mutation",
+        "automatic_task_update_coupling"
+      ],
+      "name": "verify_task_board",
+      "ordinal": 10,
+      "purpose": "Detect task lifecycle contradictions and completion-policy breaches.",
+      "requires_mission_packet": false
+    },
+    {
+      "effect": "observe",
+      "group": "capability_discovery",
+      "mandatory_controls": [
+        "server_side_agent_state_resolution",
+        "availability_filter",
+        "agent_allowlist_filter",
+        "state_allowlist_filter",
+        "visibility_does_not_grant_call_authority"
+      ],
+      "name": "list_skills",
+      "ordinal": 11,
+      "purpose": "Return capabilities visible to a registered agent in its authoritative state.",
+      "requires_mission_packet": false
+    },
+    {
+      "effect": "observe",
+      "group": "evidence_retrieval",
+      "mandatory_controls": [
+        "server_side_agent_state_resolution",
+        "task_and_agent_scope",
+        "bounded_top_k",
+        "read_only_memory_lane",
+        "evidence_lineage"
+      ],
+      "name": "memory_search",
+      "ordinal": 12,
+      "purpose": "Retrieve task-scoped GraphRAG evidence for a registered agent.",
+      "requires_mission_packet": false
+    },
+    {
+      "effect": "execute",
+      "group": "version_control",
+      "mandatory_controls": [
+        "exact_repository_root",
+        "authority_and_assignment_admission",
+        "operation_discriminated_input_schema",
+        "server_owned_protected_branch_policy",
+        "dry_run_default_for_mutation",
+        "shell_false_argv_execution",
+        "hooks_and_signing_disabled",
+        "no_push_or_force_operations",
+        "explicit_history_rewrite_admission",
+        "secret_path_rejection",
+        "bounded_timeout_and_output",
+        "execution_receipt"
+      ],
+      "name": "git_lane",
+      "operations": [
+        "repo_context",
+        "clean_check",
+        "staged_diff",
+        "working_diff",
+        "commit",
+        "pr_description",
+        "changelog",
+        "branch",
+        "tag"
+      ],
+      "ordinal": 13,
+      "purpose": "Execute one schema-selected, policy-governed Git-lane operation inside the exact admitted repository root.",
+      "requires_mission_packet": true
+    },
+    {
+      "name": "reference_build",
+      "ordinal": 14,
+      "group": "reference_bounded_engineering",
+      "effect": "execute",
+      "purpose": "Derive JSON or sectioned Markdown artifacts from pinned references, reject unsupported delta, and publish revalidated local receipts before the unchanged baseline completion transaction.",
+      "requires_mission_packet": true,
+      "operations": [
+        "load_reference",
+        "transform_from_reference",
+        "validate_against_reference",
+        "diff_candidate",
+        "emit_receipt"
+      ],
+      "mandatory_controls": [
+        "external_policy_hash_pin",
+        "exact_assignment_and_operation_admission",
+        "strict_operation_schema",
+        "reference_and_schema_hash_pins",
+        "closed_schema_keyword_profile",
+        "explicit_semantic_invariants",
+        "exact_path_delta_admission",
+        "requested_candidate_equivalence",
+        "no_shell_or_network",
+        "bounded_resources",
+        "revalidation_before_emit",
+        "append_only_receipt",
+        "no_activation_or_task_completion_authority"
+      ]
+    }
+  ]
+}

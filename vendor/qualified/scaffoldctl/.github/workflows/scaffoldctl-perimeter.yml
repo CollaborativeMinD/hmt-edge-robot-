@@ -1,0 +1,111 @@
+name: scaffoldctl-perimeter
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: scaffoldctl-perimeter-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-tree:
+    name: validate immutable commit tree
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+
+      - name: Install pinned uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
+        with:
+          version: 0.11.33
+          enable-cache: false
+
+      - name: Verify and install pinned scaffoldctl wheel
+        shell: bash
+        run: |
+          set -euo pipefail
+          wheel_path=provenance/sealed_source_release_v0_3_0/distributions/scaffoldctl-0.3.0-py3-none-any.whl
+          test -f "$wheel_path"
+          printf '%s  %s\n' '8462f8af16f6a5612572a35c8ec6615de9235198d3116bdf5ce623f48e249159' "$wheel_path" | sha256sum --check --strict
+          uv tool install --force "$wheel_path"
+          scaffoldctl authority > "$RUNNER_TEMP/scaffoldctl-authority.json"
+
+      - name: Generate isolated evidence key
+        shell: bash
+        run: |
+          set -euo pipefail
+          install -d -m 0700 "$RUNNER_TEMP/scaffoldctl"
+          scaffoldctl keygen \
+            --private-key "$RUNNER_TEMP/scaffoldctl/lease-signing-key.pem" \
+            --public-key "$RUNNER_TEMP/scaffoldctl/lease-signing-key.pub.pem" \
+            > "$RUNNER_TEMP/scaffoldctl/keygen.json"
+
+      - name: Validate commit tree
+        id: perimeter
+        shell: bash
+        run: |
+          set -uo pipefail
+          baseline=
+          if git rev-parse --verify --quiet "${GITHUB_SHA}^" >/dev/null; then
+            baseline="${GITHUB_SHA}^"
+          fi
+          command=(
+            scaffoldctl validate --tree "$GITHUB_SHA"
+            --root "$GITHUB_WORKSPACE"
+            --ledger "$RUNNER_TEMP/scaffoldctl/evidence.duckdb"
+            --private-key "$RUNNER_TEMP/scaffoldctl/lease-signing-key.pem"
+            --signer-provenance ci_ephemeral_key
+          )
+          if test -n "$baseline"; then
+            command+=(--baseline-tree "$baseline")
+          fi
+          "${command[@]}" > "$RUNNER_TEMP/scaffoldctl/validation.json"
+          status=$?
+          printf 'status=%s\n' "$status" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Seal DuckDB ledger
+        id: seal
+        if: always()
+        shell: bash
+        run: |
+          set +e
+          scaffoldctl seal-ledger \
+            --ledger "$RUNNER_TEMP/scaffoldctl/evidence.duckdb" \
+            --private-key "$RUNNER_TEMP/scaffoldctl/lease-signing-key.pem" \
+            --signer-provenance ci_ephemeral_key \
+            --output "$RUNNER_TEMP/scaffoldctl/ledger-seal.json"
+          status=$?
+          printf 'status=%s\n' "$status" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Upload native evidence
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f
+        with:
+          name: scaffoldctl-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/scaffoldctl
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Enforce admission verdict
+        if: always()
+        shell: bash
+        env:
+          PERIMETER_STATUS: ${{ steps.perimeter.outputs.status }}
+          SEAL_STATUS: ${{ steps.seal.outputs.status }}
+        run: |
+          set -euo pipefail
+          test "$PERIMETER_STATUS" = 0
+          test "$SEAL_STATUS" = 0

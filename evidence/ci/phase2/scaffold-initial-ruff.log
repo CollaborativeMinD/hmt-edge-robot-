@@ -1,0 +1,89 @@
+I001 [*] Import block is un-sorted or un-formatted
+  --> src/scaffoldctl/validation.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | from dataclasses import dataclass
+ 4 | |
+ 5 | | from pydantic import ValidationError
+ 6 | |
+ 7 | | from scaffoldctl.exceptions import PhaseTwoError
+ 8 | | from scaffoldctl.integrity import sha256_bytes
+ 9 | | from scaffoldctl.models import RepositoryRootDirectory, document_from_text, physical_line_count
+10 | | from scaffoldctl.phase2_models import (
+11 | |     ArtifactEvidence,
+12 | |     ArtifactOperationDisposition,
+13 | |     BoundaryPolicy,
+14 | |     BoundarySpec,
+15 | |     EntryKind,
+16 | |     PolicyPack,
+17 | |     PolicyDocumentRule,
+18 | |     ValidationFinding,
+19 | |     document_structure_status,
+20 | |     joined_relative_path,
+21 | | )
+22 | | from scaffoldctl.policy import load_policy_pack, parse_boundary_policy
+23 | | from scaffoldctl.reason_codes import ReasonCode
+24 | | from scaffoldctl.snapshot import RepositorySnapshot
+   | |___________________________________________________^
+help: Organize imports
+   |
+15 |     EntryKind,
+16 +     PolicyDocumentRule,
+17 |     PolicyPack,
+   -     PolicyDocumentRule,
+18 |     ValidationFinding,
+   |
+
+SIM117 Use a single `with` statement with multiple contexts instead of nested `with` statements
+  --> tests/test_mcp_adapter.py:51:13
+   |
+49 |       def test_epoch_must_be_a_nonnegative_integer(self) -> None:
+50 |           for invalid in (-1, True, "7"):
+51 | /             with self.subTest(invalid=invalid):
+52 | |                 with self.assertRaisesRegex(ValueError, "MCP_EPOCH_INVALID"):
+   | |_____________________________________________________________________________^
+53 |                       invoke(_request(admission_epoch=invalid))
+   |
+help: Combine `with` statements
+
+SIM117 Use a single `with` statement with multiple contexts instead of nested `with` statements
+  --> tests/test_mcp_adapter.py:61:13
+   |
+59 |       def test_unadmitted_capability_is_denied(self) -> None:
+60 |           for invalid in ("scaffoldctl.scaffold", "", ["scaffoldctl.authority"]):
+61 | /             with self.subTest(invalid=invalid):
+62 | |                 with self.assertRaisesRegex(PermissionError, "MCP_CAPABILITY_NOT_ADMITTED"):
+   | |____________________________________________________________________________________________^
+63 |                       invoke(_request(capability_id=invalid))
+   |
+help: Combine `with` statements
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests/test_phase2_validation.py:1:1
+   |
+ 1 | / from pathlib import Path
+ 2 | |
+ 3 | | import scaffoldctl.validation as validation_module
+ 4 | |
+ 5 | | from scaffoldctl.exceptions import PhaseTwoError
+ 6 | | from scaffoldctl.phase2_models import (
+ 7 | |     BoundarySpec,
+ 8 | |     EntryKind,
+ 9 | |     PolicyDocumentRule,
+10 | |     SnapshotEntry,
+11 | | )
+12 | | from scaffoldctl.policy import boundary_policy_bytes, load_policy_pack, render_boundary
+13 | | from scaffoldctl.reason_codes import ReasonCode
+14 | | from scaffoldctl.snapshot import WorktreeSnapshot
+15 | | from scaffoldctl.validation import validate_boundary, validate_document
+   | |_______________________________________________________________________^
+help: Organize imports
+  |
+3 | import scaffoldctl.validation as validation_module
+  -
+4 | from scaffoldctl.exceptions import PhaseTwoError
+  |
+
+Found 4 errors.
+[*] 2 fixable with the `--fix` option.

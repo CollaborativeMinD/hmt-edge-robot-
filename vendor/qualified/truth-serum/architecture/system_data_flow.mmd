@@ -1,0 +1,7 @@
+flowchart TD
+    A["Local repository + mode"] --> B["Strict airlock"]
+    B --> C["Policy-bound witnesses"]
+    C --> D["Normalized lane evidence"]
+    D --> E["Admission aggregator"]
+    E --> F["Report + trace + handoff"]
+    F -. "separate closeout" .-> G["Checksum verifier"]

@@ -188,3 +188,10 @@ Run `python3 tools/ci_admission.py`, `uv lock --check`, `uv sync --locked --extr
 then `uv run --no-sync python tools/validate.py`. Stop on nonzero status and inspect
 `evidence/ci/admission.json` and current gate logs. Follow `docs/ci_cd.md` for policy changes.
 CI PASS admits the software toolchain only. Candidate tools and Pi/K3s deployment remain HOLD.
+
+## 10. Policy and tool support
+
+Follow `docs/ci_phase2.md`. G-POLICY-014 produces a measured HOLD register;
+G-PROFILE-015 checks root documents and evidence byte binding; G-QUALIFY-016 reruns
+both tool regressions. Inspect `evidence/ci/phase2/current` on failure. Stop on
+source-pin drift. Full policies/tools, Docker builds, and deployment remain HOLD.

@@ -1,0 +1,219 @@
+{
+  "attempt_id": "local-ci",
+  "clear": true,
+  "decision": "PASS",
+  "evidence_dir": "evidence/closeout/runtime",
+  "lanes": [
+    {
+      "evidence_paths": [],
+      "findings": [],
+      "lane_id": "architecture-trace",
+      "reason_codes": [
+        "PASS_ARCHITECTURE_TRACE"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "local"
+    },
+    {
+      "evidence_paths": [],
+      "findings": [],
+      "lane_id": "repository-shape",
+      "reason_codes": [
+        "PASS_REPOSITORY_SHAPE"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "local"
+    },
+    {
+      "evidence_paths": [],
+      "findings": [],
+      "lane_id": "source-aperture",
+      "reason_codes": [
+        "PASS_SOURCE_APERTURE"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "ast"
+    },
+    {
+      "evidence_paths": [],
+      "findings": [],
+      "lane_id": "structured-data",
+      "reason_codes": [
+        "PASS_STRUCTURED_DATA"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "local"
+    },
+    {
+      "evidence_paths": [],
+      "findings": [],
+      "lane_id": "evidence-binding",
+      "reason_codes": [
+        "PASS_EVIDENCE_BINDING"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "local"
+    },
+    {
+      "evidence_paths": [],
+      "findings": [],
+      "lane_id": "secret-scan",
+      "reason_codes": [
+        "PASS_SECRET_SCAN"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "local"
+    },
+    {
+      "evidence_paths": [],
+      "findings": [],
+      "lane_id": "shell-syntax",
+      "reason_codes": [
+        "PASS_SHELL_SYNTAX"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "bash"
+    },
+    {
+      "evidence_paths": [
+        "raw/ruff.stderr.txt",
+        "raw/ruff.stdout.txt"
+      ],
+      "findings": [],
+      "lane_id": "witness-ruff",
+      "reason_codes": [
+        "PASS_WITNESS_RUFF"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "ruff"
+    },
+    {
+      "evidence_paths": [
+        "raw/pylint.stderr.txt",
+        "raw/pylint.stdout.txt"
+      ],
+      "findings": [],
+      "lane_id": "witness-pylint",
+      "reason_codes": [
+        "PASS_WITNESS_PYLINT"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "pylint"
+    },
+    {
+      "evidence_paths": [
+        "raw/mypy.stderr.txt",
+        "raw/mypy.stdout.txt"
+      ],
+      "findings": [],
+      "lane_id": "witness-mypy",
+      "reason_codes": [
+        "PASS_WITNESS_MYPY"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "mypy"
+    },
+    {
+      "evidence_paths": [
+        "raw/bandit.stderr.txt",
+        "raw/bandit.stdout.txt"
+      ],
+      "findings": [],
+      "lane_id": "witness-bandit",
+      "reason_codes": [
+        "PASS_WITNESS_BANDIT"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "bandit"
+    },
+    {
+      "evidence_paths": [
+        "raw/semgrep.stderr.txt",
+        "raw/semgrep.stdout.txt"
+      ],
+      "findings": [],
+      "lane_id": "witness-semgrep",
+      "reason_codes": [
+        "PASS_WITNESS_SEMGREP"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "semgrep"
+    },
+    {
+      "evidence_paths": [
+        "raw/yamllint.stderr.txt",
+        "raw/yamllint.stdout.txt"
+      ],
+      "findings": [],
+      "lane_id": "witness-yamllint",
+      "reason_codes": [
+        "PASS_WITNESS_YAMLLINT"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "yamllint"
+    },
+    {
+      "evidence_paths": [
+        "raw/pytest.stderr.txt",
+        "raw/pytest.stdout.txt"
+      ],
+      "findings": [],
+      "lane_id": "witness-pytest",
+      "reason_codes": [
+        "PASS_WITNESS_PYTEST"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "pytest"
+    },
+    {
+      "evidence_paths": [
+        "raw/pip-audit.stderr.txt",
+        "raw/pip-audit.stdout.txt"
+      ],
+      "findings": [],
+      "lane_id": "witness-pip-audit",
+      "reason_codes": [
+        "PASS_WITNESS_PIP_AUDIT"
+      ],
+      "required": true,
+      "status": "PASS",
+      "tool": "pip-audit"
+    }
+  ],
+  "mode": "ci",
+  "policy_path": "contracts/lane_policy.yaml",
+  "posture": "PRIMARY",
+  "reasons": [
+    "PASS_ARCHITECTURE_TRACE",
+    "PASS_EVIDENCE_BINDING",
+    "PASS_REPOSITORY_SHAPE",
+    "PASS_SECRET_SCAN",
+    "PASS_SHELL_SYNTAX",
+    "PASS_SOURCE_APERTURE",
+    "PASS_STRUCTURED_DATA",
+    "PASS_WITNESS_BANDIT",
+    "PASS_WITNESS_MYPY",
+    "PASS_WITNESS_PIP_AUDIT",
+    "PASS_WITNESS_PYLINT",
+    "PASS_WITNESS_PYTEST",
+    "PASS_WITNESS_RUFF",
+    "PASS_WITNESS_SEMGREP",
+    "PASS_WITNESS_YAMLLINT"
+  ],
+  "schema_id": "truth-serum.admission-report",
+  "schema_version": "1.0.0"
+}

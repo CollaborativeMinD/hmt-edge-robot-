@@ -1,0 +1,782 @@
+{
+  "assessment_status": "PASS",
+  "full_policy_adoption": "HOLD",
+  "full_tool_admission": "HOLD",
+  "docker_build": "HOLD",
+  "deployment": "HOLD",
+  "policy_profile_hash": "496b60a604e6ab05228f32601c372fec432d6a2e0828d21c380a018b1018e02b",
+  "policies": [
+    {
+      "path": "policy/hmt/axioms/HMT_Axioms_Policy_v1.0.0.json",
+      "sha256": "a32f92ab9c090c25a8d19e5a8e17dd97ecb289ab1aab7f29c216b4f2bba982da",
+      "policy_id": "HMT-AXIOMS",
+      "declared_status": "CANDIDATE_FOR_HUMAN_ARCHITECT_PROMOTION",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    },
+    {
+      "path": "policy/hmt/federated-ontology/Ontology_MachineHandoff_Example.json",
+      "sha256": "ebdcd7b5652be4ba82709ff0c8cf914c6877afe7a958d8abd3e22de0dccf72ef",
+      "policy_id": "DATA",
+      "declared_status": "UNSPECIFIED",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    },
+    {
+      "path": "policy/hmt/federated-ontology/Ontology_MachineHandoff_Schema.json",
+      "sha256": "916f5a82442a85b18c941c760ee058bdc8b64a797667f088de4f92ac4beb3142",
+      "policy_id": "DATA",
+      "declared_status": "UNSPECIFIED",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    },
+    {
+      "path": "policy/hmt/finite-state-machine/default-pace-matrix_v1.json",
+      "sha256": "ad828451154d1778e9e5e3e026f3b8889a0d1338b8bdf84761870f5d35894e88",
+      "policy_id": "DATA",
+      "declared_status": "UNSPECIFIED",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    },
+    {
+      "path": "policy/hmt/mcp/HMT_Baseline_MCP_Tools_v1.0.0.json",
+      "sha256": "ff34e5ed4e999e5c60ce84ba864ab1fe7d315f18b090f91d292f5c46e788face",
+      "policy_id": "HMT-MCP-BASELINE",
+      "declared_status": "FROZEN",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    },
+    {
+      "path": "policy/hmt/mcp/HMT_Baseline_MCP_Tools_v1.1.0.json",
+      "sha256": "49237cf5b0f6fa7153ea2e6c4e25039a3b67d07203c14850ade652a2493d4878",
+      "policy_id": "HMT-MCP-BASELINE",
+      "declared_status": "FROZEN",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    },
+    {
+      "path": "policy/hmt/mcp/HMT_Baseline_MCP_Tools_v1.2.0.json",
+      "sha256": "7b0d96e40ba3b678c7b2c463063052dd61a8781c97f2231a8b76de10fbf22be8",
+      "policy_id": "HMT-MCP-BASELINE",
+      "declared_status": "FROZEN",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    },
+    {
+      "path": "policy/hmt/mcp/HMT_Baseline_MCP_Tools_v1.3.0.json",
+      "sha256": "f655fe369257e663d29d17df4607dab161dc50f9ce97332be90a0ec93bc2fa40",
+      "policy_id": "HMT-MCP-BASELINE",
+      "declared_status": "CANDIDATE_FOR_HUMAN_ARCHITECT_PROMOTION",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    },
+    {
+      "path": "policy/hmt/model-roles/HMT_Model_Roles_and_Convergence_Policy_v1.0.0.json",
+      "sha256": "ae4b024108a32717a5c2d93e0aa6f497bb5aaeb4c1cf186bbca002af1fe3afe1",
+      "policy_id": "HMT-MODEL-ROLES-CONVERGENCE",
+      "declared_status": "FROZEN",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    },
+    {
+      "path": "policy/hmt/model-roles/HMT_Model_Roles_and_Convergence_Policy_v1.2.0.json",
+      "sha256": "38030c3d3ff5dbd736e50e54b31d06bc382d2267c6b1d4912503b4dc565fef0e",
+      "policy_id": "HMT-MODEL-ROLES-CONVERGENCE",
+      "declared_status": "CANDIDATE_FOR_HUMAN_ARCHITECT_PROMOTION",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    },
+    {
+      "path": "policy/hmt/reuse-constraints/HMT_Reuse_Extension_and_Promotion_Policy_v1.0.0.json",
+      "sha256": "2e7e284fef8e7c57f54934335e456db54d6447527849cc19bf2d42f7c8f005f0",
+      "policy_id": "HMT-REUSE-EXTENSION-PROMOTION",
+      "declared_status": "CANDIDATE_FOR_HUMAN_ARCHITECT_PROMOTION",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    },
+    {
+      "path": "policy/hmt/reuse-constraints/ref-transformation-bounds/HMT_Reference_Bounded_Transformation_Policy_v1.0.0.json",
+      "sha256": "51e4600681da747b0d8db208a27ec0d099e8dd4cb2eb2cf11374f3db409e8f49",
+      "policy_id": "HMT-REFERENCE-BOUNDED-TRANSFORMATION",
+      "declared_status": "CANDIDATE_FOR_HUMAN_ARCHITECT_PROMOTION",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    },
+    {
+      "path": "policy/hmt/reverse-rca/HMT_rrca_policy_v4.json",
+      "sha256": "dd20bbcf45cf1c1a9767df0a98b854d8ca3b0958c58336809162de53645c57af",
+      "policy_id": "HMT-RRCA-POLICY",
+      "declared_status": "ACTIVE",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    },
+    {
+      "path": "policy/hmt/test-and-admission/HMT_Executable_Testing_and_Continuous_Admission_Policy_v1.0.0.json",
+      "sha256": "bcc3fcbccf11d154f40ccf9a6d1472ae6740252a865227980f6b4b0ba948f871",
+      "policy_id": "HMT-TESTING-CONTINUOUS-ADMISSION",
+      "declared_status": "CANDIDATE_FOR_HUMAN_ARCHITECT_PROMOTION",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    },
+    {
+      "path": "policy/references/HMT_Model_Roles_and_Convergence_Policy_v1.1.0.json",
+      "sha256": "f5cd552c667fd9acf893215b493e1b88c8bba2f8cbd984d0769c1c8e854f69bc",
+      "policy_id": "HMT-MODEL-ROLES-CONVERGENCE",
+      "declared_status": "CANDIDATE_FOR_HUMAN_ARCHITECT_PROMOTION",
+      "adoption": "EVALUATED_NOT_GLOBALLY_PROMOTED"
+    }
+  ],
+  "historical_source_pins": [
+    {
+      "policy": "policy/hmt/model-roles/HMT_Model_Roles_and_Convergence_Policy_v1.0.0.json",
+      "artifact": "HMT_Axioms_Policy_v1.0.0.json",
+      "expected_sha256": "a32f92ab9c090c25a8d19e5a8e17dd97ecb289ab1aab7f29c216b4f2bba982da",
+      "status": "PASS"
+    },
+    {
+      "policy": "policy/hmt/model-roles/HMT_Model_Roles_and_Convergence_Policy_v1.0.0.json",
+      "artifact": "HMT_Baseline_MCP_Tools_v1.0.0.json",
+      "expected_sha256": "ff34e5ed4e999e5c60ce84ba864ab1fe7d315f18b090f91d292f5c46e788face",
+      "status": "PASS"
+    },
+    {
+      "policy": "policy/hmt/model-roles/HMT_Model_Roles_and_Convergence_Policy_v1.2.0.json",
+      "artifact": "HMT_Model_Roles_and_Convergence_Policy_v1.1.0.json",
+      "expected_sha256": "f5cd552c667fd9acf893215b493e1b88c8bba2f8cbd984d0769c1c8e854f69bc",
+      "status": "PASS"
+    },
+    {
+      "policy": "policy/hmt/model-roles/HMT_Model_Roles_and_Convergence_Policy_v1.2.0.json",
+      "artifact": "HMT_rrca_policy_v4.json",
+      "expected_sha256": "dd20bbcf45cf1c1a9767df0a98b854d8ca3b0958c58336809162de53645c57af",
+      "status": "PASS"
+    },
+    {
+      "policy": "policy/hmt/model-roles/HMT_Model_Roles_and_Convergence_Policy_v1.2.0.json",
+      "artifact": "HMT_Axioms_Policy_v1.0.0.json",
+      "expected_sha256": "a32f92ab9c090c25a8d19e5a8e17dd97ecb289ab1aab7f29c216b4f2bba982da",
+      "status": "PASS"
+    },
+    {
+      "policy": "policy/hmt/model-roles/HMT_Model_Roles_and_Convergence_Policy_v1.2.0.json",
+      "artifact": "HMT_Baseline_MCP_Tools_v1.2.0.json",
+      "expected_sha256": "7b0d96e40ba3b678c7b2c463063052dd61a8781c97f2231a8b76de10fbf22be8",
+      "status": "PASS"
+    },
+    {
+      "policy": "policy/hmt/model-roles/HMT_Model_Roles_and_Convergence_Policy_v1.2.0.json",
+      "artifact": "HMT_Model_Roles_and_Convergence_Policy_v1.0.0.json",
+      "expected_sha256": "ae4b024108a32717a5c2d93e0aa6f497bb5aaeb4c1cf186bbca002af1fe3afe1",
+      "status": "PASS"
+    },
+    {
+      "policy": "policy/hmt/test-and-admission/HMT_Executable_Testing_and_Continuous_Admission_Policy_v1.0.0.json",
+      "artifact": "tooling_normalization.xml",
+      "expected_sha256": "2680756ab5bbe5ce5dbb89338aa5bdc6be42745ade289949edbcf019f8526202",
+      "status": "PASS"
+    },
+    {
+      "policy": "policy/hmt/test-and-admission/HMT_Executable_Testing_and_Continuous_Admission_Policy_v1.0.0.json",
+      "artifact": "system_prompt_baseline.xml",
+      "expected_sha256": "77e1ccb6ec1710fbe63a3c361cd10ae3b26aa8c8595164a14208715ecf43ba42",
+      "status": "PASS"
+    },
+    {
+      "policy": "policy/hmt/test-and-admission/HMT_Executable_Testing_and_Continuous_Admission_Policy_v1.0.0.json",
+      "artifact": "sql-quality-automation-pipeline project.zip",
+      "expected_sha256": "9010f01755da035d1b0e26122063deb0ccd5529208de08a9fabed891849f100b",
+      "status": "UNAVAILABLE"
+    },
+    {
+      "policy": "policy/hmt/test-and-admission/HMT_Executable_Testing_and_Continuous_Admission_Policy_v1.0.0.json",
+      "artifact": "rrca_verification_and_validation_v4.md",
+      "expected_sha256": "9e40b6b088a8196f959fba170403d0b6da8340a27ab1fe04a5843004e234076d",
+      "status": "PASS"
+    },
+    {
+      "policy": "policy/hmt/test-and-admission/HMT_Executable_Testing_and_Continuous_Admission_Policy_v1.0.0.json",
+      "artifact": "HMT_Axioms_Policy_v1.0.0.md",
+      "expected_sha256": "b67c1722bf0fb57495c6548e712b7ab6608f40943cc26f609fecb254c874cb68",
+      "status": "PASS"
+    },
+    {
+      "policy": "policy/references/HMT_Model_Roles_and_Convergence_Policy_v1.1.0.json",
+      "artifact": "HMT_rrca_policy_v4.json",
+      "expected_sha256": "dd20bbcf45cf1c1a9767df0a98b854d8ca3b0958c58336809162de53645c57af",
+      "status": "PASS"
+    },
+    {
+      "policy": "policy/references/HMT_Model_Roles_and_Convergence_Policy_v1.1.0.json",
+      "artifact": "HMT_Axioms_Policy_v1.0.0.json",
+      "expected_sha256": "a32f92ab9c090c25a8d19e5a8e17dd97ecb289ab1aab7f29c216b4f2bba982da",
+      "status": "PASS"
+    },
+    {
+      "policy": "policy/references/HMT_Model_Roles_and_Convergence_Policy_v1.1.0.json",
+      "artifact": "HMT_Baseline_MCP_Tools_v1.2.0.json",
+      "expected_sha256": "7b0d96e40ba3b678c7b2c463063052dd61a8781c97f2231a8b76de10fbf22be8",
+      "status": "PASS"
+    },
+    {
+      "policy": "policy/references/HMT_Model_Roles_and_Convergence_Policy_v1.1.0.json",
+      "artifact": "HMT_Model_Roles_and_Convergence_Policy_v1.0.0.json",
+      "expected_sha256": "ae4b024108a32717a5c2d93e0aa6f497bb5aaeb4c1cf186bbca002af1fe3afe1",
+      "status": "PASS"
+    }
+  ],
+  "fold_measurements": [
+    {
+      "path": "notebooks/cell_ssot.py",
+      "module_loc": 56,
+      "max_function_physical_loc": 22,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/__init__.py",
+      "module_loc": 2,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/access.py",
+      "module_loc": 97,
+      "max_function_physical_loc": 32,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/analytics.py",
+      "module_loc": 65,
+      "max_function_physical_loc": 20,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "module_loc": 143,
+      "max_function_physical_loc": 33,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/__init__.py",
+      "module_loc": 3,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc.py",
+      "module_loc": 229,
+      "max_function_physical_loc": 58,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/analytics.py",
+      "module_loc": 145,
+      "max_function_physical_loc": 36,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "module_loc": 227,
+      "max_function_physical_loc": 38,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/contracts.py",
+      "module_loc": 177,
+      "max_function_physical_loc": 7,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/kernel.py",
+      "module_loc": 113,
+      "max_function_physical_loc": 22,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/mcc.py",
+      "module_loc": 156,
+      "max_function_physical_loc": 40,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/optimization.py",
+      "module_loc": 26,
+      "max_function_physical_loc": 23,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "module_loc": 144,
+      "max_function_physical_loc": 44,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/system.py",
+      "module_loc": 90,
+      "max_function_physical_loc": 40,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/usea.py",
+      "module_loc": 101,
+      "max_function_physical_loc": 49,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/cli.py",
+      "module_loc": 124,
+      "max_function_physical_loc": 36,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/contracts.py",
+      "module_loc": 140,
+      "max_function_physical_loc": 10,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/edge.py",
+      "module_loc": 73,
+      "max_function_physical_loc": 49,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/geometry.py",
+      "module_loc": 60,
+      "max_function_physical_loc": 11,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/ingress.py",
+      "module_loc": 56,
+      "max_function_physical_loc": 39,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "module_loc": 177,
+      "max_function_physical_loc": 32,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "module_loc": 228,
+      "max_function_physical_loc": 40,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "module_loc": 305,
+      "max_function_physical_loc": 33,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/runtime.py",
+      "module_loc": 139,
+      "max_function_physical_loc": 32,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/safety.py",
+      "module_loc": 101,
+      "max_function_physical_loc": 33,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/vision.py",
+      "module_loc": 75,
+      "max_function_physical_loc": 25,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/conftest.py",
+      "module_loc": 39,
+      "max_function_physical_loc": 13,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_api_cli.py",
+      "module_loc": 151,
+      "max_function_physical_loc": 38,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "module_loc": 162,
+      "max_function_physical_loc": 19,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "module_loc": 168,
+      "max_function_physical_loc": 16,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "module_loc": 178,
+      "max_function_physical_loc": 27,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_authority_safety_edge.py",
+      "module_loc": 90,
+      "max_function_physical_loc": 16,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_ci_admission.py",
+      "module_loc": 83,
+      "max_function_physical_loc": 22,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_ci_support.py",
+      "module_loc": 65,
+      "max_function_physical_loc": 14,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_contracts_geometry.py",
+      "module_loc": 101,
+      "max_function_physical_loc": 21,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_ingress_replay.py",
+      "module_loc": 65,
+      "max_function_physical_loc": 33,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "module_loc": 179,
+      "max_function_physical_loc": 20,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_policy_evaluation.py",
+      "module_loc": 38,
+      "max_function_physical_loc": 12,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "module_loc": 234,
+      "max_function_physical_loc": 41,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_typecheck_gate.py",
+      "module_loc": 23,
+      "max_function_physical_loc": 20,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/assurance_campaign.py",
+      "module_loc": 115,
+      "max_function_physical_loc": 31,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/ci_admission.py",
+      "module_loc": 86,
+      "max_function_physical_loc": 41,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/ci_profiles.py",
+      "module_loc": 37,
+      "max_function_physical_loc": 15,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/contracts_export.py",
+      "module_loc": 74,
+      "max_function_physical_loc": 34,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/coupled_campaign.py",
+      "module_loc": 69,
+      "max_function_physical_loc": 50,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/live_llm_campaign.py",
+      "module_loc": 113,
+      "max_function_physical_loc": 58,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/policy_contracts.py",
+      "module_loc": 30,
+      "max_function_physical_loc": 12,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/policy_evaluation.py",
+      "module_loc": 45,
+      "max_function_physical_loc": 21,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/policy_inventory.py",
+      "module_loc": 50,
+      "max_function_physical_loc": 23,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/policy_pins.py",
+      "module_loc": 35,
+      "max_function_physical_loc": 29,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/profile_witnesses.py",
+      "module_loc": 42,
+      "max_function_physical_loc": 15,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/tool_qualification.py",
+      "module_loc": 39,
+      "max_function_physical_loc": 21,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/validate.py",
+      "module_loc": 285,
+      "max_function_physical_loc": 53,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    }
+  ],
+  "hold_register": [
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "module_loc": 143,
+      "max_function_physical_loc": 33,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc.py",
+      "module_loc": 229,
+      "max_function_physical_loc": 58,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/analytics.py",
+      "module_loc": 145,
+      "max_function_physical_loc": 36,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "module_loc": 227,
+      "max_function_physical_loc": 38,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/contracts.py",
+      "module_loc": 177,
+      "max_function_physical_loc": 7,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/kernel.py",
+      "module_loc": 113,
+      "max_function_physical_loc": 22,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/mcc.py",
+      "module_loc": 156,
+      "max_function_physical_loc": 40,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "module_loc": 144,
+      "max_function_physical_loc": 44,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/usea.py",
+      "module_loc": 101,
+      "max_function_physical_loc": 49,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/cli.py",
+      "module_loc": 124,
+      "max_function_physical_loc": 36,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/contracts.py",
+      "module_loc": 140,
+      "max_function_physical_loc": 10,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "module_loc": 177,
+      "max_function_physical_loc": 32,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "module_loc": 228,
+      "max_function_physical_loc": 40,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "module_loc": 305,
+      "max_function_physical_loc": 33,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/runtime.py",
+      "module_loc": 139,
+      "max_function_physical_loc": 32,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/safety.py",
+      "module_loc": 101,
+      "max_function_physical_loc": 33,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_api_cli.py",
+      "module_loc": 151,
+      "max_function_physical_loc": 38,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "module_loc": 162,
+      "max_function_physical_loc": 19,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "module_loc": 168,
+      "max_function_physical_loc": 16,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "module_loc": 178,
+      "max_function_physical_loc": 27,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_contracts_geometry.py",
+      "module_loc": 101,
+      "max_function_physical_loc": 21,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "module_loc": 179,
+      "max_function_physical_loc": 20,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "module_loc": 234,
+      "max_function_physical_loc": 41,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/assurance_campaign.py",
+      "module_loc": 115,
+      "max_function_physical_loc": 31,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/live_llm_campaign.py",
+      "module_loc": 113,
+      "max_function_physical_loc": 58,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/validate.py",
+      "module_loc": 285,
+      "max_function_physical_loc": 53,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    }
+  ],
+  "reason_codes": [
+    "HOLD_FOLD7_CEILING_EXCEEDED"
+  ],
+  "notification": "POLICY_ASSESSMENT_RECORDED",
+  "alert": true
+}

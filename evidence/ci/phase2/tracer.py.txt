@@ -1,0 +1,18 @@
+import hashlib,json,sys,tempfile
+from pathlib import Path
+sys.path.insert(0,'/workspace/scratch/1abe905e6918/admission-review/scaffoldctl-verify_v0.3.0/scaffoldctl/src')
+sys.path.insert(0,'/workspace/scratch/1abe905e6918/admission-review/truth-serum_v1.0.0/truth-serum/src')
+from scaffoldctl.models import RepositoryRootDirectory,document_from_text
+from truth_serum_runtime.gates.claims import run
+with tempfile.TemporaryDirectory() as t:
+ r=Path(t); docs=[document_from_text(n,'# Operational document\n') for n in ['README.md','Start_here.md','Index.md']]
+ assert len(RepositoryRootDirectory(hasHMTTrifectaDocument=tuple(docs)).hasHMTTrifectaDocument)==3
+ try: document_from_text('README.md','x\n'*100)
+ except ValueError: pass
+ else:raise AssertionError('overlong doc admitted')
+ p=r/'proof.json';p.write_text('{"software":"PASS","deployment":"HOLD"}')
+ c=r/'release.claims.json';c.write_text(json.dumps({'claims':[{'claim_id':'host.software','statement':'software proof bytes bound; no deployment claim','file_path':'proof.json','sha256':hashlib.sha256(p.read_bytes()).hexdigest()}]}))
+ assert run(r,r/'out').status.value=='PASS'
+ p.write_text('{}')
+ assert run(r,r/'out').status.value=='FAIL'
+print(json.dumps({'status':'PASS','seams':['scaffold-root-contract','doc-length-rejection','truth-evidence-binding','tamper-rejection'],'scope':'support-only; no lease, full-engine admission, Docker or deployment'}))

@@ -1,0 +1,33 @@
+{
+  "schema_id": "truth_serum.provenance",
+  "schema_version": "1.0.0",
+  "provenance_id": "prov_truth_serum_blue_closeout_v1_0_0",
+  "authoritative_inputs": [
+    "02-system_prompt_baseline.xml",
+    "03-output_format.xml",
+    "04-tooling_normalization.xml",
+    "06-Lambda_Execution_and_Morph_Flow.md",
+    "07-Lambda_Evidence_Operating_Law.md",
+    "08-Lambda_Ontology_Governance.xml",
+    "10-Lambda_Doctrine_Core.md",
+    "11-Lambda_Contracts_Validation_Traceability.md",
+    "12-Lambda_Deployment_Profiles.md",
+    "14-team_context.xml",
+    "15-Ontology_MachineHandoff_Schema.json"
+  ],
+  "implementation_inputs": [
+    "scaffoldctl_phase_3_v0_3_0(4).zip",
+    "truth_serum_kernel_adapter_sos_phase5_edgedevsecops_applied(3).zip",
+    "Pre-Commit Execution Flow(6).md",
+    "Predictive_Collapse_Control_Toolkit_v1.2-1.md"
+  ],
+  "context_only_inputs": [
+    "digital_twin_ssot_mission_threads_screens.zip",
+    "sentinel_core_kernel_release.zip",
+    "Database_State_Analytics_and_Tools_Architecture_Physical_AI_v2_2_3(1).md"
+  ],
+  "transformation": "clean-room semantic rebuild after independent architecture and runtime audits",
+  "formula_equation_citations": [
+    "N/A: repository admission contains no executable physical or control law"
+  ]
+}

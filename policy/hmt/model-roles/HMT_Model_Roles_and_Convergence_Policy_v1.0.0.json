@@ -1,0 +1,393 @@
+{
+  "document_type": "hmt_model_roles_and_convergence_policy",
+  "document_schema_version": "1.0.0",
+  "policy_id": "HMT-MODEL-ROLES-CONVERGENCE",
+  "policy_version": "1.0.0",
+  "title": "HMT Model Roles and Convergence Policy",
+  "status": "FROZEN",
+  "effective_at": "2026-09-02T00:00:00Z",
+  "authority": "human_architect",
+  "scope": [
+    "hmt_quickstarter_repositories",
+    "embedded_mcp_control_planes",
+    "graphrag_evidence_paths",
+    "task_completion_review",
+    "bounded_time_series_forecasting"
+  ],
+  "frozen_references": [
+    {
+      "artifact": "HMT_Baseline_MCP_Tools_v1.0.0.json",
+      "sha256": "ff34e5ed4e999e5c60ce84ba864ab1fe7d315f18b090f91d292f5c46e788face",
+      "mutation": "forbidden"
+    },
+    {
+      "artifact": "HMT_Axioms_Policy_v1.0.0.json",
+      "sha256": "a32f92ab9c090c25a8d19e5a8e17dd97ecb289ab1aab7f29c216b4f2bba982da",
+      "mutation": "forbidden"
+    }
+  ],
+  "architecture_decision": {
+    "orchestrator": "lfm",
+    "semantic_supervisor": "ibm_granite_3_3_2b_instruct",
+    "convergence": "granite_semantic_review_plus_deterministic_reducer",
+    "learned_convergence_classifier": "removed",
+    "forecast_primary": "amazon_chronos_2",
+    "forecast_secondary_edge": "datadog_toto_2_0",
+    "timesfm": "prohibited_from_deployable_profiles",
+    "classical_graph_core": "networkx_plus_duckdb_projection"
+  },
+  "roles": [
+    {
+      "role_id": "orchestrator",
+      "component_family": "LFM",
+      "profile_id": "lfm_orchestrator",
+      "duties": [
+        "interpret_admitted_mission",
+        "propose_task_decomposition",
+        "select_registered_tools",
+        "sequence_admitted_tool_calls",
+        "package_evidence_references"
+      ],
+      "forbidden": [
+        "approve_completion",
+        "grant_done",
+        "mutate_authority",
+        "bypass_policy",
+        "adjudicate_own_work",
+        "impersonate_semantic_supervisor"
+      ],
+      "authority_ceiling": "proposal_only"
+    },
+    {
+      "role_id": "semantic_supervisor",
+      "component_family": "IBM Granite",
+      "profile_id": "granite_3_3_2b_instruct_supervisor",
+      "checkpoint": "ibm-granite/granite-3.3-2b-instruct",
+      "duties": [
+        "compare_completion_packet_to_user_request",
+        "compare_completion_packet_to_pinned_policy",
+        "compare_completion_packet_to_accepted_decomposition",
+        "classify_every_definition_of_done_requirement",
+        "identify_bounded_rework",
+        "recommend_nonbinding_disposition"
+      ],
+      "forbidden": [
+        "call_operational_tools",
+        "call_task_tools",
+        "call_authority_tools",
+        "mutate_task_board",
+        "mutate_graphrag",
+        "mutate_policy",
+        "mutate_evidence",
+        "retrieve_outside_packet",
+        "grant_done",
+        "override_reducer",
+        "convert_missing_evidence_to_pass"
+      ],
+      "authority_ceiling": "advisory_findings_only"
+    },
+    {
+      "role_id": "state_disposition",
+      "component_family": "deterministic_code",
+      "profile_id": "deterministic_reducer",
+      "duties": [
+        "validate_packet_hashes",
+        "validate_schema",
+        "validate_requirement_coverage",
+        "validate_evidence_references",
+        "validate_contradiction_flags",
+        "apply_retry_counters",
+        "apply_escalation_rules",
+        "emit_controlled_disposition"
+      ],
+      "forbidden": [
+        "infer_missing_semantics",
+        "grant_done",
+        "widen_policy",
+        "accept_unknown_fields"
+      ],
+      "authority_ceiling": "controlled_disposition_only"
+    },
+    {
+      "role_id": "time_series_forecasting",
+      "component_family": "config_swappable_forecasting_backend",
+      "profile_id": "forecast_tool",
+      "duties": [
+        "bounded_forecasting",
+        "point_and_quantile_output_when_supported",
+        "input_output_hashing",
+        "append_only_telemetry",
+        "validated_evidence_emission"
+      ],
+      "forbidden": [
+        "authority_mutation",
+        "task_mutation",
+        "unbounded_input",
+        "unlicensed_profile_execution"
+      ],
+      "authority_ceiling": "pure_tool_output"
+    }
+  ],
+  "supervisor_review_packet": {
+    "name": "SupervisorReviewPacket",
+    "immutability": "content_addressed",
+    "additional_properties": false,
+    "required_fields": [
+      "packet_id",
+      "schema_version",
+      "created_at",
+      "content_hash",
+      "task_id",
+      "parent_mission_id",
+      "task_status",
+      "user_request",
+      "user_request_hash",
+      "pinned_policies",
+      "accepted_decomposition",
+      "definition_of_done",
+      "changed_artifacts",
+      "deterministic_receipts",
+      "evidence_excerpts",
+      "prior_findings",
+      "admission_attempt_count",
+      "semantic_review_attempt_count"
+    ],
+    "scope_rules": [
+      "task_scoped_only",
+      "stable_evidence_references_only",
+      "no_live_retrieval_by_supervisor",
+      "hash_all_mutable_payloads"
+    ]
+  },
+  "semantic_result_contract": {
+    "additional_properties": false,
+    "required_fields": [
+      "packet_id",
+      "packet_hash",
+      "model_profile_id",
+      "findings",
+      "unresolved_items",
+      "recommended_disposition"
+    ],
+    "finding_required_fields": [
+      "requirement_id",
+      "verdict",
+      "evidence_refs",
+      "reason_code"
+    ],
+    "verdict_enum": [
+      "SATISFIED",
+      "UNSATISFIED",
+      "CONTRADICTED",
+      "INSUFFICIENT_EVIDENCE"
+    ],
+    "recommended_disposition_enum": [
+      "REVIEW_READY",
+      "REWORK",
+      "HUMAN_ESCALATION"
+    ],
+    "recommendation_is_binding": false,
+    "coverage_rule": "exactly_one_finding_per_definition_of_done_requirement",
+    "failure_posture": "fail_closed"
+  },
+  "reducer": {
+    "type": "deterministic",
+    "controlled_dispositions": [
+      "QUARANTINED",
+      "REWORK",
+      "REVIEW_READY",
+      "HUMAN_ESCALATION"
+    ],
+    "done_is_excluded": true,
+    "checks": [
+      "packet_hash_match",
+      "schema_exactness",
+      "complete_requirement_coverage",
+      "evidence_reference_validity",
+      "contradiction_resolution",
+      "reason_code_validity",
+      "retry_counter_bounds",
+      "policy_gate_satisfaction"
+    ],
+    "unknown_or_malformed_result": "QUARANTINED"
+  },
+  "convergence_policy": {
+    "implementation": "granite_semantic_re_review_plus_deterministic_retry_ceiling",
+    "scikit_learn_training": "removed",
+    "autonomous_semantic_rework_cycles": 2,
+    "escalate_on_semantic_review_attempt": 3,
+    "separate_counters": [
+      "admission_attempt_count",
+      "semantic_review_attempt_count"
+    ],
+    "admission_failure_consumes_semantic_attempt": false,
+    "escalation_conditions": [
+      "third_semantic_review_failure",
+      "repeated_unresolved_finding",
+      "policy_ambiguity",
+      "model_runtime_failure",
+      "invalid_or_unverifiable_evidence"
+    ],
+    "completion_rule": "only_human_or_separately_admitted_authority_may_grant_done"
+  },
+  "forecast_interface": {
+    "profile_id": "forecast_tool_v1",
+    "inputs": [
+      "validated_targets",
+      "past_covariates",
+      "optional_future_covariates",
+      "context_bound",
+      "horizon_bound",
+      "requested_quantiles"
+    ],
+    "outputs": [
+      "model_metadata",
+      "point_forecasts_when_supported",
+      "quantile_forecasts",
+      "input_hash",
+      "output_hash",
+      "validation_receipts"
+    ],
+    "invariants": [
+      "same_interface_across_backends",
+      "bounded_series_context_and_horizon",
+      "pure_tool_behavior",
+      "append_only_telemetry",
+      "fail_closed_license_gate"
+    ]
+  },
+  "model_profiles": [
+    {
+      "profile_id": "forecast_primary",
+      "backend": "amazon_chronos_2",
+      "checkpoint": "amazon/chronos-2",
+      "role": "primary",
+      "license_policy": "apache_2_0_allowlisted",
+      "deployment_status": "eligible_after_tracer_qualification",
+      "capability_requirements": [
+        "univariate",
+        "multivariate",
+        "past_covariates",
+        "future_covariates",
+        "probabilistic_quantiles"
+      ]
+    },
+    {
+      "profile_id": "forecast_secondary_edge",
+      "backend": "datadog_toto_2_0",
+      "checkpoint_family": "Datadog/Toto-2.0",
+      "role": "secondary_and_edge",
+      "license_policy": "apache_2_0_allowlisted",
+      "deployment_status": "eligible_after_tracer_qualification",
+      "capability_requirements": [
+        "multivariate",
+        "probabilistic_quantiles",
+        "configurable_checkpoint_size",
+        "same_forecast_tool_contract"
+      ]
+    }
+  ],
+  "prohibited_profiles": [
+    {
+      "family": "TimesFM",
+      "reason_code": "LICENSE_INCOMPATIBLE_WITH_DEPLOYABLE_HMT_PROFILE",
+      "prohibitions": [
+        "active_model_profile",
+        "runtime_download",
+        "deployable_dependency",
+        "fallback_selection",
+        "production_or_commercial_execution"
+      ],
+      "stale_config_disposition": "REJECT_AND_LOG",
+      "archive_policy": "historical_receipts_only_as_NON_DEPLOYABLE_ARCHIVE"
+    }
+  ],
+  "configuration_boundary": {
+    "configurable": [
+      "enabled_role_profile",
+      "checkpoint_identifier",
+      "checkpoint_revision",
+      "device",
+      "quantization",
+      "resource_ceilings",
+      "license_policy_id",
+      "local_model_path",
+      "offline_only"
+    ],
+    "not_configurable": [
+      "role_authority",
+      "reducer_rules",
+      "required_packet_fields",
+      "evidence_requirements",
+      "retry_ceilings",
+      "controlled_dispositions"
+    ]
+  },
+  "telemetry_required_fields": [
+    "transaction_id",
+    "mission_id",
+    "task_id",
+    "attempt_id",
+    "packet_id",
+    "model_profile_id",
+    "policy_ids",
+    "checkpoint_revision",
+    "runtime",
+    "device",
+    "quantization",
+    "license_policy_result",
+    "input_hash",
+    "output_hash",
+    "admission_decision",
+    "semantic_findings",
+    "evidence_refs",
+    "reducer_decision",
+    "latency_ms",
+    "resource_observations",
+    "error",
+    "final_disposition"
+  ],
+  "telemetry_invariants": [
+    "append_only",
+    "tuning_lane_read_only_to_authority",
+    "tuning_lane_read_only_to_task_state",
+    "training_records_from_admitted_content_addressed_packets_only"
+  ],
+  "tracer_qualification_gates": [
+    "local_initialization_and_bounded_execution",
+    "required_contract_output",
+    "deterministic_schema_rejection",
+    "fail_closed_error_behavior",
+    "complete_telemetry_and_content_addressed_lineage",
+    "network_egress_disabled_by_default",
+    "license_compatibility",
+    "target_device_resource_ceiling",
+    "replayable_golden_and_negative_cases",
+    "no_authority_or_task_state_mutation",
+    "documented_swap_and_rollback_points"
+  ],
+  "migration_order": [
+    "remove_timesfm_from_active_config_dependencies_registry_smoke_tests_and_fallbacks",
+    "bind_chronos_2_to_existing_forecast_interface_and_qualify",
+    "bind_toto_2_0_as_secondary_edge_and_run_identical_contract_suite",
+    "add_granite_3_3_2b_behind_completion_review_ingress_without_general_tool_exposure",
+    "add_immutable_review_packet_and_strict_result_validation",
+    "add_deterministic_reducer_separate_counters_and_escalation_ceiling",
+    "verify_cross_role_non_impersonation_and_no_operational_tool_access",
+    "run_complete_mission_to_validated_jsonl_tracer_before_promotion"
+  ],
+  "baseline_impact": {
+    "frozen_mcp_tool_count_before": 12,
+    "frozen_mcp_tool_count_after": 12,
+    "new_general_mcp_tools": 0,
+    "semantic_supervisor_exposure": "internal_completion_firewall_only",
+    "forecasting_exposure": "existing_bounded_tool_interface",
+    "networkx_core_changed": false
+  },
+  "qualification_references": [
+    "https://huggingface.co/ibm-granite/granite-3.3-2b-instruct",
+    "https://huggingface.co/amazon/chronos-2",
+    "https://huggingface.co/Datadog/Toto-2.0-4m",
+    "https://huggingface.co/google/timesfm-3.0-pytorch/blob/main/LICENSE"
+  ]
+}

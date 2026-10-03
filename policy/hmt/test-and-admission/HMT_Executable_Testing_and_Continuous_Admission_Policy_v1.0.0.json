@@ -1,0 +1,240 @@
+{
+  "document_type": "hmt_executable_testing_continuous_admission_policy",
+  "document_schema_version": "1.0.0",
+  "policy_id": "HMT-TESTING-CONTINUOUS-ADMISSION",
+  "policy_version": "1.0.0",
+  "title": "HMT Executable Testing and Continuous Admission Methodology",
+  "status": "CANDIDATE_FOR_HUMAN_ARCHITECT_PROMOTION",
+  "issued_at": "2026-09-13T00:00:00Z",
+  "authority": {
+    "policy_owner": "human_architect",
+    "promotion_authority": "human_architect_only",
+    "agent_waiver_authority": false,
+    "workflow_self_promotion": false,
+    "model_self_promotion": false
+  },
+  "normative_terms": {
+    "SHALL": "mandatory",
+    "SHALL_NOT": "prohibited",
+    "SHOULD": "preferred_with_documented_deviation",
+    "MAY": "permitted",
+    "default_breach_disposition": "HOLD"
+  },
+  "core_questions": [
+    {
+      "id": "Q1_EXISTENCE",
+      "question": "For this capability, state, or output to exist lawfully, what must be true?",
+      "answer_surface": "positive_unit_contract_formula_behavior_assertions"
+    },
+    {
+      "id": "Q2_PERSISTENCE",
+      "question": "For this admitted truth to remain true, what cannot exist?",
+      "answer_surface": "assumption_invariant_forbidden_state_negative_assertions"
+    },
+    {
+      "id": "Q3_ADMISSION",
+      "question": "What evidence proves this candidate may advance, or fails it fast for remodeling?",
+      "answer_surface": "deterministic_ci_admission_gate_chain"
+    }
+  ],
+  "laws": [
+    {
+      "id": "HMT-TCA-001",
+      "name": "Question-to-Test Traceability",
+      "shall": "Every consequential test traces to a requirement, invariant, assumption, failure mode, formula, contract, or closed RRCA incident.",
+      "evidence": [
+        "test_id",
+        "source_requirement_or_invariant",
+        "test_intent",
+        "expected_disposition",
+        "evidence_ref"
+      ]
+    },
+    {
+      "id": "HMT-TCA-002",
+      "name": "Existence Assertions",
+      "shall": "Positive tests prove the minimum conditions required for claimed behavior, output, state transition, transformation, or calculation to exist lawfully.",
+      "breach_reason_code": "HOLD_REQUIRED_BEHAVIOR_NOT_PROVEN"
+    },
+    {
+      "id": "HMT-TCA-003",
+      "name": "Assumption and Forbidden-State Assertions",
+      "shall": "Consequential capabilities identify and test the assumptions and forbidden states on which continued admission depends.",
+      "prohibition": "An alternate implementation shall not route around a data, semantic, authority, leakage, or invariant violation.",
+      "breach_reason_code": "HOLD_ASSUMPTION_OR_INVARIANT_VIOLATED"
+    },
+    {
+      "id": "HMT-TCA-004",
+      "name": "Boundary and Fail-Closed Tests",
+      "shall": "Typed schema, authority, state, timing, domain, and resource boundaries include negative-path tests with stable reason codes and no consequential partial effects.",
+      "breach_reason_code": "HOLD_FAIL_CLOSED_BEHAVIOR_NOT_PROVEN"
+    },
+    {
+      "id": "HMT-TCA-005",
+      "name": "Cumulative Regression and RRCA Closure",
+      "shall": "Previously passing applicable gates are rerun after change; regressions stop progression and are closed under RRCA before continuation.",
+      "breach_reason_code": "HOLD_REGRESSION_OR_RRCA_INCOMPLETE"
+    },
+    {
+      "id": "HMT-TCA-006",
+      "name": "Reproducible Git and Environment Admission",
+      "shall": "Candidates are bound to immutable Git evidence and a reproducible declared environment; Python projects use pyproject.toml plus uv.lock before frozen CI is claimed.",
+      "breach_reason_code": "HOLD_ENVIRONMENT_OR_SOURCE_NOT_REPRODUCIBLE"
+    },
+    {
+      "id": "HMT-TCA-007",
+      "name": "CI Admits; CD Does Not Widen Authority",
+      "shall": "CI gathers admission evidence; delivery packages only admitted candidates; deployment requires explicit target authority and environment verification.",
+      "breach_reason_code": "REJECT_PROMOTION_AUTHORITY_WIDENING"
+    }
+  ],
+  "test_intents": [
+    {
+      "prefix": "T-EXIST",
+      "intent": "required_behavior_existence",
+      "question": "what_must_be_true"
+    },
+    {
+      "prefix": "T-ASSUME",
+      "intent": "assumption_invariant_forbidden_state",
+      "question": "what_cannot_exist"
+    },
+    {
+      "prefix": "T-BOUND",
+      "intent": "schema_domain_authority_timing_resource_boundary",
+      "question": "what_must_be_rejected_or_held"
+    },
+    {
+      "prefix": "T-INTEG",
+      "intent": "cross_module_or_system_seam",
+      "question": "do_admitted_parts_remain_coherent_together"
+    },
+    {
+      "prefix": "T-PARITY",
+      "intent": "equivalent_implementation_semantic_parity",
+      "question": "do_alternate_forms_preserve_semantics"
+    },
+    {
+      "prefix": "T-REPLAY",
+      "intent": "determinism_reproducibility",
+      "question": "can_same_admitted_state_be_reproduced"
+    },
+    {
+      "prefix": "T-RRCA",
+      "intent": "closed_incident_regression",
+      "question": "does_repaired_failure_remain_closed"
+    }
+  ],
+  "ci_gate_chain": [
+    {
+      "gate_id": "G-REPO-001",
+      "purpose": "repository_contract",
+      "failure": "HOLD_REPOSITORY_CONTRACT"
+    },
+    {
+      "gate_id": "G-ENV-002",
+      "purpose": "reproducible_environment",
+      "failure": "HOLD_ENVIRONMENT_OR_SOURCE_NOT_REPRODUCIBLE"
+    },
+    {
+      "gate_id": "G-STATIC-003",
+      "purpose": "static_quality_and_fold7",
+      "failure": "HOLD_STATIC_VERIFICATION_FAILED"
+    },
+    {
+      "gate_id": "G-EXIST-004",
+      "purpose": "required_behavior_existence",
+      "failure": "HOLD_REQUIRED_BEHAVIOR_NOT_PROVEN"
+    },
+    {
+      "gate_id": "G-ASSUME-005",
+      "purpose": "assumption_invariant_negative_paths",
+      "failure": "HOLD_ASSUMPTION_OR_INVARIANT_VIOLATED"
+    },
+    {
+      "gate_id": "G-INTEG-006",
+      "purpose": "integration_parity_replay",
+      "failure": "HOLD_INTEGRATION_OR_PARITY_FAILED"
+    },
+    {
+      "gate_id": "G-SEAL-007",
+      "purpose": "evidence_manifest_regression_and_admission_seal",
+      "failure": "HOLD_EVIDENCE_SEAL_INCOMPLETE"
+    }
+  ],
+  "git_environment_profile": {
+    "candidate_identity": "git_commit_sha",
+    "protected_baseline": "declared_main_or_release_branch",
+    "release_identity": "signed_or_governed_tag_to_admitted_commit",
+    "python": {
+      "dependency_intent": "pyproject.toml",
+      "resolved_environment": "uv.lock",
+      "frozen_sync_command": "uv sync --frozen --all-groups",
+      "lock_required_for_frozen_claim": true
+    },
+    "github_actions": {
+      "workflow_directory": ".github/workflows",
+      "required_gates_nonzero_on_failure": true,
+      "sealed_workflow_preference": "pin_actions_to_immutable_commit_sha",
+      "cache_is_evidence": false
+    }
+  },
+  "cd_profile": {
+    "continuous_integration": "prove_candidate_coherence_and_admission_evidence",
+    "continuous_delivery": "package_and_stage_only_ci_admitted_candidate",
+    "continuous_deployment": "activate_only_with_explicit_authority_target_binding_rollback_readiness_and_post_deploy_verification",
+    "default_without_deployment_authority": "DELIVERED_NOT_ACTIVATED"
+  },
+  "rrca_integration": {
+    "trigger": "required_test_or_gate_failure_after_change_or_unexplained_regression",
+    "prohibition": "test_suppression_is_not_a_repair",
+    "permanent_regression_prefix": "T-RRCA",
+    "required_ledgers": [
+      "Cumulative Gate Ledger",
+      "Reverse RCA Ledger"
+    ]
+  },
+  "reason_codes": [
+    "HOLD_UNEXECUTED_REQUIRED_TEST",
+    "HOLD_REQUIRED_BEHAVIOR_NOT_PROVEN",
+    "HOLD_ASSUMPTION_OR_INVARIANT_VIOLATED",
+    "HOLD_FAIL_CLOSED_BEHAVIOR_NOT_PROVEN",
+    "HOLD_REGRESSION_OR_RRCA_INCOMPLETE",
+    "HOLD_ENVIRONMENT_OR_SOURCE_NOT_REPRODUCIBLE",
+    "HOLD_REPOSITORY_CONTRACT",
+    "HOLD_STATIC_VERIFICATION_FAILED",
+    "HOLD_INTEGRATION_OR_PARITY_FAILED",
+    "HOLD_EVIDENCE_SEAL_INCOMPLETE",
+    "REJECT_PROMOTION_AUTHORITY_WIDENING"
+  ],
+  "source_pins": [
+    {
+      "artifact": "HMT_Axioms_Policy_v1.0.0.md",
+      "sha256": "b67c1722bf0fb57495c6548e712b7ab6608f40943cc26f609fecb254c874cb68",
+      "use": "axioms_fold7_tracer_reusable_steel_rrca_alignment"
+    },
+    {
+      "artifact": "rrca_verification_and_validation_v4.md",
+      "sha256": "9e40b6b088a8196f959fba170403d0b6da8340a27ab1fe04a5843004e234076d",
+      "use": "dynamic_cumulative_verification_and_reverse_rca"
+    },
+    {
+      "artifact": "sql-quality-automation-pipeline project.zip",
+      "sha256": "9010f01755da035d1b0e26122063deb0ccd5529208de08a9fabed891849f100b",
+      "use": "originating_sql_ci_quality_tracer"
+    },
+    {
+      "artifact": "system_prompt_baseline.xml",
+      "sha256": "77e1ccb6ec1710fbe63a3c361cd10ae3b26aa8c8595164a14208715ecf43ba42",
+      "use": "evidence_gate_and_status_baseline"
+    },
+    {
+      "artifact": "tooling_normalization.xml",
+      "sha256": "2680756ab5bbe5ce5dbb89338aa5bdc6be42745ade289949edbcf019f8526202",
+      "use": "python_uv_pytest_and_tooling_alignment"
+    }
+  ],
+  "current_boundary": {
+    "docker_specific_admission_rules": "DEFERRED_UNTIL_CONTAINER_RUNTIME_DISCIPLINE_IS_SEPARATELY_REFRESHED_AND_PROVEN"
+  }
+}

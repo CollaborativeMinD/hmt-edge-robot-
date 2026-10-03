@@ -5,7 +5,7 @@
 Governed edge robotics, resident HMT, and evidence you can replay.
 
 [![CI](https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/tests-151_passing-2ea043?style=flat-square)](evidence/validation.json)
+[![Tests](https://img.shields.io/badge/tests-166_passing-2ea043?style=flat-square)](evidence/validation.json)
 [![Coverage](https://img.shields.io/badge/coverage-97.42%25-2ea043?style=flat-square)](evidence/coverage.json)
 [![Supervisory SIL](https://img.shields.io/badge/supervisory_SIL-PASS-2ea043?style=flat-square)](evidence/validation.json)
 [![Physical deployment](https://img.shields.io/badge/physical_deployment-HOLD-d29922?style=flat-square)](docs/compliance.md)
@@ -84,3 +84,5 @@ until their external evidence exists. The architecture's cloud and deployment
 components are mapped explicitly; absent services are never reported as running.
 
 CI/CD phase 1 now binds tool admission and locked dependencies. See [the pipeline SOP](docs/ci_cd.md). Linux/Pi/K3s deployment remains HOLD.
+
+Phase 2 adds [policy assessment and scoped tool reuse](docs/ci_phase2.md). Full policy/tool admission, Docker builds, and deployment remain HOLD.

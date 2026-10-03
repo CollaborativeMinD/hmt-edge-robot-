@@ -1,0 +1,14 @@
+@prefix forge: <https://terminal-state.systems/ontology/forge#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+forge:CanonicalFieldSubtypeShape a sh:NodeShape ;
+    sh:targetClass forge:CanonicalField ;
+    sh:property [ sh:path forge:hard_binds_to_subtype ; sh:minCount 1 ; sh:maxCount 1 ; sh:class forge:FieldSemanticSubtype ] ;
+    sh:property [ sh:path forge:phase_4_binding_basis ; sh:minCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path forge:phase_4_hardening_action ; sh:minCount 1 ; sh:datatype xsd:string ] .
+
+forge:FieldMappingRefinementShape a sh:NodeShape ;
+    sh:targetClass forge:Mapping ;
+    sh:property [ sh:path forge:refined_mapping_disposition ; sh:minCount 1 ; sh:datatype xsd:string ] .

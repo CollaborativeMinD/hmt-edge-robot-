@@ -1,0 +1,22 @@
+{
+  "schema_id": "truth_serum.constraints-register",
+  "schema_version": "1.0.0",
+  "constraints": [
+    {
+      "id": "CON-TS-001",
+      "statement": "Runtime replaces only an explicit runtime-named output beneath evidence/."
+    },
+    {
+      "id": "CON-TS-002",
+      "statement": "Production Python functions are at most 60 lines and modules are below 100 lines."
+    },
+    {
+      "id": "CON-TS-003",
+      "statement": "REPOSITORY_SEAL.json is the only whole-repository checksum artifact."
+    },
+    {
+      "id": "CON-TS-004",
+      "statement": "Unavailable mandatory evidence produces HOLD and cannot be waived by documentation."
+    }
+  ]
+}

@@ -1,0 +1,450 @@
+{
+  "document_type": "hmt_axioms_policy",
+  "document_schema_version": "1.0.0",
+  "policy_id": "HMT-AXIOMS",
+  "policy_version": "1.0.0",
+  "title": "HMT Axioms Policy",
+  "status": "CANDIDATE_FOR_HUMAN_ARCHITECT_PROMOTION",
+  "issued_at": "2026-09-02T00:00:00Z",
+  "authority": {
+    "policy_owner": "human_architect",
+    "promotion_authority": "human_architect_only",
+    "agent_waiver_authority": false,
+    "model_self_promotion": false
+  },
+  "normative_terms": {
+    "SHALL": "mandatory",
+    "SHALL_NOT": "prohibited",
+    "SHOULD": "preferred_with_documented_deviation",
+    "MAY": "permitted",
+    "default_breach_disposition": "HOLD"
+  },
+  "scope": [
+    "hmt_repositories",
+    "hmt_packages",
+    "embedded_mcp_servers",
+    "tool_adapters",
+    "agent_and_human_interfaces",
+    "safety_critical_control_paths",
+    "deterministic_build_and_verification_tools",
+    "notebooks",
+    "tracer_bullets",
+    "digital_twins",
+    "python_plants",
+    "repository_specific_skills"
+  ],
+  "execution_profiles": {
+    "safety_critical_path": {
+      "definition": "Code permitted to influence physical state, authority state, task completion, admission, or a controlled terminal decision.",
+      "managed_runtime_default": "PROHIBITED_UNLESS_EQUIVALENT_BOUNDS_ARE_PROVEN_AND_HUMAN_PROMOTED"
+    },
+    "managed_runtime_support": {
+      "definition": "Code outside the hard safety path that communicates only through bounded typed fail-closed adapters.",
+      "direct_authority_over_safety_path": false
+    }
+  },
+  "frozen_baseline_reference": {
+    "baseline_id": "HMT-MCP-BASELINE",
+    "baseline_version": "1.0.0",
+    "file": "HMT_Baseline_MCP_Tools_v1.0.0.json",
+    "sha256": "ff34e5ed4e999e5c60ce84ba864ab1fe7d315f18b090f91d292f5c46e788face",
+    "canonical_tool_count": 12,
+    "status": "FROZEN"
+  },
+  "axioms": [
+    {
+      "axiom_id": "HMT-AX-001",
+      "name": "Predictable Finite-State Core",
+      "source_doctrine": "NASA Power of 10 inspired safety-critical core",
+      "statement": "The safety-critical execution path shall operate as a bounded predictable finite-state system with no dynamic memory allocation after initialization, no recursion, no hidden side-effect pointers, and no boundary input that has not been explicitly admitted.",
+      "tactical_posture": "Structural stress shall not cause unbounded loops, memory exhaustion, silent state drift, or unreplayable authority transitions.",
+      "requirements": [
+        {
+          "requirement_id": "HMT-AX-001-R01",
+          "rule": "Every loop has a static or configuration-bounded iteration ceiling.",
+          "verification": "loop_bound_inventory"
+        },
+        {
+          "requirement_id": "HMT-AX-001-R02",
+          "rule": "Recursion is prohibited in the safety-critical execution path.",
+          "verification": "static_recursion_scan"
+        },
+        {
+          "requirement_id": "HMT-AX-001-R03",
+          "rule": "Buffers, queues, state containers, and work pools are prefilled or preallocated before consequential execution.",
+          "verification": "allocation_boundary_verification"
+        },
+        {
+          "requirement_id": "HMT-AX-001-R04",
+          "rule": "Boundary inputs use typed default-deny schemas.",
+          "verification": "negative_boundary_schema_tests"
+        },
+        {
+          "requirement_id": "HMT-AX-001-R05",
+          "rule": "Consequential state transitions are explicit, finite, receipted, and replayable.",
+          "verification": "state_transition_and_replay_test"
+        },
+        {
+          "requirement_id": "HMT-AX-001-R06",
+          "rule": "Managed runtimes remain outside the hard safety path unless equivalent bounds are evidenced and promoted by the Human Architect.",
+          "verification": "execution_profile_boundary_check"
+        }
+      ],
+      "required_evidence": [
+        "static_analysis_receipt",
+        "loop_bound_inventory",
+        "allocation_bound_statement",
+        "state_transition_inventory",
+        "negative_boundary_test_receipts",
+        "replay_receipt"
+      ],
+      "breach_reason_code": "HOLD_SAFETY_CORE_UNBOUNDED"
+    },
+    {
+      "axiom_id": "HMT-AX-002",
+      "name": "Fold 7 Spatial Ceiling",
+      "statement": "Every discrete business function shall contain no more than 60 source lines and every encapsulated executable module shall contain no more than 100 source lines.",
+      "tactical_posture": "Spatial bounds force semantic density, reduce cross-module entanglement, and preserve a reviewable human and agent working set.",
+      "loc_policy": {
+        "function_max_loc": 60,
+        "module_max_loc": 100,
+        "metric": "nonblank_physical_source_lines",
+        "count_comment_only_lines": false,
+        "count_decorators": true,
+        "count_docstring_lines": true,
+        "not_executable_module": [
+          "generated_evidence",
+          "immutable_data_fixture",
+          "prose_document"
+        ],
+        "notebook_cell_function_is_function": true
+      },
+      "requirements": [
+        {
+          "requirement_id": "HMT-AX-002-R01",
+          "rule": "Oversized routines are decomposed by responsibility rather than formatting evasion.",
+          "verification": "deterministic_loc_and_structure_report"
+        },
+        {
+          "requirement_id": "HMT-AX-002-R02",
+          "rule": "Modules do not evade ceilings through dynamic code injection or unbounded import side effects.",
+          "verification": "dynamic_injection_and_import_scan"
+        },
+        {
+          "requirement_id": "HMT-AX-002-R03",
+          "rule": "Any exception remains HOLD until explicit Human Architect disposition.",
+          "verification": "exception_register_check"
+        }
+      ],
+      "required_evidence": [
+        "function_loc_report",
+        "module_loc_report",
+        "fold7_violation_reason_codes"
+      ],
+      "breach_reason_code": "HOLD_FOLD7_CEILING_EXCEEDED"
+    },
+    {
+      "axiom_id": "HMT-AX-003",
+      "name": "Agent-Validated Tracer-Bullet Inception",
+      "statement": "An agent or model shall not claim a solution, recommend an implementation architecture, or admit work into the repository until it has compiled, executed, and validated a thin end-to-end slice in a live disposable sandbox.",
+      "tactical_posture": "The builder acts as an accountable systems compiler and proves integration viability before the master repository absorbs the direction.",
+      "preferred_exploration_surfaces": [
+        "scratch_pad.py",
+        "white_board.html"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "HMT-AX-003-R01",
+          "rule": "The tracer crosses every critical seam required to prove the proposed direction.",
+          "verification": "critical_seam_coverage"
+        },
+        {
+          "requirement_id": "HMT-AX-003-R02",
+          "rule": "The tracer includes at least one valid path and one fail-closed or negative path.",
+          "verification": "positive_and_negative_execution_receipts"
+        },
+        {
+          "requirement_id": "HMT-AX-003-R03",
+          "rule": "Inputs, outputs, configuration, environment, evidence, and artifact hashes are captured.",
+          "verification": "tracer_evidence_packet_validation"
+        },
+        {
+          "requirement_id": "HMT-AX-003-R04",
+          "rule": "Conversational descriptions, partial code, mocked success, and operator-completed initialization do not satisfy the tracer requirement.",
+          "verification": "non_execution_claim_rejection"
+        },
+        {
+          "requirement_id": "HMT-AX-003-R05",
+          "rule": "If the executing agent cannot validate the tracer, the direction remains HOLD rather than feasible-by-assertion.",
+          "verification": "agent_validation_receipt_required"
+        },
+        {
+          "requirement_id": "HMT-AX-003-R06",
+          "rule": "The full build begins only after tracer admission.",
+          "verification": "build_admission_dependency_check"
+        }
+      ],
+      "required_evidence": [
+        "compile_receipt",
+        "execution_receipt",
+        "negative_path_receipt",
+        "environment_manifest",
+        "seam_inventory",
+        "artifact_hash",
+        "tracer_admission_decision"
+      ],
+      "breach_reason_code": "HOLD_TRACER_BULLET_NOT_PROVEN",
+      "agent_inability_reason_code": "HOLD_AGENT_VALIDATION_INCOMPLETE"
+    },
+    {
+      "axiom_id": "HMT-AX-004",
+      "name": "Reusable Steel",
+      "source_doctrine": "Lazy Genius and KISS",
+      "statement": "Simplicity shall preserve rigor. A hardened deterministic capability shall be packaged behind a narrow typed interface instead of being repeatedly rebuilt, copied, or replaced with prose orchestration.",
+      "tactical_posture": "Work hard once, reuse the proven mechanism through adapters, and keep the system small without weakening evidence or failure behavior.",
+      "requirements": [
+        {
+          "requirement_id": "HMT-AX-004-R01",
+          "rule": "Shared capabilities remain independently executable and model-agnostic.",
+          "verification": "independent_execution_test"
+        },
+        {
+          "requirement_id": "HMT-AX-004-R02",
+          "rule": "MCP exposure uses a bounded adapter rather than duplicating or absorbing the sovereign tool.",
+          "verification": "adapter_boundary_review"
+        },
+        {
+          "requirement_id": "HMT-AX-004-R03",
+          "rule": "Direct and MCP execution produce semantically equivalent decisions and receipts.",
+          "verification": "direct_mcp_parity_test"
+        },
+        {
+          "requirement_id": "HMT-AX-004-R04",
+          "rule": "Repository-specific skills add repository-specific work and do not rename or thinly wrap baseline tools.",
+          "verification": "skill_overlap_and_value_test"
+        },
+        {
+          "requirement_id": "HMT-AX-004-R05",
+          "rule": "The simplest design satisfying every governing requirement is preferred.",
+          "verification": "scope_and_dependency_review"
+        }
+      ],
+      "required_evidence": [
+        "adapter_contract",
+        "direct_mcp_parity_receipt",
+        "reuse_map",
+        "dependency_boundary",
+        "regression_receipts"
+      ],
+      "breach_reason_code": "HOLD_REUSABLE_STEEL_PARITY_FAILED"
+    },
+    {
+      "axiom_id": "HMT-AX-005",
+      "name": "Self-Explaining Operational Scaffold",
+      "statement": "The system and each consequential module shall be documented, functionally scaffolded, wired, and evidenced well enough to explain operation, authority, troubleshooting, verification, and recovery without the original builder being present.",
+      "tactical_posture": "Context saturation is an engineering failure mode. Operational meaning belongs in executable interfaces, receipts, and concise root documents rather than builder memory.",
+      "required_root_documents": [
+        "Runbook.md",
+        "Agents.md",
+        "SKILLS.md"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "HMT-AX-005-R01",
+          "rule": "Runbook.md contains operator-ready execution, observability, maintenance, troubleshooting, recovery, and verification procedures.",
+          "verification": "runbook_operational_parity_test"
+        },
+        {
+          "requirement_id": "HMT-AX-005-R02",
+          "rule": "Agents.md defines authority, admission, interception, task, tool, failure, and escalation behavior.",
+          "verification": "agents_contract_parity_test"
+        },
+        {
+          "requirement_id": "HMT-AX-005-R03",
+          "rule": "SKILLS.md projects only executable skills with schemas, bounds, evidence, and invocation contracts.",
+          "verification": "skills_registry_implementation_parity_test"
+        },
+        {
+          "requirement_id": "HMT-AX-005-R04",
+          "rule": "Every consequential module identifies purpose, inputs, outputs, side effects, authority, failure states, evidence, and verification command.",
+          "verification": "module_operational_metadata_check"
+        },
+        {
+          "requirement_id": "HMT-AX-005-R05",
+          "rule": "Documentation does not claim unavailable, unbound, or unverified capability.",
+          "verification": "documentation_execution_parity_test"
+        }
+      ],
+      "required_evidence": [
+        "documentation_parity_report",
+        "clean_room_operator_replay",
+        "clean_room_agent_replay",
+        "capability_registry_parity_receipt",
+        "stale_command_and_link_check"
+      ],
+      "breach_reason_code": "HOLD_OPERATIONAL_CONTEXT_INCOMPLETE"
+    },
+    {
+      "axiom_id": "HMT-AX-006",
+      "name": "Reverse RCA and Cumulative Verification",
+      "statement": "Verification is a dynamic cumulative constraint. After each task item, every previously good applicable gate shall be rerun. A regression stops work until Reverse RCA finds the evidenced initiating condition or lawful boundary, repairs the coupling, and closes regression testing down the causal chain.",
+      "tactical_posture": "An output is a receipt of upstream admissions, authority transfers, state changes, and structural effects. Surface repair without causal closure is not completion.",
+      "causal_question": "For this output to be true, what upstream effects admitted or caused it?",
+      "causal_stop_conditions": [
+        "reproducible_initiating_condition",
+        "immutable_external_dependency",
+        "explicit_architectural_boundary",
+        "evidence_backed_environmental_limitation"
+      ],
+      "requirements": [
+        {
+          "requirement_id": "HMT-AX-006-R01",
+          "rule": "Causal traversal follows only evidenced edges and does not continue speculatively past the last evidenced edge.",
+          "verification": "causal_evidence_chain_check"
+        },
+        {
+          "requirement_id": "HMT-AX-006-R02",
+          "rule": "Gates and incidents receive stable identifiers.",
+          "verification": "stable_identifier_check"
+        },
+        {
+          "requirement_id": "HMT-AX-006-R03",
+          "rule": "A Cumulative Gate Ledger is maintained with no more than seven columns for single-agent execution.",
+          "verification": "cumulative_gate_ledger_schema_check"
+        },
+        {
+          "requirement_id": "HMT-AX-006-R04",
+          "rule": "A Reverse RCA Ledger is maintained with no more than seven columns for single-agent execution.",
+          "verification": "reverse_rca_ledger_schema_check"
+        },
+        {
+          "requirement_id": "HMT-AX-006-R05",
+          "rule": "Supervised sub-agent execution authorizes and requires one eighth sub_agent_task_attestation column and cross-spectrum contradiction checking.",
+          "verification": "sub_agent_attestation_and_contradiction_check"
+        },
+        {
+          "requirement_id": "HMT-AX-006-R06",
+          "rule": "A repaired branch reruns its causal regression chain and every previously good applicable gate.",
+          "verification": "cumulative_regression_replay"
+        }
+      ],
+      "ledger_schemas": {
+        "cumulative_gate_ledger": {
+          "single_agent_max_columns": 7,
+          "columns": [
+            "timestamp",
+            "task",
+            "gate_id",
+            "requirement",
+            "status",
+            "evidence_ref",
+            "evidence_hash_or_reason"
+          ]
+        },
+        "reverse_rca_ledger": {
+          "single_agent_max_columns": 7,
+          "columns": [
+            "timestamp",
+            "incident_id",
+            "checkpoint",
+            "observed_state",
+            "causal_evidence",
+            "validation_test",
+            "disposition"
+          ]
+        },
+        "supervised_sub_agent_extension": {
+          "max_columns": 8,
+          "required_column": "sub_agent_task_attestation"
+        }
+      },
+      "required_evidence": [
+        "cumulative_gate_ledger",
+        "reverse_rca_ledger",
+        "failure_reproducer",
+        "initiating_condition_evidence",
+        "repair_diff",
+        "downstream_regression_receipts",
+        "final_disposition"
+      ],
+      "breach_reason_code": "HOLD_RRCA_OR_REGRESSION_INCOMPLETE"
+    }
+  ],
+  "completion_firewall": {
+    "entry_tool": "task_update",
+    "model_may_skip": false,
+    "task_update_may_set_done": false,
+    "human_closeout_required": true,
+    "fixed_steps": [
+      "validate_mission_authority_assignment_and_state",
+      "hash_submitted_package",
+      "run_truth_serum",
+      "check_reverse_rca_ledger",
+      "check_cumulative_gate_ledger",
+      "run_scaffoldctl",
+      "persist_immutable_receipt",
+      "verify_task_board",
+      "working_agreement",
+      "apply_disposition"
+    ],
+    "permitted_dispositions": [
+      "REVIEW",
+      "QUARANTINED",
+      "ESCALATED"
+    ]
+  },
+  "repository_specific_skill_policy": {
+    "default_target_count": 5,
+    "required_properties": [
+      "repository_specific",
+      "executable",
+      "typed",
+      "bounded",
+      "model_agnostic",
+      "direct_mcp_parity_verified",
+      "deterministic_receipts",
+      "stable_reason_codes",
+      "evidence_lineage"
+    ],
+    "prohibited_patterns": [
+      "prose_only_workflow",
+      "renamed_baseline_tool",
+      "thin_wrapper_without_new_repository_function",
+      "unvalidated_tool",
+      "silent_authority_widening"
+    ]
+  },
+  "minimum_repository_acceptance_packet": [
+    "Runbook.md",
+    "Agents.md",
+    "SKILLS.md",
+    "frozen_baseline_compatibility_receipt",
+    "admitted_tracer_bullet_receipt",
+    "capability_registry_implementation_parity_receipt",
+    "direct_mcp_parity_receipts",
+    "fold7_report",
+    "safety_core_report",
+    "cumulative_gate_ledger",
+    "reverse_rca_ledger",
+    "repository_specific_skill_tests",
+    "final_package_hash",
+    "human_architect_disposition"
+  ],
+  "controlled_dispositions": [
+    "PASS",
+    "HOLD",
+    "REJECT",
+    "FAIL",
+    "QUARANTINED",
+    "ESCALATED",
+    "REVIEW"
+  ],
+  "change_control": {
+    "axiom_change_requires_new_policy_version": true,
+    "baseline_change_requires_new_baseline_version": true,
+    "human_architect_approval_required": true,
+    "agent_may_modify_frozen_baseline": false,
+    "model_may_widen_authority": false,
+    "policy_promotion_requires_preserved_hashes": true
+  }
+}

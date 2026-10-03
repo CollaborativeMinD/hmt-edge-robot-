@@ -1,0 +1,41 @@
+{
+  "schema_id": "urn:scaffoldctl:adapter:mcp-tool-contract:1.0",
+  "tool_id": "scaffoldctl",
+  "tool_version": "0.3.0",
+  "invocation_seam": "subprocess_cli_only",
+  "implementation_imports_allowed": false,
+  "present_authority_required": true,
+  "capabilities": [
+    {"capability_id": "scaffoldctl.authority", "command": "authority", "effect_class": "READ_ONLY_AUTHORITY"},
+    {"capability_id": "scaffoldctl.state_table", "command": "state-table", "effect_class": "READ_ONLY_INSPECTION"},
+    {"capability_id": "scaffoldctl.schema", "command": "schema", "effect_class": "READ_ONLY_INSPECTION"},
+    {"capability_id": "scaffoldctl.validate_root", "command": "validate-root", "effect_class": "READ_ONLY_VALIDATION"},
+    {"capability_id": "scaffoldctl.validate", "command": "validate", "effect_class": "BOUNDED_VALIDATION"},
+    {"capability_id": "scaffoldctl.audit", "command": "audit", "effect_class": "READ_ONLY_AUDIT"},
+    {"capability_id": "scaffoldctl.verify_ledger", "command": "verify-ledger", "effect_class": "READ_ONLY_EVIDENCE_VERIFICATION"}
+  ],
+  "required_outer_fields": [
+    "capability_id",
+    "admission_epoch",
+    "current_epoch",
+    "lease_id",
+    "authority_tier",
+    "agent_role",
+    "arguments"
+  ],
+  "epoch_contract": "nonnegative_integer_exact_equality",
+  "bounds": {
+    "arguments": 24,
+    "argument_characters": 512,
+    "argument_characters_total": 4096,
+    "authority_field_characters": 128,
+    "subprocess_timeout_seconds": 30
+  },
+  "authority_ceiling": ["NO_DIRECT_ACTUATION", "NO_ARCHITECTURE_MUTATION", "NO_PROMOTION"],
+  "exit_semantics": {"0": "PASS", "1": "REJECT_OR_FAIL", "2": "CONTRACT_OR_AUTHORITY_ERROR"},
+  "non_claims": [
+    "Tool visibility is not present execution authority.",
+    "The adapter does not import scaffoldctl implementation modules.",
+    "The adapter does not expose scaffolding, hook installation, key generation, ledger sealing, or promotion."
+  ]
+}

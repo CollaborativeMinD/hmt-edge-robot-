@@ -1,0 +1,80 @@
+{
+  "document_type": "hmt_reference_bounded_transformation_policy",
+  "schema_version": "1.0.0",
+  "policy_id": "HMT-REFERENCE-BOUNDED-TRANSFORMATION",
+  "policy_version": "1.0.0",
+  "title": "HMT Reference-Bounded Transformation Policy",
+  "status": "CANDIDATE_FOR_HUMAN_ARCHITECT_PROMOTION",
+  "authority": "human_architect_only",
+  "principle": "Initialize reusable reference structures before engineering; derive candidates only from an admitted reference plus an explicit requested change; measure and validate the delta before handoff.",
+  "tool_name": "reference_build",
+  "operations": ["load_reference", "transform_from_reference", "validate_against_reference", "diff_candidate", "emit_receipt"],
+  "execution_profile": "managed_runtime_support",
+  "activation_allowed": false,
+  "reference_locations": [
+    {"location_id":"EXAMPLE-JSON","repository":"hmt-reference-build-1.0.0","relative_location":"examples/references/build_object.json","description":"Executable schema-bound build object reference, not a production assignment.","requirements":["Use examples/references/build_object.schema.json.","Raw-byte reference and schema hashes are pinned in examples/reference_registry.json.","The only change paths are title, details/summary, and requirements."]},
+    {"location_id":"EXAMPLE-MD","repository":"hmt-reference-build-1.0.0","relative_location":"examples/references/runbook.md","description":"Sectioned Markdown reference with immutable scope and section order.","requirements":["Use examples/references/runbook.schema.json.","Only the Procedure section body is mutable.","LF, ATX headings, unique headings and lossless projection roundtrip are mandatory."]},
+    {"location_id":"OPERATOR-REGISTRY","repository":"operator-selected local reference snapshot; no remote repository has been assigned","relative_location":"<reference-root>/<policy-relative-path>","description":"Authoritative local snapshot root selected before the MCP process starts.","requirements":["Select a real local repository snapshot, version and owner; do not treat this placeholder as a configured repo.","Declare artifact ID, version, description, relative artifact/schema locations, raw-byte hashes, requirements, exact allowed paths/operations, required and immutable paths, explicit invariants and max_delta.","Validate with contracts/schemas/reference_registry.schema.json; externally pin the registry hash and bind exact mission triples to references and operations.","Mount reference content read-only for the tool process; keep a dedicated mutable state directory outside the root."]},
+    {"location_id":"KERNEL-PROVENANCE","repository":"HMT_Transformation_Kernel_v4.0.0","relative_location":"evidence/kernel_mission_bundle.json; src/hmt_reference_build/kernel/","description":"Actual kernel-generated mission bundle and byte-preserved canonical/model/error primitives used to derive this specialized tool.","requirements":["See evidence/kernel_derivation.json for source pins and exact reuse.","The mission artifact is provenance, not a live mission assignment.","Exact full-kernel Python 3.13 validation remains distinct from the tested Python 3.12 generation aperture."]}
+  ],
+  "initialization_order": [
+    "Review this policy, the supplied HMT axioms/RRCA policies, Agents.md, and Runbook.md.",
+    "Operator selects a versioned local reference snapshot and closed artifact schema.",
+    "Operator declares only explicit requested-change paths and invariants, then pins the registry externally.",
+    "Operator binds mission assignment and operation ceilings; no caller may supply a replacement policy.",
+    "Run init to validate every reference and schema before creating the dedicated receipt outbox.",
+    "Use load_reference and explicit transform/compare operations; do not infer permission from arbitrary prose.",
+    "Emit the recomputed validation receipt, then submit its artifact/evidence through the existing baseline completion firewall."
+  ],
+  "requirements": [
+    {"requirement_id":"RBT-REQ-001","rule":"Generate candidates from a pinned reference and explicit add/replace/remove requests; no unconstrained generation.","modules":["registry.py","transform.py"],"gates":["G-RBT-SMOKE","G-RBT-DRIFT"]},
+    {"requirement_id":"RBT-REQ-002","rule":"Use strict frozen extra-forbid inputs and validate every supported schema constraint; unsupported keywords reject.","modules":["request.py","policy.py","schema_profile.py","schema_validation.py"],"gates":["G-SCHEMA-002","G-RBT-SCHEMA"]},
+    {"requirement_id":"RBT-REQ-003","rule":"Measure all structural/value deltas and explicit semantic invariants; reject drift outside the request and policy.","modules":["delta.py","invariants.py","evaluate.py"],"gates":["G-RBT-DRIFT","G-RBT-MARKDOWN"]},
+    {"requirement_id":"RBT-REQ-004","rule":"Bind request, policy, reference, schema, candidate, rendering and delta into deterministic validation receipts; revalidate before append-only handoff.","modules":["receipts.py","service.py","store.py"],"gates":["G-REPLAY-005","G-RBT-RECEIPT"]},
+    {"requirement_id":"RBT-REQ-005","rule":"Expose one MCP tool with five schema-discriminated operations and direct/stdio decision parity.","modules":["mcp_contract.py","mcp_protocol.py","mcp_server.py"],"gates":["G-RBT-MCP","G-RBT-PROTOCOL"]},
+    {"requirement_id":"RBT-REQ-006","rule":"Constrain local files, input bytes/nodes/depth, paths, deltas and stored receipts; never execute artifact text.","modules":["bounds.py","paths.py","pointers.py","store.py"],"gates":["G-AUTH-003","G-RBT-BOUNDARY"]},
+    {"requirement_id":"RBT-REQ-007","rule":"Derive the core from the supplied kernel, execute a tracer first and document bounded necessary extensions.","modules":["kernel/canonical.py","kernel/models/base.py"],"gates":["G-RBT-TRACER","G-ARCH-001"]},
+    {"requirement_id":"RBT-REQ-008","rule":"Keep existing baseline tools and completion transaction unchanged; reference receipts never replace integration tests or review authority.","modules":["service.py","store.py"],"gates":["G-RBT-POLICY","G-RUNTIME-004"]},
+    {"requirement_id":"RBT-REQ-009","rule":"Publish executable documentation, field bindings, module controls, complete test inventory, cumulative gates and RRCA evidence.","modules":["cli.py","mcp_contract.py"],"gates":["G-ARCH-001","G-RBT-DOCS","G-RBT-POLICY"]}
+  ],
+  "semantic_contract": [
+    "Semantic means only declared equals, unchanged, non_empty and subset constraints; no language-model judgment or general proof of behavioral equivalence is claimed.",
+    "JSON objects are compared recursively by an iterative walker; arrays are atomic values. Numeric representation is strict: 1 and 1.0 are distinct for equality/enum/const and delta identity.",
+    "JSON Pointer uses canonical ~0/~1 escapes, dictionary segments only, no root replacement, no empty key segments or array-index patching.",
+    "Allowed paths are exact, not prefix permissions; replacing a parent object does not authorize unlisted child deltas.",
+    "Replace/remove require the previous value digest; overlapping operations reject; add requires absence.",
+    "A submitted candidate must exactly equal reconstruction from the admitted reference and requested change, even if its extra change uses an otherwise permitted path.",
+    "Markdown is a strict ATX/LF section projection. Rendering must reparse identically, preventing body edits from introducing headings or dropping sections.",
+    "Schema profile supports explicit JSON types, closed objects/properties/required, items, enum/const, min/max Length/Items, uniqueItems, minimum/maximum, title/description and the 2020-12 dialect marker. All other keywords reject."
+  ],
+  "boundary_limits": [
+    "262144 bytes per input, policy, schema or reference; at most 4096 JSON nodes and depth 16.",
+    "At most 32 references, 32 assignment triples, 64 patches, 64 delta entries, and a per-reference max_delta no greater than 64.",
+    "Relative filesystem paths are at most 1024 characters; patch pointers are at most 256 characters and 16 nonempty segments.",
+    "No symlinks, parent traversal, absolute caller paths, secret-path patterns or non-regular reference files.",
+    "At most 4096 newline-framed MCP messages per process. Oversized or unterminated frames terminate with a protocol error; synchronous bounded processing only.",
+    "At most 4096 immutable receipt rows and 1048576 bytes per stored envelope; SQLite lock wait is two seconds. Dedicated OS-level disk/process limits remain the operator responsibility.",
+    "No hard real-time or allocation-free claim: Python, Pydantic and SQLite are managed-support components, not promoted safety/authority controllers."
+  ],
+  "handoff_contract": [
+    "transform/validate/diff yield PASS only after the same reducer checks; their artifacts remain unpersisted and handoff_ready=false.",
+    "emit_receipt receives a candidate and prior validation receipt ID; it recomputes the decision, checks the ID, reloads pinned sources, then atomically appends the complete envelope. Only this returns handoff_ready=true.",
+    "Handoff-ready means locally recorded engineering evidence, not task completion, runtime activation, or human approval.",
+    "Rejected candidates are withheld from artifact/rendered output; available delta and reason codes explain rejection. Pin mismatches and storage capacity produce HOLD.",
+    "Receipt IDs are integrity hashes, not signatures or authentication. Operator-controlled policy and process boundaries are the trust root; privileged filesystem tampering is outside this tool's guarantee.",
+    "Downstream task_update still runs truth_serum, RRCA/cumulative checks, scaffoldctl and package tests; working_agreement still requires fresh passing receipts. Existing corrective feedback, lease and attempt limits are not bypassed or reimplemented."
+  ],
+  "exclusions": [
+    "No arbitrary shell, network, remote Git checkout, installation hooks, model calls, execution of generated artifacts, or template expressions.",
+    "No YAML, binary files, arbitrary source-code refactoring, AST equivalence, cross-file transaction generator, full JSON Schema evaluator or semantic natural-language proof.",
+    "No policy self-edit, policy-pin inference from caller input, authority escalation, DONE transition or operational activation.",
+    "No automatic personal Codex skill installation, remote repository creation or deployment is performed by this package."
+  ],
+  "source_policies": ["HMT_Axioms_Policy_v1.0.0.json","HMT_rrca_policy_v4.json","HMT_Baseline_MCP_Tools_v1.2.0.json","default-pace-matrix_v1.json","Ontology_FederatedBaseline_Core.ttl","Ontology_FederatedBaseline_SubtypeCore.ttl"],
+  "promotion_requirements": [
+    "Human Architect reviews the new policy and baseline v1.3.0 successor; the frozen v1.2.0 source remains byte-preserved.",
+    "Resolve real production reference repo paths, exact policies and assignment bindings; execute the supplied cumulative test manifest in the actual host.",
+    "Run the actual sovereign truth_serum/scaffoldctl/rrca-build and upstream completion transaction where configured; local analogous tests are not sovereign receipts.",
+    "For a claim of exact full-kernel reproduction, rerun its own validation under its pinned Python 3.13 environment. This package's verified Python 3.12 scope does not satisfy that separate claim."
+  ]
+}

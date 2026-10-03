@@ -1,0 +1,979 @@
+{
+  "authority": {
+    "direct_actuation_authority": false,
+    "human_promotion_required": true,
+    "mcp_plus_repository_surface": "READY",
+    "promotion_allowed": false
+  },
+  "disposition_counts": {
+    "INHERITED": 34,
+    "MODIFIED": 22,
+    "NEW": 40,
+    "REMOVED": 31
+  },
+  "files": [
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "MODIFIED",
+      "path": ".github/workflows/scaffoldctl-perimeter.yml",
+      "sha256": "4cebdc4e4025c246a8a88795cd5cd4ab6d7e1ba86875a22ed8cca1b253e9575a",
+      "size_bytes": 3688
+    },
+    {
+      "artifact_type": "governed_document",
+      "disposition": "MODIFIED",
+      "path": "AGENTS.md",
+      "sha256": "a01d3196c1729dedca2ffd84dda7885beb6594db397c60269c792ac5cf944aaf",
+      "size_bytes": 2525
+    },
+    {
+      "artifact_type": "governed_document",
+      "disposition": "NEW",
+      "path": "Agents.md.md",
+      "sha256": "7aa3e2279dafdff7afbb2002379d6e9daf469cc2e70623c3413ee30f0da6c217",
+      "size_bytes": 2444
+    },
+    {
+      "artifact_type": "governed_document",
+      "disposition": "NEW",
+      "path": "Humans.md",
+      "sha256": "750be2e14da70a2507bd5ec25d776ae19d6487d1396ce59a5a8fba1397f8c06d",
+      "size_bytes": 1699
+    },
+    {
+      "artifact_type": "governed_document",
+      "disposition": "MODIFIED",
+      "path": "Index.md",
+      "sha256": "b8c194e8149ec16e33c86e84a046dc433a3918837881783308528d15babfd196",
+      "size_bytes": 2301
+    },
+    {
+      "artifact_type": "governed_document",
+      "disposition": "MODIFIED",
+      "path": "README.md",
+      "sha256": "8379729cd8406dd21af359851a2bc2ae4f6f7f14fdf333a0c2cd748563df4e99",
+      "size_bytes": 1748
+    },
+    {
+      "artifact_type": "governed_document",
+      "disposition": "MODIFIED",
+      "path": "Start_here.md",
+      "sha256": "9aea1d9b54be01f04323e133a274fb25ca83617bbd2557d28b002e484ffa6947",
+      "size_bytes": 1274
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "NEW",
+      "path": "adapters/__init__.py",
+      "sha256": "ef993edfafecce9e1bcda712b389dfd36da776712a3c8637c546e8e42d24d001",
+      "size_bytes": 68
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "NEW",
+      "path": "adapters/contract_adapter.py",
+      "sha256": "8074873bc52e6b3ab4eac4378e2935088321cd30021b34a333c19972d9b09bff",
+      "size_bytes": 3274
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "adapters/mcp_tool_contract.json",
+      "sha256": "01fd77de2527712918ad17168d1a7df90aeae5f5db49e9704219bafc3529b245",
+      "size_bytes": 1929
+    },
+    {
+      "artifact_type": "governed_document",
+      "disposition": "NEW",
+      "path": "docs/Git_Admission_and_Evidence_Contract.md",
+      "sha256": "dd0c96813371ecfdba2adbeb6e484d6d4510e2ce8745d7aaba4e8cfa0d377308",
+      "size_bytes": 2386
+    },
+    {
+      "artifact_type": "governed_document",
+      "disposition": "MODIFIED",
+      "path": "docs/Threat_Model.md",
+      "sha256": "c31775f05e4ff0945d35171db117d66574931efa83d0e2b0d881a247e3aaed9d",
+      "size_bytes": 2342
+    },
+    {
+      "artifact_type": "governed_document",
+      "disposition": "NEW",
+      "path": "docs/Worktree_Scaffolding_Contract.md",
+      "sha256": "560e7eb1842c6b4e60e69a1f4820bcbb3bf50cb8d5a1ee40d02a668cf79ebe40",
+      "size_bytes": 3105
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "NEW",
+      "path": "evidence/operational_validation_report.json",
+      "sha256": "b1e86ae8c13b46c5a59ccbd3e9eee32f9fdcc4efce75ff16c35d176cacbdd702",
+      "size_bytes": 2512
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "NEW",
+      "path": "evidence/validation_receipt.json",
+      "sha256": "c5619bde2581f884dc5eea05d0dc93006a94cf735b2658addd79bbc88fcaf4b7",
+      "size_bytes": 2977
+    },
+    {
+      "artifact_type": "governed_document",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/README.md",
+      "sha256": "2ed882db87c835b18e990b92237d32b9f690c8f0127fed89d5ba0629edf021fd",
+      "size_bytes": 843
+    },
+    {
+      "artifact_type": "repository_artifact",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/SHA256SUMS",
+      "sha256": "1c0a48f0949d1362900013a5c15b90e5825bcc7f9b546ed082c2ba2a667116d6",
+      "size_bytes": 8319
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/artifact_manifest.json",
+      "sha256": "a9d5a4160406a98aa207789e0d6779dfb67f1cc92260072c4086aae384146b64",
+      "size_bytes": 17508
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/coverage_summary.json",
+      "sha256": "bef24bfa4bf7b8b6949255959a070263a1bb90062b97232f3e062ffd2442e070",
+      "size_bytes": 163
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/distribution_reproducibility.json",
+      "sha256": "9f0545cf7dad89a0a691ea94b1a339bc76a5e033f7dd8c4de8ade082bc5e4435",
+      "size_bytes": 289
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/installed_wheel_smoke.json",
+      "sha256": "774d30af441b634aea9b733e4786d88973e76da866cc85e1a72835ac581c27eb",
+      "size_bytes": 61
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/lifecycle_transition_receipts.json",
+      "sha256": "1fb9342eb13ec485ce24d54c79d21bdefe7a1c41b7863a075e7f885a66936bc4",
+      "size_bytes": 1409
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/machine_handoff.json",
+      "sha256": "3602803c204a2d05cc4a67251a4b94bf0e1ab90cecb1b609c2b0afb5dadd3602",
+      "size_bytes": 919
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/ontology_authority_receipt.json",
+      "sha256": "2641b0b69afb06bd4dab15e41e98cef8ee83cef2b869951838fbaa636253babc",
+      "size_bytes": 341
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/phase3_asset_lease.json",
+      "sha256": "fd113307ab7be90616cd14d59c5457b34fbf37cc907814708ea0e88aefbff52d",
+      "size_bytes": 987
+    },
+    {
+      "artifact_type": "binary_or_runtime_asset",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/phase3_ledger.duckdb",
+      "sha256": "ec2324bd1a0a4fcdd44d42b4760e63010e7cf8abe497e74c3e75a1669d53e302",
+      "size_bytes": 4730880
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/phase3_ledger_append_receipt.json",
+      "sha256": "f625669ade332059db8d87a9fbe70b286f6aea05cd21c157634170324b2dee00",
+      "size_bytes": 586
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/phase3_ledger_verification.json",
+      "sha256": "1b2e96daae7dc40742d886e19e43e0290677b357d4a4c978caf5b136221d6553",
+      "size_bytes": 1832
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/phase3_perimeter_receipt.json",
+      "sha256": "1bac613ad58b03604d43f2c24e6921b1099fe6cf77aad04fcfb4fd9cbc7e62f4",
+      "size_bytes": 2099
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/phase_0_baseline.json",
+      "sha256": "b24c993d1a73b3c6bd4ccfeb216dd4b4fc34734fcde5628a8fb6a0eeb57871af",
+      "size_bytes": 3967
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/phase_2_build_authority.json",
+      "sha256": "b3ea946b9af32202ff093b220383ff520eb92c61b265cab9e6a7a0031a740c31",
+      "size_bytes": 1022
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/phase_2_resource_authority_receipt.json",
+      "sha256": "e659744ac2bb5da3b93b54a4ee74fa6c52681ba19d4fafcc33a598f0209b3c0c",
+      "size_bytes": 471
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/phase_3_build_authority.json",
+      "sha256": "0551edad0c8b2020ac4134bdc9d2aabbbf629ec1f8432ceb6730c714ba9760eb",
+      "size_bytes": 1255
+    },
+    {
+      "artifact_type": "repository_artifact",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/provenance_ledger.jsonl",
+      "sha256": "f035fe3940d0d0facbbce457a59d40d36a3a2c7ee608865bda983888f5913705",
+      "size_bytes": 3389
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/upstream_backend_smoke.json",
+      "sha256": "456a022614c4ff4aad838dffc5205a40d6cd772acba4bfd07906af61c57b6e31",
+      "size_bytes": 117
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/upstream_verification_receipt.json",
+      "sha256": "f7710d8cf71cbae5b0dbb71018dad56ab5fa0e51fa7329d84172e7950c19e168",
+      "size_bytes": 481
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/closeout_evidence/validation_report.json",
+      "sha256": "08c8ea26d1c1cf5da76863100b44d2349c17ebdb7985c10f8550a91ce7286ff4",
+      "size_bytes": 1239
+    },
+    {
+      "artifact_type": "binary_or_runtime_asset",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/distributions/scaffoldctl-0.3.0-py3-none-any.whl",
+      "sha256": "8462f8af16f6a5612572a35c8ec6615de9235198d3116bdf5ce623f48e249159",
+      "size_bytes": 71846
+    },
+    {
+      "artifact_type": "binary_or_runtime_asset",
+      "disposition": "NEW",
+      "path": "provenance/sealed_source_release_v0_3_0/distributions/scaffoldctl-0.3.0.tar.gz",
+      "sha256": "24cdc01c268fe5cb5dbca13eada05528791479c6a9e3aa50eddb041904721023",
+      "size_bytes": 133411
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "MODIFIED",
+      "path": "pyproject.toml",
+      "sha256": "15ab6091f059dd54476587380a07a09e944ea4af7a70380d4966f76204cf5d04",
+      "size_bytes": 1247
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "MODIFIED",
+      "path": "scaffold.policy.json",
+      "sha256": "e308919ed0c0a5da669818189dffcce1f2f512a0a6023d6210bd180330d2fa8b",
+      "size_bytes": 1381
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "MODIFIED",
+      "path": "scripts/build_evidence.py",
+      "sha256": "45e918726d9025baacbad5b0549b59413f6f9454b3ef76adbd98504d330aeee7",
+      "size_bytes": 27996
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "NEW",
+      "path": "scripts/check_function_lengths.py",
+      "sha256": "d766467dca1465d530f6c0161b44a28ca73a2e975b0e23cf14c7e294314f9f53",
+      "size_bytes": 1144
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "MODIFIED",
+      "path": "scripts/package_release.py",
+      "sha256": "cfbd8248beb475cdf824c4e8f070a75e3e302f3058eb1ceae273c8b10ae3ab48",
+      "size_bytes": 4839
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "scripts/seal_ledger.py",
+      "sha256": "293494d2acaf495edaf57b80dbac159a3731c67283f456c0477a0f9534a02277",
+      "size_bytes": 191
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/__init__.py",
+      "sha256": "a295e292deafcceeb36743697655831c47cbee7b90735afea3802fdb5be48f1b",
+      "size_bytes": 2056
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/__main__.py",
+      "sha256": "90d9fbcdc52a5e52daeac922724517d64f573760162e5dc157648eafc5b13781",
+      "size_bytes": 59
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/authority.py",
+      "sha256": "2d3d0ab73a9106f0199eee7f152d1e82c9795de46b451e6a49adb67844ee7adc",
+      "size_bytes": 11041
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "MODIFIED",
+      "path": "src/scaffoldctl/cli.py",
+      "sha256": "cba61950dd86ae66a0903e1cb2fc2834b3148c2e1463a1a7235c609b351e2a63",
+      "size_bytes": 17133
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/confinement.py",
+      "sha256": "4bc8dc928f45683edd3aa678150407f51474f3bcd4946d0e550dab3e8e059ba5",
+      "size_bytes": 11298
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/engine.py",
+      "sha256": "8cc279711902c207ac16285a7244fec51dea89332bce224b5da0057b8172155c",
+      "size_bytes": 23024
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/exceptions.py",
+      "sha256": "9c29381ffe41aab33805a0c05fb91552ee0e8dc4fed2bb082f8fbf58479fc4ea",
+      "size_bytes": 1058
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/git_snapshot.py",
+      "sha256": "7009155697d98dd9aa1890cde876f84d79385dd733e92b27319d739fb65f606c",
+      "size_bytes": 19577
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "MODIFIED",
+      "path": "src/scaffoldctl/hook.py",
+      "sha256": "1b768c1bfaafbbc35082299b33352187e787342843abcbc67dccfcf6e1ae96ae",
+      "size_bytes": 11750
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/integrity.py",
+      "sha256": "85cfd7ac144849b13d14fcd6ecdc96ac3912648d26fbcd6ef4be59656c0ad0b9",
+      "size_bytes": 2522
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "MODIFIED",
+      "path": "src/scaffoldctl/lease.py",
+      "sha256": "cb4d01d5468d11ec75329caf81f1997d57febcce69ade09bf574a51a2ff32cc4",
+      "size_bytes": 10346
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "MODIFIED",
+      "path": "src/scaffoldctl/ledger.py",
+      "sha256": "4fb71114ce4e4c31a57adbaa41ad30b4e6ab70ac2b0aa528862304f715584c39",
+      "size_bytes": 33016
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "MODIFIED",
+      "path": "src/scaffoldctl/lifecycle.py",
+      "sha256": "d8dbacbf8e88508954d410fd1b596ccc8ce00cd10a9b74267d0d9b456e17223c",
+      "size_bytes": 9082
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/models.py",
+      "sha256": "29a8fe4d6303832f0e6aa2821177d328c4cb0053b3bfb4008deb8226cdc8a4a8",
+      "size_bytes": 4644
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "MODIFIED",
+      "path": "src/scaffoldctl/ontology.py",
+      "sha256": "16e3afe08b6e531e36d3fdee6fa4aeaae3040ac58370d92001585e97adaf48f5",
+      "size_bytes": 13624
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "MODIFIED",
+      "path": "src/scaffoldctl/perimeter.py",
+      "sha256": "b1d0cf48fb78d120a35c800619c6fee12c0f6ad073ac531bdacf16a52a82403b",
+      "size_bytes": 7951
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/phase2_models.py",
+      "sha256": "5500a6a4b755b2547fabfb017a916d43250df546ab2b285f4fadd203abe1afc0",
+      "size_bytes": 14149
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/phase3_models.py",
+      "sha256": "f9da2af01917bc1cab10887f0ea25b5049d9d48f871464fea5ad1eab8680b0e2",
+      "size_bytes": 17662
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "MODIFIED",
+      "path": "src/scaffoldctl/policy.py",
+      "sha256": "c3dbdeb60b1946411ff5ca3f22393c9373821f4c31f70f6c2a9fb952d5583390",
+      "size_bytes": 6090
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/py.typed",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size_bytes": 1
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/reason_codes.py",
+      "sha256": "a71a5f7cd34e507523babceea67f6ab54e7c680a1bd90afdef6905546cd3a35e",
+      "size_bytes": 6349
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/resources/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size_bytes": 1
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "NEW",
+      "path": "src/scaffoldctl/resources/boundary_contract/Index.md.tmpl",
+      "sha256": "ab6b99f4bffce84c83d40c88e4eb30e0a18740ef84ec8586a090951fd338ba43",
+      "size_bytes": 368
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "NEW",
+      "path": "src/scaffoldctl/resources/boundary_contract/README.md.tmpl",
+      "sha256": "22d3e2fbcaee5fc9c91c096c79190fa1149c3741cd1472356e0dc7c12294dbe7",
+      "size_bytes": 425
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "NEW",
+      "path": "src/scaffoldctl/resources/boundary_contract/Start_here.md.tmpl",
+      "sha256": "9a715f602f1f1f2049ac7a25e7a8cc7cbfcf42348bd0c62963705f9842bfe742",
+      "size_bytes": 299
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "NEW",
+      "path": "src/scaffoldctl/resources/boundary_contract/hmt-root-policy.json",
+      "sha256": "3523ca97954bb8a3ee70dfb1e8f96f0f8d70c3b2aacca27489916b6aa62ce3cd",
+      "size_bytes": 1200
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "NEW",
+      "path": "src/scaffoldctl/resources/git_perimeter/pre-commit",
+      "sha256": "9a8c03436aa70ffe728e48643a67ad1a03a5a9afad85e7ab323a6b56636e83ab",
+      "size_bytes": 581
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/resources/semantic-scaffolding.ttl",
+      "sha256": "875b9ec0d714b8757c2172ea844d8ecfe6150feac2649b0205239aa64534650b",
+      "size_bytes": 17021
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/semantics.py",
+      "sha256": "ce5bb8838500cdc527c8e277f9bace2318e450bb5f644e68f62e3a96f0ab6532",
+      "size_bytes": 2978
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/snapshot.py",
+      "sha256": "21bfbdbc68a7d88f0ded7de7f917bdbaeff689f1f99a5693f55f7f2ea79ecf94",
+      "size_bytes": 7670
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "INHERITED",
+      "path": "src/scaffoldctl/transaction.py",
+      "sha256": "a291f8141c69573c4f2c84ec203d584e5e981cb00b430762c32ce839033893c6",
+      "size_bytes": 7546
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "MODIFIED",
+      "path": "src/scaffoldctl/validation.py",
+      "sha256": "fcc087029a9aa1600187f28bda4dde7aa87bd2dabb1487014892f7fe48b22f31",
+      "size_bytes": 9555
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "INHERITED",
+      "path": "tests/phase3_support.py",
+      "sha256": "2e83526b1470839f7b631213ea69347d82d813c6f977eafbdc421b60bcaa4c32",
+      "size_bytes": 1774
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "INHERITED",
+      "path": "tests/test_authority.py",
+      "sha256": "0da019ee0bb6e7024128a6316d2f583f5c431fd5afa8f051dbedaf1928a401fc",
+      "size_bytes": 2219
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "INHERITED",
+      "path": "tests/test_cli.py",
+      "sha256": "37d9f26c665347e23e544a15993a622ff8e47e0e23ef770a0a7b6fe27c548d43",
+      "size_bytes": 3634
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "INHERITED",
+      "path": "tests/test_cli_phase2.py",
+      "sha256": "3c23bd9ae58127552e72a01aba936d56f294cbd0ff906b2429fbdceba60fad0d",
+      "size_bytes": 6813
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "INHERITED",
+      "path": "tests/test_confinement.py",
+      "sha256": "3bf5ea07ea440c527e637e346baa9622b24470ef2a7f303aa6c16a8675213a8c",
+      "size_bytes": 6488
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "INHERITED",
+      "path": "tests/test_lifecycle.py",
+      "sha256": "41fa301db0b8730a668ef1ca5c786c9a26e0ade64650f62c6004c176dc39a522",
+      "size_bytes": 5931
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "NEW",
+      "path": "tests/test_mcp_adapter.py",
+      "sha256": "ee7420311ffa3dc3fd5c88d171a58790631e23841f2a46e3ffbb10dd6558aaac",
+      "size_bytes": 2960
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "INHERITED",
+      "path": "tests/test_models.py",
+      "sha256": "4127a8cbe9518176915328b900f38f8adb2c5f3b307ac5fadbf5e982d7035d12",
+      "size_bytes": 4239
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "INHERITED",
+      "path": "tests/test_ontology.py",
+      "sha256": "d9a7318213f12615252ddb364aeea384e22ef7b2047ef6c20cf4c5beb0fef0ee",
+      "size_bytes": 4071
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "MODIFIED",
+      "path": "tests/test_package_contract.py",
+      "sha256": "8bf24f2504453ae2de327bd4df5c7a4c9e51da8a37d43ea141e093527cc5c570",
+      "size_bytes": 1775
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "INHERITED",
+      "path": "tests/test_phase2_engine.py",
+      "sha256": "a700f8e2877ecf82964a24ca014d956e80998beffb58fd338d9cc355100ef097",
+      "size_bytes": 19518
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "INHERITED",
+      "path": "tests/test_phase2_models_policy.py",
+      "sha256": "1e2e3a12f4817cbacff379031d35ddbe58b35c25b34b249f9d5578267b91f11d",
+      "size_bytes": 11876
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "MODIFIED",
+      "path": "tests/test_phase2_validation.py",
+      "sha256": "c0eb02aa777d383202ed082b10c2558bce3dfa5a517542e85f068b17cb1ca1df",
+      "size_bytes": 8037
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "INHERITED",
+      "path": "tests/test_phase3_contract_models.py",
+      "sha256": "0859fd43936494e705e29cb58e6e27174ba87a9e6c6a8dca6d44f96158577773",
+      "size_bytes": 9652
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "INHERITED",
+      "path": "tests/test_phase3_git_snapshot.py",
+      "sha256": "8e9214acb7817a3cf4da12a30f3fd7f449073e514d3ad6d292c07f9928a37d7d",
+      "size_bytes": 16381
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "MODIFIED",
+      "path": "tests/test_phase3_hook_cli_ci.py",
+      "sha256": "45e41036ab7594da332143fe6d8d03544bdfe7ee8735772e1173a864ed18f66f",
+      "size_bytes": 11216
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "INHERITED",
+      "path": "tests/test_phase3_lease_ledger.py",
+      "sha256": "0528885ca6d082c6b8261197bb7052d9d9f92d0318edb379de8cbf41b1bdd497",
+      "size_bytes": 24254
+    },
+    {
+      "artifact_type": "test_artifact",
+      "disposition": "INHERITED",
+      "path": "tests/test_snapshot_transaction.py",
+      "sha256": "bbfe59505077a996cb6395c4980f2c1ad2655f89ea6c10d962b0fbc94ccf3925",
+      "size_bytes": 13070
+    },
+    {
+      "artifact_type": "configuration_or_contract",
+      "disposition": "INHERITED",
+      "path": "uv.lock",
+      "sha256": "4e08e4f71ecea5655a6b071d8dde54f41ee2e285530b534b26dc6e3181da72b3",
+      "size_bytes": 118138
+    }
+  ],
+  "governing_sources": [
+    {
+      "name": "01-system_prompt_baseline.xml",
+      "sha256": "77e1ccb6ec1710fbe63a3c361cd10ae3b26aa8c8595164a14208715ecf43ba42"
+    },
+    {
+      "name": "02-tooling_normalization.xml",
+      "sha256": "2680756ab5bbe5ce5dbb89338aa5bdc6be42745ade289949edbcf019f8526202"
+    },
+    {
+      "name": "03-knowledge_base.md",
+      "sha256": "0f282e6f0507a0482ac53ed774f1d303154486e711ff5579d01cece9ff08f66e"
+    },
+    {
+      "name": "04-CyberImpl_Deploy_EvidenceRelease.xml",
+      "sha256": "1b4e6a4c1e0e494270e9a1062c62180ad8398a9b7cb074c4619251a379bb7981"
+    },
+    {
+      "name": "05-CyberImpl_Compliance_EnforceMISRA.xml",
+      "sha256": "f0c81eb9a6814c756727b009a935cdd77611ab2db768e2e3e81d198d3b1e665e"
+    },
+    {
+      "name": "06-CyberImpl_Behavior_BlockUndefined.xml",
+      "sha256": "13ac67eb21408379ef46fc1a54e2b100e341d0a327604f5fdbd0bda3f215b7b1"
+    },
+    {
+      "name": "07-CyberImpl_Memory_BlockDynamic.xml",
+      "sha256": "38fafd7cfb640fc41d0c9ebd111521d21d3523a29e951e73918525b22f877377"
+    },
+    {
+      "name": "08-CyberImpl_Trace_BindArchitecture.xml",
+      "sha256": "ec13e44e111c45956c469d6d118243fd4241f70f1611ddd2de25f313f276257d"
+    },
+    {
+      "name": "09-Ontology_MachineHandoff_Example.json",
+      "sha256": "ebdcd7b5652be4ba82709ff0c8cf914c6877afe7a958d8abd3e22de0dccf72ef"
+    },
+    {
+      "name": "10-Ontology_MachineHandoff_Schema.json",
+      "sha256": "916f5a82442a85b18c941c760ee058bdc8b64a797667f088de4f92ac4beb3142"
+    },
+    {
+      "name": "11-Ontology_FederatedBaseline_SubtypeCore.ttl",
+      "sha256": "2de2b0ad9cd705946926e659a5ed34ca478b9d7ed00df5ad381d05d99f7f7861"
+    },
+    {
+      "name": "12-Ontology_FederatedBaseline_Core.ttl",
+      "sha256": "d01595e2f9e549f51556964dc91a0ee7629d6fba3744fc78d86a5e3855c918f3"
+    },
+    {
+      "name": "13-team_context.xml",
+      "sha256": "0673c2ee8f30ad8bd829a50708c78505da870528224a0824970a58112e8afd19"
+    }
+  ],
+  "normalization_status": "PASS",
+  "qualification": {
+    "reason_codes": [
+      "CURRENT_DISTRIBUTION_REPRODUCIBILITY_NOT_RUN",
+      "FULL_LOCKED_DEPENDENCY_TEST_LANE_UNAVAILABLE",
+      "HUMAN_PROMOTION_PENDING",
+      "RUFF_0_16_1_UNAVAILABLE"
+    ],
+    "status": "HOLD"
+  },
+  "removed_source_files": [
+    {
+      "artifact_type": "repository_artifact",
+      "disposition": "REMOVED",
+      "path": ".git/hooks/pre-commit",
+      "sha256": "9a8c03436aa70ffe728e48643a67ad1a03a5a9afad85e7ab323a6b56636e83ab",
+      "size_bytes": 581
+    },
+    {
+      "artifact_type": "binary_or_runtime_asset",
+      "disposition": "REMOVED",
+      "path": "dist/scaffoldctl-0.3.0-py3-none-any.whl",
+      "sha256": "8462f8af16f6a5612572a35c8ec6615de9235198d3116bdf5ce623f48e249159",
+      "size_bytes": 71846
+    },
+    {
+      "artifact_type": "binary_or_runtime_asset",
+      "disposition": "REMOVED",
+      "path": "dist/scaffoldctl-0.3.0.tar.gz",
+      "sha256": "24cdc01c268fe5cb5dbca13eada05528791479c6a9e3aa50eddb041904721023",
+      "size_bytes": 133411
+    },
+    {
+      "artifact_type": "governed_document",
+      "disposition": "REMOVED",
+      "path": "docs/Phase_2_Contract.md",
+      "sha256": "ccb3cda491cbd43fec862ea0aa776c052b770b0ae9c3d9f487a1a48117d61a0d",
+      "size_bytes": 2821
+    },
+    {
+      "artifact_type": "governed_document",
+      "disposition": "REMOVED",
+      "path": "docs/Phase_3_Contract.md",
+      "sha256": "ce9ab3888f1ef898228d09a2342e35e1bc14512d64ca1139e7f9c3c312b8e9ea",
+      "size_bytes": 2221
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/SHA256SUMS",
+      "sha256": "1c0a48f0949d1362900013a5c15b90e5825bcc7f9b546ed082c2ba2a667116d6",
+      "size_bytes": 8319
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/artifact_manifest.json",
+      "sha256": "a9d5a4160406a98aa207789e0d6779dfb67f1cc92260072c4086aae384146b64",
+      "size_bytes": 17508
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/coverage_summary.json",
+      "sha256": "bef24bfa4bf7b8b6949255959a070263a1bb90062b97232f3e062ffd2442e070",
+      "size_bytes": 163
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/distribution_reproducibility.json",
+      "sha256": "9f0545cf7dad89a0a691ea94b1a339bc76a5e033f7dd8c4de8ade082bc5e4435",
+      "size_bytes": 289
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/installed_wheel_smoke.json",
+      "sha256": "774d30af441b634aea9b733e4786d88973e76da866cc85e1a72835ac581c27eb",
+      "size_bytes": 61
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/lifecycle_transition_receipts.json",
+      "sha256": "1fb9342eb13ec485ce24d54c79d21bdefe7a1c41b7863a075e7f885a66936bc4",
+      "size_bytes": 1409
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/machine_handoff.json",
+      "sha256": "3602803c204a2d05cc4a67251a4b94bf0e1ab90cecb1b609c2b0afb5dadd3602",
+      "size_bytes": 919
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/ontology_authority_receipt.json",
+      "sha256": "2641b0b69afb06bd4dab15e41e98cef8ee83cef2b869951838fbaa636253babc",
+      "size_bytes": 341
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/phase3_asset_lease.json",
+      "sha256": "fd113307ab7be90616cd14d59c5457b34fbf37cc907814708ea0e88aefbff52d",
+      "size_bytes": 987
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/phase3_ledger.duckdb",
+      "sha256": "ec2324bd1a0a4fcdd44d42b4760e63010e7cf8abe497e74c3e75a1669d53e302",
+      "size_bytes": 4730880
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/phase3_ledger_append_receipt.json",
+      "sha256": "f625669ade332059db8d87a9fbe70b286f6aea05cd21c157634170324b2dee00",
+      "size_bytes": 586
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/phase3_ledger_verification.json",
+      "sha256": "1b2e96daae7dc40742d886e19e43e0290677b357d4a4c978caf5b136221d6553",
+      "size_bytes": 1832
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/phase3_perimeter_receipt.json",
+      "sha256": "1bac613ad58b03604d43f2c24e6921b1099fe6cf77aad04fcfb4fd9cbc7e62f4",
+      "size_bytes": 2099
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/phase_0_baseline.json",
+      "sha256": "b24c993d1a73b3c6bd4ccfeb216dd4b4fc34734fcde5628a8fb6a0eeb57871af",
+      "size_bytes": 3967
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/phase_2_build_authority.json",
+      "sha256": "b3ea946b9af32202ff093b220383ff520eb92c61b265cab9e6a7a0031a740c31",
+      "size_bytes": 1022
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/phase_2_resource_authority_receipt.json",
+      "sha256": "e659744ac2bb5da3b93b54a4ee74fa6c52681ba19d4fafcc33a598f0209b3c0c",
+      "size_bytes": 471
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/phase_3_build_authority.json",
+      "sha256": "0551edad0c8b2020ac4134bdc9d2aabbbf629ec1f8432ceb6730c714ba9760eb",
+      "size_bytes": 1255
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/provenance_ledger.jsonl",
+      "sha256": "f035fe3940d0d0facbbce457a59d40d36a3a2c7ee608865bda983888f5913705",
+      "size_bytes": 3389
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/upstream_backend_smoke.json",
+      "sha256": "456a022614c4ff4aad838dffc5205a40d6cd772acba4bfd07906af61c57b6e31",
+      "size_bytes": 117
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/upstream_verification_receipt.json",
+      "sha256": "f7710d8cf71cbae5b0dbb71018dad56ab5fa0e51fa7329d84172e7950c19e168",
+      "size_bytes": 481
+    },
+    {
+      "artifact_type": "evidence_record",
+      "disposition": "REMOVED",
+      "path": "evidence/validation_report.json",
+      "sha256": "08c8ea26d1c1cf5da76863100b44d2349c17ebdb7985c10f8550a91ce7286ff4",
+      "size_bytes": 1239
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "REMOVED",
+      "path": "src/scaffoldctl/resources/phase2/Index.md.tmpl",
+      "sha256": "ab6b99f4bffce84c83d40c88e4eb30e0a18740ef84ec8586a090951fd338ba43",
+      "size_bytes": 368
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "REMOVED",
+      "path": "src/scaffoldctl/resources/phase2/README.md.tmpl",
+      "sha256": "22d3e2fbcaee5fc9c91c096c79190fa1149c3741cd1472356e0dc7c12294dbe7",
+      "size_bytes": 425
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "REMOVED",
+      "path": "src/scaffoldctl/resources/phase2/Start_here.md.tmpl",
+      "sha256": "9a715f602f1f1f2049ac7a25e7a8cc7cbfcf42348bd0c62963705f9842bfe742",
+      "size_bytes": 299
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "REMOVED",
+      "path": "src/scaffoldctl/resources/phase2/hmt-root-policy.json",
+      "sha256": "3523ca97954bb8a3ee70dfb1e8f96f0f8d70c3b2aacca27489916b6aa62ce3cd",
+      "size_bytes": 1200
+    },
+    {
+      "artifact_type": "runtime_source",
+      "disposition": "REMOVED",
+      "path": "src/scaffoldctl/resources/phase3/pre-commit",
+      "sha256": "9a8c03436aa70ffe728e48643a67ad1a03a5a9afad85e7ab323a6b56636e83ab",
+      "size_bytes": 581
+    }
+  ],
+  "repository": "scaffoldctl",
+  "schema_id": "urn:terminal-state:tool-repository-operational-manifest:1.0",
+  "self_hash_policy": "evidence/operational_manifest.json excluded to avoid recursive hashing",
+  "source_archive": {
+    "name": "scaffoldctl_phase_3_v0_3_0.zip",
+    "sha256": "31c6c085d89735baf9650f9f0975045969839d5dfd0ab01319e03b9ccdc9c7cf",
+    "size_bytes": 406009
+  }
+}

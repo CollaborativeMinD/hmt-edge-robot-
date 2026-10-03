@@ -1,0 +1,49 @@
+schema_id: truth-serum.lane-policy
+schema_version: 1.0.0
+aggregation_precedence:
+  - ESCALATE
+  - FAIL
+  - HOLD
+  - PASS
+status_routes:
+  PASS: PASS
+  NOT_APPLICABLE: PASS
+  FAIL: FAIL
+  UNAVAILABLE: HOLD
+  ERROR: HOLD
+local_lanes:
+  - architecture-trace
+  - repository-shape
+  - source-aperture
+  - structured-data
+  - evidence-binding
+  - secret-scan
+  - shell-syntax
+external_lanes:
+  - witness-ruff
+  - witness-pylint
+  - witness-mypy
+  - witness-bandit
+  - witness-semgrep
+  - witness-yamllint
+  - witness-pytest
+  - witness-pip-audit
+modes:
+  architecture-only:
+    required: local
+    external: NOT_APPLICABLE
+  ci:
+    required: all
+    external: REQUIRED
+  post-build:
+    required: all
+    external: REQUIRED
+  rainy-day:
+    required: all
+    external: REQUIRED
+rules:
+  unavailable_required_witness: HOLD
+  witness_execution_error: HOLD
+  blocking_finding: FAIL
+  terminal_finding: ESCALATE
+  absent_target: NOT_APPLICABLE

@@ -13,7 +13,7 @@ from ci_admission import ROOT, evaluate, main
 
 def copy_admission(tmp_path: Path) -> Path:
     policy = json.loads((ROOT / "policy/ci_admission.json").read_text())
-    names = ["policy/ci_admission.json", *policy["files"]]
+    names = ["policy/ci_admission.json", *policy["files"], *policy["qualified_sources"]]
     names.extend(candidate["path"] for candidate in policy["candidates"])
     for name in names:
         target = tmp_path / name
@@ -31,7 +31,8 @@ def test_ci_admission_and_candidates_remain_hold(tmp_path: Path) -> None:
     assert receipt["target"]["deployment"] == "HOLD"
 
 
-@pytest.mark.parametrize("name", ["uv.lock", "tools/validate.py", ".github/workflows/ci.yml"])
+@pytest.mark.parametrize("name", ["uv.lock", "tools/validate.py", ".github/workflows/ci.yml",
+                                 "vendor/qualified/scaffoldctl/src/scaffoldctl/models.py"])
 def test_ci_admission_denies_tampering(tmp_path: Path, name: str) -> None:
     root = copy_admission(tmp_path)
     with (root / name).open("a") as stream:

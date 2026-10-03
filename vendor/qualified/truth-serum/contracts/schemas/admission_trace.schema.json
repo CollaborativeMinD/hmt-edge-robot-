@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://truth-serum.local/contracts/admission_trace.schema.json",
+  "title": "One Truth Serum admission trace event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "schema_version",
+    "attempt_id",
+    "sequence",
+    "mode",
+    "stage",
+    "artifacts",
+    "transition",
+    "reason_codes",
+    "evidence"
+  ],
+  "properties": {
+    "schema_id": {"const": "truth_serum.admission_trace_event"},
+    "schema_version": {"const": "1.0.0"},
+    "attempt_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,79}$"
+    },
+    "sequence": {"type": "integer", "minimum": 0},
+    "mode": {
+      "enum": ["architecture-only", "ci", "post-build", "rainy-day"]
+    },
+    "stage": {"type": "string", "pattern": "^[a-z][a-z0-9-]{1,63}$"},
+    "artifacts": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/artifact"}
+    },
+    "transition": {"$ref": "#/$defs/transition"},
+    "reason_codes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/reason_code"},
+      "uniqueItems": true
+    },
+    "evidence": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/evidence_ref"}
+    }
+  },
+  "$defs": {
+    "reason_code": {
+      "type": "string",
+      "pattern": "^(PASS|HOLD|FAIL|ESCALATE|NOT_APPLICABLE)_[A-Z0-9_]+$"
+    },
+    "repository_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$"
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "kind", "state"],
+      "properties": {
+        "path": {"$ref": "#/$defs/repository_path"},
+        "kind": {
+          "enum": ["INPUT", "OUTPUT", "POLICY", "REPORT", "EVIDENCE", "WITNESS_OUTPUT"]
+        },
+        "state": {"enum": ["PRESENT", "MISSING", "GENERATED", "UNCHANGED"]}
+      }
+    },
+    "transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to"],
+      "properties": {
+        "from": {"const": "PENDING"},
+        "to": {
+          "enum": ["PASS", "FAIL", "UNAVAILABLE", "ERROR", "NOT_APPLICABLE"]
+        }
+      }
+    },
+    "evidence_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "evidence_class"],
+      "properties": {
+        "path": {"$ref": "#/$defs/repository_path"},
+        "evidence_class": {
+          "enum": ["COMMAND_OUTPUT", "LANE_REPORT", "TEST_REPORT", "POLICY", "TRACE", "RAW_WITNESS"]
+        }
+      }
+    }
+  }
+}
