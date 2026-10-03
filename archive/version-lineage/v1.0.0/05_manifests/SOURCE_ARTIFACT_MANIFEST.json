@@ -1,0 +1,131 @@
+{
+  "archive_id": "HMT_EDGE_ROBOT_VERSION_LINEAGE_ARCHIVE_v1.0.0",
+  "created_utc": "2026-10-03T02:46:48Z",
+  "purpose": "Preserve V1 -> Lambda revalidation -> integrated edge robotics lineage.",
+  "lineage_statement": "V1 proved the mechanisms; Lambda revalidation proved the subsystems; HMT Edge Robot proves the composition in the supervisory/SIL partition.",
+  "source_archives": [
+    {
+      "stage": "01_v1_prototypes",
+      "filename": "AccessManager-main.zip",
+      "size_bytes": 99202,
+      "sha256": "5250bf8f4dde640acb7e688101fb400fd04f9bdc1de5748df4a6e4daeed2ec20",
+      "contained_file_count": 7,
+      "top_level_entries": [
+        "AccessManager-main"
+      ],
+      "preservation": "BYTE_FOR_BYTE_COPY"
+    },
+    {
+      "stage": "01_v1_prototypes",
+      "filename": "Factory_Orchestrator-main.zip",
+      "size_bytes": 112443,
+      "sha256": "c3abe880d004a5abdb0632ef1feeb2ffb556a1b3d39b0cbf3784f55e5bc790e0",
+      "contained_file_count": 17,
+      "top_level_entries": [
+        "Factory_Orchestrator-main"
+      ],
+      "preservation": "BYTE_FOR_BYTE_COPY"
+    },
+    {
+      "stage": "01_v1_prototypes",
+      "filename": "HaloSafe-main.zip",
+      "size_bytes": 188124,
+      "sha256": "2ab14eb7e39d24c36a68a2b20b633541891fa30a7968b10c9a6e8e88bc05ee1e",
+      "contained_file_count": 12,
+      "top_level_entries": [
+        "HaloSafe-main"
+      ],
+      "preservation": "BYTE_FOR_BYTE_COPY"
+    },
+    {
+      "stage": "01_v1_prototypes",
+      "filename": "Neuro-Grasp-main.zip",
+      "size_bytes": 100342,
+      "sha256": "df75f6d4d5d197a5d93a4cae001ae15e5519ef6ae88528f541dfdd4028ad6635",
+      "contained_file_count": 12,
+      "top_level_entries": [
+        "Neuro-Grasp-main"
+      ],
+      "preservation": "BYTE_FOR_BYTE_COPY"
+    },
+    {
+      "stage": "01_v1_prototypes",
+      "filename": "waialua-edge-node-v11-main.zip",
+      "size_bytes": 483444,
+      "sha256": "1146dfa1939cfe8b29ad6f741659ae796a6d2dd4a0c5b7c94abc522aa6a7c40c",
+      "contained_file_count": 14,
+      "top_level_entries": [
+        "waialua-edge-node-v11-main"
+      ],
+      "preservation": "BYTE_FOR_BYTE_COPY"
+    },
+    {
+      "stage": "02_lambda_revalidation",
+      "filename": "accessmanager_lambda_revalidation_pack.zip",
+      "size_bytes": 40245,
+      "sha256": "dff33745f71b2e062932cb605cf664f9d81e1410a13625f0261851ef3456e131",
+      "contained_file_count": 25,
+      "top_level_entries": [
+        ".pytest_cache",
+        "README.md",
+        "docs",
+        "models",
+        "runs",
+        "src",
+        "tests"
+      ],
+      "preservation": "BYTE_FOR_BYTE_COPY"
+    },
+    {
+      "stage": "02_lambda_revalidation",
+      "filename": "factory_orchestrator_lambda_revalidation_pack.zip",
+      "size_bytes": 18466,
+      "sha256": "8756e31706f77a305ba40151128d5e87f884c592899ac4e367771e65d7326fe3",
+      "contained_file_count": 21,
+      "top_level_entries": [
+        "factory_orchestrator_lambda_revalidation"
+      ],
+      "preservation": "BYTE_FOR_BYTE_COPY"
+    },
+    {
+      "stage": "02_lambda_revalidation",
+      "filename": "halosafe_lambda_revalidation_pack.zip",
+      "size_bytes": 43029,
+      "sha256": "e0c42045f2c0da198fc5c810f37ba376e023276674506b93e1b811b8d8c49707",
+      "contained_file_count": 18,
+      "top_level_entries": [
+        "halosafe_lambda_revalidation"
+      ],
+      "preservation": "BYTE_FOR_BYTE_COPY"
+    },
+    {
+      "stage": "02_lambda_revalidation",
+      "filename": "neurograsp_lambda_revalidation_pack.zip",
+      "size_bytes": 41667,
+      "sha256": "bf23e2460948cef3186b4edf39d1748df31d8017fcc9d7ed1185f576eeb0c472",
+      "contained_file_count": 24,
+      "top_level_entries": [
+        "neurograsp_lambda_revalidation"
+      ],
+      "preservation": "BYTE_FOR_BYTE_COPY"
+    },
+    {
+      "stage": "02_lambda_revalidation",
+      "filename": "waialua_edge_node_lambda_revalidation_pack.zip",
+      "size_bytes": 25056,
+      "sha256": "90cca5978f14c276b391f964e9a611d232605e33dee465fb1c5c86dc9f962175",
+      "contained_file_count": 15,
+      "top_level_entries": [
+        "waialua_edge_node_lambda_revalidation"
+      ],
+      "preservation": "BYTE_FOR_BYTE_COPY"
+    }
+  ],
+  "integrated_reference": {
+    "repository": "CollaborativeMinD/hmt-edge-robot-",
+    "main_commit": "57b2d8e313955ef598c7b7bf90d13ced6bb54f37",
+    "tree": "2624da6ee236811069326e5a35743a28067a2fa2",
+    "software_status": "PASS",
+    "external_deployment_status": "HOLD"
+  }
+}

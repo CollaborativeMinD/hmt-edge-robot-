@@ -1,0 +1,31 @@
+Archive:  /mnt/data/hmt_edge_robot_version_lineage_v1_0_0/02_lambda_revalidation/waialua_edge_node_lambda_revalidation_pack.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2026-03-28 00:39   waialua_edge_node_lambda_revalidation/
+        0  2026-03-28 00:39   waialua_edge_node_lambda_revalidation/src/
+     5105  2026-03-28 00:34   waialua_edge_node_lambda_revalidation/src/contracts.py
+     6701  2026-03-28 00:38   waialua_edge_node_lambda_revalidation/src/waialua_edge_node_lambda.py
+     2341  2026-03-28 00:34   waialua_edge_node_lambda_revalidation/src/sil_campaign.py
+        0  2026-03-28 00:34   waialua_edge_node_lambda_revalidation/src/__init__.py
+        0  2026-03-28 00:39   waialua_edge_node_lambda_revalidation/tests/
+        0  2026-03-28 00:34   waialua_edge_node_lambda_revalidation/tests/__init__.py
+     3779  2026-03-28 00:38   waialua_edge_node_lambda_revalidation/tests/test_waialua_edge_node_lambda.py
+        0  2026-03-28 00:36   waialua_edge_node_lambda_revalidation/docs/
+     1422  2026-03-28 00:36   waialua_edge_node_lambda_revalidation/docs/RTM.md
+     4939  2026-03-28 00:36   waialua_edge_node_lambda_revalidation/docs/ICD_WaialuaEdgeNode.SensorBus.TelemetryAssessment.md
+        0  2026-03-28 00:36   waialua_edge_node_lambda_revalidation/models/
+     1359  2026-03-28 00:36   waialua_edge_node_lambda_revalidation/models/waialua_edge_node_lambda.sysml
+        0  2026-03-28 00:33   waialua_edge_node_lambda_revalidation/runs/
+        0  2026-03-28 00:33   waialua_edge_node_lambda_revalidation/runs/WEN-001/
+        0  2026-03-28 00:39   waialua_edge_node_lambda_revalidation/runs/WEN-001/notebooks/
+    10285  2026-03-28 00:37   waialua_edge_node_lambda_revalidation/runs/WEN-001/notebooks/iteration_001.ipynb
+    22519  2026-03-28 00:39   waialua_edge_node_lambda_revalidation/runs/WEN-001/notebooks/iteration_001.executed.ipynb
+        0  2026-03-28 00:33   waialua_edge_node_lambda_revalidation/runs/WEN-001/artifacts/
+        0  2026-03-28 00:39   waialua_edge_node_lambda_revalidation/runs/WEN-001/evidence/
+     1015  2026-03-28 00:39   waialua_edge_node_lambda_revalidation/runs/WEN-001/evidence/campaigns.json
+     2199  2026-03-28 00:39   waialua_edge_node_lambda_revalidation/runs/WEN-001/evidence/manifest.json
+      253  2026-03-28 00:39   waialua_edge_node_lambda_revalidation/runs/WEN-001/evidence/final_gate.json
+        0  2026-03-28 00:33   waialua_edge_node_lambda_revalidation/runs/WEN-001/manifests/
+      880  2026-03-28 00:36   waialua_edge_node_lambda_revalidation/README.md
+---------                     -------
+    62797                     26 files

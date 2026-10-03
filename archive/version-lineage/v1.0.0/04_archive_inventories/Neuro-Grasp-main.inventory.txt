@@ -1,0 +1,19 @@
+Archive:  /mnt/data/hmt_edge_robot_version_lineage_v1_0_0/01_v1_prototypes/Neuro-Grasp-main.zip
+9bd2016519be618ab331496c6c53a8771102013f
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2026-02-18 07:04   Neuro-Grasp-main/
+     4026  2026-02-18 07:04   Neuro-Grasp-main/AI_Assisted_Engineering_Protocol_README.md
+    14827  2026-02-18 07:04   Neuro-Grasp-main/Cycle_1_PCA_Grasp_Vector.png
+    20080  2026-02-18 07:04   Neuro-Grasp-main/Cycle_1_PCA_Vector1.png
+    15908  2026-02-18 07:04   Neuro-Grasp-main/Cycle_1_PCA_Vector2.png
+    15573  2026-02-18 07:04   Neuro-Grasp-main/Cycle_1_PCA_Vector3.png
+    17097  2026-02-18 07:04   Neuro-Grasp-main/Cycle_2_PCA_Grasp_Vector.png
+    10113  2026-02-18 07:04   Neuro-Grasp-main/Cycle_3_PCA_Grasp_Vector.png
+     4358  2026-02-18 07:04   Neuro-Grasp-main/Deterministic AI Architecture.md
+     1071  2026-02-18 07:04   Neuro-Grasp-main/LICENSE
+     3261  2026-02-18 07:04   Neuro-Grasp-main/README.md
+     9780  2026-02-18 07:04   Neuro-Grasp-main/neuro_grasp.py
+     6435  2026-02-18 07:04   Neuro-Grasp-main/test_neuro_grasp.py
+---------                     -------
+   122529                     13 files

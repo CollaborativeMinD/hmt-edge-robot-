@@ -1,0 +1,28 @@
+Archive:  /mnt/data/hmt_edge_robot_version_lineage_v1_0_0/01_v1_prototypes/Factory_Orchestrator-main.zip
+30af12308af0d56b9cdc194f568da1d9205b0b65
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2026-02-18 07:02   Factory_Orchestrator-main/
+        0  2026-02-18 07:02   Factory_Orchestrator-main/.github/
+        0  2026-02-18 07:02   Factory_Orchestrator-main/.github/workflows/
+     1278  2026-02-18 07:02   Factory_Orchestrator-main/.github/workflows/ci_pipeline.yml
+       87  2026-02-18 07:02   Factory_Orchestrator-main/.gitignore
+     4026  2026-02-18 07:02   Factory_Orchestrator-main/AI_Assisted_Engineering_Protocol_README.md
+     4358  2026-02-18 07:02   Factory_Orchestrator-main/Deterministic AI Architecture.md
+     1071  2026-02-18 07:02   Factory_Orchestrator-main/LICENSE
+     4848  2026-02-18 07:02   Factory_Orchestrator-main/README.md
+      121  2026-02-18 07:02   Factory_Orchestrator-main/requirements.txt
+        0  2026-02-18 07:02   Factory_Orchestrator-main/src/
+        1  2026-02-18 07:02   Factory_Orchestrator-main/src/__init__.py
+    12263  2026-02-18 07:02   Factory_Orchestrator-main/src/factory_orchestrator.py
+     6153  2026-02-18 07:02   Factory_Orchestrator-main/src/hardware_adapters.py
+     2268  2026-02-18 07:02   Factory_Orchestrator-main/src/main.py
+        0  2026-02-18 07:02   Factory_Orchestrator-main/tests/
+        1  2026-02-18 07:02   Factory_Orchestrator-main/tests/__init__.py
+     9670  2026-02-18 07:02   Factory_Orchestrator-main/tests/basic_set.png
+    11417  2026-02-18 07:02   Factory_Orchestrator-main/tests/hardening_set.png
+     6643  2026-02-18 07:02   Factory_Orchestrator-main/tests/test_factory_orchestrator.py
+     5421  2026-02-18 07:02   Factory_Orchestrator-main/tests/test_hardening_factory_orchestrator.py
+    84036  2026-02-18 07:02   Factory_Orchestrator-main/tests/the_mission_loop.png
+---------                     -------
+   153662                     22 files

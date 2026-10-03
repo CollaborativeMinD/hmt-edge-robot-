@@ -1,0 +1,14 @@
+Archive:  /mnt/data/hmt_edge_robot_version_lineage_v1_0_0/01_v1_prototypes/AccessManager-main.zip
+f75e83a61c9aefad66202b340a68e4712ff4e5f7
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2026-02-06 20:43   AccessManager-main/
+     4026  2026-02-06 20:43   AccessManager-main/AI_Assisted_Engineering_Protocol_README.md
+     1071  2026-02-06 20:43   AccessManager-main/LICENSE
+     3801  2026-02-06 20:43   AccessManager-main/README.md
+    10863  2026-02-06 20:43   AccessManager-main/access_manager.py
+    24245  2026-02-06 20:43   AccessManager-main/access_manager_jupyter_notebook.ipynb
+    96891  2026-02-06 20:43   AccessManager-main/state_monitor.png
+     7570  2026-02-06 20:43   AccessManager-main/test_access_manager.py
+---------                     -------
+   148467                     8 files

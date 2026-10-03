@@ -1,0 +1,27 @@
+Archive:  /mnt/data/hmt_edge_robot_version_lineage_v1_0_0/01_v1_prototypes/waialua-edge-node-v11-main.zip
+09ef1457a25cd75cd3ec98d1fa409cb63114e14b
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2026-02-18 07:00   waialua-edge-node-v11-main/
+        0  2026-02-18 07:00   waialua-edge-node-v11-main/.github/
+        0  2026-02-18 07:00   waialua-edge-node-v11-main/.github/workflows/
+     1355  2026-02-18 07:00   waialua-edge-node-v11-main/.github/workflows/pylint.yml
+     4197  2026-02-18 07:00   waialua-edge-node-v11-main/AI-Assisted_MBSE_Protocol.md
+     4358  2026-02-18 07:00   waialua-edge-node-v11-main/Deterministic AI Architecture.md
+     1071  2026-02-18 07:00   waialua-edge-node-v11-main/LICENSE
+     4564  2026-02-18 07:00   waialua-edge-node-v11-main/README.md
+        0  2026-02-18 07:00   waialua-edge-node-v11-main/docs/
+     1580  2026-02-18 07:00   waialua-edge-node-v11-main/docs/ICD_v11_RevA.md
+        0  2026-02-18 07:00   waialua-edge-node-v11-main/docs/sysml/
+     2521  2026-02-18 07:00   waialua-edge-node-v11-main/docs/sysml/architecture_v1.sysml
+     1966  2026-02-18 07:00   waialua-edge-node-v11-main/docs/sysml/architecture_v2.sysml
+       95  2026-02-18 07:00   waialua-edge-node-v11-main/requirements.txt
+        0  2026-02-18 07:00   waialua-edge-node-v11-main/src/
+       33  2026-02-18 07:00   waialua-edge-node-v11-main/src/__init__.py
+     7964  2026-02-18 07:00   waialua-edge-node-v11-main/src/waialua_master.py
+        0  2026-02-18 07:00   waialua-edge-node-v11-main/states/
+   284365  2026-02-18 07:00   waialua-edge-node-v11-main/states/Dashboard.png
+    74809  2026-02-18 07:00   waialua-edge-node-v11-main/states/RejectionLog.png
+   280544  2026-02-18 07:00   waialua-edge-node-v11-main/states/ThermalGap.png
+---------                     -------
+   669422                     21 files
