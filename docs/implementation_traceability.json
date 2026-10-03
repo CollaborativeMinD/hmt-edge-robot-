@@ -48,7 +48,9 @@
     "module_id": "src/hmt_edge_robot/runtime.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/runtime.py"
+      "src/hmt_edge_robot/runtime.py",
+      "src/hmt_edge_robot/runtime_simulation.py",
+      "src/hmt_edge_robot/runtime_governance.py"
     ],
     "contract_id": "Login/SessionRequest/Policy",
     "safety_constraint_id": [
@@ -60,7 +62,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_orchestration_ledger.py::test_policy_update_revokes_pending_authority"
+      "tests/test_orchestration_ledger_authority.py::test_policy_update_revokes_pending_authority"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
@@ -70,7 +72,8 @@
     "module_id": "src/hmt_edge_robot/safety.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/safety.py"
+      "src/hmt_edge_robot/safety.py",
+      "src/hmt_edge_robot/safety_admittance.py"
     ],
     "contract_id": "PositionPacket/SafetyAssessment/Policy",
     "safety_constraint_id": [
@@ -92,7 +95,8 @@
     "module_id": "src/hmt_edge_robot/safety.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/safety.py"
+      "src/hmt_edge_robot/safety.py",
+      "src/hmt_edge_robot/safety_admittance.py"
     ],
     "contract_id": "PositionPacket/SafetyAssessment/Policy",
     "safety_constraint_id": [
@@ -114,7 +118,8 @@
     "module_id": "src/hmt_edge_robot/safety.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/safety.py"
+      "src/hmt_edge_robot/safety.py",
+      "src/hmt_edge_robot/safety_admittance.py"
     ],
     "contract_id": "PositionPacket/SafetyAssessment/Policy",
     "safety_constraint_id": [
@@ -126,7 +131,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_contracts_geometry.py::test_admittance_law_and_bounds"
+      "tests/test_contracts_geometry_vision.py::test_admittance_law_and_bounds"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
@@ -214,7 +219,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_contracts_geometry.py::test_vision_rejects_ambiguity_empty_small_and_format"
+      "tests/test_contracts_geometry_vision.py::test_vision_rejects_ambiguity_empty_small_and_format"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
@@ -258,7 +263,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_contracts_geometry.py::test_grasp_candidates_calibration_determinism"
+      "tests/test_contracts_geometry_vision.py::test_grasp_candidates_calibration_determinism"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
@@ -268,7 +273,11 @@
     "module_id": "src/hmt_edge_robot/orchestrator.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/orchestrator.py"
+      "src/hmt_edge_robot/orchestrator.py",
+      "src/hmt_edge_robot/orchestrator_recovery.py",
+      "src/hmt_edge_robot/orchestrator_admission.py",
+      "src/hmt_edge_robot/orchestrator_driver.py",
+      "src/hmt_edge_robot/orchestrator_execution.py"
     ],
     "contract_id": "MotionRequest/TaskReceipt/Policy",
     "safety_constraint_id": [
@@ -280,7 +289,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_orchestration_ledger.py::test_admission_denials"
+      "tests/test_orchestration_ledger_driver.py::test_admission_denials"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
@@ -290,7 +299,11 @@
     "module_id": "src/hmt_edge_robot/orchestrator.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/orchestrator.py"
+      "src/hmt_edge_robot/orchestrator.py",
+      "src/hmt_edge_robot/orchestrator_recovery.py",
+      "src/hmt_edge_robot/orchestrator_admission.py",
+      "src/hmt_edge_robot/orchestrator_driver.py",
+      "src/hmt_edge_robot/orchestrator_execution.py"
     ],
     "contract_id": "MotionRequest/TaskReceipt/Policy",
     "safety_constraint_id": [
@@ -302,7 +315,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_orchestration_ledger.py::test_driver_ack_and_feedback_regressions"
+      "tests/test_orchestration_ledger_driver.py::test_driver_ack_and_feedback_regressions"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
@@ -312,7 +325,11 @@
     "module_id": "src/hmt_edge_robot/orchestrator.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/orchestrator.py"
+      "src/hmt_edge_robot/orchestrator.py",
+      "src/hmt_edge_robot/orchestrator_recovery.py",
+      "src/hmt_edge_robot/orchestrator_admission.py",
+      "src/hmt_edge_robot/orchestrator_driver.py",
+      "src/hmt_edge_robot/orchestrator_execution.py"
     ],
     "contract_id": "MotionRequest/TaskReceipt/Policy",
     "safety_constraint_id": [
@@ -324,7 +341,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_orchestration_ledger.py::test_duplicate_atomic_admission"
+      "tests/test_orchestration_ledger_authority.py::test_duplicate_atomic_admission"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
@@ -334,7 +351,11 @@
     "module_id": "src/hmt_edge_robot/orchestrator.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/orchestrator.py"
+      "src/hmt_edge_robot/orchestrator.py",
+      "src/hmt_edge_robot/orchestrator_recovery.py",
+      "src/hmt_edge_robot/orchestrator_admission.py",
+      "src/hmt_edge_robot/orchestrator_driver.py",
+      "src/hmt_edge_robot/orchestrator_execution.py"
     ],
     "contract_id": "MotionRequest/TaskReceipt/Policy",
     "safety_constraint_id": [
@@ -346,7 +367,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_orchestration_ledger.py::test_authority_rechecked_after_movement"
+      "tests/test_orchestration_ledger_authority.py::test_authority_rechecked_after_movement"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
@@ -356,7 +377,11 @@
     "module_id": "src/hmt_edge_robot/ledger.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/ledger.py"
+      "src/hmt_edge_robot/ledger.py",
+      "src/hmt_edge_robot/ledger_queries.py",
+      "src/hmt_edge_robot/ledger_replay.py",
+      "src/hmt_edge_robot/ledger_transitions.py",
+      "src/hmt_edge_robot/ledger_errors.py"
     ],
     "contract_id": "TaskState",
     "safety_constraint_id": [
@@ -368,7 +393,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_orchestration_ledger.py::test_evidence_failure_stops_before_side_effect"
+      "tests/test_orchestration_ledger_authority.py::test_evidence_failure_stops_before_side_effect"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
@@ -378,7 +403,11 @@
     "module_id": "src/hmt_edge_robot/ledger.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/ledger.py"
+      "src/hmt_edge_robot/ledger.py",
+      "src/hmt_edge_robot/ledger_queries.py",
+      "src/hmt_edge_robot/ledger_replay.py",
+      "src/hmt_edge_robot/ledger_transitions.py",
+      "src/hmt_edge_robot/ledger_errors.py"
     ],
     "contract_id": "TaskState",
     "safety_constraint_id": [
@@ -466,7 +495,13 @@
     "module_id": "src/hmt_edge_robot/resident.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/resident.py"
+      "src/hmt_edge_robot/resident.py",
+      "src/hmt_edge_robot/resident_cloud_request.py",
+      "src/hmt_edge_robot/resident_cloud.py",
+      "src/hmt_edge_robot/resident_governance.py",
+      "src/hmt_edge_robot/resident_health.py",
+      "src/hmt_edge_robot/resident_cloud_transport.py",
+      "src/hmt_edge_robot/resident_providers.py"
     ],
     "contract_id": "ResidentProposal/ResidentReceipt/Policy",
     "safety_constraint_id": [
@@ -488,7 +523,13 @@
     "module_id": "src/hmt_edge_robot/resident.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/resident.py"
+      "src/hmt_edge_robot/resident.py",
+      "src/hmt_edge_robot/resident_cloud_request.py",
+      "src/hmt_edge_robot/resident_cloud.py",
+      "src/hmt_edge_robot/resident_governance.py",
+      "src/hmt_edge_robot/resident_health.py",
+      "src/hmt_edge_robot/resident_cloud_transport.py",
+      "src/hmt_edge_robot/resident_providers.py"
     ],
     "contract_id": "ResidentProposal/ResidentReceipt/Policy",
     "safety_constraint_id": [
@@ -500,7 +541,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_resident_analytics.py::test_resident_context_tools_and_bounds"
+      "tests/test_resident_analytics_governance.py::test_resident_context_tools_and_bounds"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
@@ -510,7 +551,13 @@
     "module_id": "src/hmt_edge_robot/resident.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/resident.py"
+      "src/hmt_edge_robot/resident.py",
+      "src/hmt_edge_robot/resident_cloud_request.py",
+      "src/hmt_edge_robot/resident_cloud.py",
+      "src/hmt_edge_robot/resident_governance.py",
+      "src/hmt_edge_robot/resident_health.py",
+      "src/hmt_edge_robot/resident_cloud_transport.py",
+      "src/hmt_edge_robot/resident_providers.py"
     ],
     "contract_id": "ResidentProposal/ResidentReceipt/Policy",
     "safety_constraint_id": [
@@ -522,7 +569,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_resident_analytics.py::test_resident_invalid_provider_holds"
+      "tests/test_resident_analytics_governance.py::test_resident_invalid_provider_holds"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
@@ -532,7 +579,13 @@
     "module_id": "src/hmt_edge_robot/resident.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/resident.py"
+      "src/hmt_edge_robot/resident.py",
+      "src/hmt_edge_robot/resident_cloud_request.py",
+      "src/hmt_edge_robot/resident_cloud.py",
+      "src/hmt_edge_robot/resident_governance.py",
+      "src/hmt_edge_robot/resident_health.py",
+      "src/hmt_edge_robot/resident_cloud_transport.py",
+      "src/hmt_edge_robot/resident_providers.py"
     ],
     "contract_id": "ResidentProposal/ResidentReceipt/Policy",
     "safety_constraint_id": [
@@ -544,7 +597,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_resident_analytics.py::test_paid_adapter_incomplete_or_uncertain_usage_holds"
+      "tests/test_resident_analytics_budget.py::test_paid_adapter_incomplete_or_uncertain_usage_holds"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
@@ -554,7 +607,11 @@
     "module_id": "src/hmt_edge_robot/api.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/api.py"
+      "src/hmt_edge_robot/api.py",
+      "src/hmt_edge_robot/api_resident.py",
+      "src/hmt_edge_robot/api_commands.py",
+      "src/hmt_edge_robot/api_queries.py",
+      "src/hmt_edge_robot/api_requests.py"
     ],
     "contract_id": "Login/Question/MotionRequest",
     "safety_constraint_id": [
@@ -566,7 +623,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_api_cli.py::test_api_full_operator_flow"
+      "tests/test_api_cli_http.py::test_api_full_operator_flow"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
@@ -576,7 +633,9 @@
     "module_id": "src/hmt_edge_robot/cli.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/cli.py"
+      "src/hmt_edge_robot/cli.py",
+      "src/hmt_edge_robot/cli_demonstration.py",
+      "src/hmt_edge_robot/cli_commands.py"
     ],
     "contract_id": "Login/Question/MotionRequest",
     "safety_constraint_id": [
@@ -598,7 +657,9 @@
     "module_id": "src/hmt_edge_robot/runtime.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "src/hmt_edge_robot/runtime.py"
+      "src/hmt_edge_robot/runtime.py",
+      "src/hmt_edge_robot/runtime_simulation.py",
+      "src/hmt_edge_robot/runtime_governance.py"
     ],
     "contract_id": "RobotCell composition",
     "safety_constraint_id": [
@@ -620,7 +681,14 @@
     "module_id": "tools/validate.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "tools/validate.py"
+      "tools/validate.py",
+      "tools/validate_base.py",
+      "tools/validate_incidents.py",
+      "tools/validate_ledger.py",
+      "tools/validate_execution.py",
+      "tools/validate_regression.py",
+      "tools/validate_report.py",
+      "tools/validate_structure.py"
     ],
     "contract_id": "Contract/Policy",
     "safety_constraint_id": [
@@ -642,7 +710,14 @@
     "module_id": "tools/validate.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "tools/validate.py"
+      "tools/validate.py",
+      "tools/validate_base.py",
+      "tools/validate_incidents.py",
+      "tools/validate_ledger.py",
+      "tools/validate_execution.py",
+      "tools/validate_regression.py",
+      "tools/validate_report.py",
+      "tools/validate_structure.py"
     ],
     "contract_id": "Contract/Policy",
     "safety_constraint_id": [
@@ -664,7 +739,14 @@
     "module_id": "tools/validate.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "tools/validate.py"
+      "tools/validate.py",
+      "tools/validate_base.py",
+      "tools/validate_incidents.py",
+      "tools/validate_ledger.py",
+      "tools/validate_execution.py",
+      "tools/validate_regression.py",
+      "tools/validate_report.py",
+      "tools/validate_structure.py"
     ],
     "contract_id": "Contract/Policy",
     "safety_constraint_id": [
@@ -686,7 +768,14 @@
     "module_id": "tools/validate.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "tools/validate.py"
+      "tools/validate.py",
+      "tools/validate_base.py",
+      "tools/validate_incidents.py",
+      "tools/validate_ledger.py",
+      "tools/validate_execution.py",
+      "tools/validate_regression.py",
+      "tools/validate_report.py",
+      "tools/validate_structure.py"
     ],
     "contract_id": "Contract/Policy",
     "safety_constraint_id": [
@@ -708,7 +797,14 @@
     "module_id": "tools/validate.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "tools/validate.py"
+      "tools/validate.py",
+      "tools/validate_base.py",
+      "tools/validate_incidents.py",
+      "tools/validate_ledger.py",
+      "tools/validate_execution.py",
+      "tools/validate_regression.py",
+      "tools/validate_report.py",
+      "tools/validate_structure.py"
     ],
     "contract_id": "Contract/Policy",
     "safety_constraint_id": [
@@ -720,7 +816,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_orchestration_ledger.py::test_evidence_failure_stops_before_side_effect"
+      "tests/test_orchestration_ledger_authority.py::test_evidence_failure_stops_before_side_effect"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
@@ -730,7 +826,14 @@
     "module_id": "tools/validate.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "tools/validate.py"
+      "tools/validate.py",
+      "tools/validate_base.py",
+      "tools/validate_incidents.py",
+      "tools/validate_ledger.py",
+      "tools/validate_execution.py",
+      "tools/validate_regression.py",
+      "tools/validate_report.py",
+      "tools/validate_structure.py"
     ],
     "contract_id": "Contract/Policy",
     "safety_constraint_id": [
@@ -752,7 +855,14 @@
     "module_id": "tools/validate.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "tools/validate.py"
+      "tools/validate.py",
+      "tools/validate_base.py",
+      "tools/validate_incidents.py",
+      "tools/validate_ledger.py",
+      "tools/validate_execution.py",
+      "tools/validate_regression.py",
+      "tools/validate_report.py",
+      "tools/validate_structure.py"
     ],
     "contract_id": "Contract/Policy",
     "safety_constraint_id": [
@@ -774,7 +884,14 @@
     "module_id": "tools/validate.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "tools/validate.py"
+      "tools/validate.py",
+      "tools/validate_base.py",
+      "tools/validate_incidents.py",
+      "tools/validate_ledger.py",
+      "tools/validate_execution.py",
+      "tools/validate_regression.py",
+      "tools/validate_report.py",
+      "tools/validate_structure.py"
     ],
     "contract_id": "Contract/Policy",
     "safety_constraint_id": [
@@ -796,7 +913,14 @@
     "module_id": "tools/validate.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "tools/validate.py"
+      "tools/validate.py",
+      "tools/validate_base.py",
+      "tools/validate_incidents.py",
+      "tools/validate_ledger.py",
+      "tools/validate_execution.py",
+      "tools/validate_regression.py",
+      "tools/validate_report.py",
+      "tools/validate_structure.py"
     ],
     "contract_id": "Contract/Policy",
     "safety_constraint_id": [
@@ -808,7 +932,7 @@
       "INV-06"
     ],
     "test_id": [
-      "tests/test_resident_analytics.py::test_resident_context_tools_and_bounds"
+      "tests/test_resident_analytics_governance.py::test_resident_context_tools_and_bounds"
     ],
     "analysis_id": "G-AUTH-003",
     "evidence_id": "evidence/validation.json"
@@ -818,7 +942,14 @@
     "module_id": "tools/validate.py",
     "runtime_partition": "supervisory/SIL",
     "source_path": [
-      "tools/validate.py"
+      "tools/validate.py",
+      "tools/validate_base.py",
+      "tools/validate_incidents.py",
+      "tools/validate_ledger.py",
+      "tools/validate_execution.py",
+      "tools/validate_regression.py",
+      "tools/validate_report.py",
+      "tools/validate_structure.py"
     ],
     "contract_id": "Contract/Policy",
     "safety_constraint_id": [
@@ -840,7 +971,9 @@
     "module_id": "src/hmt_edge_robot/assurance/mcc.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/mcc.py"
+      "src/hmt_edge_robot/assurance/mcc.py",
+      "src/hmt_edge_robot/assurance/mcc_collection.py",
+      "src/hmt_edge_robot/assurance/mcc_readiness.py"
     ],
     "contract_id": "SubstrateAssurance/mcc.py",
     "safety_constraint_id": [
@@ -849,7 +982,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_readiness_effects.py::test_mcc_mission_readiness_and_boundary"
+      "tests/test_assurance_readiness_effects_readiness.py::test_mcc_mission_readiness_and_boundary"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -859,7 +992,9 @@
     "module_id": "src/hmt_edge_robot/assurance/mcc.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/mcc.py"
+      "src/hmt_edge_robot/assurance/mcc.py",
+      "src/hmt_edge_robot/assurance/mcc_collection.py",
+      "src/hmt_edge_robot/assurance/mcc_readiness.py"
     ],
     "contract_id": "SubstrateAssurance/mcc.py",
     "safety_constraint_id": [
@@ -868,7 +1003,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_readiness_effects.py::test_mcc_incomplete_invalid_and_stale"
+      "tests/test_assurance_readiness_effects_readiness.py::test_mcc_incomplete_invalid_and_stale"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -878,7 +1013,9 @@
     "module_id": "src/hmt_edge_robot/assurance/mcc.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/mcc.py"
+      "src/hmt_edge_robot/assurance/mcc.py",
+      "src/hmt_edge_robot/assurance/mcc_collection.py",
+      "src/hmt_edge_robot/assurance/mcc_readiness.py"
     ],
     "contract_id": "SubstrateAssurance/mcc.py",
     "safety_constraint_id": [
@@ -887,7 +1024,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_integration.py::test_software_probe_durable_failure_and_no_returned_readiness"
+      "tests/test_assurance_integration_replay.py::test_software_probe_durable_failure_and_no_returned_readiness"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -897,7 +1034,9 @@
     "module_id": "src/hmt_edge_robot/assurance/mcc.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/mcc.py"
+      "src/hmt_edge_robot/assurance/mcc.py",
+      "src/hmt_edge_robot/assurance/mcc_collection.py",
+      "src/hmt_edge_robot/assurance/mcc_readiness.py"
     ],
     "contract_id": "SubstrateAssurance/mcc.py",
     "safety_constraint_id": [
@@ -906,7 +1045,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_readiness_effects.py::test_mcc_empirical_envelope_is_not_wcet"
+      "tests/test_assurance_readiness_effects_readiness.py::test_mcc_empirical_envelope_is_not_wcet"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -916,7 +1055,8 @@
     "module_id": "src/hmt_edge_robot/assurance/usea.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/usea.py"
+      "src/hmt_edge_robot/assurance/usea.py",
+      "src/hmt_edge_robot/assurance/usea_manifest.py"
     ],
     "contract_id": "SubstrateAssurance/usea.py",
     "safety_constraint_id": [
@@ -925,7 +1065,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_readiness_effects.py::test_usea_effect_receipt_distinction"
+      "tests/test_assurance_readiness_effects_effects.py::test_usea_effect_receipt_distinction"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -935,7 +1075,8 @@
     "module_id": "src/hmt_edge_robot/assurance/usea.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/usea.py"
+      "src/hmt_edge_robot/assurance/usea.py",
+      "src/hmt_edge_robot/assurance/usea_manifest.py"
     ],
     "contract_id": "SubstrateAssurance/usea.py",
     "safety_constraint_id": [
@@ -944,7 +1085,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_readiness_effects.py::test_usea_incomplete_is_hold"
+      "tests/test_assurance_readiness_effects_effects.py::test_usea_incomplete_is_hold"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -954,7 +1095,8 @@
     "module_id": "src/hmt_edge_robot/assurance/usea.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/usea.py"
+      "src/hmt_edge_robot/assurance/usea.py",
+      "src/hmt_edge_robot/assurance/usea_manifest.py"
     ],
     "contract_id": "SubstrateAssurance/usea.py",
     "safety_constraint_id": [
@@ -963,7 +1105,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_readiness_effects.py::test_manifest_actual_writes_and_coverage_limit"
+      "tests/test_assurance_readiness_effects_effects.py::test_manifest_actual_writes_and_coverage_limit"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -973,7 +1115,10 @@
     "module_id": "src/hmt_edge_robot/assurance/agc.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/agc.py"
+      "src/hmt_edge_robot/assurance/agc.py",
+      "src/hmt_edge_robot/assurance/agc_planning.py",
+      "src/hmt_edge_robot/assurance/agc_admission.py",
+      "src/hmt_edge_robot/assurance/agc_mutation.py"
     ],
     "contract_id": "SubstrateAssurance/agc.py",
     "safety_constraint_id": [
@@ -982,7 +1127,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_reclamation.py::test_agc_transitive_reference_closure_and_cycles"
+      "tests/test_assurance_reclamation_protection.py::test_agc_transitive_reference_closure_and_cycles"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -992,7 +1137,10 @@
     "module_id": "src/hmt_edge_robot/assurance/agc.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/agc.py"
+      "src/hmt_edge_robot/assurance/agc.py",
+      "src/hmt_edge_robot/assurance/agc_planning.py",
+      "src/hmt_edge_robot/assurance/agc_admission.py",
+      "src/hmt_edge_robot/assurance/agc_mutation.py"
     ],
     "contract_id": "SubstrateAssurance/agc.py",
     "safety_constraint_id": [
@@ -1001,7 +1149,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_reclamation.py::test_agc_unknown_hold"
+      "tests/test_assurance_reclamation_protection.py::test_agc_unknown_hold"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -1011,7 +1159,10 @@
     "module_id": "src/hmt_edge_robot/assurance/agc.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/agc.py"
+      "src/hmt_edge_robot/assurance/agc.py",
+      "src/hmt_edge_robot/assurance/agc_planning.py",
+      "src/hmt_edge_robot/assurance/agc_admission.py",
+      "src/hmt_edge_robot/assurance/agc_mutation.py"
     ],
     "contract_id": "SubstrateAssurance/agc.py",
     "safety_constraint_id": [
@@ -1030,7 +1181,10 @@
     "module_id": "src/hmt_edge_robot/assurance/agc.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/agc.py"
+      "src/hmt_edge_robot/assurance/agc.py",
+      "src/hmt_edge_robot/assurance/agc_planning.py",
+      "src/hmt_edge_robot/assurance/agc_admission.py",
+      "src/hmt_edge_robot/assurance/agc_mutation.py"
     ],
     "contract_id": "SubstrateAssurance/agc.py",
     "safety_constraint_id": [
@@ -1039,7 +1193,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_reclamation.py::test_agc_fence_changed_reference_and_no_grant_replay"
+      "tests/test_assurance_reclamation_authority.py::test_agc_fence_changed_reference_and_no_grant_replay"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -1049,7 +1203,11 @@
     "module_id": "src/hmt_edge_robot/assurance/catalog.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/catalog.py"
+      "src/hmt_edge_robot/assurance/catalog.py",
+      "src/hmt_edge_robot/assurance/catalog_records.py",
+      "src/hmt_edge_robot/assurance/catalog_authority.py",
+      "src/hmt_edge_robot/assurance/catalog_replay.py",
+      "src/hmt_edge_robot/assurance/catalog_storage.py"
     ],
     "contract_id": "SubstrateAssurance/catalog.py",
     "safety_constraint_id": [
@@ -1058,7 +1216,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_reclamation.py::test_catalog_missing_record_and_revision_tamper"
+      "tests/test_assurance_reclamation_replay.py::test_catalog_missing_record_and_revision_tamper"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -1068,7 +1226,8 @@
     "module_id": "src/hmt_edge_robot/assurance/kernel.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/kernel.py"
+      "src/hmt_edge_robot/assurance/kernel.py",
+      "src/hmt_edge_robot/assurance/kernel_observer.py"
     ],
     "contract_id": "SubstrateAssurance/kernel.py",
     "safety_constraint_id": [
@@ -1106,7 +1265,9 @@
     "module_id": "src/hmt_edge_robot/assurance/analytics.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/analytics.py"
+      "src/hmt_edge_robot/assurance/analytics.py",
+      "src/hmt_edge_robot/assurance/analytics_exports.py",
+      "src/hmt_edge_robot/assurance/analytics_queries.py"
     ],
     "contract_id": "SubstrateAssurance/analytics.py",
     "safety_constraint_id": [
@@ -1125,7 +1286,9 @@
     "module_id": "src/hmt_edge_robot/assurance/routes.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/routes.py"
+      "src/hmt_edge_robot/assurance/routes.py",
+      "src/hmt_edge_robot/assurance/routes_catalog.py",
+      "src/hmt_edge_robot/assurance/routes_requests.py"
     ],
     "contract_id": "SubstrateAssurance/routes.py",
     "safety_constraint_id": [
@@ -1134,7 +1297,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_integration.py::test_assurance_api_native_json_and_declared_trace_hold"
+      "tests/test_assurance_integration_http.py::test_assurance_api_native_json_and_declared_trace_hold"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -1144,7 +1307,13 @@
     "module_id": "src/hmt_edge_robot/assurance/contracts.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/contracts.py"
+      "src/hmt_edge_robot/assurance/contracts.py",
+      "src/hmt_edge_robot/assurance/contracts_identity.py",
+      "src/hmt_edge_robot/assurance/contracts_reclamation.py",
+      "src/hmt_edge_robot/assurance/contracts_recovery.py",
+      "src/hmt_edge_robot/assurance/contracts_effects.py",
+      "src/hmt_edge_robot/assurance/contracts_base.py",
+      "src/hmt_edge_robot/assurance/contracts_reports.py"
     ],
     "contract_id": "SubstrateAssurance/contracts.py",
     "safety_constraint_id": [
@@ -1153,7 +1322,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_readiness_effects.py::test_assurance_contracts_strict_finite_frozen"
+      "tests/test_assurance_readiness_effects_optimization.py::test_assurance_contracts_strict_finite_frozen"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -1163,7 +1332,11 @@
     "module_id": "src/hmt_edge_robot/assurance/catalog.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/catalog.py"
+      "src/hmt_edge_robot/assurance/catalog.py",
+      "src/hmt_edge_robot/assurance/catalog_records.py",
+      "src/hmt_edge_robot/assurance/catalog_authority.py",
+      "src/hmt_edge_robot/assurance/catalog_replay.py",
+      "src/hmt_edge_robot/assurance/catalog_storage.py"
     ],
     "contract_id": "SubstrateAssurance/catalog.py",
     "safety_constraint_id": [
@@ -1172,7 +1345,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_reclamation.py::test_catalog_and_census_bounds"
+      "tests/test_assurance_reclamation_protection.py::test_catalog_and_census_bounds"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -1182,7 +1355,10 @@
     "module_id": "src/hmt_edge_robot/assurance/agc.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/agc.py"
+      "src/hmt_edge_robot/assurance/agc.py",
+      "src/hmt_edge_robot/assurance/agc_planning.py",
+      "src/hmt_edge_robot/assurance/agc_admission.py",
+      "src/hmt_edge_robot/assurance/agc_mutation.py"
     ],
     "contract_id": "SubstrateAssurance/agc.py",
     "safety_constraint_id": [
@@ -1191,7 +1367,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_reclamation.py::test_agc_evidence_failure_rolls_back_mutation"
+      "tests/test_assurance_reclamation_replay.py::test_agc_evidence_failure_rolls_back_mutation"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -1210,7 +1386,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_readiness_effects.py::test_optimization_exact_against_brute_force"
+      "tests/test_assurance_readiness_effects_optimization.py::test_optimization_exact_against_brute_force"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -1220,7 +1396,11 @@
     "module_id": "src/hmt_edge_robot/assurance/catalog.py",
     "runtime_partition": "system software / managed catalog",
     "source_path": [
-      "src/hmt_edge_robot/assurance/catalog.py"
+      "src/hmt_edge_robot/assurance/catalog.py",
+      "src/hmt_edge_robot/assurance/catalog_records.py",
+      "src/hmt_edge_robot/assurance/catalog_authority.py",
+      "src/hmt_edge_robot/assurance/catalog_replay.py",
+      "src/hmt_edge_robot/assurance/catalog_storage.py"
     ],
     "contract_id": "SubstrateAssurance/catalog.py",
     "safety_constraint_id": [
@@ -1229,7 +1409,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_integration.py::test_catalog_readonly_no_recovery_or_writes"
+      "tests/test_assurance_integration_replay.py::test_catalog_readonly_no_recovery_or_writes"
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/triad/campaign.json"
@@ -1248,7 +1428,7 @@
       "INV-SAT-03"
     ],
     "test_id": [
-      "tests/test_assurance_readiness_effects.py::test_optimization_exact_against_brute_force"
+      "tests/test_assurance_readiness_effects_optimization.py::test_optimization_exact_against_brute_force"
     ],
     "analysis_id": "G-TRIAD-011",
     "evidence_id": "evidence/triad/campaign.json"
@@ -1260,7 +1440,14 @@
     "source_path": [
       "pyproject.toml",
       "tools/validate.py",
-      ".github/workflows/ci.yml"
+      ".github/workflows/ci.yml",
+      "tools/validate_base.py",
+      "tools/validate_incidents.py",
+      "tools/validate_ledger.py",
+      "tools/validate_execution.py",
+      "tools/validate_regression.py",
+      "tools/validate_report.py",
+      "tools/validate_structure.py"
     ],
     "contract_id": "Pyrefly static type gate",
     "safety_constraint_id": [
@@ -1342,7 +1529,7 @@
     ],
     "contract_id": "policy/ci_support.json",
     "safety_constraint_id": [
-      "NO_GLOBAL_PROMOTION",
+      "HUMAN_APPROVED_PROMOTION_ONLY",
       "NO_DOCKER_OR_DEPLOYMENT"
     ],
     "test_id": [
@@ -1363,7 +1550,7 @@
     ],
     "contract_id": "policy/ci_support.json",
     "safety_constraint_id": [
-      "NO_GLOBAL_PROMOTION",
+      "HUMAN_APPROVED_PROMOTION_ONLY",
       "NO_DOCKER_OR_DEPLOYMENT"
     ],
     "test_id": [
@@ -1384,7 +1571,7 @@
     ],
     "contract_id": "policy/ci_support.json",
     "safety_constraint_id": [
-      "NO_GLOBAL_PROMOTION",
+      "HUMAN_APPROVED_PROMOTION_ONLY",
       "NO_DOCKER_OR_DEPLOYMENT"
     ],
     "test_id": [
@@ -1405,7 +1592,7 @@
     ],
     "contract_id": "policy/ci_support.json",
     "safety_constraint_id": [
-      "NO_GLOBAL_PROMOTION",
+      "HUMAN_APPROVED_PROMOTION_ONLY",
       "NO_DOCKER_OR_DEPLOYMENT"
     ],
     "test_id": [
@@ -1413,5 +1600,49 @@
     ],
     "analysis_id": "G-PROFILE-015",
     "evidence_id": "evidence/ci/phase2/profiles.json"
+  },
+  {
+    "req_id": "REQ-CI3-01",
+    "module_id": "tools/policy_promotion.py",
+    "runtime_partition": "system software validation",
+    "source_path": [
+      "tools/policy_promotion.py",
+      "tools/policy_evaluation.py",
+      "policy/promotion.json"
+    ],
+    "contract_id": "policy/promotion.json",
+    "safety_constraint_id": [
+      "HUMAN_APPROVED_PROMOTION_ONLY",
+      "NO_DOCKER_OR_DEPLOYMENT"
+    ],
+    "test_id": [
+      "tests/test_policy_promotion.py::test_promoted_policy_replay_and_historical_disposition",
+      "tests/test_policy_promotion.py::test_promotion_rejects_unapproved_changes",
+      "tests/test_policy_promotion.py::test_promotion_missing_and_undispositioned_pin_fail_closed",
+      "tests/test_policy_promotion.py::test_malformed_source_replaces_prior_pass_receipt"
+    ],
+    "analysis_id": "G-POLICY-014",
+    "evidence_id": "evidence/ci/phase2/policy_evaluation.json"
+  },
+  {
+    "req_id": "REQ-CI3-02",
+    "module_id": "tools/policy_inventory.py",
+    "runtime_partition": "system software validation",
+    "source_path": [
+      "tools/policy_inventory.py",
+      "tools/validate_structure.py"
+    ],
+    "contract_id": "policy/promotion.json",
+    "safety_constraint_id": [
+      "HUMAN_APPROVED_PROMOTION_ONLY",
+      "NO_DOCKER_OR_DEPLOYMENT"
+    ],
+    "test_id": [
+      "tests/test_policy_evaluation.py::test_policy_inventory_and_full_adoption_hold",
+      "tests/test_policy_evaluation.py::test_new_support_module_cannot_evade_ceiling",
+      "tests/test_policy_promotion.py::test_function_budget_includes_decorators"
+    ],
+    "analysis_id": "G-ARCH-001",
+    "evidence_id": "evidence/ci/phase2/policy_evaluation.json"
   }
 ]

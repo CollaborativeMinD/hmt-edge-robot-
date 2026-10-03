@@ -1,8 +1,4 @@
-"""REQ-HS-01..03: local SSM engineering guard, not a certified safety controller.
-
-Derived S = vh*(Tr+Ts)+vr*Tr+Db+Z; configured bounds require hardware calibration.
-FF-V6-KIN-01 (distance from velocity/time); FF-V6-GUARD-01 admissibility.
-"""
+"""Compatibility facade for the decomposed safety interfaces."""
 
 from __future__ import annotations
 
@@ -11,6 +7,7 @@ import math
 import numpy as np
 
 from .contracts import Policy, PositionPacket, SafetyAssessment, Vector3
+from .safety_admittance import AdmittanceController as AdmittanceController
 
 
 class HaloSafe:
@@ -87,31 +84,3 @@ class HaloSafe:
         assessment = self.assess(target_mm, self.policy.max_speed_mps, now)
         self.latched = not assessment.admitted
         return not self.latched
-
-
-class AdmittanceController:
-    """SIL only: M*a+D*v+K*x=F; FF-V6-DYN-01, FF-V6-DISC-01."""
-
-    def __init__(
-        self, mass: float = 5.0, damping: float = 10.0, stiffness: float = 0.0, dt: float = 0.01
-    ) -> None:
-        if not all(math.isfinite(x) for x in (mass, damping, stiffness, dt)):
-            raise ValueError("PHYSICS_NONFINITE")
-        if mass <= 0 or damping < 0 or stiffness < 0 or not 0 < dt <= 0.05:
-            raise ValueError("PHYSICS_BOUNDS_INVALID")
-        self.mass, self.damping, self.stiffness, self.dt = mass, damping, stiffness, dt
-        self.position, self.velocity = np.zeros(3), np.zeros(3)
-
-    def step(self, force: Vector3) -> tuple[Vector3, Vector3]:
-        if len(force) != 3 or not all(math.isfinite(x) for x in force):
-            raise ValueError("FORCE_INVALID")
-        acceleration = (
-            np.asarray(force) - self.damping * self.velocity - self.stiffness * self.position
-        ) / self.mass
-        velocity = self.velocity + acceleration * self.dt
-        position = self.position + velocity * self.dt
-        if not np.isfinite(position).all() or not np.isfinite(velocity).all():
-            raise ValueError("PHYSICS_UPDATE_NONFINITE")
-        self.position, self.velocity = position, velocity
-        return ((float(position[0]), float(position[1]), float(position[2])),
-                (float(velocity[0]), float(velocity[1]), float(velocity[2])))

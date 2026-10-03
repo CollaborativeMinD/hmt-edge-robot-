@@ -50,7 +50,7 @@ def fold_measurements(root: Path) -> list[dict[str, Any]]:
         tree = ast.parse(text)
         functions = [node for node in ast.walk(tree)
                      if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef))]
-        longest = max(((node.end_lineno or node.lineno) - node.lineno + 1
+        longest = max(((node.end_lineno or node.lineno) - min([node.lineno] + [d.lineno for d in node.decorator_list]) + 1
                        for node in functions), default=0)
         result.append({"path": path.relative_to(root).as_posix(), "module_loc": count,
                        "max_function_physical_loc": longest,

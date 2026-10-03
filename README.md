@@ -85,4 +85,4 @@ components are mapped explicitly; absent services are never reported as running.
 
 CI/CD phase 1 now binds tool admission and locked dependencies. See [the pipeline SOP](docs/ci_cd.md). Linux/Pi/K3s deployment remains HOLD.
 
-Phase 2 adds [policy assessment and scoped tool reuse](docs/ci_phase2.md). Full policy/tool admission, Docker builds, and deployment remain HOLD.
+Phase 2 adds [policy assessment and scoped tool reuse](docs/ci_phase2.md). The [policy promotion continuation](docs/policy_promotion.md) resolves all 26 module HOLDs. Full tool engines, Docker builds, and deployment remain HOLD.

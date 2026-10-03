@@ -195,3 +195,10 @@ Follow `docs/ci_phase2.md`. G-POLICY-014 produces a measured HOLD register;
 G-PROFILE-015 checks root documents and evidence byte binding; G-QUALIFY-016 reruns
 both tool regressions. Inspect `evidence/ci/phase2/current` on failure. Stop on
 source-pin drift. Full policies/tools, Docker builds, and deployment remain HOLD.
+
+## Promoted policy continuation
+
+Follow `docs/policy_promotion.md`. Check the human approval overlay and exact source pins,
+then run cumulative validation. Policy promotion requires an empty module HOLD register.
+A changed source set or ceiling violation blocks CI. Keep full tool engines, Docker/CD
+and hardware gates held until their independently reviewed phases.

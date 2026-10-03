@@ -4,7 +4,7 @@
     "observed_state": "Legacy false-success terminal state",
     "causal_evidence": "False driver acknowledgments ignored in execution; verification unconditionally clears fault",
     "remediation": "Require is True acknowledgments and real finite feedback before SUCCEEDED",
-    "validation_test": "tests/test_orchestration_ledger.py::test_driver_ack_and_feedback_regressions",
+    "validation_test": "tests/test_orchestration_ledger_driver.py::test_driver_ack_and_feedback_regressions",
     "external_boundary": false
   },
   {
@@ -20,7 +20,7 @@
     "observed_state": "API rejected legitimate JSON coordinate arrays",
     "causal_evidence": "Strict Python tuple validation applied after framework JSON decoding",
     "remediation": "Validate bounded native JSON bytes at motion seam",
-    "validation_test": "tests/test_api_cli.py::test_api_full_operator_flow",
+    "validation_test": "tests/test_api_cli_http.py::test_api_full_operator_flow",
     "external_boundary": false
   },
   {
@@ -76,7 +76,7 @@
     "observed_state": "HTTP fixture recursively patched client constructor",
     "causal_evidence": "Repeated transport fixture referenced mutable patched httpx.AsyncClient",
     "remediation": "Capture immutable HTTP_CLIENT before patching",
-    "validation_test": "tests/test_resident_analytics.py::test_http_size_status_and_evidence_guards",
+    "validation_test": "tests/test_resident_analytics_budget.py::test_http_size_status_and_evidence_guards",
     "external_boundary": false
   },
   {
@@ -84,7 +84,7 @@
     "observed_state": "Routed model receipt raised ValidationError after live qualification",
     "causal_evidence": "Routed OpenRouter model_id contains slash; generic Identifier omitted slash; invalid receipt was appended before contract validation",
     "remediation": "Distinct ModelIdentifier validated at provider admission; validate receipt before durable decision; explicit stopped-context proposal guard",
-    "validation_test": "tests/test_resident_analytics.py::test_routed_model_id_and_stop_admission",
+    "validation_test": "tests/test_resident_analytics_governance.py::test_routed_model_id_and_stop_admission",
     "external_boundary": false
   },
   {
@@ -92,7 +92,7 @@
     "observed_state": "CLI qualification context still named the offline default provider",
     "causal_evidence": "CLI assigned the selected provider only after canary construction; prompt profile diverged from invoked provider",
     "remediation": "Assign the explicit unqualified provider before constructing canary context; failed qualification still blocks activation",
-    "validation_test": "tests/test_api_cli.py::test_cli_qualified_model_seam",
+    "validation_test": "tests/test_api_cli_entry.py::test_cli_qualified_model_seam",
     "external_boundary": false
   },
   {
@@ -100,7 +100,7 @@
     "observed_state": "Expired-census fixture raised schema validation instead of UNKNOWN_HOLD",
     "causal_evidence": "Fixture bypassed frozen validation with model_copy and inverted observation/expiry order; expiry did not represent a valid expired witness",
     "remediation": "Use a valid census and advance the clock beyond its expiry; retain rejection of inverted clock contracts",
-    "validation_test": "tests/test_assurance_reclamation.py::test_agc_unknown_hold",
+    "validation_test": "tests/test_assurance_reclamation_protection.py::test_agc_unknown_hold",
     "external_boundary": false
   },
   {
@@ -116,7 +116,7 @@
     "observed_state": "Static gate detected unused census hash during dependency-closure optimization",
     "causal_evidence": "Scope hash was hoisted out of per-record transformation but the call site omitted its new required parameter",
     "remediation": "Pass the single canonical census hash into every scoped decision; check closure, reconstruction and the software scale campaign",
-    "validation_test": "tests/test_assurance_reclamation.py::test_agc_transitive_reference_closure_and_cycles",
+    "validation_test": "tests/test_assurance_reclamation_protection.py::test_agc_transitive_reference_closure_and_cycles",
     "external_boundary": false
   },
   {
@@ -166,5 +166,21 @@
     "remediation": "Reuse qualified read-only primitives with explicit non-claims and independent host traces",
     "validation_test": "tests/test_ci_support.py::test_support_reuse_replay_and_no_promotion",
     "external_boundary": true
+  },
+  {
+    "incident_id": "RRCA-CI3-25",
+    "observed_state": "26 active modules exceeded the reviewed policy ceiling; historical SQL archive unavailable",
+    "causal_evidence": "Phase-2 fold inventory and source-pin assessment identify the exact module counts and unavailable historical artifact",
+    "remediation": "Owner approved package promotion and disregarded SQL reference; extract typed responsibility modules, enforce promoted bounds and preserve source bytes",
+    "validation_test": "tests/test_policy_promotion.py::test_promoted_policy_replay_and_historical_disposition",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CI3-26",
+    "observed_state": "Malformed Python aborted policy assessment before replacing a prior PASS receipt",
+    "causal_evidence": "fold_measurements raises SyntaxError or tokenize.TokenError; main previously omitted both from its rejection handler",
+    "remediation": "Handle both parse failures and atomically replace the prior assessment with FAIL and explicit authority HOLDs",
+    "validation_test": "tests/test_policy_promotion.py::test_malformed_source_replaces_prior_pass_receipt",
+    "external_boundary": false
   }
 ]

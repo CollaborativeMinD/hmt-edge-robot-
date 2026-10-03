@@ -1,0 +1,16 @@
+{
+  "software_status": "PASS",
+  "test_cases": 178,
+  "coverage_percent": 97.73851590106007,
+  "policy_status": "PROMOTED",
+  "policy_hold_count": 0,
+  "max_module_loc": 97,
+  "source_manifest_sha256": "35f6c6a1a51fdc99a25feca7cb5e2bf989c36a5e4c2fe55ae40dcee2408d0e29",
+  "validation_ref": "evidence/validation.json",
+  "approval_ref": "policy/promotion.json",
+  "docker_build": "HOLD",
+  "deployment": "HOLD",
+  "paid_provider_calls": 0,
+  "notification": "POLICY_PROMOTION_VALIDATED",
+  "alert": false
+}
