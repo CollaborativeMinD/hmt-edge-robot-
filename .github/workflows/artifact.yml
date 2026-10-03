@@ -1,0 +1,98 @@
+name: ARM64 artifact qualification
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: artifact-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  qualify:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 40
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    env:
+      UV_PYTHON: '3.12'
+      UV_NO_PROGRESS: '1'
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Invalidate stale qualification before any build
+        run: |
+          mkdir -p evidence/cd/stage4
+          echo '{"status":"FAIL","stage":4,"deployment":"HOLD","hardware":"HOLD","alert":true,"reason_codes":["CAMPAIGN_INCOMPLETE"]}' > evidence/cd/stage4/qualification.json
+          python3 tools/ci_admission.py
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+        with:
+          version: 0.9.7
+          enable-cache: false
+      - name: Locked software gates before artifact construction
+        run: |
+          uv lock --check
+          uv sync --locked --extra dev
+          uv run --no-sync python tools/validate.py
+      - name: Resolve immutable build inputs once and record tool inventory
+        run: |
+          test "$(uname -m)" = aarch64
+          docker pull --platform linux/arm64 python:3.12-slim-bookworm
+          docker pull --platform linux/arm64 ghcr.io/astral-sh/uv:0.9.7
+          docker pull --platform linux/arm64 aquasec/trivy:0.69.3
+          docker pull --platform linux/arm64 moby/buildkit:v0.25.1
+          python3 - <<'PY'
+          import json, subprocess
+          tags = {'python':'python:3.12-slim-bookworm','uv':'ghcr.io/astral-sh/uv:0.9.7','trivy':'aquasec/trivy:0.69.3','buildkit':'moby/buildkit:v0.25.1'}
+          bases = {key:json.loads(subprocess.check_output(['docker','image','inspect',tag]))[0]['RepoDigests'][0] for key,tag in tags.items()}
+          open('evidence/cd/stage4/base-lock.json','w').write(json.dumps(bases,indent=2)+'\n')
+          import os
+          with open(os.environ['GITHUB_ENV'],'a') as output:
+              output.write('BUILDKIT_IMAGE='+bases['buildkit']+'\n')
+          with open('evidence/cd/stage4/tool-inventory.txt','w') as output:
+              subprocess.run(['docker','version'],stdout=output,check=True)
+              subprocess.run(['gh','version'],stdout=output,check=True)
+          PY
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f
+        with:
+          driver-opts: image=${{ env.BUILDKIT_IMAGE }}
+      - name: Build one locked ARM64 OCI archive
+        run: |
+          PYTHON_IMAGE=$(python3 -c 'import json; print(json.load(open("evidence/cd/stage4/base-lock.json"))["python"])')
+          UV_IMAGE=$(python3 -c 'import json; print(json.load(open("evidence/cd/stage4/base-lock.json"))["uv"])')
+          docker buildx build --platform linux/arm64 --file deploy/stage4/Dockerfile --build-arg "PYTHON_IMAGE=$PYTHON_IMAGE" --build-arg "UV_IMAGE=$UV_IMAGE" --build-arg "SOURCE_COMMIT=$GITHUB_SHA" --provenance=mode=max --metadata-file evidence/cd/stage4/build-metadata.json --output type=oci,dest=evidence/cd/stage4/image.oci.tar .
+      - name: Load the exact OCI runtime image and qualify without network or privileges
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends skopeo
+          skopeo --version >> evidence/cd/stage4/tool-inventory.txt
+          skopeo copy --override-arch arm64 --override-os linux oci-archive:evidence/cd/stage4/image.oci.tar docker-daemon:hmt-edge:qualification
+          docker image inspect hmt-edge:qualification > evidence/cd/stage4/loaded-image.json
+          timeout --signal=TERM --kill-after=10s 120s docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges --pids-limit 128 --memory 2g --cpus 2 --user 10001:10001 --tmpfs /data:rw,uid=10001,gid=10001,size=67108864 --tmpfs /run/hmt-scratch:rw,uid=10001,gid=10001,size=67108864 --mount "type=bind,src=$PWD/tools/artifact_probe.py,dst=/qualify.py,readonly" hmt-edge:qualification python /qualify.py > evidence/cd/stage4/container.json
+      - name: Inventory and vulnerability scan of that same archive
+        run: |
+          TRIVY_IMAGE=$(python3 -c 'import json; print(json.load(open("evidence/cd/stage4/base-lock.json"))["trivy"])')
+          docker run --rm --mount "type=bind,src=$PWD/evidence/cd/stage4,dst=/evidence" "$TRIVY_IMAGE" image --input /evidence/image.oci.tar --format spdx-json --output /evidence/sbom.spdx.json --timeout 10m
+          docker run --rm --mount "type=bind,src=$PWD/evidence/cd/stage4,dst=/evidence" "$TRIVY_IMAGE" image --input /evidence/image.oci.tar --scanners vuln,secret --list-all-pkgs --format json --output /evidence/vulnerabilities.json --timeout 10m
+      - uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a
+        with:
+          subject-path: evidence/cd/stage4/image.oci.tar
+      - name: Verify signed provenance and issue source-bound qualification receipt
+        run: |
+          uv run --no-sync python tools/artifact_gate.py "$GITHUB_SHA"
+      - name: Surface artifact rejection
+        if: failure()
+        run: echo '::error::ARM64 artifact qualification rejected. Deployment and hardware remain HOLD. Inspect stage4 evidence.'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: arm64-artifact-${{ github.sha }}
+          path: evidence/cd/stage4/
+          retention-days: 30
+          if-no-files-found: error

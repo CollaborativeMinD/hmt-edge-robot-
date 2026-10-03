@@ -1,0 +1,11 @@
+{
+  "software_status": "PASS",
+  "test_cases": 327,
+  "runtime_coverage": 97.73851590106007,
+  "artifact_branch_coverage": 93.5,
+  "native_artifact_status": "PENDING_ACTIONS",
+  "deployment": "HOLD",
+  "hardware": "HOLD",
+  "signed_provenance": "PENDING_ACTIONS",
+  "requirements": 78
+}

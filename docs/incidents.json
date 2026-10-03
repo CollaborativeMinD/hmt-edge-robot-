@@ -222,5 +222,13 @@
     "remediation": "Write fail-closed campaign evidence before spawn; use 60-second inner deadline and five-second bounded reap; atomically replace final result; test hangs, nonzero exits, success and spawn errors",
     "validation_test": "tests/test_deployment_campaign.py::test_campaign_timeout_and_startup_failure_preserve_fail_closed_evidence",
     "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CD4-32",
+    "observed_state": "Fresh installed SIL probe in the development environment was rejected for bundled development tools",
+    "causal_evidence": "artifact_probe identified pytest/Ruff/Pyrefly in the existing dev environment; runtime qualification cannot use that environment as the installed runtime candidate",
+    "remediation": "Create a separate locked no-dev non-editable environment; execute installed mission/analytics/stop/replay tracer; use no-dev non-editable /opt/venv in both Docker stages",
+    "validation_test": "tests/test_artifact_evidence.py::test_scan_and_runtime_contradictions_are_rejected",
+    "external_boundary": false
   }
 ]

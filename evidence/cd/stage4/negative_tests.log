@@ -1,0 +1,18 @@
+..................................................................       [100%]
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.14-final-0 _______________
+
+Name                          Stmts   Miss Branch BrPart  Cover   Missing
+-------------------------------------------------------------------------
+tools/artifact_campaign.py       31      1      2      1    94%   46
+tools/artifact_contracts.py      23      0      0      0   100%
+tools/artifact_design.py         18      2     12      2    87%   17, 27
+tools/artifact_evidence.py       56      0     40      0   100%
+tools/artifact_gate.py           66      3     16      3    93%   34, 42, 88
+tools/artifact_oci.py            64      7     38      7    86%   19, 22, 37, 49, 58, 67, 69
+tools/artifact_verify.py         28      0      6      0   100%
+-------------------------------------------------------------------------
+TOTAL                           286     13    114     13    94%
+Coverage JSON written to file /workspace/scratch/1abe905e6918/hmt-edge-robot/evidence/cd/stage4/coverage.json
+Required test coverage of 90% reached. Total coverage: 93.50%
+66 passed in 0.78s

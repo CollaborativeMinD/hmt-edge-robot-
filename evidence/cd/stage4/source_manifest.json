@@ -1,0 +1,251 @@
+{
+  "source_baseline_commit": "e8fffa9ca9aaa40357d53a27943bcddc084f0744",
+  "authority": "Owner: I merged the PR. Proceed with stage 4 of the CI/CD github-actions build.",
+  "scope": "ARM64_ARTIFACT_QUALIFICATION_ONLY",
+  "runtime_source_changes": 0,
+  "inherited_files_excluded_from_delta": true,
+  "protected_files_verified": 249,
+  "artifact_qualification": "PENDING_ACTIONS",
+  "cluster_deployment": "HOLD",
+  "hardware": "HOLD",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "status": "new",
+      "sha256": "2de2621e318712804c80b77f825c9b3648b9e940d135fbb56ff3c82fe5642dc6",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": ".github/workflows/artifact.yml",
+      "status": "new",
+      "sha256": "a54f9e898e661be225446edce160da922dfe9abb518580a70451889a6d5993dd",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "Agents.md",
+      "status": "modified",
+      "sha256": "025713adcc2c26f372bac41448ad938b370a0c6a4230d7ca14fa3199858ec141",
+      "baseline_blob": "c1a68ea9c5995b7e6450adda1d299521ed9dfe33",
+      "mode": "100644"
+    },
+    {
+      "path": "Index.md",
+      "status": "modified",
+      "sha256": "34ea3af54d7f5599668805ba3dec05243bcb530cbc7d34bc3cd017a73b34f852",
+      "baseline_blob": "a672e973624d8b1565428187ee83bb68a5a23811",
+      "mode": "100644"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "sha256": "4c62e32099719e76459dc447cee8929d36039ea6988edb282d08da2067f26ee4",
+      "baseline_blob": "ef19f4ef1b963616406e3d312fce8b61563f0a1a",
+      "mode": "100644"
+    },
+    {
+      "path": "Runbook.md",
+      "status": "modified",
+      "sha256": "3fb95df9c8d717d66289550da7287fb73a43751e449f74873984ca87f11805b2",
+      "baseline_blob": "23f09206e55da0c28de84e826bfcaeffafaa08b0",
+      "mode": "100644"
+    },
+    {
+      "path": "Start_here.md",
+      "status": "modified",
+      "sha256": "0a3c56b5f2ea2da2539b8b2524eb4442bb41b2b31243e1f2293562d1dd9bad43",
+      "baseline_blob": "d02942c43f9849ab1015d629af3ef46dd3003eeb",
+      "mode": "100644"
+    },
+    {
+      "path": "deploy/stage4/Dockerfile",
+      "status": "new",
+      "sha256": "01155706f395b46dd545450a9b4c35f173f7f7a4b931edfa81d5392ffce0f4cb",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/cd/stage4.md",
+      "status": "new",
+      "sha256": "1afdd9076c2cd33a6536d20d0c94a0bac190531047b5f559fbe303bc37cbbd23",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/implementation_traceability.json",
+      "status": "modified",
+      "sha256": "d1d2a3535430a51c035ef30d6bd8302c08cb6cede9f37ff5b4e4a9fbba0fb9da",
+      "baseline_blob": "d5b2ecd086cdfac20bea0e7fbdd1569bc253d4bb",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/incidents.json",
+      "status": "modified",
+      "sha256": "a6f9ec7afb11e64e4041f36ac39ec41ece2323d095a0c0ec69aaf1fa3ee84756",
+      "baseline_blob": "32363f47b78efcb68e1f3f2766fc4b5fd86aeb41",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/machine_handoff.json",
+      "status": "modified",
+      "sha256": "8171fc5c0b69c060ece355c7dbde02a2f5297ddeeac31dcf14c382d7cf02f261",
+      "baseline_blob": "8f25b04722f35f242b40e7fc8c4c6acbb20a31e1",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/requirements.json",
+      "status": "modified",
+      "sha256": "e5b47cc1f8c9ab3cfc4afcd2175b57608ef4414486a81134b97faeb52091bc83",
+      "baseline_blob": "c5f6c900ba4a04cc2ec7f1bda8c01ecf8c468394",
+      "mode": "100644"
+    },
+    {
+      "path": "policy/artifact_admission.json",
+      "status": "new",
+      "sha256": "a0eccd1c8563362f0c87511754bf7458a50270728cfe835ca5900f2c82b675b8",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "policy/ci_admission.json",
+      "status": "modified",
+      "sha256": "c8df5d704564f44578124f537d6aa158111d89b47ccf9ec2c5e675c1ac1d4936",
+      "baseline_blob": "c3aec8b2dee86ebd6eac8c700bf653f6c04656fa",
+      "mode": "100644"
+    },
+    {
+      "path": "policy/deployment_admission.json",
+      "status": "modified",
+      "sha256": "9112f69c96c5a29f09b0e9cb7b2be2315d2be84f16929328fccf37c430687074",
+      "baseline_blob": "cd59b9e86ba669898cb8461946c15303c3754f79",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/artifact_support.py",
+      "status": "new",
+      "sha256": "7a316780a08b98f5228c25753512d06e4772f0909b62f76140eee653b5f60c42",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_artifact_campaign.py",
+      "status": "new",
+      "sha256": "fa6b9ff2cea427647c3de45f313fadffb8f39ad775d1cc2e662e468dfb8d9e4f",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_artifact_contracts.py",
+      "status": "new",
+      "sha256": "8559b98b0763ea27b3c9edfcaa82777f355de64b1ab4a295116c005f97f6dc6e",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_artifact_design.py",
+      "status": "new",
+      "sha256": "02db828386fdd1f913f1350ba58d9a51e42eadea6260bd308603bc3f803adb69",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_artifact_evidence.py",
+      "status": "new",
+      "sha256": "b1f358745c95c14737636451ab61b9a06fa09fb8fabf06467020f69ac7efc6e6",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_artifact_gate.py",
+      "status": "new",
+      "sha256": "055c02440fe7311b25b338c7bae4845416f187a6061f5ce60feba296d76c8e04",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_artifact_oci.py",
+      "status": "new",
+      "sha256": "d48d28656d6fedd2d4a3fbbab39bd86bd758169a232b0e986928eb615a8149de",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_artifact_probe.py",
+      "status": "new",
+      "sha256": "25937b8e698f09d4e0c0235993d73a1c56afd9215750be61652f1432ca1621aa",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_artifact_verify.py",
+      "status": "new",
+      "sha256": "a35acd65f2cd6373d85c0c54115618053153bf95d3b79ecc73e1de9939d383f8",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tools/artifact_campaign.py",
+      "status": "new",
+      "sha256": "ea5371ab938d9c031520d7a9f4418f83885b8b8b522bd7b9520c45882b2a1eab",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tools/artifact_contracts.py",
+      "status": "new",
+      "sha256": "bd0ef7b5f0e260f47afbdce830286c00eb00ee4c1ca05d2c6275c78c0f1395a4",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tools/artifact_design.py",
+      "status": "new",
+      "sha256": "450e2ed39d61b07adea115877f06d90357aeb92aff949f31df73b67fb6d4024f",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tools/artifact_evidence.py",
+      "status": "new",
+      "sha256": "64efd4d9051105cb9a5fa34c95f70fa4af49e277658e8f9b62c8b5f274fa6ccf",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tools/artifact_gate.py",
+      "status": "new",
+      "sha256": "a9e2102cf46e8bf329a19410ecb6bdd2320ac8bd4b2f449f596fdfb9345e485b",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tools/artifact_oci.py",
+      "status": "new",
+      "sha256": "a6495d131a792f4d0f466ecd004f20f3fb31171d382f2f59d01e8f9267a0398a",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tools/artifact_probe.py",
+      "status": "new",
+      "sha256": "c9ab473c58acf48c011528e4192298d530839eb9caa819f633c1a46caaf0c0a8",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tools/artifact_verify.py",
+      "status": "new",
+      "sha256": "201fbdd38b385a1a63cecc027e14bd1e1d062cdec225b65b0b0fb9b852a1004b",
+      "baseline_blob": null,
+      "mode": "100644"
+    },
+    {
+      "path": "tools/validate.py",
+      "status": "modified",
+      "sha256": "155bfc1dbc59e5ecec23782cc643fc8baa8d5f162c43b875b26eadbc2c88413d",
+      "baseline_blob": "6cd11818ad71dd562bc9a6da521ad26921bc3e3c",
+      "mode": "100644"
+    }
+  ]
+}

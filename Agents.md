@@ -71,3 +71,9 @@ external secret references and the ledger. Reject rehashed manifest authority dr
 stale receipts or invented image/target evidence. Rerun both new CD gates and every
 prior gate. Never apply resources, install Flux, build images or provision credentials
 from this stage's contract PASS. Target readiness and single-owner proof remain HOLD.
+
+Stage 4 is independently admitted by `policy/artifact_admission.json`; follow
+`docs/cd/stage4.md`. Image builds and isolated hosted ARM64 SIL container execution
+are now in scope. Stage-3 contracts never grant this authority. Require frozen
+packages, digest-bound OCI closure, complete scans and fresh cryptographic provenance
+verification. Keep every Pi/cluster/deployment/physical gate HOLD. Preserve old seals.
