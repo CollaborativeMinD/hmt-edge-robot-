@@ -1,0 +1,179 @@
+{
+  "classification": "SOFTWARE_VALIDATION_ONLY",
+  "timestamp_utc": "2026-10-03T05:56:22.982688Z",
+  "status": "PASS",
+  "readiness": {
+    "classification": "EMPIRICAL_SOFTWARE_CAMPAIGN",
+    "sample_count": 8,
+    "p95_sec": 0.0006605469970963895,
+    "max_sec": 0.0006605469970963895,
+    "failure_count": 0,
+    "failure_probability_upper_95": 0.32440756488388023,
+    "report_hashes": [
+      "7c14bbe80f056283d41f99e65ac2a8e623320e8a3c600905215a2be201ad85cf",
+      "6ba44836245788af0af422722217e04c45d3efdfe3a2bf2d9d2be12838c61974",
+      "162c07f35c392274613248513cc3eef3109bba6e912eaa7582b17c1539473b24",
+      "68a6a813ee96d0529fcb4a67d4e49513b4ab3c100b63e324f36d0d4b4e99bcf9",
+      "f033fea2eb0e755aa9c57e37456ef6d9722c798929bc3157f90e539649dfa8f9",
+      "4c382294f55a38e82016453407f85a81c4c046a83837fcb5c9a4ef9e00ad59a2",
+      "b5bc9f329bf014c9d6f111f9ef9b159d28aaef19afa8fbd4484882c768b4fcc0",
+      "1904dbdde2619f1851f375648dd25be0bf3baadce9fae368efff64510821d132"
+    ],
+    "scenario": "cold",
+    "worst_case_guarantee": false
+  },
+  "side_effect_verdict": "ATTESTATION_INCOMPLETE",
+  "reclamation": {
+    "report": {
+      "component": "AGC",
+      "scope": {
+        "subject_id": "stale-0000",
+        "subject_hash": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881",
+        "contract_hash": "4ee34a10c5c006ae64afd10a5ca8a091e6ddc16e2df8c27122bcc6e82542f922",
+        "collector_id": "managed-catalog",
+        "epochs": {
+          "runtime": 0,
+          "policy": 1,
+          "department": 0,
+          "membership": 0
+        },
+        "observed_at": 77193.592390829,
+        "expires_at": 77253.592390829,
+        "coverage": [
+          "authority",
+          "recovery",
+          "evidence",
+          "effects",
+          "dependency_closure"
+        ]
+      },
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "GOVERNED_QUARANTINE"
+      ],
+      "artifact_refs": [],
+      "observation_hash": "fbc82f87011126ed883dbacdcd86146329aa94f5186ac4d88cbae7eecfd0cab5",
+      "metrics": [],
+      "dry_run": false
+    },
+    "report_hash": "bf7169d6662b0f542890fd84f8e9d3c0bc3f9509823f72563dc7804eea4dfd49",
+    "event_hash": "4a83106916f2cc83fd2e06041d8d80532a6f12af17b94b888d3ce8d94afb3bc6"
+  },
+  "restoration": {
+    "report": {
+      "component": "AGC",
+      "scope": {
+        "subject_id": "stale-0000",
+        "subject_hash": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881",
+        "contract_hash": "f9a0a1d17ccd8a62ca91aec3adcfb23562835f5d47982092e3430fb10a621897",
+        "collector_id": "managed-catalog",
+        "epochs": {
+          "runtime": 0,
+          "policy": 1,
+          "department": 0,
+          "membership": 0
+        },
+        "observed_at": 77193.653031103,
+        "expires_at": 77253.653031103,
+        "coverage": [
+          "authority",
+          "recovery",
+          "evidence",
+          "effects",
+          "dependency_closure"
+        ]
+      },
+      "verdict": "RESTORED",
+      "reason_codes": [
+        "GOVERNED_RESTORE"
+      ],
+      "artifact_refs": [],
+      "observation_hash": "fbc82f87011126ed883dbacdcd86146329aa94f5186ac4d88cbae7eecfd0cab5",
+      "metrics": [],
+      "dry_run": false
+    },
+    "report_hash": "5ea42aee31c7f64d8495ae03434bc5816597ff5211823d907903da82a2fb2aa3",
+    "event_hash": "5b74dae561b9eee3e0f05cba828aeedcb9b9576fe58bf5fe30bd57b36c6140f9"
+  },
+  "measurements": {
+    "artifact_count": 258,
+    "planning_sec": 0.09583959401061293,
+    "planning_ceiling_sec": 10.0,
+    "optimization_sec": 0.015163793999818154,
+    "optimization_ceiling_sec": 2.0,
+    "optimization": {
+      "classification": "ADVISORY_ONLY",
+      "selected": [
+        "model-00",
+        "model-01",
+        "model-02",
+        "model-03",
+        "model-04",
+        "model-05",
+        "model-06",
+        "model-07",
+        "model-08",
+        "model-09",
+        "model-10",
+        "model-11",
+        "model-12",
+        "model-13",
+        "model-14",
+        "model-15",
+        "model-16",
+        "model-17",
+        "model-18",
+        "model-19",
+        "model-20",
+        "model-21",
+        "model-22",
+        "model-23",
+        "model-24",
+        "model-25",
+        "model-26",
+        "model-27",
+        "model-28",
+        "model-29",
+        "model-30",
+        "model-31",
+        "model-32",
+        "model-33",
+        "model-34",
+        "model-35",
+        "model-36",
+        "model-37",
+        "model-38",
+        "model-39",
+        "model-40",
+        "model-41",
+        "model-56",
+        "model-63"
+      ],
+      "saved_sec": 1024.0,
+      "budget_units": 1024,
+      "algorithm": "BOUNDED_EXACT_01_KNAPSACK",
+      "input_hash": "32b9c9f0ed9dc7f05e9694ec78cb9a1d95124483b5848b97235c7b1fa24545d7"
+    },
+    "pass": true
+  },
+  "exports": {
+    "records": 786,
+    "files": {
+      "capability_readiness_atlas.parquet": "d24144d9364f72aa78ad0c9e0ee6926984e2588aac095f31b922a4f71b6c28c7",
+      "effect_attestation.parquet": "4ce8da8cee68d57bb240cbdb9603fc5dd6a0cd03f3a19343478be1c1b8ea8f30",
+      "reclamation_verdicts.parquet": "80eb90d39e81c62e9e8322ffce507457cc51b0b7ca738929472e7d191565c9c4",
+      "cold_start_recovery_margin_report.json": "1993ce4be4e857c9d3f1c44033ce977cbff4b49d524a6e044c70f57a03876295",
+      "side_effect_contract_report.json": "bbe90afbeb8bf6343e695af448ddcaee2bb55c733245dfc228d521864f0241dd",
+      "safe_reclamation_plan.json": "5930230f1b87994ed42b13ad60df0402b432e83746a05447cccdb743dac17f18",
+      "reclaim_receipt.json": "9d381a41b283054ad7d87152f9662f34057def3b416ef0b7091eb7cdfd6d9577",
+      "assurance_summary.json": "344e23417562ce5b91d5e435219f48a89789d2a5b05e4c34aafc286fa5c6154f",
+      "effect_attestation.jsonl": "b6e9d751fa490aa742e64a8cd40ab98515f114fb95366438f119e003b7e2cf32",
+      "artifact_reference_graph.graphml": "428b653b2bb1564fd33871745332a7d5d48ec501e5ae384ac51f37ce12950708"
+    },
+    "complete_history": false
+  },
+  "verified_events": 1095,
+  "verified_catalog_records": 258,
+  "driver_moves": 0,
+  "hardware_verification": "DEFERRED_UNTIL_CONTAINERIZED_DEPLOYMENT"
+}

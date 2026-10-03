@@ -41,6 +41,7 @@ class Ledger:
           packet_type TEXT NOT NULL, payload TEXT NOT NULL,
           previous_hash TEXT NOT NULL, determinism_hash TEXT NOT NULL UNIQUE);
         CREATE INDEX IF NOT EXISTS request_events ON events(request_id,seq);
+        CREATE INDEX IF NOT EXISTS packet_events ON events(packet_type,seq);
         CREATE TABLE IF NOT EXISTS tasks (
           request_id TEXT PRIMARY KEY, request_hash TEXT NOT NULL,
           state TEXT NOT NULL, rejection_reason TEXT NOT NULL);

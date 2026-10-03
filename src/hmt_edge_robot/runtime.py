@@ -8,6 +8,7 @@ from typing import Any, Callable
 
 from .access import AccessManager, ProvisionedIdentity
 from .analytics import Analytics
+from .assurance import SubstrateAssurance
 from .contracts import Policy, PositionPacket, SensorSample, digest
 from .edge import WaialuaEdgeNode
 from .geometry import Calibration
@@ -50,6 +51,7 @@ class RobotCell:
             ResidentHMT(self.policy, self.ledger, provider),
         )
         self.lock = self.orchestrator.lock
+        self.assurance = SubstrateAssurance(self, read_only=read_only)
 
     def observe_simulation(
         self,
@@ -105,6 +107,7 @@ class RobotCell:
                 result = {
                     "sensor_trends": self.analytics.sensor_trends(),
                     "event_summary": self.analytics.summary(),
+                    "assurance_summary": self.assurance.analytics.summary(),
                 }
             elif action == "plan_grasp":
                 result = [

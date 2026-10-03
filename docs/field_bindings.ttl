@@ -2,17 +2,17 @@
 @prefix forge: <https://terminal-state.systems/ontology/forge#> .
 edge:GraspObservation_target_mm a forge:CanonicalField ; forge:hard_binds_to_subtype forge:MechanicalMetricField ; forge:phase_4_binding_basis "Measured or planned geometric quantity in declared units" .
 edge:GraspObservation_angle_deg a forge:CanonicalField ; forge:hard_binds_to_subtype forge:MechanicalMetricField ; forge:phase_4_binding_basis "Measured or planned geometric quantity in declared units" .
-edge:GraspObservation_primary_eigenvalue a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
-edge:GraspObservation_secondary_eigenvalue a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
-edge:GraspObservation_ambiguity_ratio a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
+edge:GraspObservation_primary_eigenvalue a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:GraspObservation_secondary_eigenvalue a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:GraspObservation_ambiguity_ratio a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
 edge:GraspObservation_calibration_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
 edge:GraspObservation_frame_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
 edge:MotionRequest_request_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
 edge:MotionRequest_operator_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
 edge:MotionRequest_session_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
-edge:MotionRequest_policy_epoch a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
+edge:MotionRequest_policy_epoch a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ControlConstraintField ; forge:phase_4_binding_basis "Named operator-selected supervisory policy constraint" .
 edge:MotionRequest_target_mm a forge:CanonicalField ; forge:hard_binds_to_subtype forge:MechanicalMetricField ; forge:phase_4_binding_basis "Measured or planned geometric quantity in declared units" .
-edge:MotionRequest_speed_mps a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
+edge:MotionRequest_speed_mps a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
 edge:MotionRequest_issued_at a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Sequence or clock-domain freshness constraint" .
 edge:MotionRequest_expires_at a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Sequence or clock-domain freshness constraint" .
 edge:Policy_policy_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
@@ -48,38 +48,38 @@ edge:ResidentProposal_action a forge:CanonicalField ; forge:hard_binds_to_subtyp
 edge:ResidentProposal_explanation a forge:CanonicalField ; forge:hard_binds_to_subtype forge:DomainDescriptorField ; forge:phase_4_binding_basis "Domain-specific reason or advisory explanation" .
 edge:ResidentProposal_evidence_refs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:EvidenceReferenceField ; forge:phase_4_binding_basis "References to validated evidence records" .
 edge:ResidentReceipt_decision a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ValidationStatusField ; forge:phase_4_binding_basis "Admission or validity result with declared bounds" .
-edge:ResidentReceipt_proposal a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
+edge:ResidentReceipt_proposal a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
 edge:ResidentReceipt_model_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
 edge:ResidentReceipt_context_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
 edge:ResidentReceipt_rejection_reason a forge:CanonicalField ; forge:hard_binds_to_subtype forge:DomainDescriptorField ; forge:phase_4_binding_basis "Domain-specific reason or advisory explanation" .
 edge:ResidentReceipt_evidence_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:EvidenceReferenceField ; forge:phase_4_binding_basis "References to validated evidence records" .
 edge:SafetyAssessment_admitted a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ValidationStatusField ; forge:phase_4_binding_basis "Admission or validity result with declared bounds" .
-edge:SafetyAssessment_scale_factor a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
+edge:SafetyAssessment_scale_factor a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
 edge:SafetyAssessment_human_distance_m a forge:CanonicalField ; forge:hard_binds_to_subtype forge:MechanicalMetricField ; forge:phase_4_binding_basis "Measured or planned geometric quantity in declared units" .
-edge:SafetyAssessment_protective_distance_m a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
+edge:SafetyAssessment_protective_distance_m a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
 edge:SafetyAssessment_rejection_reason a forge:CanonicalField ; forge:hard_binds_to_subtype forge:DomainDescriptorField ; forge:phase_4_binding_basis "Domain-specific reason or advisory explanation" .
 edge:SensorAssessment_pace_lane a forge:CanonicalField ; forge:hard_binds_to_subtype forge:RuntimeStateStatusField ; forge:phase_4_binding_basis "Closed runtime state, lane, or advisory action vocabulary" .
-edge:SensorAssessment_poll_interval_sec a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
+edge:SensorAssessment_poll_interval_sec a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
 edge:SensorAssessment_data_valid a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ValidationStatusField ; forge:phase_4_binding_basis "Admission or validity result with declared bounds" .
 edge:SensorAssessment_accepted_temp_c a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ThermalMetricField ; forge:phase_4_binding_basis "Observed or accepted temperature; invalid observations remain gaps" .
-edge:SensorAssessment_accepted_signal_dbm a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
-edge:SensorAssessment_battery_margin a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
-edge:SensorAssessment_flush_required a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
+edge:SensorAssessment_accepted_signal_dbm a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:SensorAssessment_battery_margin a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:SensorAssessment_flush_required a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
 edge:SensorAssessment_rejection_reason a forge:CanonicalField ; forge:hard_binds_to_subtype forge:DomainDescriptorField ; forge:phase_4_binding_basis "Domain-specific reason or advisory explanation" .
 edge:SensorSample_monotonic_seq a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Sequence or clock-domain freshness constraint" .
 edge:SensorSample_observed_at a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Sequence or clock-domain freshness constraint" .
 edge:SensorSample_voltage_v a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PowerMetricField ; forge:phase_4_binding_basis "Observed electrical quantity with finite units" .
 edge:SensorSample_temp_c a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ThermalMetricField ; forge:phase_4_binding_basis "Observed or accepted temperature; invalid observations remain gaps" .
-edge:SensorSample_signal_dbm a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
+edge:SensorSample_signal_dbm a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
 edge:TaskReceipt_request_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
 edge:TaskReceipt_state a forge:CanonicalField ; forge:hard_binds_to_subtype forge:RuntimeStateStatusField ; forge:phase_4_binding_basis "Closed runtime state, lane, or advisory action vocabulary" .
 edge:TaskReceipt_pace_lane a forge:CanonicalField ; forge:hard_binds_to_subtype forge:RuntimeStateStatusField ; forge:phase_4_binding_basis "Closed runtime state, lane, or advisory action vocabulary" .
 edge:TaskReceipt_rejection_reason a forge:CanonicalField ; forge:hard_binds_to_subtype forge:DomainDescriptorField ; forge:phase_4_binding_basis "Domain-specific reason or advisory explanation" .
 edge:TaskReceipt_evidence_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:EvidenceReferenceField ; forge:phase_4_binding_basis "References to validated evidence records" .
 edge:Calibration_calibration_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
-edge:Calibration_pixel_to_mm a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
-edge:Calibration_yaw_rad a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
-edge:Calibration_translation_mm a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed robotics quantity bounded by the declaring contract" .
+edge:Calibration_pixel_to_mm a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:Calibration_yaw_rad a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:Calibration_translation_mm a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
 edge:Login_operator_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
 edge:Login_proof a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TrustRootField ; forge:phase_4_binding_basis "Provisioned identity credential; excluded from evidence payloads" .
 edge:Question_session_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
@@ -87,3 +87,133 @@ edge:Question_operator_id a forge:CanonicalField ; forge:hard_binds_to_subtype f
 edge:Question_question a forge:CanonicalField ; forge:hard_binds_to_subtype forge:DomainDescriptorField ; forge:phase_4_binding_basis "Untrusted resident question bounded by its wire contract" .
 edge:SessionRequest_session_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
 edge:SessionRequest_operator_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:ArtifactIdentity_artifact_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:ArtifactIdentity_artifact_type a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:ArtifactIdentity_identity_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
+edge:ArtifactIdentity_owner_surface a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:ArtifactIdentity_generation a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:ArtifactIdentity_size_bytes a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:ArtifactIdentity_created_at_utc a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:ArtifactRecord_identity a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:ArtifactRecord_epochs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ControlConstraintField ; forge:phase_4_binding_basis "Named operator-selected supervisory policy constraint" .
+edge:ArtifactRecord_authority_refs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:EvidenceReferenceField ; forge:phase_4_binding_basis "References to validated evidence records" .
+edge:ArtifactRecord_recovery_refs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:EvidenceReferenceField ; forge:phase_4_binding_basis "References to validated evidence records" .
+edge:ArtifactRecord_evidence_refs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:EvidenceReferenceField ; forge:phase_4_binding_basis "References to validated evidence records" .
+edge:ArtifactRecord_side_effect_refs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:EvidenceReferenceField ; forge:phase_4_binding_basis "References to validated evidence records" .
+edge:ArtifactRecord_cold_start_refs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:EvidenceReferenceField ; forge:phase_4_binding_basis "References to validated evidence records" .
+edge:ArtifactRecord_dependencies a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:AssuranceReport_component a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:AssuranceReport_scope a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:AssuranceReport_verdict a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ValidationStatusField ; forge:phase_4_binding_basis "Admission or validity result with declared bounds" .
+edge:AssuranceReport_reason_codes a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:AssuranceReport_artifact_refs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:EvidenceReferenceField ; forge:phase_4_binding_basis "References to validated evidence records" .
+edge:AssuranceReport_observation_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
+edge:AssuranceReport_metrics a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:AssuranceReport_dry_run a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ValidationStatusField ; forge:phase_4_binding_basis "Admission or validity result with declared bounds" .
+edge:Census_epochs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ControlConstraintField ; forge:phase_4_binding_basis "Named operator-selected supervisory policy constraint" .
+edge:Census_revision a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:Census_observed_at a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Sequence or clock-domain freshness constraint" .
+edge:Census_expires_at a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Sequence or clock-domain freshness constraint" .
+edge:Census_complete a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ValidationStatusField ; forge:phase_4_binding_basis "Admission or validity result with declared bounds" .
+edge:Census_records a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:Effect_kind a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:Effect_target a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:EffectContract_executable_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:EffectContract_executable_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
+edge:EffectContract_allowed a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:EffectContract_required_coverage a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:EffectContract_max_runtime_sec a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:EffectContract_allowed_exit_codes a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:EffectContract_witness_ttl_sec a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:EffectTrace_origin a forge:CanonicalField ; forge:hard_binds_to_subtype forge:RuntimeStateStatusField ; forge:phase_4_binding_basis "Closed runtime state, lane, or advisory action vocabulary" .
+edge:EffectTrace_collector_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:EffectTrace_executable_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
+edge:EffectTrace_epochs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ControlConstraintField ; forge:phase_4_binding_basis "Named operator-selected supervisory policy constraint" .
+edge:EffectTrace_started_at a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:EffectTrace_runtime_sec a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:EffectTrace_exit_code a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:EffectTrace_coverage a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:EffectTrace_complete a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ValidationStatusField ; forge:phase_4_binding_basis "Admission or validity result with declared bounds" .
+edge:EffectTrace_observed a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:EffectTrace_artifact_refs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:EvidenceReferenceField ; forge:phase_4_binding_basis "References to validated evidence records" .
+edge:Epochs_runtime a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:Epochs_policy a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:Epochs_department a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:Epochs_membership a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:MutationGrant_grant_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:MutationGrant_operator_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:MutationGrant_session_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:MutationGrant_plan_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
+edge:MutationGrant_epochs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ControlConstraintField ; forge:phase_4_binding_basis "Named operator-selected supervisory policy constraint" .
+edge:MutationGrant_revision a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:MutationGrant_action a forge:CanonicalField ; forge:hard_binds_to_subtype forge:RuntimeStateStatusField ; forge:phase_4_binding_basis "Closed runtime state, lane, or advisory action vocabulary" .
+edge:MutationGrant_artifact_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:MutationGrant_expires_at a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Sequence or clock-domain freshness constraint" .
+edge:ReclamationPlan_census_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
+edge:ReclamationPlan_revision a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:ReclamationPlan_epochs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ControlConstraintField ; forge:phase_4_binding_basis "Named operator-selected supervisory policy constraint" .
+edge:ReclamationPlan_expires_at a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Sequence or clock-domain freshness constraint" .
+edge:ReclamationPlan_decisions a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:ReclamationPlan_dry_run a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ValidationStatusField ; forge:phase_4_binding_basis "Admission or validity result with declared bounds" .
+edge:RecoverySpec_capability_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:RecoverySpec_capability_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
+edge:RecoverySpec_transaction_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
+edge:RecoverySpec_scenario a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:RecoverySpec_stages a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:RecoverySpec_recovery_horizon_sec a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:RecoverySpec_reserve_sec a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:RecoverySpec_witness_ttl_sec a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:RecoverySpec_artifact_refs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:EvidenceReferenceField ; forge:phase_4_binding_basis "References to validated evidence records" .
+edge:RecoveryTrace_origin a forge:CanonicalField ; forge:hard_binds_to_subtype forge:RuntimeStateStatusField ; forge:phase_4_binding_basis "Closed runtime state, lane, or advisory action vocabulary" .
+edge:RecoveryTrace_collector_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:RecoveryTrace_epochs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ControlConstraintField ; forge:phase_4_binding_basis "Named operator-selected supervisory policy constraint" .
+edge:RecoveryTrace_started_at a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:RecoveryTrace_observations a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:SealedReport_report a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:SealedReport_report_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
+edge:SealedReport_event_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
+edge:StageObservation_stage a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:StageObservation_elapsed_sec a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:StageObservation_succeeded a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:StageObservation_transaction_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
+edge:WarmCandidate_artifact_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:WarmCandidate_cost_units a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:WarmCandidate_saved_sec a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:WitnessScope_subject_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:WitnessScope_subject_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
+edge:WitnessScope_contract_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
+edge:WitnessScope_collector_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:WitnessScope_epochs a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ControlConstraintField ; forge:phase_4_binding_basis "Named operator-selected supervisory policy constraint" .
+edge:WitnessScope_observed_at a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Sequence or clock-domain freshness constraint" .
+edge:WitnessScope_expires_at a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Sequence or clock-domain freshness constraint" .
+edge:WitnessScope_coverage a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:AcknowledgeRequest_session_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:AcknowledgeRequest_operator_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:AcknowledgeRequest_report_hash a forge:CanonicalField ; forge:hard_binds_to_subtype forge:TelemetryIntegrityField ; forge:phase_4_binding_basis "Integrity receipt for the declared artifact or payload" .
+edge:ArtifactRequest_session_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:ArtifactRequest_operator_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:ArtifactRequest_artifact_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:ArtifactRequest_content_base64 a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:AttestationRequest_session_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:AttestationRequest_operator_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:AttestationRequest_contract a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:AttestationRequest_trace a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:ExecuteRequest_plan a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:ExecuteRequest_grant a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:GrantRequest_session_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:GrantRequest_operator_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:GrantRequest_plan a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:GrantRequest_action a forge:CanonicalField ; forge:hard_binds_to_subtype forge:RuntimeStateStatusField ; forge:phase_4_binding_basis "Closed runtime state, lane, or advisory action vocabulary" .
+edge:GrantRequest_artifact_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:ObserverRequest_session_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:ObserverRequest_operator_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:ReadinessRequest_session_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:ReadinessRequest_operator_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:ReadinessRequest_spec a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:ReadinessRequest_trace a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:ReferenceRequest_session_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:ReferenceRequest_operator_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:ReferenceRequest_record a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .
+edge:WitnessBindingRequest_session_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:WitnessBindingRequest_operator_id a forge:CanonicalField ; forge:hard_binds_to_subtype forge:ArtifactIdentifierField ; forge:phase_4_binding_basis "Identifier scoped by its declaring domain contract" .
+edge:WitnessBindingRequest_sealed a forge:CanonicalField ; forge:hard_binds_to_subtype forge:PhysicalBoundField ; forge:phase_4_binding_basis "Typed domain quantity bounded by the declaring contract" .

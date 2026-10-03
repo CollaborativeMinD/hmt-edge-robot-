@@ -1,0 +1,22 @@
+{
+  "objective": "OBJ-SAT-03",
+  "parent_main_commit": "8a1dfe32991dfc14ce3e60fbf018ab5bda59fd9a",
+  "source_hashes": {
+    "16-Geometric_Algebra_PGA_GC_Mobile_Field_Card_v1.py": "aa59bfb38c5f391167d0da5e1bd8b83fda0b4312036926a57023ad6255a24355",
+    "17-Classical_Calculus_Lin_Algebra_Mobile_Field_Card_v6.py": "55b739d4ce49d05bcc1686432faa302da1542ff5ea3123216b8dfe4c67566d90",
+    "18-white_board.html": "4b2e57379bf7f00f6733ffd283b6106c489c7cb98c4d945e3fbd9586b15068e5",
+    "19-rrca_verification_and_validation_v4.md": "9e40b6b088a8196f959fba170403d0b6da8340a27ab1fe04a5843004e234076d",
+    "20-scratch_pad.py": "fb7a7282579cec0bf20ba80a3da771e3510086892e7e0d5f923d9249f248ee56"
+  },
+  "applications": {
+    "transformation_kernel": "Strict observation/report/receipt/record transformations with canonical integrity; numerical geometry remains in the existing PGA subsystem",
+    "classical_field_card": "Bounded scalar statistics and declared computational domains; no unneeded coordinate geometry added to lifecycle decisions",
+    "sentinel_kernel": "Adapt remaining-horizon scheduling and bounded resource ranking into exact discrete warm-set optimization; do not copy unbounded ranking inputs",
+    "rrca": "Tracer first; preserve errors and all prior software gates; seven-column cumulative and RCA evidence"
+  },
+  "kernel_members": {
+    "release_kernel/sentinel_core/mission_math/tau_scheduler.py": "51957bbcfcd2336426a657498294042a29f9626e45339314db0c9d665afaf300",
+    "release_kernel/sentinel_core/mission_math/network_calculus.py": "9e91c661e77acaec7fa5c609f6763478d9f579c145b87b27494c9eb6d58bfb67",
+    "release_kernel/sentinel_core/node_selection/node_ranking.py": "93685120256eb60f26660f835be9b38b0cd6e2817697a1456554b8c7284f8ba8"
+  }
+}

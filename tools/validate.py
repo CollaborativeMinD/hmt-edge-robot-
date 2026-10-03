@@ -279,6 +279,7 @@ async def main() -> None:
             ],
         ),
         ("G-PERF-006", "REQ-NFR-06", [sys.executable, "tools/coupled_campaign.py"]),
+        ("G-TRIAD-011", "REQ-SAT-NFR-06", [sys.executable, "tools/assurance_campaign.py"]),
         (
             "G-NOTEBOOK-008",
             "REQ-SYS-01",

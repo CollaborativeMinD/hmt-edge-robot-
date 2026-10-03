@@ -32,3 +32,13 @@ risks, interface deltas, source provenance and evidence artifacts. Maintain
 `docs/incidents.json` and the seven-column cumulative and RRCA ledgers. Only mark
 an incident INVESTIGATION_COMPLETE at a reproducible initiating condition or an
 explicit external boundary. Operator escalation must say which evidence is missing.
+
+Objective OBJ-SAT-03: system-software substrate assurance before deployment.
+MCC readiness, USEA effect evidence and AGC reference closure must interlock through
+scoped hashes and current epochs. All admitted lifecycle mutations are confined to
+the managed artifact catalog. Reject declared traces as positive collected evidence;
+reject incomplete coverage, dangling references, forged witnesses, stale plans,
+expired/replayed grants, changed sessions and missing projection rows. Persist
+notifications and alerts; failure to write evidence blocks acceptance. Recheck the
+triad software campaign with all prior gates. No physical verification, native
+tracing deployment, external deletion or paid inference is authorized by this SOP.

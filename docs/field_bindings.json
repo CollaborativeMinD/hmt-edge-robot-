@@ -15,19 +15,19 @@
     "contract": "GraspObservation",
     "field": "primary_eigenvalue",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "GraspObservation",
     "field": "secondary_eigenvalue",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "GraspObservation",
     "field": "ambiguity_ratio",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "GraspObservation",
@@ -62,8 +62,8 @@
   {
     "contract": "MotionRequest",
     "field": "policy_epoch",
-    "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
   },
   {
     "contract": "MotionRequest",
@@ -75,7 +75,7 @@
     "contract": "MotionRequest",
     "field": "speed_mps",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "MotionRequest",
@@ -291,7 +291,7 @@
     "contract": "ResidentReceipt",
     "field": "proposal",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "ResidentReceipt",
@@ -327,7 +327,7 @@
     "contract": "SafetyAssessment",
     "field": "scale_factor",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "SafetyAssessment",
@@ -339,7 +339,7 @@
     "contract": "SafetyAssessment",
     "field": "protective_distance_m",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "SafetyAssessment",
@@ -357,7 +357,7 @@
     "contract": "SensorAssessment",
     "field": "poll_interval_sec",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "SensorAssessment",
@@ -375,19 +375,19 @@
     "contract": "SensorAssessment",
     "field": "accepted_signal_dbm",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "SensorAssessment",
     "field": "battery_margin",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "SensorAssessment",
     "field": "flush_required",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "SensorAssessment",
@@ -423,7 +423,7 @@
     "contract": "SensorSample",
     "field": "signal_dbm",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "TaskReceipt",
@@ -465,19 +465,19 @@
     "contract": "Calibration",
     "field": "pixel_to_mm",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "Calibration",
     "field": "yaw_rad",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "Calibration",
     "field": "translation_mm",
     "subtype": "PhysicalBoundField",
-    "basis": "Typed robotics quantity bounded by the declaring contract"
+    "basis": "Typed domain quantity bounded by the declaring contract"
   },
   {
     "contract": "Login",
@@ -520,5 +520,785 @@
     "field": "operator_id",
     "subtype": "ArtifactIdentifierField",
     "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "ArtifactIdentity",
+    "field": "artifact_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "ArtifactIdentity",
+    "field": "artifact_type",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "ArtifactIdentity",
+    "field": "identity_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "ArtifactIdentity",
+    "field": "owner_surface",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "ArtifactIdentity",
+    "field": "generation",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "ArtifactIdentity",
+    "field": "size_bytes",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "ArtifactIdentity",
+    "field": "created_at_utc",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "ArtifactRecord",
+    "field": "identity",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "ArtifactRecord",
+    "field": "epochs",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "ArtifactRecord",
+    "field": "authority_refs",
+    "subtype": "EvidenceReferenceField",
+    "basis": "References to validated evidence records"
+  },
+  {
+    "contract": "ArtifactRecord",
+    "field": "recovery_refs",
+    "subtype": "EvidenceReferenceField",
+    "basis": "References to validated evidence records"
+  },
+  {
+    "contract": "ArtifactRecord",
+    "field": "evidence_refs",
+    "subtype": "EvidenceReferenceField",
+    "basis": "References to validated evidence records"
+  },
+  {
+    "contract": "ArtifactRecord",
+    "field": "side_effect_refs",
+    "subtype": "EvidenceReferenceField",
+    "basis": "References to validated evidence records"
+  },
+  {
+    "contract": "ArtifactRecord",
+    "field": "cold_start_refs",
+    "subtype": "EvidenceReferenceField",
+    "basis": "References to validated evidence records"
+  },
+  {
+    "contract": "ArtifactRecord",
+    "field": "dependencies",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "AssuranceReport",
+    "field": "component",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "AssuranceReport",
+    "field": "scope",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "AssuranceReport",
+    "field": "verdict",
+    "subtype": "ValidationStatusField",
+    "basis": "Admission or validity result with declared bounds"
+  },
+  {
+    "contract": "AssuranceReport",
+    "field": "reason_codes",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "AssuranceReport",
+    "field": "artifact_refs",
+    "subtype": "EvidenceReferenceField",
+    "basis": "References to validated evidence records"
+  },
+  {
+    "contract": "AssuranceReport",
+    "field": "observation_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "AssuranceReport",
+    "field": "metrics",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "AssuranceReport",
+    "field": "dry_run",
+    "subtype": "ValidationStatusField",
+    "basis": "Admission or validity result with declared bounds"
+  },
+  {
+    "contract": "Census",
+    "field": "epochs",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Census",
+    "field": "revision",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "Census",
+    "field": "observed_at",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Sequence or clock-domain freshness constraint"
+  },
+  {
+    "contract": "Census",
+    "field": "expires_at",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Sequence or clock-domain freshness constraint"
+  },
+  {
+    "contract": "Census",
+    "field": "complete",
+    "subtype": "ValidationStatusField",
+    "basis": "Admission or validity result with declared bounds"
+  },
+  {
+    "contract": "Census",
+    "field": "records",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "Effect",
+    "field": "kind",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "Effect",
+    "field": "target",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "EffectContract",
+    "field": "executable_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "EffectContract",
+    "field": "executable_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "EffectContract",
+    "field": "allowed",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "EffectContract",
+    "field": "required_coverage",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "EffectContract",
+    "field": "max_runtime_sec",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "EffectContract",
+    "field": "allowed_exit_codes",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "EffectContract",
+    "field": "witness_ttl_sec",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "EffectTrace",
+    "field": "origin",
+    "subtype": "RuntimeStateStatusField",
+    "basis": "Closed runtime state, lane, or advisory action vocabulary"
+  },
+  {
+    "contract": "EffectTrace",
+    "field": "collector_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "EffectTrace",
+    "field": "executable_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "EffectTrace",
+    "field": "epochs",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "EffectTrace",
+    "field": "started_at",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "EffectTrace",
+    "field": "runtime_sec",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "EffectTrace",
+    "field": "exit_code",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "EffectTrace",
+    "field": "coverage",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "EffectTrace",
+    "field": "complete",
+    "subtype": "ValidationStatusField",
+    "basis": "Admission or validity result with declared bounds"
+  },
+  {
+    "contract": "EffectTrace",
+    "field": "observed",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "EffectTrace",
+    "field": "artifact_refs",
+    "subtype": "EvidenceReferenceField",
+    "basis": "References to validated evidence records"
+  },
+  {
+    "contract": "Epochs",
+    "field": "runtime",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "Epochs",
+    "field": "policy",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "Epochs",
+    "field": "department",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "Epochs",
+    "field": "membership",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "MutationGrant",
+    "field": "grant_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "MutationGrant",
+    "field": "operator_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "MutationGrant",
+    "field": "session_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "MutationGrant",
+    "field": "plan_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "MutationGrant",
+    "field": "epochs",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "MutationGrant",
+    "field": "revision",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "MutationGrant",
+    "field": "action",
+    "subtype": "RuntimeStateStatusField",
+    "basis": "Closed runtime state, lane, or advisory action vocabulary"
+  },
+  {
+    "contract": "MutationGrant",
+    "field": "artifact_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "MutationGrant",
+    "field": "expires_at",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Sequence or clock-domain freshness constraint"
+  },
+  {
+    "contract": "ReclamationPlan",
+    "field": "census_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "ReclamationPlan",
+    "field": "revision",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "ReclamationPlan",
+    "field": "epochs",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "ReclamationPlan",
+    "field": "expires_at",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Sequence or clock-domain freshness constraint"
+  },
+  {
+    "contract": "ReclamationPlan",
+    "field": "decisions",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "ReclamationPlan",
+    "field": "dry_run",
+    "subtype": "ValidationStatusField",
+    "basis": "Admission or validity result with declared bounds"
+  },
+  {
+    "contract": "RecoverySpec",
+    "field": "capability_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "RecoverySpec",
+    "field": "capability_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "RecoverySpec",
+    "field": "transaction_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "RecoverySpec",
+    "field": "scenario",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "RecoverySpec",
+    "field": "stages",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "RecoverySpec",
+    "field": "recovery_horizon_sec",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "RecoverySpec",
+    "field": "reserve_sec",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "RecoverySpec",
+    "field": "witness_ttl_sec",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "RecoverySpec",
+    "field": "artifact_refs",
+    "subtype": "EvidenceReferenceField",
+    "basis": "References to validated evidence records"
+  },
+  {
+    "contract": "RecoveryTrace",
+    "field": "origin",
+    "subtype": "RuntimeStateStatusField",
+    "basis": "Closed runtime state, lane, or advisory action vocabulary"
+  },
+  {
+    "contract": "RecoveryTrace",
+    "field": "collector_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "RecoveryTrace",
+    "field": "epochs",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "RecoveryTrace",
+    "field": "started_at",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "RecoveryTrace",
+    "field": "observations",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "SealedReport",
+    "field": "report",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "SealedReport",
+    "field": "report_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "SealedReport",
+    "field": "event_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "StageObservation",
+    "field": "stage",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "StageObservation",
+    "field": "elapsed_sec",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "StageObservation",
+    "field": "succeeded",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "StageObservation",
+    "field": "transaction_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "WarmCandidate",
+    "field": "artifact_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "WarmCandidate",
+    "field": "cost_units",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "WarmCandidate",
+    "field": "saved_sec",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "WitnessScope",
+    "field": "subject_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "WitnessScope",
+    "field": "subject_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "WitnessScope",
+    "field": "contract_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "WitnessScope",
+    "field": "collector_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "WitnessScope",
+    "field": "epochs",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "WitnessScope",
+    "field": "observed_at",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Sequence or clock-domain freshness constraint"
+  },
+  {
+    "contract": "WitnessScope",
+    "field": "expires_at",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Sequence or clock-domain freshness constraint"
+  },
+  {
+    "contract": "WitnessScope",
+    "field": "coverage",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "AcknowledgeRequest",
+    "field": "session_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "AcknowledgeRequest",
+    "field": "operator_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "AcknowledgeRequest",
+    "field": "report_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "ArtifactRequest",
+    "field": "session_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "ArtifactRequest",
+    "field": "operator_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "ArtifactRequest",
+    "field": "artifact_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "ArtifactRequest",
+    "field": "content_base64",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "AttestationRequest",
+    "field": "session_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "AttestationRequest",
+    "field": "operator_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "AttestationRequest",
+    "field": "contract",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "AttestationRequest",
+    "field": "trace",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "ExecuteRequest",
+    "field": "plan",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "ExecuteRequest",
+    "field": "grant",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "GrantRequest",
+    "field": "session_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "GrantRequest",
+    "field": "operator_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "GrantRequest",
+    "field": "plan",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "GrantRequest",
+    "field": "action",
+    "subtype": "RuntimeStateStatusField",
+    "basis": "Closed runtime state, lane, or advisory action vocabulary"
+  },
+  {
+    "contract": "GrantRequest",
+    "field": "artifact_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "ObserverRequest",
+    "field": "session_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "ObserverRequest",
+    "field": "operator_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "ReadinessRequest",
+    "field": "session_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "ReadinessRequest",
+    "field": "operator_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "ReadinessRequest",
+    "field": "spec",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "ReadinessRequest",
+    "field": "trace",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "ReferenceRequest",
+    "field": "session_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "ReferenceRequest",
+    "field": "operator_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "ReferenceRequest",
+    "field": "record",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "WitnessBindingRequest",
+    "field": "session_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "WitnessBindingRequest",
+    "field": "operator_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "WitnessBindingRequest",
+    "field": "sealed",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed domain quantity bounded by the declaring contract"
   }
 ]

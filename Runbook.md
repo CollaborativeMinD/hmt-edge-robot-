@@ -102,3 +102,62 @@ applicable, and review the seven-column ledgers. Advance policy epochs and revok
 old leases. Train the health model only on a reviewed labelled baseline; the demo
 baseline is synthetic. Preserve all failed/HOLD evidence. Deploy physical firmware
 only after the hardware and compliance gates in `docs/compliance.md` pass.
+
+## 7. Validate and operate substrate assurance software
+
+Run all gates and the standalone offline campaign:
+
+```bash
+uv run python tools/validate.py
+uv run python tools/assurance_campaign.py
+```
+
+Inspect `evidence/triad/campaign.json`, `capability_readiness_atlas.parquet`,
+`cold_start_recovery_margin_report.json`, `effect_attestation.jsonl`,
+`side_effect_contract_report.json`, `safe_reclamation_plan.json`,
+`artifact_reference_graph.graphml`, `reclaim_receipt.json`, and `export_manifest.json`
+inside `evidence/triad/`. The file-manifest attestation must remain
+ATTESTATION_INCOMPLETE; the campaign PASS verifies that honest software behavior.
+The campaign has zero driver moves and performs no live provider or hardware calls.
+
+For the private API, use `/docs` for the strict assurance request schemas:
+
+1. Obtain a current operator session using section 3. Use bearer authentication on
+   all `/assurance/*` routes. Renew the heartbeat during longer operations.
+2. Register explicitly managed software bytes through `/assurance/artifacts`;
+   declare authority/recovery/evidence/dependency references through
+   `/assurance/references` before planning. Existing host files are not registered
+   or deleted implicitly.
+3. Evaluate declared traces with `/assurance/readiness` or `/assurance/attest`.
+   API declarations do not qualify as collected observation. Use trusted local
+   software adapters for `cell.assurance.mcc.collect` and the USEA evaluator.
+4. Bind fresh sealed MCC/USEA evidence with `/assurance/bind-witness`. Binding is
+   conservative retention, and requires a reset-authorized current session.
+5. POST `/assurance/plan` with the session context. Inspect every decision and the
+   domain scope. It performs no lifecycle mutation.
+6. POST `/assurance/grant` with that exact plan, artifact ID and requested action.
+   POST `/assurance/execute` with the exact plan and returned grant. A new reference,
+   changed epoch, expiry, used grant or changed revision requires a fresh plan.
+7. Restore a quarantined artifact using a fresh plan and `restore` grant. For
+   deletion, wait at least 60 seconds, acquire a fresh plan and current session,
+   then request a new `delete` grant. Preserve the resulting receipt and identity.
+8. Poll `/assurance/notices?after_seq=0&limit=32`, persist the greatest processed
+   sequence, and deduplicate by sequence. POST `/assurance/ack` with session,
+   operator and report hash after reviewing each alert. Use `/assurance/analytics`
+   for bounded report counts. Acknowledgment does not resolve the underlying condition.
+
+| Condition | Required action |
+|---|---|
+| Mission not ready / horizon exhausted | Inspect stage order, exact acceptance transaction, elapsed time, reserve and scenario. Correct the adapter or recovery plan; do not replace the mission check with liveness. |
+| ATTESTATION_INCOMPLETE | Identify missing effect coverage, executable identity or expiry. Retain a HOLD until an appropriate collector supplies evidence. File snapshots cannot close process-wide coverage. |
+| SIDE_EFFECT_OUTSIDE_CONTRACT | Preserve contract and observed trace. Trace the actual effect back to admission and execution; amend code or re-admit a reviewed effect contract. |
+| UNKNOWN_HOLD | Inspect census completeness, record epochs and dangling dependencies. Do not delete or fabricate absent references. |
+| Mutation fence / authority denied | Recheck operator session, heartbeat, epochs, revision, issued grant and current references; acquire a new plan and grant. |
+| Catalog hash / projection mismatch | Stop mutations; preserve database/WAL and immutable events. Investigate full membership and revision as well as bytes; never auto-repair projections. |
+| ASSURANCE_STORAGE_UNAVAILABLE | Treat as evidence failure. Stop, preserve storage and resolve database availability before retry. |
+
+For large plans use the local typed SDK; do not raise the 16 KiB request limit.
+Back up the whole SQLite database using section 6. Hardware verification is deferred
+until a qualified containerized deployment exists. The software requirement scope,
+trust assumptions, optimization bounds and adapter seams are specified in
+`docs/substrate_assurance.md`.

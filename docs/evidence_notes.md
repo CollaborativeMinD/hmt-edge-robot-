@@ -30,3 +30,12 @@ a stopped-state injection. Zero driver movements occurred. It establishes a narr
 live integration result, not general accuracy, safety certification, or a model
 training/holdout evaluation. Statistical ML and physical deployment gates remain
 HOLD. Read `compliance.md` before interpreting software PASS as release authority.
+
+
+The triad update has a new software evidence series in `evidence/triad/` and current
+cumulative gate runs. The earlier `source_manifest.json`, GitHub CI receipt and
+archive admission receipts describe their original sealed checkpoints; they are
+preserved as historical evidence rather than rewritten to claim the new code.
+The triad source manifest binds the new acceptance source independently. Readiness
+campaign statistics are empirical. The incomplete file-manifest verdict is required
+truth, not a failed software campaign. No hardware or paid inference calls occur.

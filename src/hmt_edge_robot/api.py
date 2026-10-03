@@ -10,6 +10,7 @@ from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.responses import JSONResponse
 from pydantic import Field, ValidationError
 
+from .assurance.routes import routes as assurance_routes
 from .contracts import Contract, Identifier, MotionRequest, TaskReceipt
 from .ingress import BoundedIngress
 from .ledger import EvidenceError
@@ -53,6 +54,7 @@ def create_app(cell: RobotCell, api_token: str) -> FastAPI:
     session_routes(app, cell, authenticated)
     task_routes(app, cell, authenticated)
     resident_routes(app, cell, authenticated)
+    assurance_routes(app, cell, authenticated)
     return app
 
 

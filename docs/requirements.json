@@ -494,6 +494,292 @@
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-MCC-01",
+      "kind": "functional",
+      "acceptance": "Mission readiness requires ordered successful stages and the exact validated transaction hash; deadline equality holds",
+      "source": [
+        "src/hmt_edge_robot/assurance/mcc.py"
+      ],
+      "tests": [
+        "tests/test_assurance_readiness_effects.py::test_mcc_mission_readiness_and_boundary"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-MCC-02",
+      "kind": "functional",
+      "acceptance": "Stage failure, stale epochs, future or expired traces cannot certify mission readiness",
+      "source": [
+        "src/hmt_edge_robot/assurance/mcc.py"
+      ],
+      "tests": [
+        "tests/test_assurance_readiness_effects.py::test_mcc_incomplete_invalid_and_stale"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-MCC-03",
+      "kind": "functional",
+      "acceptance": "Cooperative asynchronous software probes use remaining recovery budget and persist intent; timeout or malformed adapter fails closed",
+      "source": [
+        "src/hmt_edge_robot/assurance/mcc.py"
+      ],
+      "tests": [
+        "tests/test_assurance_integration.py::test_software_probe_durable_failure_and_no_returned_readiness"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-MCC-04",
+      "kind": "functional",
+      "acceptance": "Bound campaigns to 256; report empirical p95, maximum and Wilson failure endpoint without a worst-case guarantee",
+      "source": [
+        "src/hmt_edge_robot/assurance/mcc.py"
+      ],
+      "tests": [
+        "tests/test_assurance_readiness_effects.py::test_mcc_empirical_envelope_is_not_wcet"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-USEA-01",
+      "kind": "functional",
+      "acceptance": "Compare exact effect kind and target, runtime and exit contract; a valid receipt cannot substitute for effect conformance",
+      "source": [
+        "src/hmt_edge_robot/assurance/usea.py"
+      ],
+      "tests": [
+        "tests/test_assurance_readiness_effects.py::test_usea_effect_receipt_distinction"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-USEA-02",
+      "kind": "functional",
+      "acceptance": "Incomplete coverage, unbound executable identity, expiry or changed epochs cannot produce conformance",
+      "source": [
+        "src/hmt_edge_robot/assurance/usea.py"
+      ],
+      "tests": [
+        "tests/test_assurance_readiness_effects.py::test_usea_incomplete_is_hold"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-USEA-03",
+      "kind": "functional",
+      "acceptance": "Actual file manifests detect persistent writes, refuse links and special files, and never claim reads or transient effects",
+      "source": [
+        "src/hmt_edge_robot/assurance/usea.py"
+      ],
+      "tests": [
+        "tests/test_assurance_readiness_effects.py::test_manifest_actual_writes_and_coverage_limit"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-AGC-01",
+      "kind": "functional",
+      "acceptance": "Compute transitive protection across cycles; retain authority, recovery, evidence and effect dependencies",
+      "source": [
+        "src/hmt_edge_robot/assurance/agc.py"
+      ],
+      "tests": [
+        "tests/test_assurance_reclamation.py::test_agc_transitive_reference_closure_and_cycles"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-AGC-02",
+      "kind": "functional",
+      "acceptance": "Incomplete, stale, mismatched-epoch or dangling-reference census yields UNKNOWN_HOLD",
+      "source": [
+        "src/hmt_edge_robot/assurance/agc.py"
+      ],
+      "tests": [
+        "tests/test_assurance_reclamation.py::test_agc_unknown_hold"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-AGC-03",
+      "kind": "functional",
+      "acceptance": "Plan is dry-run; quarantine preserves bytes, restoration is reversible, deletion requires fresh authority and dwell",
+      "source": [
+        "src/hmt_edge_robot/assurance/agc.py"
+      ],
+      "tests": [
+        "tests/test_assurance_reclamation.py::test_agc_dry_run_quarantine_restore_and_governed_delete"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-AGC-04",
+      "kind": "functional",
+      "acceptance": "Atomic revision fence, issued single-use grants, live session recheck and decision reconstruction reject stale or forged mutation",
+      "source": [
+        "src/hmt_edge_robot/assurance/agc.py"
+      ],
+      "tests": [
+        "tests/test_assurance_reclamation.py::test_agc_fence_changed_reference_and_no_grant_replay"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-AGC-05",
+      "kind": "functional",
+      "acceptance": "Catalog content, full membership, revision, quarantine time and state replay match durable events",
+      "source": [
+        "src/hmt_edge_robot/assurance/catalog.py"
+      ],
+      "tests": [
+        "tests/test_assurance_reclamation.py::test_catalog_missing_record_and_revision_tamper"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-SAT-01",
+      "kind": "functional",
+      "acceptance": "Persist cursor-addressed notices and alerts with admitted acknowledgments; survive restart and propagate failures",
+      "source": [
+        "src/hmt_edge_robot/assurance/kernel.py"
+      ],
+      "tests": [
+        "tests/test_assurance_integration.py::test_observer_durable_cursor_ack_and_restart"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-SAT-02",
+      "kind": "functional",
+      "acceptance": "Atomically bind MCC recovery and USEA effect witnesses into catalog retention; reject forged or unknown evidence",
+      "source": [
+        "src/hmt_edge_robot/assurance/system.py"
+      ],
+      "tests": [
+        "tests/test_assurance_integration.py::test_cross_component_witness_retention"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-SAT-03",
+      "kind": "functional",
+      "acceptance": "Transform validated SQLite reports through Polars/DuckDB into hashed JSONL, GraphML and Parquet software evidence",
+      "source": [
+        "src/hmt_edge_robot/assurance/analytics.py"
+      ],
+      "tests": [
+        "tests/test_assurance_integration.py::test_assurance_export_sql_parquet_jsonl_graphml"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-SAT-04",
+      "kind": "functional",
+      "acceptance": "Private strict JSON API admits sessions and grants; submitted trace claims cannot become collected observations",
+      "source": [
+        "src/hmt_edge_robot/assurance/routes.py"
+      ],
+      "tests": [
+        "tests/test_assurance_integration.py::test_assurance_api_native_json_and_declared_trace_hold"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-SAT-NFR-01",
+      "kind": "nonfunctional",
+      "acceptance": "Finite frozen contracts reject coercion and unknown fields; every witness binds identity, contract, collector, epochs and expiry",
+      "source": [
+        "src/hmt_edge_robot/assurance/contracts.py"
+      ],
+      "tests": [
+        "tests/test_assurance_readiness_effects.py::test_assurance_contracts_strict_finite_frozen"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-SAT-NFR-02",
+      "kind": "nonfunctional",
+      "acceptance": "Bound managed catalog to 1024 records and 16 MiB per blob; manifests to 256 files/16 MiB by default; observer reads to 256 and analytics to 1024",
+      "source": [
+        "src/hmt_edge_robot/assurance/catalog.py"
+      ],
+      "tests": [
+        "tests/test_assurance_reclamation.py::test_catalog_and_census_bounds"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-SAT-NFR-03",
+      "kind": "nonfunctional",
+      "acceptance": "No committed lifecycle mutation or consumed grant when evidence fails; storage failures propagate as EvidenceError",
+      "source": [
+        "src/hmt_edge_robot/assurance/agc.py"
+      ],
+      "tests": [
+        "tests/test_assurance_reclamation.py::test_agc_evidence_failure_rolls_back_mutation"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-SAT-NFR-04",
+      "kind": "nonfunctional",
+      "acceptance": "Exact bounded 0/1 knapsack matches independent brute-force oracle and never grants authority",
+      "source": [
+        "src/hmt_edge_robot/assurance/optimization.py"
+      ],
+      "tests": [
+        "tests/test_assurance_readiness_effects.py::test_optimization_exact_against_brute_force"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-SAT-NFR-05",
+      "kind": "nonfunctional",
+      "acceptance": "Read-only assurance census and analytics leave projections and pending work unchanged",
+      "source": [
+        "src/hmt_edge_robot/assurance/catalog.py"
+      ],
+      "tests": [
+        "tests/test_assurance_integration.py::test_catalog_readonly_no_recovery_or_writes"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-SAT-NFR-06",
+      "kind": "nonfunctional",
+      "acceptance": "Software campaign plans 258 records within 10 sec and optimizes 64 candidates/1024 budget within 2 sec on acceptance host, with zero driver moves",
+      "source": [
+        "src/hmt_edge_robot/assurance/optimization.py"
+      ],
+      "tests": [
+        "tests/test_assurance_readiness_effects.py::test_optimization_exact_against_brute_force"
+      ],
+      "gate": "G-TRIAD-011",
+      "scope": "system software / managed catalog"
     }
   ]
 }
