@@ -15,13 +15,8 @@ def test_policy_inventory_and_full_adoption_hold(tmp_path: Path) -> None:
     source = root / "src/big.py"
     source.parent.mkdir()
     source.write_text("value = 1\n" * 101)
-    report = evaluate(root)
-    assert report["assessment_status"] == "PASS"
-    assert report["full_policy_adoption"] == "HOLD" and report["alert"]
-    assert report["hold_register"][0]["module_loc"] == 101
-    assert report["deployment"] == report["docker_build"] == "HOLD"
-    assert any(p["declared_status"] == "CANDIDATE_FOR_HUMAN_ARCHITECT_PROMOTION"
-               for p in report["policies"])
+    with pytest.raises(ValueError, match="MODULE_CEILING_EXCEEDED"):
+        evaluate(root)
 
 
 def test_declared_policy_tamper_is_not_admitted(tmp_path: Path) -> None:
@@ -45,5 +40,5 @@ def test_new_support_module_cannot_evade_ceiling(tmp_path: Path) -> None:
     source = root / "tools/ci_profiles.py"
     source.parent.mkdir()
     source.write_text("value = 1\n" * 101)
-    with pytest.raises(ValueError, match="SUPPORT_MODULE_CEILING"):
+    with pytest.raises(ValueError, match="MODULE_CEILING"):
         evaluate(root)

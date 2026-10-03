@@ -5,7 +5,9 @@
 Phase 2 evaluates the supplied HMT declarations and integrates verified CI support interfaces.
 Docker builds, container execution, delivery activation, Pi testing, and deployment remain HOLD.
 This phase replaces the previously proposed container-build phase 2. Container work is later.
-No candidate policy is globally promoted, and no full tool admission is claimed.
+The subsequent human approval is recorded in `policy/promotion.json` and
+`docs/policy_promotion.md`. The policy package is promoted for system-software validation.
+No full tool admission is claimed. The following evaluation describes the phase-2 baseline.
 
 ## Evaluation
 
@@ -77,7 +79,7 @@ do not copy another product's trace files to manufacture apparent compliance.
 
 ## Continuation
 
-Before full policy adoption, decompose oversized active modules and verify import/API/contract
-parity, all requirements, full coverage, replay, and every previous gate. Before full tool admission,
+The 26-module decomposition and policy promotion continuation is documented in
+`docs/policy_promotion.md`. Before full tool admission,
 qualify the host-specific perimeter and Truth Serum profile plus provenance and distributions.
 These steps do not authorize Docker or deployment. Branch protection remains independently required.

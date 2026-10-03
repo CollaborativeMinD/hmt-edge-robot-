@@ -8,6 +8,7 @@ from typing import Any
 
 from ci_admission import ROOT
 from policy_inventory import inventory, load_profile
+from policy_promotion import load_promotion
 from profile_witnesses import document_witness, evidence_witness, source_claim
 
 from hmt_edge_robot.contracts import digest
@@ -16,12 +17,13 @@ from hmt_edge_robot.contracts import digest
 def evaluate(root: Path) -> dict[str, Any]:
     profile = load_profile(root)
     inventory(root, profile)
+    load_promotion(root, profile)
     claims = [source_claim(root, name) for name in
               ("policy/ci_support.json", "docs/requirements.json", "docs/implementation_traceability.json")]
     witnesses = [document_witness(root, profile), evidence_witness(root, claims)]
     payload = {"profile_id": profile.profile_id, "profile_hash": digest(profile.model_dump(mode="json")),
                "status": "PASS", "witnesses": witnesses, "full_tool_admission": "HOLD",
-               "full_policy_adoption": "HOLD", "docker_build": "HOLD", "deployment": "HOLD"}
+               "full_policy_adoption": "PROMOTED", "docker_build": "HOLD", "deployment": "HOLD"}
     return {**payload, "receipt_hash": digest(payload), "notification": "CI_SUPPORT_PROFILES_PASS",
             "alert": False}
 

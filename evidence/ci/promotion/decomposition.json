@@ -1,0 +1,2965 @@
+{
+  "status": "PASS",
+  "original_oversized_modules": 26,
+  "before_inventory": [
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "module_loc": 143,
+      "max_function_physical_loc": 33,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc.py",
+      "module_loc": 229,
+      "max_function_physical_loc": 58,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/analytics.py",
+      "module_loc": 145,
+      "max_function_physical_loc": 36,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "module_loc": 227,
+      "max_function_physical_loc": 39,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/contracts.py",
+      "module_loc": 177,
+      "max_function_physical_loc": 8,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/kernel.py",
+      "module_loc": 113,
+      "max_function_physical_loc": 22,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/mcc.py",
+      "module_loc": 156,
+      "max_function_physical_loc": 41,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "module_loc": 144,
+      "max_function_physical_loc": 44,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/usea.py",
+      "module_loc": 101,
+      "max_function_physical_loc": 50,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/cli.py",
+      "module_loc": 124,
+      "max_function_physical_loc": 36,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/contracts.py",
+      "module_loc": 140,
+      "max_function_physical_loc": 11,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "module_loc": 177,
+      "max_function_physical_loc": 32,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "module_loc": 228,
+      "max_function_physical_loc": 40,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "module_loc": 305,
+      "max_function_physical_loc": 33,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/runtime.py",
+      "module_loc": 139,
+      "max_function_physical_loc": 32,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/safety.py",
+      "module_loc": 101,
+      "max_function_physical_loc": 33,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_api_cli.py",
+      "module_loc": 151,
+      "max_function_physical_loc": 38,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "module_loc": 162,
+      "max_function_physical_loc": 19,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "module_loc": 168,
+      "max_function_physical_loc": 16,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "module_loc": 178,
+      "max_function_physical_loc": 27,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_contracts_geometry.py",
+      "module_loc": 101,
+      "max_function_physical_loc": 21,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "module_loc": 179,
+      "max_function_physical_loc": 20,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "module_loc": 234,
+      "max_function_physical_loc": 41,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/assurance_campaign.py",
+      "module_loc": 115,
+      "max_function_physical_loc": 31,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/live_llm_campaign.py",
+      "module_loc": 113,
+      "max_function_physical_loc": 58,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/validate.py",
+      "module_loc": 285,
+      "max_function_physical_loc": 53,
+      "module_status": "HOLD",
+      "function_status": "PASS"
+    }
+  ],
+  "current_inventory": [
+    {
+      "path": "notebooks/cell_ssot.py",
+      "module_loc": 56,
+      "max_function_physical_loc": 23,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/__init__.py",
+      "module_loc": 2,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/access.py",
+      "module_loc": 97,
+      "max_function_physical_loc": 32,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/analytics.py",
+      "module_loc": 65,
+      "max_function_physical_loc": 20,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "module_loc": 38,
+      "max_function_physical_loc": 25,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/api_commands.py",
+      "module_loc": 58,
+      "max_function_physical_loc": 33,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/api_queries.py",
+      "module_loc": 43,
+      "max_function_physical_loc": 29,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/api_requests.py",
+      "module_loc": 12,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/api_resident.py",
+      "module_loc": 22,
+      "max_function_physical_loc": 16,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/__init__.py",
+      "module_loc": 3,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc.py",
+      "module_loc": 61,
+      "max_function_physical_loc": 18,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc_admission.py",
+      "module_loc": 51,
+      "max_function_physical_loc": 47,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc_mutation.py",
+      "module_loc": 76,
+      "max_function_physical_loc": 58,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc_planning.py",
+      "module_loc": 70,
+      "max_function_physical_loc": 36,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/analytics.py",
+      "module_loc": 48,
+      "max_function_physical_loc": 28,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/analytics_exports.py",
+      "module_loc": 42,
+      "max_function_physical_loc": 12,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/analytics_queries.py",
+      "module_loc": 76,
+      "max_function_physical_loc": 36,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "module_loc": 41,
+      "max_function_physical_loc": 20,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog_authority.py",
+      "module_loc": 78,
+      "max_function_physical_loc": 34,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog_records.py",
+      "module_loc": 80,
+      "max_function_physical_loc": 39,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog_replay.py",
+      "module_loc": 60,
+      "max_function_physical_loc": 36,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog_storage.py",
+      "module_loc": 13,
+      "max_function_physical_loc": 9,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/contracts.py",
+      "module_loc": 24,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/contracts_base.py",
+      "module_loc": 30,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/contracts_effects.py",
+      "module_loc": 35,
+      "max_function_physical_loc": 5,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/contracts_identity.py",
+      "module_loc": 42,
+      "max_function_physical_loc": 5,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/contracts_reclamation.py",
+      "module_loc": 38,
+      "max_function_physical_loc": 6,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/contracts_recovery.py",
+      "module_loc": 47,
+      "max_function_physical_loc": 8,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/contracts_reports.py",
+      "module_loc": 20,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/kernel.py",
+      "module_loc": 75,
+      "max_function_physical_loc": 22,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/kernel_observer.py",
+      "module_loc": 48,
+      "max_function_physical_loc": 17,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/mcc.py",
+      "module_loc": 36,
+      "max_function_physical_loc": 23,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/mcc_collection.py",
+      "module_loc": 71,
+      "max_function_physical_loc": 34,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/mcc_readiness.py",
+      "module_loc": 67,
+      "max_function_physical_loc": 41,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/optimization.py",
+      "module_loc": 26,
+      "max_function_physical_loc": 23,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "module_loc": 56,
+      "max_function_physical_loc": 44,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes_catalog.py",
+      "module_loc": 64,
+      "max_function_physical_loc": 41,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes_requests.py",
+      "module_loc": 56,
+      "max_function_physical_loc": 7,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/system.py",
+      "module_loc": 90,
+      "max_function_physical_loc": 40,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/usea.py",
+      "module_loc": 60,
+      "max_function_physical_loc": 50,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/usea_manifest.py",
+      "module_loc": 46,
+      "max_function_physical_loc": 35,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/cli.py",
+      "module_loc": 54,
+      "max_function_physical_loc": 26,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/cli_commands.py",
+      "module_loc": 43,
+      "max_function_physical_loc": 28,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/cli_demonstration.py",
+      "module_loc": 43,
+      "max_function_physical_loc": 36,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/contracts.py",
+      "module_loc": 24,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/contracts_base.py",
+      "module_loc": 38,
+      "max_function_physical_loc": 3,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/contracts_motion.py",
+      "module_loc": 24,
+      "max_function_physical_loc": 5,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/contracts_observations.py",
+      "module_loc": 31,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/contracts_policy.py",
+      "module_loc": 41,
+      "max_function_physical_loc": 11,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/contracts_resident.py",
+      "module_loc": 32,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/edge.py",
+      "module_loc": 73,
+      "max_function_physical_loc": 49,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/geometry.py",
+      "module_loc": 60,
+      "max_function_physical_loc": 11,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/ingress.py",
+      "module_loc": 56,
+      "max_function_physical_loc": 39,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "module_loc": 61,
+      "max_function_physical_loc": 32,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger_errors.py",
+      "module_loc": 3,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger_queries.py",
+      "module_loc": 42,
+      "max_function_physical_loc": 18,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger_replay.py",
+      "module_loc": 40,
+      "max_function_physical_loc": 22,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger_transitions.py",
+      "module_loc": 65,
+      "max_function_physical_loc": 30,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "module_loc": 43,
+      "max_function_physical_loc": 15,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator_admission.py",
+      "module_loc": 81,
+      "max_function_physical_loc": 22,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator_driver.py",
+      "module_loc": 31,
+      "max_function_physical_loc": 5,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator_execution.py",
+      "module_loc": 85,
+      "max_function_physical_loc": 40,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator_recovery.py",
+      "module_loc": 32,
+      "max_function_physical_loc": 19,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "module_loc": 9,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/resident_cloud.py",
+      "module_loc": 44,
+      "max_function_physical_loc": 25,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/resident_cloud_request.py",
+      "module_loc": 53,
+      "max_function_physical_loc": 29,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/resident_cloud_transport.py",
+      "module_loc": 47,
+      "max_function_physical_loc": 22,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/resident_governance.py",
+      "module_loc": 81,
+      "max_function_physical_loc": 33,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/resident_health.py",
+      "module_loc": 65,
+      "max_function_physical_loc": 28,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/resident_providers.py",
+      "module_loc": 49,
+      "max_function_physical_loc": 17,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/runtime.py",
+      "module_loc": 67,
+      "max_function_physical_loc": 32,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/runtime_governance.py",
+      "module_loc": 54,
+      "max_function_physical_loc": 24,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/runtime_simulation.py",
+      "module_loc": 37,
+      "max_function_physical_loc": 31,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/safety.py",
+      "module_loc": 75,
+      "max_function_physical_loc": 33,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/safety_admittance.py",
+      "module_loc": 29,
+      "max_function_physical_loc": 13,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "src/hmt_edge_robot/vision.py",
+      "module_loc": 75,
+      "max_function_physical_loc": 25,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/conftest.py",
+      "module_loc": 39,
+      "max_function_physical_loc": 13,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_api_cli.py",
+      "module_loc": 25,
+      "max_function_physical_loc": 13,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_api_cli_base.py",
+      "module_loc": 4,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_api_cli_entry.py",
+      "module_loc": 77,
+      "max_function_physical_loc": 38,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_api_cli_http.py",
+      "module_loc": 62,
+      "max_function_physical_loc": 32,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "module_loc": 69,
+      "max_function_physical_loc": 18,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_integration_http.py",
+      "module_loc": 52,
+      "max_function_physical_loc": 19,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_integration_replay.py",
+      "module_loc": 50,
+      "max_function_physical_loc": 12,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "module_loc": 6,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects_base.py",
+      "module_loc": 33,
+      "max_function_physical_loc": 6,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects_effects.py",
+      "module_loc": 48,
+      "max_function_physical_loc": 11,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects_optimization.py",
+      "module_loc": 40,
+      "max_function_physical_loc": 16,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects_readiness.py",
+      "module_loc": 70,
+      "max_function_physical_loc": 16,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "module_loc": 33,
+      "max_function_physical_loc": 27,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_reclamation_authority.py",
+      "module_loc": 60,
+      "max_function_physical_loc": 15,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_reclamation_base.py",
+      "module_loc": 12,
+      "max_function_physical_loc": 7,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_reclamation_protection.py",
+      "module_loc": 47,
+      "max_function_physical_loc": 12,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_assurance_reclamation_replay.py",
+      "module_loc": 41,
+      "max_function_physical_loc": 16,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_authority_safety_edge.py",
+      "module_loc": 90,
+      "max_function_physical_loc": 16,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_ci_admission.py",
+      "module_loc": 83,
+      "max_function_physical_loc": 23,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_ci_support.py",
+      "module_loc": 65,
+      "max_function_physical_loc": 15,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_contracts_geometry.py",
+      "module_loc": 62,
+      "max_function_physical_loc": 18,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_contracts_geometry_vision.py",
+      "module_loc": 45,
+      "max_function_physical_loc": 21,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_ingress_replay.py",
+      "module_loc": 65,
+      "max_function_physical_loc": 33,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "module_loc": 29,
+      "max_function_physical_loc": 13,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_orchestration_ledger_authority.py",
+      "module_loc": 61,
+      "max_function_physical_loc": 16,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_orchestration_ledger_driver.py",
+      "module_loc": 65,
+      "max_function_physical_loc": 19,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_orchestration_ledger_replay.py",
+      "module_loc": 43,
+      "max_function_physical_loc": 20,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_policy_evaluation.py",
+      "module_loc": 33,
+      "max_function_physical_loc": 7,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_policy_promotion.py",
+      "module_loc": 69,
+      "max_function_physical_loc": 15,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "module_loc": 32,
+      "max_function_physical_loc": 12,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_resident_analytics_base.py",
+      "module_loc": 3,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_resident_analytics_budget.py",
+      "module_loc": 79,
+      "max_function_physical_loc": 41,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_resident_analytics_governance.py",
+      "module_loc": 90,
+      "max_function_physical_loc": 25,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_resident_analytics_transport.py",
+      "module_loc": 52,
+      "max_function_physical_loc": 30,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_typecheck_gate.py",
+      "module_loc": 23,
+      "max_function_physical_loc": 20,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/assurance_campaign.py",
+      "module_loc": 55,
+      "max_function_physical_loc": 31,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/assurance_campaign_base.py",
+      "module_loc": 5,
+      "max_function_physical_loc": 0,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/assurance_campaign_probes.py",
+      "module_loc": 66,
+      "max_function_physical_loc": 26,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/ci_admission.py",
+      "module_loc": 86,
+      "max_function_physical_loc": 41,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/ci_profiles.py",
+      "module_loc": 39,
+      "max_function_physical_loc": 15,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/contracts_export.py",
+      "module_loc": 74,
+      "max_function_physical_loc": 34,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/coupled_campaign.py",
+      "module_loc": 69,
+      "max_function_physical_loc": 50,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/live_llm_campaign.py",
+      "module_loc": 35,
+      "max_function_physical_loc": 25,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/live_llm_campaign_provider.py",
+      "module_loc": 83,
+      "max_function_physical_loc": 58,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/policy_contracts.py",
+      "module_loc": 30,
+      "max_function_physical_loc": 13,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/policy_evaluation.py",
+      "module_loc": 51,
+      "max_function_physical_loc": 23,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/policy_inventory.py",
+      "module_loc": 50,
+      "max_function_physical_loc": 23,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/policy_pins.py",
+      "module_loc": 35,
+      "max_function_physical_loc": 29,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/policy_promotion.py",
+      "module_loc": 49,
+      "max_function_physical_loc": 12,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/profile_witnesses.py",
+      "module_loc": 42,
+      "max_function_physical_loc": 15,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/tool_qualification.py",
+      "module_loc": 39,
+      "max_function_physical_loc": 21,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/validate.py",
+      "module_loc": 63,
+      "max_function_physical_loc": 42,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/validate_base.py",
+      "module_loc": 10,
+      "max_function_physical_loc": 2,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/validate_execution.py",
+      "module_loc": 25,
+      "max_function_physical_loc": 19,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/validate_incidents.py",
+      "module_loc": 50,
+      "max_function_physical_loc": 26,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/validate_ledger.py",
+      "module_loc": 32,
+      "max_function_physical_loc": 14,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/validate_regression.py",
+      "module_loc": 47,
+      "max_function_physical_loc": 34,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/validate_report.py",
+      "module_loc": 33,
+      "max_function_physical_loc": 24,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/validate_structure.py",
+      "module_loc": 82,
+      "max_function_physical_loc": 56,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    }
+  ],
+  "functions_examined": 246,
+  "unchanged_function_bodies": 245,
+  "intentional_gate_changes": [
+    {
+      "original_path": "tools/validate.py",
+      "function": "structural_checks",
+      "reason": "Promoted structural gate adds module and decorator bounds",
+      "current_path": "tools/validate_structure.py"
+    }
+  ],
+  "modules": [
+    {
+      "original_path": "src/hmt_edge_robot/api.py",
+      "original_sha256": "2f2cc7b56ebcc7972b266167298036f090bb9bd7c1a4dc1b8de87461f3729071",
+      "before_module_loc": 143,
+      "destinations": [
+        "src/hmt_edge_robot/api.py",
+        "src/hmt_edge_robot/api_commands.py",
+        "src/hmt_edge_robot/api_queries.py",
+        "src/hmt_edge_robot/api_requests.py",
+        "src/hmt_edge_robot/api_resident.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "create_app",
+          "current_path": "src/hmt_edge_robot/api.py",
+          "current_function": "create_app",
+          "body_sha256": "c1443b5e40ee3ecd79d031fe18376020a3f4d41fafdc0026ba8a53c3852a1724"
+        },
+        {
+          "original_function": "error_routes",
+          "current_path": "src/hmt_edge_robot/api_queries.py",
+          "current_function": "error_routes",
+          "body_sha256": "80ebf796cf881a7a4be84f32c8c6dd1c787411a950778227514d8f226f9ed81b"
+        },
+        {
+          "original_function": "read_routes",
+          "current_path": "src/hmt_edge_robot/api_queries.py",
+          "current_function": "read_routes",
+          "body_sha256": "e81c89ac2e6d6a7c6900b1883fd95e7f2e26f1d12a65b54df36e4009efb262c3"
+        },
+        {
+          "original_function": "session_routes",
+          "current_path": "src/hmt_edge_robot/api_commands.py",
+          "current_function": "session_routes",
+          "body_sha256": "96a5e1c410dfb5d20fd8108e2b375021a5809a491450241b684d87244662b473"
+        },
+        {
+          "original_function": "task_routes",
+          "current_path": "src/hmt_edge_robot/api_commands.py",
+          "current_function": "task_routes",
+          "body_sha256": "de47a641db096947fc32e180024b0524d34bc3355c0ec18e207f7f8b55b4ad74"
+        },
+        {
+          "original_function": "resident_routes",
+          "current_path": "src/hmt_edge_robot/api_resident.py",
+          "current_function": "resident_routes",
+          "body_sha256": "3deb7a6b4f63c4ef016cb6e5e5a817768ba29cb22a258a4e1dc93b6de26d2a9c"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/assurance/agc.py",
+      "original_sha256": "bdb6a32efc5d242fa10995345e516c97c2581ee7ed8427e66a31a67e341d4967",
+      "before_module_loc": 229,
+      "destinations": [
+        "src/hmt_edge_robot/assurance/agc.py",
+        "src/hmt_edge_robot/assurance/agc_admission.py",
+        "src/hmt_edge_robot/assurance/agc_mutation.py",
+        "src/hmt_edge_robot/assurance/agc_planning.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "AutonomyGarbageCollector.__init__",
+          "current_path": "src/hmt_edge_robot/assurance/agc.py",
+          "current_function": "AutonomyGarbageCollector.__init__",
+          "body_sha256": "59b74143298106da3aaa4487046e5bf4dd3f01a4700778813be87d49269e0163"
+        },
+        {
+          "original_function": "AutonomyGarbageCollector.plan",
+          "current_path": "src/hmt_edge_robot/assurance/agc.py",
+          "current_function": "AutonomyGarbageCollector.plan",
+          "body_sha256": "c2b15fd327555b56bf9911093a48e064e50ec0ace4743d099b6638ea1d719f94"
+        },
+        {
+          "original_function": "AutonomyGarbageCollector._plan",
+          "current_path": "src/hmt_edge_robot/assurance/agc.py",
+          "current_function": "AutonomyGarbageCollector._plan",
+          "body_sha256": "fea2d5ae925bdbedb97473da3a34a99ea4b84d90ab6158a4f2b0fc13c7987fd2"
+        },
+        {
+          "original_function": "AutonomyGarbageCollector._decisions",
+          "current_path": "src/hmt_edge_robot/assurance/agc_planning.py",
+          "current_function": "_decisions",
+          "body_sha256": "10658bc64ac64d78223fda459eb338830a53181ec55cb92d1cebfd01cbe2af93"
+        },
+        {
+          "original_function": "AutonomyGarbageCollector._decision",
+          "current_path": "src/hmt_edge_robot/assurance/agc_planning.py",
+          "current_function": "_decision",
+          "body_sha256": "680b5fdc974da796377062d26f4ce9297903b24afc1d7448e6179dd29696b85b"
+        },
+        {
+          "original_function": "AutonomyGarbageCollector.execute",
+          "current_path": "src/hmt_edge_robot/assurance/agc.py",
+          "current_function": "AutonomyGarbageCollector.execute",
+          "body_sha256": "c8992e1dadce5fef6891a11d2faf08783a77e87a74bab2c0a632a9f52b785ad6"
+        },
+        {
+          "original_function": "AutonomyGarbageCollector._execute",
+          "current_path": "src/hmt_edge_robot/assurance/agc_mutation.py",
+          "current_function": "_execute",
+          "body_sha256": "f2b1b2da0dbe78180026eec9b969a789437f393dd26dd07f28b9e3c515b9714f"
+        },
+        {
+          "original_function": "AutonomyGarbageCollector._admit",
+          "current_path": "src/hmt_edge_robot/assurance/agc_admission.py",
+          "current_function": "_admit",
+          "body_sha256": "9685a1d4f842044a78a1cdbde1b23f57dcfd9461b8d780c3eccff22eab2c4be1"
+        },
+        {
+          "original_function": "AutonomyGarbageCollector._transition",
+          "current_path": "src/hmt_edge_robot/assurance/agc_mutation.py",
+          "current_function": "_transition",
+          "body_sha256": "161bc8f1f27f51e3a962c91e739a13dc2554af7c8a64dc99aa64ef90b637ae10"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/assurance/analytics.py",
+      "original_sha256": "813af046537dda8e865e5562ece696be0800df017da414c497be1f6767058603",
+      "before_module_loc": 145,
+      "destinations": [
+        "src/hmt_edge_robot/assurance/analytics.py",
+        "src/hmt_edge_robot/assurance/analytics_exports.py",
+        "src/hmt_edge_robot/assurance/analytics_queries.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "AssuranceAnalytics.__init__",
+          "current_path": "src/hmt_edge_robot/assurance/analytics.py",
+          "current_function": "AssuranceAnalytics.__init__",
+          "body_sha256": "8db8aa3201d096dc8c4ce3df5d2adbe64a67b0f870b2c37f3b1dce3868f8204a"
+        },
+        {
+          "original_function": "AssuranceAnalytics.frame",
+          "current_path": "src/hmt_edge_robot/assurance/analytics_queries.py",
+          "current_function": "frame",
+          "body_sha256": "02c494fda1e3b34ca2b71044aa45145d0910a363ee4057ded2fb9775fc937a0b"
+        },
+        {
+          "original_function": "AssuranceAnalytics.summary",
+          "current_path": "src/hmt_edge_robot/assurance/analytics.py",
+          "current_function": "AssuranceAnalytics.summary",
+          "body_sha256": "5a9186f304430a933bc577320638b51143e1beec94105928cf5118fac908332c"
+        },
+        {
+          "original_function": "AssuranceAnalytics._payloads",
+          "current_path": "src/hmt_edge_robot/assurance/analytics_queries.py",
+          "current_function": "_payloads",
+          "body_sha256": "226e541bf1f4cd8d92c781661ce375d851f4cd499e2e4e7dc9e5b1b2fb06c0d0"
+        },
+        {
+          "original_function": "AssuranceAnalytics.export",
+          "current_path": "src/hmt_edge_robot/assurance/analytics.py",
+          "current_function": "AssuranceAnalytics.export",
+          "body_sha256": "b74304090070417a9907f99311bf47273be3edbc14930760cd202ab1476c2b4d"
+        },
+        {
+          "original_function": "summarize",
+          "current_path": "src/hmt_edge_robot/assurance/analytics_exports.py",
+          "current_function": "summarize",
+          "body_sha256": "718b9fa1ff72ba45b1c9d6f727a63b5cfe7710ecbfc797b8135c391e6ac433dc"
+        },
+        {
+          "original_function": "atomic_text",
+          "current_path": "src/hmt_edge_robot/assurance/analytics_exports.py",
+          "current_function": "atomic_text",
+          "body_sha256": "a26a4ef315a1c393cda3798d7f6623f2da64e7b9c7cd445d54cfb0a2ed689a8e"
+        },
+        {
+          "original_function": "reference_graph",
+          "current_path": "src/hmt_edge_robot/assurance/analytics_exports.py",
+          "current_function": "reference_graph",
+          "body_sha256": "c744e88fa209b83ec96225cbd195bba128cbc7a57599134550a33d9515fcf167"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/assurance/catalog.py",
+      "original_sha256": "ee94079053e9803f5b41737839dd8387b94e975d73c034d2ec67944adc592314",
+      "before_module_loc": 227,
+      "destinations": [
+        "src/hmt_edge_robot/assurance/catalog.py",
+        "src/hmt_edge_robot/assurance/catalog_authority.py",
+        "src/hmt_edge_robot/assurance/catalog_records.py",
+        "src/hmt_edge_robot/assurance/catalog_replay.py",
+        "src/hmt_edge_robot/assurance/catalog_storage.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "storage_guard",
+          "current_path": "src/hmt_edge_robot/assurance/catalog_storage.py",
+          "current_function": "storage_guard",
+          "body_sha256": "923fb759485d5197a9233731d671855dc9b0f83a6aaada4439b96b811923d78e"
+        },
+        {
+          "original_function": "ArtifactCatalog.__init__",
+          "current_path": "src/hmt_edge_robot/assurance/catalog.py",
+          "current_function": "ArtifactCatalog.__init__",
+          "body_sha256": "4a144ce2bab38b7f699c303190b967cb60981712ae534d16c7fe1a1e07d91f43"
+        },
+        {
+          "original_function": "ArtifactCatalog.put",
+          "current_path": "src/hmt_edge_robot/assurance/catalog_records.py",
+          "current_function": "put",
+          "body_sha256": "27d935bfb0f153fe5c5745cae9b35cfb04396325d07a7175c42541622c137263"
+        },
+        {
+          "original_function": "ArtifactCatalog.update",
+          "current_path": "src/hmt_edge_robot/assurance/catalog_records.py",
+          "current_function": "update",
+          "body_sha256": "e74d01bd50a304185924ce70da5b08c630b31b230b6c8f09ceed4b50f458740b"
+        },
+        {
+          "original_function": "ArtifactCatalog._changed",
+          "current_path": "src/hmt_edge_robot/assurance/catalog_records.py",
+          "current_function": "_changed",
+          "body_sha256": "235272b2d708f9881c4cfcfadc114064338901a7fc3def4e191854133fb9cedb"
+        },
+        {
+          "original_function": "ArtifactCatalog._row",
+          "current_path": "src/hmt_edge_robot/assurance/catalog_records.py",
+          "current_function": "_row",
+          "body_sha256": "e0757c83947d83936e410f74e76ff0ab74bc7a9338abe0f56392a80aeccc3b83"
+        },
+        {
+          "original_function": "ArtifactCatalog.census",
+          "current_path": "src/hmt_edge_robot/assurance/catalog_authority.py",
+          "current_function": "census",
+          "body_sha256": "847e9630129a038b74c506d423a379f95236b5fc9b141db2c93edb18d4f032a5"
+        },
+        {
+          "original_function": "ArtifactCatalog.issue",
+          "current_path": "src/hmt_edge_robot/assurance/catalog_authority.py",
+          "current_function": "issue",
+          "body_sha256": "034579c4bb8f0d6dafec98e248c7eb95e36bffad305ac171a4625040dd0aeb19"
+        },
+        {
+          "original_function": "ArtifactCatalog.verify",
+          "current_path": "src/hmt_edge_robot/assurance/catalog_replay.py",
+          "current_function": "verify",
+          "body_sha256": "1172f454dffee639e9918e6cd265dad56e3beba623e07fe00e2c1a1a6dd44377"
+        },
+        {
+          "original_function": "ArtifactCatalog._verify_domain",
+          "current_path": "src/hmt_edge_robot/assurance/catalog_replay.py",
+          "current_function": "_verify_domain",
+          "body_sha256": "a89b08b5cf0b246e209af13fa8a710bd22020b88f63cb9894c74b29801671344"
+        },
+        {
+          "original_function": "ArtifactCatalog.read",
+          "current_path": "src/hmt_edge_robot/assurance/catalog_authority.py",
+          "current_function": "read",
+          "body_sha256": "94c9cfca199e9ccf2dc9d508c4a3b1855853beba7e52d3df162d0b8057472928"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/assurance/contracts.py",
+      "original_sha256": "a10e413edf13e3c303f321d149ccc39678dcaef66cafed9d1422af4c6755954e",
+      "before_module_loc": 177,
+      "destinations": [
+        "src/hmt_edge_robot/assurance/contracts.py",
+        "src/hmt_edge_robot/assurance/contracts_base.py",
+        "src/hmt_edge_robot/assurance/contracts_effects.py",
+        "src/hmt_edge_robot/assurance/contracts_identity.py",
+        "src/hmt_edge_robot/assurance/contracts_reclamation.py",
+        "src/hmt_edge_robot/assurance/contracts_recovery.py",
+        "src/hmt_edge_robot/assurance/contracts_reports.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "WitnessScope.time_order",
+          "current_path": "src/hmt_edge_robot/assurance/contracts_identity.py",
+          "current_function": "WitnessScope.time_order",
+          "body_sha256": "b831a848b3219a50b11ec4e484d492b6f8e065a0414c6e4b8ae72a5d03baa0e9"
+        },
+        {
+          "original_function": "RecoverySpec.readiness_law",
+          "current_path": "src/hmt_edge_robot/assurance/contracts_recovery.py",
+          "current_function": "RecoverySpec.readiness_law",
+          "body_sha256": "b685222df8b7a1585e0ddef175506d9df172cce1cd9186c915ef409b4a1cca01"
+        },
+        {
+          "original_function": "EffectContract.unique_coverage",
+          "current_path": "src/hmt_edge_robot/assurance/contracts_effects.py",
+          "current_function": "EffectContract.unique_coverage",
+          "body_sha256": "5d061d6f518e7a4ac2bc770a90c03d5fe3e677944dcd5b3ed8aa690116f29022"
+        },
+        {
+          "original_function": "Census.census_law",
+          "current_path": "src/hmt_edge_robot/assurance/contracts_reclamation.py",
+          "current_function": "Census.census_law",
+          "body_sha256": "bb0c9746c240d2db2b2dcd0854527b65d95eb021c3fdc4bc98ccc14138bb898f"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/assurance/kernel.py",
+      "original_sha256": "459c466685944f0100b6fca8722654926f780888d29645302f3c9cecf59d837c",
+      "before_module_loc": 113,
+      "destinations": [
+        "src/hmt_edge_robot/assurance/kernel.py",
+        "src/hmt_edge_robot/assurance/kernel_observer.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "AssuranceKernel.__init__",
+          "current_path": "src/hmt_edge_robot/assurance/kernel.py",
+          "current_function": "AssuranceKernel.__init__",
+          "body_sha256": "1dc995ccd34af652b9fe20ab46fc2386602728b64368a06762cee3d11d7e6206"
+        },
+        {
+          "original_function": "AssuranceKernel.scope",
+          "current_path": "src/hmt_edge_robot/assurance/kernel.py",
+          "current_function": "AssuranceKernel.scope",
+          "body_sha256": "0b022da47cfb361bb0ac174b12cf99c276da50ec4faddb984f4f1f1f13d57bb0"
+        },
+        {
+          "original_function": "AssuranceKernel.valid",
+          "current_path": "src/hmt_edge_robot/assurance/kernel.py",
+          "current_function": "AssuranceKernel.valid",
+          "body_sha256": "825ed2f1a77f13a133f367b26b437391f500c22c40b7a6963e9e93f6fc1f99f3"
+        },
+        {
+          "original_function": "AssuranceKernel.seal",
+          "current_path": "src/hmt_edge_robot/assurance/kernel.py",
+          "current_function": "AssuranceKernel.seal",
+          "body_sha256": "1f759c7297033e7fe935e0336c2d4c6d0b170df980f4726a11098d3e09b8a5e8"
+        },
+        {
+          "original_function": "AssuranceKernel.alert",
+          "current_path": "src/hmt_edge_robot/assurance/kernel_observer.py",
+          "current_function": "alert",
+          "body_sha256": "04f6f507329c0900677288ae994702a047a27a2c3268526bc0eef8e18d2d7e27"
+        },
+        {
+          "original_function": "AssuranceKernel.notices",
+          "current_path": "src/hmt_edge_robot/assurance/kernel_observer.py",
+          "current_function": "notices",
+          "body_sha256": "324513742fc3d02117dc0e4dcbff03ea8cf39a678763353c314b94552c27fc6c"
+        },
+        {
+          "original_function": "AssuranceKernel.acknowledge",
+          "current_path": "src/hmt_edge_robot/assurance/kernel_observer.py",
+          "current_function": "acknowledge",
+          "body_sha256": "ed0c100d6c27dd0a8e3701482db1013240467901e32dd8763fef96a6c9e76245"
+        },
+        {
+          "original_function": "witnessed",
+          "current_path": "src/hmt_edge_robot/assurance/kernel.py",
+          "current_function": "witnessed",
+          "body_sha256": "654d898092161d87691981a84e1b6759ac2fbd7595f6492ea9e0891d7581d035"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/assurance/mcc.py",
+      "original_sha256": "b883a3f9b607b431cfe58c739c36754bb65e3d65c5e45eaca9d69cdd24d16e6d",
+      "before_module_loc": 156,
+      "destinations": [
+        "src/hmt_edge_robot/assurance/mcc.py",
+        "src/hmt_edge_robot/assurance/mcc_collection.py",
+        "src/hmt_edge_robot/assurance/mcc_readiness.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "MissionColdStartCartographer.__init__",
+          "current_path": "src/hmt_edge_robot/assurance/mcc.py",
+          "current_function": "MissionColdStartCartographer.__init__",
+          "body_sha256": "8db8aa3201d096dc8c4ce3df5d2adbe64a67b0f870b2c37f3b1dce3868f8204a"
+        },
+        {
+          "original_function": "MissionColdStartCartographer.assess",
+          "current_path": "src/hmt_edge_robot/assurance/mcc_readiness.py",
+          "current_function": "assess",
+          "body_sha256": "63e2bf08f7f7e7cf9649da198ac4ec71ed971ef58920f3515b8f3d6f0d3843c6"
+        },
+        {
+          "original_function": "MissionColdStartCartographer._verdict",
+          "current_path": "src/hmt_edge_robot/assurance/mcc_readiness.py",
+          "current_function": "_verdict",
+          "body_sha256": "83630fcc6f9c38eb1c0ee5de919c56ed682da88052cefb543a55a73464fa6998"
+        },
+        {
+          "original_function": "MissionColdStartCartographer.collect",
+          "current_path": "src/hmt_edge_robot/assurance/mcc_collection.py",
+          "current_function": "collect",
+          "body_sha256": "23312a8e0e31bc2c9794063bddd5e8f3d61a6966f22596698d28866a13c13f8f"
+        },
+        {
+          "original_function": "MissionColdStartCartographer._collect_stages",
+          "current_path": "src/hmt_edge_robot/assurance/mcc_collection.py",
+          "current_function": "_collect_stages",
+          "body_sha256": "8daeef3a743eeeb4572ff25007219e939eab4a57c71751e1c19bb61705695685"
+        },
+        {
+          "original_function": "MissionColdStartCartographer.envelope",
+          "current_path": "src/hmt_edge_robot/assurance/mcc.py",
+          "current_function": "MissionColdStartCartographer.envelope",
+          "body_sha256": "7836d8a3cedc3cfd67cbf1b6fd4b02a0ce332a0ac52a69c4e41e10c1e843e25d"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/assurance/routes.py",
+      "original_sha256": "7512525853a7d27483073e44aee110b66ad14ab3626444a23b8dd2426a02c321",
+      "before_module_loc": 144,
+      "destinations": [
+        "src/hmt_edge_robot/assurance/routes.py",
+        "src/hmt_edge_robot/assurance/routes_catalog.py",
+        "src/hmt_edge_robot/assurance/routes_requests.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "native_body",
+          "current_path": "src/hmt_edge_robot/assurance/routes_requests.py",
+          "current_function": "native_body",
+          "body_sha256": "f4743678b620ba27285644dec8bf25207f689351e2ba4084da01538d55d71ba9"
+        },
+        {
+          "original_function": "body_schema",
+          "current_path": "src/hmt_edge_robot/assurance/routes_requests.py",
+          "current_function": "body_schema",
+          "body_sha256": "2cfe2d1bc41762b14474179e3430f697cd2dfa00ee857a13de6c0a48990260c7"
+        },
+        {
+          "original_function": "require",
+          "current_path": "src/hmt_edge_robot/assurance/routes_requests.py",
+          "current_function": "require",
+          "body_sha256": "ac7f3d25d973468c98477041ed9d16113dd9bbf3a3f411d0d9542533333389c4"
+        },
+        {
+          "original_function": "routes",
+          "current_path": "src/hmt_edge_robot/assurance/routes.py",
+          "current_function": "routes",
+          "body_sha256": "4404661379038c72263607aeaaee74ff625f40658b254ff9541480ab7bafb4b6"
+        },
+        {
+          "original_function": "catalog_routes",
+          "current_path": "src/hmt_edge_robot/assurance/routes_catalog.py",
+          "current_function": "catalog_routes",
+          "body_sha256": "6c2ba860d011d4f7c406c333b05c9081007d013ae9ed9fcb0595cd39a9aee376"
+        },
+        {
+          "original_function": "mutation_routes",
+          "current_path": "src/hmt_edge_robot/assurance/routes_catalog.py",
+          "current_function": "mutation_routes",
+          "body_sha256": "b6c98c1eb03eaddcc844ee6cac7ba02927f6586b9a598c994bd7109aaca277de"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/assurance/usea.py",
+      "original_sha256": "bf4e9d477b6ffb5a3b5ca99b59f7b68068c0e3591a258928a50e1747624ac3f8",
+      "before_module_loc": 101,
+      "destinations": [
+        "src/hmt_edge_robot/assurance/usea.py",
+        "src/hmt_edge_robot/assurance/usea_manifest.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "UndeclaredSideEffectAttestor.__init__",
+          "current_path": "src/hmt_edge_robot/assurance/usea.py",
+          "current_function": "UndeclaredSideEffectAttestor.__init__",
+          "body_sha256": "8db8aa3201d096dc8c4ce3df5d2adbe64a67b0f870b2c37f3b1dce3868f8204a"
+        },
+        {
+          "original_function": "UndeclaredSideEffectAttestor.attest",
+          "current_path": "src/hmt_edge_robot/assurance/usea.py",
+          "current_function": "UndeclaredSideEffectAttestor.attest",
+          "body_sha256": "16f19115ee93621170ec0d4b756605f64ea9c8c6f8224d544a2d8ede9bcf773e"
+        },
+        {
+          "original_function": "file_manifest",
+          "current_path": "src/hmt_edge_robot/assurance/usea_manifest.py",
+          "current_function": "file_manifest",
+          "body_sha256": "917a3f2a6ca2f63b882cb0b4f3a1d97d04d2667915e866432544c061381040c5"
+        },
+        {
+          "original_function": "manifest_effects",
+          "current_path": "src/hmt_edge_robot/assurance/usea_manifest.py",
+          "current_function": "manifest_effects",
+          "body_sha256": "78d6b7c6e22fd22b96ca034d90ea44524959df648b8488428217dae1f6927586"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/cli.py",
+      "original_sha256": "a0da6e738d6e87689f01778a73901f8497274cd04bb1a5cf69005dd78a745ee0",
+      "before_module_loc": 124,
+      "destinations": [
+        "src/hmt_edge_robot/cli.py",
+        "src/hmt_edge_robot/cli_commands.py",
+        "src/hmt_edge_robot/cli_demonstration.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "demonstrate",
+          "current_path": "src/hmt_edge_robot/cli_demonstration.py",
+          "current_function": "demonstrate",
+          "body_sha256": "e6ee2936d3f7b041fbb1f4e77921575b0e8cbe41c47d4fbb5f68d6706125d32f"
+        },
+        {
+          "original_function": "parser",
+          "current_path": "src/hmt_edge_robot/cli.py",
+          "current_function": "parser",
+          "body_sha256": "7fb907a11efff8db648057db3ffa83fafd3f76eb8d5299a7e009adaf0eeb7c37"
+        },
+        {
+          "original_function": "main",
+          "current_path": "src/hmt_edge_robot/cli.py",
+          "current_function": "main",
+          "body_sha256": "eea28f1f7541e2550417eb7049c11ed6a9fd8a4b5d7abca6919ee28d510f6932"
+        },
+        {
+          "original_function": "dispatch",
+          "current_path": "src/hmt_edge_robot/cli_commands.py",
+          "current_function": "dispatch",
+          "body_sha256": "e048afe447f45f371e186b230bcbb8d62d0113c9e84bb6038dd2f2f6d46b61d8"
+        },
+        {
+          "original_function": "serve",
+          "current_path": "src/hmt_edge_robot/cli_commands.py",
+          "current_function": "serve",
+          "body_sha256": "30958e194641a159f4e3e8708be66344ba6c4b8c18b9c4e24234210fa7d66918"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/contracts.py",
+      "original_sha256": "8ca9680bd5480af3054cfe91a20fcef97bbbd885d2f931743aa23d874ff2a15b",
+      "before_module_loc": 140,
+      "destinations": [
+        "src/hmt_edge_robot/contracts.py",
+        "src/hmt_edge_robot/contracts_base.py",
+        "src/hmt_edge_robot/contracts_motion.py",
+        "src/hmt_edge_robot/contracts_observations.py",
+        "src/hmt_edge_robot/contracts_policy.py",
+        "src/hmt_edge_robot/contracts_resident.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "canonical",
+          "current_path": "src/hmt_edge_robot/contracts_base.py",
+          "current_function": "canonical",
+          "body_sha256": "fdb44642c0e339e87e8f7e4a498d84595a7910facee065b5526d59f2d7dfd032"
+        },
+        {
+          "original_function": "digest",
+          "current_path": "src/hmt_edge_robot/contracts_base.py",
+          "current_function": "digest",
+          "body_sha256": "91b1ee57a1cdf2ce68aaaed0b979a98a639360ece290f9fd1fa0af39189ebed7"
+        },
+        {
+          "original_function": "utc_now",
+          "current_path": "src/hmt_edge_robot/contracts_base.py",
+          "current_function": "utc_now",
+          "body_sha256": "6c647a8530c6fbd5ba9c28c2be53ab33bdeb51989b37e55881bb0a54b42c1397"
+        },
+        {
+          "original_function": "Policy.ordered_bounds",
+          "current_path": "src/hmt_edge_robot/contracts_policy.py",
+          "current_function": "Policy.ordered_bounds",
+          "body_sha256": "28a3fd903474b5c63228818fa2e1299ffcddb5ef518724b40560962cacdbe17f"
+        },
+        {
+          "original_function": "MotionRequest.valid_interval",
+          "current_path": "src/hmt_edge_robot/contracts_motion.py",
+          "current_function": "MotionRequest.valid_interval",
+          "body_sha256": "9d9308c4f1d7937c64337691089db140358bef1226bab7dbd575afd30c39b0a7"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/ledger.py",
+      "original_sha256": "a95f307690a06d2123401c33767d4b012520ceb8478dd02aa4cd95b8b6e34c23",
+      "before_module_loc": 177,
+      "destinations": [
+        "src/hmt_edge_robot/ledger.py",
+        "src/hmt_edge_robot/ledger_errors.py",
+        "src/hmt_edge_robot/ledger_queries.py",
+        "src/hmt_edge_robot/ledger_replay.py",
+        "src/hmt_edge_robot/ledger_transitions.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "Ledger.__init__",
+          "current_path": "src/hmt_edge_robot/ledger.py",
+          "current_function": "Ledger.__init__",
+          "body_sha256": "1b63e24f824c4dd4930e4a0854e2e9a47a9e1a4a71fa05bddd7f9ce502607ead"
+        },
+        {
+          "original_function": "Ledger._append",
+          "current_path": "src/hmt_edge_robot/ledger_transitions.py",
+          "current_function": "_append",
+          "body_sha256": "4d2c9aea31565a098c0f20381c1e20d993069fa0ede03e4c88a29d970d853738"
+        },
+        {
+          "original_function": "Ledger.append",
+          "current_path": "src/hmt_edge_robot/ledger_transitions.py",
+          "current_function": "append",
+          "body_sha256": "f597c210a3976d6996503f2b0bbe95ed216aeb27ba135d5c11ea2af8a2bada4d"
+        },
+        {
+          "original_function": "Ledger.claim",
+          "current_path": "src/hmt_edge_robot/ledger_transitions.py",
+          "current_function": "claim",
+          "body_sha256": "da44b0d70ba10bdf87333276e41a062d48ab7d12bd520ae22641ca2064879db9"
+        },
+        {
+          "original_function": "Ledger.transition",
+          "current_path": "src/hmt_edge_robot/ledger_transitions.py",
+          "current_function": "transition",
+          "body_sha256": "99a900367a56cebf79b88c0a9d27d2197d6c1058e269894536427e27649943a5"
+        },
+        {
+          "original_function": "Ledger.task",
+          "current_path": "src/hmt_edge_robot/ledger_queries.py",
+          "current_function": "task",
+          "body_sha256": "448885893d1e6773d6de44417a67bd7dc330bcca96c5eb761eabab2c6f8c1335"
+        },
+        {
+          "original_function": "Ledger.recent",
+          "current_path": "src/hmt_edge_robot/ledger_queries.py",
+          "current_function": "recent",
+          "body_sha256": "58442627fb6436260adfd43c610e9e64bc8accf99032c1aad96e1f8fb39e8488"
+        },
+        {
+          "original_function": "Ledger.verify",
+          "current_path": "src/hmt_edge_robot/ledger_replay.py",
+          "current_function": "verify",
+          "body_sha256": "4e7cdf5a829691883306d921a017ef8aa02210f0000947c412d281399ca77281"
+        },
+        {
+          "original_function": "Ledger._verify_tasks",
+          "current_path": "src/hmt_edge_robot/ledger_replay.py",
+          "current_function": "_verify_tasks",
+          "body_sha256": "d307c2aa2362d2d57eaf2d5f1f9df727eb74781e3be8afbac652c9c9fa5c4a3a"
+        },
+        {
+          "original_function": "Ledger.recover",
+          "current_path": "src/hmt_edge_robot/ledger_queries.py",
+          "current_function": "recover",
+          "body_sha256": "efb9aff24411366fa45fd7ff44fe09fb6d1b36b331e64232a1fd32df70bd37c8"
+        },
+        {
+          "original_function": "Ledger.flush",
+          "current_path": "src/hmt_edge_robot/ledger.py",
+          "current_function": "Ledger.flush",
+          "body_sha256": "6021e4566ddac600db823e4f6c6bca1107808a3e1b1ae882abe2c8f49291cc3f"
+        },
+        {
+          "original_function": "Ledger.close",
+          "current_path": "src/hmt_edge_robot/ledger.py",
+          "current_function": "Ledger.close",
+          "body_sha256": "a752cda570591ed926f4da06a66edd2cc65dc1e976aecf6c03d11f758ca44ce8"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/orchestrator.py",
+      "original_sha256": "9008e10165142355abe489d3bf4ce7646a7f8f6e9d28914ee0847d21f8d83813",
+      "before_module_loc": 228,
+      "destinations": [
+        "src/hmt_edge_robot/orchestrator.py",
+        "src/hmt_edge_robot/orchestrator_admission.py",
+        "src/hmt_edge_robot/orchestrator_driver.py",
+        "src/hmt_edge_robot/orchestrator_execution.py",
+        "src/hmt_edge_robot/orchestrator_recovery.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "Driver.move_to",
+          "current_path": "src/hmt_edge_robot/orchestrator_driver.py",
+          "current_function": "Driver.move_to",
+          "body_sha256": "3d9e0c553f8a09e6f794a87e905d2d7ac0f558fce75901394999aabb73aface0"
+        },
+        {
+          "original_function": "Driver.gripper_close",
+          "current_path": "src/hmt_edge_robot/orchestrator_driver.py",
+          "current_function": "Driver.gripper_close",
+          "body_sha256": "3d9e0c553f8a09e6f794a87e905d2d7ac0f558fce75901394999aabb73aface0"
+        },
+        {
+          "original_function": "Driver.feedback",
+          "current_path": "src/hmt_edge_robot/orchestrator_driver.py",
+          "current_function": "Driver.feedback",
+          "body_sha256": "3d9e0c553f8a09e6f794a87e905d2d7ac0f558fce75901394999aabb73aface0"
+        },
+        {
+          "original_function": "Driver.emergency_stop",
+          "current_path": "src/hmt_edge_robot/orchestrator_driver.py",
+          "current_function": "Driver.emergency_stop",
+          "body_sha256": "3d9e0c553f8a09e6f794a87e905d2d7ac0f558fce75901394999aabb73aface0"
+        },
+        {
+          "original_function": "SimulationDriver.__init__",
+          "current_path": "src/hmt_edge_robot/orchestrator_driver.py",
+          "current_function": "SimulationDriver.__init__",
+          "body_sha256": "8f18776194491561265b5ef1c3504e6c8e49d9ea172911027559c09d578b4357"
+        },
+        {
+          "original_function": "SimulationDriver.move_to",
+          "current_path": "src/hmt_edge_robot/orchestrator_driver.py",
+          "current_function": "SimulationDriver.move_to",
+          "body_sha256": "5b582445f104a79131050ad373edb9e6da8ebf53bf4f9092dc1804e4d2d7ab86"
+        },
+        {
+          "original_function": "SimulationDriver.gripper_close",
+          "current_path": "src/hmt_edge_robot/orchestrator_driver.py",
+          "current_function": "SimulationDriver.gripper_close",
+          "body_sha256": "60561ee4d92d3f394f69ca07e4dafd38a1b54ab39885b3480da1f79aa29c771d"
+        },
+        {
+          "original_function": "SimulationDriver.feedback",
+          "current_path": "src/hmt_edge_robot/orchestrator_driver.py",
+          "current_function": "SimulationDriver.feedback",
+          "body_sha256": "7975fb678f99c5bd2ad2e0c8cbb38caad9ded219e4eae278cffb19093e940902"
+        },
+        {
+          "original_function": "SimulationDriver.emergency_stop",
+          "current_path": "src/hmt_edge_robot/orchestrator_driver.py",
+          "current_function": "SimulationDriver.emergency_stop",
+          "body_sha256": "e3fb1d3b56ca421191f8d20635698117e5b1e0ced3f073abf25552761a33f77f"
+        },
+        {
+          "original_function": "FactoryOrchestrator.__init__",
+          "current_path": "src/hmt_edge_robot/orchestrator.py",
+          "current_function": "FactoryOrchestrator.__init__",
+          "body_sha256": "6abc60d2fbf2f6467fa2e52a8c1998b51f4c9d609c73e926b8cd6470a26c76fc"
+        },
+        {
+          "original_function": "FactoryOrchestrator._guard",
+          "current_path": "src/hmt_edge_robot/orchestrator_admission.py",
+          "current_function": "_guard",
+          "body_sha256": "8fe01f487a8314594d65b68c9b667c7fa4f435b0e7721a6d79acf2366a642303"
+        },
+        {
+          "original_function": "FactoryOrchestrator._receipt",
+          "current_path": "src/hmt_edge_robot/orchestrator_admission.py",
+          "current_function": "_receipt",
+          "body_sha256": "8fe5ab9e6505fe6ef0f9f25b78a8665688972d319c0a98b22b10dfd790179327"
+        },
+        {
+          "original_function": "FactoryOrchestrator.submit",
+          "current_path": "src/hmt_edge_robot/orchestrator_admission.py",
+          "current_function": "submit",
+          "body_sha256": "40477482bcb6d23062f56f48771fd6bc6eb74d045ae2e8bd7b8a24df0cbc9c7f"
+        },
+        {
+          "original_function": "FactoryOrchestrator.cancel",
+          "current_path": "src/hmt_edge_robot/orchestrator_admission.py",
+          "current_function": "cancel",
+          "body_sha256": "6c5415c986b6683ed34dba3b8c91bb3737a3f073dcc750d1d063be0b5564e9a5"
+        },
+        {
+          "original_function": "FactoryOrchestrator.run_next",
+          "current_path": "src/hmt_edge_robot/orchestrator_execution.py",
+          "current_function": "run_next",
+          "body_sha256": "665154e58db6a9a1ac8d7b28aab72a36b854feea2b28a0749b64438baf21cc92"
+        },
+        {
+          "original_function": "FactoryOrchestrator._execute",
+          "current_path": "src/hmt_edge_robot/orchestrator_execution.py",
+          "current_function": "_execute",
+          "body_sha256": "c13e5b26c9c4e6aff8950ef88bb810d5115957d7ca06b0003b3e261637e3a405"
+        },
+        {
+          "original_function": "FactoryOrchestrator._verify",
+          "current_path": "src/hmt_edge_robot/orchestrator_execution.py",
+          "current_function": "_verify",
+          "body_sha256": "0da29bd7fb91c25b7b8f429408752167872f5a5823e7d74196a9b5882a87d52c"
+        },
+        {
+          "original_function": "FactoryOrchestrator._deadline",
+          "current_path": "src/hmt_edge_robot/orchestrator_recovery.py",
+          "current_function": "_deadline",
+          "body_sha256": "34c6678786d4dddd285986f47b77e581c4dfa4cfb42f6a60d74a6d0e1950c49d"
+        },
+        {
+          "original_function": "FactoryOrchestrator.stop",
+          "current_path": "src/hmt_edge_robot/orchestrator_recovery.py",
+          "current_function": "stop",
+          "body_sha256": "ffc4691d53910f536763a7df57b321a45a526731f30cf719a00e3af18e2cd29a"
+        },
+        {
+          "original_function": "FactoryOrchestrator.reset",
+          "current_path": "src/hmt_edge_robot/orchestrator_recovery.py",
+          "current_function": "reset",
+          "body_sha256": "9bedc28b7cfaa3f5c10e7582bb5b8f7fecd6822d8fd7f9a8fc0d91dcd536676e"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/resident.py",
+      "original_sha256": "178236698eee520352e221c5700c6fd643ff8f5f40a40390f1bb16e2981a66a7",
+      "before_module_loc": 305,
+      "destinations": [
+        "src/hmt_edge_robot/resident.py",
+        "src/hmt_edge_robot/resident_cloud.py",
+        "src/hmt_edge_robot/resident_cloud_request.py",
+        "src/hmt_edge_robot/resident_cloud_transport.py",
+        "src/hmt_edge_robot/resident_governance.py",
+        "src/hmt_edge_robot/resident_health.py",
+        "src/hmt_edge_robot/resident_providers.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "HealthModel.__init__",
+          "current_path": "src/hmt_edge_robot/resident_health.py",
+          "current_function": "HealthModel.__init__",
+          "body_sha256": "3cf3ab18f5c0d8758066a3f5d143ecf99f78769a796b109882b47497bc3ea9e1"
+        },
+        {
+          "original_function": "HealthModel.fit",
+          "current_path": "src/hmt_edge_robot/resident_health.py",
+          "current_function": "HealthModel.fit",
+          "body_sha256": "afb1b786c471017a96ced7e467d838f3e818a81a1eb8ebc5f526c0ae07619457"
+        },
+        {
+          "original_function": "HealthModel.predict",
+          "current_path": "src/hmt_edge_robot/resident_health.py",
+          "current_function": "HealthModel.predict",
+          "body_sha256": "9cd4b32566318eb37fb0c4069c454cdc9bf3de4cbbe14ab025030d6f7edcfc37"
+        },
+        {
+          "original_function": "ResidentProvider.propose",
+          "current_path": "src/hmt_edge_robot/resident_providers.py",
+          "current_function": "ResidentProvider.propose",
+          "body_sha256": "3d9e0c553f8a09e6f794a87e905d2d7ac0f558fce75901394999aabb73aface0"
+        },
+        {
+          "original_function": "CallBudget.__init__",
+          "current_path": "src/hmt_edge_robot/resident_providers.py",
+          "current_function": "CallBudget.__init__",
+          "body_sha256": "e411ae22a401eed4b3e38ae2b0552428a78decaaec7d48160323065d326639b8"
+        },
+        {
+          "original_function": "CallBudget.reserve",
+          "current_path": "src/hmt_edge_robot/resident_providers.py",
+          "current_function": "CallBudget.reserve",
+          "body_sha256": "6deb0dadccea8da7f8363c3cd5cac338661ca0cdfb1a05a1f1b3bd51ca209cc6"
+        },
+        {
+          "original_function": "DeterministicResident.propose",
+          "current_path": "src/hmt_edge_robot/resident_providers.py",
+          "current_function": "DeterministicResident.propose",
+          "body_sha256": "a91dc333824c0804e31a2938b29814b216ae599e3735c1e700d97e4a80af4dc4"
+        },
+        {
+          "original_function": "OpenAICompatibleProvider.__init__",
+          "current_path": "src/hmt_edge_robot/resident_cloud.py",
+          "current_function": "OpenAICompatibleProvider.__init__",
+          "body_sha256": "01b1bdafdeab04d9508044f3a59b7ea8f2ae49f4fdd3b109e4b93f1629016794"
+        },
+        {
+          "original_function": "OpenAICompatibleProvider.propose",
+          "current_path": "src/hmt_edge_robot/resident_cloud.py",
+          "current_function": "OpenAICompatibleProvider.propose",
+          "body_sha256": "c8617340c2de9ccc65bf67d71a0dac3df4654ba4164c9ca65e1ce238ec5bbc74"
+        },
+        {
+          "original_function": "OpenAICompatibleProvider._body",
+          "current_path": "src/hmt_edge_robot/resident_cloud_request.py",
+          "current_function": "_body",
+          "body_sha256": "427b415685f06eb0a240c6d16c59cf9e6ffcbda89ae2a55b3d9c3ed0abb546a4"
+        },
+        {
+          "original_function": "OpenAICompatibleProvider._call",
+          "current_path": "src/hmt_edge_robot/resident_cloud_transport.py",
+          "current_function": "_call",
+          "body_sha256": "019b4e0851fdd1223fa29e98e1d48f50be62e65fd6a091857e510cdbe766e1e2"
+        },
+        {
+          "original_function": "OpenAICompatibleProvider._decode",
+          "current_path": "src/hmt_edge_robot/resident_cloud_request.py",
+          "current_function": "_decode",
+          "body_sha256": "174b1b8f2189956243168e076687da50f13ca05758ae84b8845467d22e5ecc88"
+        },
+        {
+          "original_function": "OpenAICompatibleProvider.qualify",
+          "current_path": "src/hmt_edge_robot/resident_cloud_transport.py",
+          "current_function": "qualify",
+          "body_sha256": "812d69eb4895174462bf29bcc8dc4205ce170c61b7ed4928cd677b8bc8f869ae"
+        },
+        {
+          "original_function": "ResidentHMT.__init__",
+          "current_path": "src/hmt_edge_robot/resident_governance.py",
+          "current_function": "ResidentHMT.__init__",
+          "body_sha256": "1e1c55df0358f04ef8e5b04e5c7be012e7245d5db991621236c368af54b8d137"
+        },
+        {
+          "original_function": "ResidentHMT.context",
+          "current_path": "src/hmt_edge_robot/resident_governance.py",
+          "current_function": "ResidentHMT.context",
+          "body_sha256": "2da540647245962785a6bd89418b761a4386a5d5bcf577c2813caecb28567319"
+        },
+        {
+          "original_function": "ResidentHMT.ask",
+          "current_path": "src/hmt_edge_robot/resident_governance.py",
+          "current_function": "ResidentHMT.ask",
+          "body_sha256": "c8bbd4a58f6d6480138bd18068286eaafa1e637bc13cf14dd7fc656e2ffe6acd"
+        },
+        {
+          "original_function": "ResidentHMT._record",
+          "current_path": "src/hmt_edge_robot/resident_governance.py",
+          "current_function": "ResidentHMT._record",
+          "body_sha256": "0308ae6e24083a5e751b212614af8fb3a0175b030e62442970b4098802d0c20a"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/runtime.py",
+      "original_sha256": "b195ef90bd56a939343cfea3970c4a771a68b265434828d0f0e434119cfb5488",
+      "before_module_loc": 139,
+      "destinations": [
+        "src/hmt_edge_robot/runtime.py",
+        "src/hmt_edge_robot/runtime_governance.py",
+        "src/hmt_edge_robot/runtime_simulation.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "RobotCell.__init__",
+          "current_path": "src/hmt_edge_robot/runtime.py",
+          "current_function": "RobotCell.__init__",
+          "body_sha256": "20863ca4af3656bb3c47f8e121b00ea76c78e1c896d2dfd585642eb45d865a02"
+        },
+        {
+          "original_function": "RobotCell.observe_simulation",
+          "current_path": "src/hmt_edge_robot/runtime_simulation.py",
+          "current_function": "observe_simulation",
+          "body_sha256": "9cde8c2e1c0f5de81351bae5089fcf0d1c1edb5eec90b45195c89ed90c1fe87a"
+        },
+        {
+          "original_function": "RobotCell.status",
+          "current_path": "src/hmt_edge_robot/runtime.py",
+          "current_function": "RobotCell.status",
+          "body_sha256": "04b2a2951adeed64c33eeacbb2bc2ea569e5248cdb23602df437511d9743a46b"
+        },
+        {
+          "original_function": "RobotCell.resident_tool",
+          "current_path": "src/hmt_edge_robot/runtime_governance.py",
+          "current_function": "resident_tool",
+          "body_sha256": "721c10939d30d2d8d0ded5b407b251b1d9c565949df3bce180843d546d8056b7"
+        },
+        {
+          "original_function": "RobotCell.close",
+          "current_path": "src/hmt_edge_robot/runtime.py",
+          "current_function": "RobotCell.close",
+          "body_sha256": "895b811c77fea4e3f3aa44ed9ca428a6a9d780675c7156e5957b7ba8579b7b86"
+        },
+        {
+          "original_function": "RobotCell.update_policy",
+          "current_path": "src/hmt_edge_robot/runtime_governance.py",
+          "current_function": "update_policy",
+          "body_sha256": "68334117e3b286494041cfa8d7575e591e5718c5414b32cc1a1147648ce8e064"
+        }
+      ]
+    },
+    {
+      "original_path": "src/hmt_edge_robot/safety.py",
+      "original_sha256": "0683f13ffc6b94fe73af971e94b014e901bca5caebca6e3a3870a126d8c5da53",
+      "before_module_loc": 101,
+      "destinations": [
+        "src/hmt_edge_robot/safety.py",
+        "src/hmt_edge_robot/safety_admittance.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "HaloSafe.__init__",
+          "current_path": "src/hmt_edge_robot/safety.py",
+          "current_function": "HaloSafe.__init__",
+          "body_sha256": "989c9ecd6ab731cee3bae196c22a945cb26b826c54f5db5559c323bb751b935a"
+        },
+        {
+          "original_function": "HaloSafe.update",
+          "current_path": "src/hmt_edge_robot/safety.py",
+          "current_function": "HaloSafe.update",
+          "body_sha256": "1efe3bc815d181fef79b1c90a2f9d43686ab57ad781e37c60e60b108b5f9b727"
+        },
+        {
+          "original_function": "HaloSafe.protective_distance",
+          "current_path": "src/hmt_edge_robot/safety.py",
+          "current_function": "HaloSafe.protective_distance",
+          "body_sha256": "475f612810ca6a3a809af891a8714b5b0aac80f12ca845172e7b6a2f966c5cd1"
+        },
+        {
+          "original_function": "HaloSafe.assess",
+          "current_path": "src/hmt_edge_robot/safety.py",
+          "current_function": "HaloSafe.assess",
+          "body_sha256": "0ddabcaa75a227bdfc3fca9fc83a8efc2128851164f43dd6d6d0fd00bd188620"
+        },
+        {
+          "original_function": "HaloSafe._path_distance",
+          "current_path": "src/hmt_edge_robot/safety.py",
+          "current_function": "HaloSafe._path_distance",
+          "body_sha256": "d2e6d28ad408f723972d6fc07410db2a6598362e2d25a2fe5b70246920b9bb9e"
+        },
+        {
+          "original_function": "HaloSafe.reset",
+          "current_path": "src/hmt_edge_robot/safety.py",
+          "current_function": "HaloSafe.reset",
+          "body_sha256": "dee64ead87ff9cc339347cedcaa24cdb616f491cc56cc38af9d3c1ce7f925519"
+        },
+        {
+          "original_function": "AdmittanceController.__init__",
+          "current_path": "src/hmt_edge_robot/safety_admittance.py",
+          "current_function": "AdmittanceController.__init__",
+          "body_sha256": "af305f2995c69e6eeffe9723d4c338c9eeb30dc57773e4d7f0d2333e44b522fa"
+        },
+        {
+          "original_function": "AdmittanceController.step",
+          "current_path": "src/hmt_edge_robot/safety_admittance.py",
+          "current_function": "AdmittanceController.step",
+          "body_sha256": "e4170b68e93477b796dd531a90b7bf7c81508e64430751e4e974995f578597c9"
+        }
+      ]
+    },
+    {
+      "original_path": "tests/test_api_cli.py",
+      "original_sha256": "e3c0e3ab9d2f517f1e1e96d303d207e6f0d7dad4d5e6b9a3ea6d08c17d34308a",
+      "before_module_loc": 151,
+      "destinations": [
+        "tests/test_api_cli.py",
+        "tests/test_api_cli_base.py",
+        "tests/test_api_cli_entry.py",
+        "tests/test_api_cli_http.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "test_api_full_operator_flow",
+          "current_path": "tests/test_api_cli_http.py",
+          "current_function": "test_api_full_operator_flow",
+          "body_sha256": "7c31bdaaa4a8f3be992f7771c3bb45e14d912dca8955f44437c7d26be5613f99"
+        },
+        {
+          "original_function": "test_api_cancel_errors_and_strict_payload",
+          "current_path": "tests/test_api_cli_http.py",
+          "current_function": "test_api_cancel_errors_and_strict_payload",
+          "body_sha256": "d09511efdec7b3da1ade30e2b218bdf02877526211dbdff6a3dfab7666cb593d"
+        },
+        {
+          "original_function": "test_api_lifespan_closes",
+          "current_path": "tests/test_api_cli_http.py",
+          "current_function": "test_api_lifespan_closes",
+          "body_sha256": "74168845d5685684f148426aba4ee927cf3d637eb9907599ece4c62189b73ed6"
+        },
+        {
+          "original_function": "test_cli_demo_and_commands",
+          "current_path": "tests/test_api_cli.py",
+          "current_function": "test_cli_demo_and_commands",
+          "body_sha256": "8e3eca543a0d33c97efa4b7942b8239dfc3b60a3234512d33fe878df34aaa598"
+        },
+        {
+          "original_function": "test_cli_entry_and_serve_configuration",
+          "current_path": "tests/test_api_cli_entry.py",
+          "current_function": "test_cli_entry_and_serve_configuration",
+          "body_sha256": "a5d579bb4efa0a0bf0e614be05a9a0c5b81466176eaf8eff26c1bad609da272c"
+        },
+        {
+          "original_function": "test_cli_qualified_model_seam",
+          "current_path": "tests/test_api_cli_entry.py",
+          "current_function": "test_cli_qualified_model_seam",
+          "body_sha256": "6120fbddbbba4679c439c775972db9e12edc396d1b0f7830c2422e508a03465b"
+        },
+        {
+          "original_function": "test_operator_token_minimum",
+          "current_path": "tests/test_api_cli.py",
+          "current_function": "test_operator_token_minimum",
+          "body_sha256": "c3583db7b334aace2c4742d3d5208f6999c9ca6d36865e4c59ffd2b8e6e8f872"
+        }
+      ]
+    },
+    {
+      "original_path": "tests/test_assurance_integration.py",
+      "original_sha256": "673a9d7536a9d2d8867e83a3eb73ae2e56eb66c83eedad9e0ea4ffc9e2fb5932",
+      "before_module_loc": 162,
+      "destinations": [
+        "tests/test_assurance_integration.py",
+        "tests/test_assurance_integration_http.py",
+        "tests/test_assurance_integration_replay.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "test_cross_component_witness_retention",
+          "current_path": "tests/test_assurance_integration.py",
+          "current_function": "test_cross_component_witness_retention",
+          "body_sha256": "8c13416e059be285a9fbe4a72659fdfaad17bc9016249cda7862139c480b01ad"
+        },
+        {
+          "original_function": "test_witness_binding_atomic_unknown_reference",
+          "current_path": "tests/test_assurance_integration_replay.py",
+          "current_function": "test_witness_binding_atomic_unknown_reference",
+          "body_sha256": "268feafde26a5ccc6a2233d30a95ebb62c1964d3b559c32719bd01fe4e88b213"
+        },
+        {
+          "original_function": "test_observer_durable_cursor_ack_and_restart",
+          "current_path": "tests/test_assurance_integration.py",
+          "current_function": "test_observer_durable_cursor_ack_and_restart",
+          "body_sha256": "61350b81d8d627ccf3f4abe2b416921d49f1f13be9ae34da9999f70db62df587"
+        },
+        {
+          "original_function": "test_observer_analysis_failure_not_silent",
+          "current_path": "tests/test_assurance_integration.py",
+          "current_function": "test_observer_analysis_failure_not_silent",
+          "body_sha256": "da1f2f1f274551d48fd523865a9899d4b8f4f60331657a27252756ec1af1a3e9"
+        },
+        {
+          "original_function": "test_assurance_export_sql_parquet_jsonl_graphml",
+          "current_path": "tests/test_assurance_integration.py",
+          "current_function": "test_assurance_export_sql_parquet_jsonl_graphml",
+          "body_sha256": "0ed7cf6b4703f585bc906ad36520a45f262ff3f957832881fb237fc51979e6b9"
+        },
+        {
+          "original_function": "client_for",
+          "current_path": "tests/test_assurance_integration_http.py",
+          "current_function": "client_for",
+          "body_sha256": "9b8612ad234a5bd851cdf7a200fe1331f64148e98bffa296f13fb0749b0e2bae"
+        },
+        {
+          "original_function": "test_assurance_api_native_json_and_declared_trace_hold",
+          "current_path": "tests/test_assurance_integration_http.py",
+          "current_function": "test_assurance_api_native_json_and_declared_trace_hold",
+          "body_sha256": "c52dba7447a083a1a2c130516be96aeef329cf797b897c6cbbd898ae5d76b891"
+        },
+        {
+          "original_function": "test_assurance_api_catalog_and_grant_flow",
+          "current_path": "tests/test_assurance_integration_http.py",
+          "current_function": "test_assurance_api_catalog_and_grant_flow",
+          "body_sha256": "4887e6b316a915202d49e72386c7ce89d3f9aa889a425cd48f8052830a8f1bf6"
+        },
+        {
+          "original_function": "test_catalog_readonly_no_recovery_or_writes",
+          "current_path": "tests/test_assurance_integration_replay.py",
+          "current_function": "test_catalog_readonly_no_recovery_or_writes",
+          "body_sha256": "7495ac1daedc194f6a4b8fb76cdd1c95d45850aa09ecf095f2bd3e8ef2f86932"
+        },
+        {
+          "original_function": "test_software_probe_durable_failure_and_no_returned_readiness",
+          "current_path": "tests/test_assurance_integration_replay.py",
+          "current_function": "test_software_probe_durable_failure_and_no_returned_readiness",
+          "body_sha256": "2ddf6a2b551acf0162285d18f93553ec3225b597d44f36ecf1d4654073460f88"
+        },
+        {
+          "original_function": "test_catalog_storage_fail_closed",
+          "current_path": "tests/test_assurance_integration_replay.py",
+          "current_function": "test_catalog_storage_fail_closed",
+          "body_sha256": "2c900c2b024115ef0fd63b4d854ec911e3b466dbf954ef4172d3324944747de9"
+        },
+        {
+          "original_function": "test_assurance_api_reference_binding_and_scope_rejection",
+          "current_path": "tests/test_assurance_integration_http.py",
+          "current_function": "test_assurance_api_reference_binding_and_scope_rejection",
+          "body_sha256": "c9feace2c9edf5fda2837b8f26702a85da22a15d254616322c8a320ec9d30ef4"
+        },
+        {
+          "original_function": "test_catalog_duplicate_and_expired_grant",
+          "current_path": "tests/test_assurance_integration_replay.py",
+          "current_function": "test_catalog_duplicate_and_expired_grant",
+          "body_sha256": "8d134730dfa251017a14b0fbccabc72c79e0395580caf4c4b64f4d8324ce7a3c"
+        }
+      ]
+    },
+    {
+      "original_path": "tests/test_assurance_readiness_effects.py",
+      "original_sha256": "724690862085d945baf4c02e999d8e28b53f7a8c6c51a7d37431c3f703c50b89",
+      "before_module_loc": 168,
+      "destinations": [
+        "tests/test_assurance_readiness_effects.py",
+        "tests/test_assurance_readiness_effects_base.py",
+        "tests/test_assurance_readiness_effects_effects.py",
+        "tests/test_assurance_readiness_effects_optimization.py",
+        "tests/test_assurance_readiness_effects_readiness.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "spec",
+          "current_path": "tests/test_assurance_readiness_effects_base.py",
+          "current_function": "spec",
+          "body_sha256": "5ac762e3920b1a83aad1643b29567e3254106dd81a6585e30b537f3e26a631cd"
+        },
+        {
+          "original_function": "trace",
+          "current_path": "tests/test_assurance_readiness_effects_base.py",
+          "current_function": "trace",
+          "body_sha256": "968dc8b29a5e23dd26f6051a1e0125c0607bf2bce8318fcf7940c9596993ad75"
+        },
+        {
+          "original_function": "effect_contract",
+          "current_path": "tests/test_assurance_readiness_effects_base.py",
+          "current_function": "effect_contract",
+          "body_sha256": "ded8068a8fde4a27565fc13d5de5da17d66ce1852e3219f897fa23e955d31985"
+        },
+        {
+          "original_function": "effect_trace",
+          "current_path": "tests/test_assurance_readiness_effects_base.py",
+          "current_function": "effect_trace",
+          "body_sha256": "86da599d1f3b1ae8904095dbfae869dd3fb718da45fb1f3a91d4515a96567af3"
+        },
+        {
+          "original_function": "test_mcc_mission_readiness_and_boundary",
+          "current_path": "tests/test_assurance_readiness_effects_readiness.py",
+          "current_function": "test_mcc_mission_readiness_and_boundary",
+          "body_sha256": "295973e3802d514df7b929ad12e8bd14ad8fe8d4afb80d1ed917eccdc89e9f88"
+        },
+        {
+          "original_function": "test_mcc_stage_failure",
+          "current_path": "tests/test_assurance_readiness_effects_readiness.py",
+          "current_function": "test_mcc_stage_failure",
+          "body_sha256": "fb479359fdf5f044123c47b8d414d610c5de0a4d1a636be9131b27bf3368de03"
+        },
+        {
+          "original_function": "test_mcc_incomplete_invalid_and_stale",
+          "current_path": "tests/test_assurance_readiness_effects_readiness.py",
+          "current_function": "test_mcc_incomplete_invalid_and_stale",
+          "body_sha256": "498eb8ef0221dbfbc6f9857dd8f0b52afc2283cdfd9f8b80ee8cd28e7ffaa7a2"
+        },
+        {
+          "original_function": "test_mcc_software_probe_and_timeout",
+          "current_path": "tests/test_assurance_readiness_effects_readiness.py",
+          "current_function": "test_mcc_software_probe_and_timeout",
+          "body_sha256": "a492cc8a42746a07a67c38b96d2d475f0f84d12aafe8f3b275a7663f0544e2df"
+        },
+        {
+          "original_function": "test_mcc_empirical_envelope_is_not_wcet",
+          "current_path": "tests/test_assurance_readiness_effects_readiness.py",
+          "current_function": "test_mcc_empirical_envelope_is_not_wcet",
+          "body_sha256": "328238ebb9195ff9923b692eff306c78c7af2c03540d1cc72f7676d718e172a5"
+        },
+        {
+          "original_function": "test_usea_effect_receipt_distinction",
+          "current_path": "tests/test_assurance_readiness_effects_effects.py",
+          "current_function": "test_usea_effect_receipt_distinction",
+          "body_sha256": "5bb11fd9dd2ee401189f01331fdb8fa84149fa8aeeee1ee2fcb5cdaad98cd6f6"
+        },
+        {
+          "original_function": "test_usea_incomplete_is_hold",
+          "current_path": "tests/test_assurance_readiness_effects_effects.py",
+          "current_function": "test_usea_incomplete_is_hold",
+          "body_sha256": "693ae603ce1bfbbb66a87799d58f305ea8c66f0ae2c6864abcc6c899d57128e1"
+        },
+        {
+          "original_function": "test_usea_runtime_and_exit_contract",
+          "current_path": "tests/test_assurance_readiness_effects_effects.py",
+          "current_function": "test_usea_runtime_and_exit_contract",
+          "body_sha256": "c85b5f040044840222757b3045d5386c4f072edc2c9abd7917b00fa0f922a471"
+        },
+        {
+          "original_function": "test_manifest_actual_writes_and_coverage_limit",
+          "current_path": "tests/test_assurance_readiness_effects_effects.py",
+          "current_function": "test_manifest_actual_writes_and_coverage_limit",
+          "body_sha256": "6849d1b39381a645e20a41d32c0f8f3d6392e2fc1863b20284898f4f6cdd2adb"
+        },
+        {
+          "original_function": "test_manifest_resource_bounds",
+          "current_path": "tests/test_assurance_readiness_effects_effects.py",
+          "current_function": "test_manifest_resource_bounds",
+          "body_sha256": "b2bbd2007604b6c854c389019935e485db3258cf6035032859077859e2452ee5"
+        },
+        {
+          "original_function": "test_optimization_exact_against_brute_force",
+          "current_path": "tests/test_assurance_readiness_effects_optimization.py",
+          "current_function": "test_optimization_exact_against_brute_force",
+          "body_sha256": "5fb813b0897d409a0d715579929a11fa4ce983ff745780d377ea925ec4e35a6e"
+        },
+        {
+          "original_function": "test_assurance_contracts_strict_finite_frozen",
+          "current_path": "tests/test_assurance_readiness_effects_optimization.py",
+          "current_function": "test_assurance_contracts_strict_finite_frozen",
+          "body_sha256": "68b3ee6dc8edcd7e5636fd4f0fdd3140affee72e0357fb28278d0c5a495b21b6"
+        }
+      ]
+    },
+    {
+      "original_path": "tests/test_assurance_reclamation.py",
+      "original_sha256": "32bfb55798236a4818f09df8938daad3796221aa999ccf6088dba0b67d3d933f",
+      "before_module_loc": 178,
+      "destinations": [
+        "tests/test_assurance_reclamation.py",
+        "tests/test_assurance_reclamation_authority.py",
+        "tests/test_assurance_reclamation_base.py",
+        "tests/test_assurance_reclamation_protection.py",
+        "tests/test_assurance_reclamation_replay.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "setup_artifact",
+          "current_path": "tests/test_assurance_reclamation_base.py",
+          "current_function": "setup_artifact",
+          "body_sha256": "063000247d0003050bb298532fb4a21173af265407c5e42524e56a23f7a85e38"
+        },
+        {
+          "original_function": "plan",
+          "current_path": "tests/test_assurance_reclamation_base.py",
+          "current_function": "plan",
+          "body_sha256": "dd5f54ef4a17fb2f01e9cf9ba882ec03b147dd8a26e2bb10983bbcf9ceede7be"
+        },
+        {
+          "original_function": "grant",
+          "current_path": "tests/test_assurance_reclamation_base.py",
+          "current_function": "grant",
+          "body_sha256": "bf3c2470e6cee25db09e7e6c78723cf1ff46267321f45e35dfbdef6c307cbc17"
+        },
+        {
+          "original_function": "test_agc_transitive_reference_closure_and_cycles",
+          "current_path": "tests/test_assurance_reclamation_protection.py",
+          "current_function": "test_agc_transitive_reference_closure_and_cycles",
+          "body_sha256": "2248d9b3c984758bd05574095700c570634078a63179af705f7ee6e06ca001f1"
+        },
+        {
+          "original_function": "test_agc_reference_protection",
+          "current_path": "tests/test_assurance_reclamation_protection.py",
+          "current_function": "test_agc_reference_protection",
+          "body_sha256": "130343d6fd9941f0e3410ccd4fe0fd8913e1fc9f918f385b6b21ac30d50957d6"
+        },
+        {
+          "original_function": "test_agc_unknown_hold",
+          "current_path": "tests/test_assurance_reclamation_protection.py",
+          "current_function": "test_agc_unknown_hold",
+          "body_sha256": "a8088e2135b85a2aba42ee7a07c502bd902b763b6f41f94f30e1ae680c092f1e"
+        },
+        {
+          "original_function": "test_agc_dry_run_quarantine_restore_and_governed_delete",
+          "current_path": "tests/test_assurance_reclamation.py",
+          "current_function": "test_agc_dry_run_quarantine_restore_and_governed_delete",
+          "body_sha256": "a8655ed2abf4c9b1d22da2ba06745bbad59539fd23dd0d754712e7944b4984f5"
+        },
+        {
+          "original_function": "test_agc_fence_changed_reference_and_no_grant_replay",
+          "current_path": "tests/test_assurance_reclamation_authority.py",
+          "current_function": "test_agc_fence_changed_reference_and_no_grant_replay",
+          "body_sha256": "d4e8f3ce48bc5614009b8df19aa0d16017afcb3b83588245e0c8e9e26a6c6662"
+        },
+        {
+          "original_function": "test_agc_authority_revoked_and_policy_epoch_changed",
+          "current_path": "tests/test_assurance_reclamation_authority.py",
+          "current_function": "test_agc_authority_revoked_and_policy_epoch_changed",
+          "body_sha256": "9065f0aa896bb37ce6d868ff291effcef9cdb3d14b8bc17881642e7b6decdce4"
+        },
+        {
+          "original_function": "test_agc_plan_reconstruction_and_forged_grant",
+          "current_path": "tests/test_assurance_reclamation_authority.py",
+          "current_function": "test_agc_plan_reconstruction_and_forged_grant",
+          "body_sha256": "34b23dac8b7cb93a62a5c96ca634fe9120e3a8f2de4ecabddf1d223d4ee1219c"
+        },
+        {
+          "original_function": "test_agc_reference_added_during_quarantine_blocks_delete",
+          "current_path": "tests/test_assurance_reclamation_authority.py",
+          "current_function": "test_agc_reference_added_during_quarantine_blocks_delete",
+          "body_sha256": "e77d1e49ca672138f2a65fb35700c9b308ee3004976a59b82fa3aa12ef6890d5"
+        },
+        {
+          "original_function": "test_catalog_content_projection_tampering",
+          "current_path": "tests/test_assurance_reclamation_replay.py",
+          "current_function": "test_catalog_content_projection_tampering",
+          "body_sha256": "97a9392e8c5c2092802402a2c5682152e785f6c7ef2b953511fe2be2086c50d4"
+        },
+        {
+          "original_function": "test_agc_evidence_failure_rolls_back_mutation",
+          "current_path": "tests/test_assurance_reclamation_replay.py",
+          "current_function": "test_agc_evidence_failure_rolls_back_mutation",
+          "body_sha256": "857cc1657137ba25993e17412a2798e640639e76636e25b7e20f07dc86331bca"
+        },
+        {
+          "original_function": "test_catalog_and_census_bounds",
+          "current_path": "tests/test_assurance_reclamation_protection.py",
+          "current_function": "test_catalog_and_census_bounds",
+          "body_sha256": "d43f6d32eb0a65b1c511893685db4555b32e2e211d6679e99c971977bcee7728"
+        },
+        {
+          "original_function": "test_catalog_missing_record_and_revision_tamper",
+          "current_path": "tests/test_assurance_reclamation_replay.py",
+          "current_function": "test_catalog_missing_record_and_revision_tamper",
+          "body_sha256": "16108413cbc2de83d30a13f985cc6c9d330f62d6c7e1306a3c7a2b3fab63d682"
+        }
+      ]
+    },
+    {
+      "original_path": "tests/test_contracts_geometry.py",
+      "original_sha256": "e5736c6c046bb619fb6990083c0d58ee4748b7ebcb0b0f87f1fe87b894277fcc",
+      "before_module_loc": 101,
+      "destinations": [
+        "tests/test_contracts_geometry.py",
+        "tests/test_contracts_geometry_vision.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "test_nonfinite_boundary_rejected",
+          "current_path": "tests/test_contracts_geometry.py",
+          "current_function": "test_nonfinite_boundary_rejected",
+          "body_sha256": "0b85f7fb59a2c2fa9b082c980f05822dab8adaf2c8572c6de4ed7b2fd234b059"
+        },
+        {
+          "original_function": "test_contracts_forbid_unknown_mutation_coercion",
+          "current_path": "tests/test_contracts_geometry.py",
+          "current_function": "test_contracts_forbid_unknown_mutation_coercion",
+          "body_sha256": "0814c43b871e4254a50891d2903cbb1d92b5ba35b694dbcf6bd83837c79cce23"
+        },
+        {
+          "original_function": "test_policy_ordering",
+          "current_path": "tests/test_contracts_geometry.py",
+          "current_function": "test_policy_ordering",
+          "body_sha256": "325ee3a3ea6b4285638c42208398cdded02e61ddcb7d3bbce4b5e7f1ae1bd68e"
+        },
+        {
+          "original_function": "test_pga_classical_parity_and_inverse",
+          "current_path": "tests/test_contracts_geometry.py",
+          "current_function": "test_pga_classical_parity_and_inverse",
+          "body_sha256": "1b8f76c45d38e1ea590ad2293d4686d2e06939332fa7bf1530729782bcebd840"
+        },
+        {
+          "original_function": "test_invalid_motor_point",
+          "current_path": "tests/test_contracts_geometry.py",
+          "current_function": "test_invalid_motor_point",
+          "body_sha256": "b5a88fd1685d3d2e09b4a97da1876908f28e1b12be2e9e6b30efc26b18b2b813"
+        },
+        {
+          "original_function": "test_grasp_candidates_calibration_determinism",
+          "current_path": "tests/test_contracts_geometry_vision.py",
+          "current_function": "test_grasp_candidates_calibration_determinism",
+          "body_sha256": "a8c7c56641240c4b8b731b1665d24facd24bc8142ff0dde523bc0098cfa08746"
+        },
+        {
+          "original_function": "test_vision_rejects_ambiguity_empty_small_and_format",
+          "current_path": "tests/test_contracts_geometry_vision.py",
+          "current_function": "test_vision_rejects_ambiguity_empty_small_and_format",
+          "body_sha256": "5d7af3c25f7be9c462e97e296bd8875d56c45054f351763cb87626f8abbb4421"
+        },
+        {
+          "original_function": "test_admittance_law_and_bounds",
+          "current_path": "tests/test_contracts_geometry_vision.py",
+          "current_function": "test_admittance_law_and_bounds",
+          "body_sha256": "b0580b7689f4e0d9e97a7a98467b547e7dd98ab49872aa2973114cebe8221c5d"
+        }
+      ]
+    },
+    {
+      "original_path": "tests/test_orchestration_ledger.py",
+      "original_sha256": "475587ade6837cb3fc09bd70b8c149427dada66736b8e37fada8ca41ad177378",
+      "before_module_loc": 179,
+      "destinations": [
+        "tests/test_orchestration_ledger.py",
+        "tests/test_orchestration_ledger_authority.py",
+        "tests/test_orchestration_ledger_driver.py",
+        "tests/test_orchestration_ledger_replay.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "test_nominal_outcome_chain",
+          "current_path": "tests/test_orchestration_ledger.py",
+          "current_function": "test_nominal_outcome_chain",
+          "body_sha256": "3d58cc6cb710762aa3c6809e10389876e47b0bd6d0acd12d9e24a3f9f9880e99"
+        },
+        {
+          "original_function": "FailedDriver.move_to",
+          "current_path": "tests/test_orchestration_ledger_driver.py",
+          "current_function": "FailedDriver.move_to",
+          "body_sha256": "59c088f20e891706a43dd0de9ebf8f4a05a953446a81795f7e065b4da6676cf8"
+        },
+        {
+          "original_function": "FailedGripper.gripper_close",
+          "current_path": "tests/test_orchestration_ledger_driver.py",
+          "current_function": "FailedGripper.gripper_close",
+          "body_sha256": "59c088f20e891706a43dd0de9ebf8f4a05a953446a81795f7e065b4da6676cf8"
+        },
+        {
+          "original_function": "BadFeedback.feedback",
+          "current_path": "tests/test_orchestration_ledger_driver.py",
+          "current_function": "BadFeedback.feedback",
+          "body_sha256": "d6d5ef286a1e987467fdf386c89b8c8d57f58ac7d97c82f43d015b342f933fcb"
+        },
+        {
+          "original_function": "EmptyGrasp.feedback",
+          "current_path": "tests/test_orchestration_ledger_driver.py",
+          "current_function": "EmptyGrasp.feedback",
+          "body_sha256": "26d1887130f6a5285c5121c4107062545c446f8c8093bd960b332ec3142f1065"
+        },
+        {
+          "original_function": "NonfiniteFeedback.feedback",
+          "current_path": "tests/test_orchestration_ledger_driver.py",
+          "current_function": "NonfiniteFeedback.feedback",
+          "body_sha256": "ba6ba878549972eeed394c1f33403f6784f38c5a0df1d57d53823930e393c139"
+        },
+        {
+          "original_function": "test_driver_ack_and_feedback_regressions",
+          "current_path": "tests/test_orchestration_ledger_driver.py",
+          "current_function": "test_driver_ack_and_feedback_regressions",
+          "body_sha256": "092e07382823c7fa0cf6e8b97ea70931313e7cb18e9d513bb2ac6dd6b018b831"
+        },
+        {
+          "original_function": "test_admission_denials",
+          "current_path": "tests/test_orchestration_ledger_driver.py",
+          "current_function": "test_admission_denials",
+          "body_sha256": "2108dcd3f5c1f141ab3634325f24241bef4159ac9b4ee7ca4407469f149e402f"
+        },
+        {
+          "original_function": "test_substrate_stop_and_pending_revalidation",
+          "current_path": "tests/test_orchestration_ledger_driver.py",
+          "current_function": "test_substrate_stop_and_pending_revalidation",
+          "body_sha256": "7ca667fc64e1a51184f30c218c5a43252d3bcd7e782dc494cc14bba1ace851bc"
+        },
+        {
+          "original_function": "test_queue_backpressure_and_cancel",
+          "current_path": "tests/test_orchestration_ledger.py",
+          "current_function": "test_queue_backpressure_and_cancel",
+          "body_sha256": "249f48c461b7c3f5b253de6e3c23201ce184f6bffa70abaf64292b58f6e02716"
+        },
+        {
+          "original_function": "test_duplicate_atomic_admission",
+          "current_path": "tests/test_orchestration_ledger_authority.py",
+          "current_function": "test_duplicate_atomic_admission",
+          "body_sha256": "32626e3f09adbb3c9f14248641ce543fffabbe10e4a21ade674bbcd4026644a1"
+        },
+        {
+          "original_function": "test_authority_rechecked_after_movement",
+          "current_path": "tests/test_orchestration_ledger_authority.py",
+          "current_function": "test_authority_rechecked_after_movement",
+          "body_sha256": "d3ff3ba90861e518d5c897be59b5a3b3448c75a4ce87d4c678d1ba851b1653c8"
+        },
+        {
+          "original_function": "test_deadline_detection_and_stop",
+          "current_path": "tests/test_orchestration_ledger_authority.py",
+          "current_function": "test_deadline_detection_and_stop",
+          "body_sha256": "170196163ecb108ceba14bef112031af4afbc6813011809bdf69184f640e1738"
+        },
+        {
+          "original_function": "test_evidence_failure_stops_before_side_effect",
+          "current_path": "tests/test_orchestration_ledger_authority.py",
+          "current_function": "test_evidence_failure_stops_before_side_effect",
+          "body_sha256": "5867e8072b16796c2d9537f71c36debc9a4860133cbf21172278307d0037272e"
+        },
+        {
+          "original_function": "test_policy_update_revokes_pending_authority",
+          "current_path": "tests/test_orchestration_ledger_authority.py",
+          "current_function": "test_policy_update_revokes_pending_authority",
+          "body_sha256": "d049de517382c91835f23460a64e614c4708ff1bb9deb519e5afdb8e3828a92b"
+        },
+        {
+          "original_function": "test_ledger_restart_append_only_and_law",
+          "current_path": "tests/test_orchestration_ledger_replay.py",
+          "current_function": "test_ledger_restart_append_only_and_law",
+          "body_sha256": "27e3b0abb7de49db1449fa9e269f78a456fec0463235af055ac062c7b7e3d5c5"
+        },
+        {
+          "original_function": "test_ledger_corruption_detected",
+          "current_path": "tests/test_orchestration_ledger_replay.py",
+          "current_function": "test_ledger_corruption_detected",
+          "body_sha256": "3135daba38ddca35b198c04e5512a9547d3cd1c4bf2b4fdbe0e866460c69a894"
+        },
+        {
+          "original_function": "test_ledger_errors_and_bounds",
+          "current_path": "tests/test_orchestration_ledger_replay.py",
+          "current_function": "test_ledger_errors_and_bounds",
+          "body_sha256": "e79ef0036c5e3a4475d24fa4b7c3f910fae56fe956658c6ca779e2087b26607b"
+        }
+      ]
+    },
+    {
+      "original_path": "tests/test_resident_analytics.py",
+      "original_sha256": "8be519fdbdc1d0e063fa7dac6a46532dcb2f407bb9327271074d4a3f799595a5",
+      "before_module_loc": 234,
+      "destinations": [
+        "tests/test_resident_analytics.py",
+        "tests/test_resident_analytics_base.py",
+        "tests/test_resident_analytics_budget.py",
+        "tests/test_resident_analytics_governance.py",
+        "tests/test_resident_analytics_transport.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "test_analytics_actual_engines_and_parquet",
+          "current_path": "tests/test_resident_analytics.py",
+          "current_function": "test_analytics_actual_engines_and_parquet",
+          "body_sha256": "ac41917723ddafcd0385bd93ab44fe1864d2e2439af9d3a7115ed821338181ff"
+        },
+        {
+          "original_function": "test_empty_analytics",
+          "current_path": "tests/test_resident_analytics.py",
+          "current_function": "test_empty_analytics",
+          "body_sha256": "0f3f98ea0c43ef58758973e8b0d419ba99941f534782e0e626022813b126d2ce"
+        },
+        {
+          "original_function": "test_classical_ml_fit_inference_and_determinism",
+          "current_path": "tests/test_resident_analytics.py",
+          "current_function": "test_classical_ml_fit_inference_and_determinism",
+          "body_sha256": "e4fa5faafab645534e5394b2102126498fd386c7a584cb1e74700cae51a683c6"
+        },
+        {
+          "original_function": "FixtureProvider.__init__",
+          "current_path": "tests/test_resident_analytics_governance.py",
+          "current_function": "FixtureProvider.__init__",
+          "body_sha256": "b20aea84e32094452abcc41d8910d3991a83ad943773a428dd479231b0e9f250"
+        },
+        {
+          "original_function": "FixtureProvider.propose",
+          "current_path": "tests/test_resident_analytics_governance.py",
+          "current_function": "FixtureProvider.propose",
+          "body_sha256": "c27dc7927afc9824a73ac604d6c5a091bd04748e2d3fd0d740bb79126d3682bf"
+        },
+        {
+          "original_function": "test_routed_model_id_and_stop_admission",
+          "current_path": "tests/test_resident_analytics_governance.py",
+          "current_function": "test_routed_model_id_and_stop_admission",
+          "body_sha256": "757fee4b5312fc581c8037949613679e2bf3b63d938d18b03e2331f69bdbab6b"
+        },
+        {
+          "original_function": "test_resident_invalid_provider_holds",
+          "current_path": "tests/test_resident_analytics_governance.py",
+          "current_function": "test_resident_invalid_provider_holds",
+          "body_sha256": "41f2a764222e10f0c70372f017b1e61a8a59287093da3f17a99b9f6fc783ec55"
+        },
+        {
+          "original_function": "test_resident_context_tools_and_bounds",
+          "current_path": "tests/test_resident_analytics_governance.py",
+          "current_function": "test_resident_context_tools_and_bounds",
+          "body_sha256": "ff1af408b1af71f5dd6345f4d078a30f2f1a783fcaafdb15ef9279e3bd2d0dd8"
+        },
+        {
+          "original_function": "test_provider_profiles_and_price_budget",
+          "current_path": "tests/test_resident_analytics_governance.py",
+          "current_function": "test_provider_profiles_and_price_budget",
+          "body_sha256": "100f90dc54d2e4f521fe9feda76d071e4962fea8e5f5539d81b73bbf420fd2dc"
+        },
+        {
+          "original_function": "mock_client",
+          "current_path": "tests/test_resident_analytics_transport.py",
+          "current_function": "mock_client",
+          "body_sha256": "a4828ff7767a95a13996d9d5832ba0fadbd1399b9127b83b5f30b7c16b2493d2"
+        },
+        {
+          "original_function": "test_http_adapter_canary_proposal_usage",
+          "current_path": "tests/test_resident_analytics_transport.py",
+          "current_function": "test_http_adapter_canary_proposal_usage",
+          "body_sha256": "2cc30ef8527775519de4b17f3516f6de5c32543bb8024bb88b033d2fcb26bfe0"
+        },
+        {
+          "original_function": "test_http_invalid_response",
+          "current_path": "tests/test_resident_analytics_transport.py",
+          "current_function": "test_http_invalid_response",
+          "body_sha256": "d7013a46d172e8d8c21b0e546b5dc9506677e1906686a076dad4ebde08cdad64"
+        },
+        {
+          "original_function": "test_paid_adapter_incomplete_or_uncertain_usage_holds",
+          "current_path": "tests/test_resident_analytics_budget.py",
+          "current_function": "test_paid_adapter_incomplete_or_uncertain_usage_holds",
+          "body_sha256": "6308a64076da9dc99d8e1c1f783fe4340ed0185411f0daa6dbbd9ddf14b583bc"
+        },
+        {
+          "original_function": "test_http_size_status_and_evidence_guards",
+          "current_path": "tests/test_resident_analytics_budget.py",
+          "current_function": "test_http_size_status_and_evidence_guards",
+          "body_sha256": "a8fd9fc3cc53e9da57b2ca8b34bde8f484f568a6090bf2003c22a86df21cc4fc"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/assurance_campaign.py",
+      "original_sha256": "e11871549cb05f15cd3b484f25ec0462cb4820c1493228f0ccdded32eb0fbce7",
+      "before_module_loc": 115,
+      "destinations": [
+        "tools/assurance_campaign.py",
+        "tools/assurance_campaign_base.py",
+        "tools/assurance_campaign_probes.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "readiness",
+          "current_path": "tools/assurance_campaign_probes.py",
+          "current_function": "readiness",
+          "body_sha256": "dd386f06de43676cc28379f8e5c580bbe8cb4974d507970460ac9f3a41e3754a"
+        },
+        {
+          "original_function": "effects",
+          "current_path": "tools/assurance_campaign_probes.py",
+          "current_function": "effects",
+          "body_sha256": "18d6adc8f4f78b65db98ebbdd995a44c524186d3f1f57b0f8529e48637340021"
+        },
+        {
+          "original_function": "scale",
+          "current_path": "tools/assurance_campaign_probes.py",
+          "current_function": "scale",
+          "body_sha256": "480079cb3319d1bc7d61127e809eb5fd41eadd9ec2b054a35d310d12bb319108"
+        },
+        {
+          "original_function": "campaign",
+          "current_path": "tools/assurance_campaign.py",
+          "current_function": "campaign",
+          "body_sha256": "7c32b445083d50611f60da46195bbc527c7a5b3a65c4be7c9b465768a29926b2"
+        },
+        {
+          "original_function": "main",
+          "current_path": "tools/assurance_campaign.py",
+          "current_function": "main",
+          "body_sha256": "e793c3550e1d9ee80f58488a1b9b8f7a3591e3e92d5204eaf7f27924de9088d2"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/live_llm_campaign.py",
+      "original_sha256": "b65fb6e9c5bd91d639892382df1cb4f149cff2916a95e2553f626d979a276527",
+      "before_module_loc": 113,
+      "destinations": [
+        "tools/live_llm_campaign.py",
+        "tools/live_llm_campaign_provider.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "campaign",
+          "current_path": "tools/live_llm_campaign_provider.py",
+          "current_function": "campaign",
+          "body_sha256": "244eb1f4c3cb7f731d1cee79dddc625a6c856c3965169e88edb2402fa3d6066f"
+        },
+        {
+          "original_function": "completed",
+          "current_path": "tools/live_llm_campaign_provider.py",
+          "current_function": "completed",
+          "body_sha256": "b2576813e4c9fadd3227d1c3d77f2755108d133adf9f3930bab698e89d5082f3"
+        },
+        {
+          "original_function": "main",
+          "current_path": "tools/live_llm_campaign.py",
+          "current_function": "main",
+          "body_sha256": "00bd108304289ef15d71da45a415821a70fc16ac3221e3aacba153cd90d872db"
+        }
+      ]
+    },
+    {
+      "original_path": "tools/validate.py",
+      "original_sha256": "d6f807c5dfb3690952cb66a15797e2bd6166eeddfa03df5661b87a08c8293174",
+      "before_module_loc": 285,
+      "destinations": [
+        "tools/validate.py",
+        "tools/validate_base.py",
+        "tools/validate_execution.py",
+        "tools/validate_incidents.py",
+        "tools/validate_ledger.py",
+        "tools/validate_regression.py",
+        "tools/validate_report.py",
+        "tools/validate_structure.py"
+      ],
+      "function_body_parity": [
+        {
+          "original_function": "sha",
+          "current_path": "tools/validate_base.py",
+          "current_function": "sha",
+          "body_sha256": "5a7d44ed68cc55737e7b4c5aca2f349f3e1edf68a19eea5da81afd3bae30914e"
+        },
+        {
+          "original_function": "database",
+          "current_path": "tools/validate_ledger.py",
+          "current_function": "database",
+          "body_sha256": "b0ec97c19231c5f3365e7f83f442e1eef0414637a450c331cf70d6c87446985b"
+        },
+        {
+          "original_function": "record",
+          "current_path": "tools/validate_ledger.py",
+          "current_function": "record",
+          "body_sha256": "48666752c20bbc7a8c4d9fed61e753a34f58c2548470ecd62ba0870f3d6d6e58"
+        },
+        {
+          "original_function": "execute",
+          "current_path": "tools/validate_execution.py",
+          "current_function": "execute",
+          "body_sha256": "05c5ec052f330ba20e431e3e7ff015654bed5a03c9189b32158407b3f64be2da"
+        },
+        {
+          "original_function": "ontology_checks",
+          "current_path": "tools/validate_structure.py",
+          "current_function": "ontology_checks",
+          "body_sha256": "a4f5326393fcd89b65be3278f22205ca58c3353cb48fa1ae64f771d8d9897b9f"
+        },
+        {
+          "original_function": "incidents",
+          "current_path": "tools/validate_incidents.py",
+          "current_function": "incidents",
+          "body_sha256": "f4fc41dee677bc03070133666fb32df1145de39daac0b98edfcbf88a59ca8973"
+        },
+        {
+          "original_function": "external_gates",
+          "current_path": "tools/validate_incidents.py",
+          "current_function": "external_gates",
+          "body_sha256": "16eadaeffacb5b5ee287a18c3f7afe8308fc220821e269b25c411c2c9f402696"
+        },
+        {
+          "original_function": "junit_cases",
+          "current_path": "tools/validate_regression.py",
+          "current_function": "junit_cases",
+          "body_sha256": "8ca69807e52a3ba8fd8ec00f48e29fad600e8f408085fac55060211d8a3e5e78"
+        },
+        {
+          "original_function": "regression_groups",
+          "current_path": "tools/validate_regression.py",
+          "current_function": "regression_groups",
+          "body_sha256": "f4a8e8e9f190bc566190aefc707266773e124c329572b8c56c8806cca5f3bcbf"
+        },
+        {
+          "original_function": "finalize",
+          "current_path": "tools/validate_report.py",
+          "current_function": "finalize",
+          "body_sha256": "802dd045dc5cb815812de678e6f0001baed5e5f1505816fa0cca676a5f3f04db"
+        },
+        {
+          "original_function": "main",
+          "current_path": "tools/validate.py",
+          "current_function": "main",
+          "body_sha256": "8e27b0e69b852e8131bb057985e2698bafd7f763f4a9691dca583ea0bd78c082"
+        }
+      ]
+    }
+  ],
+  "semantics": "AST function bodies unchanged except promoted structural gate; owning self annotations and imports may change. Behavioral tests establish runtime acceptance."
+}

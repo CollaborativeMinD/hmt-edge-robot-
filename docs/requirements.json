@@ -32,10 +32,12 @@
       "kind": "functional",
       "acceptance": "Policy epoch update revokes leases and pending authority",
       "source": [
-        "src/hmt_edge_robot/runtime.py"
+        "src/hmt_edge_robot/runtime.py",
+        "src/hmt_edge_robot/runtime_simulation.py",
+        "src/hmt_edge_robot/runtime_governance.py"
       ],
       "tests": [
-        "tests/test_orchestration_ledger.py::test_policy_update_revokes_pending_authority"
+        "tests/test_orchestration_ledger_authority.py::test_policy_update_revokes_pending_authority"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
@@ -45,7 +47,8 @@
       "kind": "functional",
       "acceptance": "Reject stale, repeated and mismatched-frame spatial observations",
       "source": [
-        "src/hmt_edge_robot/safety.py"
+        "src/hmt_edge_robot/safety.py",
+        "src/hmt_edge_robot/safety_admittance.py"
       ],
       "tests": [
         "tests/test_authority_safety_edge.py::test_safety_invalid_stale_frame_and_reset"
@@ -58,7 +61,8 @@
       "kind": "functional",
       "acceptance": "Check path segment separation and scale speed within protective bounds",
       "source": [
-        "src/hmt_edge_robot/safety.py"
+        "src/hmt_edge_robot/safety.py",
+        "src/hmt_edge_robot/safety_admittance.py"
       ],
       "tests": [
         "tests/test_authority_safety_edge.py::test_safety_path_distance_not_endpoint"
@@ -71,10 +75,11 @@
       "kind": "functional",
       "acceptance": "Finite bounded SIL admittance preserves declared dynamical law",
       "source": [
-        "src/hmt_edge_robot/safety.py"
+        "src/hmt_edge_robot/safety.py",
+        "src/hmt_edge_robot/safety_admittance.py"
       ],
       "tests": [
-        "tests/test_contracts_geometry.py::test_admittance_law_and_bounds"
+        "tests/test_contracts_geometry_vision.py::test_admittance_law_and_bounds"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
@@ -126,7 +131,7 @@
         "src/hmt_edge_robot/vision.py"
       ],
       "tests": [
-        "tests/test_contracts_geometry.py::test_vision_rejects_ambiguity_empty_small_and_format"
+        "tests/test_contracts_geometry_vision.py::test_vision_rejects_ambiguity_empty_small_and_format"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
@@ -152,7 +157,7 @@
         "src/hmt_edge_robot/vision.py"
       ],
       "tests": [
-        "tests/test_contracts_geometry.py::test_grasp_candidates_calibration_determinism"
+        "tests/test_contracts_geometry_vision.py::test_grasp_candidates_calibration_determinism"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
@@ -162,10 +167,14 @@
       "kind": "functional",
       "acceptance": "Admit only valid current-session, epoch, time, substrate and geometry requests",
       "source": [
-        "src/hmt_edge_robot/orchestrator.py"
+        "src/hmt_edge_robot/orchestrator.py",
+        "src/hmt_edge_robot/orchestrator_recovery.py",
+        "src/hmt_edge_robot/orchestrator_admission.py",
+        "src/hmt_edge_robot/orchestrator_driver.py",
+        "src/hmt_edge_robot/orchestrator_execution.py"
       ],
       "tests": [
-        "tests/test_orchestration_ledger.py::test_admission_denials"
+        "tests/test_orchestration_ledger_driver.py::test_admission_denials"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
@@ -175,10 +184,14 @@
       "kind": "functional",
       "acceptance": "SUCCEEDED requires both driver acknowledgments and matching finite feedback",
       "source": [
-        "src/hmt_edge_robot/orchestrator.py"
+        "src/hmt_edge_robot/orchestrator.py",
+        "src/hmt_edge_robot/orchestrator_recovery.py",
+        "src/hmt_edge_robot/orchestrator_admission.py",
+        "src/hmt_edge_robot/orchestrator_driver.py",
+        "src/hmt_edge_robot/orchestrator_execution.py"
       ],
       "tests": [
-        "tests/test_orchestration_ledger.py::test_driver_ack_and_feedback_regressions"
+        "tests/test_orchestration_ledger_driver.py::test_driver_ack_and_feedback_regressions"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
@@ -188,10 +201,14 @@
       "kind": "functional",
       "acceptance": "Bound queue, reject duplicate concurrent claims and permit authorized cancellation",
       "source": [
-        "src/hmt_edge_robot/orchestrator.py"
+        "src/hmt_edge_robot/orchestrator.py",
+        "src/hmt_edge_robot/orchestrator_recovery.py",
+        "src/hmt_edge_robot/orchestrator_admission.py",
+        "src/hmt_edge_robot/orchestrator_driver.py",
+        "src/hmt_edge_robot/orchestrator_execution.py"
       ],
       "tests": [
-        "tests/test_orchestration_ledger.py::test_duplicate_atomic_admission"
+        "tests/test_orchestration_ledger_authority.py::test_duplicate_atomic_admission"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
@@ -201,10 +218,14 @@
       "kind": "functional",
       "acceptance": "Revalidate authority after movement and stop on deadline or evidence failure",
       "source": [
-        "src/hmt_edge_robot/orchestrator.py"
+        "src/hmt_edge_robot/orchestrator.py",
+        "src/hmt_edge_robot/orchestrator_recovery.py",
+        "src/hmt_edge_robot/orchestrator_admission.py",
+        "src/hmt_edge_robot/orchestrator_driver.py",
+        "src/hmt_edge_robot/orchestrator_execution.py"
       ],
       "tests": [
-        "tests/test_orchestration_ledger.py::test_authority_rechecked_after_movement"
+        "tests/test_orchestration_ledger_authority.py::test_authority_rechecked_after_movement"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
@@ -214,10 +235,14 @@
       "kind": "functional",
       "acceptance": "Atomically persist intent and lawful state transition before side effects",
       "source": [
-        "src/hmt_edge_robot/ledger.py"
+        "src/hmt_edge_robot/ledger.py",
+        "src/hmt_edge_robot/ledger_queries.py",
+        "src/hmt_edge_robot/ledger_replay.py",
+        "src/hmt_edge_robot/ledger_transitions.py",
+        "src/hmt_edge_robot/ledger_errors.py"
       ],
       "tests": [
-        "tests/test_orchestration_ledger.py::test_evidence_failure_stops_before_side_effect"
+        "tests/test_orchestration_ledger_authority.py::test_evidence_failure_stops_before_side_effect"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
@@ -227,7 +252,11 @@
       "kind": "functional",
       "acceptance": "Verify append-only hash chain, projection and restart without motion replay",
       "source": [
-        "src/hmt_edge_robot/ledger.py"
+        "src/hmt_edge_robot/ledger.py",
+        "src/hmt_edge_robot/ledger_queries.py",
+        "src/hmt_edge_robot/ledger_replay.py",
+        "src/hmt_edge_robot/ledger_transitions.py",
+        "src/hmt_edge_robot/ledger_errors.py"
       ],
       "tests": [
         "tests/test_ingress_replay.py::test_projection_tamper_detected"
@@ -279,7 +308,13 @@
       "kind": "functional",
       "acceptance": "Fit explicit seeded ML baseline; HOLD nonfinite, unfit and out-of-envelope samples",
       "source": [
-        "src/hmt_edge_robot/resident.py"
+        "src/hmt_edge_robot/resident.py",
+        "src/hmt_edge_robot/resident_cloud_request.py",
+        "src/hmt_edge_robot/resident_cloud.py",
+        "src/hmt_edge_robot/resident_governance.py",
+        "src/hmt_edge_robot/resident_health.py",
+        "src/hmt_edge_robot/resident_cloud_transport.py",
+        "src/hmt_edge_robot/resident_providers.py"
       ],
       "tests": [
         "tests/test_resident_analytics.py::test_classical_ml_fit_inference_and_determinism"
@@ -292,10 +327,16 @@
       "kind": "functional",
       "acceptance": "Bind bounded model context to policy, schema, profile and real evidence hashes",
       "source": [
-        "src/hmt_edge_robot/resident.py"
+        "src/hmt_edge_robot/resident.py",
+        "src/hmt_edge_robot/resident_cloud_request.py",
+        "src/hmt_edge_robot/resident_cloud.py",
+        "src/hmt_edge_robot/resident_governance.py",
+        "src/hmt_edge_robot/resident_health.py",
+        "src/hmt_edge_robot/resident_cloud_transport.py",
+        "src/hmt_edge_robot/resident_providers.py"
       ],
       "tests": [
-        "tests/test_resident_analytics.py::test_resident_context_tools_and_bounds"
+        "tests/test_resident_analytics_governance.py::test_resident_context_tools_and_bounds"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
@@ -305,10 +346,16 @@
       "kind": "functional",
       "acceptance": "Reject malformed or unsupported proposals; model has no actuator tool",
       "source": [
-        "src/hmt_edge_robot/resident.py"
+        "src/hmt_edge_robot/resident.py",
+        "src/hmt_edge_robot/resident_cloud_request.py",
+        "src/hmt_edge_robot/resident_cloud.py",
+        "src/hmt_edge_robot/resident_governance.py",
+        "src/hmt_edge_robot/resident_health.py",
+        "src/hmt_edge_robot/resident_cloud_transport.py",
+        "src/hmt_edge_robot/resident_providers.py"
       ],
       "tests": [
-        "tests/test_resident_analytics.py::test_resident_invalid_provider_holds"
+        "tests/test_resident_analytics_governance.py::test_resident_invalid_provider_holds"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
@@ -318,10 +365,16 @@
       "kind": "functional",
       "acceptance": "Explicit provider qualification, no retries, bounded time/body/budget and usage certainty",
       "source": [
-        "src/hmt_edge_robot/resident.py"
+        "src/hmt_edge_robot/resident.py",
+        "src/hmt_edge_robot/resident_cloud_request.py",
+        "src/hmt_edge_robot/resident_cloud.py",
+        "src/hmt_edge_robot/resident_governance.py",
+        "src/hmt_edge_robot/resident_health.py",
+        "src/hmt_edge_robot/resident_cloud_transport.py",
+        "src/hmt_edge_robot/resident_providers.py"
       ],
       "tests": [
-        "tests/test_resident_analytics.py::test_paid_adapter_incomplete_or_uncertain_usage_holds"
+        "tests/test_resident_analytics_budget.py::test_paid_adapter_incomplete_or_uncertain_usage_holds"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
@@ -331,10 +384,14 @@
       "kind": "functional",
       "acceptance": "Authenticated FastAPI operator flow uses strict JSON wire contracts",
       "source": [
-        "src/hmt_edge_robot/api.py"
+        "src/hmt_edge_robot/api.py",
+        "src/hmt_edge_robot/api_resident.py",
+        "src/hmt_edge_robot/api_commands.py",
+        "src/hmt_edge_robot/api_queries.py",
+        "src/hmt_edge_robot/api_requests.py"
       ],
       "tests": [
-        "tests/test_api_cli.py::test_api_full_operator_flow"
+        "tests/test_api_cli_http.py::test_api_full_operator_flow"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
@@ -344,7 +401,9 @@
       "kind": "functional",
       "acceptance": "CLI demo, read-only replay, analytics and export compose the same runtime",
       "source": [
-        "src/hmt_edge_robot/cli.py"
+        "src/hmt_edge_robot/cli.py",
+        "src/hmt_edge_robot/cli_demonstration.py",
+        "src/hmt_edge_robot/cli_commands.py"
       ],
       "tests": [
         "tests/test_ingress_replay.py::test_read_only_queries_do_not_recover_pending_tasks"
@@ -357,7 +416,9 @@
       "kind": "functional",
       "acceptance": "Nominal coupled mission yields consistent terminal state and evidence",
       "source": [
-        "src/hmt_edge_robot/runtime.py"
+        "src/hmt_edge_robot/runtime.py",
+        "src/hmt_edge_robot/runtime_simulation.py",
+        "src/hmt_edge_robot/runtime_governance.py"
       ],
       "tests": [
         "tests/test_orchestration_ledger.py::test_nominal_outcome_chain"
@@ -370,7 +431,14 @@
       "kind": "nonfunctional",
       "acceptance": "Strict, frozen, extra-forbidden finite contracts at domain seams",
       "source": [
-        "tools/validate.py"
+        "tools/validate.py",
+        "tools/validate_base.py",
+        "tools/validate_incidents.py",
+        "tools/validate_ledger.py",
+        "tools/validate_execution.py",
+        "tools/validate_regression.py",
+        "tools/validate_report.py",
+        "tools/validate_structure.py"
       ],
       "tests": [
         "tests/test_contracts_geometry.py::test_contracts_forbid_unknown_mutation_coercion"
@@ -383,7 +451,14 @@
       "kind": "nonfunctional",
       "acceptance": "Bounded request bodies, receive deadlines and process rate window",
       "source": [
-        "tools/validate.py"
+        "tools/validate.py",
+        "tools/validate_base.py",
+        "tools/validate_incidents.py",
+        "tools/validate_ledger.py",
+        "tools/validate_execution.py",
+        "tools/validate_regression.py",
+        "tools/validate_report.py",
+        "tools/validate_structure.py"
       ],
       "tests": [
         "tests/test_ingress_replay.py::test_global_body_and_rate_bounds"
@@ -396,7 +471,14 @@
       "kind": "nonfunctional",
       "acceptance": "Queue, session, sensor and context capacities enforced",
       "source": [
-        "tools/validate.py"
+        "tools/validate.py",
+        "tools/validate_base.py",
+        "tools/validate_incidents.py",
+        "tools/validate_ledger.py",
+        "tools/validate_execution.py",
+        "tools/validate_regression.py",
+        "tools/validate_report.py",
+        "tools/validate_structure.py"
       ],
       "tests": [
         "tests/test_orchestration_ledger.py::test_queue_backpressure_and_cancel"
@@ -409,7 +491,14 @@
       "kind": "nonfunctional",
       "acceptance": "Replay detects payload corruption and never mutates pending state",
       "source": [
-        "tools/validate.py"
+        "tools/validate.py",
+        "tools/validate_base.py",
+        "tools/validate_incidents.py",
+        "tools/validate_ledger.py",
+        "tools/validate_execution.py",
+        "tools/validate_regression.py",
+        "tools/validate_report.py",
+        "tools/validate_structure.py"
       ],
       "tests": [
         "tests/test_ingress_replay.py::test_read_only_queries_do_not_recover_pending_tasks"
@@ -422,10 +511,17 @@
       "kind": "nonfunctional",
       "acceptance": "Evidence failures stop execution before first side effect",
       "source": [
-        "tools/validate.py"
+        "tools/validate.py",
+        "tools/validate_base.py",
+        "tools/validate_incidents.py",
+        "tools/validate_ledger.py",
+        "tools/validate_execution.py",
+        "tools/validate_regression.py",
+        "tools/validate_report.py",
+        "tools/validate_structure.py"
       ],
       "tests": [
-        "tests/test_orchestration_ledger.py::test_evidence_failure_stops_before_side_effect"
+        "tests/test_orchestration_ledger_authority.py::test_evidence_failure_stops_before_side_effect"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "supervisory/SIL"
@@ -435,7 +531,14 @@
       "kind": "nonfunctional",
       "acceptance": "Observed SIL p95 cycle below 100 ms and Linux host peak RSS below 512 MiB",
       "source": [
-        "tools/validate.py"
+        "tools/validate.py",
+        "tools/validate_base.py",
+        "tools/validate_incidents.py",
+        "tools/validate_ledger.py",
+        "tools/validate_execution.py",
+        "tools/validate_regression.py",
+        "tools/validate_report.py",
+        "tools/validate_structure.py"
       ],
       "tests": [
         "tests/test_orchestration_ledger.py::test_nominal_outcome_chain"
@@ -448,7 +551,14 @@
       "kind": "nonfunctional",
       "acceptance": "Functions <=60 physical lines; security lint and locked reproducible dependencies",
       "source": [
-        "tools/validate.py"
+        "tools/validate.py",
+        "tools/validate_base.py",
+        "tools/validate_incidents.py",
+        "tools/validate_ledger.py",
+        "tools/validate_execution.py",
+        "tools/validate_regression.py",
+        "tools/validate_report.py",
+        "tools/validate_structure.py"
       ],
       "tests": [
         "tests/test_contracts_geometry.py::test_nonfinite_boundary_rejected"
@@ -461,7 +571,14 @@
       "kind": "nonfunctional",
       "acceptance": "Every declared requirement has implementation/test binding; every contract field has ontology binding",
       "source": [
-        "tools/validate.py"
+        "tools/validate.py",
+        "tools/validate_base.py",
+        "tools/validate_incidents.py",
+        "tools/validate_ledger.py",
+        "tools/validate_execution.py",
+        "tools/validate_regression.py",
+        "tools/validate_report.py",
+        "tools/validate_structure.py"
       ],
       "tests": [
         "tests/test_contracts_geometry.py::test_contracts_forbid_unknown_mutation_coercion"
@@ -474,10 +591,17 @@
       "kind": "nonfunctional",
       "acceptance": "Resident proposals remain advisory; unknown tools and cloud defaults blocked",
       "source": [
-        "tools/validate.py"
+        "tools/validate.py",
+        "tools/validate_base.py",
+        "tools/validate_incidents.py",
+        "tools/validate_ledger.py",
+        "tools/validate_execution.py",
+        "tools/validate_regression.py",
+        "tools/validate_report.py",
+        "tools/validate_structure.py"
       ],
       "tests": [
-        "tests/test_resident_analytics.py::test_resident_context_tools_and_bounds"
+        "tests/test_resident_analytics_governance.py::test_resident_context_tools_and_bounds"
       ],
       "gate": "G-AUTH-003",
       "scope": "supervisory/SIL"
@@ -487,7 +611,14 @@
       "kind": "nonfunctional",
       "acceptance": "Full offline suite passes with >=90% combined line/branch coverage",
       "source": [
-        "tools/validate.py"
+        "tools/validate.py",
+        "tools/validate_base.py",
+        "tools/validate_incidents.py",
+        "tools/validate_ledger.py",
+        "tools/validate_execution.py",
+        "tools/validate_regression.py",
+        "tools/validate_report.py",
+        "tools/validate_structure.py"
       ],
       "tests": [
         "tests/test_orchestration_ledger.py::test_nominal_outcome_chain"
@@ -500,10 +631,12 @@
       "kind": "functional",
       "acceptance": "Mission readiness requires ordered successful stages and the exact validated transaction hash; deadline equality holds",
       "source": [
-        "src/hmt_edge_robot/assurance/mcc.py"
+        "src/hmt_edge_robot/assurance/mcc.py",
+        "src/hmt_edge_robot/assurance/mcc_collection.py",
+        "src/hmt_edge_robot/assurance/mcc_readiness.py"
       ],
       "tests": [
-        "tests/test_assurance_readiness_effects.py::test_mcc_mission_readiness_and_boundary"
+        "tests/test_assurance_readiness_effects_readiness.py::test_mcc_mission_readiness_and_boundary"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -513,10 +646,12 @@
       "kind": "functional",
       "acceptance": "Stage failure, stale epochs, future or expired traces cannot certify mission readiness",
       "source": [
-        "src/hmt_edge_robot/assurance/mcc.py"
+        "src/hmt_edge_robot/assurance/mcc.py",
+        "src/hmt_edge_robot/assurance/mcc_collection.py",
+        "src/hmt_edge_robot/assurance/mcc_readiness.py"
       ],
       "tests": [
-        "tests/test_assurance_readiness_effects.py::test_mcc_incomplete_invalid_and_stale"
+        "tests/test_assurance_readiness_effects_readiness.py::test_mcc_incomplete_invalid_and_stale"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -526,10 +661,12 @@
       "kind": "functional",
       "acceptance": "Cooperative asynchronous software probes use remaining recovery budget and persist intent; timeout or malformed adapter fails closed",
       "source": [
-        "src/hmt_edge_robot/assurance/mcc.py"
+        "src/hmt_edge_robot/assurance/mcc.py",
+        "src/hmt_edge_robot/assurance/mcc_collection.py",
+        "src/hmt_edge_robot/assurance/mcc_readiness.py"
       ],
       "tests": [
-        "tests/test_assurance_integration.py::test_software_probe_durable_failure_and_no_returned_readiness"
+        "tests/test_assurance_integration_replay.py::test_software_probe_durable_failure_and_no_returned_readiness"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -539,10 +676,12 @@
       "kind": "functional",
       "acceptance": "Bound campaigns to 256; report empirical p95, maximum and Wilson failure endpoint without a worst-case guarantee",
       "source": [
-        "src/hmt_edge_robot/assurance/mcc.py"
+        "src/hmt_edge_robot/assurance/mcc.py",
+        "src/hmt_edge_robot/assurance/mcc_collection.py",
+        "src/hmt_edge_robot/assurance/mcc_readiness.py"
       ],
       "tests": [
-        "tests/test_assurance_readiness_effects.py::test_mcc_empirical_envelope_is_not_wcet"
+        "tests/test_assurance_readiness_effects_readiness.py::test_mcc_empirical_envelope_is_not_wcet"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -552,10 +691,11 @@
       "kind": "functional",
       "acceptance": "Compare exact effect kind and target, runtime and exit contract; a valid receipt cannot substitute for effect conformance",
       "source": [
-        "src/hmt_edge_robot/assurance/usea.py"
+        "src/hmt_edge_robot/assurance/usea.py",
+        "src/hmt_edge_robot/assurance/usea_manifest.py"
       ],
       "tests": [
-        "tests/test_assurance_readiness_effects.py::test_usea_effect_receipt_distinction"
+        "tests/test_assurance_readiness_effects_effects.py::test_usea_effect_receipt_distinction"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -565,10 +705,11 @@
       "kind": "functional",
       "acceptance": "Incomplete coverage, unbound executable identity, expiry or changed epochs cannot produce conformance",
       "source": [
-        "src/hmt_edge_robot/assurance/usea.py"
+        "src/hmt_edge_robot/assurance/usea.py",
+        "src/hmt_edge_robot/assurance/usea_manifest.py"
       ],
       "tests": [
-        "tests/test_assurance_readiness_effects.py::test_usea_incomplete_is_hold"
+        "tests/test_assurance_readiness_effects_effects.py::test_usea_incomplete_is_hold"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -578,10 +719,11 @@
       "kind": "functional",
       "acceptance": "Actual file manifests detect persistent writes, refuse links and special files, and never claim reads or transient effects",
       "source": [
-        "src/hmt_edge_robot/assurance/usea.py"
+        "src/hmt_edge_robot/assurance/usea.py",
+        "src/hmt_edge_robot/assurance/usea_manifest.py"
       ],
       "tests": [
-        "tests/test_assurance_readiness_effects.py::test_manifest_actual_writes_and_coverage_limit"
+        "tests/test_assurance_readiness_effects_effects.py::test_manifest_actual_writes_and_coverage_limit"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -591,10 +733,13 @@
       "kind": "functional",
       "acceptance": "Compute transitive protection across cycles; retain authority, recovery, evidence and effect dependencies",
       "source": [
-        "src/hmt_edge_robot/assurance/agc.py"
+        "src/hmt_edge_robot/assurance/agc.py",
+        "src/hmt_edge_robot/assurance/agc_planning.py",
+        "src/hmt_edge_robot/assurance/agc_admission.py",
+        "src/hmt_edge_robot/assurance/agc_mutation.py"
       ],
       "tests": [
-        "tests/test_assurance_reclamation.py::test_agc_transitive_reference_closure_and_cycles"
+        "tests/test_assurance_reclamation_protection.py::test_agc_transitive_reference_closure_and_cycles"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -604,10 +749,13 @@
       "kind": "functional",
       "acceptance": "Incomplete, stale, mismatched-epoch or dangling-reference census yields UNKNOWN_HOLD",
       "source": [
-        "src/hmt_edge_robot/assurance/agc.py"
+        "src/hmt_edge_robot/assurance/agc.py",
+        "src/hmt_edge_robot/assurance/agc_planning.py",
+        "src/hmt_edge_robot/assurance/agc_admission.py",
+        "src/hmt_edge_robot/assurance/agc_mutation.py"
       ],
       "tests": [
-        "tests/test_assurance_reclamation.py::test_agc_unknown_hold"
+        "tests/test_assurance_reclamation_protection.py::test_agc_unknown_hold"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -617,7 +765,10 @@
       "kind": "functional",
       "acceptance": "Plan is dry-run; quarantine preserves bytes, restoration is reversible, deletion requires fresh authority and dwell",
       "source": [
-        "src/hmt_edge_robot/assurance/agc.py"
+        "src/hmt_edge_robot/assurance/agc.py",
+        "src/hmt_edge_robot/assurance/agc_planning.py",
+        "src/hmt_edge_robot/assurance/agc_admission.py",
+        "src/hmt_edge_robot/assurance/agc_mutation.py"
       ],
       "tests": [
         "tests/test_assurance_reclamation.py::test_agc_dry_run_quarantine_restore_and_governed_delete"
@@ -630,10 +781,13 @@
       "kind": "functional",
       "acceptance": "Atomic revision fence, issued single-use grants, live session recheck and decision reconstruction reject stale or forged mutation",
       "source": [
-        "src/hmt_edge_robot/assurance/agc.py"
+        "src/hmt_edge_robot/assurance/agc.py",
+        "src/hmt_edge_robot/assurance/agc_planning.py",
+        "src/hmt_edge_robot/assurance/agc_admission.py",
+        "src/hmt_edge_robot/assurance/agc_mutation.py"
       ],
       "tests": [
-        "tests/test_assurance_reclamation.py::test_agc_fence_changed_reference_and_no_grant_replay"
+        "tests/test_assurance_reclamation_authority.py::test_agc_fence_changed_reference_and_no_grant_replay"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -643,10 +797,14 @@
       "kind": "functional",
       "acceptance": "Catalog content, full membership, revision, quarantine time and state replay match durable events",
       "source": [
-        "src/hmt_edge_robot/assurance/catalog.py"
+        "src/hmt_edge_robot/assurance/catalog.py",
+        "src/hmt_edge_robot/assurance/catalog_records.py",
+        "src/hmt_edge_robot/assurance/catalog_authority.py",
+        "src/hmt_edge_robot/assurance/catalog_replay.py",
+        "src/hmt_edge_robot/assurance/catalog_storage.py"
       ],
       "tests": [
-        "tests/test_assurance_reclamation.py::test_catalog_missing_record_and_revision_tamper"
+        "tests/test_assurance_reclamation_replay.py::test_catalog_missing_record_and_revision_tamper"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -656,7 +814,8 @@
       "kind": "functional",
       "acceptance": "Persist cursor-addressed notices and alerts with admitted acknowledgments; survive restart and propagate failures",
       "source": [
-        "src/hmt_edge_robot/assurance/kernel.py"
+        "src/hmt_edge_robot/assurance/kernel.py",
+        "src/hmt_edge_robot/assurance/kernel_observer.py"
       ],
       "tests": [
         "tests/test_assurance_integration.py::test_observer_durable_cursor_ack_and_restart"
@@ -682,7 +841,9 @@
       "kind": "functional",
       "acceptance": "Transform validated SQLite reports through Polars/DuckDB into hashed JSONL, GraphML and Parquet software evidence",
       "source": [
-        "src/hmt_edge_robot/assurance/analytics.py"
+        "src/hmt_edge_robot/assurance/analytics.py",
+        "src/hmt_edge_robot/assurance/analytics_exports.py",
+        "src/hmt_edge_robot/assurance/analytics_queries.py"
       ],
       "tests": [
         "tests/test_assurance_integration.py::test_assurance_export_sql_parquet_jsonl_graphml"
@@ -695,10 +856,12 @@
       "kind": "functional",
       "acceptance": "Private strict JSON API admits sessions and grants; submitted trace claims cannot become collected observations",
       "source": [
-        "src/hmt_edge_robot/assurance/routes.py"
+        "src/hmt_edge_robot/assurance/routes.py",
+        "src/hmt_edge_robot/assurance/routes_catalog.py",
+        "src/hmt_edge_robot/assurance/routes_requests.py"
       ],
       "tests": [
-        "tests/test_assurance_integration.py::test_assurance_api_native_json_and_declared_trace_hold"
+        "tests/test_assurance_integration_http.py::test_assurance_api_native_json_and_declared_trace_hold"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -708,10 +871,16 @@
       "kind": "nonfunctional",
       "acceptance": "Finite frozen contracts reject coercion and unknown fields; every witness binds identity, contract, collector, epochs and expiry",
       "source": [
-        "src/hmt_edge_robot/assurance/contracts.py"
+        "src/hmt_edge_robot/assurance/contracts.py",
+        "src/hmt_edge_robot/assurance/contracts_identity.py",
+        "src/hmt_edge_robot/assurance/contracts_reclamation.py",
+        "src/hmt_edge_robot/assurance/contracts_recovery.py",
+        "src/hmt_edge_robot/assurance/contracts_effects.py",
+        "src/hmt_edge_robot/assurance/contracts_base.py",
+        "src/hmt_edge_robot/assurance/contracts_reports.py"
       ],
       "tests": [
-        "tests/test_assurance_readiness_effects.py::test_assurance_contracts_strict_finite_frozen"
+        "tests/test_assurance_readiness_effects_optimization.py::test_assurance_contracts_strict_finite_frozen"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -721,10 +890,14 @@
       "kind": "nonfunctional",
       "acceptance": "Bound managed catalog to 1024 records and 16 MiB per blob; manifests to 256 files/16 MiB by default; observer reads to 256 and analytics to 1024",
       "source": [
-        "src/hmt_edge_robot/assurance/catalog.py"
+        "src/hmt_edge_robot/assurance/catalog.py",
+        "src/hmt_edge_robot/assurance/catalog_records.py",
+        "src/hmt_edge_robot/assurance/catalog_authority.py",
+        "src/hmt_edge_robot/assurance/catalog_replay.py",
+        "src/hmt_edge_robot/assurance/catalog_storage.py"
       ],
       "tests": [
-        "tests/test_assurance_reclamation.py::test_catalog_and_census_bounds"
+        "tests/test_assurance_reclamation_protection.py::test_catalog_and_census_bounds"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -734,10 +907,13 @@
       "kind": "nonfunctional",
       "acceptance": "No committed lifecycle mutation or consumed grant when evidence fails; storage failures propagate as EvidenceError",
       "source": [
-        "src/hmt_edge_robot/assurance/agc.py"
+        "src/hmt_edge_robot/assurance/agc.py",
+        "src/hmt_edge_robot/assurance/agc_planning.py",
+        "src/hmt_edge_robot/assurance/agc_admission.py",
+        "src/hmt_edge_robot/assurance/agc_mutation.py"
       ],
       "tests": [
-        "tests/test_assurance_reclamation.py::test_agc_evidence_failure_rolls_back_mutation"
+        "tests/test_assurance_reclamation_replay.py::test_agc_evidence_failure_rolls_back_mutation"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -750,7 +926,7 @@
         "src/hmt_edge_robot/assurance/optimization.py"
       ],
       "tests": [
-        "tests/test_assurance_readiness_effects.py::test_optimization_exact_against_brute_force"
+        "tests/test_assurance_readiness_effects_optimization.py::test_optimization_exact_against_brute_force"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -760,10 +936,14 @@
       "kind": "nonfunctional",
       "acceptance": "Read-only assurance census and analytics leave projections and pending work unchanged",
       "source": [
-        "src/hmt_edge_robot/assurance/catalog.py"
+        "src/hmt_edge_robot/assurance/catalog.py",
+        "src/hmt_edge_robot/assurance/catalog_records.py",
+        "src/hmt_edge_robot/assurance/catalog_authority.py",
+        "src/hmt_edge_robot/assurance/catalog_replay.py",
+        "src/hmt_edge_robot/assurance/catalog_storage.py"
       ],
       "tests": [
-        "tests/test_assurance_integration.py::test_catalog_readonly_no_recovery_or_writes"
+        "tests/test_assurance_integration_replay.py::test_catalog_readonly_no_recovery_or_writes"
       ],
       "gate": "G-RUNTIME-004",
       "scope": "system software / managed catalog"
@@ -776,7 +956,7 @@
         "src/hmt_edge_robot/assurance/optimization.py"
       ],
       "tests": [
-        "tests/test_assurance_readiness_effects.py::test_optimization_exact_against_brute_force"
+        "tests/test_assurance_readiness_effects_optimization.py::test_optimization_exact_against_brute_force"
       ],
       "gate": "G-TRIAD-011",
       "scope": "system software / managed catalog"
@@ -788,7 +968,14 @@
       "source": [
         "pyproject.toml",
         "tools/validate.py",
-        ".github/workflows/ci.yml"
+        ".github/workflows/ci.yml",
+        "tools/validate_base.py",
+        "tools/validate_incidents.py",
+        "tools/validate_ledger.py",
+        "tools/validate_execution.py",
+        "tools/validate_regression.py",
+        "tools/validate_report.py",
+        "tools/validate_structure.py"
       ],
       "tests": [
         "tests/test_typecheck_gate.py::test_pyrefly_rejects_invalid_return"
@@ -841,7 +1028,7 @@
     {
       "id": "REQ-CI2-01",
       "kind": "functional",
-      "acceptance": "Assess pinned declarations, surface adoption gaps and preserve authority boundaries",
+      "acceptance": "Verify supplied policy source integrity, explicit human promotion, source-reference dispositions and globally enforced active-source bounds",
       "source": [
         "tools/policy_evaluation.py",
         "tools/ci_profiles.py",
@@ -901,6 +1088,40 @@
       ],
       "gate": "G-PROFILE-015",
       "scope": "managed CI support"
+    },
+    {
+      "id": "REQ-CI3-01",
+      "kind": "functional",
+      "acceptance": "Admit only source-bound human-approved software policy promotion; retain explicit historical SQL disposition and independent authority HOLDs",
+      "source": [
+        "tools/policy_promotion.py",
+        "tools/policy_evaluation.py",
+        "policy/promotion.json"
+      ],
+      "tests": [
+        "tests/test_policy_promotion.py::test_promoted_policy_replay_and_historical_disposition",
+        "tests/test_policy_promotion.py::test_promotion_rejects_unapproved_changes",
+        "tests/test_policy_promotion.py::test_promotion_missing_and_undispositioned_pin_fail_closed",
+        "tests/test_policy_promotion.py::test_malformed_source_replaces_prior_pass_receipt"
+      ],
+      "gate": "G-POLICY-014",
+      "scope": "system software validation"
+    },
+    {
+      "id": "REQ-CI3-02",
+      "kind": "nonfunctional",
+      "acceptance": "Enforce 100 nonblank non-comment module lines and 60 physical function lines including decorators across all active Python sources",
+      "source": [
+        "tools/policy_inventory.py",
+        "tools/validate_structure.py"
+      ],
+      "tests": [
+        "tests/test_policy_evaluation.py::test_policy_inventory_and_full_adoption_hold",
+        "tests/test_policy_evaluation.py::test_new_support_module_cannot_evade_ceiling",
+        "tests/test_policy_promotion.py::test_function_budget_includes_decorators"
+      ],
+      "gate": "G-ARCH-001",
+      "scope": "system software validation"
     }
   ]
 }

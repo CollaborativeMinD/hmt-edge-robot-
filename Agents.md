@@ -19,7 +19,8 @@ stale observations; changed epochs; duplicate intents; illegal transitions;
 evidence write/verification failures; unqualified model profiles; unbounded calls;
 neural actuation; and hardware or compliance claims without physical evidence.
 
-Keep functions at most 60 physical lines, dependencies locked, runtime histories
+Keep functions at most 60 physical lines including decorators and modules at most 100
+nonblank, non-comment-only physical lines including docstrings. Keep dependencies locked, runtime histories
 bounded, and critical state guarded by the cell lock. Do not suppress failing tests,
 invent measurements, auto-home on failure, bypass the stop latch, rewrite inherited
 evidence, expose credentials, or enable paid probes in normal CI. Preserve source
@@ -57,3 +58,9 @@ Phase 2 permits only the pinned read-only support interfaces in `policy/ci_suppo
 Qualified source copies are independently hash-bound before installation. Preserve original
 archives and record deltas. Assessment PASS never promotes a policy with unresolved HOLDs.
 No hook, lease, full-engine admission, Docker build, or deployment is admitted by this profile.
+
+Human-approved policy promotion is recorded in `policy/promotion.json`. The overlay binds
+the original package and source set for system-software validation. The sole historical SQL
+archive reference is explicitly disregarded by the owner. Enforce the promoted ceilings
+on every active Python module and rerun all gates. Runtime activation of external policy
+roles, full tool engines, Docker builds, deployment and hardware verification remain HOLD.

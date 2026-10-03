@@ -15,7 +15,7 @@ from profile_witnesses import document_witness, evidence_witness, source_claim
 
 def support_copy(tmp_path: Path) -> Path:
     profile = load_profile(ROOT)
-    names = ["policy/ci_support.json", "docs/requirements.json", "docs/implementation_traceability.json",
+    names = ["policy/promotion.json", "vendor/admission/hmt-policy.zip", "policy/ci_support.json", "docs/requirements.json", "docs/implementation_traceability.json",
              *profile.documents, *profile.policy_sources, *profile.qualification_refs]
     for name in names:
         target = tmp_path / name
