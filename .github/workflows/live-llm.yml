@@ -1,7 +1,7 @@
 name: Bounded live resident campaign
 on:
   push:
-    branches: [campaign/openrouter-resident-once]
+    branches: [campaign/openrouter-resident-validated]
 permissions:
   contents: read
 concurrency:

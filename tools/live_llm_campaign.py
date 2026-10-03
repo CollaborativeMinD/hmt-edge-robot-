@@ -15,7 +15,7 @@ from hmt_edge_robot.runtime import RobotCell
 
 async def campaign(key: str) -> dict:
     # Reserve the two rejected direct-provider attempts across the session.
-    opening_reserve_usd = 0.0044536
+    opening_reserve_usd = 0.0090008
     budget = CallBudget(limit_usd=0.95, max_calls=4)
     with tempfile.TemporaryDirectory() as directory:
         cell = RobotCell(
@@ -64,6 +64,7 @@ async def campaign(key: str) -> dict:
                 "reserved_upper_bound_usd": budget.reserved_usd,
                 "limit_usd": 1.0,
                 "session_reserved_upper_bound_usd": opening_reserve_usd + budget.reserved_usd,
+                "usage": provider.usage,
             }
             if hasattr(exc, "response"):
                 result["http_status"] = exc.response.status_code

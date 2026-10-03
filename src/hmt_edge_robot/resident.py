@@ -13,10 +13,10 @@ from urllib.parse import urlparse
 import httpx
 import numpy as np
 import sklearn
-from pydantic import ValidationError
+from pydantic import TypeAdapter, ValidationError
 from sklearn.ensemble import IsolationForest
 
-from .contracts import Policy, ResidentProposal, ResidentReceipt, canonical, digest
+from .contracts import ModelIdentifier, Policy, ResidentProposal, ResidentReceipt, canonical, digest
 from .ledger import Ledger
 
 
@@ -160,8 +160,7 @@ class OpenAICompatibleProvider:
             raise ValueError("PROVIDER_PROFILE_INVALID")
         if not self.local and (not policy.allow_cloud or parsed.scheme != "https"):
             raise PermissionError("CLOUD_NOT_ADMITTED")
-        if not model_id or len(model_id) > 128:
-            raise ValueError("MODEL_ID_INVALID")
+        TypeAdapter(ModelIdentifier).validate_python(model_id, strict=True)
         self.base_url, self.model_id, self.key = base_url.rstrip("/"), model_id, key
         self.policy_epoch, self.qualified = policy.policy_epoch, False
         self.budget = budget
@@ -270,6 +269,7 @@ class ResidentHMT:
     ) -> None:
         self.policy, self.ledger = policy, ledger
         self.provider = provider or DeterministicResident()
+        TypeAdapter(ModelIdentifier).validate_python(self.provider.model_id, strict=True)
         if not self.provider.local and not policy.allow_cloud:
             raise PermissionError("CLOUD_NOT_ADMITTED")
         self.health_model = HealthModel()
@@ -305,6 +305,8 @@ class ResidentHMT:
             available = {r["determinism_hash"] for r in context["evidence"]}
             if any(ref not in available for ref in proposal.evidence_refs):
                 raise ValueError("MODEL_EVIDENCE_INVALID")
+            if context["stopped"] and proposal.action != "hold":
+                raise ValueError("STOP_MODEL_PROPOSAL_REJECTED")
             return self._record(context_hash, proposal, "ADMIT", "PROPOSAL_VALIDATED")
         except (
             ValidationError,
@@ -324,19 +326,14 @@ class ResidentHMT:
     def _record(
         self, context_hash: str, proposal: ResidentProposal | None, decision: str, reason: str
     ) -> ResidentReceipt:
-        payload = {
-            "decision": decision,
-            "proposal": proposal.model_dump(mode="json") if proposal else None,
-            "model_id": self.provider.model_id,
-            "context_hash": context_hash,
-            "rejection_reason": reason,
-        }
-        evidence = self.ledger.append("resident", context_hash, "resident_decision", payload)
-        return ResidentReceipt(
+        receipt = ResidentReceipt(
             decision=decision,
             proposal=proposal,
             model_id=self.provider.model_id,
             context_hash=context_hash,
             rejection_reason=reason,
-            evidence_id=evidence,
+            evidence_id="PENDING",
         )
+        payload = receipt.model_dump(mode="json", exclude={"evidence_id"})
+        evidence = self.ledger.append("resident", context_hash, "resident_decision", payload)
+        return receipt.model_copy(update={"evidence_id": evidence})

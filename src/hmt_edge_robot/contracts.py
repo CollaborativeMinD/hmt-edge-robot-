@@ -14,6 +14,9 @@ Finite = Annotated[float, Field(allow_inf_nan=False)]
 Positive = Annotated[float, Field(gt=0, allow_inf_nan=False)]
 Nonnegative = Annotated[float, Field(ge=0, allow_inf_nan=False)]
 Identifier = Annotated[str, Field(min_length=1, max_length=128, pattern=r"^[A-Za-z0-9_.:-]+$")]
+ModelIdentifier = Annotated[
+    str, Field(min_length=1, max_length=128, pattern=r"^[A-Za-z0-9_.:/-]+$")
+]
 Vector3 = tuple[Finite, Finite, Finite]
 
 
@@ -169,7 +172,7 @@ class ResidentProposal(Contract):
 class ResidentReceipt(Contract):
     decision: Literal["ADMIT", "HOLD", "DENY"]
     proposal: ResidentProposal | None
-    model_id: Identifier
+    model_id: ModelIdentifier
     context_hash: str
     rejection_reason: str
     evidence_id: str
