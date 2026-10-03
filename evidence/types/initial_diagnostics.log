@@ -1,0 +1,242 @@
+   Building hmt-edge-robot @ file:///workspace/scratch/1abe905e6918/hmt-edge-robot
+      Built hmt-edge-robot @ file:///workspace/scratch/1abe905e6918/hmt-edge-robot
+Uninstalled 1 package in 0.29ms
+Installed 1 package in 0.48ms
+ INFO Checking project configured at `/workspace/scratch/1abe905e6918/hmt-edge-robot/pyproject.toml`
+ERROR Object of class `NoneType` has no attribute `state` [missing-attribute]
+  --> tools/coupled_campaign.py:42:52
+   |
+42 |             if planned.state.value != "PLANNED" or outcome.state.value != "SUCCEEDED":
+   |                                                    ^^^^^^^^^^^^^
+ERROR Argument `str` is not assignable to parameter `action` with type `Literal['delete', 'quarantine', 'restore']` in function `hmt_edge_robot.assurance.contracts.MutationGrant.__init__` [bad-argument-type]
+   --> src/hmt_edge_robot/assurance/catalog.py:159:20
+    |
+159 |             action=action,
+    |                    ^^^^^^
+ERROR `stage` is uninitialized [unbound-name]
+   --> src/hmt_edge_robot/assurance/mcc.py:140:27
+    |
+140 |                     stage=stage, elapsed_sec=self.kernel.clock() - started, succeeded=False
+    |                           ^^^^^
+ERROR Cannot set item in `list[tuple[float, tuple[()]]]` [unsupported-operation]
+  --> src/hmt_edge_robot/assurance/optimization.py:22:17
+   |
+22 |                 table[budget] = choice
+   |                 ^^^^^^^^^^^^^
+  No matching overload found for function `list.__setitem__` called with arguments: (int, tuple[float, tuple[str]])
+  Possible overloads:
+    (key: SupportsIndex, value: tuple[float, tuple[()]], /) -> None [closest match]
+    (key: slice[SupportsIndex | None, SupportsIndex | None, SupportsIndex | None], value: Iterable[tuple[float, tuple[()]]], /) -> None
+  Argument `tuple[float, tuple[str]]` is not assignable to parameter `value` with type `tuple[float, tuple[()]]` in function `list.__setitem__`
+ERROR `list[str]` is not assignable to dict value type `str | dict[str, bool | dict[str, Any] | str]` [bad-assignment]
+   --> src/hmt_edge_robot/resident.py:197:25
+    |
+197 |                 "only": ["OpenAI"],
+    |                         ^^^^^^^^^^
+ERROR `Literal[False]` is not assignable to dict value type `str | dict[str, bool | dict[str, Any] | str]` [bad-assignment]
+   --> src/hmt_edge_robot/resident.py:198:36
+    |
+198 |                 "allow_fallbacks": False,
+    |                                    ^^^^^
+ERROR `Literal[True]` is not assignable to dict value type `str | dict[str, bool | dict[str, Any] | str]` [bad-assignment]
+   --> src/hmt_edge_robot/resident.py:199:39
+    |
+199 |                 "require_parameters": True,
+    |                                       ^^^^
+ERROR `float` is not assignable to dict value type `bool | dict[str, Any] | str` [bad-assignment]
+   --> src/hmt_edge_robot/resident.py:200:41
+    |
+200 |                 "max_price": {"prompt": 0.4, "completion": 1.6},
+    |                                         ^^^
+ERROR `float` is not assignable to dict value type `bool | dict[str, Any] | str` [bad-assignment]
+   --> src/hmt_edge_robot/resident.py:200:60
+    |
+200 |                 "max_price": {"prompt": 0.4, "completion": 1.6},
+    |                                                            ^^^
+ERROR Argument `str` is not assignable to parameter `decision` with type `Literal['ADMIT', 'DENY', 'HOLD']` in function `hmt_edge_robot.contracts.ResidentReceipt.__init__` [bad-argument-type]
+   --> src/hmt_edge_robot/resident.py:330:22
+    |
+330 |             decision=decision,
+    |                      ^^^^^^^^
+ERROR Object of class `DeterministicResident` has no attribute `qualified` [missing-attribute]
+   --> src/hmt_edge_robot/runtime.py:149:17
+    |
+149 |                 self.resident.provider.qualified = False
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR Object of class `ResidentProvider` has no attribute `qualified` [missing-attribute]
+   --> src/hmt_edge_robot/runtime.py:149:17
+    |
+149 |                 self.resident.provider.qualified = False
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR Object of class `NoneType` has no attribute `position_mm` [missing-attribute]
+  --> src/hmt_edge_robot/safety.py:78:28
+   |
+78 |         start = np.asarray(self.robot.position_mm, dtype=float)
+   |                            ^^^^^^^^^^^^^^^^^^^^^^
+ERROR Object of class `NoneType` has no attribute `position_mm` [missing-attribute]
+  --> src/hmt_edge_robot/safety.py:79:56
+   |
+79 |         end, human = np.asarray(target_mm), np.asarray(self.human.position_mm)
+   |                                                        ^^^^^^^^^^^^^^^^^^^^^^
+ERROR Returned type `tuple[tuple[float, ...], tuple[float, ...]]` is not assignable to declared return type `tuple[tuple[float, float, float], tuple[float, float, float]]` [bad-return]
+   --> src/hmt_edge_robot/safety.py:116:16
+    |
+116 |         return tuple(float(x) for x in position), tuple(float(x) for x in velocity)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: src/hmt_edge_robot/safety.py:105:39
+    |
+105 |     def step(self, force: Vector3) -> tuple[Vector3, Vector3]:
+    |                                       ----------------------- declared return type
+ERROR Argument `Mat | ndarray[Any, dtype[floating | integer]]` is not assignable to parameter `contour` with type `ndarray[tuple[Any, ...], dtype[signedinteger[_32Bit]]]` in function `NeuroGrasp._pose` [bad-argument-type]
+  --> src/hmt_edge_robot/vision.py:47:38
+   |
+47 |             observation = self._pose(contour, frame_hash)
+   |                                      ^^^^^^^
+ERROR Object of class `NoneType` has no attribute `action` [missing-attribute]
+  --> tools/live_llm_campaign.py:46:58
+   |
+46 |                 passed = receipt.decision == "ADMIT" and receipt.proposal.action == expected
+   |                                                          ^^^^^^^^^^^^^^^^^^^^^^^
+ERROR Argument `tuple[str, str, str]` is not assignable to parameter `required_coverage` with type `tuple[EffectKind, ...]` in function `hmt_edge_robot.assurance.contracts.EffectContract.__init__` [bad-argument-type]
+  --> tests/test_assurance_readiness_effects.py:44:27
+   |
+44 |     return EffectContract(**values)
+   |                           ^^^^^^^^
+ERROR Argument `str` is not assignable to parameter `origin` with type `Literal['DECLARED_TRACE', 'SOFTWARE_COLLECTED']` in function `hmt_edge_robot.assurance.contracts.EffectTrace.__init__` [bad-argument-type]
+  --> tests/test_assurance_readiness_effects.py:52:24
+   |
+52 |     return EffectTrace(**values)
+   |                        ^^^^^^^^
+ERROR Argument `tuple[str, str, str]` is not assignable to parameter `coverage` with type `tuple[EffectKind, ...]` in function `hmt_edge_robot.assurance.contracts.EffectTrace.__init__` [bad-argument-type]
+  --> tests/test_assurance_readiness_effects.py:52:24
+   |
+52 |     return EffectTrace(**values)
+   |                        ^^^^^^^^
+ERROR Argument `Literal['1']` is not assignable to parameter `policy` with type `int` in function `hmt_edge_robot.assurance.contracts.Epochs.__init__` [bad-argument-type]
+   --> tests/test_assurance_readiness_effects.py:198:23
+    |
+198 |         Epochs(policy="1")
+    |                       ^^^
+ERROR Unexpected keyword argument `unrecognized` in function `hmt_edge_robot.assurance.contracts.Epochs.__init__` [unexpected-keyword]
+   --> tests/test_assurance_readiness_effects.py:200:16
+    |
+200 |         Epochs(unrecognized=True)
+    |                ^^^^^^^^^^^^
+ERROR Cannot set field `policy` [read-only]
+   --> tests/test_assurance_readiness_effects.py:203:9
+    |
+203 |         frozen.policy = 2
+    |         ^^^^^^^^^^^^^
+  This field belongs to a frozen Pydantic model
+ERROR Unexpected keyword argument `unknown` in function `hmt_edge_robot.contracts.Policy.__init__` [unexpected-keyword]
+  --> tests/test_contracts_geometry.py:23:16
+   |
+23 |         Policy(unknown=1)
+   |                ^^^^^^^
+ERROR Argument `Literal['1']` is not assignable to parameter `policy_epoch` with type `int` in function `hmt_edge_robot.contracts.Policy.__init__` [bad-argument-type]
+  --> tests/test_contracts_geometry.py:25:29
+   |
+25 |         Policy(policy_epoch="1")
+   |                             ^^^
+ERROR Cannot set field `policy_epoch` [read-only]
+  --> tests/test_contracts_geometry.py:27:9
+   |
+27 |         Policy().policy_epoch = 3
+   |         ^^^^^^^^^^^^^^^^^^^^^
+  This field belongs to a frozen Pydantic model
+ERROR Argument `ndarray[tuple[int, int], dtype[float64]] | ndarray[tuple[int, int, int], dtype[unsignedinteger[_8Bit]]]` is not assignable to parameter `frame` with type `ndarray[tuple[Any, ...], dtype[unsignedinteger[_8Bit]]]` in function `hmt_edge_robot.vision.NeuroGrasp.candidates` [bad-argument-type]
+   --> tests/test_contracts_geometry.py:102:31
+    |
+102 |             vision.candidates(frame)
+    |                               ^^^^^
+ERROR `None` is not subscriptable [unsupported-operation]
+  --> tests/test_ingress_replay.py:63:12
+   |
+63 |     assert cell.ledger.task("pending")["state"] == "PLANNED"
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR `None` is not subscriptable [unsupported-operation]
+  --> tests/test_ingress_replay.py:69:12
+   |
+69 |     assert writer.ledger.task("pending")["state"] == "FAILED"
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR `None` is not subscriptable [unsupported-operation]
+   --> tests/test_orchestration_ledger.py:189:12
+    |
+189 |     assert reopened.task("unfinished")["state"] == "FAILED"
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR Argument `None` is not assignable to parameter `ledger` with type `Ledger` in function `hmt_edge_robot.resident.ResidentHMT.__init__` [bad-argument-type]
+   --> tests/test_resident_analytics.py:128:31
+    |
+128 |         ResidentHMT(Policy(), None, provider)
+    |                               ^^^^
+ERROR `-` is not supported between `None` and `int` [unsupported-operation]
+  --> tools/validate.py:87:28
+   |
+87 |                     size = node.end_lineno - node.lineno + 1
+   |                            ---------------^^^-----------
+   |                            |                 |
+   |                            |                 has type `int`
+   |                            has type `None`
+  Argument `None` is not assignable to parameter `value` with type `int` in function `int.__rsub__`
+ERROR Object of class `NoneType` has no attribute `findall` [missing-attribute]
+   --> tools/validate.py:205:13
+    |
+205 |     cases = ET.parse(path).getroot().findall(".//testcase")
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR Object of class `NoneType` has no attribute `findall` [missing-attribute]
+   --> tools/validate.py:259:32
+    |
+259 |     report["test_cases"] = len(ET.parse(EVIDENCE / "tests.xml").getroot().findall(".//testcase"))
+    |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+=== Error Summary ===
+
+Top 30 Files by Error Count:
+/workspace/scratch/1abe905e6918/hmt-edge-robot/src/hmt_edge_robot/resident.py: 6 errors
+  bad-assignment: 5
+  bad-argument-type: 1
+/workspace/scratch/1abe905e6918/hmt-edge-robot/tests/test_assurance_readiness_effects.py: 6 errors
+  bad-argument-type: 4
+  read-only: 1
+  unexpected-keyword: 1
+/workspace/scratch/1abe905e6918/hmt-edge-robot/tests/test_contracts_geometry.py: 4 errors
+  bad-argument-type: 2
+  read-only: 1
+  unexpected-keyword: 1
+/workspace/scratch/1abe905e6918/hmt-edge-robot/src/hmt_edge_robot/safety.py: 3 errors
+  missing-attribute: 2
+  bad-return: 1
+/workspace/scratch/1abe905e6918/hmt-edge-robot/tools/validate.py: 3 errors
+  missing-attribute: 2
+  unsupported-operation: 1
+/workspace/scratch/1abe905e6918/hmt-edge-robot/src/hmt_edge_robot/runtime.py: 2 errors
+  missing-attribute: 2
+/workspace/scratch/1abe905e6918/hmt-edge-robot/tests/test_ingress_replay.py: 2 errors
+  unsupported-operation: 2
+/workspace/scratch/1abe905e6918/hmt-edge-robot/src/hmt_edge_robot/assurance/catalog.py: 1 error
+  bad-argument-type: 1
+/workspace/scratch/1abe905e6918/hmt-edge-robot/src/hmt_edge_robot/assurance/mcc.py: 1 error
+  unbound-name: 1
+/workspace/scratch/1abe905e6918/hmt-edge-robot/src/hmt_edge_robot/assurance/optimization.py: 1 error
+  unsupported-operation: 1
+/workspace/scratch/1abe905e6918/hmt-edge-robot/src/hmt_edge_robot/vision.py: 1 error
+  bad-argument-type: 1
+/workspace/scratch/1abe905e6918/hmt-edge-robot/tests/test_orchestration_ledger.py: 1 error
+  unsupported-operation: 1
+/workspace/scratch/1abe905e6918/hmt-edge-robot/tests/test_resident_analytics.py: 1 error
+  bad-argument-type: 1
+/workspace/scratch/1abe905e6918/hmt-edge-robot/tools/coupled_campaign.py: 1 error
+  missing-attribute: 1
+/workspace/scratch/1abe905e6918/hmt-edge-robot/tools/live_llm_campaign.py: 1 error
+  missing-attribute: 1
+
+Top Errors by Count:
+bad-argument-type: 10 instances
+missing-attribute: 8 instances
+bad-assignment: 5 instances
+unsupported-operation: 5 instances
+read-only: 2 instances
+unexpected-keyword: 2 instances
+bad-return: 1 instance
+unbound-name: 1 instance
+ INFO 34 errors (2 warnings not shown)

@@ -118,5 +118,13 @@
     "remediation": "Pass the single canonical census hash into every scoped decision; check closure, reconstruction and the software scale campaign",
     "validation_test": "tests/test_assurance_reclamation.py::test_agc_transitive_reference_closure_and_cycles",
     "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-016",
+    "observed_state": "First Pyrefly pass found 34 type errors and two untyped dependency warnings",
+    "causal_evidence": "New full-project type gate exposed optional receipts/projections, hidden state dependencies, over-narrow container inference, literal domains, protocol qualification and deliberate invalid constructor calls in negative tests; initial diagnostics retained in evidence/types/initial_diagnostics.log",
+    "remediation": "Narrow optional values; pass observed packets explicitly; type literal/action/DP containers; declare provider protocol; use model_validate/setattr for negative runtime boundaries; install locked upstream stubs; require zero warnings/errors",
+    "validation_test": "G-TYPES-012; tests/test_typecheck_gate.py::test_pyrefly_rejects_invalid_return; G-RUNTIME-004",
+    "external_boundary": false
   }
 ]

@@ -39,7 +39,7 @@ def run() -> dict:
             )
             planned = cell.orchestrator.submit(order)
             outcome = cell.orchestrator.run_next()
-            if planned.state.value != "PLANNED" or outcome.state.value != "SUCCEEDED":
+            if planned.state.value != "PLANNED" or outcome is None or outcome.state.value != "SUCCEEDED":
                 raise RuntimeError("COUPLED_MISSION_FAILED")
             cell.access.revoke(session)
             durations.append((time.perf_counter() - start) * 1000)

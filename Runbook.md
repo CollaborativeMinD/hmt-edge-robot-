@@ -6,6 +6,8 @@ Prerequisites: Python 3.12+ and uv. Run from the repository root.
 
 ```bash
 uv sync --frozen --extra dev
+uv run pyrefly check --min-severity warn
+uv run ruff check src tests tools notebooks
 uv run python tools/validate.py
 ```
 
@@ -161,3 +163,21 @@ Back up the whole SQLite database using section 6. Hardware verification is defe
 until a qualified containerized deployment exists. The software requirement scope,
 trust assumptions, optimization bounds and adapter seams are specified in
 `docs/substrate_assurance.md`.
+
+
+## 8. Maintain the static typing gate
+
+Pyrefly 1.3.2 is pinned in the development extra and `uv.lock`; Ruff remains the
+lint gate. The `tool.pyrefly` configuration checks `src`, `tests`, `tools`, and the
+executable notebook, including unannotated definitions and generated code. The
+G-TYPES-012 gate runs `pyrefly check --min-severity warn` through the same cumulative
+validator used by GitHub Actions. A warning or error blocks software acceptance.
+Locked `types-jsonschema` and `types-defusedxml` provide upstream type interfaces.
+
+On a failure, read the current run's `G-TYPES-012.log`. Resolve the violated type
+contract at its defining boundary, narrow optional values before use, and preserve
+runtime schema guards. Deliberately invalid input tests must use `model_validate`
+and mutation attempts must use `setattr`; neither is a diagnostic suppression.
+Do not add baselines, ignore comments, missing-import bypasses, or blanket error
+exclusions to obtain PASS. Run all cumulative gates after each correction. Historical
+acceptance seals remain unchanged; the typing update has its own source receipt.

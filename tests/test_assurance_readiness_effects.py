@@ -41,7 +41,7 @@ def effect_contract(**kwargs):
         allowed=(Effect(kind="write", target="evidence/report.json"),),
         required_coverage=("write", "network", "spawn"), max_runtime_sec=2.0)
     values.update(kwargs)
-    return EffectContract(**values)
+    return EffectContract.model_validate(values)
 
 
 def effect_trace(**kwargs):
@@ -49,7 +49,7 @@ def effect_trace(**kwargs):
         started_at=0.0, runtime_sec=1.0, exit_code=0, coverage=("write", "network", "spawn"),
         complete=True, observed=(Effect(kind="write", target="evidence/report.json"),))
     values.update(kwargs)
-    return EffectTrace(**values)
+    return EffectTrace.model_validate(values)
 
 
 def test_mcc_mission_readiness_and_boundary(cell):
@@ -195,9 +195,9 @@ def test_assurance_contracts_strict_finite_frozen():
     with pytest.raises(ValidationError):
         WitnessScope(subject_id="a", subject_hash=HASH, contract_hash=HASH, collector_id="fixture", epochs=Epochs(), observed_at=1.0, expires_at=1.0, coverage=())
     with pytest.raises(ValidationError):
-        Epochs(policy="1")
+        Epochs.model_validate({"policy": "1"})
     with pytest.raises(ValidationError):
-        Epochs(unrecognized=True)
+        Epochs.model_validate({"unrecognized": True})
     frozen = Epochs()
     with pytest.raises(ValidationError):
-        frozen.policy = 2
+        setattr(frozen, "policy", 2)

@@ -5,12 +5,13 @@
 Governed edge robotics, resident HMT, and evidence you can replay.
 
 [![CI](https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/tests-136_passing-2ea043?style=flat-square)](evidence/validation.json)
-[![Coverage](https://img.shields.io/badge/coverage-97.41%25-2ea043?style=flat-square)](evidence/coverage.json)
+[![Tests](https://img.shields.io/badge/tests-137_passing-2ea043?style=flat-square)](evidence/validation.json)
+[![Coverage](https://img.shields.io/badge/coverage-97.78%25-2ea043?style=flat-square)](evidence/coverage.json)
 [![Supervisory SIL](https://img.shields.io/badge/supervisory_SIL-PASS-2ea043?style=flat-square)](evidence/validation.json)
 [![Physical deployment](https://img.shields.io/badge/physical_deployment-HOLD-d29922?style=flat-square)](docs/compliance.md)
 
 [![Python](https://img.shields.io/badge/Python-3.12%2B-3776ab?style=flat-square&logo=python&logoColor=white)](pyproject.toml)
+[![Pyrefly](https://img.shields.io/badge/Pyrefly-1.3.2-8b5cf6?style=flat-square)](pyproject.toml)
 [![Pydantic](https://img.shields.io/badge/Pydantic-v2-e92063?style=flat-square)](docs/contracts.schema.json)
 [![Resident HMT](https://img.shields.io/badge/resident_HMT-advisory-7c3aed?style=flat-square)](docs/architecture.md)
 [![Lineage](https://img.shields.io/badge/lineage-v1.0.0-0969da?style=flat-square)](archive/version-lineage/v1.0.0/VERSION_LINEAGE.md)
@@ -30,6 +31,7 @@ uv run hmt-edge-robot demo
 uv run hmt-edge-robot replay
 uv run hmt-edge-robot analytics
 uv run hmt-edge-robot export
+uv run pyrefly check --min-severity warn
 uv run python tools/validate.py
 ```
 

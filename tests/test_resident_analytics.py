@@ -112,7 +112,7 @@ def test_resident_context_tools_and_bounds(cell, ready):
     assert asyncio.run(cell.resident.ask(cell.status(), "inspect")).proposal.action == "hold"
 
 
-def test_provider_profiles_and_price_budget():
+def test_provider_profiles_and_price_budget(cell):
     for url in ("ftp://localhost", "http://user:pass@localhost", "http://localhost?key=secret"):
         with pytest.raises(ValueError):
             OpenAICompatibleProvider(url, "model", Policy())
@@ -125,7 +125,7 @@ def test_provider_profiles_and_price_budget():
         asyncio.run(provider.propose({"policy_epoch": 1}, "inspect"))
     provider.local = False
     with pytest.raises(PermissionError):
-        ResidentHMT(Policy(), None, provider)
+        ResidentHMT(Policy(), cell.ledger, provider)
     for args in ((2.0, 4), (1.0, 5), (0.0, 1)):
         with pytest.raises(ValueError):
             CallBudget(*args)

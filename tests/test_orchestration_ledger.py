@@ -186,7 +186,9 @@ def test_ledger_restart_append_only_and_law(tmp_path):
     ledger.close()
     reopened = Ledger(path)
     assert reopened.recover() == 1
-    assert reopened.task("unfinished")["state"] == "FAILED"
+    task = reopened.task("unfinished")
+    assert task is not None
+    assert task["state"] == "FAILED"
     assert reopened.verify() == 2
     with pytest.raises(EvidenceError):
         reopened.transition("unfinished", TaskState.FAILED, TaskState.SUCCEEDED, "invented")

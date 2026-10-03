@@ -6,7 +6,7 @@ from ..contracts import digest
 from .agc import AutonomyGarbageCollector
 from .analytics import AssuranceAnalytics
 from .catalog import ArtifactCatalog
-from .contracts import Epochs, ReclamationPlan
+from .contracts import Epochs, MutationAction, ReclamationPlan
 from .kernel import AssuranceKernel
 from .mcc import MissionColdStartCartographer
 from .usea import UndeclaredSideEffectAttestor
@@ -33,7 +33,7 @@ class SubstrateAssurance:
     def issue_grant(
         self,
         plan: ReclamationPlan,
-        action: str,
+        action: MutationAction,
         artifact_id: str,
         session_id: str,
         operator_id: str,

@@ -20,11 +20,11 @@ def test_nonfinite_boundary_rejected(value):
 
 def test_contracts_forbid_unknown_mutation_coercion():
     with pytest.raises(ValidationError):
-        Policy(unknown=1)
+        Policy.model_validate({"unknown": 1})
     with pytest.raises(ValidationError):
-        Policy(policy_epoch="1")
+        Policy.model_validate({"policy_epoch": "1"})
     with pytest.raises(ValidationError):
-        Policy().policy_epoch = 3
+        setattr(Policy(), "policy_epoch", 3)
     with pytest.raises(ValidationError):
         MotionRequest(
             request_id="x",

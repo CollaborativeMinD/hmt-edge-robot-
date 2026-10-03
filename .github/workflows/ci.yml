@@ -1,4 +1,4 @@
-name: Cumulative supervisory verification
+name: Cumulative software verification (Pyrefly + Ruff)
 on:
   push:
     branches: [main, build/architecture-bound-v1]
@@ -15,7 +15,8 @@ jobs:
         with:
           version: 0.9.7
       - run: uv sync --frozen --extra dev
-      - run: uv run --no-sync python tools/validate.py
+      - name: Pyrefly, Ruff, and cumulative regression gates
+        run: uv run --no-sync python tools/validate.py
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:

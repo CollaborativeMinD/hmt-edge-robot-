@@ -71,3 +71,5 @@ Scope: system software. Physical deployment verification is deferred. The normat
 | REQ-SAT-NFR-04 | nonfunctional | Exact bounded 0/1 knapsack matches independent brute-force oracle and never grants authority | test_optimization_exact_against_brute_force |
 | REQ-SAT-NFR-05 | nonfunctional | Read-only assurance census and analytics leave projections and pending work unchanged | test_catalog_readonly_no_recovery_or_writes |
 | REQ-SAT-NFR-06 | nonfunctional | Software campaign plans 258 records within 10 sec and optimizes 64 candidates/1024 budget within 2 sec on acceptance host, with zero driver moves | test_optimization_exact_against_brute_force |
+
+| REQ-NFR-11 | nonfunctional | Pinned Pyrefly checks source, tests, tools and notebook; zero warnings/errors, static mismatch rejects CI alongside Ruff | test_pyrefly_rejects_invalid_return |

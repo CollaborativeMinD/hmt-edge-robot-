@@ -61,7 +61,7 @@ class HaloSafe:
         ):
             reason = "WORKSPACE_REJECTED"
         else:
-            distance = self._path_distance(target_mm)
+            distance = self._path_distance(target_mm, self.robot, self.human)
             span = self.policy.full_speed_separation_m - protective
             scale = min(1.0, max(0.0, (distance - protective) / span)) if span > 0 else 0.0
             reason = "SAFE" if scale > 0 else "PROTECTIVE_STOP"
@@ -73,10 +73,10 @@ class HaloSafe:
             rejection_reason=reason,
         )
 
-    def _path_distance(self, target_mm: Vector3) -> float:
+    def _path_distance(self, target_mm: Vector3, robot: PositionPacket, human_packet: PositionPacket) -> float:
         """Closest distance to commanded straight segment, not just endpoint."""
-        start = np.asarray(self.robot.position_mm, dtype=float)
-        end, human = np.asarray(target_mm), np.asarray(self.human.position_mm)
+        start = np.asarray(robot.position_mm, dtype=float)
+        end, human = np.asarray(target_mm), np.asarray(human_packet.position_mm)
         direction = end - start
         norm = float(direction @ direction)
         t = float(np.clip((human - start) @ direction / norm, 0, 1)) if norm > 0 else 0.0
@@ -113,4 +113,5 @@ class AdmittanceController:
         if not np.isfinite(position).all() or not np.isfinite(velocity).all():
             raise ValueError("PHYSICS_UPDATE_NONFINITE")
         self.position, self.velocity = position, velocity
-        return tuple(float(x) for x in position), tuple(float(x) for x in velocity)
+        return ((float(position[0]), float(position[1]), float(position[2])),
+                (float(velocity[0]), float(velocity[1]), float(velocity[2])))

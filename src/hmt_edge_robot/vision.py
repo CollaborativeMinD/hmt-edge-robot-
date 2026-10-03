@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import hashlib
 import math
+from typing import Any
 
 import cv2
 import numpy as np
@@ -28,7 +29,7 @@ class NeuroGrasp:
             ambiguity_limit,
         )
 
-    def candidates(self, frame: NDArray[np.uint8], limit: int = 8) -> tuple[GraspObservation, ...]:
+    def candidates(self, frame: NDArray[Any], limit: int = 8) -> tuple[GraspObservation, ...]:
         if type(limit) is not int or not 1 <= limit <= 32:
             raise ValueError("CANDIDATE_LIMIT_INVALID")
         if frame.dtype != np.uint8 or frame.ndim != 3 or frame.shape[2] != 3:
@@ -44,7 +45,7 @@ class NeuroGrasp:
         for contour in contours[:32]:
             if cv2.contourArea(contour) < self.min_area:
                 continue
-            observation = self._pose(contour, frame_hash)
+            observation = self._pose(np.asarray(contour, dtype=np.int32), frame_hash)
             if observation is not None:
                 observations.append(observation)
             if len(observations) == limit:

@@ -12,7 +12,7 @@ def optimize_warm_set(candidates: tuple[WarmCandidate, ...], budget_units: int) 
     if len({c.artifact_id for c in candidates}) != len(candidates):
         raise ValueError("DUPLICATE_CANDIDATE")
     # 0/1 knapsack with descending budget avoids reusing an artifact. O(n*budget).
-    table = [(0.0, ()) for _ in range(budget_units + 1)]
+    table: list[tuple[float, tuple[str, ...]]] = [(0.0, ()) for _ in range(budget_units + 1)]
     for c in sorted(candidates, key=lambda c: c.artifact_id):
         for budget in range(budget_units, c.cost_units - 1, -1):
             gain, ids = table[budget - c.cost_units]
