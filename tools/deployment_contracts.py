@@ -18,6 +18,10 @@ class Closed(BaseModel):
     def exact_version(cls, value: object) -> object:
         if isinstance(value, dict) and "schema_version" in value and type(value["schema_version"]) is not int:
             raise ValueError("SCHEMA_VERSION_INTEGER_REQUIRED")
+        if isinstance(value, dict):
+            for name in ("alert", "flux_suspended"):
+                if name in value and type(value[name]) is not bool:
+                    raise ValueError("DEPLOYMENT_BOOLEAN_REQUIRED")
         return value
 
 

@@ -936,8 +936,8 @@
     },
     {
       "path": "tests/test_deployment_receipts.py",
-      "module_loc": 59,
-      "max_function_physical_loc": 28,
+      "module_loc": 61,
+      "max_function_physical_loc": 30,
       "module_status": "PASS",
       "function_status": "PASS"
     },
@@ -1104,8 +1104,8 @@
     },
     {
       "path": "tools/deployment_contracts.py",
-      "module_loc": 80,
-      "max_function_physical_loc": 6,
+      "module_loc": 84,
+      "max_function_physical_loc": 10,
       "module_status": "PASS",
       "function_status": "PASS"
     },

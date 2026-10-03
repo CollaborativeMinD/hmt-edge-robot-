@@ -29,7 +29,7 @@ def test_design_receipt_replay_preserves_every_execution_hold(tmp_path: Path) ->
     assert verify_receipt(first, raw) == first
 
 
-@pytest.mark.parametrize("mutation", ["hash", "authority", "unknown", "oversize", "duplicate", "stale"])
+@pytest.mark.parametrize("mutation", ["hash", "authority", "unknown", "oversize", "duplicate", "stale", "numeric_alert"])
 def test_receipt_forgery_and_stale_inputs_are_denied(tmp_path: Path, mutation: str) -> None:
     root = deployment_copy(tmp_path)
     first = evaluate(root)
@@ -41,6 +41,8 @@ def test_receipt_forgery_and_stale_inputs_are_denied(tmp_path: Path, mutation: s
         value["release_decision"] = "ADMIT"
     elif mutation == "unknown":
         value["cluster_credentials"] = "unreviewed"
+    elif mutation == "numeric_alert":
+        value["alert"] = 0
     elif mutation == "stale":
         mutate(root, "policy/deployment.json", ("resources", "request_cpu_m"), 600)
         candidate = json.loads((root / "policy/release_candidate.json").read_text())
