@@ -208,10 +208,19 @@ class OpenAICompatibleProvider:
         payload = json.loads(data)
         if payload.get("model") != self.model_id:
             raise ValueError("MODEL_ID_MISMATCH")
-        self.usage.append(payload.get("usage", {}))
+        choice = payload["choices"][0]
+        if choice.get("finish_reason") != "stop" or choice["message"].get("refusal"):
+            raise ValueError("MODEL_RESPONSE_INCOMPLETE")
+        usage = payload.get("usage", {})
+        if self.budget is not None and any(
+            type(usage.get(name)) is not int or usage[name] < 0
+            for name in ("prompt_tokens", "completion_tokens")
+        ):
+            raise ValueError("MODEL_USAGE_UNAVAILABLE")
+        self.usage.append(usage)
         if len(self.usage) > 256:
             del self.usage[0]
-        return payload["choices"][0]["message"]["content"]
+        return choice["message"]["content"]
 
     async def qualify(self, context: dict[str, Any]) -> str:
         """L4 canary: bind actual schema-compliant response to the live profile."""

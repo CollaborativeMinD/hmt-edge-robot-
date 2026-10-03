@@ -11,6 +11,7 @@ from fastapi.responses import JSONResponse
 from pydantic import Field, ValidationError
 
 from .contracts import Contract, Identifier, MotionRequest, TaskReceipt
+from .ingress import BoundedIngress
 from .ledger import EvidenceError
 from .runtime import RobotCell
 
@@ -39,6 +40,7 @@ def create_app(cell: RobotCell, api_token: str) -> FastAPI:
         cell.close()
 
     app = FastAPI(title="HMT Edge Robot (SIL)", lifespan=lifespan)
+    app.add_middleware(BoundedIngress)
 
     def authenticated(authorization: Annotated[str | None, Header()] = None) -> None:
         if authorization is None or not secrets.compare_digest(

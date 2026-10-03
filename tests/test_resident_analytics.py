@@ -146,6 +146,7 @@ def test_http_adapter_canary_proposal_usage(cell, monkeypatch):
                 "usage": {"prompt_tokens": 100, "completion_tokens": 10},
                 "choices": [
                     {
+                        "finish_reason": "stop",
                         "message": {
                             "content": canonical(
                                 {"action": "inspect", "explanation": "ok", "evidence_refs": []}
@@ -203,6 +204,7 @@ def test_http_size_status_and_evidence_guards(cell, monkeypatch):
                 "model": "fixture-v1",
                 "choices": [
                     {
+                        "finish_reason": "stop",
                         "message": {
                             "content": '{"action":"inspect","explanation":"ok","evidence_refs":["fake"]}'
                         }

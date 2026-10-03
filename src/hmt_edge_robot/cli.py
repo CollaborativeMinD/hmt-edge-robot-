@@ -75,9 +75,12 @@ def main() -> None:
     if args.command in ("serve", "resident") and (token is None or len(token) < 16):
         raise SystemExit("HMT_OPERATOR_TOKEN must contain at least 16 characters")
     token = token or secrets.token_hex(32)
-    cell = RobotCell(args.database, token, policy)
+    read_only = args.command in ("replay", "analytics", "export")
+    cell = RobotCell(args.database, token, policy, read_only=read_only)
     try:
         if args.model_url or args.model_id:
+            if read_only:
+                raise SystemExit("Read-only commands cannot activate a model")
             if not (args.model_url and args.model_id):
                 raise SystemExit("Both --model-url and --model-id are required")
             provider = OpenAICompatibleProvider(

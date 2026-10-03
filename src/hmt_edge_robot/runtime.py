@@ -26,13 +26,15 @@ class RobotCell:
         policy: Policy | None = None,
         provider: ResidentProvider | None = None,
         clock: Callable[[], float] = time.monotonic,
+        read_only: bool = False,
     ) -> None:
         if len(operator_token) < 16:
             raise ValueError("OPERATOR_TOKEN_TOO_SHORT")
         self.policy, self.clock = policy or Policy(), clock
-        self.ledger = Ledger(database)
+        self.ledger = Ledger(database, read_only=read_only)
         self.ledger.verify()
-        self.ledger.recover()
+        if not read_only:
+            self.ledger.recover()
         identity = ProvisionedIdentity(
             {"operator": (digest(operator_token), ("inspect", "motion", "reset"))}
         )
