@@ -12,6 +12,8 @@ dependencies = ["pydantic>=2.12,<3", "numpy>=2.2,<3", "duckdb>=1.4,<2", "polars>
 [project.optional-dependencies]
 dev = [
     "pytest>=9,<10",
+    "scaffoldctl==0.3.0",
+    "hmt-truth-serum-lanes==1.0.0",
     "pytest-cov>=7,<8",
     "ruff>=0.14,<1",
     "jsonschema>=4.25,<5",
@@ -55,3 +57,7 @@ search-path = ["src", "tests", "tools"]
 python-version = "3.12"
 check-unannotated-defs = true
 ignore-errors-in-generated-code = false
+
+[tool.uv.sources]
+scaffoldctl = { path = "vendor/qualified/scaffoldctl" }
+hmt-truth-serum-lanes = { path = "vendor/qualified/truth-serum" }

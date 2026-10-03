@@ -1,0 +1,2 @@
+{"assessment_status": "PASS", "reason_codes": ["HOLD_FOLD7_CEILING_EXCEEDED"], "alert": true}
+::warning::Policy assessment has unresolved adoption gaps; inspect its HOLD register.

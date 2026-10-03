@@ -1,0 +1,71 @@
+@prefix forge: <https://terminal-state.systems/ontology/forge#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+
+forge:status_scheme
+    a forge:ConceptScheme ;
+    skos:prefLabel "status_scheme" ;
+    dct:description "Canonical status taxonomy for federated specialist-agent packages." .
+
+### Approval status
+forge:approval_status_scheme a forge:ConceptScheme ; skos:prefLabel "approval_status_scheme" .
+forge:approval_approved a forge:ApprovalStatus, forge:ControlledTerm ; skos:inScheme forge:approval_status_scheme ; skos:prefLabel "approved" .
+forge:approval_rejected a forge:ApprovalStatus, forge:ControlledTerm ; skos:inScheme forge:approval_status_scheme ; skos:prefLabel "rejected" .
+forge:approval_pending a forge:ApprovalStatus, forge:ControlledTerm ; skos:inScheme forge:approval_status_scheme ; skos:prefLabel "pending" .
+forge:approval_hold a forge:ApprovalStatus, forge:ControlledTerm ; skos:inScheme forge:approval_status_scheme ; skos:prefLabel "hold" .
+
+### Validation status
+forge:validation_status_scheme a forge:ConceptScheme ; skos:prefLabel "validation_status_scheme" .
+forge:validation_pass a forge:ValidationStatus, forge:ControlledTerm ; skos:inScheme forge:validation_status_scheme ; skos:prefLabel "pass" .
+forge:validation_fail a forge:ValidationStatus, forge:ControlledTerm ; skos:inScheme forge:validation_status_scheme ; skos:prefLabel "fail" .
+forge:validation_hold a forge:ValidationStatus, forge:ControlledTerm ; skos:inScheme forge:validation_status_scheme ; skos:prefLabel "hold" .
+forge:validation_not_run a forge:ValidationStatus, forge:ControlledTerm ; skos:inScheme forge:validation_status_scheme ; skos:prefLabel "not_run" .
+
+### Runtime state status
+forge:runtime_state_status_scheme a forge:ConceptScheme ; skos:prefLabel "runtime_state_status_scheme" .
+forge:runtime_nominal a forge:RuntimeStateStatus, forge:ControlledTerm ; skos:inScheme forge:runtime_state_status_scheme ; skos:prefLabel "nominal" .
+forge:runtime_degraded a forge:RuntimeStateStatus, forge:ControlledTerm ; skos:inScheme forge:runtime_state_status_scheme ; skos:prefLabel "degraded" .
+forge:runtime_fail_safe a forge:RuntimeStateStatus, forge:ControlledTerm ; skos:inScheme forge:runtime_state_status_scheme ; skos:prefLabel "fail_safe" .
+forge:runtime_offline a forge:RuntimeStateStatus, forge:ControlledTerm ; skos:inScheme forge:runtime_state_status_scheme ; skos:prefLabel "offline" .
+
+### Review status
+forge:review_status_scheme a forge:ConceptScheme ; skos:prefLabel "review_status_scheme" .
+forge:review_requested a forge:ReviewStatus, forge:ControlledTerm ; skos:inScheme forge:review_status_scheme ; skos:prefLabel "requested" .
+forge:review_in_review a forge:ReviewStatus, forge:ControlledTerm ; skos:inScheme forge:review_status_scheme ; skos:prefLabel "in_review" .
+forge:review_closed a forge:ReviewStatus, forge:ControlledTerm ; skos:inScheme forge:review_status_scheme ; skos:prefLabel "closed" .
+forge:review_escalated a forge:ReviewStatus, forge:ControlledTerm ; skos:inScheme forge:review_status_scheme ; skos:prefLabel "escalated" .
+
+### Mapping disposition
+forge:mapping_disposition_scheme a forge:ConceptScheme ; skos:prefLabel "mapping_disposition_scheme" .
+forge:mapping_exact_match a forge:MappingDisposition, forge:ControlledTerm ; skos:inScheme forge:mapping_disposition_scheme ; skos:prefLabel "exact_match" .
+forge:mapping_close_match a forge:MappingDisposition, forge:ControlledTerm ; skos:inScheme forge:mapping_disposition_scheme ; skos:prefLabel "close_match" .
+forge:mapping_broad_match a forge:MappingDisposition, forge:ControlledTerm ; skos:inScheme forge:mapping_disposition_scheme ; skos:prefLabel "broad_match" .
+forge:mapping_narrow_match a forge:MappingDisposition, forge:ControlledTerm ; skos:inScheme forge:mapping_disposition_scheme ; skos:prefLabel "narrow_match" .
+forge:mapping_rejected a forge:MappingDisposition, forge:ControlledTerm ; skos:inScheme forge:mapping_disposition_scheme ; skos:prefLabel "rejected" .
+
+### Drift assessment status
+forge:drift_assessment_status_scheme a forge:ConceptScheme ; skos:prefLabel "drift_assessment_status_scheme" .
+forge:drift_none a forge:DriftAssessmentStatus, forge:ControlledTerm ; skos:inScheme forge:drift_assessment_status_scheme ; skos:prefLabel "none_detected" .
+forge:drift_observed a forge:DriftAssessmentStatus, forge:ControlledTerm ; skos:inScheme forge:drift_assessment_status_scheme ; skos:prefLabel "observed" .
+forge:drift_material a forge:DriftAssessmentStatus, forge:ControlledTerm ; skos:inScheme forge:drift_assessment_status_scheme ; skos:prefLabel "material" .
+forge:drift_rejected a forge:DriftAssessmentStatus, forge:ControlledTerm ; skos:inScheme forge:drift_assessment_status_scheme ; skos:prefLabel "rejected_pending_repair" .
+
+### Risk status
+forge:risk_status_scheme a forge:ConceptScheme ; skos:prefLabel "risk_status_scheme" .
+forge:risk_open a forge:RiskStatus, forge:ControlledTerm ; skos:inScheme forge:risk_status_scheme ; skos:prefLabel "open" .
+forge:risk_mitigated a forge:RiskStatus, forge:ControlledTerm ; skos:inScheme forge:risk_status_scheme ; skos:prefLabel "mitigated" .
+forge:risk_accepted a forge:RiskStatus, forge:ControlledTerm ; skos:inScheme forge:risk_status_scheme ; skos:prefLabel "accepted" .
+forge:risk_blocking a forge:RiskStatus, forge:ControlledTerm ; skos:inScheme forge:risk_status_scheme ; skos:prefLabel "blocking" .
+
+### Scheme binding
+forge:status_scheme skos:hasTopConcept
+    forge:approval_approved,
+    forge:validation_pass,
+    forge:runtime_nominal,
+    forge:review_requested,
+    forge:mapping_exact_match,
+    forge:drift_none,
+    forge:risk_open .

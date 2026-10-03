@@ -1,0 +1,24 @@
+{
+  "status": "QUALIFIED_SCOPED",
+  "scaffoldctl": {
+    "tests": 253,
+    "coverage": 96.74,
+    "scope": [
+      "root-document-schema",
+      "read-only-document-validator"
+    ],
+    "full_perimeter_host_fit": "HOLD"
+  },
+  "truth_serum": {
+    "tests": 28,
+    "subtests": 22,
+    "archive_seal": "PASS",
+    "scope": [
+      "evidence-claim-byte-binding"
+    ],
+    "full_engine_host_fit": "HOLD"
+  },
+  "policy_full_adoption": "HOLD",
+  "docker_build": "HOLD",
+  "deployment": "HOLD"
+}

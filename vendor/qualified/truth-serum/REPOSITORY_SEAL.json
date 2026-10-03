@@ -1,0 +1,12 @@
+{
+  "algorithm": "sha256-path-size-content-v1",
+  "byte_count": 313040,
+  "excluded_paths": [
+    "REPOSITORY_SEAL.json",
+    "evidence/runtime"
+  ],
+  "file_count": 93,
+  "schema_id": "truth_serum.repository_seal",
+  "schema_version": "1.0.0",
+  "tree_sha256": "3431e60ee9ed09a49a8597db15375c81337f20453e6b11dbc637f4d567adb47b"
+}

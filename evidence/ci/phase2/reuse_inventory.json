@@ -1,0 +1,25 @@
+{
+  "unresolved_delta": "read-only host document/evidence profile plus policy measurement; no control algorithms",
+  "references": [
+    {
+      "name": "16-Geometric_Algebra_PGA_GC_Mobile_Field_Card_v1.py",
+      "sha256": "aa59bfb38c5f391167d0da5e1bd8b83fda0b4312036926a57023ad6255a24355",
+      "disposition": "REFERENCE_ONLY_NO_CI_ADMISSION_ALGORITHM"
+    },
+    {
+      "name": "17-Classical_Calculus_Lin_Algebra_Mobile_Field_Card_v6.py",
+      "sha256": "55b739d4ce49d05bcc1686432faa302da1542ff5ea3123216b8dfe4c67566d90",
+      "disposition": "REFERENCE_ONLY_NO_CI_ADMISSION_ALGORITHM"
+    },
+    {
+      "name": "18-white_board.html",
+      "sha256": "4b2e57379bf7f00f6733ffd283b6106c489c7cb98c4d945e3fbd9586b15068e5",
+      "disposition": "EXPLORE_ONLY"
+    },
+    {
+      "name": "20-scratch_pad.py",
+      "sha256": "fb7a7282579cec0bf20ba80a3da771e3510086892e7e0d5f923d9249f248ee56",
+      "disposition": "EXPLORE_ONLY"
+    }
+  ]
+}

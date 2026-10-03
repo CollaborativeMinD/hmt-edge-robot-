@@ -1,0 +1,27 @@
+{
+  "schema_id": "truth_serum.validation_report",
+  "schema_version": "1.0.0",
+  "validation_status": "pass",
+  "scope": "repository-source admission and human handoff",
+  "gates": [
+    {"gate": "frozen-provisioning", "status": "pass", "evidence": "uv sync --frozen; 101 packages"},
+    {"gate": "acceptance-regression", "status": "pass", "evidence": "28 tests passed"},
+    {"gate": "scaffoldctl-worktree", "status": "pass", "evidence": "SCF.WORKTREE.VALID"},
+    {"gate": "scaffoldctl-staged", "status": "pass", "evidence": "SCF.HOOK.ADMITTED"},
+    {"gate": "scaffoldctl-tree", "status": "pass", "evidence": "SCF.HOOK.ADMITTED"},
+    {"gate": "truth-serum-ci", "status": "pass", "evidence": "15 of 15 lanes PASS"},
+    {"gate": "ruff", "status": "pass", "evidence": "All checks passed"},
+    {"gate": "mypy", "status": "pass", "evidence": "30 source files"},
+    {"gate": "pylint", "status": "pass", "evidence": "E/F/W return code 0"},
+    {"gate": "bandit", "status": "pass", "evidence": "0 medium/high findings"},
+    {"gate": "semgrep", "status": "pass", "evidence": "0 blocking findings"},
+    {"gate": "yamllint", "status": "pass", "evidence": "return code 0"},
+    {"gate": "pip-audit", "status": "pass", "evidence": "no known vulnerabilities"},
+    {"gate": "seal-mutation-regressions", "status": "pass", "evidence": "byte, envelope, and debris tampering rejected"}
+  ],
+  "nonclaims": [
+    "No official SysML v2 or SysIDE semantic execution was available.",
+    "No Docker, Kubernetes, Pi, Tailscale, physical-AI, or product-runtime target was executed.",
+    "Repository PASS does not grant human promotion authority."
+  ]
+}

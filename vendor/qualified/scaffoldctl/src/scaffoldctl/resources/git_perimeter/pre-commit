@@ -1,0 +1,21 @@
+#!/bin/sh
+set -u
+umask 077
+
+repo_root=$(git rev-parse --show-toplevel 2>/dev/null) || exit 1
+git_dir=$(git rev-parse --absolute-git-dir 2>/dev/null) || exit 1
+scaffoldctl_bin=${SCAFFOLDCTL_BIN:-scaffoldctl}
+ledger_path=${SCAFFOLDCTL_LEDGER:-"$git_dir/scaffoldctl/evidence.duckdb"}
+private_key=${SCAFFOLDCTL_LEASE_PRIVATE_KEY:-"$git_dir/scaffoldctl/lease-signing-key.pem"}
+
+command -v "$scaffoldctl_bin" >/dev/null 2>&1 || exit 1
+
+if "$scaffoldctl_bin" pre-commit \
+    --root "$repo_root" \
+    --ledger "$ledger_path" \
+    --private-key "$private_key"
+then
+    exit 0
+fi
+
+exit 1

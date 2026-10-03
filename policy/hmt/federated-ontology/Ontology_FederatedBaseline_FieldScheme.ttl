@@ -1,0 +1,843 @@
+@prefix forge: <https://terminal-state.systems/ontology/forge#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+
+forge:field_scheme_phase5 a forge:ConceptScheme ; skos:prefLabel "field_scheme_phase5" ; dct:description "Canonical cross-package field registry after phase 5 targeted domain refinement and Edge DevSecOps explicit field declaration generation." .
+
+forge:field_reference a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_reference" .
+
+forge:field_constraint a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_constraint" .
+
+forge:field_misc a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_misc" .
+
+forge:field_identifier a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_identifier" .
+
+forge:field_state_control a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_state_control" .
+
+forge:field_physical_metric a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_physical_metric" .
+
+forge:field_ontology a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_ontology" .
+
+forge:field_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_status" .
+
+forge:field_risk a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_risk" .
+
+forge:field_review a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_review" .
+
+forge:field_deployment a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_deployment" .
+
+forge:field_twin a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_twin" .
+
+forge:field_artifact_context a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_artifact_context" .
+
+forge:field_evidence a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_evidence" .
+
+forge:field_integrity a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "field_integrity" .
+
+forge:field_action_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "action_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_actuation_allowed a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "actuation_allowed" ; skos:broader forge:field_constraint ; forge:target_term "forge:ControlConstraint" ; forge:mapping_type "close_match" ; forge:justification "Constraint-like field aligns closely to runtime control constraints." .
+
+forge:field_actuation_limit a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "actuation_limit" ; skos:broader forge:field_constraint ; forge:target_term "forge:ControlConstraint" ; forge:mapping_type "close_match" ; forge:justification "Constraint-like field aligns closely to runtime control constraints." .
+
+forge:field_actuator_enable_condition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "actuator_enable_condition" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_actuator_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "actuator_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_actuator_state a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "actuator_state" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_affected_state_transition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "affected_state_transition" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_allocation_strategy a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "allocation_strategy" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_allowable_deflection_mm a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "allowable_deflection_mm" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_allowable_peak_accel_g a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "allowable_peak_accel_g" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_allowed_actions a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "allowed_actions" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_allowed_artifacts a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "allowed_artifacts" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_allowed_states a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "allowed_states" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_alt_label a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "alt_label" ; skos:broader forge:field_ontology ; forge:target_term "forge:ControlledTerm" ; forge:mapping_type "close_match" ; forge:justification "Field aligns closely to governed ontology vocabulary." .
+
+forge:field_ambient_c a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "ambient_c" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_analysis_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "analysis_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_analysis_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "analysis_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation-style outcome governance." .
+
+forge:field_anomaly_flag a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "anomaly_flag" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_applicability a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "applicability" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_approval_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "approval_status" ; skos:broader forge:field_status ; forge:target_term "forge:approval_status" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_approver a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "approver" ; skos:broader forge:field_review ; forge:target_term "forge:ReviewAction" ; forge:mapping_type "close_match" ; forge:justification "Review-oriented field aligns closely to review action governance." .
+
+forge:field_architecture_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "architecture_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_artifact_hash a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "artifact_hash" ; skos:broader forge:field_deployment ; forge:target_term "forge:DeploymentArtifact" ; forge:mapping_type "close_match" ; forge:justification "Deployment or release field aligns closely to deployment and release governance." .
+
+forge:field_artifact_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "artifact_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:artifact_id" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_artifact_type a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "artifact_type" ; skos:broader forge:field_ontology ; forge:target_term "forge:artifact_type" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_assembly_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "assembly_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_base_image_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "base_image_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_baseline_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "baseline_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_baseline_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "baseline_ref" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_batch_size a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "batch_size" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_blast_radius a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "blast_radius" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_bootstrap_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "bootstrap_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation or lifecycle outcome governance." .
+
+forge:field_broader_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "broader_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_build_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "build_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:DeploymentArtifact" ; forge:mapping_type "close_match" ; forge:justification "Identifier aligns to deployment or release artifacts." .
+
+forge:field_build_stage_count a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "build_stage_count" ; skos:broader forge:field_deployment ; forge:target_term "forge:DeploymentArtifact" ; forge:mapping_type "close_match" ; forge:justification "Deployment or release field aligns closely to deployment and release governance." .
+
+forge:field_bus_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "bus_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_cable_path_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "cable_path_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation-style outcome governance." .
+
+forge:field_candidate_logic_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "candidate_logic_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_cardinality_rule a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "cardinality_rule" ; skos:broader forge:field_constraint ; forge:target_term "forge:ShapeConstraint" ; forge:mapping_type "close_match" ; forge:justification "Constraint-like field aligns closely to graph or shape validation constraints." .
+
+forge:field_cg_location_mm a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "cg_location_mm" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_cg_shift_risk a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "cg_shift_risk" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_change_class a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "change_class" ; skos:broader forge:field_ontology ; forge:target_term "forge:change_class" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_change_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "change_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_ci_parity_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "ci_parity_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation or lifecycle outcome governance." .
+
+forge:field_circuit_break_trigger a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "circuit_break_trigger" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_claim_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "claim_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_claimed_behavior a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "claimed_behavior" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_class_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "class_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:ControlledTerm" ; forge:mapping_type "close_match" ; forge:justification "Identifier participates in governed semantic vocabulary or shape control." .
+
+forge:field_climb_rate_required a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "climb_rate_required" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_clock_state a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "clock_state" ; skos:broader forge:field_twin ; forge:target_term "forge:RuntimeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field aligns closely to digital twin, replay, or scenario runtime artifacts." .
+
+forge:field_comparison_method a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "comparison_method" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_compliance_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "compliance_status" ; skos:broader forge:field_status ; forge:target_term "forge:Status" ; forge:mapping_type "broad_match" ; forge:justification "Specialized status field maps broadly to the canonical Status taxonomy and should be normalized to an approved subtype." .
+
+forge:field_component a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "component" ; skos:broader forge:field_artifact_context ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed artifact or operational context awaiting stricter subtype binding." .
+
+forge:field_component_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "component_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_component_ids a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "component_ids" ; skos:broader forge:field_artifact_context ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed artifact or operational context awaiting stricter subtype binding." .
+
+forge:field_compression_applied a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "compression_applied" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_concept_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "concept_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:ControlledTerm" ; forge:mapping_type "close_match" ; forge:justification "Identifier participates in governed semantic vocabulary or shape control." .
+
+forge:field_concept_scheme_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "concept_scheme_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:ControlledTerm" ; forge:mapping_type "close_match" ; forge:justification "Identifier participates in governed semantic vocabulary or shape control." .
+
+forge:field_concern_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "concern_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_condition_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "condition_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_confidence_threshold a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "confidence_threshold" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_config_model_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "config_model_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_config_schema_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "config_schema_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_conformance_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "conformance_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation-style outcome governance." .
+
+forge:field_connector_access_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "connector_access_status" ; skos:broader forge:field_status ; forge:target_term "forge:RuntimeStateStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to runtime state governance." .
+
+forge:field_constraint_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "constraint_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_constraint_refs a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "constraint_refs" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_constraint_type a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "constraint_type" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_consumer_component a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "consumer_component" ; skos:broader forge:field_artifact_context ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed artifact or operational context awaiting stricter subtype binding." .
+
+forge:field_consumer_impact a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "consumer_impact" ; skos:broader forge:field_ontology ; forge:target_term "forge:consumer_impact" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_container_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "container_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_contract_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "contract_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_contract_version a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "contract_version" ; skos:broader forge:field_deployment ; forge:target_term "forge:DeploymentArtifact" ; forge:mapping_type "close_match" ; forge:justification "Deployment or release field aligns closely to deployment and release governance." .
+
+forge:field_control_authority_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "control_authority_status" ; skos:broader forge:field_status ; forge:target_term "forge:RuntimeStateStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to runtime state governance." .
+
+forge:field_control_constraint_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "control_constraint_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:Constraint" ; forge:mapping_type "close_match" ; forge:justification "Reference points to a governed constraint or bounded rule." .
+
+forge:field_cooling_assumption a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "cooling_assumption" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_correlated_bus_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "correlated_bus_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_critical_frequency_hz a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "critical_frequency_hz" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_critical_mode a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "critical_mode" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_critical_temp_c a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "critical_temp_c" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_criticality a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "criticality" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_dataset_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "dataset_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_datatype_or_nodekind a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "datatype_or_nodekind" ; skos:broader forge:field_ontology ; forge:target_term "forge:ShapeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field aligns closely to shape or schema governance artifacts." .
+
+forge:field_definition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "definition" ; skos:broader forge:field_ontology ; forge:target_term "forge:ControlledTerm" ; forge:mapping_type "close_match" ; forge:justification "Field aligns closely to governed ontology vocabulary." .
+
+forge:field_deflection_limit a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "deflection_limit" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_degraded_mode a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "degraded_mode" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_degraded_range a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "degraded_range" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_delta_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "delta_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_delta_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "delta_status" ; skos:broader forge:field_status ; forge:target_term "forge:DriftAssessmentStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to drift assessment governance." .
+
+forge:field_denied_states a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "denied_states" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_dependency_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "dependency_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_deployment_profile a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "deployment_profile" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_deployment_target a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "deployment_target" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_deployment_unit_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "deployment_unit_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_descent_rate_required a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "descent_rate_required" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_detection_method a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "detection_method" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_deviation_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "deviation_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_deviation_reason a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "deviation_reason" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_direction a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "direction" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_disposition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "disposition" ; skos:broader forge:field_status ; forge:target_term "forge:Status" ; forge:mapping_type "rejected" ; forge:justification "Generic field is semantically ambiguous across the federated stack and is rejected until specialized." .
+
+forge:field_divergence_value a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "divergence_value" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_domain_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "domain_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_downstream_restriction a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "downstream_restriction" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_downstream_review_required a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "downstream_review_required" ; skos:broader forge:field_review ; forge:target_term "forge:ReviewAction" ; forge:mapping_type "close_match" ; forge:justification "Review-oriented field aligns closely to review action governance." .
+
+forge:field_downstream_signal a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "downstream_signal" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_drift_metric a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "drift_metric" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_drift_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "drift_status" ; skos:broader forge:field_status ; forge:target_term "forge:drift_status" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_drift_type a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "drift_type" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_duckdb_table a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "duckdb_table" ; skos:broader forge:field_evidence ; forge:target_term "forge:EvidenceRecord" ; forge:mapping_type "broad_match" ; forge:justification "Evidence-bearing field maps broadly to the canonical EvidenceRecord class." .
+
+forge:field_early_indicator a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "early_indicator" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_edge_runtime_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "edge_runtime_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_edge_value a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "edge_value" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_effectiveness_assumption a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "effectiveness_assumption" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_electrical_valid a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "electrical_valid" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_enclosure_profile a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "enclosure_profile" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_energy_margin_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "energy_margin_status" ; skos:broader forge:field_status ; forge:target_term "forge:Status" ; forge:mapping_type "broad_match" ; forge:justification "Specialized status field maps broadly to the canonical Status taxonomy and should be normalized to an approved subtype." .
+
+forge:field_entry_condition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "entry_condition" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_entry_state a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "entry_state" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_envelope_state a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "envelope_state" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_environment_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "environment_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_error_class a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "error_class" ; skos:broader forge:field_ontology ; forge:target_term "forge:ControlledTerm" ; forge:mapping_type "close_match" ; forge:justification "Field aligns closely to governed ontology vocabulary." .
+
+forge:field_escalation_gate a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "escalation_gate" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_estimated_cost a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "estimated_cost" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_event_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "event_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_evidence_artifact a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "evidence_artifact" ; skos:broader forge:field_evidence ; forge:target_term "forge:EvidenceRecord" ; forge:mapping_type "broad_match" ; forge:justification "Evidence-bearing field maps broadly to the canonical EvidenceRecord class." .
+
+forge:field_evidence_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "evidence_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:evidence_id" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_evidence_path a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "evidence_path" ; skos:broader forge:field_evidence ; forge:target_term "forge:EvidenceRecord" ; forge:mapping_type "broad_match" ; forge:justification "Evidence-bearing field maps broadly to the canonical EvidenceRecord class." .
+
+forge:field_evidence_source a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "evidence_source" ; skos:broader forge:field_evidence ; forge:target_term "forge:EvidenceRecord" ; forge:mapping_type "broad_match" ; forge:justification "Evidence-bearing field maps broadly to the canonical EvidenceRecord class." .
+
+forge:field_evidence_timestamp_utc a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "evidence_timestamp_utc" ; skos:broader forge:field_evidence ; forge:target_term "forge:EvidenceRecord" ; forge:mapping_type "broad_match" ; forge:justification "Evidence-bearing field maps broadly to the canonical EvidenceRecord class." .
+
+forge:field_exception_justification a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "exception_justification" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_exit_condition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "exit_condition" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_expected_gate a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "expected_gate" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_expected_load_profile a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "expected_load_profile" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_expected_safe_state a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "expected_safe_state" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_export_format a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "export_format" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_extra_policy a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "extra_policy" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_fail_condition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "fail_condition" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_failure_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "failure_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_failure_mode a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "failure_mode" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_failure_semantics_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "failure_semantics_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_fall_threshold a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "fall_threshold" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_fallback_activated a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "fallback_activated" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_fallback_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "fallback_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_fallback_path a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "fallback_path" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_fallback_risk a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "fallback_risk" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_fallback_sequence a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "fallback_sequence" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_fastener_type a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "fastener_type" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_fault_code a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "fault_code" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_fault_condition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "fault_condition" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_fault_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "fault_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_fault_latched_state a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "fault_latched_state" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_fault_signal_behavior a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "fault_signal_behavior" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_fault_type a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "fault_type" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_feasibility_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "feasibility_status" ; skos:broader forge:field_status ; forge:target_term "forge:Status" ; forge:mapping_type "broad_match" ; forge:justification "Specialized status field maps broadly to the canonical Status taxonomy and should be normalized to an approved subtype." .
+
+forge:field_finding_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "finding_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_forbidden_actions a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "forbidden_actions" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_forbidden_interpretations a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "forbidden_interpretations" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_gate_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "gate_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_generation_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "generation_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_generator_stack a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "generator_stack" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_given a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "given" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_graph_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "graph_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_guard_condition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "guard_condition" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_guard_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "guard_status" ; skos:broader forge:field_status ; forge:target_term "forge:Status" ; forge:mapping_type "broad_match" ; forge:justification "Specialized status field maps broadly to the canonical Status taxonomy and should be normalized to an approved subtype." .
+
+forge:field_guard_type a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "guard_type" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_health_endpoint_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "health_endpoint_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_heap_allowed a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "heap_allowed" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_hysteresis_band a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "hysteresis_band" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_icd_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "icd_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_identity_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "identity_status" ; skos:broader forge:field_status ; forge:target_term "forge:identity_status" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_image_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "image_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_input_slice_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "input_slice_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_inspection_requirement a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "inspection_requirement" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_integrity_check a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "integrity_check" ; skos:broader forge:field_integrity ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Integrity or recovery field is governed but awaits stricter subtype binding." .
+
+forge:field_interface_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "interface_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_interface_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "interface_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_invariant_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "invariant_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_invariant_refs a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "invariant_refs" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_isolation_scope a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "isolation_scope" ; skos:broader forge:field_integrity ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Integrity or recovery field is governed but awaits stricter subtype binding." .
+
+forge:field_justification a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "justification" ; skos:broader forge:field_ontology ; forge:target_term "forge:justification" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_keep_out_zone_mm a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "keep_out_zone_mm" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_latency_baseline_ms a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "latency_baseline_ms" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_latency_current_ms a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "latency_current_ms" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_latency_or_lag a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "latency_or_lag" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_latency_p50_ms a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "latency_p50_ms" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_latency_p95_ms a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "latency_p95_ms" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_limit_load a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "limit_load" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_liveness_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "liveness_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation or lifecycle outcome governance." .
+
+forge:field_load_level a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "load_level" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_lockfile_hash a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "lockfile_hash" ; skos:broader forge:field_deployment ; forge:target_term "forge:DeploymentArtifact" ; forge:mapping_type "close_match" ; forge:justification "Deployment or release field aligns closely to deployment and release governance." .
+
+forge:field_lower_bound a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "lower_bound" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_machine_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "machine_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_mapping_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "mapping_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_mapping_type a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "mapping_type" ; skos:broader forge:field_ontology ; forge:target_term "forge:mapping_type" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_mass_kg a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "mass_kg" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_material_pair a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "material_pair" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_max_bank_deg a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "max_bank_deg" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_max_climb_rate a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "max_climb_rate" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_max_descent_rate a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "max_descent_rate" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_max_load_factor a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "max_load_factor" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_max_retries a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "max_retries" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_max_speed a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "max_speed" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_memory_mb a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "memory_mb" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_metric_name a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "metric_name" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_min_speed a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "min_speed" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_mission_demand_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "mission_demand_status" ; skos:broader forge:field_status ; forge:target_term "forge:Status" ; forge:mapping_type "broad_match" ; forge:justification "Specialized status field maps broadly to the canonical Status taxonomy and should be normalized to an approved subtype." .
+
+forge:field_mission_objective_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "mission_objective_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_mission_relevance a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "mission_relevance" ; skos:broader forge:field_artifact_context ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed artifact or operational context awaiting stricter subtype binding." .
+
+forge:field_mitigation_gate a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "mitigation_gate" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_model_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "model_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_model_name a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "model_name" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_module_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "module_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_monotonic_seq a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "monotonic_seq" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_mount_pattern a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "mount_pattern" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_mount_type a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "mount_type" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_mounting_scheme a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "mounting_scheme" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_namespace_iri a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "namespace_iri" ; skos:broader forge:field_ontology ; forge:target_term "forge:ControlledTerm" ; forge:mapping_type "close_match" ; forge:justification "Field aligns closely to governed ontology vocabulary." .
+
+forge:field_narrower_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "narrower_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_nominal_range a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "nominal_range" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_nominal_voltage_v a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "nominal_voltage_v" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_normal_enable_condition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "normal_enable_condition" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_normal_mode a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "normal_mode" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_normal_temp_range_c a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "normal_temp_range_c" ; skos:broader forge:field_constraint ; forge:target_term "forge:ThermalConstraint" ; forge:mapping_type "close_match" ; forge:justification "Constraint-like field aligns closely to thermal constraint governance." .
+
+forge:field_observed_result a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "observed_result" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_ontology_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "ontology_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:ontology_id" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_openapi_export_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "openapi_export_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_operator_or_controller_ack a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "operator_or_controller_ack" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_option_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "option_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_orchestration_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "orchestration_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation or lifecycle outcome governance." .
+
+forge:field_outer_dimensions_mm a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "outer_dimensions_mm" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_output_schema_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "output_schema_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:ControlledTerm" ; forge:mapping_type "close_match" ; forge:justification "Identifier participates in governed semantic vocabulary or shape control." .
+
+forge:field_output_summary a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "output_summary" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_owner a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "owner" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_pace_lane a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "pace_lane" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_package_name a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "package_name" ; skos:broader forge:field_artifact_context ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed artifact or operational context awaiting stricter subtype binding." .
+
+forge:field_parameter_name a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "parameter_name" ; skos:broader forge:field_artifact_context ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed artifact or operational context awaiting stricter subtype binding." .
+
+forge:field_parity_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "parity_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation-style outcome governance." .
+
+forge:field_parse_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "parse_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation-style outcome governance." .
+
+forge:field_partition_type a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "partition_type" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_path_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "path_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation-style outcome governance." .
+
+forge:field_persistence_path a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "persistence_path" ; skos:broader forge:field_evidence ; forge:target_term "forge:EvidenceRecord" ; forge:mapping_type "broad_match" ; forge:justification "Evidence-bearing field maps broadly to the canonical EvidenceRecord class." .
+
+forge:field_perturbation_profile a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "perturbation_profile" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_policy_version a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "policy_version" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_power_state a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "power_state" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_predicted_failure_mode a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "predicted_failure_mode" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_pref_label a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "pref_label" ; skos:broader forge:field_ontology ; forge:target_term "forge:ControlledTerm" ; forge:mapping_type "close_match" ; forge:justification "Field aligns closely to governed ontology vocabulary." .
+
+forge:field_preload_or_retention_method a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "preload_or_retention_method" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_preprocess_pipeline_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "preprocess_pipeline_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_preprocess_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "preprocess_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_probe_policy_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "probe_policy_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_producer_component a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "producer_component" ; skos:broader forge:field_artifact_context ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed artifact or operational context awaiting stricter subtype binding." .
+
+forge:field_prohibited_range a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "prohibited_range" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_promotion_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "promotion_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation or lifecycle outcome governance." .
+
+forge:field_prompt_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "prompt_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_proof_type a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "proof_type" ; skos:broader forge:field_evidence ; forge:target_term "forge:EvidenceRecord" ; forge:mapping_type "broad_match" ; forge:justification "Evidence-bearing field maps broadly to the canonical EvidenceRecord class." .
+
+forge:field_property_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "property_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:ControlledTerm" ; forge:mapping_type "close_match" ; forge:justification "Identifier participates in governed semantic vocabulary or shape control." .
+
+forge:field_property_path a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "property_path" ; skos:broader forge:field_ontology ; forge:target_term "forge:ShapeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field aligns closely to shape or schema governance artifacts." .
+
+forge:field_proposal_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "proposal_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_proposal_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "proposal_status" ; skos:broader forge:field_status ; forge:target_term "forge:Status" ; forge:mapping_type "broad_match" ; forge:justification "Specialized status field maps broadly to the canonical Status taxonomy and should be normalized to an approved subtype." .
+
+forge:field_protection_rating_target a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "protection_rating_target" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_protocol a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "protocol" ; skos:broader forge:field_integrity ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Integrity or recovery field is governed but awaits stricter subtype binding." .
+
+forge:field_provenance_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "provenance_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_quality_flag a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "quality_flag" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_quantization_mode a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "quantization_mode" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_rail_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "rail_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_range_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "range_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_rate_limit a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "rate_limit" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_readiness_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "readiness_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation or lifecycle outcome governance." .
+
+forge:field_recommended_action a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "recommended_action" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_recovery_action a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "recovery_action" ; skos:broader forge:field_integrity ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Integrity or recovery field is governed but awaits stricter subtype binding." .
+
+forge:field_recovery_condition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "recovery_condition" ; skos:broader forge:field_integrity ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Integrity or recovery field is governed but awaits stricter subtype binding." .
+
+forge:field_recovery_method a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "recovery_method" ; skos:broader forge:field_integrity ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Integrity or recovery field is governed but awaits stricter subtype binding." .
+
+forge:field_recovery_priority a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "recovery_priority" ; skos:broader forge:field_integrity ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Integrity or recovery field is governed but awaits stricter subtype binding." .
+
+forge:field_recovery_state a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "recovery_state" ; skos:broader forge:field_integrity ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Integrity or recovery field is governed but awaits stricter subtype binding." .
+
+forge:field_regression_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "regression_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation or lifecycle outcome governance." .
+
+forge:field_rejection_reason a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "rejection_reason" ; skos:broader forge:field_ontology ; forge:target_term "forge:rejection_reason" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_release_checklist_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "release_checklist_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_release_unit_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "release_unit_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_req_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "req_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_request_schema_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "request_schema_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_required_fix a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "required_fix" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_requirement_refs a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "requirement_refs" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_reset_behavior a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "reset_behavior" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_residual_risk a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "residual_risk" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_response_schema_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "response_schema_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_restart_allowed a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "restart_allowed" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_restart_attempted a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "restart_attempted" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_restart_enable_condition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "restart_enable_condition" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_restart_rise_v a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "restart_rise_v" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_review_required a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "review_required" ; skos:broader forge:field_review ; forge:target_term "forge:ReviewAction" ; forge:mapping_type "close_match" ; forge:justification "Review-oriented field aligns closely to review action governance." .
+
+forge:field_review_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "review_status" ; skos:broader forge:field_status ; forge:target_term "forge:review_status" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_rise_threshold a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "rise_threshold" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_risk_class a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "risk_class" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_rollback_constraint a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "rollback_constraint" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_rollback_point_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "rollback_point_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_rollback_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "rollback_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_rule_set a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "rule_set" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_rule_source a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "rule_source" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_runtime_partition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "runtime_partition" ; skos:broader forge:field_deployment ; forge:target_term "forge:DeploymentArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field aligns closely to deployment, containment, or release lifecycle governance." .
+
+forge:field_runtime_user a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "runtime_user" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_runtime_version a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "runtime_version" ; skos:broader forge:field_deployment ; forge:target_term "forge:DeploymentArtifact" ; forge:mapping_type "close_match" ; forge:justification "Deployment or release field aligns closely to deployment and release governance." .
+
+forge:field_safe_action a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "safe_action" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_safe_output_state a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "safe_output_state" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_safe_recovery_option a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "safe_recovery_option" ; skos:broader forge:field_integrity ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Integrity or recovery field is governed but awaits stricter subtype binding." .
+
+forge:field_safe_state a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "safe_state" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_safe_state_on_fail a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "safe_state_on_fail" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_safe_state_or_isolation a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "safe_state_or_isolation" ; skos:broader forge:field_integrity ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Integrity or recovery field is governed but awaits stricter subtype binding." .
+
+forge:field_safety_constraint_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "safety_constraint_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_sample_window a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "sample_window" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_sampling_method a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "sampling_method" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_sampling_rate_hz a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "sampling_rate_hz" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_sbom_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "sbom_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_scenario_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "scenario_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:RuntimeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Identifier aligns to scenario, replay, or twin execution artifacts." .
+
+forge:field_schema_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "schema_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:ControlledTerm" ; forge:mapping_type "close_match" ; forge:justification "Identifier participates in governed semantic vocabulary or shape control." .
+
+forge:field_schema_version a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "schema_version" ; skos:broader forge:field_ontology ; forge:target_term "forge:ShapeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field aligns closely to shape or schema governance artifacts." .
+
+forge:field_scope_boundary a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "scope_boundary" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_score a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "score" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_seam_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "seam_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_seed a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "seed" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_segment_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "segment_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_selection_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "selection_status" ; skos:broader forge:field_status ; forge:target_term "forge:Status" ; forge:mapping_type "broad_match" ; forge:justification "Specialized status field maps broadly to the canonical Status taxonomy and should be normalized to an approved subtype." .
+
+forge:field_sensor_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "sensor_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_sensor_valid a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "sensor_valid" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_service_access_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "service_access_status" ; skos:broader forge:field_status ; forge:target_term "forge:Status" ; forge:mapping_type "broad_match" ; forge:justification "Specialized status field maps broadly to the canonical Status taxonomy and should be normalized to an approved subtype." .
+
+forge:field_service_name a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "service_name" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_serviceability_assessment a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "serviceability_assessment" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_severity a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "severity" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_shape_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "shape_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:ControlledTerm" ; forge:mapping_type "close_match" ; forge:justification "Identifier participates in governed semantic vocabulary or shape control." .
+
+forge:field_shutdown_behavior_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "shutdown_behavior_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_shutdown_preference a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "shutdown_preference" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_signal_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "signal_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_signal_or_rail a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "signal_or_rail" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_signal_or_rail_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "signal_or_rail_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_source_framework a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "source_framework" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_source_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "source_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_source_path a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "source_path" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_source_revision a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "source_revision" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_source_state a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "source_state" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_source_term a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "source_term" ; skos:broader forge:field_ontology ; forge:target_term "forge:source_term" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_source_type a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "source_type" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_speed_required a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "speed_required" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_stable_hold_ms a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "stable_hold_ms" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_stack_bound a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "stack_bound" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_stakeholder_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "stakeholder_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_stall_or_loss_margin a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "stall_or_loss_margin" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_state_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "state_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_state_ids a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "state_ids" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "status" ; skos:broader forge:field_status ; forge:target_term "forge:Status" ; forge:mapping_type "rejected" ; forge:justification "Generic field is semantically ambiguous across the federated stack and is rejected until specialized." .
+
+forge:field_stiffness_assessment a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "stiffness_assessment" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_subsystem a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "subsystem" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_surface_or_channel a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "surface_or_channel" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_survivability_assessment a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "survivability_assessment" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_target_class a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "target_class" ; skos:broader forge:field_ontology ; forge:target_term "forge:ControlledTerm" ; forge:mapping_type "close_match" ; forge:justification "Field aligns closely to governed ontology vocabulary." .
+
+forge:field_target_state a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "target_state" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_target_term a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "target_term" ; skos:broader forge:field_ontology ; forge:target_term "forge:target_term" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_temperature_c a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "temperature_c" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_test_evidence_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "test_evidence_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_test_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "test_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_test_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "test_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation-style outcome governance." .
+
+forge:field_then a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "then" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_thermal_constraint_link a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "thermal_constraint_link" ; skos:broader forge:field_constraint ; forge:target_term "forge:ThermalConstraint" ; forge:mapping_type "close_match" ; forge:justification "Constraint-like field aligns closely to thermal constraint governance." .
+
+forge:field_thermal_state a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "thermal_state" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_throttle_indicator a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "throttle_indicator" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_throttle_risk_temp_c a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "throttle_risk_temp_c" ; skos:broader forge:field_risk ; forge:target_term "forge:Risk" ; forge:mapping_type "broad_match" ; forge:justification "Risk-like field maps broadly to the canonical Risk class." .
+
+forge:field_throughput_baseline a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "throughput_baseline" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_throughput_current a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "throughput_current" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_throughput_units_per_sec a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "throughput_units_per_sec" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_timestamp_utc a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "timestamp_utc" ; skos:broader forge:field_evidence ; forge:target_term "forge:timestamp_utc" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_timing_fit_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "timing_fit_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation-style outcome governance." .
+
+forge:field_timing_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "timing_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_topology_choice a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "topology_choice" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_traceability_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "traceability_status" ; skos:broader forge:field_status ; forge:target_term "forge:ValidationStatus" ; forge:mapping_type "close_match" ; forge:justification "Specialized status aligns to validation-style outcome governance." .
+
+forge:field_training_dataset_ref a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "training_dataset_ref" ; skos:broader forge:field_reference ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Reference field points to governed artifacts, entities, or constraints and maps broadly to KnowledgeArtifact context." .
+
+forge:field_training_value a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "training_value" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_trajectory_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "trajectory_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_transition_result a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "transition_result" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_transition_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "transition_status" ; skos:broader forge:field_status ; forge:target_term "forge:Status" ; forge:mapping_type "broad_match" ; forge:justification "Specialized status field maps broadly to the canonical Status taxonomy and should be normalized to an approved subtype." .
+
+forge:field_trigger a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "trigger" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_trigger_condition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "trigger_condition" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_trust_function a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "trust_function" ; skos:broader forge:field_integrity ; forge:target_term "forge:Constraint" ; forge:mapping_type "close_match" ; forge:justification "Trust/integrity field aligns closely to bounded trust rules and recovery governance." .
+
+forge:field_trust_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "trust_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_turn_rate_required a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "turn_rate_required" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_ultimate_load a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "ultimate_load" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_undefined_behavior_class a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "undefined_behavior_class" ; skos:broader forge:field_ontology ; forge:target_term "forge:ControlledTerm" ; forge:mapping_type "close_match" ; forge:justification "Field aligns closely to governed ontology vocabulary." .
+
+forge:field_upper_bound a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "upper_bound" ; skos:broader forge:field_constraint ; forge:target_term "forge:Constraint" ; forge:mapping_type "broad_match" ; forge:justification "Constraint-like field maps broadly to the canonical Constraint class." .
+
+forge:field_uv_disable_condition a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "uv_disable_condition" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_uv_fall_v a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "uv_fall_v" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_uv_warn_v a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "uv_warn_v" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_validation_method a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "validation_method" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_validation_status a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "validation_status" ; skos:broader forge:field_status ; forge:target_term "forge:validation_status" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_vehicle_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "vehicle_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_verification_method a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "verification_method" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_version_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "version_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:version_id" ; forge:mapping_type "exact_match" ; forge:justification "Direct lexical and semantic match to a federated baseline property." .
+
+forge:field_viewpoint_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "viewpoint_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+
+forge:field_violation_action a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "violation_action" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_voltage_v a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "voltage_v" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_volume_cm3 a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "volume_cm3" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_warning_mode a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "warning_mode" ; skos:broader forge:field_state_control ; forge:target_term "forge:RuntimeBehavior" ; forge:mapping_type "broad_match" ; forge:justification "Runtime-control field maps broadly to RuntimeBehavior governance." .
+
+forge:field_warning_temp_c a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "warning_temp_c" ; skos:broader forge:field_physical_metric ; forge:target_term "forge:PhysicalEnvelope" ; forge:mapping_type "close_match" ; forge:justification "Physical, thermal, power, latency, or performance metric aligns closely to operating-envelope governance." .
+
+forge:field_when a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "when" ; skos:broader forge:field_misc ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "close_match" ; forge:justification "Field is governed but not yet bound to a more specific canonical property in the current baseline." .
+
+forge:field_workload_id a forge:ControlledTerm ; skos:inScheme forge:field_scheme_phase5 ; skos:prefLabel "workload_id" ; skos:broader forge:field_identifier ; forge:target_term "forge:KnowledgeArtifact" ; forge:mapping_type "broad_match" ; forge:justification "Identifier field names a governed artifact, entity, or record and maps broadly to KnowledgeArtifact context until further subtype binding." .
+

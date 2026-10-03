@@ -1,0 +1,18 @@
+{
+  "schema_id": "truth_serum.assumptions-register",
+  "schema_version": "1.0.0",
+  "assumptions": [
+    {
+      "id": "ASM-TS-001",
+      "statement": "Repository-source admission executes on Linux with Python 3.12 and writable external caches."
+    },
+    {
+      "id": "ASM-TS-002",
+      "statement": "Witness executables are the pinned environment resolved by uv.lock."
+    },
+    {
+      "id": "ASM-TS-003",
+      "statement": "The human architect retains promotion authority after repository PASS."
+    }
+  ]
+}

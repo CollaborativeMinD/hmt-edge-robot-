@@ -1,0 +1,187 @@
+{
+  "status": "SCOPED_SOURCE_ADAPTATION",
+  "changes": [
+    {
+      "path": "vendor/qualified/scaffoldctl/scripts/seal_ledger.py",
+      "old_sha256": "293494d2acaf495edaf57b80dbac159a3731c67283f456c0477a0f9534a02277",
+      "new_sha256": "293494d2acaf495edaf57b80dbac159a3731c67283f456c0477a0f9534a02277",
+      "old_mode": 420,
+      "new_mode": 493
+    },
+    {
+      "path": "vendor/qualified/scaffoldctl/src/scaffoldctl/resources/git_perimeter/pre-commit",
+      "old_sha256": "9a8c03436aa70ffe728e48643a67ad1a03a5a9afad85e7ab323a6b56636e83ab",
+      "new_sha256": "9a8c03436aa70ffe728e48643a67ad1a03a5a9afad85e7ab323a6b56636e83ab",
+      "old_mode": 420,
+      "new_mode": 493
+    },
+    {
+      "path": "vendor/qualified/scaffoldctl/src/scaffoldctl/validation.py",
+      "old_sha256": "fcc087029a9aa1600187f28bda4dde7aa87bd2dabb1487014892f7fe48b22f31",
+      "new_sha256": "affe78eb34c7ddfbc1de3154f5c972750fbb7e676118522eb64fe58da0dd3ea0",
+      "old_mode": 420,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/scaffoldctl/tests/test_mcp_adapter.py",
+      "old_sha256": "ee7420311ffa3dc3fd5c88d171a58790631e23841f2a46e3ffbb10dd6558aaac",
+      "new_sha256": "97b4b349b41c913ac6fabc92ab8a5bbd365a5338b3d4e439cc9942f16f91c9d8",
+      "old_mode": 420,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/scaffoldctl/tests/test_phase2_validation.py",
+      "old_sha256": "c0eb02aa777d383202ed082b10c2558bce3dfa5a517542e85f068b17cb1ca1df",
+      "new_sha256": "67449f15706ac1a1be97d90b5d51fa775ddef54292d6b20803df241125238b3e",
+      "old_mode": 420,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/REPOSITORY_SEAL.json",
+      "old_sha256": "17682bf34c4938ddd6d1a4afb81565c005ff0a5a7ce19dd539cea900984beafa",
+      "new_sha256": "17682bf34c4938ddd6d1a4afb81565c005ff0a5a7ce19dd539cea900984beafa",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/admission_report.json",
+      "old_sha256": "6f7fc9736b19a5266491e64221c1ab3175fcd1ba0e5783dde87aa9c5eb12560c",
+      "new_sha256": "6f7fc9736b19a5266491e64221c1ab3175fcd1ba0e5783dde87aa9c5eb12560c",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/admission_trace.jsonl",
+      "old_sha256": "3175af41ae7f3b548613119fe468b5644ec4a48d2e3a9e5eb56236a67f9ed97f",
+      "new_sha256": "3175af41ae7f3b548613119fe468b5644ec4a48d2e3a9e5eb56236a67f9ed97f",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/bandit.stderr.txt",
+      "old_sha256": "a5487fcb1237e1db85f59a97b6d48603675d42e31aeaa465b04838f0182bce77",
+      "new_sha256": "a5487fcb1237e1db85f59a97b6d48603675d42e31aeaa465b04838f0182bce77",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/bandit.stdout.txt",
+      "old_sha256": "780157e754212ff653e3f98e108a06f244c03a5b92cad11be097281b1d73d9e1",
+      "new_sha256": "780157e754212ff653e3f98e108a06f244c03a5b92cad11be097281b1d73d9e1",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/mypy.stderr.txt",
+      "old_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "new_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/mypy.stdout.txt",
+      "old_sha256": "b1e54a4dabc8d720118d6074a4c299c7b40c262f2e4f5d8f801e29a5cdfe35a5",
+      "new_sha256": "b1e54a4dabc8d720118d6074a4c299c7b40c262f2e4f5d8f801e29a5cdfe35a5",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/pip-audit.stderr.txt",
+      "old_sha256": "15950a68a7ed99c59779717acefdceb3f69cfd31bde67d2c954f2a3cea4d7955",
+      "new_sha256": "15950a68a7ed99c59779717acefdceb3f69cfd31bde67d2c954f2a3cea4d7955",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/pip-audit.stdout.txt",
+      "old_sha256": "0e1abb68ca48748460fa8a991a8140f87e1cb3729fb6add915f5d1e3308a39cf",
+      "new_sha256": "0e1abb68ca48748460fa8a991a8140f87e1cb3729fb6add915f5d1e3308a39cf",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/pylint.stderr.txt",
+      "old_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "new_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/pylint.stdout.txt",
+      "old_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "new_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/pytest.stderr.txt",
+      "old_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "new_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/pytest.stdout.txt",
+      "old_sha256": "819f8224a245c1b2272dd90e78d2e50123a5b4ea361e593e8d24a37e46ac8995",
+      "new_sha256": "819f8224a245c1b2272dd90e78d2e50123a5b4ea361e593e8d24a37e46ac8995",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/ruff.stderr.txt",
+      "old_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "new_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/ruff.stdout.txt",
+      "old_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "new_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/semgrep.stderr.txt",
+      "old_sha256": "8060f2f7e2f19df9b75c36d8c930605e2df9c9cacabf817c8b5d3be7709f6cfd",
+      "new_sha256": "8060f2f7e2f19df9b75c36d8c930605e2df9c9cacabf817c8b5d3be7709f6cfd",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/semgrep.stdout.txt",
+      "old_sha256": "8ee0c930caf61691fbf23d4f3ff390bd4ff29a5f280fc1ebaba961db2fca772f",
+      "new_sha256": "8ee0c930caf61691fbf23d4f3ff390bd4ff29a5f280fc1ebaba961db2fca772f",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/yamllint.stderr.txt",
+      "old_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "new_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/evidence/closeout/runtime/raw/yamllint.stdout.txt",
+      "old_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "new_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "old_mode": 384,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/pyproject.toml",
+      "old_sha256": "7f72a9f7df6d9e07472b84ac7a4e1a5ec1621724fd504b0f055ab99ac131bef3",
+      "new_sha256": "5245a05c507055be1cf4b43ffda8f303f848c76d8c1ba4f4e6d5599672c4f70d",
+      "old_mode": 420,
+      "new_mode": 420
+    },
+    {
+      "path": "vendor/qualified/truth-serum/upstream.pyproject.toml",
+      "old_sha256": null,
+      "new_sha256": "7f72a9f7df6d9e07472b84ac7a4e1a5ec1621724fd504b0f055ab99ac131bef3",
+      "old_mode": null,
+      "new_mode": 420
+    }
+  ]
+}

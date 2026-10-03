@@ -1,0 +1,9 @@
+{
+  "regressions": {
+    "scaffoldctl": true,
+    "truth-serum": true
+  },
+  "full_tool_admission": "HOLD",
+  "docker_build": "HOLD",
+  "deployment": "HOLD"
+}

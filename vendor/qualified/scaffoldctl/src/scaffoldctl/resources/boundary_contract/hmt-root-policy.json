@@ -1,0 +1,33 @@
+{
+  "schemaId": "urn:scaffoldctl:schema:hmt-root-policy:0.2.0",
+  "schemaVersion": "0.2.0",
+  "policyId": "scaffoldctl.hmt-root",
+  "policyVersion": "1.0.0",
+  "ontologySha256": "875b9ec0d714b8757c2172ea844d8ecfe6150feac2649b0205239aa64534650b",
+  "policyFileName": "scaffold.policy.json",
+  "maximumDocumentUtf8Bytes": 65536,
+  "preserveExistingContent": true,
+  "rejectCaseCollisions": true,
+  "rejectSymlinks": true,
+  "requiredDocuments": [
+    {
+      "canonicalRelativePath": "README.md",
+      "maximumLineCountExclusive": 100,
+      "requireSectionContent": true,
+      "requiredHeadings": ["## Purpose", "## Lifecycle", "## Invariants", "## Authority"]
+    },
+    {
+      "canonicalRelativePath": "Start_here.md",
+      "maximumLineCountExclusive": 100,
+      "requireSectionContent": true,
+      "requiredHeadings": ["## Boundary", "## First Action", "## Validation"]
+    },
+    {
+      "canonicalRelativePath": "Index.md",
+      "maximumLineCountExclusive": 100,
+      "requireSectionContent": true,
+      "requiredHeadings": ["## Boundary", "## Governed Documents", "## Registered Artifacts"]
+    }
+  ],
+  "unresolvedPlaceholderTokens": ["${", "{{", "}}", "<<", ">>", "__SCAFFOLDCTL_"]
+}

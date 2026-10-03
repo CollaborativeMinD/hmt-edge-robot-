@@ -1,0 +1,13 @@
+rules:
+  - id: truth-serum-dynamic-exec
+    message: Dynamic execution surface requires explicit architectural authority.
+    severity: ERROR
+    languages: [python]
+    pattern-either:
+      - pattern: eval(...)
+      - pattern: exec(...)
+  - id: truth-serum-shell-true
+    message: Shell-mediated subprocess execution is prohibited.
+    severity: ERROR
+    languages: [python]
+    pattern: subprocess.run(..., shell=True, ...)

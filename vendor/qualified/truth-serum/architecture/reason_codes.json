@@ -1,0 +1,51 @@
+{
+  "schema_id": "truth-serum.reason-code-registry",
+  "schema_version": "1.0.0",
+  "static_codes": [
+    {"code": "ESCALATE_REPOSITORY_SYMLINK_ESCAPE", "route": "ESCALATE", "meaning": "A resolved path escaped the selected repository."},
+    {"code": "ESCALATE_SECRET_EXPOSURE", "route": "ESCALATE", "meaning": "A probable secret requires human containment."},
+    {"code": "FAIL_ARCHITECTURE_TRACE_MISSING", "route": "FAIL", "meaning": "A required architecture trace identifier is absent."},
+    {"code": "FAIL_ARCHITECTURE_POLICY_MISMATCH", "route": "FAIL", "meaning": "The lane policy differs from the executable closed contract."},
+    {"code": "FAIL_ARCHITECTURE_TRACE_UNBOUND", "route": "FAIL", "meaning": "A requirement, invariant, or oracle is orphaned."},
+    {"code": "FAIL_EVIDENCE_CLAIM_SCHEMA", "route": "FAIL", "meaning": "An evidence claim violates its strict contract."},
+    {"code": "FAIL_EVIDENCE_HASH_MISMATCH", "route": "FAIL", "meaning": "Claimed evidence bytes do not match the claim digest."},
+    {"code": "FAIL_EVIDENCE_REF_MISSING", "route": "FAIL", "meaning": "A claimed repository-relative evidence path is absent."},
+    {"code": "FAIL_JSON_DUPLICATE_KEY", "route": "FAIL", "meaning": "JSON contains a duplicate object key."},
+    {"code": "FAIL_JSON_NONFINITE", "route": "FAIL", "meaning": "JSON contains a non-finite numeric value."},
+    {"code": "FAIL_JSON_SYNTAX", "route": "FAIL", "meaning": "JSON parsing failed."},
+    {"code": "FAIL_REPOSITORY_CASE_COLLISION", "route": "FAIL", "meaning": "Two repository paths collide under case folding."},
+    {"code": "FAIL_REPOSITORY_SHAPE", "route": "FAIL", "meaning": "Required repository structure is absent or debris is present."},
+    {"code": "FAIL_SHELL_STRICT_MODE", "route": "FAIL", "meaning": "A shell entrypoint lacks required strict mode."},
+    {"code": "FAIL_SHELL_SYNTAX", "route": "FAIL", "meaning": "Bash syntax validation failed."},
+    {"code": "FAIL_SOURCE_FUNCTION_APERTURE", "route": "FAIL", "meaning": "A production Python function exceeds 60 source lines."},
+    {"code": "FAIL_SOURCE_MODULE_APERTURE", "route": "FAIL", "meaning": "A production Python module is 100 or more source lines."},
+    {"code": "FAIL_SOURCE_SYNTAX", "route": "FAIL", "meaning": "Python parsing or compilation failed."},
+    {"code": "FAIL_YAML_DUPLICATE_KEY", "route": "FAIL", "meaning": "YAML contains a duplicate mapping key."},
+    {"code": "FAIL_YAML_NONFINITE", "route": "FAIL", "meaning": "YAML contains a non-finite numeric value."},
+    {"code": "FAIL_YAML_SYNTAX", "route": "FAIL", "meaning": "YAML parsing failed."},
+    {"code": "HOLD_BASH_UNAVAILABLE", "route": "HOLD", "meaning": "Required Bash syntax witness is unavailable."},
+    {"code": "NOT_APPLICABLE_EVIDENCE_CLAIMS", "route": "PASS", "meaning": "No evidence-claim target exists."},
+    {"code": "NOT_APPLICABLE_SECRET_SCAN", "route": "PASS", "meaning": "No secret-scan target exists."},
+    {"code": "NOT_APPLICABLE_SHELL", "route": "PASS", "meaning": "No shell target exists."},
+    {"code": "NOT_APPLICABLE_SOURCE_APERTURE", "route": "PASS", "meaning": "No production Python target exists."},
+    {"code": "NOT_APPLICABLE_STRUCTURED_DATA", "route": "PASS", "meaning": "No JSON or YAML target exists."},
+    {"code": "PASS_ARCHITECTURE_TRACE", "route": "PASS", "meaning": "All governed architecture identifiers are bound."},
+    {"code": "PASS_EVIDENCE_BINDING", "route": "PASS", "meaning": "All present evidence claims are valid and bound."},
+    {"code": "PASS_REPOSITORY_SHAPE", "route": "PASS", "meaning": "Repository shape and debris checks passed."},
+    {"code": "PASS_SECRET_SCAN", "route": "PASS", "meaning": "The bounded local secret scan found no probable secret."},
+    {"code": "PASS_SHELL_SYNTAX", "route": "PASS", "meaning": "Shell syntax and strict-mode checks passed."},
+    {"code": "PASS_SOURCE_APERTURE", "route": "PASS", "meaning": "Python syntax and source aperture checks passed."},
+    {"code": "PASS_STRUCTURED_DATA", "route": "PASS", "meaning": "JSON and YAML syntax and duplicate-key checks passed."}
+  ],
+  "witness_family": {
+    "tools": ["RUFF", "PYLINT", "MYPY", "BANDIT", "SEMGREP", "YAMLLINT", "PYTEST", "PIP_AUDIT"],
+    "templates": [
+      {"code": "PASS_WITNESS_{TOOL}", "route": "PASS", "meaning": "The required witness ran and reported no blocking finding."},
+      {"code": "NOT_APPLICABLE_WITNESS_{TOOL}", "route": "PASS", "meaning": "The repository has no target for this witness."},
+      {"code": "HOLD_WITNESS_{TOOL}_UNAVAILABLE", "route": "HOLD", "meaning": "The required witness executable is unavailable."},
+      {"code": "HOLD_WITNESS_{TOOL}_ERROR", "route": "HOLD", "meaning": "The witness could not produce trustworthy native output."},
+      {"code": "FAIL_WITNESS_{TOOL}_FINDING", "route": "FAIL", "meaning": "The witness produced at least one blocking finding."}
+    ]
+  },
+  "ordering": ["ESCALATE", "FAIL", "HOLD", "NOT_APPLICABLE", "PASS"]
+}

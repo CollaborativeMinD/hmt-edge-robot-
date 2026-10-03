@@ -1,0 +1,1 @@
+{"status": "PASS", "seams": ["scaffold-root-contract", "doc-length-rejection", "truth-evidence-binding", "tamper-rejection"], "scope": "support-only; no lease, full-engine admission, Docker or deployment"}

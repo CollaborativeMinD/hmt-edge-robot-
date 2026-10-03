@@ -1329,5 +1329,89 @@
     ],
     "analysis_id": "G-CI-013",
     "evidence_id": "evidence/ci/admission.json"
+  },
+  {
+    "req_id": "REQ-CI2-01",
+    "module_id": "tools/ci_profiles.py",
+    "runtime_partition": "managed CI support",
+    "source_path": [
+      "tools/policy_evaluation.py",
+      "tools/ci_profiles.py",
+      "tools/profile_witnesses.py",
+      "tools/tool_qualification.py"
+    ],
+    "contract_id": "policy/ci_support.json",
+    "safety_constraint_id": [
+      "NO_GLOBAL_PROMOTION",
+      "NO_DOCKER_OR_DEPLOYMENT"
+    ],
+    "test_id": [
+      "tests/test_policy_evaluation.py::test_policy_inventory_and_full_adoption_hold"
+    ],
+    "analysis_id": "G-POLICY-014",
+    "evidence_id": "evidence/ci/phase2/profiles.json"
+  },
+  {
+    "req_id": "REQ-CI2-02",
+    "module_id": "tools/ci_profiles.py",
+    "runtime_partition": "managed CI support",
+    "source_path": [
+      "tools/policy_evaluation.py",
+      "tools/ci_profiles.py",
+      "tools/profile_witnesses.py",
+      "tools/tool_qualification.py"
+    ],
+    "contract_id": "policy/ci_support.json",
+    "safety_constraint_id": [
+      "NO_GLOBAL_PROMOTION",
+      "NO_DOCKER_OR_DEPLOYMENT"
+    ],
+    "test_id": [
+      "tests/test_ci_support.py::test_support_reuse_replay_and_no_promotion"
+    ],
+    "analysis_id": "G-PROFILE-015",
+    "evidence_id": "evidence/ci/phase2/profiles.json"
+  },
+  {
+    "req_id": "REQ-CI2-03",
+    "module_id": "tools/ci_profiles.py",
+    "runtime_partition": "managed CI support",
+    "source_path": [
+      "tools/policy_evaluation.py",
+      "tools/ci_profiles.py",
+      "tools/profile_witnesses.py",
+      "tools/tool_qualification.py"
+    ],
+    "contract_id": "policy/ci_support.json",
+    "safety_constraint_id": [
+      "NO_GLOBAL_PROMOTION",
+      "NO_DOCKER_OR_DEPLOYMENT"
+    ],
+    "test_id": [
+      "tests/test_policy_evaluation.py::test_declared_policy_tamper_is_not_admitted"
+    ],
+    "analysis_id": "G-QUALIFY-016",
+    "evidence_id": "evidence/ci/phase2/profiles.json"
+  },
+  {
+    "req_id": "REQ-CI2-04",
+    "module_id": "tools/ci_profiles.py",
+    "runtime_partition": "managed CI support",
+    "source_path": [
+      "tools/policy_evaluation.py",
+      "tools/ci_profiles.py",
+      "tools/profile_witnesses.py",
+      "tools/tool_qualification.py"
+    ],
+    "contract_id": "policy/ci_support.json",
+    "safety_constraint_id": [
+      "NO_GLOBAL_PROMOTION",
+      "NO_DOCKER_OR_DEPLOYMENT"
+    ],
+    "test_id": [
+      "tests/test_ci_support.py::test_scaffold_support_rejects_document_defects"
+    ],
+    "analysis_id": "G-PROFILE-015",
+    "evidence_id": "evidence/ci/phase2/profiles.json"
   }
 ]

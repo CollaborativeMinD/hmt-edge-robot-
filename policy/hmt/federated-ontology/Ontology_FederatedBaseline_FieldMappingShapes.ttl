@@ -1,0 +1,23 @@
+@prefix forge: <https://terminal-state.systems/ontology/forge#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+
+
+forge:CanonicalFieldTermShape a sh:NodeShape ;
+  sh:targetClass forge:ControlledTerm ;
+  sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path skos:broader ; sh:minCount 1 ; sh:class forge:ControlledTerm ] ;
+  sh:property [ sh:path forge:target_term ; sh:minCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path forge:mapping_type ; sh:minCount 1 ; sh:in ( "exact_match" "close_match" "broad_match" "narrow_match" "rejected" ) ] .
+
+forge:FieldMappingRecordShape a sh:NodeShape ;
+  sh:targetClass forge:Mapping ;
+  sh:property [ sh:path forge:source_term ; sh:minCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path forge:target_term ; sh:minCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path forge:mapping_type ; sh:minCount 1 ; sh:in ( "exact_match" "close_match" "broad_match" "narrow_match" "rejected" ) ] ;
+  sh:property [ sh:path forge:justification ; sh:minCount 1 ; sh:datatype xsd:string ] .

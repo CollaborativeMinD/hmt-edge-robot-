@@ -1,0 +1,18 @@
+@prefix forge: <https://terminal-state.systems/ontology/forge#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+
+forge:Phase5FieldMappingShape a sh:NodeShape ;
+  sh:targetClass forge:Mapping ;
+  sh:property [ sh:path forge:refined_subtype ; sh:minCount 1 ] ;
+  sh:property [ sh:path forge:refined_mapping_disposition ; sh:minCount 1 ] .
+
+forge:EdgeOpsExplicitFieldDeclarationShape a sh:NodeShape ;
+  sh:targetSubjectsOf forge:edgeops_declared_for ;
+  sh:property [ sh:path forge:edgeops_declared_for ; sh:minCount 1 ] ;
+  sh:property [ sh:path forge:minimum_table_schema ; sh:minCount 1 ] .

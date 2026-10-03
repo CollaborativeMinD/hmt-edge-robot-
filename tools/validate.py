@@ -272,6 +272,9 @@ async def main() -> None:
     db = database()
     commands = [
         ("G-CI-013", "REQ-CI-01", [sys.executable, "tools/ci_admission.py"]),
+        ("G-POLICY-014", "REQ-CI2-01", [sys.executable, "tools/policy_evaluation.py"]),
+        ("G-PROFILE-015", "REQ-CI2-02", [sys.executable, "tools/ci_profiles.py"]),
+        ("G-QUALIFY-016", "REQ-CI2-03", [sys.executable, "tools/tool_qualification.py"]),
         ("G-TYPES-012", "REQ-NFR-11", ["pyrefly", "check", "--min-severity", "warn"]),
         ("G-STATIC-007", "REQ-NFR-07", ["ruff", "check", "src", "tests", "tools", "notebooks"]),
         (

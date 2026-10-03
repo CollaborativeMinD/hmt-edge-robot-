@@ -837,6 +837,70 @@
       ],
       "gate": "G-CI-013",
       "scope": "software CI/Linux"
+    },
+    {
+      "id": "REQ-CI2-01",
+      "kind": "functional",
+      "acceptance": "Assess pinned declarations, surface adoption gaps and preserve authority boundaries",
+      "source": [
+        "tools/policy_evaluation.py",
+        "tools/ci_profiles.py",
+        "tools/profile_witnesses.py",
+        "tools/tool_qualification.py"
+      ],
+      "tests": [
+        "tests/test_policy_evaluation.py::test_policy_inventory_and_full_adoption_hold"
+      ],
+      "gate": "G-POLICY-014",
+      "scope": "managed CI support"
+    },
+    {
+      "id": "REQ-CI2-02",
+      "kind": "functional",
+      "acceptance": "Reuse scaffold and evidence validators through bounded read-only interfaces",
+      "source": [
+        "tools/policy_evaluation.py",
+        "tools/ci_profiles.py",
+        "tools/profile_witnesses.py",
+        "tools/tool_qualification.py"
+      ],
+      "tests": [
+        "tests/test_ci_support.py::test_support_reuse_replay_and_no_promotion"
+      ],
+      "gate": "G-PROFILE-015",
+      "scope": "managed CI support"
+    },
+    {
+      "id": "REQ-CI2-03",
+      "kind": "nonfunctional",
+      "acceptance": "Repeat tool regressions and preserve source qualification pins",
+      "source": [
+        "tools/policy_evaluation.py",
+        "tools/ci_profiles.py",
+        "tools/profile_witnesses.py",
+        "tools/tool_qualification.py"
+      ],
+      "tests": [
+        "tests/test_policy_evaluation.py::test_declared_policy_tamper_is_not_admitted"
+      ],
+      "gate": "G-QUALIFY-016",
+      "scope": "managed CI support"
+    },
+    {
+      "id": "REQ-CI2-04",
+      "kind": "functional",
+      "acceptance": "Reject missing/overlong/link/heading defects and changed evidence without authority transfer",
+      "source": [
+        "tools/policy_evaluation.py",
+        "tools/ci_profiles.py",
+        "tools/profile_witnesses.py",
+        "tools/tool_qualification.py"
+      ],
+      "tests": [
+        "tests/test_ci_support.py::test_scaffold_support_rejects_document_defects"
+      ],
+      "gate": "G-PROFILE-015",
+      "scope": "managed CI support"
     }
   ]
 }

@@ -1,0 +1,71 @@
+[project]
+name = "truth-serum"
+version = "1.0.0"
+description = "Deterministic repository admission and evidence reconciliation."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "jsonschema>=4,<5",
+  "pydantic>=2,<3",
+  "PyYAML>=6,<7",
+]
+
+[dependency-groups]
+dev = [
+  "bandit>=1.9,<2",
+  "mypy>=1.20,<2",
+  "pip-audit>=2.10,<3",
+  "pylint>=3.3,<4",
+  "pytest>=9.0.3,<10",
+  "ruff>=0.16,<1",
+  "semgrep>=1.174,<2",
+  "yamllint>=1.38,<2",
+]
+
+[tool.uv]
+package = false
+default-groups = ["dev"]
+environments = ["sys_platform == 'linux'"]
+index-strategy = "first-index"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q -p no:cacheprovider"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unreachable = true
+strict = true
+
+[tool.bandit]
+exclude_dirs = [".venv", "evidence", "tests"]
+
+[tool.pylint.main]
+ignore-paths = ["^tests/", "^evidence/"]
+load-plugins = []
+
+[tool.pylint.format]
+max-line-length = 100
+
+[tool.pylint.design]
+max-args = 8
+
+[tool.pylint.messages_control]
+disable = [
+  "duplicate-code",
+  "fixme",
+  "missing-function-docstring",
+  "missing-module-docstring",
+  "missing-class-docstring",
+  "too-few-public-methods",
+]

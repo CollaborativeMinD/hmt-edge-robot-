@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://truth-serum.local/contracts/admission_report.schema.json",
+  "title": "Truth Serum admission report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "schema_version",
+    "attempt_id",
+    "mode",
+    "decision",
+    "posture",
+    "clear",
+    "reasons",
+    "lanes",
+    "evidence_dir",
+    "policy_path"
+  ],
+  "properties": {
+    "schema_id": {"const": "truth-serum.admission-report"},
+    "schema_version": {"const": "1.0.0"},
+    "attempt_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,79}$"
+    },
+    "mode": {
+      "enum": ["architecture-only", "ci", "post-build", "rainy-day"]
+    },
+    "decision": {"enum": ["PASS", "HOLD", "FAIL", "ESCALATE"]},
+    "posture": {
+      "enum": ["PRIMARY", "ALTERNATE", "CONTINGENCY", "EMERGENCY", "TERMINAL"]
+    },
+    "clear": {"type": "boolean"},
+    "reasons": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/reason_code"},
+      "uniqueItems": true
+    },
+    "lanes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/lane_result"},
+      "minItems": 1
+    },
+    "evidence_dir": {"$ref": "#/$defs/repository_path"},
+    "policy_path": {"$ref": "#/$defs/repository_path"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"decision": {"const": "PASS"}}},
+      "then": {
+        "properties": {
+          "clear": {"const": true},
+          "posture": {"const": "PRIMARY"}
+        }
+      },
+      "else": {"properties": {"clear": {"const": false}}}
+    },
+    {
+      "if": {"properties": {"decision": {"const": "HOLD"}}},
+      "then": {"properties": {"posture": {"const": "ALTERNATE"}}}
+    },
+    {
+      "if": {"properties": {"decision": {"const": "ESCALATE"}}},
+      "then": {"properties": {"posture": {"const": "TERMINAL"}}}
+    },
+    {
+      "if": {"properties": {"decision": {"const": "FAIL"}}},
+      "then": {
+        "properties": {
+          "posture": {"const": "EMERGENCY"}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "reason_code": {
+      "type": "string",
+      "pattern": "^(PASS|HOLD|FAIL|ESCALATE|NOT_APPLICABLE)_[A-Z0-9_]+$"
+    },
+    "repository_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$"
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reason_code", "message", "path", "line", "route"],
+      "properties": {
+        "reason_code": {"$ref": "#/$defs/reason_code"},
+        "message": {"type": "string", "minLength": 1},
+        "path": {
+          "oneOf": [
+            {"$ref": "#/$defs/repository_path"},
+            {"type": "null"}
+          ]
+        },
+        "line": {"type": ["integer", "null"], "minimum": 1},
+        "route": {"enum": ["PASS", "HOLD", "FAIL", "ESCALATE"]}
+      }
+    },
+    "lane_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lane_id",
+        "status",
+        "required",
+        "tool",
+        "reason_codes",
+        "evidence_paths",
+        "findings"
+      ],
+      "properties": {
+        "lane_id": {"type": "string", "pattern": "^[a-z][a-z0-9-]{1,63}$"},
+        "status": {
+          "enum": ["PASS", "FAIL", "UNAVAILABLE", "ERROR", "NOT_APPLICABLE"]
+        },
+        "required": {"type": "boolean"},
+        "tool": {"type": "string", "minLength": 1, "maxLength": 80},
+        "reason_codes": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/reason_code"},
+          "uniqueItems": true
+        },
+        "evidence_paths": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/repository_path"},
+          "uniqueItems": true
+        },
+        "findings": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/finding"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+<Tooling_Normalization>
+  <python_stack>
+    Python is the default systems glue language.
+    Use uv for environment, dependency, and project management.
+    Use FastAPI for seam validation and separation of duties.
+    Use Pydantic v2 for all critical handoffs.
+    Use pytest for architecture, contract, and behavior verification.
+  </python_stack>
+  <modeling_stack>
+    SysML v2 by SysIDE documentation standards is the architecture SSOT.
+    Gaphor is the model-backed diagram and view layer, not authority over the textual baseline.
+  </modeling_stack>
+  <math_stack>
+    Prefer SymPy for symbolic proof and constraints.
+    Prefer SciPy and NumPy for deterministic numerical evaluation and physics.
+  </math_stack>
+  <telemetry_stack>
+    DuckDB is the flight recorder.
+    Polars is preferred for analytics, with Pandas only if Polars is unavailable.
+  </telemetry_stack>
+  <control_stack>
+    transitions is preferred for executable state-machine realization.
+    NetworkX is the symbolic topology and reachability engine.
+  </control_stack>
+  <ml_stack>
+    scikit-learn for anomaly detection and lightweight ML.
+    PyTorch for learned models.
+    OpenCV for deterministic perception pre-processing.
+    OpenVLA via LeRobot for reflexive VLA tasks only when justified.
+    Dreamer v3 for long-horizon predictive world modeling only when justified.
+  </ml_stack>
+  <sim_stack>
+    Faker, SDV, SimPy, Monte Carlo perturbation, and NetworkX sabotage analysis are the adversarial and synthetic test forge.
+  </sim_stack>
+  <deployment_stack>
+    TypeScript, Docker, Kubernetes, and MISRA C++23 are used according to partitioned runtime needs, not as decoration.
+  </deployment_stack>
+  <hil_stack>
+    Streamlit or React for observation, dashboards, remote access, and HIL surfaces.
+    Plotly and Seaborn are preferred for visuals, with Matplotlib as fallback.
+  </hil_stack>
+  <engagement_rules>
+    Symbolic over neural.
+    Never pass raw tensor outputs directly to actuators.
+    Log everything important.
+    Prefer native open-source implementations.
+    Prefer Marimo notebooks over Jupyter notebooks.
+  </engagement_rules>
+</Tooling_Normalization>
