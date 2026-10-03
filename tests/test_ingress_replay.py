@@ -60,13 +60,17 @@ def test_read_only_queries_do_not_recover_pending_tasks(tmp_path):
     ledger.claim("pending", digest({"x": 1}), {"x": 1})
     ledger.close()
     cell = RobotCell(path, TOKEN, read_only=True)
-    assert cell.ledger.task("pending")["state"] == "PLANNED"
+    task = cell.ledger.task("pending")
+    assert task is not None
+    assert task["state"] == "PLANNED"
     assert cell.ledger.verify() == 1
     with pytest.raises(EvidenceError):
         cell.ledger.append("test", "1", "event", {})
     cell.close()
     writer = RobotCell(path, TOKEN)
-    assert writer.ledger.task("pending")["state"] == "FAILED"
+    task = writer.ledger.task("pending")
+    assert task is not None
+    assert task["state"] == "FAILED"
     writer.close()
 
 

@@ -43,7 +43,7 @@ async def campaign(key: str) -> dict:
                 if stopped:
                     cell.orchestrator.stop()
                 receipt = await cell.resident.ask(cell.status(), question)
-                passed = receipt.decision == "ADMIT" and receipt.proposal.action == expected
+                passed = receipt.decision == "ADMIT" and receipt.proposal is not None and receipt.proposal.action == expected
                 results.append(
                     {
                         "case": case,

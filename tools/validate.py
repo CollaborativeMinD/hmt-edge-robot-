@@ -84,7 +84,7 @@ def structural_checks() -> dict:
         for path in (ROOT / directory).rglob("*.py"):
             for node in ast.walk(ast.parse(path.read_text())):
                 if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
-                    size = node.end_lineno - node.lineno + 1
+                    size = (node.end_lineno or node.lineno) - node.lineno + 1
                     lengths.append(
                         {
                             "path": str(path.relative_to(ROOT)),
@@ -199,10 +199,17 @@ def external_gates(db: sqlite3.Connection) -> None:
     record(db, "G-LIVE-009", "REQ-HMT-04/bounded-canary", "PASS" if admitted else "HOLD", live)
 
 
+def junit_cases(path: Path) -> list:
+    root = ET.parse(path).getroot()
+    if root is None:
+        raise ValueError("JUNIT_ROOT_MISSING")
+    return root.findall(".//testcase")
+
+
 def regression_groups(db: sqlite3.Connection) -> bool:
     path = RUN / "tests.xml"
     path.write_bytes((EVIDENCE / "tests.xml").read_bytes())
-    cases = ET.parse(path).getroot().findall(".//testcase")
+    cases = junit_cases(path)
     outcomes = {}
     for case in cases:
         name = case.attrib["name"].split("[")[0]
@@ -256,7 +263,7 @@ def finalize(db: sqlite3.Connection, passed: bool) -> None:
         "rrca_columns": 7,
         "ledger_semantics": "append-only observations; current run retests all software gates",
     }
-    report["test_cases"] = len(ET.parse(EVIDENCE / "tests.xml").getroot().findall(".//testcase"))
+    report["test_cases"] = len(junit_cases(EVIDENCE / "tests.xml"))
     (EVIDENCE / "validation.json").write_text(json.dumps(report, indent=2) + "\n")
     db.close()
 
@@ -264,6 +271,7 @@ def finalize(db: sqlite3.Connection, passed: bool) -> None:
 async def main() -> None:
     db = database()
     commands = [
+        ("G-TYPES-012", "REQ-NFR-11", ["pyrefly", "check", "--min-severity", "warn"]),
         ("G-STATIC-007", "REQ-NFR-07", ["ruff", "check", "src", "tests", "tools", "notebooks"]),
         (
             "G-RUNTIME-004",

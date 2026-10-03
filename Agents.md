@@ -42,3 +42,8 @@ expired/replayed grants, changed sessions and missing projection rows. Persist
 notifications and alerts; failure to write evidence blocks acceptance. Recheck the
 triad software campaign with all prior gates. No physical verification, native
 tracing deployment, external deletion or paid inference is authorized by this SOP.
+
+REQ-NFR-11 / G-TYPES-012: use the pinned Pyrefly checker alongside Ruff on the full
+active Python project. Zero warnings or errors are required. Fix contract boundaries
+and retain negative runtime tests; do not suppress typing diagnostics or substitute
+an empty checking scope. Preserve historical source seals.

@@ -39,3 +39,8 @@ preserved as historical evidence rather than rewritten to claim the new code.
 The triad source manifest binds the new acceptance source independently. Readiness
 campaign statistics are empirical. The incomplete file-manifest verdict is required
 truth, not a failed software campaign. No hardware or paid inference calls occur.
+
+The Pyrefly update preserves prior robotics and triad source seals. Its initial
+diagnostics and independently bound source receipt are in `evidence/types/`. The
+current cumulative series adds G-TYPES-012 alongside Ruff and rechecks all software
+gates; old successful type-free runs remain historical observations.

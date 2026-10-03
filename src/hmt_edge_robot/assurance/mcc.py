@@ -110,6 +110,7 @@ class MissionColdStartCartographer:
 
     async def _collect_stages(self, spec, probe, started):
         observations = []
+        stage = spec.stages[0]
         try:
             for stage in spec.stages:
                 remaining = spec.recovery_horizon_sec - (self.kernel.clock() - started)

@@ -780,6 +780,21 @@
       ],
       "gate": "G-TRIAD-011",
       "scope": "system software / managed catalog"
+    },
+    {
+      "id": "REQ-NFR-11",
+      "kind": "nonfunctional",
+      "acceptance": "Pinned Pyrefly and locked type stubs check src, tests, tools and notebook with no warnings/errors alongside Ruff; static mismatch fails CI",
+      "source": [
+        "pyproject.toml",
+        "tools/validate.py",
+        ".github/workflows/ci.yml"
+      ],
+      "tests": [
+        "tests/test_typecheck_gate.py::test_pyrefly_rejects_invalid_return"
+      ],
+      "gate": "G-TYPES-012",
+      "scope": "system software"
     }
   ]
 }

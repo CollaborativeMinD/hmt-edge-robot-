@@ -11,6 +11,7 @@ from ..contracts import Contract, Identifier, Nonnegative, Positive
 Hash = Annotated[str, Field(pattern=r"^[a-f0-9]{64}$")]
 Refs = Annotated[tuple[Identifier, ...], Field(max_length=256)]
 Text = Annotated[str, Field(min_length=1, max_length=512)]
+MutationAction = Literal["quarantine", "restore", "delete"]
 EffectKind = Literal["read", "write", "network", "secret", "spawn", "mount"]
 Verdict = Literal[
     "MISSION_READY",
@@ -206,7 +207,7 @@ class MutationGrant(Contract):
     plan_hash: Hash
     epochs: Epochs
     revision: int = Field(ge=0)
-    action: Literal["quarantine", "restore", "delete"]
+    action: MutationAction
     artifact_id: Identifier
     expires_at: Nonnegative
 

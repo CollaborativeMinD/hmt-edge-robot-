@@ -11,7 +11,14 @@ from typing import Callable
 
 from ..contracts import digest, utc_now
 from ..ledger import EvidenceError, Ledger
-from .contracts import ArtifactIdentity, ArtifactRecord, Census, Epochs, MutationGrant
+from .contracts import (
+    ArtifactIdentity,
+    ArtifactRecord,
+    Census,
+    Epochs,
+    MutationAction,
+    MutationGrant,
+)
 
 
 def storage_guard(method):
@@ -145,7 +152,7 @@ class ArtifactCatalog:
         self,
         plan_hash: str,
         revision: int,
-        action: str,
+        action: MutationAction,
         artifact_id: str,
         expires_at: float,
         operator_id: str,

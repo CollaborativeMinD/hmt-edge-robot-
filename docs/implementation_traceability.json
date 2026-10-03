@@ -1252,5 +1252,25 @@
     ],
     "analysis_id": "G-TRIAD-011",
     "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-NFR-11",
+    "module_id": "tools/validate.py",
+    "runtime_partition": "system software",
+    "source_path": [
+      "pyproject.toml",
+      "tools/validate.py",
+      ".github/workflows/ci.yml"
+    ],
+    "contract_id": "Pyrefly static type gate",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02"
+    ],
+    "test_id": [
+      "tests/test_typecheck_gate.py::test_pyrefly_rejects_invalid_return"
+    ],
+    "analysis_id": "G-TYPES-012",
+    "evidence_id": "evidence/validation.json"
   }
 ]

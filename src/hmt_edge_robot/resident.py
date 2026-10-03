@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import asyncio
 import math
-from typing import Any, Protocol
+from typing import Any, Literal, Protocol, runtime_checkable
 from urllib.parse import urlparse
 
 import httpx
@@ -87,6 +87,11 @@ class ResidentProvider(Protocol):
     local: bool
 
     async def propose(self, context: dict[str, Any], question: str) -> str: ...
+
+
+@runtime_checkable
+class QualifiedResidentProvider(Protocol):
+    qualified: bool
 
 
 class CallBudget:
@@ -172,7 +177,7 @@ class OpenAICompatibleProvider:
         return await self._call(context, question)
 
     def _body(self, context: dict[str, Any], question: str) -> dict:
-        body = {
+        body: dict[str, Any] = {
             "model": self.model_id,
             "temperature": 0,
             "max_tokens": 512,
@@ -268,7 +273,7 @@ class ResidentHMT:
         self, policy: Policy, ledger: Ledger, provider: ResidentProvider | None = None
     ) -> None:
         self.policy, self.ledger = policy, ledger
-        self.provider = provider or DeterministicResident()
+        self.provider: ResidentProvider = provider or DeterministicResident()
         TypeAdapter(ModelIdentifier).validate_python(self.provider.model_id, strict=True)
         if not self.provider.local and not policy.allow_cloud:
             raise PermissionError("CLOUD_NOT_ADMITTED")
@@ -324,7 +329,7 @@ class ResidentHMT:
             self.busy = False
 
     def _record(
-        self, context_hash: str, proposal: ResidentProposal | None, decision: str, reason: str
+        self, context_hash: str, proposal: ResidentProposal | None, decision: Literal["ADMIT", "HOLD", "DENY"], reason: str
     ) -> ResidentReceipt:
         receipt = ResidentReceipt(
             decision=decision,

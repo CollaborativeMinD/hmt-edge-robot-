@@ -14,7 +14,7 @@ from .edge import WaialuaEdgeNode
 from .geometry import Calibration
 from .ledger import Ledger
 from .orchestrator import FactoryOrchestrator, SimulationDriver
-from .resident import ResidentHMT, ResidentProvider
+from .resident import QualifiedResidentProvider, ResidentHMT, ResidentProvider
 from .safety import HaloSafe
 from .vision import NeuroGrasp, synthetic_frame
 
@@ -145,5 +145,5 @@ class RobotCell:
             ):
                 component.policy = policy
             self.access.sessions.clear()
-            if hasattr(self.resident.provider, "qualified"):
+            if isinstance(self.resident.provider, QualifiedResidentProvider):
                 self.resident.provider.qualified = False
