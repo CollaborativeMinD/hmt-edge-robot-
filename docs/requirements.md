@@ -73,3 +73,5 @@ Scope: system software. Physical deployment verification is deferred. The normat
 | REQ-SAT-NFR-06 | nonfunctional | Software campaign plans 258 records within 10 sec and optimizes 64 candidates/1024 budget within 2 sec on acceptance host, with zero driver moves | test_optimization_exact_against_brute_force |
 
 | REQ-NFR-11 | nonfunctional | Pinned Pyrefly checks source, tests, tools and notebook; zero warnings/errors, static mismatch rejects CI alongside Ruff | test_pyrefly_rejects_invalid_return |
+
+CI/CD phase 1 adds REQ-CI-01, REQ-CI-02 and REQ-CI-NFR-01. See `docs/requirements.json`, `docs/ci_cd.md` and G-CI-013 evidence.

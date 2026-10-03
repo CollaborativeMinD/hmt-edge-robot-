@@ -1,24 +1,47 @@
 name: Cumulative software verification (Pyrefly + Ruff)
 on:
   push:
-    branches: [main, build/architecture-bound-v1]
+    branches: [main]
   pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: software-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+defaults:
+  run:
+    shell: bash
 jobs:
   verify:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      UV_PYTHON: '3.12'
+      UV_NO_PROGRESS: '1'
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Tool admission before dependency installation
+        run: python3 tools/ci_admission.py
       - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
         with:
           version: 0.9.7
-      - run: uv sync --frozen --extra dev
+          enable-cache: false
+      - name: Lock consistency and locked installation
+        run: |
+          uv lock --check
+          uv sync --locked --extra dev
       - name: Pyrefly, Ruff, and cumulative regression gates
         run: uv run --no-sync python tools/validate.py
+      - name: Surface failed software admission
+        if: failure()
+        run: echo '::error::Software admission failed. Deployment remains HOLD. Inspect cumulative-verification.'
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
           name: cumulative-verification
           path: evidence/
+          retention-days: 30
+          if-no-files-found: error

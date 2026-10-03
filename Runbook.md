@@ -181,3 +181,10 @@ and mutation attempts must use `setattr`; neither is a diagnostic suppression.
 Do not add baselines, ignore comments, missing-import bypasses, or blanket error
 exclusions to obtain PASS. Run all cumulative gates after each correction. Historical
 acceptance seals remain unchanged; the typing update has its own source receipt.
+
+## 9. CI admission
+
+Run `python3 tools/ci_admission.py`, `uv lock --check`, `uv sync --locked --extra dev`,
+then `uv run --no-sync python tools/validate.py`. Stop on nonzero status and inspect
+`evidence/ci/admission.json` and current gate logs. Follow `docs/ci_cd.md` for policy changes.
+CI PASS admits the software toolchain only. Candidate tools and Pi/K3s deployment remain HOLD.
