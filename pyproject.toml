@@ -28,7 +28,7 @@ hmt-edge-robot = "hmt_edge_robot.cli:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["src"]
+pythonpath = ["src", "tools"]
 addopts = "-ra --strict-markers"
 
 [tool.ruff]

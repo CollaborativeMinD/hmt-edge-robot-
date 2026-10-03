@@ -271,6 +271,7 @@ def finalize(db: sqlite3.Connection, passed: bool) -> None:
 async def main() -> None:
     db = database()
     commands = [
+        ("G-CI-013", "REQ-CI-01", [sys.executable, "tools/ci_admission.py"]),
         ("G-TYPES-012", "REQ-NFR-11", ["pyrefly", "check", "--min-severity", "warn"]),
         ("G-STATIC-007", "REQ-NFR-07", ["ruff", "check", "src", "tests", "tools", "notebooks"]),
         (

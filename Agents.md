@@ -47,3 +47,8 @@ REQ-NFR-11 / G-TYPES-012: use the pinned Pyrefly checker alongside Ruff on the f
 active Python project. Zero warnings or errors are required. Fix contract boundaries
 and retain negative runtime tests; do not suppress typing diagnostics or substitute
 an empty checking scope. Preserve historical source seals.
+
+Phase 1 CI: critical inputs and tool versions are bound by `policy/ci_admission.json`.
+Check uv lock freshness before locked installation. Reject unreviewed candidate promotion;
+never execute the retained candidate ZIPs or expose cluster/provider credentials in PR CI.
+Preserve existing gates and archive seals. Refer to `docs/ci_cd.md` for continuation boundaries.

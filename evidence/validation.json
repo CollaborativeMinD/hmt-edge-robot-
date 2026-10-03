@@ -1,25 +1,25 @@
 {
-  "timestamp_utc": "2026-10-03T08:10:36.161327Z",
+  "timestamp_utc": "2026-10-03T08:50:39.534025Z",
   "software_status": "PASS",
   "external_deployment_status": "HOLD",
   "coverage": {
-    "covered_lines": 1988,
+    "covered_lines": 1981,
     "num_statements": 2014,
-    "percent_covered": 97.77867528271406,
-    "percent_covered_display": "98",
-    "missing_lines": 26,
+    "percent_covered": 97.4151857835218,
+    "percent_covered_display": "97",
+    "missing_lines": 33,
     "excluded_lines": 14,
-    "percent_statements_covered": 98.7090367428004,
-    "percent_statements_covered_display": "99",
+    "percent_statements_covered": 98.36146971201589,
+    "percent_statements_covered_display": "98",
     "num_branches": 462,
-    "num_partial_branches": 29,
-    "covered_branches": 433,
-    "missing_branches": 29,
-    "percent_branches_covered": 93.72294372294373,
-    "percent_branches_covered_display": "94"
+    "num_partial_branches": 31,
+    "covered_branches": 431,
+    "missing_branches": 31,
+    "percent_branches_covered": 93.29004329004329,
+    "percent_branches_covered_display": "93"
   },
   "gate_columns": 7,
   "rrca_columns": 7,
   "ledger_semantics": "append-only observations; current run retests all software gates",
-  "test_cases": 137
+  "test_cases": 151
 }

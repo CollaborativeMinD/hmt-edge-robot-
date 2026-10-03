@@ -1,0 +1,20 @@
+{
+  "baseline_commit": "c8246f03e692fcdee740549199b07376e386ef71",
+  "scope": "CI/CD phase 1 software only",
+  "files": {
+    "tools/ci_admission.py": "5c900422b6c70f61c9f4e558700801ac5b99e00b91bd81f55ae5ded8a6d7aa58",
+    "tools/validate.py": "def0f29bdfac5b2ac59dc68bddc3fdb1e4e1a33a468a2f25203d3759fa37a91e",
+    "tests/test_ci_admission.py": "7f6abf8ee03d168458d69d75cd64fe21ed1dc41937d9eeab16c28c47e23b029b",
+    "policy/ci_admission.json": "4c73ec1e0ab9f5a9aa3c1b7b63d321cd0808bd1400b6abcfc92eb6dabc838765",
+    ".github/workflows/ci.yml": "c1d4fd3f635f185d408a9844b5ce7c31ca14991fd5d3f7a6c2b7171adeb24a37",
+    "pyproject.toml": "90403f3b5b381e07474400d9611c014ba8999db4a3dfc558f2bd5469918e59f7",
+    "uv.lock": "0f121cae36b8ac839885a7307699e83d7ad6c446eb1528842750e7036c8d239a",
+    "docs/ci_cd.md": "880c920def86628b639f90b3614722d7f106c9f2d0c2efabdd972e9b803fc7fe",
+    "docs/requirements.json": "0d81cdf6e9609e20f7f99e88bd3ae5d62815ae5a751c2c516092a2b8d6eba0bb",
+    "docs/implementation_traceability.json": "90e9baa8e6390edd8cc17cd0f41499052090c7fa2f8e26cc0b616ce9d23ba8cb",
+    "docs/machine_handoff.json": "d1b541470601332434317c51dc6a84a851bb1766286c38842a031c8b446873cf",
+    "Runbook.md": "7ecc83328978b370ddfa2185131207ff436170e639af2cc55f6bd9c38cee22c9",
+    "Agents.md": "dd7718d472b4c1614f259f9af7830917c992f27705d36e68ce038a2d3c0bdee1",
+    "README.md": "513b4ca44015cb810268bc86041b443a8629d4eb3befcb6b9aede9075764259b"
+  }
+}

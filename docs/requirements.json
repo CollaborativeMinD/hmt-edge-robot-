@@ -795,6 +795,48 @@
       ],
       "gate": "G-TYPES-012",
       "scope": "system software"
+    },
+    {
+      "id": "REQ-CI-01",
+      "kind": "functional",
+      "acceptance": "Hash-bound CI inputs and exact locked tools; candidate HOLD never grants execution",
+      "source": [
+        "tools/ci_admission.py",
+        ".github/workflows/ci.yml"
+      ],
+      "tests": [
+        "tests/test_ci_admission.py::test_ci_admission_and_candidates_remain_hold"
+      ],
+      "gate": "G-CI-013",
+      "scope": "software CI/Linux"
+    },
+    {
+      "id": "REQ-CI-02",
+      "kind": "functional",
+      "acceptance": "Changed critical inputs, invalid admission and links reject with durable failure alert",
+      "source": [
+        "tools/ci_admission.py",
+        ".github/workflows/ci.yml"
+      ],
+      "tests": [
+        "tests/test_ci_admission.py::test_ci_admission_denies_tampering"
+      ],
+      "gate": "G-CI-013",
+      "scope": "software CI/Linux"
+    },
+    {
+      "id": "REQ-CI-NFR-01",
+      "kind": "nonfunctional",
+      "acceptance": "Stale uv lock fails without rewrite; Linux CI never admits K3s hardware deployment",
+      "source": [
+        "tools/ci_admission.py",
+        ".github/workflows/ci.yml"
+      ],
+      "tests": [
+        "tests/test_ci_admission.py::test_uv_stale_lock_denied_without_rewrite"
+      ],
+      "gate": "G-CI-013",
+      "scope": "software CI/Linux"
     }
   ]
 }

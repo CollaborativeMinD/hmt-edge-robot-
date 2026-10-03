@@ -1,0 +1,59 @@
+[
+  {
+    "req_id": "REQ-CI-01",
+    "module_id": "tools/ci_admission.py",
+    "runtime_partition": "software CI/Linux",
+    "source_path": [
+      "tools/ci_admission.py",
+      ".github/workflows/ci.yml"
+    ],
+    "contract_id": "policy/ci_admission.json",
+    "safety_constraint_id": [
+      "NO_CANDIDATE_EXECUTION",
+      "NO_TARGET_DEPLOYMENT"
+    ],
+    "test_id": [
+      "tests/test_ci_admission.py::test_ci_admission_and_candidates_remain_hold"
+    ],
+    "analysis_id": "G-CI-013",
+    "evidence_id": "evidence/ci/admission.json"
+  },
+  {
+    "req_id": "REQ-CI-02",
+    "module_id": "tools/ci_admission.py",
+    "runtime_partition": "software CI/Linux",
+    "source_path": [
+      "tools/ci_admission.py",
+      ".github/workflows/ci.yml"
+    ],
+    "contract_id": "policy/ci_admission.json",
+    "safety_constraint_id": [
+      "NO_CANDIDATE_EXECUTION",
+      "NO_TARGET_DEPLOYMENT"
+    ],
+    "test_id": [
+      "tests/test_ci_admission.py::test_ci_admission_denies_tampering"
+    ],
+    "analysis_id": "G-CI-013",
+    "evidence_id": "evidence/ci/admission.json"
+  },
+  {
+    "req_id": "REQ-CI-NFR-01",
+    "module_id": "tools/ci_admission.py",
+    "runtime_partition": "software CI/Linux",
+    "source_path": [
+      "tools/ci_admission.py",
+      ".github/workflows/ci.yml"
+    ],
+    "contract_id": "policy/ci_admission.json",
+    "safety_constraint_id": [
+      "NO_CANDIDATE_EXECUTION",
+      "NO_TARGET_DEPLOYMENT"
+    ],
+    "test_id": [
+      "tests/test_ci_admission.py::test_uv_stale_lock_denied_without_rewrite"
+    ],
+    "analysis_id": "G-CI-013",
+    "evidence_id": "evidence/ci/admission.json"
+  }
+]
