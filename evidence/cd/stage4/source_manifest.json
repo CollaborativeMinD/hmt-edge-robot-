@@ -40,7 +40,7 @@
     {
       "path": "README.md",
       "status": "modified",
-      "sha256": "4c62e32099719e76459dc447cee8929d36039ea6988edb282d08da2067f26ee4",
+      "sha256": "cdb079e365d6a9fd9a868af5ad5eb441298bc46c10621148c4bfd527b52b63e0",
       "baseline_blob": "ef19f4ef1b963616406e3d312fce8b61563f0a1a",
       "mode": "100644"
     },
@@ -68,7 +68,7 @@
     {
       "path": "docs/cd/stage4.md",
       "status": "new",
-      "sha256": "35d865356d758c7e929d897c7a77897b488927b83deb8a8f1acffcb1fb2cd3b2",
+      "sha256": "1fd48a0d7676d468862808e70f153ca222f8c50b8dcebde406221afc4434d40e",
       "baseline_blob": null,
       "mode": "100644"
     },
@@ -103,14 +103,14 @@
     {
       "path": "policy/artifact_admission.json",
       "status": "new",
-      "sha256": "1fcba1793da7b98d46adbf2b844d5d8aacc737e744ccbbb44866828c1cdd0b88",
+      "sha256": "24c0a8f0b53ead02fe1c6785dddcf854f9fea2a5243baee36f15f3ab4c3ad558",
       "baseline_blob": null,
       "mode": "100644"
     },
     {
       "path": "policy/ci_admission.json",
       "status": "modified",
-      "sha256": "0928891a4e203eba0852709c7367497ce2df804cd24dd736b19476c31b2a6448",
+      "sha256": "9bdae40e182f9dff250f63d5e749b6932497af6440c9b58176ffb42a45e3a079",
       "baseline_blob": "c3aec8b2dee86ebd6eac8c700bf653f6c04656fa",
       "mode": "100644"
     },
@@ -268,5 +268,6 @@
       "mode": "100644",
       "sha256": "1556b8dd596f674739cd1a04edef75e1530af5215e874e6d7563557e19ecaebd"
     }
-  ]
+  ],
+  "final_tested_head": "1d0ad63b3437bc6de250a971456d53472df80046"
 }

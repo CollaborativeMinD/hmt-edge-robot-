@@ -30,7 +30,7 @@
     "tools/validate_structure.py": "dee4faa972382d188aae4c736f586754e4c1329c45deb506a811bee1c6d5b47c",
     "uv.lock": "b1ce60e49dc526e19077ddc69fb91fc142f551e123c746a4ffbb88433d98998b",
     "policy/deployment_admission.json": "79880a4c21a63d148d47461a08e0b204b6de49b3c1b5be1abad569024b1c9a2b",
-    "policy/artifact_admission.json": "1fcba1793da7b98d46adbf2b844d5d8aacc737e744ccbbb44866828c1cdd0b88"
+    "policy/artifact_admission.json": "24c0a8f0b53ead02fe1c6785dddcf854f9fea2a5243baee36f15f3ab4c3ad558"
   },
   "tools": {
     "pyrefly": "1.3.2",

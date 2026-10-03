@@ -115,3 +115,14 @@ UNKNOWN findings. The one listed fix is pinned in the runtime recipe:
 `libpcre2-8-0=10.46-1~deb13u3`. Remaining no-fix findings remain blockers, not waivers.
 The OS patch is installed through the base's signed Debian repository; its version
 and bytes are retained by the image digest and SBOM. Python package pins do not change.
+
+## Current campaign disposition
+
+Run37152497376 built the pinned-patch ARM64 image, passed restricted installed SIL,
+and produced SBOM/security evidence. The available PCRE2 fix closed; scanner counts
+are44 HIGH2 UNKNOWN0 CRITICAL, with no listed fixes for the remaining blockers.
+`evidence/cd/stage4/final_campaign_receipt.json` binds that run, tested merge/head,
+artifact ID, raw blocking IDs and package versions. Artifact promotion remains HOLD
+for these findings and signing eligibility. Software CI run37152497356 passes.
+The final documentation commit preserves this tested runtime/source lineage; it
+is not a new qualified image claim. No candidate is admitted to Pi/K3s operation.
