@@ -12,6 +12,7 @@ from urllib.parse import urlparse
 
 import httpx
 import numpy as np
+import sklearn
 from pydantic import ValidationError
 from sklearn.ensemble import IsolationForest
 
@@ -46,7 +47,14 @@ class HealthModel:
         self.bounds = tuple(
             (float(values[:, i].min()), float(values[:, i].max())) for i in range(2)
         )
-        self.artifact_hash = digest({"baseline": baseline, "parameters": self.model.get_params()})
+        self.artifact_hash = digest(
+            {
+                "baseline": baseline,
+                "parameters": self.model.get_params(),
+                "sklearn_version": sklearn.__version__,
+                "features": ["voltage_v", "temp_c"],
+            }
+        )
         return self.artifact_hash
 
     def predict(self, voltage_v: float, temp_c: float) -> dict[str, Any]:
@@ -164,8 +172,7 @@ class OpenAICompatibleProvider:
             raise RuntimeError("MODEL_NOT_QUALIFIED")
         return await self._call(context, question)
 
-    async def _call(self, context: dict[str, Any], question: str) -> str:
-        headers = {"Authorization": f"Bearer {self.key}"} if self.key else {}
+    def _body(self, context: dict[str, Any], question: str) -> dict:
         body = {
             "model": self.model_id,
             "temperature": 0,
@@ -186,11 +193,24 @@ class OpenAICompatibleProvider:
                 {"role": "user", "content": canonical({"context": context, "question": question})},
             ],
         }
+        if self.base_url == "https://openrouter.ai/api/v1":
+            body["provider"] = {
+                "only": ["OpenAI"],
+                "allow_fallbacks": False,
+                "require_parameters": True,
+                "max_price": {"prompt": 0.4, "completion": 1.6},
+            }
+        return body
+
+    async def _call(self, context: dict[str, Any], question: str) -> str:
+        headers = {"Authorization": f"Bearer {self.key}"} if self.key else {}
+        body = self._body(context, question)
         if self.budget is not None:
-            if (
-                self.model_id != "gpt-4.1-mini-2025-04-14"
-                or self.base_url != "https://api.openai.com/v1"
-            ):
+            profiles = {
+                ("https://api.openai.com/v1", "gpt-4.1-mini-2025-04-14"),
+                ("https://openrouter.ai/api/v1", "openai/gpt-4.1-mini"),
+            }
+            if (self.base_url, self.model_id) not in profiles:
                 raise RuntimeError("BUDGET_PRICE_PROFILE_MISMATCH")
             self.budget.reserve(len(canonical(body).encode()))
         async with httpx.AsyncClient(timeout=5, follow_redirects=False, trust_env=False) as client:
@@ -203,6 +223,9 @@ class OpenAICompatibleProvider:
                     data.extend(chunk)
                     if len(data) > 32768:
                         raise ValueError("MODEL_RESPONSE_TOO_LARGE")
+        return self._decode(bytes(data))
+
+    def _decode(self, data: bytes) -> str:
         import json
 
         payload = json.loads(data)

@@ -1,7 +1,7 @@
 name: Bounded live resident campaign
 on:
   push:
-    branches: [campaign/live-resident-keys]
+    branches: [campaign/openrouter-resident-once]
 permissions:
   contents: read
 concurrency:
@@ -19,7 +19,7 @@ jobs:
       - run: uv sync --frozen --extra dev
       - run: uv run --no-sync python tools/live_llm_campaign.py
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || secrets.OPENAI_KEY || secrets.OPENAI }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
