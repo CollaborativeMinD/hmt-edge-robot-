@@ -4,7 +4,8 @@
 
 Governed edge robotics, resident HMT, and evidence you can replay.
 
-[![CI](https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/workflows/ci.yml)
+[![CI](https://img.shields.io/badge/CI-workflow_results-0969da?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/workflows/ci.yml)
+[![Ruff](https://img.shields.io/badge/Ruff-PASS-2ea043?style=flat-square&logo=ruff&logoColor=white)](evidence/G-STATIC-007.log)
 [![Tests](https://img.shields.io/badge/tests-331_passing-2ea043?style=flat-square)](evidence/cd/stage4/validation_receipt.json)
 [![Coverage](https://img.shields.io/badge/coverage-97.74%25-2ea043?style=flat-square)](evidence/cd/stage4/validation_receipt.json)
 [![Supervisory SIL](https://img.shields.io/badge/supervisory_SIL-PASS-2ea043?style=flat-square)](evidence/cd/stage4/validation_receipt.json)
@@ -56,7 +57,9 @@ is explicit. The resident can inspect, diagnose, or plan; it cannot actuate.
 ## Proof and lineage
 
 The test, coverage, and PASS badges describe the committed validation snapshot;
-the CI badge links to current workflow results. The evidence pack includes a
+including Ruff (`G-STATIC-007`); the CI badge is a link to live workflow results,
+not a live status indicator. A static link badge avoids private-repository workflow
+badge image failures. The evidence pack includes a
 32-cycle composed SIL campaign, requirement and ontology bindings, cumulative
 gate and RRCA ledgers, and a bounded live resident canary with zero driver moves.
 
