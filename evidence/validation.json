@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-10-03T17:57:54.591420Z",
+  "timestamp_utc": "2026-10-03T19:01:52.220126Z",
   "software_status": "PASS",
   "external_deployment_status": "HOLD",
   "coverage": {
@@ -21,5 +21,5 @@
   "gate_columns": 7,
   "rrca_columns": 7,
   "ledger_semantics": "append-only observations; current run retests all software gates",
-  "test_cases": 178
+  "test_cases": 261
 }

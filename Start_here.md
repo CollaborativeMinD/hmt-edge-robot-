@@ -14,3 +14,5 @@ Run `python3 tools/ci_admission.py`, then `uv lock --check` and
 
 Inspect current `evidence/validation.json`, `evidence/ci/admission.json`, and
 `evidence/ci/phase2`. Stop on failed gates. Read `Runbook.md` and `docs/ci_phase2.md`.
+For stage-3 deployment design, inspect `evidence/cd/stage3` and `docs/cd/stage3.md`.
+Contract PASS does not activate the zero-replica or suspended templates.

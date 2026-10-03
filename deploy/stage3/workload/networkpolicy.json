@@ -1,0 +1,21 @@
+{
+  "apiVersion": "networking.k8s.io/v1",
+  "kind": "NetworkPolicy",
+  "metadata": {
+    "name": "hmt-edge-deny-all",
+    "namespace": "hmt-edge-robot-sil"
+  },
+  "spec": {
+    "podSelector": {
+      "matchLabels": {
+        "app.kubernetes.io/name": "hmt-edge-robot"
+      }
+    },
+    "policyTypes": [
+      "Ingress",
+      "Egress"
+    ],
+    "ingress": [],
+    "egress": []
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "release_name": "hmt-edge-robot-sil-stage3",
+  "baseline": {
+    "commit": "3f2ebe3280e09c13612526c02d107a3448435477",
+    "tree": "7eb6a2598db5c400c619322d2424b49aa89adab8"
+  },
+  "plan_sha256": "48ca0e4f1db4776979bf58960aa0e8f00edc7a85507f2852dcb87c1824312080",
+  "source_inventory_sha256": "f2829bd8d5d2e0703f8d3f733d75d9b4a3357e2f5f4b38550bf8013f88cbdc93",
+  "artifact_status": "UNBUILT",
+  "image_digest": null,
+  "target_observation": null,
+  "authorization": "DESIGN_ONLY"
+}

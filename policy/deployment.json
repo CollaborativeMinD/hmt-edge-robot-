@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "stage": 3,
+  "scope": "deployment_design_only",
+  "baseline": {
+    "commit": "3f2ebe3280e09c13612526c02d107a3448435477",
+    "tree": "7eb6a2598db5c400c619322d2424b49aa89adab8"
+  },
+  "os": "linux",
+  "architecture": "arm64",
+  "orchestrator": "k3s",
+  "namespace": "hmt-edge-robot-sil",
+  "driver": "SIL",
+  "replicas": 0,
+  "workers": 1,
+  "flux_suspended": true,
+  "image": null,
+  "node_owner": "qualification-required",
+  "storage_class": "hmt-edge-unqualified",
+  "storage_gib": 8,
+  "storage_access_mode": "ReadWriteOnce",
+  "upgrade": "stop_verify_backup_replace",
+  "rollback": "compatible_image_preserve_ledger",
+  "bind_host": "127.0.0.1",
+  "private_access": "qualified_port_forward_only",
+  "api_secret": "hmt-edge-runtime",
+  "operator_secret": "hmt-edge-runtime",
+  "registry_secret": "hmt-edge-registry-read",
+  "git_secret": "hmt-edge-git-read",
+  "resources": {
+    "request_cpu_m": 500,
+    "limit_cpu_m": 2000,
+    "request_memory_mib": 512,
+    "limit_memory_mib": 2048,
+    "qualification": "HOLD"
+  },
+  "boundaries": {
+    "image_build": "HOLD",
+    "container_execution": "HOLD",
+    "target_qualification": "HOLD",
+    "cluster_deployment": "HOLD",
+    "physical_actuation": "HOLD",
+    "readiness_implementation": "HOLD",
+    "single_owner_qualification": "HOLD",
+    "storage_restore_qualification": "HOLD",
+    "private_access_qualification": "HOLD",
+    "cluster_inventory": "HOLD",
+    "protected_promotion": "HOLD"
+  }
+}

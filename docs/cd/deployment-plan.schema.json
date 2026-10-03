@@ -1,0 +1,310 @@
+{
+  "$defs": {
+    "Baseline": {
+      "additionalProperties": false,
+      "properties": {
+        "commit": {
+          "maxLength": 40,
+          "minLength": 40,
+          "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+          "title": "Commit",
+          "type": "string"
+        },
+        "tree": {
+          "maxLength": 40,
+          "minLength": 40,
+          "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+          "title": "Tree",
+          "type": "string"
+        }
+      },
+      "required": [
+        "commit",
+        "tree"
+      ],
+      "title": "Baseline",
+      "type": "object"
+    },
+    "Boundaries": {
+      "additionalProperties": false,
+      "properties": {
+        "image_build": {
+          "const": "HOLD",
+          "title": "Image Build",
+          "type": "string"
+        },
+        "container_execution": {
+          "const": "HOLD",
+          "title": "Container Execution",
+          "type": "string"
+        },
+        "target_qualification": {
+          "const": "HOLD",
+          "title": "Target Qualification",
+          "type": "string"
+        },
+        "cluster_deployment": {
+          "const": "HOLD",
+          "title": "Cluster Deployment",
+          "type": "string"
+        },
+        "physical_actuation": {
+          "const": "HOLD",
+          "title": "Physical Actuation",
+          "type": "string"
+        },
+        "readiness_implementation": {
+          "const": "HOLD",
+          "title": "Readiness Implementation",
+          "type": "string"
+        },
+        "single_owner_qualification": {
+          "const": "HOLD",
+          "title": "Single Owner Qualification",
+          "type": "string"
+        },
+        "storage_restore_qualification": {
+          "const": "HOLD",
+          "title": "Storage Restore Qualification",
+          "type": "string"
+        },
+        "private_access_qualification": {
+          "const": "HOLD",
+          "title": "Private Access Qualification",
+          "type": "string"
+        },
+        "cluster_inventory": {
+          "const": "HOLD",
+          "title": "Cluster Inventory",
+          "type": "string"
+        },
+        "protected_promotion": {
+          "const": "HOLD",
+          "title": "Protected Promotion",
+          "type": "string"
+        }
+      },
+      "required": [
+        "image_build",
+        "container_execution",
+        "target_qualification",
+        "cluster_deployment",
+        "physical_actuation",
+        "readiness_implementation",
+        "single_owner_qualification",
+        "storage_restore_qualification",
+        "private_access_qualification",
+        "cluster_inventory",
+        "protected_promotion"
+      ],
+      "title": "Boundaries",
+      "type": "object"
+    },
+    "Resources": {
+      "additionalProperties": false,
+      "properties": {
+        "request_cpu_m": {
+          "maximum": 2000,
+          "minimum": 100,
+          "title": "Request Cpu M",
+          "type": "integer"
+        },
+        "limit_cpu_m": {
+          "maximum": 2000,
+          "minimum": 100,
+          "title": "Limit Cpu M",
+          "type": "integer"
+        },
+        "request_memory_mib": {
+          "maximum": 2048,
+          "minimum": 256,
+          "title": "Request Memory Mib",
+          "type": "integer"
+        },
+        "limit_memory_mib": {
+          "maximum": 2048,
+          "minimum": 256,
+          "title": "Limit Memory Mib",
+          "type": "integer"
+        },
+        "qualification": {
+          "const": "HOLD",
+          "title": "Qualification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "request_cpu_m",
+        "limit_cpu_m",
+        "request_memory_mib",
+        "limit_memory_mib",
+        "qualification"
+      ],
+      "title": "Resources",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "stage": {
+      "const": 3,
+      "title": "Stage",
+      "type": "integer"
+    },
+    "scope": {
+      "const": "deployment_design_only",
+      "title": "Scope",
+      "type": "string"
+    },
+    "baseline": {
+      "$ref": "#/$defs/Baseline"
+    },
+    "os": {
+      "const": "linux",
+      "title": "Os",
+      "type": "string"
+    },
+    "architecture": {
+      "const": "arm64",
+      "title": "Architecture",
+      "type": "string"
+    },
+    "orchestrator": {
+      "const": "k3s",
+      "title": "Orchestrator",
+      "type": "string"
+    },
+    "namespace": {
+      "const": "hmt-edge-robot-sil",
+      "title": "Namespace",
+      "type": "string"
+    },
+    "driver": {
+      "const": "SIL",
+      "title": "Driver",
+      "type": "string"
+    },
+    "replicas": {
+      "const": 0,
+      "title": "Replicas",
+      "type": "integer"
+    },
+    "workers": {
+      "const": 1,
+      "title": "Workers",
+      "type": "integer"
+    },
+    "flux_suspended": {
+      "const": true,
+      "title": "Flux Suspended",
+      "type": "boolean"
+    },
+    "image": {
+      "title": "Image",
+      "type": "null"
+    },
+    "node_owner": {
+      "const": "qualification-required",
+      "title": "Node Owner",
+      "type": "string"
+    },
+    "storage_class": {
+      "const": "hmt-edge-unqualified",
+      "title": "Storage Class",
+      "type": "string"
+    },
+    "storage_gib": {
+      "maximum": 32,
+      "minimum": 8,
+      "title": "Storage Gib",
+      "type": "integer"
+    },
+    "storage_access_mode": {
+      "const": "ReadWriteOnce",
+      "title": "Storage Access Mode",
+      "type": "string"
+    },
+    "upgrade": {
+      "const": "stop_verify_backup_replace",
+      "title": "Upgrade",
+      "type": "string"
+    },
+    "rollback": {
+      "const": "compatible_image_preserve_ledger",
+      "title": "Rollback",
+      "type": "string"
+    },
+    "bind_host": {
+      "const": "127.0.0.1",
+      "title": "Bind Host",
+      "type": "string"
+    },
+    "private_access": {
+      "const": "qualified_port_forward_only",
+      "title": "Private Access",
+      "type": "string"
+    },
+    "api_secret": {
+      "const": "hmt-edge-runtime",
+      "title": "Api Secret",
+      "type": "string"
+    },
+    "operator_secret": {
+      "const": "hmt-edge-runtime",
+      "title": "Operator Secret",
+      "type": "string"
+    },
+    "registry_secret": {
+      "const": "hmt-edge-registry-read",
+      "title": "Registry Secret",
+      "type": "string"
+    },
+    "git_secret": {
+      "const": "hmt-edge-git-read",
+      "title": "Git Secret",
+      "type": "string"
+    },
+    "resources": {
+      "$ref": "#/$defs/Resources"
+    },
+    "boundaries": {
+      "$ref": "#/$defs/Boundaries"
+    }
+  },
+  "required": [
+    "schema_version",
+    "stage",
+    "scope",
+    "baseline",
+    "os",
+    "architecture",
+    "orchestrator",
+    "namespace",
+    "driver",
+    "replicas",
+    "workers",
+    "flux_suspended",
+    "image",
+    "node_owner",
+    "storage_class",
+    "storage_gib",
+    "storage_access_mode",
+    "upgrade",
+    "rollback",
+    "bind_host",
+    "private_access",
+    "api_secret",
+    "operator_secret",
+    "registry_secret",
+    "git_secret",
+    "resources",
+    "boundaries"
+  ],
+  "title": "DeploymentPlan",
+  "type": "object"
+}

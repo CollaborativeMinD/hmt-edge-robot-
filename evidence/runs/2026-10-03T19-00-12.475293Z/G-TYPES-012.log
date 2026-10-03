@@ -1,0 +1,7 @@
+ INFO Checking project configured at `/workspace/scratch/1abe905e6918/hmt-edge-robot/pyproject.toml`
+ERROR `Literal[-9]` is not assignable to attribute `returncode` with type `Literal[0, 1]` [bad-assignment]
+  --> tests/test_deployment_campaign.py:32:31
+   |
+32 |             self.returncode = -9
+   |                               ^^
+ INFO 1 diagnostic

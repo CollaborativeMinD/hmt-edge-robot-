@@ -1,0 +1,69 @@
+.....................................................................F.. [ 94%]
+....                                                                     [100%]
+=================================== FAILURES ===================================
+___________ test_receipt_forgery_and_stale_inputs_are_denied[stale] ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-21/test_receipt_forgery_and_stale5')
+mutation = 'stale'
+
+    @pytest.mark.parametrize("mutation", ["hash", "authority", "unknown", "oversize", "duplicate", "stale"])
+    def test_receipt_forgery_and_stale_inputs_are_denied(tmp_path: Path, mutation: str) -> None:
+        root = deployment_copy(tmp_path)
+        first = evaluate(root)
+        value = first.model_dump(mode="json")
+        expected = first
+        if mutation == "hash":
+            value["receipt_hash"] = "a" * 64
+        elif mutation == "authority":
+            value["release_decision"] = "ADMIT"
+        elif mutation == "unknown":
+            value["cluster_credentials"] = "unreviewed"
+        elif mutation == "stale":
+            mutate(root, "policy/deployment.json", ("resources", "request_cpu_m"), 600)
+            candidate = json.loads((root / "policy/release_candidate.json").read_text())
+            import hashlib
+            candidate["plan_sha256"] = hashlib.sha256((root / "policy/deployment.json").read_bytes()).hexdigest()
+            rewrite(root, "policy/release_candidate.json", candidate, repin=True)
+>           expected = evaluate(root)
+                       ^^^^^^^^^^^^^^
+
+tests/test_deployment_receipts.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/tmp/pytest-of-root/pytest-21/test_receipt_forgery_and_stale5')
+
+    def evaluate(root: Path) -> ReleaseReceipt:
+        catalog = bind_catalog(root)
+        plan = DeploymentPlan.model_validate(read_object(root, "policy/deployment.json"))
+        candidate = ReleaseCandidate.model_validate(read_object(root, "policy/release_candidate.json"))
+        if plan.baseline != catalog.baseline or candidate.baseline != catalog.baseline:
+            raise ValueError("RELEASE_BASELINE_MISMATCH")
+        if candidate.plan_sha256 != digest(root / "policy/deployment.json"):
+            raise ValueError("RELEASE_PLAN_MISMATCH")
+        if candidate.source_inventory_sha256 != inventory_hash(catalog):
+            raise ValueError("RELEASE_SOURCE_BINDING_MISMATCH")
+        policy = Policy.model_validate_json(json.dumps(read_object(root, "policy/deployment_runtime.json")))
+        if policy.allow_cloud:
+            raise ValueError("STAGE3_CLOUD_NOT_AUTHORIZED")
+        expected = {**{"deploy/stage3/workload/" + k: v for k, v in manifests(plan, policy.model_dump(mode="json")).items()},
+                    **{"deploy/stage3/flux/" + k: v for k, v in flux_manifests(plan).items()}}
+        schemas = {"deployment-plan": DeploymentPlan, "release-candidate": ReleaseCandidate,
+                   "release-receipt": ReleaseReceipt, "deployment-catalog": DeploymentCatalog}
+        expected.update({"docs/cd/" + name + ".schema.json": model.model_json_schema()
+                         for name, model in schemas.items()})
+        required = {"policy/deployment.json", "policy/deployment_runtime.json", "policy/release_candidate.json",
+                    "policy/promotion.json", "uv.lock", "pyproject.toml", *expected}
+        if set(catalog.inputs) != required:
+            raise ValueError("DEPLOYMENT_BINDING_SET_MISMATCH")
+        actual = {p.relative_to(root).as_posix() for p in (root / "deploy/stage3").rglob("*") if p.is_file()}
+        if actual != {name for name in expected if name.startswith("deploy/")}:
+            raise ValueError("MANIFEST_INVENTORY_MISMATCH")
+        for name, value in expected.items():
+            if canonical(read_object(root, name)) != canonical(value):
+>               raise ValueError("MANIFEST_AUTHORITY_OR_CONTRACT_DRIFT:" + name)
+E               ValueError: MANIFEST_AUTHORITY_OR_CONTRACT_DRIFT:deploy/stage3/workload/workload.template.json
+
+tools/deployment_admission.py:46: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_deployment_receipts.py::test_receipt_forgery_and_stale_inputs_are_denied[stale]
+1 failed, 75 passed in 1.45s

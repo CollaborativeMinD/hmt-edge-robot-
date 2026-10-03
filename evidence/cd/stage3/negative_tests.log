@@ -1,0 +1,22 @@
+........................................................................ [ 86%]
+...........                                                              [100%]
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.14-final-0 _______________
+
+Name                            Stmts   Miss Branch BrPart  Cover   Missing
+---------------------------------------------------------------------------
+tools/deployment_admission.py      37      0     16      0   100%
+tools/deployment_campaign.py       31      1      2      1    94%   46
+tools/deployment_contracts.py      83      1     14      2    97%   21->25, 101
+tools/deployment_flux.py            6      0      0      0   100%
+tools/deployment_gate.py           24      1      4      1    93%   33
+tools/deployment_io.py             32      0     10      0   100%
+tools/deployment_manifests.py      12      0      0      0   100%
+tools/deployment_receipts.py       59      0      6      0   100%
+tools/deployment_schemas.py         7      0      0      0   100%
+tools/deployment_workload.py       13      0      0      0   100%
+---------------------------------------------------------------------------
+TOTAL                             304      3     52      4    98%
+Coverage JSON written to file /workspace/scratch/1abe905e6918/hmt-edge-robot/evidence/cd/stage3/coverage.json
+Required test coverage of 90% reached. Total coverage: 98.03%
+83 passed in 3.29s

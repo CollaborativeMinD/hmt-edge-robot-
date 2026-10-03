@@ -1,0 +1,12 @@
+EXPECTED HISTORICAL CONSTRUCTION REJECTION: Error building "model" validator:
+  SchemaError: Error building "model-fields" validator:
+  SchemaError: Field "value":
+  SchemaError: Error building "str" validator:
+  SchemaError: regex parse error:
+    ^(?!0{64}$)[a-f0-9]{64}$
+     ^^^
+error: look-around, including look-ahead and look-behind, is not supported
+EXPECTED HISTORICAL STRICT COLLECTION REJECTION: 1 validation error for BeforeTuple
+reasons
+  Input should be a valid array [type=tuple_type, input_value=['HOLD'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/tuple_type

@@ -63,10 +63,11 @@ the bootstrap in the cumulative evidence ledger. All inherited software gates re
 | Phase | Required evidence before advancement |
 |---|---|
 | 2: Policy/tool qualification | Read-only interfaces, regressions, pinned policy assessment; see ci_phase2.md |
-| Later: Container build | Locked build, non-root image, SBOM, vulnerability disposition, provenance and digest |
-| 3: Linux/aarch64 | Container smoke, architecture dependencies, resource and bounded recovery measurements |
-| 4: K3s staging | Protected environment, least-privilege deployment, readiness, rollout and rollback rehearsal |
-| 5: Promotion | Exact tested digest, retained evidence, admission decision and operator authorization |
+| 3: Deployment design | Strict contracts, dormant manifests, release receipts and negative admission; see cd/stage3.md |
+| 4: Container qualification | Locked build, non-root ARM64 image, SBOM, vulnerability disposition, provenance and digest |
+| 5: Pi qualification | Native dependencies, target resources, readiness, single owner, backup/restore and private access |
+| 6: K3s SIL staging | Protected promotion, least-privilege deployment, rollout and rollback rehearsal |
+| 7: Software promotion | Exact tested digest/configuration, retained evidence and operator authorization |
 
 Control-plane scheduling and Pi OS/architecture must be confirmed before deployment design.
 No phase advances on a successful workflow alone. Preserve prior archive/source seals.

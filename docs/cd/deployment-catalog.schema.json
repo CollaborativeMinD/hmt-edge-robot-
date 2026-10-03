@@ -1,0 +1,72 @@
+{
+  "$defs": {
+    "Baseline": {
+      "additionalProperties": false,
+      "properties": {
+        "commit": {
+          "maxLength": 40,
+          "minLength": 40,
+          "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+          "title": "Commit",
+          "type": "string"
+        },
+        "tree": {
+          "maxLength": 40,
+          "minLength": 40,
+          "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+          "title": "Tree",
+          "type": "string"
+        }
+      },
+      "required": [
+        "commit",
+        "tree"
+      ],
+      "title": "Baseline",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "baseline": {
+      "$ref": "#/$defs/Baseline"
+    },
+    "inputs": {
+      "additionalProperties": {
+        "maxLength": 64,
+        "minLength": 64,
+        "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+        "type": "string"
+      },
+      "maxProperties": 32,
+      "minProperties": 1,
+      "title": "Inputs",
+      "type": "object"
+    },
+    "runtime_sources": {
+      "additionalProperties": {
+        "maxLength": 64,
+        "minLength": 64,
+        "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+        "type": "string"
+      },
+      "maxProperties": 128,
+      "minProperties": 1,
+      "title": "Runtime Sources",
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "baseline",
+    "inputs",
+    "runtime_sources"
+  ],
+  "title": "DeploymentCatalog",
+  "type": "object"
+}

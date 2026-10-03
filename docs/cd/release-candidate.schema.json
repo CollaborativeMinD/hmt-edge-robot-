@@ -1,0 +1,90 @@
+{
+  "$defs": {
+    "Baseline": {
+      "additionalProperties": false,
+      "properties": {
+        "commit": {
+          "maxLength": 40,
+          "minLength": 40,
+          "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+          "title": "Commit",
+          "type": "string"
+        },
+        "tree": {
+          "maxLength": 40,
+          "minLength": 40,
+          "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+          "title": "Tree",
+          "type": "string"
+        }
+      },
+      "required": [
+        "commit",
+        "tree"
+      ],
+      "title": "Baseline",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "release_name": {
+      "const": "hmt-edge-robot-sil-stage3",
+      "title": "Release Name",
+      "type": "string"
+    },
+    "baseline": {
+      "$ref": "#/$defs/Baseline"
+    },
+    "plan_sha256": {
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+      "title": "Plan Sha256",
+      "type": "string"
+    },
+    "source_inventory_sha256": {
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+      "title": "Source Inventory Sha256",
+      "type": "string"
+    },
+    "artifact_status": {
+      "const": "UNBUILT",
+      "title": "Artifact Status",
+      "type": "string"
+    },
+    "image_digest": {
+      "title": "Image Digest",
+      "type": "null"
+    },
+    "target_observation": {
+      "title": "Target Observation",
+      "type": "null"
+    },
+    "authorization": {
+      "const": "DESIGN_ONLY",
+      "title": "Authorization",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "release_name",
+    "baseline",
+    "plan_sha256",
+    "source_inventory_sha256",
+    "artifact_status",
+    "image_digest",
+    "target_observation",
+    "authorization"
+  ],
+  "title": "ReleaseCandidate",
+  "type": "object"
+}

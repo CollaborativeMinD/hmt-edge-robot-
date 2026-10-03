@@ -17,16 +17,16 @@
         {
           "relativePath": "Start_here.md",
           "disposition": "observed",
-          "sha256": "bd70751b89e48eae7634d5df774a400b6d799237803e23efcdc69e5a8278be2d",
-          "sizeBytes": 564,
-          "lineCount": 16
+          "sha256": "56228ba075b8126bb40f38b1f689ec3b6b1ae2d0ddc90a43baa0c470f3b448e5",
+          "sizeBytes": 722,
+          "lineCount": 18
         },
         {
           "relativePath": "Index.md",
           "disposition": "observed",
-          "sha256": "1452565c9125d9aa449de5d36368d5a3704443d067310131da0d8f51bd782f11",
-          "sizeBytes": 700,
-          "lineCount": 18
+          "sha256": "d638d9ae6ab1be2c001f5ad5f0733de1ad88ae09192f67558ef42fd67a0d0db3",
+          "sizeBytes": 950,
+          "lineCount": 21
         }
       ]
     },
@@ -41,16 +41,16 @@
           "sha256": "496b60a604e6ab05228f32601c372fec432d6a2e0828d21c380a018b1018e02b"
         },
         {
-          "claim_id": "source.8b5d6c7c979b8750",
+          "claim_id": "source.e255f93b8a7e18ca",
           "statement": "Reviewed input bytes are bound; no runtime promotion is implied.",
           "file_path": "docs/requirements.json",
-          "sha256": "8b5d6c7c979b8750c7d2cc1df562d3e5f21cfdac6458cf3b9a54db3e2cc8738d"
+          "sha256": "e255f93b8a7e18cacf91345b59be81766b591537af47628352bd48de5420d124"
         },
         {
-          "claim_id": "source.26ce30a790250392",
+          "claim_id": "source.f0dae2959a2a8a8d",
           "statement": "Reviewed input bytes are bound; no runtime promotion is implied.",
           "file_path": "docs/implementation_traceability.json",
-          "sha256": "26ce30a79025039211ec05ff84079c524d95320e3e6b7d9f4fbcf48b47fda3e3"
+          "sha256": "f0dae2959a2a8a8d1685ad2b3f66d218868ee691990405a6eaa5db3da4526652"
         }
       ],
       "non_claim": "Byte binding alone does not prove a statement semantically true."
@@ -60,7 +60,7 @@
   "full_policy_adoption": "PROMOTED",
   "docker_build": "HOLD",
   "deployment": "HOLD",
-  "receipt_hash": "5e1acc3a088f884acba6f5e6c8a90335fe80839bc2fada1b8e92fe8d4c84f0e4",
+  "receipt_hash": "873af7ade552e7a49a6d76888b2bda91ee794c58e2aa2ca42d385c132dc64ff1",
   "notification": "CI_SUPPORT_PROFILES_PASS",
   "alert": false
 }
