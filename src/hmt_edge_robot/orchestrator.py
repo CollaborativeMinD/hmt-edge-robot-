@@ -57,8 +57,16 @@ class SimulationDriver:
 
 
 class FactoryOrchestrator:
-    def __init__(self, policy: Policy, ledger: Ledger, access: AccessManager, safety: HaloSafe,
-                 edge: WaialuaEdgeNode, driver: Driver, clock: Callable[[], float] = time.monotonic) -> None:
+    def __init__(
+        self,
+        policy: Policy,
+        ledger: Ledger,
+        access: AccessManager,
+        safety: HaloSafe,
+        edge: WaialuaEdgeNode,
+        driver: Driver,
+        clock: Callable[[], float] = time.monotonic,
+    ) -> None:
         self.policy, self.ledger, self.access = policy, ledger, access
         self.safety, self.edge, self.driver, self.clock = safety, edge, driver, clock
         self.lock = threading.RLock()
@@ -71,20 +79,40 @@ class FactoryOrchestrator:
             return "STOP_LATCHED"
         if request.policy_epoch != self.policy.policy_epoch:
             return "POLICY_EPOCH_MISMATCH"
-        if not 0 <= now - request.issued_at <= self.policy.max_command_age_sec or now >= request.expires_at:
+        if (
+            not 0 <= now - request.issued_at <= self.policy.max_command_age_sec
+            or now >= request.expires_at
+        ):
             return "COMMAND_EXPIRED"
         if not self.access.authorize(request.session_id, request.operator_id, "motion", now):
             return "AUTHORITY_NOT_ADMITTED"
         if self.edge.halted or not self.edge.history:
             return "SUBSTRATE_NOT_READY"
-        if not self.edge.history[-1].data_valid or now - self.edge.last_time > self.policy.max_observation_age_sec:
+        if (
+            not self.edge.history[-1].data_valid
+            or now - self.edge.last_time > self.policy.max_observation_age_sec
+        ):
             return "SUBSTRATE_NOT_READY"
         assessment = self.safety.assess(request.target_mm, request.speed_mps, now)
         return "ADMITTED" if assessment.admitted else assessment.rejection_reason
 
-    def _receipt(self, request_id: str, state: TaskState, reason: str, evidence: str) -> TaskReceipt:
-        lane = Lane.EMERGENCY if self.stopped else Lane.ALTERNATE if state != TaskState.SUCCEEDED else Lane.PRIMARY
-        return TaskReceipt(request_id=request_id, state=state, pace_lane=lane, rejection_reason=reason, evidence_id=evidence)
+    def _receipt(
+        self, request_id: str, state: TaskState, reason: str, evidence: str
+    ) -> TaskReceipt:
+        lane = (
+            Lane.EMERGENCY
+            if self.stopped
+            else Lane.ALTERNATE
+            if state != TaskState.SUCCEEDED
+            else Lane.PRIMARY
+        )
+        return TaskReceipt(
+            request_id=request_id,
+            state=state,
+            pace_lane=lane,
+            rejection_reason=reason,
+            evidence_id=evidence,
+        )
 
     def submit(self, request: MotionRequest) -> TaskReceipt:
         with self.lock:
@@ -94,7 +122,9 @@ class FactoryOrchestrator:
             if len(self.queue) >= self.policy.max_queue_size:
                 reason = "QUEUE_CAPACITY_EXHAUSTED"
             if reason != "ADMITTED":
-                evidence = self.ledger.transition(request.request_id, TaskState.PLANNED, TaskState.DENIED, reason)
+                evidence = self.ledger.transition(
+                    request.request_id, TaskState.PLANNED, TaskState.DENIED, reason
+                )
                 return self._receipt(request.request_id, TaskState.DENIED, reason, evidence)
             self.queue.append(request)
             return self._receipt(request.request_id, TaskState.PLANNED, reason, evidence)
@@ -103,10 +133,19 @@ class FactoryOrchestrator:
         with self.lock:
             if not self.access.authorize(session_id, operator_id, "motion", self.clock()):
                 raise PermissionError("AUTHORITY_NOT_ADMITTED")
-            request = next((r for r in self.queue if r.request_id == request_id and r.operator_id == operator_id), None)
+            request = next(
+                (
+                    r
+                    for r in self.queue
+                    if r.request_id == request_id and r.operator_id == operator_id
+                ),
+                None,
+            )
             if request is None:
                 raise ValueError("TASK_NOT_CANCELLABLE")
-            evidence = self.ledger.transition(request_id, TaskState.PLANNED, TaskState.CANCELLED, "OPERATOR_CANCELLED")
+            evidence = self.ledger.transition(
+                request_id, TaskState.PLANNED, TaskState.CANCELLED, "OPERATOR_CANCELLED"
+            )
             self.queue.remove(request)
             return self._receipt(request_id, TaskState.CANCELLED, "OPERATOR_CANCELLED", evidence)
 
@@ -119,24 +158,36 @@ class FactoryOrchestrator:
             try:
                 reason = self._guard(request)
                 if reason != "ADMITTED":
-                    evidence = self.ledger.transition(request.request_id, state, TaskState.DENIED, reason)
+                    evidence = self.ledger.transition(
+                        request.request_id, state, TaskState.DENIED, reason
+                    )
                     return self._receipt(request.request_id, TaskState.DENIED, reason, evidence)
-                self.ledger.transition(request.request_id, state, TaskState.EXECUTING, "EXECUTION_ADMITTED")
+                self.ledger.transition(
+                    request.request_id, state, TaskState.EXECUTING, "EXECUTION_ADMITTED"
+                )
                 state = TaskState.EXECUTING
                 self._execute(request)
-                self.ledger.transition(request.request_id, state, TaskState.VERIFYING, "DRIVER_ACKNOWLEDGED")
+                self.ledger.transition(
+                    request.request_id, state, TaskState.VERIFYING, "DRIVER_ACKNOWLEDGED"
+                )
                 state = TaskState.VERIFYING
                 self._verify(request)
-                evidence = self.ledger.transition(request.request_id, state, TaskState.SUCCEEDED, "OUTCOME_VERIFIED")
+                evidence = self.ledger.transition(
+                    request.request_id, state, TaskState.SUCCEEDED, "OUTCOME_VERIFIED"
+                )
                 self.fault_count = 0
-                return self._receipt(request.request_id, TaskState.SUCCEEDED, "OUTCOME_VERIFIED", evidence)
+                return self._receipt(
+                    request.request_id, TaskState.SUCCEEDED, "OUTCOME_VERIFIED", evidence
+                )
             except EvidenceError:
                 self.stop()
                 raise
             except (RuntimeError, ValueError, TimeoutError, OSError) as exc:
                 self.fault_count += 1
                 self.stop()
-                evidence = self.ledger.transition(request.request_id, state, TaskState.FAILED, str(exc))
+                evidence = self.ledger.transition(
+                    request.request_id, state, TaskState.FAILED, str(exc)
+                )
                 return self._receipt(request.request_id, TaskState.FAILED, str(exc), evidence)
 
     def _execute(self, request: MotionRequest) -> None:
@@ -145,7 +196,9 @@ class FactoryOrchestrator:
             raise RuntimeError(reason)
         scale = self.safety.assess(request.target_mm, request.speed_mps, self.clock()).scale_factor
         start = self.clock()
-        ack = self.driver.move_to(request.target_mm, request.speed_mps * scale, self.policy.driver_timeout_sec)
+        ack = self.driver.move_to(
+            request.target_mm, request.speed_mps * scale, self.policy.driver_timeout_sec
+        )
         if ack is not True:
             raise RuntimeError("MOVE_ACK_REJECTED")
         self._deadline(start)
@@ -169,7 +222,10 @@ class FactoryOrchestrator:
 
         if len(feedback.position_mm) != 3 or not all(isfinite(x) for x in feedback.position_mm):
             raise RuntimeError("FEEDBACK_INVALID")
-        if any(abs(a - b) > self.policy.verification_tolerance_mm for a, b in zip(feedback.position_mm, request.target_mm)):
+        if any(
+            abs(a - b) > self.policy.verification_tolerance_mm
+            for a, b in zip(feedback.position_mm, request.target_mm)
+        ):
             raise RuntimeError("POSITION_NOT_CONFIRMED")
 
     def _deadline(self, started: float) -> None:
@@ -191,6 +247,11 @@ class FactoryOrchestrator:
                 return False
             if not self.safety.reset(self.driver.position, self.clock()):
                 return False
-            self.ledger.append("orchestrator", operator_id, "stop_reset", {"policy_epoch": self.policy.policy_epoch})
+            self.ledger.append(
+                "orchestrator",
+                operator_id,
+                "stop_reset",
+                {"policy_epoch": self.policy.policy_epoch},
+            )
             self.stopped, self.driver.stopped = False, False
             return True

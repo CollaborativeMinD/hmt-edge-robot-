@@ -17,10 +17,16 @@ from .geometry import Calibration
 
 
 class NeuroGrasp:
-    def __init__(self, calibration: Calibration, min_area: float = 100.0, ambiguity_limit: float = 0.8) -> None:
+    def __init__(
+        self, calibration: Calibration, min_area: float = 100.0, ambiguity_limit: float = 0.8
+    ) -> None:
         if not math.isfinite(min_area) or min_area <= 0 or not 0 < ambiguity_limit < 1:
             raise ValueError("VISION_CONFIG_INVALID")
-        self.calibration, self.min_area, self.ambiguity_limit = calibration, min_area, ambiguity_limit
+        self.calibration, self.min_area, self.ambiguity_limit = (
+            calibration,
+            min_area,
+            ambiguity_limit,
+        )
 
     def candidates(self, frame: NDArray[np.uint8], limit: int = 8) -> tuple[GraspObservation, ...]:
         if type(limit) is not int or not 1 <= limit <= 32:
@@ -56,11 +62,20 @@ class NeuroGrasp:
         if major <= 1e-12 or minor / major >= self.ambiguity_limit:
             return None
         vector = eigenvectors[:, 1]
-        angle = (math.degrees(math.atan2(float(vector[1]), float(vector[0]))) + math.degrees(self.calibration.yaw_rad)) % 180.0
+        angle = (
+            math.degrees(math.atan2(float(vector[1]), float(vector[0])))
+            + math.degrees(self.calibration.yaw_rad)
+        ) % 180.0
         target = self.calibration.pixel_to_base(float(mean[0]), float(mean[1]))
-        return GraspObservation(target_mm=target, angle_deg=angle, primary_eigenvalue=major,
-                                secondary_eigenvalue=minor, ambiguity_ratio=minor / major,
-                                calibration_id=self.calibration.calibration_id, frame_hash=frame_hash)
+        return GraspObservation(
+            target_mm=target,
+            angle_deg=angle,
+            primary_eigenvalue=major,
+            secondary_eigenvalue=minor,
+            ambiguity_ratio=minor / major,
+            calibration_id=self.calibration.calibration_id,
+            frame_hash=frame_hash,
+        )
 
 
 def synthetic_frame() -> NDArray[np.uint8]:
