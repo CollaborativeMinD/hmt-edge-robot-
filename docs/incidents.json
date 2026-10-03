@@ -206,5 +206,21 @@
     "remediation": "Dormant templates, explicit readiness failure, source-bound design receipt and eleven reason-coded execution HOLDs; collect actual evidence in later phases",
     "validation_test": "tests/test_deployment_receipts.py::test_design_receipt_replay_preserves_every_execution_hold",
     "external_boundary": true
+  },
+  {
+    "incident_id": "RRCA-CD3-30",
+    "observed_state": "Legitimate rejection receipt did not conform to the published success-only receipt schema",
+    "causal_evidence": "PR #8 review traced deployment_gate failure output to a five-field FAIL object while the original ReleaseReceipt schema required PASS and bound success fields",
+    "remediation": "Publish a discriminated PASS/FAIL union; validate bounded rejection records before writing; parse both outcomes and explicitly reject failures during fresh-success verification",
+    "validation_test": "tests/test_deployment_rejections.py::test_rejection_replaces_stale_pass_receipt",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CD3-31",
+    "observed_state": "Inner campaign timeout equaled outer cumulative timeout, risking stale PASS evidence",
+    "causal_evidence": "PR #8 review identified nested 120-second deadlines; the outer timer starts first and can terminate the wrapper before failure persistence. Process-start errors also preceded record replacement",
+    "remediation": "Write fail-closed campaign evidence before spawn; use 60-second inner deadline and five-second bounded reap; atomically replace final result; test hangs, nonzero exits, success and spawn errors",
+    "validation_test": "tests/test_deployment_campaign.py::test_campaign_timeout_and_startup_failure_preserve_fail_closed_evidence",
+    "external_boundary": false
   }
 ]

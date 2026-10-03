@@ -29,7 +29,7 @@
     "tools/validate_report.py": "6075e90956abf851a91d36379c50954860f5cb21aba1794e713fb10793bffe06",
     "tools/validate_structure.py": "dee4faa972382d188aae4c736f586754e4c1329c45deb506a811bee1c6d5b47c",
     "uv.lock": "b1ce60e49dc526e19077ddc69fb91fc142f551e123c746a4ffbb88433d98998b",
-    "policy/deployment_admission.json": "c34c5ebd5c56fe7d1e70d388bb1598b96eba76d52472e19e0e708e97a7fe963c"
+    "policy/deployment_admission.json": "12d81cfa712157a7b66d6b72f070a7bc5aaa0b3aa7f7eca20dd11e2c842961a3"
   },
   "tools": {
     "pyrefly": "1.3.2",
@@ -271,10 +271,11 @@
     "tools/deployment_workload.py": "b6dc146a643eafccc345e57d2645fdad184c51085f4e66de9ed6627233d0d5c2",
     "tools/deployment_manifests.py": "d4e9ea8aabee9f65ca0c1be60f9419ce004d1b5e03229399546d9d6b4c9d4095",
     "tools/deployment_contracts.py": "573a0f11e69d4274a71a378c5d8300f15375b98cdb7a050c662430ed86c9aaa4",
-    "tools/deployment_receipts.py": "9b10723f87adffbda12c3c7c05646d499fa3b00c3498f66c041289e622c6e7f6",
-    "tools/deployment_gate.py": "da9f7300d9633ec1662adc0841b919a8d2cf41395ff93350954b7a3d7c8dacde",
+    "tools/deployment_receipts.py": "cfafff7e03fbdad382f166563a9dbaa274358ba4626d2601bf141b068decf4b3",
+    "tools/deployment_gate.py": "da834437a91dbf3c31d4dcaa85fe2f9e41da72b205624a8e8290b1c3223a0fe3",
     "tools/deployment_io.py": "73d523ea6d49107c98cf873e5de39662fcecd319626553e082dd2285a9efdfa0",
-    "tools/deployment_campaign.py": "f1ee938fbea22bd8e2e351f77521b6528186059ad46bef188c9a7f909c4ffe4f",
-    "tools/deployment_admission.py": "43bd7e40bf900cb5848e55a7965287c370d3f70f74164c1940af5fa0387eed30"
+    "tools/deployment_campaign.py": "ebbbe447dfcc75bc469deb29feba741885663952b8c9d84f334d253df49cd5e6",
+    "tools/deployment_admission.py": "f6f66241be8dce0a0bbdbc426a655132c7d8edbafa8c4b51365e2db17b79da9e",
+    "tools/deployment_schemas.py": "6b7095c48756162e3994f91d43d8e95fea2de1d0478b51b3281be2136086447b"
   }
 }

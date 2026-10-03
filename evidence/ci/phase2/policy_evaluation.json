@@ -921,6 +921,13 @@
       "function_status": "PASS"
     },
     {
+      "path": "tests/test_deployment_campaign.py",
+      "module_loc": 41,
+      "max_function_physical_loc": 40,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
       "path": "tests/test_deployment_contracts.py",
       "module_loc": 48,
       "max_function_physical_loc": 11,
@@ -943,8 +950,8 @@
     },
     {
       "path": "tests/test_deployment_rejections.py",
-      "module_loc": 34,
-      "max_function_physical_loc": 14,
+      "module_loc": 44,
+      "max_function_physical_loc": 22,
       "module_status": "PASS",
       "function_status": "PASS"
     },
@@ -1090,15 +1097,15 @@
     },
     {
       "path": "tools/deployment_admission.py",
-      "module_loc": 51,
-      "max_function_physical_loc": 40,
+      "module_loc": 50,
+      "max_function_physical_loc": 38,
       "module_status": "PASS",
       "function_status": "PASS"
     },
     {
       "path": "tools/deployment_campaign.py",
-      "module_loc": 34,
-      "max_function_physical_loc": 25,
+      "module_loc": 39,
+      "max_function_physical_loc": 30,
       "module_status": "PASS",
       "function_status": "PASS"
     },
@@ -1118,7 +1125,7 @@
     },
     {
       "path": "tools/deployment_gate.py",
-      "module_loc": 25,
+      "module_loc": 26,
       "max_function_physical_loc": 16,
       "module_status": "PASS",
       "function_status": "PASS"
@@ -1139,8 +1146,15 @@
     },
     {
       "path": "tools/deployment_receipts.py",
-      "module_loc": 48,
+      "module_loc": 60,
       "max_function_physical_loc": 8,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/deployment_schemas.py",
+      "module_loc": 11,
+      "max_function_physical_loc": 5,
       "module_status": "PASS",
       "function_status": "PASS"
     },

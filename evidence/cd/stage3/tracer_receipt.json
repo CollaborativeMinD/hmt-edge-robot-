@@ -1,11 +1,13 @@
 {
   "status": "PASS",
   "first_corrected_tracer_cases": 76,
-  "final_stage3_cases": 79,
+  "final_stage3_cases": 83,
   "failure_lineage": [
     "RRCA-CD3-27",
     "RRCA-CD3-28",
-    "RRCA-CD3-29"
+    "RRCA-CD3-29",
+    "RRCA-CD3-30",
+    "RRCA-CD3-31"
   ],
   "initial_log": "evidence/cd/stage3/initial_tracer.log",
   "compatibility_reproducer": "evidence/cd/stage3/schema_compatibility_reproducer.log",

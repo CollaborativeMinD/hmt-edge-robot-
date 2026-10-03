@@ -1654,7 +1654,8 @@
       "tools/deployment_io.py",
       "tools/deployment_admission.py",
       "policy/deployment.json",
-      "policy/deployment_admission.json"
+      "policy/deployment_admission.json",
+      "tools/deployment_schemas.py"
     ],
     "contract_id": "policy/deployment.json",
     "safety_constraint_id": [
@@ -1705,7 +1706,8 @@
       "tools/deployment_receipts.py",
       "tools/deployment_gate.py",
       "tools/deployment_admission.py",
-      "policy/release_candidate.json"
+      "policy/release_candidate.json",
+      "tools/deployment_schemas.py"
     ],
     "contract_id": "policy/deployment.json",
     "safety_constraint_id": [
@@ -1739,7 +1741,8 @@
     "test_id": [
       "tests/test_deployment_rejections.py::test_rejection_replaces_stale_pass_receipt",
       "tests/test_deployment_rejections.py::test_rejection_does_not_echo_invalid_credential_values",
-      "tests/test_deployment_contracts.py::test_deployment_resource_budgets_are_strict_and_ordered"
+      "tests/test_deployment_contracts.py::test_deployment_resource_budgets_are_strict_and_ordered",
+      "tests/test_deployment_campaign.py::test_campaign_timeout_and_startup_failure_preserve_fail_closed_evidence"
     ],
     "analysis_id": "G-CD-NEGATIVE-018",
     "evidence_id": "evidence/cd/stage3/campaign.json"

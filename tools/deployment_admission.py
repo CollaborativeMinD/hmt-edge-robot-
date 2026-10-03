@@ -8,9 +8,10 @@ from pathlib import Path
 from ci_admission import digest
 from deployment_contracts import Boundaries, DeploymentPlan
 from deployment_flux import flux_manifests
-from deployment_io import DeploymentCatalog, bind_catalog, inventory_hash, read_object
+from deployment_io import bind_catalog, inventory_hash, read_object
 from deployment_manifests import manifests
 from deployment_receipts import ReleaseCandidate, ReleaseReceipt, canonical, content_hash
+from deployment_schemas import contract_schemas
 
 from hmt_edge_robot.contracts import Policy
 
@@ -30,10 +31,8 @@ def evaluate(root: Path) -> ReleaseReceipt:
         raise ValueError("STAGE3_CLOUD_NOT_AUTHORIZED")
     expected = {**{"deploy/stage3/workload/" + k: v for k, v in manifests(plan, policy.model_dump(mode="json")).items()},
                 **{"deploy/stage3/flux/" + k: v for k, v in flux_manifests(plan).items()}}
-    schemas = {"deployment-plan": DeploymentPlan, "release-candidate": ReleaseCandidate,
-               "release-receipt": ReleaseReceipt, "deployment-catalog": DeploymentCatalog}
-    expected.update({"docs/cd/" + name + ".schema.json": model.model_json_schema()
-                     for name, model in schemas.items()})
+    expected.update({"docs/cd/" + name + ".schema.json": schema
+                     for name, schema in contract_schemas().items()})
     required = {"policy/deployment.json", "policy/deployment_runtime.json", "policy/release_candidate.json",
                 "policy/promotion.json", "uv.lock", "pyproject.toml", "docs/requirements.json",
                 "docs/implementation_traceability.json", "docs/cd/stage3.md", *expected}

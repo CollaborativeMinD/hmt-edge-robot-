@@ -6,14 +6,17 @@ import json
 from pathlib import Path
 
 import pytest
+from deployment_admission import evaluate
 from deployment_gate import main
 from deployment_io import read_object
+from deployment_receipts import RejectionReceipt, parse_outcome, verify_receipt
 from deployment_support import deployment_copy, rewrite
 
 
 @pytest.mark.parametrize("contents", ['{', '[]', '{"stage": 3, "stage": 3}', '"' + 'x' * 65536 + '"'])
 def test_rejection_replaces_stale_pass_receipt(tmp_path: Path, contents: str) -> None:
     root = deployment_copy(tmp_path)
+    expected = evaluate(root)
     assert main(root) == 0
     path = root / "policy/deployment.json"
     path.write_text(contents)
@@ -25,6 +28,13 @@ def test_rejection_replaces_stale_pass_receipt(tmp_path: Path, contents: str) ->
     report = json.loads((root / "evidence/cd/stage3/release_receipt.json").read_text())
     assert report["contract_status"] == "FAIL" and report["release_decision"] == "HOLD"
     assert report["alert"] is True and report["reason_codes"]
+    raw = (root / "evidence/cd/stage3/release_receipt.json").read_bytes()
+    assert isinstance(parse_outcome(raw), RejectionReceipt)
+    import jsonschema
+    schema = json.loads((root / "docs/cd/release-receipt.schema.json").read_text())
+    jsonschema.Draft202012Validator(schema).validate(report)
+    with pytest.raises(ValueError, match="CONTRACT_REJECTED"):
+        verify_receipt(expected, raw)
 
 
 def test_read_object_rejects_nonobject_json(tmp_path: Path) -> None:

@@ -82,13 +82,20 @@ against a fresh assessment; stale inputs, forged authority or a changed hash fai
 `require_execution` always denies stage-3 execution. A valid design emits PASS
 and release_decision=HOLD; rejection atomically replaces any old receipt with FAIL,
 HOLD and an alert. An evidence write failure exits unsuccessfully.
+The published receipt schema is a discriminated union: PASS records carry source
+bindings and a receipt hash; FAIL records carry bounded rejection codes, HOLD and
+an alert. `parse_outcome` validates either variant, while `verify_receipt` admits
+only a fresh PASS design record and rejects a well-formed rejection explicitly.
 
 Negative cases include rescaling, worker/driver changes, unsuspending Flux,
 privilege escalation, host mounts, inline credentials, readiness bypass, broad RBAC,
 network exposure, storage changes, resource overflow, schema drift, duplicate JSON,
 path escape, symlinks, absent evidence, source inventory drift and receipt forgery.
-The campaign wrapper is orchestration plumbing; its substantive modules have a
-separate coverage gate, while host regression and source bounds remain cumulative.
+The campaign wrapper and substantive admission modules have a separate coverage
+gate, while host regression and source bounds remain cumulative. The wrapper
+replaces any old PASS with FAIL before spawning tests. Its 60-second test deadline
+and bounded five-second reap leave margin under the 120-second outer gate deadline.
+Hung or unstartable subprocesses cannot retain a prior PASS campaign record.
 
 ## Next acceptance boundary
 

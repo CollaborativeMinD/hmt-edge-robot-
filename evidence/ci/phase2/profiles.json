@@ -41,16 +41,16 @@
           "sha256": "496b60a604e6ab05228f32601c372fec432d6a2e0828d21c380a018b1018e02b"
         },
         {
-          "claim_id": "source.9bbd185133fa3958",
+          "claim_id": "source.e255f93b8a7e18ca",
           "statement": "Reviewed input bytes are bound; no runtime promotion is implied.",
           "file_path": "docs/requirements.json",
-          "sha256": "9bbd185133fa39580afd1e4d076c8cd5dae9049d14daa2d3ee59713d7a7c0a1e"
+          "sha256": "e255f93b8a7e18cacf91345b59be81766b591537af47628352bd48de5420d124"
         },
         {
-          "claim_id": "source.e5281d3c20c1603e",
+          "claim_id": "source.f0dae2959a2a8a8d",
           "statement": "Reviewed input bytes are bound; no runtime promotion is implied.",
           "file_path": "docs/implementation_traceability.json",
-          "sha256": "e5281d3c20c1603e58059da92ab9bb9903671279d65f42c4b0b086b1d6ba719a"
+          "sha256": "f0dae2959a2a8a8d1685ad2b3f66d218868ee691990405a6eaa5db3da4526652"
         }
       ],
       "non_claim": "Byte binding alone does not prove a statement semantically true."
@@ -60,7 +60,7 @@
   "full_policy_adoption": "PROMOTED",
   "docker_build": "HOLD",
   "deployment": "HOLD",
-  "receipt_hash": "c77a7c31ee9085536702be564e6e7ac8bbe60914695d307f79a57e152ea64335",
+  "receipt_hash": "873af7ade552e7a49a6d76888b2bda91ee794c58e2aa2ca42d385c132dc64ff1",
   "notification": "CI_SUPPORT_PROFILES_PASS",
   "alert": false
 }

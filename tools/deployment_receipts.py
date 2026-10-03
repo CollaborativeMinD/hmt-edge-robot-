@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import hashlib
 import json
-from typing import Literal
+from typing import Annotated, Literal
 
 from deployment_contracts import Baseline, Boundaries, Closed, Hash
-from pydantic import Field
+from pydantic import Field, TypeAdapter
 from truth_serum_runtime.gates.data_parse import loads_json
 
 
@@ -49,10 +49,28 @@ class ReleaseReceipt(Closed):
     receipt_hash: Hash
 
 
-def verify_receipt(expected: ReleaseReceipt, raw: bytes) -> ReleaseReceipt:
+class RejectionReceipt(Closed):
+    contract_status: Literal["FAIL"]
+    release_decision: Literal["HOLD"]
+    reason_codes: list[Annotated[str, Field(min_length=1, max_length=2048)]] = Field(min_length=1, max_length=16)
+    notification: Literal["DEPLOYMENT_DESIGN_REJECTED"]
+    alert: Literal[True]
+
+
+ReleaseOutcome = Annotated[ReleaseReceipt | RejectionReceipt, Field(discriminator="contract_status")]
+OUTCOME = TypeAdapter(ReleaseOutcome)
+
+
+def parse_outcome(raw: bytes) -> ReleaseReceipt | RejectionReceipt:
     if len(raw) > 65536:
         raise ValueError("RECEIPT_TOO_LARGE")
-    value = ReleaseReceipt.model_validate_json(json.dumps(loads_json(raw.decode())))
+    return OUTCOME.validate_json(json.dumps(loads_json(raw.decode())))
+
+
+def verify_receipt(expected: ReleaseReceipt, raw: bytes) -> ReleaseReceipt:
+    value = parse_outcome(raw)
+    if isinstance(value, RejectionReceipt):
+        raise ValueError("RELEASE_CONTRACT_REJECTED")
     payload = value.model_dump(mode="json", exclude={"receipt_hash"})
     if value.receipt_hash != content_hash(payload) or value != expected:
         raise ValueError("RELEASE_RECEIPT_STALE_OR_TAMPERED")

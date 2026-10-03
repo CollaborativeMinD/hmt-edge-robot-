@@ -7,6 +7,7 @@ from pathlib import Path
 
 from ci_admission import ROOT
 from deployment_admission import evaluate
+from deployment_receipts import RejectionReceipt
 from pydantic import ValidationError
 
 
@@ -15,8 +16,8 @@ def main(root: Path = ROOT) -> int:
         report = evaluate(root).model_dump(mode="json")
     except (ValueError, OSError, TypeError, KeyError) as exc:
         reason = "STAGE3_SCHEMA_REJECTED" if isinstance(exc, ValidationError) else str(exc)
-        report = {"contract_status": "FAIL", "release_decision": "HOLD", "reason_codes": [reason],
-                  "notification": "DEPLOYMENT_DESIGN_REJECTED", "alert": True}
+        report = RejectionReceipt(contract_status="FAIL", release_decision="HOLD",
+            reason_codes=[reason[:2048]], notification="DEPLOYMENT_DESIGN_REJECTED", alert=True).model_dump(mode="json")
     destination = root / "evidence/cd/stage3/release_receipt.json"
     destination.parent.mkdir(parents=True, exist_ok=True)
     temporary = destination.with_suffix(".tmp")

@@ -99,115 +99,177 @@
       ],
       "title": "Boundaries",
       "type": "object"
-    }
-  },
-  "additionalProperties": false,
-  "properties": {
-    "schema_version": {
-      "const": 1,
-      "title": "Schema Version",
-      "type": "integer"
     },
-    "release_id": {
-      "pattern": "^stage3-[a-f0-9]{24}$",
-      "title": "Release Id",
-      "type": "string"
-    },
-    "contract_status": {
-      "const": "PASS",
-      "title": "Contract Status",
-      "type": "string"
-    },
-    "release_decision": {
-      "const": "HOLD",
-      "title": "Release Decision",
-      "type": "string"
-    },
-    "baseline": {
-      "$ref": "#/$defs/Baseline"
-    },
-    "candidate_sha256": {
-      "maxLength": 64,
-      "minLength": 64,
-      "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
-      "title": "Candidate Sha256",
-      "type": "string"
-    },
-    "source_inventory_sha256": {
-      "maxLength": 64,
-      "minLength": 64,
-      "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
-      "title": "Source Inventory Sha256",
-      "type": "string"
-    },
-    "artifacts": {
-      "additionalProperties": {
-        "maxLength": 64,
-        "minLength": 64,
-        "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
-        "type": "string"
+    "RejectionReceipt": {
+      "additionalProperties": false,
+      "properties": {
+        "contract_status": {
+          "const": "FAIL",
+          "title": "Contract Status",
+          "type": "string"
+        },
+        "release_decision": {
+          "const": "HOLD",
+          "title": "Release Decision",
+          "type": "string"
+        },
+        "reason_codes": {
+          "items": {
+            "maxLength": 2048,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "title": "Reason Codes",
+          "type": "array"
+        },
+        "notification": {
+          "const": "DEPLOYMENT_DESIGN_REJECTED",
+          "title": "Notification",
+          "type": "string"
+        },
+        "alert": {
+          "const": true,
+          "title": "Alert",
+          "type": "boolean"
+        }
       },
-      "maxProperties": 32,
-      "minProperties": 1,
-      "title": "Artifacts",
+      "required": [
+        "contract_status",
+        "release_decision",
+        "reason_codes",
+        "notification",
+        "alert"
+      ],
+      "title": "RejectionReceipt",
       "type": "object"
     },
-    "boundaries": {
-      "$ref": "#/$defs/Boundaries"
-    },
-    "reason_codes": {
-      "items": {
-        "type": "string"
+    "ReleaseReceipt": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "release_id": {
+          "pattern": "^stage3-[a-f0-9]{24}$",
+          "title": "Release Id",
+          "type": "string"
+        },
+        "contract_status": {
+          "const": "PASS",
+          "title": "Contract Status",
+          "type": "string"
+        },
+        "release_decision": {
+          "const": "HOLD",
+          "title": "Release Decision",
+          "type": "string"
+        },
+        "baseline": {
+          "$ref": "#/$defs/Baseline"
+        },
+        "candidate_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+          "title": "Candidate Sha256",
+          "type": "string"
+        },
+        "source_inventory_sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+          "title": "Source Inventory Sha256",
+          "type": "string"
+        },
+        "artifacts": {
+          "additionalProperties": {
+            "maxLength": 64,
+            "minLength": 64,
+            "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+            "type": "string"
+          },
+          "maxProperties": 32,
+          "minProperties": 1,
+          "title": "Artifacts",
+          "type": "object"
+        },
+        "boundaries": {
+          "$ref": "#/$defs/Boundaries"
+        },
+        "reason_codes": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "title": "Reason Codes",
+          "type": "array"
+        },
+        "image_digest": {
+          "title": "Image Digest",
+          "type": "null"
+        },
+        "authority": {
+          "const": "DESIGN_ONLY",
+          "title": "Authority",
+          "type": "string"
+        },
+        "notification": {
+          "const": "DEPLOYMENT_DESIGN_VALIDATED_EXECUTION_HELD",
+          "title": "Notification",
+          "type": "string"
+        },
+        "alert": {
+          "const": false,
+          "title": "Alert",
+          "type": "boolean"
+        },
+        "receipt_hash": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+          "title": "Receipt Hash",
+          "type": "string"
+        }
       },
-      "maxItems": 16,
-      "minItems": 1,
-      "title": "Reason Codes",
-      "type": "array"
-    },
-    "image_digest": {
-      "title": "Image Digest",
-      "type": "null"
-    },
-    "authority": {
-      "const": "DESIGN_ONLY",
-      "title": "Authority",
-      "type": "string"
-    },
-    "notification": {
-      "const": "DEPLOYMENT_DESIGN_VALIDATED_EXECUTION_HELD",
-      "title": "Notification",
-      "type": "string"
-    },
-    "alert": {
-      "const": false,
-      "title": "Alert",
-      "type": "boolean"
-    },
-    "receipt_hash": {
-      "maxLength": 64,
-      "minLength": 64,
-      "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
-      "title": "Receipt Hash",
-      "type": "string"
+      "required": [
+        "schema_version",
+        "release_id",
+        "contract_status",
+        "release_decision",
+        "baseline",
+        "candidate_sha256",
+        "source_inventory_sha256",
+        "artifacts",
+        "boundaries",
+        "reason_codes",
+        "image_digest",
+        "authority",
+        "notification",
+        "alert",
+        "receipt_hash"
+      ],
+      "title": "ReleaseReceipt",
+      "type": "object"
     }
   },
-  "required": [
-    "schema_version",
-    "release_id",
-    "contract_status",
-    "release_decision",
-    "baseline",
-    "candidate_sha256",
-    "source_inventory_sha256",
-    "artifacts",
-    "boundaries",
-    "reason_codes",
-    "image_digest",
-    "authority",
-    "notification",
-    "alert",
-    "receipt_hash"
-  ],
-  "title": "ReleaseReceipt",
-  "type": "object"
+  "discriminator": {
+    "mapping": {
+      "FAIL": "#/$defs/RejectionReceipt",
+      "PASS": "#/$defs/ReleaseReceipt"
+    },
+    "propertyName": "contract_status"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/ReleaseReceipt"
+    },
+    {
+      "$ref": "#/$defs/RejectionReceipt"
+    }
+  ]
 }
