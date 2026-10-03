@@ -1,7 +1,7 @@
 name: Bounded live resident campaign
 on:
   push:
-    branches: [campaign/live-resident-once]
+    branches: [campaign/live-resident-keys]
 permissions:
   contents: read
 concurrency:
