@@ -41,7 +41,7 @@ def test_ci_admission_denies_tampering(tmp_path: Path, name: str) -> None:
     assert receipt["alert"] is True and "DIGEST_MISMATCH" in receipt["reason_codes"][0]
 
 
-@pytest.mark.parametrize("mutation", ["candidate", "escape", "unknown", "version", "missing"])
+@pytest.mark.parametrize("mutation", ["candidate", "escape", "unknown", "version", "missing", "duplicate", "type", "tools"])
 def test_ci_admission_denies_invalid_policy(tmp_path: Path, mutation: str) -> None:
     root = copy_admission(tmp_path)
     path = root / "policy/ci_admission.json"
@@ -54,6 +54,12 @@ def test_ci_admission_denies_invalid_policy(tmp_path: Path, mutation: str) -> No
         policy["extra"] = True
     elif mutation == "version":
         policy["tools"]["ruff"] = "0.0.0"
+    elif mutation == "duplicate":
+        policy["candidates"][1] = policy["candidates"][0]
+    elif mutation == "type":
+        policy["candidates"][0]["reason"] = True
+    elif mutation == "tools":
+        policy["tools"] = list(policy["tools"])
     else:
         (root / "uv.lock").unlink()
     path.write_text(json.dumps(policy))

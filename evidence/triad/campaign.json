@@ -1,23 +1,23 @@
 {
   "classification": "SOFTWARE_VALIDATION_ONLY",
-  "timestamp_utc": "2026-10-03T08:47:56.140925Z",
+  "timestamp_utc": "2026-10-03T08:50:36.451949Z",
   "status": "PASS",
   "readiness": {
     "classification": "EMPIRICAL_SOFTWARE_CAMPAIGN",
     "sample_count": 8,
-    "p95_sec": 0.0006664149987045676,
-    "max_sec": 0.0006664149987045676,
+    "p95_sec": 0.0006093099946156144,
+    "max_sec": 0.0006093099946156144,
     "failure_count": 0,
     "failure_probability_upper_95": 0.32440756488388023,
     "report_hashes": [
-      "c80dea5451eb9c162f8766aa6382801114c8afce4eb8f1b01597e3376793ea6f",
-      "4d422f9cebd5eb1e285a14d109e3779a1288f78d6f907e8fbdde6b0645244168",
-      "9bfc4cc61adaa2e26cc2f64c529e055a8f9349318804ce4171eb7167a8b52096",
-      "ea35b415ed2c89cc5f7873f84c480f68c44630578ce73d6589c804aa34647b80",
-      "ce996f81ce9737af6c154e7dfa45740e4e593238c17237e4e3024720714b08cb",
-      "ee2143dc25568d0eb178338bcfa88552ed5edb89a5677dbd63587b973314377d",
-      "47a3f16a4b17be2eb82e865e1a6ccf53723941fc06661387f2918d5f2be1e565",
-      "c1fb47bbcafe20f487034194157cea8f79cb34c795eef0909ecccf7ba185c146"
+      "6023168a4772e6a20f725ed190cae02ea35f5a26b134bf0b070ff837f9e6da29",
+      "aa3421267c987529ea27aeb58d5d7f3eb19eca95b581120c44b5d6b34aa8f85b",
+      "c32ce457c78e55fde207dd4195198eef95752527e3637fdaebeb507a4b0dfbf9",
+      "77f0aa792a598cd0ad18d3a100da48f62641a80cebad3ae74f3e6d167f7bf7a5",
+      "5fe9ed874df4e4e88060f4ca2eb0190e36f3e15dd0f00651e9aaa57856722b32",
+      "c7270b4354cf64c72c59cf75f9abd6b774fda1d5024b56fb81b9063a637b96fd",
+      "877b31950cc39bb8b69b32e22170f0d7ec74b25fe23397eb4eeba83485710a05",
+      "cee79c01b2390d6d92f617a397fc422960e14acdea8d571441d9f797eeac2c20"
     ],
     "scenario": "cold",
     "worst_case_guarantee": false
@@ -29,7 +29,7 @@
       "scope": {
         "subject_id": "stale-0000",
         "subject_hash": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881",
-        "contract_hash": "d36284247509dae8bdb565096d1c6d295bd5728a0fbd9abeb813e2ac513c99dc",
+        "contract_hash": "f8a47c45afab0f4f68d07167ee6a448a0049c5596ca5ebccecf6ddb4284d84e5",
         "collector_id": "managed-catalog",
         "epochs": {
           "runtime": 0,
@@ -37,8 +37,8 @@
           "department": 0,
           "membership": 0
         },
-        "observed_at": 87486.759554483,
-        "expires_at": 87546.759554483,
+        "observed_at": 87647.040714393,
+        "expires_at": 87707.040714393,
         "coverage": [
           "authority",
           "recovery",
@@ -52,12 +52,12 @@
         "GOVERNED_QUARANTINE"
       ],
       "artifact_refs": [],
-      "observation_hash": "7f4d5c3f08e69258461d685d493d19a14440047af3fae53c884979f66ade1be4",
+      "observation_hash": "723a814cfd26622bfcd676b8d76d61c91b88d1f33d7e7541ae9d4499e1a9e13c",
       "metrics": [],
       "dry_run": false
     },
-    "report_hash": "8921f8d42a4884c9324b1e09b6328725686f06acea1ea7319e3010c5510dc4a1",
-    "event_hash": "bc0c734e4d96afa701561e46f6bd261cdd7815d2c19daefe4039ff41e7139ce2"
+    "report_hash": "9061e2baaa6a42f4f67031785ae0fc0a9c3917a7db3569366e931f59e0eac2f9",
+    "event_hash": "1341d45c70f3c543c40ae731cba584cab91fd0c5387cee74d5517436b062c2a5"
   },
   "restoration": {
     "report": {
@@ -65,7 +65,7 @@
       "scope": {
         "subject_id": "stale-0000",
         "subject_hash": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881",
-        "contract_hash": "546ef3b277261a82742a641d3dbc8691502a45ff9f864fa54aa803010d498f4e",
+        "contract_hash": "a6bf9990ebabf9acd89ffb88afff04a07079f2fc093855e3d1108720cf6cfee7",
         "collector_id": "managed-catalog",
         "epochs": {
           "runtime": 0,
@@ -73,8 +73,8 @@
           "department": 0,
           "membership": 0
         },
-        "observed_at": 87486.819596791,
-        "expires_at": 87546.819596791,
+        "observed_at": 87647.103301056,
+        "expires_at": 87707.103301056,
         "coverage": [
           "authority",
           "recovery",
@@ -88,18 +88,18 @@
         "GOVERNED_RESTORE"
       ],
       "artifact_refs": [],
-      "observation_hash": "7f4d5c3f08e69258461d685d493d19a14440047af3fae53c884979f66ade1be4",
+      "observation_hash": "723a814cfd26622bfcd676b8d76d61c91b88d1f33d7e7541ae9d4499e1a9e13c",
       "metrics": [],
       "dry_run": false
     },
-    "report_hash": "8bf5486a28b9ec0d4b2b23c415463a11c93c890da156b4abfba2fb8de9bce76c",
-    "event_hash": "8ac99cd23844a2f318d1a2e70cf8fb1792448e20504afcdaf6a8a47bc28bd7ff"
+    "report_hash": "05bce590651630f0dd2ed8d4450d449ef66e9777354339b65f3c0a0b7d45c4b7",
+    "event_hash": "012cf3550f1cb73650201cd45d34d52827f9fbee510675fd405dea72642ceeb0"
   },
   "measurements": {
     "artifact_count": 258,
-    "planning_sec": 0.12280159199144691,
+    "planning_sec": 0.11162001999036875,
     "planning_ceiling_sec": 10.0,
-    "optimization_sec": 0.015644629005691968,
+    "optimization_sec": 0.015041261998703703,
     "optimization_ceiling_sec": 2.0,
     "optimization": {
       "classification": "ADVISORY_ONLY",
@@ -159,15 +159,15 @@
   "exports": {
     "records": 786,
     "files": {
-      "capability_readiness_atlas.parquet": "42e51f8b867086562650d23dd47de581ea124f297f96823bad36c46969c328ad",
-      "effect_attestation.parquet": "0069ebe3ebf2a10ad072dbecbcd70ef4f368c9a136945766c87d6a8f6b2a9088",
-      "reclamation_verdicts.parquet": "193fc24bafd06a4b0610a545addb29a131245ed13ab7c57eaad36c0c664f6ac0",
-      "cold_start_recovery_margin_report.json": "7e894760c331667c45b6d33641ac1f747a6e04f4ae50e79949010236d076cf1c",
-      "side_effect_contract_report.json": "4b95ec2201582537d807d70a018ede538e84114c2fd59ee188ba49c478108ff6",
-      "safe_reclamation_plan.json": "7f4f20843742d7335396a3af4514f3e01f5ff28f23ed476498db1e5c2d2eb89e",
-      "reclaim_receipt.json": "f1dc69da1258d11116cc9fe8e0bf245c5321ee694ab336570d41cb13fad4a557",
-      "assurance_summary.json": "e5b94c59be673b62d3061e6d6c5276966245279c02f1e9172b7769b3df7930c0",
-      "effect_attestation.jsonl": "3738fa1f82098e05b324471826865ffdfd88fe8d416819cba6eded4112b23663",
+      "capability_readiness_atlas.parquet": "171e8006952bd0e03fbb9ecbf324aabed515b73948720848c47d705c1b145121",
+      "effect_attestation.parquet": "efe7826b343d204de18a4c2d8746815219aa423623fab0f9b16c48df140efd1d",
+      "reclamation_verdicts.parquet": "c4657ef36aaba016c5545017d83a59c707c0055a97f20b189518fb32e7e003a7",
+      "cold_start_recovery_margin_report.json": "52d8f17d16038ff1e59d83090054c6ad21ee627cc7bf485406f666df4ebbeea3",
+      "side_effect_contract_report.json": "2d0b69b90695fabf2d8572849603e2adb2a277e6db11442147612e2002786dd9",
+      "safe_reclamation_plan.json": "adaf81ff7939c8a2d6963bf033c9f3bc06b3fbaf1bfe4e87fc7002782e27dc51",
+      "reclaim_receipt.json": "1a6d3291ae1dcbd2e6b5c6fa71638004190cb0b04d461ae6f259c367cf9ea67d",
+      "assurance_summary.json": "e484882b74a349ccf8f97c53d120258852ae1aad8321606c76489ae23d4b1b7e",
+      "effect_attestation.jsonl": "7a16c16c5a88bf74d2698a69ca691e43ef637f072324751916c893bc4741ff42",
       "artifact_reference_graph.graphml": "428b653b2bb1564fd33871745332a7d5d48ec501e5ae384ac51f37ce12950708"
     },
     "complete_history": false

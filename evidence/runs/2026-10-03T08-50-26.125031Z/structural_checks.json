@@ -1,0 +1,1867 @@
+{
+  "status": "PASS",
+  "requirements": 64,
+  "functions": [
+    {
+      "path": "src/hmt_edge_robot/edge.py",
+      "function": "__init__",
+      "physical_lines": 6
+    },
+    {
+      "path": "src/hmt_edge_robot/edge.py",
+      "function": "process",
+      "physical_lines": 49
+    },
+    {
+      "path": "src/hmt_edge_robot/edge.py",
+      "function": "_classify",
+      "physical_lines": 9
+    },
+    {
+      "path": "src/hmt_edge_robot/cli.py",
+      "function": "demonstrate",
+      "physical_lines": 36
+    },
+    {
+      "path": "src/hmt_edge_robot/cli.py",
+      "function": "parser",
+      "physical_lines": 13
+    },
+    {
+      "path": "src/hmt_edge_robot/cli.py",
+      "function": "main",
+      "physical_lines": 26
+    },
+    {
+      "path": "src/hmt_edge_robot/cli.py",
+      "function": "dispatch",
+      "physical_lines": 28
+    },
+    {
+      "path": "src/hmt_edge_robot/cli.py",
+      "function": "serve",
+      "physical_lines": 9
+    },
+    {
+      "path": "src/hmt_edge_robot/analytics.py",
+      "function": "__init__",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/analytics.py",
+      "function": "frame",
+      "physical_lines": 16
+    },
+    {
+      "path": "src/hmt_edge_robot/analytics.py",
+      "function": "summary",
+      "physical_lines": 12
+    },
+    {
+      "path": "src/hmt_edge_robot/analytics.py",
+      "function": "sensor_trends",
+      "physical_lines": 20
+    },
+    {
+      "path": "src/hmt_edge_robot/analytics.py",
+      "function": "export_parquet",
+      "physical_lines": 7
+    },
+    {
+      "path": "src/hmt_edge_robot/access.py",
+      "function": "authenticate",
+      "physical_lines": 1
+    },
+    {
+      "path": "src/hmt_edge_robot/access.py",
+      "function": "__init__",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/access.py",
+      "function": "authenticate",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/access.py",
+      "function": "__init__",
+      "physical_lines": 4
+    },
+    {
+      "path": "src/hmt_edge_robot/access.py",
+      "function": "_clock",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/access.py",
+      "function": "login",
+      "physical_lines": 32
+    },
+    {
+      "path": "src/hmt_edge_robot/access.py",
+      "function": "authorize",
+      "physical_lines": 10
+    },
+    {
+      "path": "src/hmt_edge_robot/access.py",
+      "function": "heartbeat",
+      "physical_lines": 15
+    },
+    {
+      "path": "src/hmt_edge_robot/access.py",
+      "function": "revoke",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/ingress.py",
+      "function": "__init__",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/ingress.py",
+      "function": "__call__",
+      "physical_lines": 39
+    },
+    {
+      "path": "src/hmt_edge_robot/ingress.py",
+      "function": "_reject",
+      "physical_lines": 9
+    },
+    {
+      "path": "src/hmt_edge_robot/ingress.py",
+      "function": "bounded_receive",
+      "physical_lines": 6
+    },
+    {
+      "path": "src/hmt_edge_robot/vision.py",
+      "function": "synthetic_frame",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/vision.py",
+      "function": "__init__",
+      "physical_lines": 10
+    },
+    {
+      "path": "src/hmt_edge_robot/vision.py",
+      "function": "candidates",
+      "physical_lines": 22
+    },
+    {
+      "path": "src/hmt_edge_robot/vision.py",
+      "function": "_pose",
+      "physical_lines": 25
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "create_app",
+      "physical_lines": 25
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "error_routes",
+      "physical_lines": 13
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "read_routes",
+      "physical_lines": 29
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "session_routes",
+      "physical_lines": 22
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "task_routes",
+      "physical_lines": 33
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "resident_routes",
+      "physical_lines": 16
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "lifespan",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "authenticated",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "evidence_failed",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "permission_failed",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "invalid_request",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "health",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "status",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "analytics",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "observe",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "stop",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "reset",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "login",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "heartbeat",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "revoke",
+      "physical_lines": 8
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "submit",
+      "physical_lines": 11
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "cancel",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "cycle",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/api.py",
+      "function": "resident",
+      "physical_lines": 14
+    },
+    {
+      "path": "src/hmt_edge_robot/runtime.py",
+      "function": "__init__",
+      "physical_lines": 32
+    },
+    {
+      "path": "src/hmt_edge_robot/runtime.py",
+      "function": "observe_simulation",
+      "physical_lines": 31
+    },
+    {
+      "path": "src/hmt_edge_robot/runtime.py",
+      "function": "status",
+      "physical_lines": 11
+    },
+    {
+      "path": "src/hmt_edge_robot/runtime.py",
+      "function": "resident_tool",
+      "physical_lines": 24
+    },
+    {
+      "path": "src/hmt_edge_robot/runtime.py",
+      "function": "close",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/runtime.py",
+      "function": "update_policy",
+      "physical_lines": 22
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "move_to",
+      "physical_lines": 1
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "gripper_close",
+      "physical_lines": 1
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "feedback",
+      "physical_lines": 1
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "emergency_stop",
+      "physical_lines": 1
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "__init__",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "move_to",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "gripper_close",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "feedback",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "emergency_stop",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "__init__",
+      "physical_lines": 15
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "_guard",
+      "physical_lines": 22
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "_receipt",
+      "physical_lines": 17
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "submit",
+      "physical_lines": 14
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "cancel",
+      "physical_lines": 19
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "run_next",
+      "physical_lines": 40
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "_execute",
+      "physical_lines": 19
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "_verify",
+      "physical_lines": 17
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "_deadline",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "stop",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/orchestrator.py",
+      "function": "reset",
+      "physical_lines": 19
+    },
+    {
+      "path": "src/hmt_edge_robot/contracts.py",
+      "function": "canonical",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/contracts.py",
+      "function": "digest",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/contracts.py",
+      "function": "utc_now",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/contracts.py",
+      "function": "ordered_bounds",
+      "physical_lines": 10
+    },
+    {
+      "path": "src/hmt_edge_robot/contracts.py",
+      "function": "valid_interval",
+      "physical_lines": 4
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "__init__",
+      "physical_lines": 4
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "fit",
+      "physical_lines": 28
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "predict",
+      "physical_lines": 23
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "propose",
+      "physical_lines": 1
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "__init__",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "reserve",
+      "physical_lines": 13
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "propose",
+      "physical_lines": 17
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "__init__",
+      "physical_lines": 25
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "propose",
+      "physical_lines": 4
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "_body",
+      "physical_lines": 29
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "_call",
+      "physical_lines": 22
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "_decode",
+      "physical_lines": 19
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "qualify",
+      "physical_lines": 17
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "__init__",
+      "physical_lines": 10
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "context",
+      "physical_lines": 13
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "ask",
+      "physical_lines": 33
+    },
+    {
+      "path": "src/hmt_edge_robot/resident.py",
+      "function": "_record",
+      "physical_lines": 14
+    },
+    {
+      "path": "src/hmt_edge_robot/geometry.py",
+      "function": "gp",
+      "physical_lines": 9
+    },
+    {
+      "path": "src/hmt_edge_robot/geometry.py",
+      "function": "reverse",
+      "physical_lines": 4
+    },
+    {
+      "path": "src/hmt_edge_robot/geometry.py",
+      "function": "basis",
+      "physical_lines": 4
+    },
+    {
+      "path": "src/hmt_edge_robot/geometry.py",
+      "function": "motor",
+      "physical_lines": 11
+    },
+    {
+      "path": "src/hmt_edge_robot/geometry.py",
+      "function": "transform",
+      "physical_lines": 11
+    },
+    {
+      "path": "src/hmt_edge_robot/geometry.py",
+      "function": "pixel_to_base",
+      "physical_lines": 6
+    },
+    {
+      "path": "src/hmt_edge_robot/safety.py",
+      "function": "__init__",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/safety.py",
+      "function": "update",
+      "physical_lines": 12
+    },
+    {
+      "path": "src/hmt_edge_robot/safety.py",
+      "function": "protective_distance",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/safety.py",
+      "function": "assess",
+      "physical_lines": 33
+    },
+    {
+      "path": "src/hmt_edge_robot/safety.py",
+      "function": "_path_distance",
+      "physical_lines": 8
+    },
+    {
+      "path": "src/hmt_edge_robot/safety.py",
+      "function": "reset",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/safety.py",
+      "function": "__init__",
+      "physical_lines": 9
+    },
+    {
+      "path": "src/hmt_edge_robot/safety.py",
+      "function": "step",
+      "physical_lines": 13
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "function": "__init__",
+      "physical_lines": 32
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "function": "_append",
+      "physical_lines": 9
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "function": "append",
+      "physical_lines": 6
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "function": "claim",
+      "physical_lines": 12
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "function": "transition",
+      "physical_lines": 30
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "function": "task",
+      "physical_lines": 6
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "function": "recent",
+      "physical_lines": 18
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "function": "verify",
+      "physical_lines": 10
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "function": "_verify_tasks",
+      "physical_lines": 22
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "function": "recover",
+      "physical_lines": 11
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "function": "flush",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/ledger.py",
+      "function": "close",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/analytics.py",
+      "function": "summarize",
+      "physical_lines": 10
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/analytics.py",
+      "function": "atomic_text",
+      "physical_lines": 12
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/analytics.py",
+      "function": "reference_graph",
+      "physical_lines": 12
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/analytics.py",
+      "function": "__init__",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/analytics.py",
+      "function": "frame",
+      "physical_lines": 36
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/analytics.py",
+      "function": "summary",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/analytics.py",
+      "function": "_payloads",
+      "physical_lines": 29
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/analytics.py",
+      "function": "export",
+      "physical_lines": 28
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/usea.py",
+      "function": "file_manifest",
+      "physical_lines": 35
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/usea.py",
+      "function": "manifest_effects",
+      "physical_lines": 8
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/usea.py",
+      "function": "__init__",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/usea.py",
+      "function": "attest",
+      "physical_lines": 49
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/system.py",
+      "function": "__init__",
+      "physical_lines": 16
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/system.py",
+      "function": "issue_grant",
+      "physical_lines": 22
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/system.py",
+      "function": "mutate",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/system.py",
+      "function": "bind_witness",
+      "physical_lines": 40
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/mcc.py",
+      "function": "__init__",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/mcc.py",
+      "function": "assess",
+      "physical_lines": 40
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/mcc.py",
+      "function": "_verdict",
+      "physical_lines": 18
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/mcc.py",
+      "function": "collect",
+      "physical_lines": 30
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/mcc.py",
+      "function": "_collect_stages",
+      "physical_lines": 34
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/mcc.py",
+      "function": "envelope",
+      "physical_lines": 23
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "native_body",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "body_schema",
+      "physical_lines": 7
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "require",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "routes",
+      "physical_lines": 44
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "catalog_routes",
+      "physical_lines": 41
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "mutation_routes",
+      "physical_lines": 12
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "notices",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "analytics",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "readiness",
+      "physical_lines": 7
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "attest",
+      "physical_lines": 7
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "acknowledge",
+      "physical_lines": 7
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "register",
+      "physical_lines": 7
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "reference",
+      "physical_lines": 6
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "plan",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "bind",
+      "physical_lines": 7
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "grant",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/routes.py",
+      "function": "execute",
+      "physical_lines": 3
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/contracts.py",
+      "function": "time_order",
+      "physical_lines": 4
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/contracts.py",
+      "function": "readiness_law",
+      "physical_lines": 7
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/contracts.py",
+      "function": "unique_coverage",
+      "physical_lines": 4
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/contracts.py",
+      "function": "census_law",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "function": "storage_guard",
+      "physical_lines": 9
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "function": "wrapped",
+      "physical_lines": 5
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "function": "__init__",
+      "physical_lines": 20
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "function": "put",
+      "physical_lines": 38
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "function": "update",
+      "physical_lines": 12
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "function": "_changed",
+      "physical_lines": 9
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "function": "_row",
+      "physical_lines": 7
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "function": "census",
+      "physical_lines": 19
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "function": "issue",
+      "physical_lines": 33
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "function": "verify",
+      "physical_lines": 35
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "function": "_verify_domain",
+      "physical_lines": 12
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/catalog.py",
+      "function": "read",
+      "physical_lines": 9
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc.py",
+      "function": "__init__",
+      "physical_lines": 15
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc.py",
+      "function": "plan",
+      "physical_lines": 6
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc.py",
+      "function": "_plan",
+      "physical_lines": 18
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc.py",
+      "function": "_decisions",
+      "physical_lines": 36
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc.py",
+      "function": "_decision",
+      "physical_lines": 27
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc.py",
+      "function": "execute",
+      "physical_lines": 6
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc.py",
+      "function": "_execute",
+      "physical_lines": 58
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc.py",
+      "function": "_admit",
+      "physical_lines": 47
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/agc.py",
+      "function": "_transition",
+      "physical_lines": 14
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/optimization.py",
+      "function": "optimize_warm_set",
+      "physical_lines": 23
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/kernel.py",
+      "function": "witnessed",
+      "physical_lines": 13
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/kernel.py",
+      "function": "__init__",
+      "physical_lines": 2
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/kernel.py",
+      "function": "scope",
+      "physical_lines": 20
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/kernel.py",
+      "function": "valid",
+      "physical_lines": 7
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/kernel.py",
+      "function": "seal",
+      "physical_lines": 22
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/kernel.py",
+      "function": "alert",
+      "physical_lines": 12
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/kernel.py",
+      "function": "notices",
+      "physical_lines": 17
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/kernel.py",
+      "function": "acknowledge",
+      "physical_lines": 17
+    },
+    {
+      "path": "src/hmt_edge_robot/assurance/kernel.py",
+      "function": "wrapped",
+      "physical_lines": 7
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "spec",
+      "physical_lines": 3
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "trace",
+      "physical_lines": 6
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "effect_contract",
+      "physical_lines": 6
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "effect_trace",
+      "physical_lines": 6
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "test_mcc_mission_readiness_and_boundary",
+      "physical_lines": 11
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "test_mcc_stage_failure",
+      "physical_lines": 5
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "test_mcc_incomplete_invalid_and_stale",
+      "physical_lines": 15
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "test_mcc_software_probe_and_timeout",
+      "physical_lines": 16
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "test_mcc_empirical_envelope_is_not_wcet",
+      "physical_lines": 8
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "test_usea_effect_receipt_distinction",
+      "physical_lines": 7
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "test_usea_incomplete_is_hold",
+      "physical_lines": 3
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "test_usea_runtime_and_exit_contract",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "test_manifest_actual_writes_and_coverage_limit",
+      "physical_lines": 11
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "test_manifest_resource_bounds",
+      "physical_lines": 11
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "test_optimization_exact_against_brute_force",
+      "physical_lines": 12
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "test_assurance_contracts_strict_finite_frozen",
+      "physical_lines": 16
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "probe",
+      "physical_lines": 4
+    },
+    {
+      "path": "tests/test_assurance_readiness_effects.py",
+      "function": "stalled",
+      "physical_lines": 3
+    },
+    {
+      "path": "tests/test_api_cli.py",
+      "function": "test_api_full_operator_flow",
+      "physical_lines": 32
+    },
+    {
+      "path": "tests/test_api_cli.py",
+      "function": "test_api_cancel_errors_and_strict_payload",
+      "physical_lines": 16
+    },
+    {
+      "path": "tests/test_api_cli.py",
+      "function": "test_api_lifespan_closes",
+      "physical_lines": 6
+    },
+    {
+      "path": "tests/test_api_cli.py",
+      "function": "test_cli_demo_and_commands",
+      "physical_lines": 13
+    },
+    {
+      "path": "tests/test_api_cli.py",
+      "function": "test_cli_entry_and_serve_configuration",
+      "physical_lines": 38
+    },
+    {
+      "path": "tests/test_api_cli.py",
+      "function": "test_cli_qualified_model_seam",
+      "physical_lines": 33
+    },
+    {
+      "path": "tests/test_api_cli.py",
+      "function": "test_operator_token_minimum",
+      "physical_lines": 3
+    },
+    {
+      "path": "tests/test_api_cli.py",
+      "function": "qualification",
+      "physical_lines": 4
+    },
+    {
+      "path": "tests/test_api_cli.py",
+      "function": "proposal",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "test_analytics_actual_engines_and_parquet",
+      "physical_lines": 10
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "test_empty_analytics",
+      "physical_lines": 3
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "test_classical_ml_fit_inference_and_determinism",
+      "physical_lines": 12
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "test_routed_model_id_and_stop_admission",
+      "physical_lines": 10
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "test_resident_invalid_provider_holds",
+      "physical_lines": 5
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "test_resident_context_tools_and_bounds",
+      "physical_lines": 25
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "test_provider_profiles_and_price_budget",
+      "physical_lines": 25
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "mock_client",
+      "physical_lines": 5
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "test_http_adapter_canary_proposal_usage",
+      "physical_lines": 30
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "test_http_invalid_response",
+      "physical_lines": 10
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "test_paid_adapter_incomplete_or_uncertain_usage_holds",
+      "physical_lines": 21
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "test_http_size_status_and_evidence_guards",
+      "physical_lines": 41
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "__init__",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "propose",
+      "physical_lines": 4
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "factory",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_resident_analytics.py",
+      "function": "respond",
+      "physical_lines": 21
+    },
+    {
+      "path": "tests/test_contracts_geometry.py",
+      "function": "test_nonfinite_boundary_rejected",
+      "physical_lines": 5
+    },
+    {
+      "path": "tests/test_contracts_geometry.py",
+      "function": "test_contracts_forbid_unknown_mutation_coercion",
+      "physical_lines": 18
+    },
+    {
+      "path": "tests/test_contracts_geometry.py",
+      "function": "test_policy_ordering",
+      "physical_lines": 3
+    },
+    {
+      "path": "tests/test_contracts_geometry.py",
+      "function": "test_pga_classical_parity_and_inverse",
+      "physical_lines": 13
+    },
+    {
+      "path": "tests/test_contracts_geometry.py",
+      "function": "test_invalid_motor_point",
+      "physical_lines": 5
+    },
+    {
+      "path": "tests/test_contracts_geometry.py",
+      "function": "test_grasp_candidates_calibration_determinism",
+      "physical_lines": 7
+    },
+    {
+      "path": "tests/test_contracts_geometry.py",
+      "function": "test_vision_rejects_ambiguity_empty_small_and_format",
+      "physical_lines": 21
+    },
+    {
+      "path": "tests/test_contracts_geometry.py",
+      "function": "test_admittance_law_and_bounds",
+      "physical_lines": 10
+    },
+    {
+      "path": "tests/test_ci_admission.py",
+      "function": "copy_admission",
+      "physical_lines": 9
+    },
+    {
+      "path": "tests/test_ci_admission.py",
+      "function": "test_ci_admission_and_candidates_remain_hold",
+      "physical_lines": 7
+    },
+    {
+      "path": "tests/test_ci_admission.py",
+      "function": "test_ci_admission_denies_tampering",
+      "physical_lines": 7
+    },
+    {
+      "path": "tests/test_ci_admission.py",
+      "function": "test_ci_admission_denies_invalid_policy",
+      "physical_lines": 22
+    },
+    {
+      "path": "tests/test_ci_admission.py",
+      "function": "test_ci_admission_denies_link",
+      "physical_lines": 7
+    },
+    {
+      "path": "tests/test_ci_admission.py",
+      "function": "test_uv_stale_lock_denied_without_rewrite",
+      "physical_lines": 22
+    },
+    {
+      "path": "tests/test_ci_admission.py",
+      "function": "check",
+      "physical_lines": 12
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "setup_artifact",
+      "physical_lines": 7
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "plan",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "grant",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "test_agc_transitive_reference_closure_and_cycles",
+      "physical_lines": 11
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "test_agc_reference_protection",
+      "physical_lines": 3
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "test_agc_unknown_hold",
+      "physical_lines": 10
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "test_agc_dry_run_quarantine_restore_and_governed_delete",
+      "physical_lines": 27
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "test_agc_fence_changed_reference_and_no_grant_replay",
+      "physical_lines": 15
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "test_agc_authority_revoked_and_policy_epoch_changed",
+      "physical_lines": 15
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "test_agc_plan_reconstruction_and_forged_grant",
+      "physical_lines": 11
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "test_agc_reference_added_during_quarantine_blocks_delete",
+      "physical_lines": 15
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "test_catalog_content_projection_tampering",
+      "physical_lines": 10
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "test_agc_evidence_failure_rolls_back_mutation",
+      "physical_lines": 16
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "test_catalog_and_census_bounds",
+      "physical_lines": 12
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "test_catalog_missing_record_and_revision_tamper",
+      "physical_lines": 11
+    },
+    {
+      "path": "tests/test_assurance_reclamation.py",
+      "function": "failing",
+      "physical_lines": 4
+    },
+    {
+      "path": "tests/conftest.py",
+      "function": "clock",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/conftest.py",
+      "function": "cell",
+      "physical_lines": 4
+    },
+    {
+      "path": "tests/conftest.py",
+      "function": "ready",
+      "physical_lines": 4
+    },
+    {
+      "path": "tests/conftest.py",
+      "function": "request",
+      "physical_lines": 13
+    },
+    {
+      "path": "tests/conftest.py",
+      "function": "policy",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/conftest.py",
+      "function": "__call__",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_typecheck_gate.py",
+      "function": "test_pyrefly_rejects_invalid_return",
+      "physical_lines": 20
+    },
+    {
+      "path": "tests/test_typecheck_gate.py",
+      "function": "check",
+      "physical_lines": 15
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "test_nominal_outcome_chain",
+      "physical_lines": 7
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "test_driver_ack_and_feedback_regressions",
+      "physical_lines": 9
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "test_admission_denials",
+      "physical_lines": 4
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "test_substrate_stop_and_pending_revalidation",
+      "physical_lines": 13
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "test_queue_backpressure_and_cancel",
+      "physical_lines": 13
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "test_duplicate_atomic_admission",
+      "physical_lines": 16
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "test_authority_rechecked_after_movement",
+      "physical_lines": 13
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "test_deadline_detection_and_stop",
+      "physical_lines": 11
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "test_evidence_failure_stops_before_side_effect",
+      "physical_lines": 10
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "test_policy_update_revokes_pending_authority",
+      "physical_lines": 10
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "test_ledger_restart_append_only_and_law",
+      "physical_lines": 20
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "test_ledger_corruption_detected",
+      "physical_lines": 6
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "test_ledger_errors_and_bounds",
+      "physical_lines": 12
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "move_to",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "gripper_close",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "feedback",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "feedback",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "feedback",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "submit",
+      "physical_lines": 5
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "fail",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "move_to",
+      "physical_lines": 4
+    },
+    {
+      "path": "tests/test_orchestration_ledger.py",
+      "function": "move_to",
+      "physical_lines": 3
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "function": "test_cross_component_witness_retention",
+      "physical_lines": 17
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "function": "test_witness_binding_atomic_unknown_reference",
+      "physical_lines": 8
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "function": "test_observer_durable_cursor_ack_and_restart",
+      "physical_lines": 18
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "function": "test_observer_analysis_failure_not_silent",
+      "physical_lines": 7
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "function": "test_assurance_export_sql_parquet_jsonl_graphml",
+      "physical_lines": 18
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "function": "client_for",
+      "physical_lines": 3
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "function": "test_assurance_api_native_json_and_declared_trace_hold",
+      "physical_lines": 19
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "function": "test_assurance_api_catalog_and_grant_flow",
+      "physical_lines": 13
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "function": "test_catalog_readonly_no_recovery_or_writes",
+      "physical_lines": 10
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "function": "test_software_probe_durable_failure_and_no_returned_readiness",
+      "physical_lines": 10
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "function": "test_catalog_storage_fail_closed",
+      "physical_lines": 6
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "function": "test_assurance_api_reference_binding_and_scope_rejection",
+      "physical_lines": 12
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "function": "test_catalog_duplicate_and_expired_grant",
+      "physical_lines": 12
+    },
+    {
+      "path": "tests/test_assurance_integration.py",
+      "function": "broken",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_authority_safety_edge.py",
+      "function": "packet",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_authority_safety_edge.py",
+      "function": "test_access_auth_scope_expiry_and_revocation",
+      "physical_lines": 15
+    },
+    {
+      "path": "tests/test_authority_safety_edge.py",
+      "function": "test_access_clock_and_capacity",
+      "physical_lines": 11
+    },
+    {
+      "path": "tests/test_authority_safety_edge.py",
+      "function": "test_safety_path_distance_not_endpoint",
+      "physical_lines": 5
+    },
+    {
+      "path": "tests/test_authority_safety_edge.py",
+      "function": "test_safety_scaling",
+      "physical_lines": 8
+    },
+    {
+      "path": "tests/test_authority_safety_edge.py",
+      "function": "test_safety_invalid_stale_frame_and_reset",
+      "physical_lines": 16
+    },
+    {
+      "path": "tests/test_authority_safety_edge.py",
+      "function": "sample",
+      "physical_lines": 4
+    },
+    {
+      "path": "tests/test_authority_safety_edge.py",
+      "function": "test_edge_lanes_gaps_hysteresis_halt",
+      "physical_lines": 12
+    },
+    {
+      "path": "tests/test_authority_safety_edge.py",
+      "function": "test_edge_sequence_age_and_history_bounds",
+      "physical_lines": 9
+    },
+    {
+      "path": "tests/test_ingress_replay.py",
+      "function": "test_global_body_and_rate_bounds",
+      "physical_lines": 6
+    },
+    {
+      "path": "tests/test_ingress_replay.py",
+      "function": "test_ingress_disconnect_timeout_and_expiry",
+      "physical_lines": 33
+    },
+    {
+      "path": "tests/test_ingress_replay.py",
+      "function": "test_read_only_queries_do_not_recover_pending_tasks",
+      "physical_lines": 18
+    },
+    {
+      "path": "tests/test_ingress_replay.py",
+      "function": "test_projection_tamper_detected",
+      "physical_lines": 7
+    },
+    {
+      "path": "tests/test_ingress_replay.py",
+      "function": "app",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_ingress_replay.py",
+      "function": "send",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_ingress_replay.py",
+      "function": "disconnected",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_ingress_replay.py",
+      "function": "empty",
+      "physical_lines": 2
+    },
+    {
+      "path": "tests/test_ingress_replay.py",
+      "function": "timeout",
+      "physical_lines": 3
+    },
+    {
+      "path": "tools/validate.py",
+      "function": "sha",
+      "physical_lines": 2
+    },
+    {
+      "path": "tools/validate.py",
+      "function": "database",
+      "physical_lines": 12
+    },
+    {
+      "path": "tools/validate.py",
+      "function": "record",
+      "physical_lines": 14
+    },
+    {
+      "path": "tools/validate.py",
+      "function": "execute",
+      "physical_lines": 19
+    },
+    {
+      "path": "tools/validate.py",
+      "function": "structural_checks",
+      "physical_lines": 53
+    },
+    {
+      "path": "tools/validate.py",
+      "function": "ontology_checks",
+      "physical_lines": 17
+    },
+    {
+      "path": "tools/validate.py",
+      "function": "incidents",
+      "physical_lines": 26
+    },
+    {
+      "path": "tools/validate.py",
+      "function": "external_gates",
+      "physical_lines": 17
+    },
+    {
+      "path": "tools/validate.py",
+      "function": "junit_cases",
+      "physical_lines": 5
+    },
+    {
+      "path": "tools/validate.py",
+      "function": "regression_groups",
+      "physical_lines": 34
+    },
+    {
+      "path": "tools/validate.py",
+      "function": "finalize",
+      "physical_lines": 24
+    },
+    {
+      "path": "tools/validate.py",
+      "function": "main",
+      "physical_lines": 39
+    },
+    {
+      "path": "tools/contracts_export.py",
+      "function": "contract_models",
+      "physical_lines": 7
+    },
+    {
+      "path": "tools/contracts_export.py",
+      "function": "semantic_type",
+      "physical_lines": 34
+    },
+    {
+      "path": "tools/contracts_export.py",
+      "function": "export",
+      "physical_lines": 23
+    },
+    {
+      "path": "tools/ci_admission.py",
+      "function": "digest",
+      "physical_lines": 2
+    },
+    {
+      "path": "tools/ci_admission.py",
+      "function": "confined",
+      "physical_lines": 11
+    },
+    {
+      "path": "tools/ci_admission.py",
+      "function": "exact_fields",
+      "physical_lines": 3
+    },
+    {
+      "path": "tools/ci_admission.py",
+      "function": "evaluate",
+      "physical_lines": 35
+    },
+    {
+      "path": "tools/ci_admission.py",
+      "function": "main",
+      "physical_lines": 17
+    },
+    {
+      "path": "tools/live_llm_campaign.py",
+      "function": "campaign",
+      "physical_lines": 58
+    },
+    {
+      "path": "tools/live_llm_campaign.py",
+      "function": "completed",
+      "physical_lines": 20
+    },
+    {
+      "path": "tools/live_llm_campaign.py",
+      "function": "main",
+      "physical_lines": 25
+    },
+    {
+      "path": "tools/coupled_campaign.py",
+      "function": "run",
+      "physical_lines": 50
+    },
+    {
+      "path": "tools/assurance_campaign.py",
+      "function": "readiness",
+      "physical_lines": 26
+    },
+    {
+      "path": "tools/assurance_campaign.py",
+      "function": "effects",
+      "physical_lines": 13
+    },
+    {
+      "path": "tools/assurance_campaign.py",
+      "function": "scale",
+      "physical_lines": 13
+    },
+    {
+      "path": "tools/assurance_campaign.py",
+      "function": "campaign",
+      "physical_lines": 31
+    },
+    {
+      "path": "tools/assurance_campaign.py",
+      "function": "main",
+      "physical_lines": 8
+    },
+    {
+      "path": "tools/assurance_campaign.py",
+      "function": "probe",
+      "physical_lines": 16
+    },
+    {
+      "path": "notebooks/cell_ssot.py",
+      "function": "imports",
+      "physical_lines": 12
+    },
+    {
+      "path": "notebooks/cell_ssot.py",
+      "function": "mission",
+      "physical_lines": 12
+    },
+    {
+      "path": "notebooks/cell_ssot.py",
+      "function": "evidence",
+      "physical_lines": 22
+    },
+    {
+      "path": "notebooks/cell_ssot.py",
+      "function": "chain",
+      "physical_lines": 3
+    }
+  ],
+  "max_physical_lines": 58
+}
