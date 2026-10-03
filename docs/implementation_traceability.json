@@ -1,0 +1,838 @@
+[
+  {
+    "req_id": "REQ-AM-01",
+    "module_id": "src/hmt_edge_robot/access.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/access.py"
+    ],
+    "contract_id": "Login/SessionRequest/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_authority_safety_edge.py::test_access_auth_scope_expiry_and_revocation"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-AM-02",
+    "module_id": "src/hmt_edge_robot/access.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/access.py"
+    ],
+    "contract_id": "Login/SessionRequest/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_authority_safety_edge.py::test_access_clock_and_capacity"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-AM-03",
+    "module_id": "src/hmt_edge_robot/runtime.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/runtime.py"
+    ],
+    "contract_id": "Login/SessionRequest/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_orchestration_ledger.py::test_policy_update_revokes_pending_authority"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-HS-01",
+    "module_id": "src/hmt_edge_robot/safety.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/safety.py"
+    ],
+    "contract_id": "PositionPacket/SafetyAssessment/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_authority_safety_edge.py::test_safety_invalid_stale_frame_and_reset"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-HS-02",
+    "module_id": "src/hmt_edge_robot/safety.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/safety.py"
+    ],
+    "contract_id": "PositionPacket/SafetyAssessment/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_authority_safety_edge.py::test_safety_path_distance_not_endpoint"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-HS-03",
+    "module_id": "src/hmt_edge_robot/safety.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/safety.py"
+    ],
+    "contract_id": "PositionPacket/SafetyAssessment/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_contracts_geometry.py::test_admittance_law_and_bounds"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-WN-01",
+    "module_id": "src/hmt_edge_robot/edge.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/edge.py"
+    ],
+    "contract_id": "SensorSample/TelemetryAssessment/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_authority_safety_edge.py::test_edge_lanes_gaps_hysteresis_halt"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-WN-02",
+    "module_id": "src/hmt_edge_robot/edge.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/edge.py"
+    ],
+    "contract_id": "SensorSample/TelemetryAssessment/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_authority_safety_edge.py::test_edge_lanes_gaps_hysteresis_halt"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-WN-03",
+    "module_id": "src/hmt_edge_robot/edge.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/edge.py"
+    ],
+    "contract_id": "SensorSample/TelemetryAssessment/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_authority_safety_edge.py::test_edge_sequence_age_and_history_bounds"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-NG-01",
+    "module_id": "src/hmt_edge_robot/vision.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/vision.py"
+    ],
+    "contract_id": "Calibration/GraspObservation",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_contracts_geometry.py::test_vision_rejects_ambiguity_empty_small_and_format"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-NG-02",
+    "module_id": "src/hmt_edge_robot/geometry.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/geometry.py"
+    ],
+    "contract_id": "Calibration/GraspObservation",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_contracts_geometry.py::test_pga_classical_parity_and_inverse"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-NG-03",
+    "module_id": "src/hmt_edge_robot/vision.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/vision.py"
+    ],
+    "contract_id": "Calibration/GraspObservation",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_contracts_geometry.py::test_grasp_candidates_calibration_determinism"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-FO-01",
+    "module_id": "src/hmt_edge_robot/orchestrator.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/orchestrator.py"
+    ],
+    "contract_id": "MotionRequest/TaskReceipt/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_orchestration_ledger.py::test_admission_denials"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-FO-02",
+    "module_id": "src/hmt_edge_robot/orchestrator.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/orchestrator.py"
+    ],
+    "contract_id": "MotionRequest/TaskReceipt/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_orchestration_ledger.py::test_driver_ack_and_feedback_regressions"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-FO-03",
+    "module_id": "src/hmt_edge_robot/orchestrator.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/orchestrator.py"
+    ],
+    "contract_id": "MotionRequest/TaskReceipt/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_orchestration_ledger.py::test_duplicate_atomic_admission"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-FO-04",
+    "module_id": "src/hmt_edge_robot/orchestrator.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/orchestrator.py"
+    ],
+    "contract_id": "MotionRequest/TaskReceipt/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_orchestration_ledger.py::test_authority_rechecked_after_movement"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-DB-01",
+    "module_id": "src/hmt_edge_robot/ledger.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/ledger.py"
+    ],
+    "contract_id": "TaskState",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_orchestration_ledger.py::test_evidence_failure_stops_before_side_effect"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-DB-02",
+    "module_id": "src/hmt_edge_robot/ledger.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/ledger.py"
+    ],
+    "contract_id": "TaskState",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_ingress_replay.py::test_projection_tamper_detected"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-AN-01",
+    "module_id": "src/hmt_edge_robot/analytics.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/analytics.py"
+    ],
+    "contract_id": "TelemetryAssessment",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_resident_analytics.py::test_analytics_actual_engines_and_parquet"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-AN-02",
+    "module_id": "src/hmt_edge_robot/analytics.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/analytics.py"
+    ],
+    "contract_id": "TelemetryAssessment",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_resident_analytics.py::test_empty_analytics"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-AN-03",
+    "module_id": "src/hmt_edge_robot/analytics.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/analytics.py"
+    ],
+    "contract_id": "TelemetryAssessment",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_resident_analytics.py::test_analytics_actual_engines_and_parquet"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-HMT-01",
+    "module_id": "src/hmt_edge_robot/resident.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/resident.py"
+    ],
+    "contract_id": "ResidentProposal/ResidentReceipt/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_resident_analytics.py::test_classical_ml_fit_inference_and_determinism"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-HMT-02",
+    "module_id": "src/hmt_edge_robot/resident.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/resident.py"
+    ],
+    "contract_id": "ResidentProposal/ResidentReceipt/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_resident_analytics.py::test_resident_context_tools_and_bounds"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-HMT-03",
+    "module_id": "src/hmt_edge_robot/resident.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/resident.py"
+    ],
+    "contract_id": "ResidentProposal/ResidentReceipt/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_resident_analytics.py::test_resident_invalid_provider_holds"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-HMT-04",
+    "module_id": "src/hmt_edge_robot/resident.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/resident.py"
+    ],
+    "contract_id": "ResidentProposal/ResidentReceipt/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_resident_analytics.py::test_paid_adapter_incomplete_or_uncertain_usage_holds"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-UI-01",
+    "module_id": "src/hmt_edge_robot/api.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/api.py"
+    ],
+    "contract_id": "Login/Question/MotionRequest",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_api_cli.py::test_api_full_operator_flow"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-UI-02",
+    "module_id": "src/hmt_edge_robot/cli.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/cli.py"
+    ],
+    "contract_id": "Login/Question/MotionRequest",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_ingress_replay.py::test_read_only_queries_do_not_recover_pending_tasks"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-SYS-01",
+    "module_id": "src/hmt_edge_robot/runtime.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "src/hmt_edge_robot/runtime.py"
+    ],
+    "contract_id": "RobotCell composition",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_orchestration_ledger.py::test_nominal_outcome_chain"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-NFR-01",
+    "module_id": "tools/validate.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "tools/validate.py"
+    ],
+    "contract_id": "Contract/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_contracts_geometry.py::test_contracts_forbid_unknown_mutation_coercion"
+    ],
+    "analysis_id": "G-SCHEMA-002",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-NFR-02",
+    "module_id": "tools/validate.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "tools/validate.py"
+    ],
+    "contract_id": "Contract/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_ingress_replay.py::test_global_body_and_rate_bounds"
+    ],
+    "analysis_id": "G-AUTH-003",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-NFR-03",
+    "module_id": "tools/validate.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "tools/validate.py"
+    ],
+    "contract_id": "Contract/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_orchestration_ledger.py::test_queue_backpressure_and_cancel"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-NFR-04",
+    "module_id": "tools/validate.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "tools/validate.py"
+    ],
+    "contract_id": "Contract/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_ingress_replay.py::test_read_only_queries_do_not_recover_pending_tasks"
+    ],
+    "analysis_id": "G-REPLAY-005",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-NFR-05",
+    "module_id": "tools/validate.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "tools/validate.py"
+    ],
+    "contract_id": "Contract/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_orchestration_ledger.py::test_evidence_failure_stops_before_side_effect"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-NFR-06",
+    "module_id": "tools/validate.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "tools/validate.py"
+    ],
+    "contract_id": "Contract/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_orchestration_ledger.py::test_nominal_outcome_chain"
+    ],
+    "analysis_id": "G-PERF-006",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-NFR-07",
+    "module_id": "tools/validate.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "tools/validate.py"
+    ],
+    "contract_id": "Contract/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_contracts_geometry.py::test_nonfinite_boundary_rejected"
+    ],
+    "analysis_id": "G-STATIC-007",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-NFR-08",
+    "module_id": "tools/validate.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "tools/validate.py"
+    ],
+    "contract_id": "Contract/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_contracts_geometry.py::test_contracts_forbid_unknown_mutation_coercion"
+    ],
+    "analysis_id": "G-ARCH-001",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-NFR-09",
+    "module_id": "tools/validate.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "tools/validate.py"
+    ],
+    "contract_id": "Contract/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_resident_analytics.py::test_resident_context_tools_and_bounds"
+    ],
+    "analysis_id": "G-AUTH-003",
+    "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-NFR-10",
+    "module_id": "tools/validate.py",
+    "runtime_partition": "supervisory/SIL",
+    "source_path": [
+      "tools/validate.py"
+    ],
+    "contract_id": "Contract/Policy",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_orchestration_ledger.py::test_nominal_outcome_chain"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/validation.json"
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HMT Edge Robot governed handoff (derived, bounded)",
+  "type": "object",
+  "required": [
+    "response"
+  ],
+  "properties": {
+    "response": {
+      "type": "object",
+      "required": [
+        "agent_role",
+        "task_owned",
+        "implementation",
+        "risks",
+        "assumptions",
+        "follow_up_instructions",
+        "validation_status",
+        "artifact_refs",
+        "provenance_id"
+      ],
+      "properties": {
+        "agent_role": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192
+        },
+        "task_owned": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192
+        },
+        "implementation": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "risks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "maxItems": 128
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "maxItems": 128
+        },
+        "follow_up_instructions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "maxItems": 128
+        },
+        "validation_status": {
+          "type": "string",
+          "enum": [
+            "pass",
+            "hold",
+            "fail"
+          ],
+          "minLength": 1,
+          "maxLength": 8192
+        },
+        "artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "maxItems": 128
+        },
+        "provenance_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

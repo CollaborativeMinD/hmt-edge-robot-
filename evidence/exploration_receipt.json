@@ -1,0 +1,7 @@
+{
+  "source_sha256": "245879c8b2cc6b9ba337437a8f2ad0a107629526eaa2083fa6c6edb39bc749f4",
+  "classification": "EXPLORATION_ONLY",
+  "status": "PASS",
+  "semantic_hash": "27b1130c262e132a0918e755598e178d50287af1c683b5d431e3edf57b028b8b",
+  "scope": "Supplied scratch/whiteboard symbolic exploration only; not robotics qualification"
+}

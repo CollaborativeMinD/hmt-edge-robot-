@@ -1,0 +1,41 @@
+{
+  "classification": "INHERITED_BASELINE_TRACER_REPRODUCTION",
+  "source_sha256": "4554813640fc9659082dd7183a832d33cacd4e43ccb5abc69da3fa0c0b4296c9",
+  "results": [
+    {
+      "driver": "MockRobotDriver",
+      "states": [
+        "IDLE",
+        "SCANNING",
+        "PLANNING",
+        "EXECUTING",
+        "VERIFYING",
+        "IDLE"
+      ],
+      "final_state": "IDLE",
+      "fault_counter": 0,
+      "estop_count": 0,
+      "moves": 1,
+      "gripper_calls": 1
+    },
+    {
+      "driver": "RejectDriver",
+      "states": [
+        "IDLE",
+        "SCANNING",
+        "PLANNING",
+        "EXECUTING",
+        "VERIFYING",
+        "IDLE"
+      ],
+      "final_state": "IDLE",
+      "fault_counter": 0,
+      "estop_count": 0,
+      "moves": 1,
+      "gripper_calls": 1
+    }
+  ],
+  "finding": "Rejected driver commands still reach IDLE with zero faults and no stop",
+  "baseline_safety_gate": "FAIL",
+  "replacement_regression": "tests/test_orchestration_ledger.py::test_driver_ack_and_feedback_regressions"
+}
