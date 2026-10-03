@@ -1,0 +1,21 @@
+{
+  "source_commit": "d0706a38b4f0a5dbd23d0837601721d45f99b999",
+  "scope": "Independent frozen-dependency supervisory/SIL verification; no paid provider calls",
+  "runs": [
+    {
+      "url": "https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/runs/37085148440",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "d0706a38b4f0a5dbd23d0837601721d45f99b999"
+    },
+    {
+      "url": "https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/runs/37085146659",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "d0706a38b4f0a5dbd23d0837601721d45f99b999"
+    }
+  ],
+  "source_manifest_sha256": "1a206ae60fcc791d841a1ec7c96ae029ce1f8844c192beb502bbf5ace5dde2fe"
+}
