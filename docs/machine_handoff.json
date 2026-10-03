@@ -1,17 +1,24 @@
 {
   "response": {
     "agent_role": "Cyber-Physical Integration / supervisory partition",
-    "task_owned": "OBJ-EDGE-01: five subsystem modernization, evidence, analytics and resident HMT",
+    "task_owned": "OBJ-EDGE-01: five subsystem modernization, evidence, analytics and resident HMT; OBJ-SAT-03: software substrate assurance triad",
     "implementation": [
       "Composed explicit SIL cell with typed operator and motion admission",
       "SQLite intent/state/hash projection and Polars/DuckDB/Parquet analytics",
       "PGA-calibrated PCA grasp candidates and guarded telemetry",
-      "Advisory resident with fitted ML envelope and explicit qualified model adapter"
+      "Advisory resident with fitted ML envelope and explicit qualified model adapter",
+      "MCC bounded software mission readiness and empirical campaigns",
+      "USEA coverage-scoped effect attestation and bounded no-link file manifests",
+      "AGC reference closure, atomic governed quarantine/restore/delete in a managed SQLite artifact domain",
+      "Durable observer alerts, witnessed transformations, exact resource optimizer and typed private API"
     ],
     "risks": [
       "Physical driver, stopping calibration, MISRA/static memory and native target evidence remain HOLD",
       "Distributed architecture services are mapped external seams; not running services",
-      "Live canary does not establish general model accuracy"
+      "Live canary does not establish general model accuracy",
+      "File snapshots cannot certify full process effects; native process tracing and hardware verification are deferred to a qualified containerized deployment",
+      "Async probes require cooperative cancellation; empirical recovery statistics are not WCET guarantees",
+      "Catalog completeness is confined to its managed BLOB domain; external infrastructure cannot be reclaimed"
     ],
     "assumptions": [
       "Python 3.12+ Linux supervisory host",
@@ -31,7 +38,9 @@
       "evidence/validation.json",
       "evidence/verification.sqlite",
       "Runbook.md",
-      "Agents.md"
+      "Agents.md",
+      "docs/substrate_assurance.md",
+      "evidence/triad/campaign.json"
     ],
     "provenance_id": "b048848592a5b9d86cde4ef469eac303cdfc4e6a16c8c3b491da6d2414c6d455"
   }

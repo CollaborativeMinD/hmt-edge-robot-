@@ -42,3 +42,32 @@ Scope: supervisory software and explicit SIL. Gate PASS means the stated accepta
 | REQ-NFR-08 | Every declared requirement has implementation/test binding; every contract field has ontology binding | tools/validate.py | test_contracts_forbid_unknown_mutation_coercion |
 | REQ-NFR-09 | Resident proposals remain advisory; unknown tools and cloud defaults blocked | tools/validate.py | test_resident_context_tools_and_bounds |
 | REQ-NFR-10 | Full offline suite passes with >=90% combined line/branch coverage | tools/validate.py | test_nominal_outcome_chain |
+
+## Substrate assurance software requirements
+
+Scope: system software. Physical deployment verification is deferred. The normative test and gate bindings are in `requirements.json`; operating assumptions are in `substrate_assurance.md`.
+
+| Requirement | Kind | Acceptance criterion | Regression |
+|---|---|---|---|
+| REQ-MCC-01 | functional | Mission readiness requires ordered successful stages and the exact validated transaction hash; deadline equality holds | test_mcc_mission_readiness_and_boundary |
+| REQ-MCC-02 | functional | Stage failure, stale epochs, future or expired traces cannot certify mission readiness | test_mcc_incomplete_invalid_and_stale |
+| REQ-MCC-03 | functional | Cooperative asynchronous software probes use remaining recovery budget and persist intent; timeout or malformed adapter fails closed | test_software_probe_durable_failure_and_no_returned_readiness |
+| REQ-MCC-04 | functional | Bound campaigns to 256; report empirical p95, maximum and Wilson failure endpoint without a worst-case guarantee | test_mcc_empirical_envelope_is_not_wcet |
+| REQ-USEA-01 | functional | Compare exact effect kind and target, runtime and exit contract; a valid receipt cannot substitute for effect conformance | test_usea_effect_receipt_distinction |
+| REQ-USEA-02 | functional | Incomplete coverage, unbound executable identity, expiry or changed epochs cannot produce conformance | test_usea_incomplete_is_hold |
+| REQ-USEA-03 | functional | Actual file manifests detect persistent writes, refuse links and special files, and never claim reads or transient effects | test_manifest_actual_writes_and_coverage_limit |
+| REQ-AGC-01 | functional | Compute transitive protection across cycles; retain authority, recovery, evidence and effect dependencies | test_agc_transitive_reference_closure_and_cycles |
+| REQ-AGC-02 | functional | Incomplete, stale, mismatched-epoch or dangling-reference census yields UNKNOWN_HOLD | test_agc_unknown_hold |
+| REQ-AGC-03 | functional | Plan is dry-run; quarantine preserves bytes, restoration is reversible, deletion requires fresh authority and dwell | test_agc_dry_run_quarantine_restore_and_governed_delete |
+| REQ-AGC-04 | functional | Atomic revision fence, issued single-use grants, live session recheck and decision reconstruction reject stale or forged mutation | test_agc_fence_changed_reference_and_no_grant_replay |
+| REQ-AGC-05 | functional | Catalog content, full membership, revision, quarantine time and state replay match durable events | test_catalog_missing_record_and_revision_tamper |
+| REQ-SAT-01 | functional | Persist cursor-addressed notices and alerts with admitted acknowledgments; survive restart and propagate failures | test_observer_durable_cursor_ack_and_restart |
+| REQ-SAT-02 | functional | Atomically bind MCC recovery and USEA effect witnesses into catalog retention; reject forged or unknown evidence | test_cross_component_witness_retention |
+| REQ-SAT-03 | functional | Transform validated SQLite reports through Polars/DuckDB into hashed JSONL, GraphML and Parquet software evidence | test_assurance_export_sql_parquet_jsonl_graphml |
+| REQ-SAT-04 | functional | Private strict JSON API admits sessions and grants; submitted trace claims cannot become collected observations | test_assurance_api_native_json_and_declared_trace_hold |
+| REQ-SAT-NFR-01 | nonfunctional | Finite frozen contracts reject coercion and unknown fields; every witness binds identity, contract, collector, epochs and expiry | test_assurance_contracts_strict_finite_frozen |
+| REQ-SAT-NFR-02 | nonfunctional | Bound managed catalog to 1024 records and 16 MiB per blob; manifests to 256 files/16 MiB by default; observer reads to 256 and analytics to 1024 | test_catalog_and_census_bounds |
+| REQ-SAT-NFR-03 | nonfunctional | No committed lifecycle mutation or consumed grant when evidence fails; storage failures propagate as EvidenceError | test_agc_evidence_failure_rolls_back_mutation |
+| REQ-SAT-NFR-04 | nonfunctional | Exact bounded 0/1 knapsack matches independent brute-force oracle and never grants authority | test_optimization_exact_against_brute_force |
+| REQ-SAT-NFR-05 | nonfunctional | Read-only assurance census and analytics leave projections and pending work unchanged | test_catalog_readonly_no_recovery_or_writes |
+| REQ-SAT-NFR-06 | nonfunctional | Software campaign plans 258 records within 10 sec and optimizes 64 candidates/1024 budget within 2 sec on acceptance host, with zero driver moves | test_optimization_exact_against_brute_force |

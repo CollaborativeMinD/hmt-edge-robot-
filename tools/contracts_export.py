@@ -7,11 +7,13 @@ import json
 from pathlib import Path
 
 from hmt_edge_robot import api, contracts, geometry
+from hmt_edge_robot.assurance import contracts as assurance_contracts
+from hmt_edge_robot.assurance import routes as assurance_routes
 
 
 def contract_models() -> dict:
     models = {}
-    for module in (contracts, geometry, api):
+    for module in (contracts, geometry, api, assurance_contracts, assurance_routes):
         for name, value in inspect.getmembers(module, inspect.isclass):
             if issubclass(value, contracts.Contract) and value is not contracts.Contract:
                 models[name] = value
@@ -25,22 +27,22 @@ def semantic_type(model: str, field: str) -> tuple[str, str]:
         return "DomainDescriptorField", "Untrusted resident question bounded by its wire contract"
     if field.endswith("hash"):
         return "TelemetryIntegrityField", "Integrity receipt for the declared artifact or payload"
-    if field == "evidence_refs" or field == "evidence_id":
+    if field.endswith("_refs") or field == "evidence_id":
         return "EvidenceReferenceField", "References to validated evidence records"
     if field.endswith("_id"):
         return "ArtifactIdentifierField", "Identifier scoped by its declaring domain contract"
-    if field in ("state", "pace_lane", "action"):
+    if field in ("state", "pace_lane", "action", "origin"):
         return (
             "RuntimeStateStatusField",
             "Closed runtime state, lane, or advisory action vocabulary",
         )
-    if field in ("decision", "admitted", "data_valid"):
+    if field in ("decision", "admitted", "data_valid", "verdict", "complete", "dry_run"):
         return "ValidationStatusField", "Admission or validity result with declared bounds"
     if field == "rejection_reason" or field == "explanation":
         return "DomainDescriptorField", "Domain-specific reason or advisory explanation"
     if field in ("monotonic_seq", "observed_at", "issued_at", "expires_at"):
         return "TelemetryIntegrityField", "Sequence or clock-domain freshness constraint"
-    if model == "Policy":
+    if model == "Policy" or field == "epochs" or field.endswith("epoch"):
         return "ControlConstraintField", "Named operator-selected supervisory policy constraint"
     if "temp" in field:
         return (
@@ -51,7 +53,7 @@ def semantic_type(model: str, field: str) -> tuple[str, str]:
         return "PowerMetricField", "Observed electrical quantity with finite units"
     if field in ("position_mm", "target_mm", "angle_deg", "human_distance_m"):
         return "MechanicalMetricField", "Measured or planned geometric quantity in declared units"
-    return "PhysicalBoundField", "Typed robotics quantity bounded by the declaring contract"
+    return "PhysicalBoundField", "Typed domain quantity bounded by the declaring contract"
 
 
 def export(root: Path) -> None:

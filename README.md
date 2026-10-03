@@ -5,8 +5,8 @@
 Governed edge robotics, resident HMT, and evidence you can replay.
 
 [![CI](https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/tests-78_passing-2ea043?style=flat-square)](evidence/validation.json)
-[![Coverage](https://img.shields.io/badge/coverage-97.39%25-2ea043?style=flat-square)](evidence/coverage.json)
+[![Tests](https://img.shields.io/badge/tests-136_passing-2ea043?style=flat-square)](evidence/validation.json)
+[![Coverage](https://img.shields.io/badge/coverage-97.41%25-2ea043?style=flat-square)](evidence/coverage.json)
 [![Supervisory SIL](https://img.shields.io/badge/supervisory_SIL-PASS-2ea043?style=flat-square)](evidence/validation.json)
 [![Physical deployment](https://img.shields.io/badge/physical_deployment-HOLD-d29922?style=flat-square)](docs/compliance.md)
 
@@ -48,6 +48,7 @@ is explicit. The resident can inspect, diagnose, or plan; it cannot actuate.
 | NeuroGrasp | Multiple ranked PCA candidates, ambiguity rejection, calibration, PGA coordinate transforms, frame provenance |
 | FactoryOrchestrator | Bounded queue, transactional admission, duplicate prevention, state law, acknowledgment and feedback gates, restart reconciliation |
 | Data and analytics | Append-only SQLite hash chain, verified projections, Polars trends, DuckDB aggregation, atomic Parquet export |
+| Substrate assurance | MCC mission readiness, USEA coverage-scoped effects, AGC governed catalog lifecycle, durable observer alerts |
 | Resident HMT | Explicit ML training envelope, bounded evidence context, schema admission, allowlisted tools, qualified local or opt-in cloud LLM seam |
 
 ## Proof and lineage
@@ -59,13 +60,14 @@ gate and RRCA ledgers, and a bounded live resident canary with zero driver moves
 
 [Executable notebook](notebooks/cell_ssot.py) ·
 [Validation receipt](evidence/validation.json) ·
+[Triad software campaign](evidence/triad/campaign.json) ·
 [Live canary receipt](evidence/live_session.json) ·
 [Version lineage archive](archive/version-lineage/v1.0.0/VERSION_LINEAGE.md)
 
 **Checkpoint preserved.** The archive carries the five V1 prototypes, their five
 Lambda revalidation packs, and the immutable reference to this integration.
-Development is paused until the next update; future lineage additions use a new
-archive version.
+The next software update adds the [Substrate Assurance Triad](docs/substrate_assurance.md).
+The archived checkpoint remains immutable; future lineage additions use a new archive version.
 
 Start with [Runbook.md](Runbook.md). See [architecture](docs/architecture.md),
 [requirements](docs/requirements.md), [compliance boundaries](docs/compliance.md),

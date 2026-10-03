@@ -1,0 +1,50 @@
+{
+  "classification": "EXPLORATION_ONLY",
+  "scratch_self_check": {
+    "status": "PASS",
+    "reason_codes": [],
+    "function_line_limit": 60,
+    "function_lengths": {
+      "utc_now@36": 3,
+      "canonical_json@41": 3,
+      "sha256_json@46": 3,
+      "require_dependency@51": 4,
+      "validate_steps@57": 5,
+      "resolve_output_dir@64": 11,
+      "function_lengths@77": 9,
+      "run_self_check@88": 15,
+      "derive_relative_degree@105": 29,
+      "scenario_forcing@136": 11,
+      "integrate_hazards@149": 27,
+      "compute_control_series@178": 23,
+      "select_regime@203": 4,
+      "select_posture@209": 11,
+      "build_series@222": 21,
+      "build_payload@245": 17,
+      "write_suite@264": 17,
+      "parse_args@283": 8,
+      "run_command@293": 15,
+      "main@310": 10,
+      "rhs@165": 3
+    },
+    "violations": {},
+    "dependencies_available": {
+      "sympy": false,
+      "numpy": true,
+      "scipy": true
+    },
+    "classification": "EXPLORATION_ONLY"
+  },
+  "checks": {
+    "deadline_boundary_holds": true,
+    "incomplete_coverage_holds": true,
+    "transitive_dependency_protected": true,
+    "stale_only_reclaimable": true
+  },
+  "whiteboard_schema_id": "semantic-hazard-whiteboard-v1",
+  "source_hashes": {
+    "20-scratch_pad.py": "fb7a7282579cec0bf20ba80a3da771e3510086892e7e0d5f923d9249f248ee56",
+    "18-white_board.html": "4b2e57379bf7f00f6733ffd283b6106c489c7cb98c4d945e3fbd9586b15068e5"
+  },
+  "status": "PASS"
+}

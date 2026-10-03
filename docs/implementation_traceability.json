@@ -834,5 +834,423 @@
     ],
     "analysis_id": "G-RUNTIME-004",
     "evidence_id": "evidence/validation.json"
+  },
+  {
+    "req_id": "REQ-MCC-01",
+    "module_id": "src/hmt_edge_robot/assurance/mcc.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/mcc.py"
+    ],
+    "contract_id": "SubstrateAssurance/mcc.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_readiness_effects.py::test_mcc_mission_readiness_and_boundary"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-MCC-02",
+    "module_id": "src/hmt_edge_robot/assurance/mcc.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/mcc.py"
+    ],
+    "contract_id": "SubstrateAssurance/mcc.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_readiness_effects.py::test_mcc_incomplete_invalid_and_stale"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-MCC-03",
+    "module_id": "src/hmt_edge_robot/assurance/mcc.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/mcc.py"
+    ],
+    "contract_id": "SubstrateAssurance/mcc.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_integration.py::test_software_probe_durable_failure_and_no_returned_readiness"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-MCC-04",
+    "module_id": "src/hmt_edge_robot/assurance/mcc.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/mcc.py"
+    ],
+    "contract_id": "SubstrateAssurance/mcc.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_readiness_effects.py::test_mcc_empirical_envelope_is_not_wcet"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-USEA-01",
+    "module_id": "src/hmt_edge_robot/assurance/usea.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/usea.py"
+    ],
+    "contract_id": "SubstrateAssurance/usea.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_readiness_effects.py::test_usea_effect_receipt_distinction"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-USEA-02",
+    "module_id": "src/hmt_edge_robot/assurance/usea.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/usea.py"
+    ],
+    "contract_id": "SubstrateAssurance/usea.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_readiness_effects.py::test_usea_incomplete_is_hold"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-USEA-03",
+    "module_id": "src/hmt_edge_robot/assurance/usea.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/usea.py"
+    ],
+    "contract_id": "SubstrateAssurance/usea.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_readiness_effects.py::test_manifest_actual_writes_and_coverage_limit"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-AGC-01",
+    "module_id": "src/hmt_edge_robot/assurance/agc.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/agc.py"
+    ],
+    "contract_id": "SubstrateAssurance/agc.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_reclamation.py::test_agc_transitive_reference_closure_and_cycles"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-AGC-02",
+    "module_id": "src/hmt_edge_robot/assurance/agc.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/agc.py"
+    ],
+    "contract_id": "SubstrateAssurance/agc.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_reclamation.py::test_agc_unknown_hold"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-AGC-03",
+    "module_id": "src/hmt_edge_robot/assurance/agc.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/agc.py"
+    ],
+    "contract_id": "SubstrateAssurance/agc.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_reclamation.py::test_agc_dry_run_quarantine_restore_and_governed_delete"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-AGC-04",
+    "module_id": "src/hmt_edge_robot/assurance/agc.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/agc.py"
+    ],
+    "contract_id": "SubstrateAssurance/agc.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_reclamation.py::test_agc_fence_changed_reference_and_no_grant_replay"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-AGC-05",
+    "module_id": "src/hmt_edge_robot/assurance/catalog.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/catalog.py"
+    ],
+    "contract_id": "SubstrateAssurance/catalog.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_reclamation.py::test_catalog_missing_record_and_revision_tamper"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-SAT-01",
+    "module_id": "src/hmt_edge_robot/assurance/kernel.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/kernel.py"
+    ],
+    "contract_id": "SubstrateAssurance/kernel.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_integration.py::test_observer_durable_cursor_ack_and_restart"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-SAT-02",
+    "module_id": "src/hmt_edge_robot/assurance/system.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/system.py"
+    ],
+    "contract_id": "SubstrateAssurance/system.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_integration.py::test_cross_component_witness_retention"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-SAT-03",
+    "module_id": "src/hmt_edge_robot/assurance/analytics.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/analytics.py"
+    ],
+    "contract_id": "SubstrateAssurance/analytics.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_integration.py::test_assurance_export_sql_parquet_jsonl_graphml"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-SAT-04",
+    "module_id": "src/hmt_edge_robot/assurance/routes.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/routes.py"
+    ],
+    "contract_id": "SubstrateAssurance/routes.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_integration.py::test_assurance_api_native_json_and_declared_trace_hold"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-SAT-NFR-01",
+    "module_id": "src/hmt_edge_robot/assurance/contracts.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/contracts.py"
+    ],
+    "contract_id": "SubstrateAssurance/contracts.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_readiness_effects.py::test_assurance_contracts_strict_finite_frozen"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-SAT-NFR-02",
+    "module_id": "src/hmt_edge_robot/assurance/catalog.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/catalog.py"
+    ],
+    "contract_id": "SubstrateAssurance/catalog.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_reclamation.py::test_catalog_and_census_bounds"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-SAT-NFR-03",
+    "module_id": "src/hmt_edge_robot/assurance/agc.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/agc.py"
+    ],
+    "contract_id": "SubstrateAssurance/agc.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_reclamation.py::test_agc_evidence_failure_rolls_back_mutation"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-SAT-NFR-04",
+    "module_id": "src/hmt_edge_robot/assurance/optimization.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/optimization.py"
+    ],
+    "contract_id": "SubstrateAssurance/optimization.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_readiness_effects.py::test_optimization_exact_against_brute_force"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-SAT-NFR-05",
+    "module_id": "src/hmt_edge_robot/assurance/catalog.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/catalog.py"
+    ],
+    "contract_id": "SubstrateAssurance/catalog.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_integration.py::test_catalog_readonly_no_recovery_or_writes"
+    ],
+    "analysis_id": "G-RUNTIME-004",
+    "evidence_id": "evidence/triad/campaign.json"
+  },
+  {
+    "req_id": "REQ-SAT-NFR-06",
+    "module_id": "src/hmt_edge_robot/assurance/optimization.py",
+    "runtime_partition": "system software / managed catalog",
+    "source_path": [
+      "src/hmt_edge_robot/assurance/optimization.py"
+    ],
+    "contract_id": "SubstrateAssurance/optimization.py",
+    "safety_constraint_id": [
+      "INV-SAT-01",
+      "INV-SAT-02",
+      "INV-SAT-03"
+    ],
+    "test_id": [
+      "tests/test_assurance_readiness_effects.py::test_optimization_exact_against_brute_force"
+    ],
+    "analysis_id": "G-TRIAD-011",
+    "evidence_id": "evidence/triad/campaign.json"
   }
 ]

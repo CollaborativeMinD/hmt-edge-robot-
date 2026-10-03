@@ -94,5 +94,29 @@
     "remediation": "Assign the explicit unqualified provider before constructing canary context; failed qualification still blocks activation",
     "validation_test": "tests/test_api_cli.py::test_cli_qualified_model_seam",
     "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-013",
+    "observed_state": "Expired-census fixture raised schema validation instead of UNKNOWN_HOLD",
+    "causal_evidence": "Fixture bypassed frozen validation with model_copy and inverted observation/expiry order; expiry did not represent a valid expired witness",
+    "remediation": "Use a valid census and advance the clock beyond its expiry; retain rejection of inverted clock contracts",
+    "validation_test": "tests/test_assurance_reclamation.py::test_agc_unknown_hold",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-014",
+    "observed_state": "Streaming catalog campaign raised TypeError before binding retention witness",
+    "causal_evidence": "Memory optimization replaced content-bearing fetchall with a streaming SQLite cursor, while return still used len(cursor)",
+    "remediation": "Count verified records during bounded per-artifact streaming; preserve full domain/revision replay and run all regression gates",
+    "validation_test": "tests/test_assurance_integration.py::test_cross_component_witness_retention",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-015",
+    "observed_state": "Static gate detected unused census hash during dependency-closure optimization",
+    "causal_evidence": "Scope hash was hoisted out of per-record transformation but the call site omitted its new required parameter",
+    "remediation": "Pass the single canonical census hash into every scoped decision; check closure, reconstruction and the software scale campaign",
+    "validation_test": "tests/test_assurance_reclamation.py::test_agc_transitive_reference_closure_and_cycles",
+    "external_boundary": false
   }
 ]

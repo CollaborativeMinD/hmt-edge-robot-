@@ -65,3 +65,20 @@ appear in `docs/source_provenance.json`.
 Formula-family IDs in source annotations refer to the supplied mobile field cards;
 the protection-distance composition is an engineering guard derived from kinematic
 terms, not an assertion of ISO certification or a copied approved hardware control law.
+
+## Substrate assurance composition
+
+The resident software now includes MCC, USEA and AGC through
+`RobotCell.assurance`. One transformation kernel binds contracts and observations
+to immutable reports, durable observer alerts and the existing evidence chain.
+MCC records software mission transaction readiness and recovery timing; USEA
+compares actual observed effects with declared contracts and explicit coverage;
+AGC protects transitive authority/recovery/evidence dependencies before governed
+managed-catalog quarantine, restoration or reclamation. MCC/USEA witness binding
+updates catalog references and invalidates earlier AGC plans through revision fences.
+
+This layer complements admission and live watchdogs. It conveys no motion authority.
+The managed catalog is the only reclamation domain. Native process collectors,
+distributed reference censuses, alert transports, container deployment and hardware
+verification remain explicit seams. See `substrate_assurance.md` for the software
+requirements, trust model, state machine, operational limits and acceptance gates.
