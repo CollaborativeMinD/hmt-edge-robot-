@@ -12,6 +12,7 @@ COPY src ./src
 RUN uv lock --check && uv sync --locked --no-dev --no-editable --no-cache
 FROM ${PYTHON_IMAGE} AS runtime
 ARG SOURCE_COMMIT
+RUN apt-get update && apt-get install -y --no-install-recommends libpcre2-8-0=10.46-1~deb13u3 && rm -rf /var/lib/apt/lists/*
 LABEL org.opencontainers.image.source="https://github.com/CollaborativeMinD/hmt-edge-robot-" \
       org.opencontainers.image.revision=${SOURCE_COMMIT}
 ENV PATH="/opt/venv/bin:$PATH" PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \

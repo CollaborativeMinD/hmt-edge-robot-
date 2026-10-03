@@ -61,14 +61,14 @@
     {
       "path": "deploy/stage4/Dockerfile",
       "status": "new",
-      "sha256": "01155706f395b46dd545450a9b4c35f173f7f7a4b931edfa81d5392ffce0f4cb",
+      "sha256": "95106d5c7925fcf55cd9f049632d0df36add15b25882192aac5303217611d176",
       "baseline_blob": null,
       "mode": "100644"
     },
     {
       "path": "docs/cd/stage4.md",
       "status": "new",
-      "sha256": "7f6b04526b3ec5b7f0bf6714a369ec8f165938d8e0fe93d339d6023622ba447c",
+      "sha256": "35d865356d758c7e929d897c7a77897b488927b83deb8a8f1acffcb1fb2cd3b2",
       "baseline_blob": null,
       "mode": "100644"
     },
@@ -82,7 +82,7 @@
     {
       "path": "docs/incidents.json",
       "status": "modified",
-      "sha256": "3aeab45a48690f196343a4acd40e17c2bc0d19bf6957ab2dbb1510ec188feff7",
+      "sha256": "738b9fde20f272d0aa62857961de0fc814de55552b9542bf78f4da02035b1850",
       "baseline_blob": "32363f47b78efcb68e1f3f2766fc4b5fd86aeb41",
       "mode": "100644"
     },
@@ -103,14 +103,14 @@
     {
       "path": "policy/artifact_admission.json",
       "status": "new",
-      "sha256": "2104fcbeddab928a63ac9794b331975c7a443dd4fbacecc7b51f373d5b6e5788",
+      "sha256": "1fcba1793da7b98d46adbf2b844d5d8aacc737e744ccbbb44866828c1cdd0b88",
       "baseline_blob": null,
       "mode": "100644"
     },
     {
       "path": "policy/ci_admission.json",
       "status": "modified",
-      "sha256": "68a662fb0b1cf42c7df95140dd90cae5cb3000938493731a3e1b3d39f74bf780",
+      "sha256": "0928891a4e203eba0852709c7367497ce2df804cd24dd736b19476c31b2a6448",
       "baseline_blob": "c3aec8b2dee86ebd6eac8c700bf653f6c04656fa",
       "mode": "100644"
     },

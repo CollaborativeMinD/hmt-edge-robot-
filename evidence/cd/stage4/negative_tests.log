@@ -16,4 +16,4 @@ tools/artifact_verify.py         28      0      6      0   100%
 TOTAL                           337     16    128     16    93%
 Coverage JSON written to file /workspace/scratch/1abe905e6918/hmt-edge-robot/evidence/cd/stage4/coverage.json
 Required test coverage of 90% reached. Total coverage: 93.12%
-70 passed in 0.88s
+70 passed in 0.82s

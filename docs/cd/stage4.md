@@ -109,3 +109,9 @@ The locked project packages and runtime source remain unchanged.
 The OCI exporter records `containerimage.digest` for its root OCI descriptor;
 it does not promise `containerimage.config.digest`. The gate binds that root digest,
 then independently binds the loaded/scanned config digest to the runtime manifest.
+
+Trixie run 37152171398 eliminated CRITICAL findings but reported 45 HIGH and two
+UNKNOWN findings. The one listed fix is pinned in the runtime recipe:
+`libpcre2-8-0=10.46-1~deb13u3`. Remaining no-fix findings remain blockers, not waivers.
+The OS patch is installed through the base's signed Debian repository; its version
+and bytes are retained by the image digest and SBOM. Python package pins do not change.

@@ -262,5 +262,13 @@
     "remediation": "Reject Bookworm candidate without ignore-unfixed or waivers; tracer newer DebianTrixie Python3.12 base with unchanged uv.lock and runtime; retain final qualification HOLD until security and provenance gates close",
     "validation_test": "tests/test_artifact_evidence.py::test_scan_and_runtime_contradictions_are_rejected",
     "external_boundary": true
+  },
+  {
+    "incident_id": "RRCA-CD4-37",
+    "observed_state": "Newer Trixie candidate had45 HIGH2 UNKNOWN findings; one HIGH had a listed package fix",
+    "causal_evidence": "Native run37152171398 Trivy output: libpcre2-8-0 version10.46-1~deb13u2 CVE-2026-103111 fixed10.46-1~deb13u3; all other blocking entries lacked listed fixes; OCI root identity repair reached security rejection VULNERABILITY_NOT_ADMITTED",
+    "remediation": "Pin package upgrade to10.46-1~deb13u3 and rerun installed/native/scanner evidence; keep unresolved vulnerabilities and signing entitlement held; no severity suppression or ignore-unfixed",
+    "validation_test": "tests/test_artifact_evidence.py::test_scan_and_runtime_contradictions_are_rejected",
+    "external_boundary": true
   }
 ]

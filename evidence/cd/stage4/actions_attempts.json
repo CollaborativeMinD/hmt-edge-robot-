@@ -54,6 +54,27 @@
         "RRCA-CD4-35",
         "RRCA-CD4-36"
       ]
+    },
+    {
+      "run_id": 37152171398,
+      "head_commit": "638f1f850faeac60bfdb43851096f68a9a28ffd8",
+      "status": "FAIL",
+      "native_software": "PASS",
+      "image_build": "PASS",
+      "restricted_installed_container": "PASS",
+      "scanner_collection": "PASS",
+      "base": "python:3.12-slim-trixie",
+      "scan_severity_counts": {
+        "LOW": 61,
+        "MEDIUM": 65,
+        "HIGH": 45,
+        "UNKNOWN": 2
+      },
+      "prequalification": "FAIL_VULNERABILITY_NOT_ADMITTED",
+      "signing": "HOLD",
+      "qualification": "HOLD",
+      "run_url": "https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/runs/37152171398",
+      "rrca": "RRCA-CD4-37"
     }
   ],
   "deployment": "HOLD",
