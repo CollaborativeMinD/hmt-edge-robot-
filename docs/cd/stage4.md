@@ -26,7 +26,7 @@ stopping, real-time timing, and native Pi acceptance are separate HOLD gates.
    stable across stages so installed script shebangs remain valid. No editable
    source, test tools, model keys, evidence database, or archive enters the image.
 6. Import the exact ARM64 OCI image into the local daemon. Verify loaded config
-   digest against the archive and BuildKit metadata. Execute installed composition
+   digest against the archive; bind BuildKit metadata to the exported OCI root digest. Execute installed composition
    with UID/GID 10001, read-only root, network disabled, all capabilities dropped,
    no-new-privileges, bounded CPU/memory/PIDs, and ephemeral data/scratch mounts.
 7. Require verified synthetic motion, resident stop behavior, SQLite replay,
@@ -97,3 +97,15 @@ remains HOLD. The signed final gate still requires live cryptographic verificati
 it cannot adopt the unsigned result. The hosted artifact job remains unsuccessful
 until a supported signing backend is qualified. A trusted owner-provisioned private
 signer or owner-selected supported repository arrangement is a later closure input.
+
+## Base-image rejection and bounded reselection
+
+Run 37151721865 reported 58 HIGH, five CRITICAL, and one UNKNOWN finding in the
+Bookworm candidate. Most blocking entries have no listed fixed version. No exception
+is admitted. The newer `python:3.12-slim-trixie` base is a bounded candidate reselection;
+its native build, installed composition, and full scans must pass before admission.
+The locked project packages and runtime source remain unchanged.
+
+The OCI exporter records `containerimage.digest` for its root OCI descriptor;
+it does not promise `containerimage.config.digest`. The gate binds that root digest,
+then independently binds the loaded/scanned config digest to the runtime manifest.

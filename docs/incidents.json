@@ -246,5 +246,21 @@
     "remediation": "Record provider entitlement HOLD and preserve private repository visibility; independently qualify unsigned image/scanner/software prerequisites while signed final artifact qualification stays held; no unsigned-to-signed promotion",
     "validation_test": "tests/test_artifact_preflight.py::test_unsigned_prequalification_never_promotes_artifact",
     "external_boundary": true
+  },
+  {
+    "incident_id": "RRCA-CD4-35",
+    "observed_state": "OCI artifact prequalification rejected missing containerimage.config.digest metadata",
+    "causal_evidence": "Native run37151721865 emitted BUILD_METADATA_CONFIG_MISMATCH although loaded/scanned config checks passed; OCI exporter metadata uses containerimage.digest for the exported root descriptor",
+    "remediation": "Bind exporter root digest to the archive root descriptor; retain independent config binding for loaded and scanned runtime; regression rejects inconsistent root digest",
+    "validation_test": "tests/test_artifact_gate.py::test_contradictory_evidence_replaces_stale_pass",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CD4-36",
+    "observed_state": "Bookworm image reported58 HIGH5 CRITICAL1 UNKNOWN findings",
+    "causal_evidence": "Trivy0.69.3 native run37151721865 emitted raw severity counts and blocking package/CVE IDs; all blocking entries had no listed fixed version",
+    "remediation": "Reject Bookworm candidate without ignore-unfixed or waivers; tracer newer DebianTrixie Python3.12 base with unchanged uv.lock and runtime; retain final qualification HOLD until security and provenance gates close",
+    "validation_test": "tests/test_artifact_evidence.py::test_scan_and_runtime_contradictions_are_rejected",
+    "external_boundary": true
   }
 ]

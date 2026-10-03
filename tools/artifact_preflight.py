@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from artifact_evidence import scans
-from artifact_oci import inspect
+from artifact_oci import inspect, root_digest
 from ci_admission import ROOT, confined, digest
 
 FILES = ("base-lock.json", "sbom.spdx.json", "vulnerabilities.json", "container.json",
@@ -45,8 +45,8 @@ def assess(root: Path, commit: str) -> dict:
     if data["vulnerabilities.json"].get("Metadata", {}).get("ImageID") != config:
         raise ValueError("SCANNER_CONFIG_IDENTITY_MISMATCH")
     metadata = data["build-metadata.json"]
-    if metadata.get("containerimage.config.digest") != config:
-        raise ValueError("BUILD_METADATA_CONFIG_MISMATCH")
+    if metadata.get("containerimage.digest") != root_digest(archive):
+        raise ValueError("BUILD_METADATA_OCI_ROOT_MISMATCH")
     scans(data["sbom.spdx.json"], data["vulnerabilities.json"], data["container.json"], (root / "uv.lock").read_bytes())
     archive_digest = archive_hash(archive)
     inputs = {name: digest(confined(root, "evidence/cd/stage4/" + name)) for name in FILES}

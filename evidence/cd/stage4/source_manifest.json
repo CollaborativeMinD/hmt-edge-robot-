@@ -5,7 +5,7 @@
   "runtime_source_changes": 0,
   "inherited_files_excluded_from_delta": true,
   "protected_files_verified": 249,
-  "artifact_qualification": "HOLD_SIGNING_BACKEND",
+  "artifact_qualification": "HOLD_SECURITY_AND_SIGNING",
   "cluster_deployment": "HOLD",
   "hardware": "HOLD",
   "files": [
@@ -19,7 +19,7 @@
     {
       "path": ".github/workflows/artifact.yml",
       "status": "new",
-      "sha256": "5b6bb37924bf27efaf85c9eeeb2b322df1257ddbbcbcc72736cead9078389df5",
+      "sha256": "fc43403eba6f82b7c8c2106fa71607638ea975c8f455a20b9a8f7c854198417f",
       "baseline_blob": null,
       "mode": "100644"
     },
@@ -68,7 +68,7 @@
     {
       "path": "docs/cd/stage4.md",
       "status": "new",
-      "sha256": "01101a5fea9c5ee79b8ea4aa2ee2750dd8b58ed7c88e549fb23118e9b64cfad2",
+      "sha256": "7f6b04526b3ec5b7f0bf6714a369ec8f165938d8e0fe93d339d6023622ba447c",
       "baseline_blob": null,
       "mode": "100644"
     },
@@ -82,7 +82,7 @@
     {
       "path": "docs/incidents.json",
       "status": "modified",
-      "sha256": "25bed3579553eeef9a8f45b583090afff07cfe5c03c094809028b617d41ff862",
+      "sha256": "3aeab45a48690f196343a4acd40e17c2bc0d19bf6957ab2dbb1510ec188feff7",
       "baseline_blob": "32363f47b78efcb68e1f3f2766fc4b5fd86aeb41",
       "mode": "100644"
     },
@@ -103,14 +103,14 @@
     {
       "path": "policy/artifact_admission.json",
       "status": "new",
-      "sha256": "09165cd0d44bce96506b0a9d4d4c0b86de2b4559507b17af1c8beb4ba8b2edf0",
+      "sha256": "2104fcbeddab928a63ac9794b331975c7a443dd4fbacecc7b51f373d5b6e5788",
       "baseline_blob": null,
       "mode": "100644"
     },
     {
       "path": "policy/ci_admission.json",
       "status": "modified",
-      "sha256": "5b29119a092fc4ddee4b4e4aa22506e46b53d39d7c2f089096a2b6a7a06ffdad",
+      "sha256": "68a662fb0b1cf42c7df95140dd90cae5cb3000938493731a3e1b3d39f74bf780",
       "baseline_blob": "c3aec8b2dee86ebd6eac8c700bf653f6c04656fa",
       "mode": "100644"
     },
@@ -124,7 +124,7 @@
     {
       "path": "tests/artifact_support.py",
       "status": "new",
-      "sha256": "889e4fe8a7679ec15b9accce4135d689f684ead811b38540e0cd9a609e443f93",
+      "sha256": "8cf93b9f4716e8b700a3efa77cc80b594189bed783b3479418f85b6f3e16040e",
       "baseline_blob": null,
       "mode": "100644"
     },
@@ -222,7 +222,7 @@
     {
       "path": "tools/artifact_oci.py",
       "status": "new",
-      "sha256": "a6495d131a792f4d0f466ecd004f20f3fb31171d382f2f59d01e8f9267a0398a",
+      "sha256": "f3d6cf8e352747d1c28dafd3ae1e8057eeea65ca2711252dd4f05585b4dab234",
       "baseline_blob": null,
       "mode": "100644"
     },
@@ -252,7 +252,7 @@
       "status": "new",
       "baseline_blob": null,
       "mode": "100644",
-      "sha256": "7df9ad3a4c522ecaa4759b62bc3042d1f033e3c4205f823374b1678d60527c1d"
+      "sha256": "55a0f9a284af522c1f2929949b73cf5abdecd5ad1b1aed3fdfe6475c4f040c01"
     },
     {
       "path": "tests/test_artifact_preflight.py",

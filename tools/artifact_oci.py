@@ -72,3 +72,14 @@ def inspect(path: Path, commit: str) -> tuple[str, str]:
         for layer in manifest["layers"]:
             blob(archive, layer, retain=False)
     return descriptor["digest"], manifest["config"]["digest"]
+
+
+def root_digest(path: Path) -> str:
+    with tarfile.open(path) as archive:
+        stream = archive.extractfile("index.json")
+        if stream is None:
+            raise ValueError("OCI_INDEX_UNAVAILABLE")
+        index = json.loads(stream.read(2**20))
+        if len(index["manifests"]) != 1:
+            raise ValueError("OCI_ROOT_DESCRIPTOR_REQUIRED")
+        return index["manifests"][0]["digest"]

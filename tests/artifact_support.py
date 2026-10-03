@@ -51,7 +51,7 @@ def fixture(root: Path) -> Path:
         "container.json": {"status": "PASS", "platform": "aarch64", "uid": 10001,
             "paid_calls": 0, "resident_stopped": True, "events": 3, "replayed": 3,
             "packages": {"hmt-edge-robot": "1.0.0"}},
-        "build-metadata.json": {"containerimage.config.digest": config},
+        "build-metadata.json": {"containerimage.digest": image},
         "loaded-image.json": [{"Id": config}],
         "scan-input.json": {"Digest": image, "Architecture": "arm64", "Os": "linux"}}
     for name, value in values.items():
