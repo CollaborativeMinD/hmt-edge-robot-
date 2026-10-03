@@ -1,0 +1,35 @@
+{
+  "policy_id": "edge-v1",
+  "policy_epoch": 1,
+  "workspace_min_mm": [
+    -100.0,
+    -100.0,
+    0.0
+  ],
+  "workspace_max_mm": [
+    100.0,
+    100.0,
+    100.0
+  ],
+  "max_speed_mps": 0.25,
+  "max_observation_age_sec": 0.5,
+  "max_command_age_sec": 2.0,
+  "session_timeout_sec": 300.0,
+  "heartbeat_timeout_sec": 1.0,
+  "verification_tolerance_mm": 0.1,
+  "min_separation_m": 0.5,
+  "full_speed_separation_m": 2.0,
+  "reaction_time_sec": 0.1,
+  "stop_time_sec": 0.2,
+  "braking_distance_m": 0.05,
+  "human_approach_mps": 1.6,
+  "uncertainty_m": 0.05,
+  "nominal_voltage_v": 3.7,
+  "safe_voltage_v": 3.4,
+  "max_temp_c": 85.0,
+  "recovery_hysteresis_v": 0.05,
+  "max_queue_size": 32,
+  "max_history_records": 256,
+  "driver_timeout_sec": 0.5,
+  "allow_cloud": false
+}

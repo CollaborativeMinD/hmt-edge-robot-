@@ -1644,5 +1644,104 @@
     ],
     "analysis_id": "G-ARCH-001",
     "evidence_id": "evidence/ci/phase2/policy_evaluation.json"
+  },
+  {
+    "req_id": "REQ-CD3-01",
+    "module_id": "tools/deployment_contracts.py",
+    "runtime_partition": "deployment design only",
+    "source_path": [
+      "tools/deployment_contracts.py",
+      "tools/deployment_io.py",
+      "tools/deployment_admission.py",
+      "policy/deployment.json",
+      "policy/deployment_admission.json"
+    ],
+    "contract_id": "policy/deployment.json",
+    "safety_constraint_id": [
+      "DESIGN_ONLY",
+      "ALL_EXECUTION_HOLD",
+      "PRESERVE_LEDGER"
+    ],
+    "test_id": [
+      "tests/test_deployment_contracts.py::test_deployment_plan_rejects_authority_and_coercion",
+      "tests/test_deployment_binding.py::test_catalog_requires_complete_confined_bindings",
+      "tests/test_deployment_binding.py::test_release_binding_denies_input_drift",
+      "tests/test_deployment_contracts.py::test_candidate_cannot_invent_build_or_target_evidence"
+    ],
+    "analysis_id": "G-CD-CONTRACT-017",
+    "evidence_id": "evidence/cd/stage3/release_receipt.json"
+  },
+  {
+    "req_id": "REQ-CD3-02",
+    "module_id": "tools/deployment_workload.py",
+    "runtime_partition": "deployment design only",
+    "source_path": [
+      "tools/deployment_workload.py",
+      "tools/deployment_manifests.py",
+      "tools/deployment_flux.py",
+      "tools/deployment_admission.py",
+      "deploy/stage3/workload/workload.template.json",
+      "deploy/stage3/flux/reconcile.template.json"
+    ],
+    "contract_id": "policy/deployment.json",
+    "safety_constraint_id": [
+      "DESIGN_ONLY",
+      "ALL_EXECUTION_HOLD",
+      "PRESERVE_LEDGER"
+    ],
+    "test_id": [
+      "tests/test_deployment_manifests.py::test_manifest_cannot_widen_runtime_authority",
+      "tests/test_deployment_manifests.py::test_manifest_cannot_widen_reconciliation_storage_or_network",
+      "tests/test_deployment_binding.py::test_release_rejects_stale_baseline_policy_and_cloud"
+    ],
+    "analysis_id": "G-CD-CONTRACT-017",
+    "evidence_id": "evidence/cd/stage3/release_receipt.json"
+  },
+  {
+    "req_id": "REQ-CD3-03",
+    "module_id": "tools/deployment_receipts.py",
+    "runtime_partition": "deployment design only",
+    "source_path": [
+      "tools/deployment_receipts.py",
+      "tools/deployment_gate.py",
+      "tools/deployment_admission.py",
+      "policy/release_candidate.json"
+    ],
+    "contract_id": "policy/deployment.json",
+    "safety_constraint_id": [
+      "DESIGN_ONLY",
+      "ALL_EXECUTION_HOLD",
+      "PRESERVE_LEDGER"
+    ],
+    "test_id": [
+      "tests/test_deployment_receipts.py::test_design_receipt_replay_preserves_every_execution_hold",
+      "tests/test_deployment_receipts.py::test_receipt_forgery_and_stale_inputs_are_denied",
+      "tests/test_deployment_receipts.py::test_evidence_failure_blocks_completion"
+    ],
+    "analysis_id": "G-CD-CONTRACT-017",
+    "evidence_id": "evidence/cd/stage3/release_receipt.json"
+  },
+  {
+    "req_id": "REQ-CD3-04",
+    "module_id": "tools/deployment_campaign.py",
+    "runtime_partition": "deployment design only",
+    "source_path": [
+      "tools/deployment_campaign.py",
+      "tools/deployment_gate.py",
+      "tools/deployment_io.py"
+    ],
+    "contract_id": "policy/deployment.json",
+    "safety_constraint_id": [
+      "DESIGN_ONLY",
+      "ALL_EXECUTION_HOLD",
+      "PRESERVE_LEDGER"
+    ],
+    "test_id": [
+      "tests/test_deployment_rejections.py::test_rejection_replaces_stale_pass_receipt",
+      "tests/test_deployment_rejections.py::test_rejection_does_not_echo_invalid_credential_values",
+      "tests/test_deployment_contracts.py::test_deployment_resource_budgets_are_strict_and_ordered"
+    ],
+    "analysis_id": "G-CD-NEGATIVE-018",
+    "evidence_id": "evidence/cd/stage3/campaign.json"
   }
 ]

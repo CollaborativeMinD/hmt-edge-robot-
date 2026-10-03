@@ -1,0 +1,187 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "hmt-edge-robot",
+    "namespace": "hmt-edge-robot-sil",
+    "annotations": {
+      "hmt.terminal-state.systems/admission": "HOLD"
+    }
+  },
+  "spec": {
+    "replicas": 0,
+    "strategy": {
+      "type": "Recreate"
+    },
+    "selector": {
+      "matchLabels": {
+        "app.kubernetes.io/name": "hmt-edge-robot"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app.kubernetes.io/name": "hmt-edge-robot"
+        }
+      },
+      "spec": {
+        "serviceAccountName": "hmt-edge-runtime",
+        "automountServiceAccountToken": false,
+        "hostNetwork": false,
+        "hostPID": false,
+        "hostIPC": false,
+        "nodeSelector": {
+          "kubernetes.io/os": "linux",
+          "kubernetes.io/arch": "arm64",
+          "hmt.terminal-state.systems/owner": "qualification-required"
+        },
+        "securityContext": {
+          "runAsNonRoot": true,
+          "runAsUser": 10001,
+          "runAsGroup": 10001,
+          "fsGroup": 10001,
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        },
+        "imagePullSecrets": [
+          {
+            "name": "hmt-edge-registry-read"
+          }
+        ],
+        "terminationGracePeriodSeconds": 30,
+        "containers": [
+          {
+            "name": "supervisor",
+            "image": "{{QUALIFIED_IMAGE_DIGEST_REQUIRED}}",
+            "imagePullPolicy": "IfNotPresent",
+            "command": [
+              "hmt-edge-robot"
+            ],
+            "args": [
+              "serve",
+              "--database",
+              "/data/cell.db",
+              "--policy",
+              "/etc/hmt/runtime-policy.json"
+            ],
+            "env": [
+              {
+                "name": "HMT_API_TOKEN",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "name": "hmt-edge-runtime",
+                    "key": "api_token"
+                  }
+                }
+              },
+              {
+                "name": "HMT_OPERATOR_TOKEN",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "name": "hmt-edge-runtime",
+                    "key": "operator_token"
+                  }
+                }
+              },
+              {
+                "name": "TMPDIR",
+                "value": "/run/hmt-scratch"
+              }
+            ],
+            "securityContext": {
+              "allowPrivilegeEscalation": false,
+              "privileged": false,
+              "readOnlyRootFilesystem": true,
+              "capabilities": {
+                "drop": [
+                  "ALL"
+                ]
+              }
+            },
+            "resources": {
+              "requests": {
+                "cpu": "500m",
+                "memory": "512Mi"
+              },
+              "limits": {
+                "cpu": "2000m",
+                "memory": "2048Mi"
+              }
+            },
+            "startupProbe": {
+              "exec": {
+                "command": [
+                  "python",
+                  "-c",
+                  "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=2).close()"
+                ]
+              },
+              "timeoutSeconds": 3,
+              "periodSeconds": 10,
+              "failureThreshold": 12
+            },
+            "livenessProbe": {
+              "exec": {
+                "command": [
+                  "python",
+                  "-c",
+                  "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=2).close()"
+                ]
+              },
+              "timeoutSeconds": 3,
+              "periodSeconds": 10,
+              "failureThreshold": 3
+            },
+            "readinessProbe": {
+              "exec": {
+                "command": [
+                  "python",
+                  "-c",
+                  "raise SystemExit(1)"
+                ]
+              },
+              "timeoutSeconds": 1,
+              "periodSeconds": 10
+            },
+            "volumeMounts": [
+              {
+                "name": "ledger",
+                "mountPath": "/data"
+              },
+              {
+                "name": "policy",
+                "mountPath": "/etc/hmt",
+                "readOnly": true
+              },
+              {
+                "name": "scratch",
+                "mountPath": "/run/hmt-scratch"
+              }
+            ]
+          }
+        ],
+        "volumes": [
+          {
+            "name": "ledger",
+            "persistentVolumeClaim": {
+              "claimName": "hmt-edge-ledger"
+            }
+          },
+          {
+            "name": "policy",
+            "configMap": {
+              "name": "hmt-edge-runtime-policy"
+            }
+          },
+          {
+            "name": "scratch",
+            "emptyDir": {
+              "sizeLimit": "64Mi"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

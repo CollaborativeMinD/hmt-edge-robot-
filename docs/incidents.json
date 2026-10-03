@@ -182,5 +182,29 @@
     "remediation": "Handle both parse failures and atomically replace the prior assessment with FAIL and explicit authority HOLDs",
     "validation_test": "tests/test_policy_promotion.py::test_malformed_source_replaces_prior_pass_receipt",
     "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CD3-27",
+    "observed_state": "Initial Pydantic model construction rejected lookahead hash pattern; initial JSON receipt rejected a strict tuple",
+    "causal_evidence": "Locked Pydantic regex engine rejects look-around; model-before validation passes Python list input to strict tuple. Corrected hash schema uses a nonzero character class and exact length; receipt uses an explicitly bounded JSON list",
+    "remediation": "Use compatible schema-expressible nonzero hash bounds and JSON-native receipt representation; freeze outer model, hash and verify every receipt field against fresh assessment",
+    "validation_test": "tests/test_deployment_contracts.py::test_boundary_and_zero_hash_cannot_be_promoted; tests/test_deployment_receipts.py::test_design_receipt_replay_preserves_every_execution_hold",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CD3-28",
+    "observed_state": "Structural dictionary equality conflates false/0 and true/1",
+    "causal_evidence": "Python dictionary equality accepts boolean/numeric substitutions at replica and suspend fields; canonical JSON compares distinct typed tokens. Rehashed mutation cases exercise both representations",
+    "remediation": "Compare canonical JSON for exact manifest grammar; reject coercion at plan boundary and replace stale failure receipts without echoing invalid credential input",
+    "validation_test": "tests/test_deployment_manifests.py::test_manifest_cannot_widen_runtime_authority; tests/test_deployment_manifests.py::test_manifest_cannot_widen_reconciliation_storage_or_network",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CD3-29",
+    "observed_state": "Cluster-facing readiness, image, owner fencing and target bindings remain unavailable",
+    "causal_evidence": "Inspected API health returns alive/SIL only, CLI binds loopback and ledger is single-writer SQLite; no image, cluster access, node/storage inventory or protected main branch is qualified by software CI",
+    "remediation": "Dormant templates, explicit readiness failure, source-bound design receipt and eleven reason-coded execution HOLDs; collect actual evidence in later phases",
+    "validation_test": "tests/test_deployment_receipts.py::test_design_receipt_replay_preserves_every_execution_hold",
+    "external_boundary": true
   }
 ]

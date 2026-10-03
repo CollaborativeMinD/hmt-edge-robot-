@@ -1,0 +1,22 @@
+{
+  "apiVersion": "v1",
+  "kind": "PersistentVolumeClaim",
+  "metadata": {
+    "name": "hmt-edge-ledger",
+    "namespace": "hmt-edge-robot-sil",
+    "annotations": {
+      "kustomize.toolkit.fluxcd.io/prune": "disabled"
+    }
+  },
+  "spec": {
+    "accessModes": [
+      "ReadWriteOnce"
+    ],
+    "storageClassName": "hmt-edge-unqualified",
+    "resources": {
+      "requests": {
+        "storage": "8Gi"
+      }
+    }
+  }
+}

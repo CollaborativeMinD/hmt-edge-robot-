@@ -1122,6 +1122,81 @@
       ],
       "gate": "G-ARCH-001",
       "scope": "system software validation"
+    },
+    {
+      "id": "REQ-CD3-01",
+      "kind": "functional",
+      "acceptance": "Bind reviewed baseline, complete runtime source set, SIL plan and source-confined inputs; reject coercion and wider deployment authority",
+      "source": [
+        "tools/deployment_contracts.py",
+        "tools/deployment_io.py",
+        "tools/deployment_admission.py",
+        "policy/deployment.json",
+        "policy/deployment_admission.json"
+      ],
+      "tests": [
+        "tests/test_deployment_contracts.py::test_deployment_plan_rejects_authority_and_coercion",
+        "tests/test_deployment_binding.py::test_catalog_requires_complete_confined_bindings",
+        "tests/test_deployment_binding.py::test_release_binding_denies_input_drift",
+        "tests/test_deployment_contracts.py::test_candidate_cannot_invent_build_or_target_evidence"
+      ],
+      "gate": "G-CD-CONTRACT-017",
+      "scope": "deployment design only"
+    },
+    {
+      "id": "REQ-CD3-02",
+      "kind": "functional",
+      "acceptance": "Validate exact dormant K3s/Flux manifest grammar; reject active replicas, public access, credentials, privilege widening, storage destruction and readiness bypass even after rehash",
+      "source": [
+        "tools/deployment_workload.py",
+        "tools/deployment_manifests.py",
+        "tools/deployment_flux.py",
+        "tools/deployment_admission.py",
+        "deploy/stage3/workload/workload.template.json",
+        "deploy/stage3/flux/reconcile.template.json"
+      ],
+      "tests": [
+        "tests/test_deployment_manifests.py::test_manifest_cannot_widen_runtime_authority",
+        "tests/test_deployment_manifests.py::test_manifest_cannot_widen_reconciliation_storage_or_network",
+        "tests/test_deployment_binding.py::test_release_rejects_stale_baseline_policy_and_cloud"
+      ],
+      "gate": "G-CD-CONTRACT-017",
+      "scope": "deployment design only"
+    },
+    {
+      "id": "REQ-CD3-03",
+      "kind": "functional",
+      "acceptance": "Emit deterministic source/byte-bound design receipts; fresh verification rejects stale or forged input; every execution gate stays HOLD and evidence persistence failure blocks acceptance",
+      "source": [
+        "tools/deployment_receipts.py",
+        "tools/deployment_gate.py",
+        "tools/deployment_admission.py",
+        "policy/release_candidate.json"
+      ],
+      "tests": [
+        "tests/test_deployment_receipts.py::test_design_receipt_replay_preserves_every_execution_hold",
+        "tests/test_deployment_receipts.py::test_receipt_forgery_and_stale_inputs_are_denied",
+        "tests/test_deployment_receipts.py::test_evidence_failure_blocks_completion"
+      ],
+      "gate": "G-CD-CONTRACT-017",
+      "scope": "deployment design only"
+    },
+    {
+      "id": "REQ-CD3-04",
+      "kind": "nonfunctional",
+      "acceptance": "Repeat adversarial release admission campaign with >=90 percent branch-aware coverage; malformed inputs replace stale PASS with FAIL/HOLD and invalid credentials are not echoed",
+      "source": [
+        "tools/deployment_campaign.py",
+        "tools/deployment_gate.py",
+        "tools/deployment_io.py"
+      ],
+      "tests": [
+        "tests/test_deployment_rejections.py::test_rejection_replaces_stale_pass_receipt",
+        "tests/test_deployment_rejections.py::test_rejection_does_not_echo_invalid_credential_values",
+        "tests/test_deployment_contracts.py::test_deployment_resource_budgets_are_strict_and_ordered"
+      ],
+      "gate": "G-CD-NEGATIVE-018",
+      "scope": "deployment design only"
     }
   ]
 }

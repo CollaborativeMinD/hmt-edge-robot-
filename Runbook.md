@@ -194,7 +194,7 @@ CI PASS admits the software toolchain only. Candidate tools and Pi/K3s deploymen
 Follow `docs/ci_phase2.md`. G-POLICY-014 produces a measured HOLD register;
 G-PROFILE-015 checks root documents and evidence byte binding; G-QUALIFY-016 reruns
 both tool regressions. Inspect `evidence/ci/phase2/current` on failure. Stop on
-source-pin drift. Full policies/tools, Docker builds, and deployment remain HOLD.
+source-pin drift. Full tool engines, Docker builds, and deployment remain HOLD.
 
 ## Promoted policy continuation
 
@@ -202,3 +202,12 @@ Follow `docs/policy_promotion.md`. Check the human approval overlay and exact so
 then run cumulative validation. Policy promotion requires an empty module HOLD register.
 A changed source set or ceiling violation blocks CI. Keep full tool engines, Docker/CD
 and hardware gates held until their independently reviewed phases.
+
+## 11. Validate the dormant deployment design
+
+Follow `docs/cd/stage3.md`. Run `uv run --no-sync python tools/deployment_gate.py`
+and `uv run --no-sync python tools/deployment_campaign.py`, then cumulative validation.
+Inspect `evidence/cd/stage3/release_receipt.json`, `campaign.json`, `coverage.json`
+and current ledger rows G-CD-CONTRACT-017/G-CD-NEGATIVE-018. Contract PASS coexists
+with release HOLD; no stage-3 receipt grants execution. Stop on alerts or input drift.
+Do not apply templates, replace the unbuilt image marker or unsuspend Flux here.

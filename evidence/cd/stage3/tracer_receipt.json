@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "first_corrected_tracer_cases": 76,
+  "final_stage3_cases": 78,
+  "failure_lineage": [
+    "RRCA-CD3-27",
+    "RRCA-CD3-28",
+    "RRCA-CD3-29"
+  ],
+  "initial_log": "evidence/cd/stage3/initial_tracer.log",
+  "compatibility_reproducer": "evidence/cd/stage3/schema_compatibility_reproducer.log",
+  "final_log": "evidence/cd/stage3/negative_tests.log",
+  "release_decision": "HOLD",
+  "paid_provider_calls": 0
+}

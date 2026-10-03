@@ -20,7 +20,7 @@
     "tools/policy_promotion.py": "c78413b55b1aae0ccbc2c9de656241b7c930347134e06f0bcd99bb3a5917acc0",
     "tools/profile_witnesses.py": "e7cf1c74688af43635f0f66cfac334f0d95e0f4a86716aa4f39df689aa353e95",
     "tools/tool_qualification.py": "459ad6c183c00aa0a1676669222ab7fec8b0eb36e74fa4a4265dcfff4ddf41bb",
-    "tools/validate.py": "bba281869b29513bc5db2305f296888ced14c451e979b9d917fd36507527bbfc",
+    "tools/validate.py": "e3da99ef5d7eda070f646c2cdda55cdc1c7e61613ea5fc18f2468c405f684073",
     "tools/validate_base.py": "5370d03a4dcfe9bb6997c3d57a93bf751762f682ceeb46b0e7a26011dda54e38",
     "tools/validate_execution.py": "bf41ff932d7135981c7253695b21744bbf788cd61eedb12eb063d9ae117397d1",
     "tools/validate_incidents.py": "00b620a6a4426a0c83db52b96c00c12c4ed6d0b61999c914d4274cb847533aa7",
@@ -28,7 +28,8 @@
     "tools/validate_regression.py": "9c3be2c874b0c9f1c9417cf684d9e366c61f3318d514723f8117369f538c7df6",
     "tools/validate_report.py": "6075e90956abf851a91d36379c50954860f5cb21aba1794e713fb10793bffe06",
     "tools/validate_structure.py": "dee4faa972382d188aae4c736f586754e4c1329c45deb506a811bee1c6d5b47c",
-    "uv.lock": "b1ce60e49dc526e19077ddc69fb91fc142f551e123c746a4ffbb88433d98998b"
+    "uv.lock": "b1ce60e49dc526e19077ddc69fb91fc142f551e123c746a4ffbb88433d98998b",
+    "policy/deployment_admission.json": "c34c5ebd5c56fe7d1e70d388bb1598b96eba76d52472e19e0e708e97a7fe963c"
   },
   "tools": {
     "pyrefly": "1.3.2",
@@ -265,6 +266,15 @@
     "policy/references/HMT_Model_Roles_and_Convergence_Policy_v1.1.0.json": "f5cd552c667fd9acf893215b493e1b88c8bba2f8cbd984d0769c1c8e854f69bc",
     "policy/references/tooling_normalization.xml": "2680756ab5bbe5ce5dbb89338aa5bdc6be42745ade289949edbcf019f8526202",
     "policy/references/rrca_verification_and_validation_v4.md": "9e40b6b088a8196f959fba170403d0b6da8340a27ab1fe04a5843004e234076d",
-    "policy/references/system_prompt_baseline.xml": "77e1ccb6ec1710fbe63a3c361cd10ae3b26aa8c8595164a14208715ecf43ba42"
+    "policy/references/system_prompt_baseline.xml": "77e1ccb6ec1710fbe63a3c361cd10ae3b26aa8c8595164a14208715ecf43ba42",
+    "tools/deployment_flux.py": "6d4eae3901cb7a6a81ed394026f6743db5396c6fb5c659979c1c92d30f16f29d",
+    "tools/deployment_workload.py": "b6dc146a643eafccc345e57d2645fdad184c51085f4e66de9ed6627233d0d5c2",
+    "tools/deployment_manifests.py": "d4e9ea8aabee9f65ca0c1be60f9419ce004d1b5e03229399546d9d6b4c9d4095",
+    "tools/deployment_contracts.py": "1db08ceccfa95e1389940527515dcdbefa53611f5edde78644d9581370c74b8b",
+    "tools/deployment_receipts.py": "9b10723f87adffbda12c3c7c05646d499fa3b00c3498f66c041289e622c6e7f6",
+    "tools/deployment_gate.py": "da9f7300d9633ec1662adc0841b919a8d2cf41395ff93350954b7a3d7c8dacde",
+    "tools/deployment_io.py": "73d523ea6d49107c98cf873e5de39662fcecd319626553e082dd2285a9efdfa0",
+    "tools/deployment_campaign.py": "f1ee938fbea22bd8e2e351f77521b6528186059ad46bef188c9a7f909c4ffe4f",
+    "tools/deployment_admission.py": "43bd7e40bf900cb5848e55a7965287c370d3f70f74164c1940af5fa0387eed30"
   }
 }

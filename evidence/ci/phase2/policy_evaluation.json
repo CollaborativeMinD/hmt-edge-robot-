@@ -753,6 +753,13 @@
       "function_status": "PASS"
     },
     {
+      "path": "tests/deployment_support.py",
+      "module_loc": 30,
+      "max_function_physical_loc": 8,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
       "path": "tests/test_api_cli.py",
       "module_loc": 25,
       "max_function_physical_loc": 13,
@@ -907,6 +914,41 @@
       "function_status": "PASS"
     },
     {
+      "path": "tests/test_deployment_binding.py",
+      "module_loc": 55,
+      "max_function_physical_loc": 19,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_deployment_contracts.py",
+      "module_loc": 48,
+      "max_function_physical_loc": 11,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_deployment_manifests.py",
+      "module_loc": 43,
+      "max_function_physical_loc": 18,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_deployment_receipts.py",
+      "module_loc": 59,
+      "max_function_physical_loc": 28,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tests/test_deployment_rejections.py",
+      "module_loc": 34,
+      "max_function_physical_loc": 14,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
       "path": "tests/test_ingress_replay.py",
       "module_loc": 65,
       "max_function_physical_loc": 33,
@@ -1047,6 +1089,69 @@
       "function_status": "PASS"
     },
     {
+      "path": "tools/deployment_admission.py",
+      "module_loc": 51,
+      "max_function_physical_loc": 40,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/deployment_campaign.py",
+      "module_loc": 34,
+      "max_function_physical_loc": 25,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/deployment_contracts.py",
+      "module_loc": 80,
+      "max_function_physical_loc": 6,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/deployment_flux.py",
+      "module_loc": 35,
+      "max_function_physical_loc": 31,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/deployment_gate.py",
+      "module_loc": 25,
+      "max_function_physical_loc": 16,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/deployment_io.py",
+      "module_loc": 33,
+      "max_function_physical_loc": 9,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/deployment_manifests.py",
+      "module_loc": 30,
+      "max_function_physical_loc": 24,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/deployment_receipts.py",
+      "module_loc": 48,
+      "max_function_physical_loc": 8,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
+      "path": "tools/deployment_workload.py",
+      "module_loc": 45,
+      "max_function_physical_loc": 39,
+      "module_status": "PASS",
+      "function_status": "PASS"
+    },
+    {
       "path": "tools/live_llm_campaign.py",
       "module_loc": 35,
       "max_function_physical_loc": 25,
@@ -1111,8 +1216,8 @@
     },
     {
       "path": "tools/validate.py",
-      "module_loc": 63,
-      "max_function_physical_loc": 42,
+      "module_loc": 65,
+      "max_function_physical_loc": 44,
       "module_status": "PASS",
       "function_status": "PASS"
     },

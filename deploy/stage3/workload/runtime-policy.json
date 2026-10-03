@@ -1,0 +1,12 @@
+{
+  "apiVersion": "v1",
+  "kind": "ConfigMap",
+  "metadata": {
+    "name": "hmt-edge-runtime-policy",
+    "namespace": "hmt-edge-robot-sil"
+  },
+  "immutable": true,
+  "data": {
+    "runtime-policy.json": "{\"allow_cloud\":false,\"braking_distance_m\":0.05,\"driver_timeout_sec\":0.5,\"full_speed_separation_m\":2.0,\"heartbeat_timeout_sec\":1.0,\"human_approach_mps\":1.6,\"max_command_age_sec\":2.0,\"max_history_records\":256,\"max_observation_age_sec\":0.5,\"max_queue_size\":32,\"max_speed_mps\":0.25,\"max_temp_c\":85.0,\"min_separation_m\":0.5,\"nominal_voltage_v\":3.7,\"policy_epoch\":1,\"policy_id\":\"edge-v1\",\"reaction_time_sec\":0.1,\"recovery_hysteresis_v\":0.05,\"safe_voltage_v\":3.4,\"session_timeout_sec\":300.0,\"stop_time_sec\":0.2,\"uncertainty_m\":0.05,\"verification_tolerance_mm\":0.1,\"workspace_max_mm\":[100.0,100.0,100.0],\"workspace_min_mm\":[-100.0,-100.0,0.0]}"
+  }
+}

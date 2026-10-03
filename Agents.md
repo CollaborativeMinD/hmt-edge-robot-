@@ -64,3 +64,10 @@ the original package and source set for system-software validation. The sole his
 archive reference is explicitly disregarded by the owner. Enforce the promoted ceilings
 on every active Python module and rerun all gates. Runtime activation of external policy
 roles, full tool engines, Docker builds, deployment and hardware verification remain HOLD.
+
+Stage 3 is deployment design only. Follow `docs/cd/stage3.md`; keep all execution
+boundaries held. Preserve dormant replicas, suspended reconciliation, private API,
+external secret references and the ledger. Reject rehashed manifest authority drift,
+stale receipts or invented image/target evidence. Rerun both new CD gates and every
+prior gate. Never apply resources, install Flux, build images or provision credentials
+from this stage's contract PASS. Target readiness and single-owner proof remain HOLD.
