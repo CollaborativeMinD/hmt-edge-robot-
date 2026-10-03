@@ -1,0 +1,26 @@
+Archive:  /mnt/data/hmt_edge_robot_version_lineage_v1_0_0/02_lambda_revalidation/factory_orchestrator_lambda_revalidation_pack.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+      855  2026-03-28 00:15   factory_orchestrator_lambda_revalidation/README.md
+        0  2026-03-28 00:15   factory_orchestrator_lambda_revalidation/src/__init__.py
+     3141  2026-03-28 00:15   factory_orchestrator_lambda_revalidation/src/contracts.py
+     8478  2026-03-28 00:15   factory_orchestrator_lambda_revalidation/src/factory_orchestrator_lambda.py
+     1473  2026-03-28 00:15   factory_orchestrator_lambda_revalidation/src/sil_campaign.py
+        0  2026-03-28 00:15   factory_orchestrator_lambda_revalidation/tests/__init__.py
+     2426  2026-03-28 00:16   factory_orchestrator_lambda_revalidation/tests/test_factory_orchestrator_lambda.py
+     2697  2026-03-28 00:16   factory_orchestrator_lambda_revalidation/tests/test_factory_orchestrator_precision.py
+     1065  2026-03-28 00:15   factory_orchestrator_lambda_revalidation/docs/RTM.md
+     3765  2026-03-28 00:15   factory_orchestrator_lambda_revalidation/docs/ICD_FactoryOrchestrator.Cell.MotionAssessment.md
+      808  2026-03-28 00:15   factory_orchestrator_lambda_revalidation/models/factory_orchestrator_lambda.sysml
+     4031  2026-03-28 00:17   factory_orchestrator_lambda_revalidation/runs/FO-001/notebooks/iteration_001.ipynb
+    10140  2026-03-28 00:17   factory_orchestrator_lambda_revalidation/runs/FO-001/notebooks/iteration_001.executed.ipynb
+     1425  2026-03-28 00:15   factory_orchestrator_lambda_revalidation/runs/FO-001/artifacts/mission_packet.json
+      100  2026-03-28 00:18   factory_orchestrator_lambda_revalidation/runs/FO-001/evidence/pytest_output.txt
+       20  2026-03-28 00:18   factory_orchestrator_lambda_revalidation/runs/FO-001/evidence/results_fast.json
+       20  2026-03-28 00:18   factory_orchestrator_lambda_revalidation/runs/FO-001/evidence/results_cert.json
+       20  2026-03-28 00:18   factory_orchestrator_lambda_revalidation/runs/FO-001/evidence/results_holdout.json
+       20  2026-03-28 00:18   factory_orchestrator_lambda_revalidation/runs/FO-001/evidence/results_regression.json
+     1008  2026-03-28 00:18   factory_orchestrator_lambda_revalidation/runs/FO-001/evidence/campaign_metrics.json
+      539  2026-03-28 00:17   factory_orchestrator_lambda_revalidation/runs/FO-001/manifests/artifact_manifest.json
+---------                     -------
+    42031                     21 files

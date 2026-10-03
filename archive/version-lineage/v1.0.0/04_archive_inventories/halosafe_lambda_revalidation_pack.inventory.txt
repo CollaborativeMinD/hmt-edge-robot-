@@ -1,0 +1,38 @@
+Archive:  /mnt/data/hmt_edge_robot_version_lineage_v1_0_0/02_lambda_revalidation/halosafe_lambda_revalidation_pack.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2026-03-28 00:00   halosafe_lambda_revalidation/
+        0  2026-03-27 23:53   halosafe_lambda_revalidation/src/
+     7740  2026-03-27 23:53   halosafe_lambda_revalidation/src/halosafe_lambda.py
+     1196  2026-03-27 23:53   halosafe_lambda_revalidation/src/contracts.py
+        0  2026-03-27 23:53   halosafe_lambda_revalidation/src/__pycache__/
+    13495  2026-03-27 23:53   halosafe_lambda_revalidation/src/__pycache__/halosafe_lambda.cpython-313.pyc
+     2228  2026-03-27 23:53   halosafe_lambda_revalidation/src/__pycache__/contracts.cpython-313.pyc
+        0  2026-03-27 23:53   halosafe_lambda_revalidation/docs/
+     1312  2026-03-27 23:53   halosafe_lambda_revalidation/docs/RTM.md
+     3842  2026-03-27 23:53   halosafe_lambda_revalidation/docs/ICD_HaloSafe.HRI.ProximityAssessment.md
+        0  2026-03-27 23:53   halosafe_lambda_revalidation/models/
+      942  2026-03-27 23:53   halosafe_lambda_revalidation/models/halosafe_lambda.sysml
+        0  2026-03-27 23:53   halosafe_lambda_revalidation/tests/
+     2788  2026-03-27 23:53   halosafe_lambda_revalidation/tests/test_halosafe_lambda.py
+        0  2026-03-27 23:53   halosafe_lambda_revalidation/tests/__pycache__/
+     6282  2026-03-27 23:53   halosafe_lambda_revalidation/tests/__pycache__/test_halosafe_lambda.cpython-313-pytest-9.0.2.pyc
+        0  2026-03-27 23:53   halosafe_lambda_revalidation/runs/
+        0  2026-03-27 23:53   halosafe_lambda_revalidation/runs/HS-001/
+        0  2026-03-27 23:53   halosafe_lambda_revalidation/runs/HS-001/notebooks/
+    16583  2026-03-27 23:53   halosafe_lambda_revalidation/runs/HS-001/notebooks/iteration_001.ipynb
+    50925  2026-03-27 23:53   halosafe_lambda_revalidation/runs/HS-001/notebooks/iteration_001.executed.ipynb
+        0  2026-03-27 23:53   halosafe_lambda_revalidation/runs/HS-001/artifacts/
+        0  2026-03-27 23:54   halosafe_lambda_revalidation/runs/HS-001/evidence/
+      152  2026-03-27 23:54   halosafe_lambda_revalidation/runs/HS-001/evidence/results_fast.json
+      154  2026-03-27 23:54   halosafe_lambda_revalidation/runs/HS-001/evidence/results_cert.json
+      183  2026-03-27 23:54   halosafe_lambda_revalidation/runs/HS-001/evidence/results_holdout.json
+      154  2026-03-27 23:54   halosafe_lambda_revalidation/runs/HS-001/evidence/results_regression.json
+      126  2026-03-27 23:54   halosafe_lambda_revalidation/runs/HS-001/evidence/execution_host.json
+        0  2026-03-27 23:54   halosafe_lambda_revalidation/runs/HS-001/manifests/
+     2959  2026-03-27 23:54   halosafe_lambda_revalidation/runs/HS-001/manifests/artifact_manifest.json
+        0  2026-03-27 23:53   halosafe_lambda_revalidation/runs/HS-001/logs/
+        0  2026-03-27 23:53   halosafe_lambda_revalidation/runs/HS-001/models/
+     2596  2026-03-28 00:00   halosafe_lambda_revalidation/README.md
+---------                     -------
+   113657                     33 files

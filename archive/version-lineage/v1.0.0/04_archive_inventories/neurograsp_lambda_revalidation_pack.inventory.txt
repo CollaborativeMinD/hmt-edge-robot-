@@ -1,0 +1,46 @@
+Archive:  /mnt/data/hmt_edge_robot_version_lineage_v1_0_0/02_lambda_revalidation/neurograsp_lambda_revalidation_pack.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2026-03-27 23:38   neurograsp_lambda_revalidation/
+        0  2026-03-27 23:38   neurograsp_lambda_revalidation/src/
+     2910  2026-03-27 23:38   neurograsp_lambda_revalidation/src/contracts.py
+     5960  2026-03-27 23:38   neurograsp_lambda_revalidation/src/neuro_grasp_lambda.py
+        0  2026-03-27 23:38   neurograsp_lambda_revalidation/src/__pycache__/
+     5680  2026-03-27 23:38   neurograsp_lambda_revalidation/src/__pycache__/contracts.cpython-313.pyc
+    10896  2026-03-27 23:38   neurograsp_lambda_revalidation/src/__pycache__/neuro_grasp_lambda.cpython-313.pyc
+        0  2026-03-27 23:38   neurograsp_lambda_revalidation/tests/
+      105  2026-03-27 23:38   neurograsp_lambda_revalidation/tests/conftest.py
+     2137  2026-03-27 23:38   neurograsp_lambda_revalidation/tests/test_neuro_grasp_lambda.py
+        0  2026-03-27 23:38   neurograsp_lambda_revalidation/tests/__pycache__/
+      572  2026-03-27 23:38   neurograsp_lambda_revalidation/tests/__pycache__/conftest.cpython-313-pytest-9.0.2.pyc
+    15656  2026-03-27 23:38   neurograsp_lambda_revalidation/tests/__pycache__/test_neuro_grasp_lambda.cpython-313-pytest-9.0.2.pyc
+        0  2026-03-27 23:38   neurograsp_lambda_revalidation/docs/
+     1387  2026-03-27 23:38   neurograsp_lambda_revalidation/docs/RTM.md
+     4242  2026-03-27 23:38   neurograsp_lambda_revalidation/docs/ICD_NeuroGrasp.VisionProcessor.GraspObservation.md
+        0  2026-03-27 23:38   neurograsp_lambda_revalidation/models/
+      668  2026-03-27 23:38   neurograsp_lambda_revalidation/models/neuro_grasp_lambda.sysml
+        0  2026-03-27 23:38   neurograsp_lambda_revalidation/runs/
+        0  2026-03-27 23:38   neurograsp_lambda_revalidation/runs/NG-001/
+        0  2026-03-27 23:39   neurograsp_lambda_revalidation/runs/NG-001/notebooks/
+    11025  2026-03-27 23:38   neurograsp_lambda_revalidation/runs/NG-001/notebooks/iteration_001.ipynb
+    24521  2026-03-27 23:39   neurograsp_lambda_revalidation/runs/NG-001/notebooks/iteration_001.executed.ipynb
+        0  2026-03-27 23:38   neurograsp_lambda_revalidation/runs/NG-001/artifacts/
+     1252  2026-03-27 23:38   neurograsp_lambda_revalidation/runs/NG-001/artifacts/mission_packet.json
+        0  2026-03-27 23:39   neurograsp_lambda_revalidation/runs/NG-001/evidence/
+      207  2026-03-27 23:39   neurograsp_lambda_revalidation/runs/NG-001/evidence/results_fast.json
+      206  2026-03-27 23:39   neurograsp_lambda_revalidation/runs/NG-001/evidence/results_cert.json
+      208  2026-03-27 23:39   neurograsp_lambda_revalidation/runs/NG-001/evidence/results_holdout.json
+      213  2026-03-27 23:39   neurograsp_lambda_revalidation/runs/NG-001/evidence/results_regression.json
+        0  2026-03-27 23:39   neurograsp_lambda_revalidation/runs/NG-001/manifests/
+     1167  2026-03-27 23:39   neurograsp_lambda_revalidation/runs/NG-001/manifests/artifact_manifest.json
+        0  2026-03-27 23:38   neurograsp_lambda_revalidation/runs/NG-001/logs/
+      705  2026-03-27 23:38   neurograsp_lambda_revalidation/README.md
+        0  2026-03-27 23:38   neurograsp_lambda_revalidation/.pytest_cache/
+      302  2026-03-27 23:38   neurograsp_lambda_revalidation/.pytest_cache/README.md
+       37  2026-03-27 23:38   neurograsp_lambda_revalidation/.pytest_cache/.gitignore
+      191  2026-03-27 23:38   neurograsp_lambda_revalidation/.pytest_cache/CACHEDIR.TAG
+        0  2026-03-27 23:38   neurograsp_lambda_revalidation/.pytest_cache/v/
+        0  2026-03-27 23:38   neurograsp_lambda_revalidation/.pytest_cache/v/cache/
+      482  2026-03-27 23:39   neurograsp_lambda_revalidation/.pytest_cache/v/cache/nodeids
+---------                     -------
+    90729                     41 files

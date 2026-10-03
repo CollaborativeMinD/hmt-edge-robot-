@@ -1,0 +1,19 @@
+Archive:  /mnt/data/hmt_edge_robot_version_lineage_v1_0_0/01_v1_prototypes/HaloSafe-main.zip
+473a49c0e367c22fbd9b9cc3311573a5dd4c1059
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2026-02-18 07:02   HaloSafe-main/
+     4026  2026-02-18 07:02   HaloSafe-main/AI_Assisted_Engineering_Protocol_README.md
+     4358  2026-02-18 07:02   HaloSafe-main/Deterministic AI Architecture.md
+     1071  2026-02-18 07:02   HaloSafe-main/LICENSE
+     3981  2026-02-18 07:02   HaloSafe-main/README.md
+    32843  2026-02-18 07:02   HaloSafe-main/SAFE_State.png
+    35021  2026-02-18 07:02   HaloSafe-main/STOP_State.png
+    34088  2026-02-18 07:02   HaloSafe-main/WARN_State.png
+    31411  2026-02-18 07:02   HaloSafe-main/safe_state.png
+    11695  2026-02-18 07:02   HaloSafe-main/safety_controller.py
+    31621  2026-02-18 07:02   HaloSafe-main/stop_state.png
+     6117  2026-02-18 07:02   HaloSafe-main/test_safety_controller.py
+    31857  2026-02-18 07:02   HaloSafe-main/warn_state.png
+---------                     -------
+   228089                     13 files

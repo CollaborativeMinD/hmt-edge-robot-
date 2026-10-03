@@ -1,0 +1,59 @@
+{
+  "repository": "CollaborativeMinD/hmt-edge-robot-",
+  "repository_visibility": "private",
+  "default_branch": "main",
+  "current_main_commit": "57b2d8e313955ef598c7b7bf90d13ced6bb54f37",
+  "current_main_tree": "2624da6ee236811069326e5a35743a28067a2fa2",
+  "merge_message": "Merge pull request #1 from CollaborativeMinD/build/architecture-bound-v1 — Compose the edge robotics cell with resident HMT and verified analytics",
+  "merge_timestamp_utc": "2026-10-03T01:14:08Z",
+  "main_commit_signature_verified": true,
+  "integrated_subsystems": [
+    "AccessManager",
+    "HaloSafe",
+    "Waialua Edge Node",
+    "NeuroGrasp",
+    "FactoryOrchestrator"
+  ],
+  "shared_integrations": [
+    "FastAPI typed ingress",
+    "Pydantic v2 contracts",
+    "SQLite append-only evidence hash chain",
+    "Polars analytics",
+    "DuckDB aggregation",
+    "atomic Parquet export",
+    "PGA geometry and calibration",
+    "classical ML health model",
+    "Resident HMT advisory layer"
+  ],
+  "validation_snapshot_on_main": {
+    "software_status": "PASS",
+    "external_deployment_status": "HOLD",
+    "test_cases": 78,
+    "percent_covered": 97.38780977896852,
+    "percent_statements_covered": 98.41004184100419,
+    "percent_branches_covered": 93.28859060402685
+  },
+  "coupled_sil_campaign": {
+    "status": "PASS",
+    "cycles": 32,
+    "events": 256,
+    "parquet_records": 256,
+    "p95_cycle_ms": 0.5250059984973632,
+    "median_cycle_ms": 0.39781299710739404,
+    "peak_host_rss_mib": 287.5546875,
+    "scope": "Observed Linux host campaign; not worst-case execution time or target firmware proof"
+  },
+  "baseline_tracer_lineage": {
+    "classification": "INHERITED_BASELINE_TRACER_REPRODUCTION",
+    "baseline_safety_gate": "FAIL",
+    "finding": "Rejected driver commands still reach IDLE with zero faults and no stop",
+    "replacement_regression": "tests/test_orchestration_ledger.py::test_driver_ack_and_feedback_regressions"
+  },
+  "github_ci_receipt_present_on_main": {
+    "source_commit": "d0706a38b4f0a5dbd23d0837601721d45f99b999",
+    "push_conclusion": "success",
+    "pull_request_conclusion": "success",
+    "note": "This CI receipt binds its own source_commit. It is preserved separately from the later signed merge commit above."
+  },
+  "archive_rule": "The current integrated source tree is not recursively embedded in this version-lineage archive. The current repo/commit/tree identify that state; this archive preserves the predecessor artifacts byte-for-byte plus selected integrated binding documents and receipts."
+}
