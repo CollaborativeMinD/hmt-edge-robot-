@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "backend": "github_native_private_sigstore",
+  "status": "HOLD",
+  "reason_code": "GITHUB_ATTESTATIONS_UNAVAILABLE_PRIVATE_USER_REPOSITORY",
+  "observed_run_id": 37151070400,
+  "observed_job_id": 111284908844,
+  "observed_error": "Feature not available for user-owned private repositories",
+  "authority_change": "NONE",
+  "repository_visibility_change": "NOT_AUTHORIZED",
+  "public_transparency_fallback": "NOT_ADMITTED",
+  "closure": "Qualify a supported private signing backend or an owner-selected supported repository arrangement; verify signed subject and source before promotion"
+}

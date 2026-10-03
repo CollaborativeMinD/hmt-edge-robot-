@@ -14,6 +14,21 @@
       "artifact_id": 11283792627,
       "run_url": "https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/runs/37150740303",
       "rrca": "RRCA-CD4-33"
+    },
+    {
+      "run_id": 37151070400,
+      "head_commit": "91b36aad7a7c0715c0d2bf230a20fcec141240b0",
+      "tested_merge_commit": "1f5cc4bf8f458ef5b36e65d5e79abd9b785fddcf",
+      "status": "FAIL",
+      "native_software": "PASS",
+      "image_build": "PASS",
+      "restricted_installed_container": "PASS",
+      "scanner_collection": "PASS",
+      "security_disposition": "PENDING_UNSIGNED_PREQUALIFICATION",
+      "signed_provenance": "HOLD_PRIVATE_USER_REPOSITORY_NOT_SUPPORTED",
+      "qualification": "HOLD",
+      "run_url": "https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/runs/37151070400",
+      "rrca": "RRCA-CD4-34"
     }
   ],
   "deployment": "HOLD",

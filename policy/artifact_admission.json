@@ -3,16 +3,18 @@
   "scope": "ARM64_ARTIFACT_QUALIFICATION_ONLY",
   "files": {
     ".dockerignore": "2de2621e318712804c80b77f825c9b3648b9e940d135fbb56ff3c82fe5642dc6",
-    ".github/workflows/artifact.yml": "1cc09088ed7d9fd044b65c5692f74e6744b21eec9c2beef1e650549087a37293",
+    ".github/workflows/artifact.yml": "5b6bb37924bf27efaf85c9eeeb2b322df1257ddbbcbcc72736cead9078389df5",
     "deploy/stage4/Dockerfile": "01155706f395b46dd545450a9b4c35f173f7f7a4b931edfa81d5392ffce0f4cb",
-    "docs/cd/stage4.md": "eebbf04ba98c1912de0f88f52144c68ae14ed1951dbf6534c4cbf0821ba36c7b",
+    "docs/cd/stage4.md": "01101a5fea9c5ee79b8ea4aa2ee2750dd8b58ed7c88e549fb23118e9b64cfad2",
     "tools/artifact_campaign.py": "ea5371ab938d9c031520d7a9f4418f83885b8b8b522bd7b9520c45882b2a1eab",
     "tools/artifact_contracts.py": "bd0ef7b5f0e260f47afbdce830286c00eb00ee4c1ca05d2c6275c78c0f1395a4",
     "tools/artifact_design.py": "450e2ed39d61b07adea115877f06d90357aeb92aff949f31df73b67fb6d4024f",
     "tools/artifact_evidence.py": "64efd4d9051105cb9a5fa34c95f70fa4af49e277658e8f9b62c8b5f274fa6ccf",
-    "tools/artifact_gate.py": "a4c6350221f3ea51e649a4987e445f769444c134b31b166c0ec9bd5380ff13ac",
+    "tools/artifact_gate.py": "cff7540836efc54a6fde8afce08b1a13fb736018dc7a7f2e198ed3f57353fa17",
     "tools/artifact_oci.py": "a6495d131a792f4d0f466ecd004f20f3fb31171d382f2f59d01e8f9267a0398a",
     "tools/artifact_probe.py": "c9ab473c58acf48c011528e4192298d530839eb9caa819f633c1a46caaf0c0a8",
-    "tools/artifact_verify.py": "201fbdd38b385a1a63cecc027e14bd1e1d062cdec225b65b0b0fb9b852a1004b"
+    "tools/artifact_verify.py": "201fbdd38b385a1a63cecc027e14bd1e1d062cdec225b65b0b0fb9b852a1004b",
+    "policy/artifact_signing.json": "1556b8dd596f674739cd1a04edef75e1530af5215e874e6d7563557e19ecaebd",
+    "tools/artifact_preflight.py": "7df9ad3a4c522ecaa4759b62bc3042d1f033e3c4205f823374b1678d60527c1d"
   }
 }

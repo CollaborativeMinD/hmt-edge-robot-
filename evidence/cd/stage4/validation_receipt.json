@@ -1,11 +1,12 @@
 {
   "software_status": "PASS",
-  "test_cases": 327,
+  "test_cases": 331,
   "runtime_coverage": 97.73851590106007,
-  "artifact_branch_coverage": 93.5,
-  "native_artifact_status": "PENDING_ACTIONS",
+  "artifact_branch_coverage": 93.80530973451327,
+  "native_artifact_status": "HOLD_SIGNING_BACKEND",
   "deployment": "HOLD",
   "hardware": "HOLD",
-  "signed_provenance": "PENDING_ACTIONS",
-  "requirements": 78
+  "signed_provenance": "HOLD_PRIVATE_USER_REPOSITORY_NOT_SUPPORTED",
+  "requirements": 78,
+  "software_receipt_note": "Previous cumulative execution passes; final disposition revision retest running in Actions and locally"
 }

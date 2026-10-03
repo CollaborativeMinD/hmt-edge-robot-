@@ -82,6 +82,16 @@ jobs:
           skopeo inspect "oci:$RUNNER_TEMP/hmt-scan:qualified" > evidence/cd/stage4/scan-input.json
           docker run --rm --mount "type=bind,src=$RUNNER_TEMP/hmt-scan,dst=/scan,readonly" --mount "type=bind,src=$PWD/evidence/cd/stage4,dst=/evidence" "$TRIVY_IMAGE" image --input /scan --format spdx-json --output /evidence/sbom.spdx.json --timeout 10m
           docker run --rm --mount "type=bind,src=$RUNNER_TEMP/hmt-scan,dst=/scan,readonly" --mount "type=bind,src=$PWD/evidence/cd/stage4,dst=/evidence" "$TRIVY_IMAGE" image --input /scan --scanners vuln,secret --list-all-pkgs --format json --output /evidence/vulnerabilities.json --timeout 10m
+          python3 - <<'PYSCAN'
+          import json, collections
+          data = json.load(open('evidence/cd/stage4/vulnerabilities.json'))
+          findings = [v for r in data.get('Results',[]) for v in (r.get('Vulnerabilities') or [])]
+          print(json.dumps({'severity_counts':dict(collections.Counter(v.get('Severity') for v in findings)), 'blocking_findings':[{k:v.get(k) for k in ('VulnerabilityID','PkgName','InstalledVersion','FixedVersion','Severity')} for v in findings if v.get('Severity') not in ('LOW','MEDIUM')]}))
+          PYSCAN
+      - name: Qualify image, scanner and installed software before signing
+        run: uv run --no-sync python tools/artifact_preflight.py "$GITHUB_SHA"
+      - name: Enforce private signing backend admission
+        run: uv run --no-sync python -c 'from pathlib import Path; import sys; sys.path.insert(0,"tools"); from artifact_gate import check_signing; check_signing(Path("."))'
       - uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a
         with:
           subject-path: evidence/cd/stage4/image.oci.tar

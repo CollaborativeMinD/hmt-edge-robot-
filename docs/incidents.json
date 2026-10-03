@@ -238,5 +238,13 @@
     "remediation": "Use skopeo preserve-digests conversion to a temporary OCI layout; bind scan Digest/platform and Trivy ImageID to original archive runtime/config before qualification; preserve rejected run artifact and rerun",
     "validation_test": "tests/test_artifact_gate.py::test_contradictory_evidence_replaces_stale_pass",
     "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CD4-34",
+    "observed_state": "GitHub refused signed attestation persistence after ARM64 build, restricted installed execution and scans completed",
+    "causal_evidence": "Actions run37151070400 job111284908844 returned Feature not available for user-owned private repositories from attestations#create; action token had documented id-token and attestations permissions",
+    "remediation": "Record provider entitlement HOLD and preserve private repository visibility; independently qualify unsigned image/scanner/software prerequisites while signed final artifact qualification stays held; no unsigned-to-signed promotion",
+    "validation_test": "tests/test_artifact_preflight.py::test_unsigned_prequalification_never_promotes_artifact",
+    "external_boundary": true
   }
 ]

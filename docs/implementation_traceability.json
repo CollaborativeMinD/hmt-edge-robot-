@@ -1799,7 +1799,8 @@
       "tools/artifact_oci.py",
       "tools/artifact_verify.py",
       "tools/artifact_evidence.py",
-      "tools/artifact_gate.py"
+      "tools/artifact_gate.py",
+      "tools/artifact_preflight.py"
     ],
     "contract_id": "policy/artifact_admission.json",
     "safety_constraint_id": [
@@ -1810,7 +1811,8 @@
     "test_id": [
       "tests/test_artifact_gate.py::test_artifact_qualification_is_replayable_and_source_bound",
       "tests/test_artifact_gate.py::test_signature_verification_failure_cannot_use_saved_json",
-      "tests/test_artifact_oci.py::test_unsafe_or_contradictory_archive_is_rejected"
+      "tests/test_artifact_oci.py::test_unsafe_or_contradictory_archive_is_rejected",
+      "tests/test_artifact_preflight.py::test_unsigned_prequalification_never_promotes_artifact"
     ],
     "analysis_id": "G-ARTIFACT-NEGATIVE-020",
     "evidence_id": "evidence/cd/stage4"

@@ -1241,12 +1241,14 @@
         "tools/artifact_oci.py",
         "tools/artifact_verify.py",
         "tools/artifact_evidence.py",
-        "tools/artifact_gate.py"
+        "tools/artifact_gate.py",
+        "tools/artifact_preflight.py"
       ],
       "tests": [
         "tests/test_artifact_gate.py::test_artifact_qualification_is_replayable_and_source_bound",
         "tests/test_artifact_gate.py::test_signature_verification_failure_cannot_use_saved_json",
-        "tests/test_artifact_oci.py::test_unsafe_or_contradictory_archive_is_rejected"
+        "tests/test_artifact_oci.py::test_unsafe_or_contradictory_archive_is_rejected",
+        "tests/test_artifact_preflight.py::test_unsigned_prequalification_never_promotes_artifact"
       ],
       "gate": "G-ARTIFACT-NEGATIVE-020",
       "scope": "hosted ARM64 software artifact qualification"

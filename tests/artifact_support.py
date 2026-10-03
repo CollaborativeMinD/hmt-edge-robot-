@@ -60,5 +60,7 @@ def fixture(root: Path) -> Path:
         path = root / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text("fixture")
+    (root / "policy").mkdir(exist_ok=True)
+    (root / "policy/artifact_signing.json").write_text(json.dumps({"backend": "github_native_private_sigstore", "status": "ADMITTED"}))
     (root / "uv.lock").write_text('[[package]]\nname="hmt-edge-robot"\nversion="1.0.0"\n')
     return destination

@@ -80,3 +80,20 @@ must preserve the exact qualified OCI object before promotion or retention expir
 - https://docs.github.com/en/actions/reference/runners/github-hosted-runners
 - https://cli.github.com/manual/gh_attestation_verify
 - https://trivy.dev/docs/v0.69/guide/target/container_image/
+
+## Observed signing-service HOLD
+
+Run 37151070400 built and exercised the native ARM64 image and completed the
+SPDX/vulnerability/secret collectors. GitHub then refused attestation persistence:
+`Feature not available for user-owned private repositories`. This is an observed
+service entitlement boundary, not a missing token or a software qualification PASS.
+`policy/artifact_signing.json` records the disposition. Repository visibility and
+public transparency fallback are not changed by this build.
+
+Unsigned prequalification is a separate observed result. It checks image/source,
+loaded/scanned identities, installed package/behavior, SBOM completeness, and the
+security threshold before attempting signing. It can PASS while final qualification
+remains HOLD. The signed final gate still requires live cryptographic verification;
+it cannot adopt the unsigned result. The hosted artifact job remains unsuccessful
+until a supported signing backend is qualified. A trusted owner-provisioned private
+signer or owner-selected supported repository arrangement is a later closure input.
