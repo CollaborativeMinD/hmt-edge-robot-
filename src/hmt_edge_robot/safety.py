@@ -46,18 +46,32 @@ class HaloSafe:
             reason = "STOP_LATCHED"
         elif self.robot is None or self.human is None:
             reason = "OBSERVATION_MISSING"
-        elif not math.isfinite(now) or any(not 0 <= now - p.observed_at <= self.policy.max_observation_age_sec for p in (self.robot, self.human)):
+        elif not math.isfinite(now) or any(
+            not 0 <= now - p.observed_at <= self.policy.max_observation_age_sec
+            for p in (self.robot, self.human)
+        ):
             reason = "OBSERVATION_STALE"
         elif not 0 < speed_mps <= self.policy.max_speed_mps:
             reason = "SPEED_NOT_ADMITTED"
-        elif any(not math.isfinite(t) or not a <= t <= b for t, a, b in zip(target_mm, self.policy.workspace_min_mm, self.policy.workspace_max_mm)):
+        elif any(
+            not math.isfinite(t) or not a <= t <= b
+            for t, a, b in zip(
+                target_mm, self.policy.workspace_min_mm, self.policy.workspace_max_mm
+            )
+        ):
             reason = "WORKSPACE_REJECTED"
         else:
             distance = self._path_distance(target_mm)
             span = self.policy.full_speed_separation_m - protective
             scale = min(1.0, max(0.0, (distance - protective) / span)) if span > 0 else 0.0
             reason = "SAFE" if scale > 0 else "PROTECTIVE_STOP"
-        return SafetyAssessment(admitted=scale > 0, scale_factor=scale, human_distance_m=distance, protective_distance_m=protective, rejection_reason=reason)
+        return SafetyAssessment(
+            admitted=scale > 0,
+            scale_factor=scale,
+            human_distance_m=distance,
+            protective_distance_m=protective,
+            rejection_reason=reason,
+        )
 
     def _path_distance(self, target_mm: Vector3) -> float:
         """Closest distance to commanded straight segment, not just endpoint."""
@@ -78,7 +92,9 @@ class HaloSafe:
 class AdmittanceController:
     """SIL only: M*a+D*v+K*x=F; FF-V6-DYN-01, FF-V6-DISC-01."""
 
-    def __init__(self, mass: float = 5.0, damping: float = 10.0, stiffness: float = 0.0, dt: float = 0.01) -> None:
+    def __init__(
+        self, mass: float = 5.0, damping: float = 10.0, stiffness: float = 0.0, dt: float = 0.01
+    ) -> None:
         if not all(math.isfinite(x) for x in (mass, damping, stiffness, dt)):
             raise ValueError("PHYSICS_NONFINITE")
         if mass <= 0 or damping < 0 or stiffness < 0 or not 0 < dt <= 0.05:
@@ -89,7 +105,9 @@ class AdmittanceController:
     def step(self, force: Vector3) -> tuple[Vector3, Vector3]:
         if len(force) != 3 or not all(math.isfinite(x) for x in force):
             raise ValueError("FORCE_INVALID")
-        acceleration = (np.asarray(force) - self.damping * self.velocity - self.stiffness * self.position) / self.mass
+        acceleration = (
+            np.asarray(force) - self.damping * self.velocity - self.stiffness * self.position
+        ) / self.mass
         velocity = self.velocity + acceleration * self.dt
         position = self.position + velocity * self.dt
         if not np.isfinite(position).all() or not np.isfinite(velocity).all():

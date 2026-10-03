@@ -1,0 +1,98 @@
+[
+  {
+    "incident_id": "RRCA-001",
+    "observed_state": "Legacy false-success terminal state",
+    "causal_evidence": "False driver acknowledgments ignored in execution; verification unconditionally clears fault",
+    "remediation": "Require is True acknowledgments and real finite feedback before SUCCEEDED",
+    "validation_test": "tests/test_orchestration_ledger.py::test_driver_ack_and_feedback_regressions",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-002",
+    "observed_state": "ML admitted far outside training distribution",
+    "causal_evidence": "IsolationForest score alone has no guaranteed extrapolation rejection",
+    "remediation": "Add deterministic reviewed training-envelope guard before inference",
+    "validation_test": "tests/test_resident_analytics.py::test_classical_ml_fit_inference_and_determinism",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-003",
+    "observed_state": "API rejected legitimate JSON coordinate arrays",
+    "causal_evidence": "Strict Python tuple validation applied after framework JSON decoding",
+    "remediation": "Validate bounded native JSON bytes at motion seam",
+    "validation_test": "tests/test_api_cli.py::test_api_full_operator_flow",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-004",
+    "observed_state": "Read-only command changed unfinished tasks",
+    "causal_evidence": "Shared startup always invoked writable restart reconciliation",
+    "remediation": "Read-only SQLite opening and no recovery for replay/analytics/export",
+    "validation_test": "tests/test_ingress_replay.py::test_read_only_queries_do_not_recover_pending_tasks",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-005",
+    "observed_state": "Projection drift escaped hash-only replay",
+    "causal_evidence": "Intact events did not imply current task table matched those events",
+    "remediation": "Compare projection with durable intent hash and latest transition",
+    "validation_test": "tests/test_ingress_replay.py::test_projection_tamper_detected",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-006",
+    "observed_state": "Notebook export failed with active event loop",
+    "causal_evidence": "Synchronous demo invoked asyncio.run inside notebook loop",
+    "remediation": "Execute synchronous composed demo with awaited worker handoff",
+    "validation_test": "G-NOTEBOOK-008",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-007",
+    "observed_state": "Live provider qualification rejected",
+    "causal_evidence": "Metadata probe confirmed OpenAI 401 invalid_api_key; no complete usage receipt",
+    "remediation": "Hold OpenAI profile; reserve both attempted calls; inspect alternate providers without inference",
+    "validation_test": "G-LIVE-009",
+    "external_boundary": true
+  },
+  {
+    "incident_id": "RRCA-008",
+    "observed_state": "Workflow listing omitted completed runs",
+    "causal_evidence": "Purpose-built listing returned empty; raw GitHub Actions API exposed the runs",
+    "remediation": "Use raw API run lookup and reconcile every attempted run before spend",
+    "validation_test": "G-LIVE-009",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-009",
+    "observed_state": "Inherited component prose mismatched code",
+    "causal_evidence": "Top-level component descriptions shifted between the five actual module packages",
+    "remediation": "Bind updated architecture and requirements to actual new code and source provenance",
+    "validation_test": "G-ARCH-001",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-010",
+    "observed_state": "HTTP fixture recursively patched client constructor",
+    "causal_evidence": "Repeated transport fixture referenced mutable patched httpx.AsyncClient",
+    "remediation": "Capture immutable HTTP_CLIENT before patching",
+    "validation_test": "tests/test_resident_analytics.py::test_http_size_status_and_evidence_guards",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-011",
+    "observed_state": "Routed model receipt raised ValidationError after live qualification",
+    "causal_evidence": "Routed OpenRouter model_id contains slash; generic Identifier omitted slash; invalid receipt was appended before contract validation",
+    "remediation": "Distinct ModelIdentifier validated at provider admission; validate receipt before durable decision; explicit stopped-context proposal guard",
+    "validation_test": "tests/test_resident_analytics.py::test_routed_model_id_and_stop_admission",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-012",
+    "observed_state": "CLI qualification context still named the offline default provider",
+    "causal_evidence": "CLI assigned the selected provider only after canary construction; prompt profile diverged from invoked provider",
+    "remediation": "Assign the explicit unqualified provider before constructing canary context; failed qualification still blocks activation",
+    "validation_test": "tests/test_api_cli.py::test_cli_qualified_model_seam",
+    "external_boundary": false
+  }
+]

@@ -1,0 +1,23 @@
+name: Cumulative supervisory verification
+on:
+  push:
+    branches: [main, build/architecture-bound-v1]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+        with:
+          version: 0.9.7
+      - run: uv sync --frozen --extra dev
+      - run: uv run --no-sync python tools/validate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: cumulative-verification
+          path: evidence/

@@ -1,0 +1,849 @@
+{
+  "GraspObservation": {
+    "additionalProperties": false,
+    "properties": {
+      "target_mm": {
+        "maxItems": 3,
+        "minItems": 3,
+        "prefixItems": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          }
+        ],
+        "title": "Target Mm",
+        "type": "array"
+      },
+      "angle_deg": {
+        "title": "Angle Deg",
+        "type": "number"
+      },
+      "primary_eigenvalue": {
+        "exclusiveMinimum": 0,
+        "title": "Primary Eigenvalue",
+        "type": "number"
+      },
+      "secondary_eigenvalue": {
+        "minimum": 0,
+        "title": "Secondary Eigenvalue",
+        "type": "number"
+      },
+      "ambiguity_ratio": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Ambiguity Ratio",
+        "type": "number"
+      },
+      "calibration_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9_.:-]+$",
+        "title": "Calibration Id",
+        "type": "string"
+      },
+      "frame_hash": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Frame Hash",
+        "type": "string"
+      }
+    },
+    "required": [
+      "target_mm",
+      "angle_deg",
+      "primary_eigenvalue",
+      "secondary_eigenvalue",
+      "ambiguity_ratio",
+      "calibration_id",
+      "frame_hash"
+    ],
+    "title": "GraspObservation",
+    "type": "object"
+  },
+  "MotionRequest": {
+    "additionalProperties": false,
+    "properties": {
+      "request_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9_.:-]+$",
+        "title": "Request Id",
+        "type": "string"
+      },
+      "operator_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9_.:-]+$",
+        "title": "Operator Id",
+        "type": "string"
+      },
+      "session_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9_.:-]+$",
+        "title": "Session Id",
+        "type": "string"
+      },
+      "policy_epoch": {
+        "minimum": 1,
+        "title": "Policy Epoch",
+        "type": "integer"
+      },
+      "target_mm": {
+        "maxItems": 3,
+        "minItems": 3,
+        "prefixItems": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          }
+        ],
+        "title": "Target Mm",
+        "type": "array"
+      },
+      "speed_mps": {
+        "exclusiveMinimum": 0,
+        "title": "Speed Mps",
+        "type": "number"
+      },
+      "issued_at": {
+        "minimum": 0,
+        "title": "Issued At",
+        "type": "number"
+      },
+      "expires_at": {
+        "minimum": 0,
+        "title": "Expires At",
+        "type": "number"
+      }
+    },
+    "required": [
+      "request_id",
+      "operator_id",
+      "session_id",
+      "policy_epoch",
+      "target_mm",
+      "speed_mps",
+      "issued_at",
+      "expires_at"
+    ],
+    "title": "MotionRequest",
+    "type": "object"
+  },
+  "Policy": {
+    "additionalProperties": false,
+    "properties": {
+      "policy_id": {
+        "default": "edge-v1",
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9_.:-]+$",
+        "title": "Policy Id",
+        "type": "string"
+      },
+      "policy_epoch": {
+        "default": 1,
+        "minimum": 1,
+        "title": "Policy Epoch",
+        "type": "integer"
+      },
+      "workspace_min_mm": {
+        "default": [
+          -100.0,
+          -100.0,
+          0.0
+        ],
+        "maxItems": 3,
+        "minItems": 3,
+        "prefixItems": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          }
+        ],
+        "title": "Workspace Min Mm",
+        "type": "array"
+      },
+      "workspace_max_mm": {
+        "default": [
+          100.0,
+          100.0,
+          100.0
+        ],
+        "maxItems": 3,
+        "minItems": 3,
+        "prefixItems": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          }
+        ],
+        "title": "Workspace Max Mm",
+        "type": "array"
+      },
+      "max_speed_mps": {
+        "default": 0.25,
+        "exclusiveMinimum": 0,
+        "title": "Max Speed Mps",
+        "type": "number"
+      },
+      "max_observation_age_sec": {
+        "default": 0.5,
+        "exclusiveMinimum": 0,
+        "title": "Max Observation Age Sec",
+        "type": "number"
+      },
+      "max_command_age_sec": {
+        "default": 2.0,
+        "exclusiveMinimum": 0,
+        "title": "Max Command Age Sec",
+        "type": "number"
+      },
+      "session_timeout_sec": {
+        "default": 300.0,
+        "exclusiveMinimum": 0,
+        "title": "Session Timeout Sec",
+        "type": "number"
+      },
+      "heartbeat_timeout_sec": {
+        "default": 1.0,
+        "exclusiveMinimum": 0,
+        "title": "Heartbeat Timeout Sec",
+        "type": "number"
+      },
+      "verification_tolerance_mm": {
+        "default": 0.1,
+        "exclusiveMinimum": 0,
+        "title": "Verification Tolerance Mm",
+        "type": "number"
+      },
+      "min_separation_m": {
+        "default": 0.5,
+        "exclusiveMinimum": 0,
+        "title": "Min Separation M",
+        "type": "number"
+      },
+      "full_speed_separation_m": {
+        "default": 2.0,
+        "exclusiveMinimum": 0,
+        "title": "Full Speed Separation M",
+        "type": "number"
+      },
+      "reaction_time_sec": {
+        "default": 0.1,
+        "minimum": 0,
+        "title": "Reaction Time Sec",
+        "type": "number"
+      },
+      "stop_time_sec": {
+        "default": 0.2,
+        "exclusiveMinimum": 0,
+        "title": "Stop Time Sec",
+        "type": "number"
+      },
+      "braking_distance_m": {
+        "default": 0.05,
+        "minimum": 0,
+        "title": "Braking Distance M",
+        "type": "number"
+      },
+      "human_approach_mps": {
+        "default": 1.6,
+        "minimum": 0,
+        "title": "Human Approach Mps",
+        "type": "number"
+      },
+      "uncertainty_m": {
+        "default": 0.05,
+        "minimum": 0,
+        "title": "Uncertainty M",
+        "type": "number"
+      },
+      "nominal_voltage_v": {
+        "default": 3.7,
+        "exclusiveMinimum": 0,
+        "title": "Nominal Voltage V",
+        "type": "number"
+      },
+      "safe_voltage_v": {
+        "default": 3.4,
+        "exclusiveMinimum": 0,
+        "title": "Safe Voltage V",
+        "type": "number"
+      },
+      "max_temp_c": {
+        "default": 85.0,
+        "exclusiveMinimum": 0,
+        "title": "Max Temp C",
+        "type": "number"
+      },
+      "recovery_hysteresis_v": {
+        "default": 0.05,
+        "exclusiveMinimum": 0,
+        "title": "Recovery Hysteresis V",
+        "type": "number"
+      },
+      "max_queue_size": {
+        "default": 32,
+        "maximum": 1024,
+        "minimum": 1,
+        "title": "Max Queue Size",
+        "type": "integer"
+      },
+      "max_history_records": {
+        "default": 256,
+        "maximum": 4096,
+        "minimum": 1,
+        "title": "Max History Records",
+        "type": "integer"
+      },
+      "driver_timeout_sec": {
+        "default": 0.5,
+        "exclusiveMinimum": 0,
+        "title": "Driver Timeout Sec",
+        "type": "number"
+      },
+      "allow_cloud": {
+        "default": false,
+        "title": "Allow Cloud",
+        "type": "boolean"
+      }
+    },
+    "title": "Policy",
+    "type": "object"
+  },
+  "PositionPacket": {
+    "additionalProperties": false,
+    "properties": {
+      "position_mm": {
+        "maxItems": 3,
+        "minItems": 3,
+        "prefixItems": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          }
+        ],
+        "title": "Position Mm",
+        "type": "array"
+      },
+      "frame_id": {
+        "default": "robot-base",
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9_.:-]+$",
+        "title": "Frame Id",
+        "type": "string"
+      },
+      "monotonic_seq": {
+        "minimum": 0,
+        "title": "Monotonic Seq",
+        "type": "integer"
+      },
+      "observed_at": {
+        "minimum": 0,
+        "title": "Observed At",
+        "type": "number"
+      }
+    },
+    "required": [
+      "position_mm",
+      "monotonic_seq",
+      "observed_at"
+    ],
+    "title": "PositionPacket",
+    "type": "object"
+  },
+  "ResidentProposal": {
+    "additionalProperties": false,
+    "properties": {
+      "action": {
+        "enum": [
+          "inspect",
+          "diagnose",
+          "plan_grasp",
+          "hold"
+        ],
+        "title": "Action",
+        "type": "string"
+      },
+      "explanation": {
+        "maxLength": 2048,
+        "minLength": 1,
+        "title": "Explanation",
+        "type": "string"
+      },
+      "evidence_refs": {
+        "items": {
+          "type": "string"
+        },
+        "maxItems": 32,
+        "title": "Evidence Refs",
+        "type": "array"
+      }
+    },
+    "required": [
+      "action",
+      "explanation",
+      "evidence_refs"
+    ],
+    "title": "ResidentProposal",
+    "type": "object"
+  },
+  "ResidentReceipt": {
+    "$defs": {
+      "ResidentProposal": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "enum": [
+              "inspect",
+              "diagnose",
+              "plan_grasp",
+              "hold"
+            ],
+            "title": "Action",
+            "type": "string"
+          },
+          "explanation": {
+            "maxLength": 2048,
+            "minLength": 1,
+            "title": "Explanation",
+            "type": "string"
+          },
+          "evidence_refs": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 32,
+            "title": "Evidence Refs",
+            "type": "array"
+          }
+        },
+        "required": [
+          "action",
+          "explanation",
+          "evidence_refs"
+        ],
+        "title": "ResidentProposal",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "decision": {
+        "enum": [
+          "ADMIT",
+          "HOLD",
+          "DENY"
+        ],
+        "title": "Decision",
+        "type": "string"
+      },
+      "proposal": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/ResidentProposal"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "model_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9_.:/-]+$",
+        "title": "Model Id",
+        "type": "string"
+      },
+      "context_hash": {
+        "title": "Context Hash",
+        "type": "string"
+      },
+      "rejection_reason": {
+        "title": "Rejection Reason",
+        "type": "string"
+      },
+      "evidence_id": {
+        "title": "Evidence Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "decision",
+      "proposal",
+      "model_id",
+      "context_hash",
+      "rejection_reason",
+      "evidence_id"
+    ],
+    "title": "ResidentReceipt",
+    "type": "object"
+  },
+  "SafetyAssessment": {
+    "additionalProperties": false,
+    "properties": {
+      "admitted": {
+        "title": "Admitted",
+        "type": "boolean"
+      },
+      "scale_factor": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Scale Factor",
+        "type": "number"
+      },
+      "human_distance_m": {
+        "minimum": 0,
+        "title": "Human Distance M",
+        "type": "number"
+      },
+      "protective_distance_m": {
+        "exclusiveMinimum": 0,
+        "title": "Protective Distance M",
+        "type": "number"
+      },
+      "rejection_reason": {
+        "title": "Rejection Reason",
+        "type": "string"
+      }
+    },
+    "required": [
+      "admitted",
+      "scale_factor",
+      "human_distance_m",
+      "protective_distance_m",
+      "rejection_reason"
+    ],
+    "title": "SafetyAssessment",
+    "type": "object"
+  },
+  "SensorAssessment": {
+    "$defs": {
+      "Lane": {
+        "enum": [
+          "PRIMARY",
+          "ALTERNATE",
+          "CONTINGENCY",
+          "EMERGENCY"
+        ],
+        "title": "Lane",
+        "type": "string"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "pace_lane": {
+        "$ref": "#/$defs/Lane"
+      },
+      "poll_interval_sec": {
+        "exclusiveMinimum": 0,
+        "title": "Poll Interval Sec",
+        "type": "number"
+      },
+      "data_valid": {
+        "title": "Data Valid",
+        "type": "boolean"
+      },
+      "accepted_temp_c": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Accepted Temp C"
+      },
+      "accepted_signal_dbm": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Accepted Signal Dbm"
+      },
+      "battery_margin": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Battery Margin",
+        "type": "number"
+      },
+      "flush_required": {
+        "title": "Flush Required",
+        "type": "boolean"
+      },
+      "rejection_reason": {
+        "title": "Rejection Reason",
+        "type": "string"
+      }
+    },
+    "required": [
+      "pace_lane",
+      "poll_interval_sec",
+      "data_valid",
+      "accepted_temp_c",
+      "accepted_signal_dbm",
+      "battery_margin",
+      "flush_required",
+      "rejection_reason"
+    ],
+    "title": "SensorAssessment",
+    "type": "object"
+  },
+  "SensorSample": {
+    "additionalProperties": false,
+    "properties": {
+      "monotonic_seq": {
+        "minimum": 0,
+        "title": "Monotonic Seq",
+        "type": "integer"
+      },
+      "observed_at": {
+        "minimum": 0,
+        "title": "Observed At",
+        "type": "number"
+      },
+      "voltage_v": {
+        "exclusiveMinimum": 0,
+        "title": "Voltage V",
+        "type": "number"
+      },
+      "temp_c": {
+        "title": "Temp C",
+        "type": "number"
+      },
+      "signal_dbm": {
+        "title": "Signal Dbm",
+        "type": "number"
+      }
+    },
+    "required": [
+      "monotonic_seq",
+      "observed_at",
+      "voltage_v",
+      "temp_c",
+      "signal_dbm"
+    ],
+    "title": "SensorSample",
+    "type": "object"
+  },
+  "TaskReceipt": {
+    "$defs": {
+      "Lane": {
+        "enum": [
+          "PRIMARY",
+          "ALTERNATE",
+          "CONTINGENCY",
+          "EMERGENCY"
+        ],
+        "title": "Lane",
+        "type": "string"
+      },
+      "TaskState": {
+        "enum": [
+          "PLANNED",
+          "EXECUTING",
+          "VERIFYING",
+          "SUCCEEDED",
+          "DENIED",
+          "FAILED",
+          "CANCELLED"
+        ],
+        "title": "TaskState",
+        "type": "string"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "request_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9_.:-]+$",
+        "title": "Request Id",
+        "type": "string"
+      },
+      "state": {
+        "$ref": "#/$defs/TaskState"
+      },
+      "pace_lane": {
+        "$ref": "#/$defs/Lane"
+      },
+      "rejection_reason": {
+        "title": "Rejection Reason",
+        "type": "string"
+      },
+      "evidence_id": {
+        "title": "Evidence Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "request_id",
+      "state",
+      "pace_lane",
+      "rejection_reason",
+      "evidence_id"
+    ],
+    "title": "TaskReceipt",
+    "type": "object"
+  },
+  "Calibration": {
+    "additionalProperties": false,
+    "properties": {
+      "calibration_id": {
+        "default": "sil-calibration-v1",
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9_.:-]+$",
+        "title": "Calibration Id",
+        "type": "string"
+      },
+      "pixel_to_mm": {
+        "default": 0.1,
+        "exclusiveMinimum": 0,
+        "title": "Pixel To Mm",
+        "type": "number"
+      },
+      "yaw_rad": {
+        "default": 0.0,
+        "title": "Yaw Rad",
+        "type": "number"
+      },
+      "translation_mm": {
+        "default": [
+          0.0,
+          0.0,
+          10.0
+        ],
+        "maxItems": 3,
+        "minItems": 3,
+        "prefixItems": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          }
+        ],
+        "title": "Translation Mm",
+        "type": "array"
+      }
+    },
+    "title": "Calibration",
+    "type": "object"
+  },
+  "Login": {
+    "additionalProperties": false,
+    "properties": {
+      "operator_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9_.:-]+$",
+        "title": "Operator Id",
+        "type": "string"
+      },
+      "proof": {
+        "maxLength": 256,
+        "minLength": 1,
+        "title": "Proof",
+        "type": "string"
+      }
+    },
+    "required": [
+      "operator_id",
+      "proof"
+    ],
+    "title": "Login",
+    "type": "object"
+  },
+  "Question": {
+    "additionalProperties": false,
+    "properties": {
+      "session_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9_.:-]+$",
+        "title": "Session Id",
+        "type": "string"
+      },
+      "operator_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9_.:-]+$",
+        "title": "Operator Id",
+        "type": "string"
+      },
+      "question": {
+        "maxLength": 2048,
+        "minLength": 1,
+        "title": "Question",
+        "type": "string"
+      }
+    },
+    "required": [
+      "session_id",
+      "operator_id",
+      "question"
+    ],
+    "title": "Question",
+    "type": "object"
+  },
+  "SessionRequest": {
+    "additionalProperties": false,
+    "properties": {
+      "session_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9_.:-]+$",
+        "title": "Session Id",
+        "type": "string"
+      },
+      "operator_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9_.:-]+$",
+        "title": "Operator Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "session_id",
+      "operator_id"
+    ],
+    "title": "SessionRequest",
+    "type": "object"
+  }
+}

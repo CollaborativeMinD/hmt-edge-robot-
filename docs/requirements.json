@@ -1,0 +1,499 @@
+{
+  "objective": "OBJ-EDGE-01",
+  "requirements": [
+    {
+      "id": "REQ-AM-01",
+      "kind": "functional",
+      "acceptance": "Provisioned identity and permission scope; false proof creates no lease",
+      "source": [
+        "src/hmt_edge_robot/access.py"
+      ],
+      "tests": [
+        "tests/test_authority_safety_edge.py::test_access_auth_scope_expiry_and_revocation"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-AM-02",
+      "kind": "functional",
+      "acceptance": "Expiry, monotonic presence and revocation prevent stale authority",
+      "source": [
+        "src/hmt_edge_robot/access.py"
+      ],
+      "tests": [
+        "tests/test_authority_safety_edge.py::test_access_clock_and_capacity"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-AM-03",
+      "kind": "functional",
+      "acceptance": "Policy epoch update revokes leases and pending authority",
+      "source": [
+        "src/hmt_edge_robot/runtime.py"
+      ],
+      "tests": [
+        "tests/test_orchestration_ledger.py::test_policy_update_revokes_pending_authority"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-HS-01",
+      "kind": "functional",
+      "acceptance": "Reject stale, repeated and mismatched-frame spatial observations",
+      "source": [
+        "src/hmt_edge_robot/safety.py"
+      ],
+      "tests": [
+        "tests/test_authority_safety_edge.py::test_safety_invalid_stale_frame_and_reset"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-HS-02",
+      "kind": "functional",
+      "acceptance": "Check path segment separation and scale speed within protective bounds",
+      "source": [
+        "src/hmt_edge_robot/safety.py"
+      ],
+      "tests": [
+        "tests/test_authority_safety_edge.py::test_safety_path_distance_not_endpoint"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-HS-03",
+      "kind": "functional",
+      "acceptance": "Finite bounded SIL admittance preserves declared dynamical law",
+      "source": [
+        "src/hmt_edge_robot/safety.py"
+      ],
+      "tests": [
+        "tests/test_contracts_geometry.py::test_admittance_law_and_bounds"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-WN-01",
+      "kind": "functional",
+      "acceptance": "Power/thermal assessments choose bounded PACE lanes with hysteresis",
+      "source": [
+        "src/hmt_edge_robot/edge.py"
+      ],
+      "tests": [
+        "tests/test_authority_safety_edge.py::test_edge_lanes_gaps_hysteresis_halt"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-WN-02",
+      "kind": "functional",
+      "acceptance": "Overtemperature readings remain null gaps; critical power halts and flushes",
+      "source": [
+        "src/hmt_edge_robot/edge.py"
+      ],
+      "tests": [
+        "tests/test_authority_safety_edge.py::test_edge_lanes_gaps_hysteresis_halt"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-WN-03",
+      "kind": "functional",
+      "acceptance": "Reject stale or repeated samples and bound retained history",
+      "source": [
+        "src/hmt_edge_robot/edge.py"
+      ],
+      "tests": [
+        "tests/test_authority_safety_edge.py::test_edge_sequence_age_and_history_bounds"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-NG-01",
+      "kind": "functional",
+      "acceptance": "Return bounded ranked PCA grasp candidates and reject ambiguous shapes",
+      "source": [
+        "src/hmt_edge_robot/vision.py"
+      ],
+      "tests": [
+        "tests/test_contracts_geometry.py::test_vision_rejects_ambiguity_empty_small_and_format"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-NG-02",
+      "kind": "functional",
+      "acceptance": "Calibrate candidates through PGA with classical transform/inverse parity",
+      "source": [
+        "src/hmt_edge_robot/geometry.py"
+      ],
+      "tests": [
+        "tests/test_contracts_geometry.py::test_pga_classical_parity_and_inverse"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-NG-03",
+      "kind": "functional",
+      "acceptance": "Bind each grasp to calibration ID and deterministic frame hash",
+      "source": [
+        "src/hmt_edge_robot/vision.py"
+      ],
+      "tests": [
+        "tests/test_contracts_geometry.py::test_grasp_candidates_calibration_determinism"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-FO-01",
+      "kind": "functional",
+      "acceptance": "Admit only valid current-session, epoch, time, substrate and geometry requests",
+      "source": [
+        "src/hmt_edge_robot/orchestrator.py"
+      ],
+      "tests": [
+        "tests/test_orchestration_ledger.py::test_admission_denials"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-FO-02",
+      "kind": "functional",
+      "acceptance": "SUCCEEDED requires both driver acknowledgments and matching finite feedback",
+      "source": [
+        "src/hmt_edge_robot/orchestrator.py"
+      ],
+      "tests": [
+        "tests/test_orchestration_ledger.py::test_driver_ack_and_feedback_regressions"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-FO-03",
+      "kind": "functional",
+      "acceptance": "Bound queue, reject duplicate concurrent claims and permit authorized cancellation",
+      "source": [
+        "src/hmt_edge_robot/orchestrator.py"
+      ],
+      "tests": [
+        "tests/test_orchestration_ledger.py::test_duplicate_atomic_admission"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-FO-04",
+      "kind": "functional",
+      "acceptance": "Revalidate authority after movement and stop on deadline or evidence failure",
+      "source": [
+        "src/hmt_edge_robot/orchestrator.py"
+      ],
+      "tests": [
+        "tests/test_orchestration_ledger.py::test_authority_rechecked_after_movement"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-DB-01",
+      "kind": "functional",
+      "acceptance": "Atomically persist intent and lawful state transition before side effects",
+      "source": [
+        "src/hmt_edge_robot/ledger.py"
+      ],
+      "tests": [
+        "tests/test_orchestration_ledger.py::test_evidence_failure_stops_before_side_effect"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-DB-02",
+      "kind": "functional",
+      "acceptance": "Verify append-only hash chain, projection and restart without motion replay",
+      "source": [
+        "src/hmt_edge_robot/ledger.py"
+      ],
+      "tests": [
+        "tests/test_ingress_replay.py::test_projection_tamper_detected"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-AN-01",
+      "kind": "functional",
+      "acceptance": "Aggregate actual persisted events with Polars and DuckDB",
+      "source": [
+        "src/hmt_edge_robot/analytics.py"
+      ],
+      "tests": [
+        "tests/test_resident_analytics.py::test_analytics_actual_engines_and_parquet"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-AN-02",
+      "kind": "functional",
+      "acceptance": "Preserve sensor gaps and bound analytics windows",
+      "source": [
+        "src/hmt_edge_robot/analytics.py"
+      ],
+      "tests": [
+        "tests/test_resident_analytics.py::test_empty_analytics"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-AN-03",
+      "kind": "functional",
+      "acceptance": "Atomic Parquet export matches validated database records",
+      "source": [
+        "src/hmt_edge_robot/analytics.py"
+      ],
+      "tests": [
+        "tests/test_resident_analytics.py::test_analytics_actual_engines_and_parquet"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-HMT-01",
+      "kind": "functional",
+      "acceptance": "Fit explicit seeded ML baseline; HOLD nonfinite, unfit and out-of-envelope samples",
+      "source": [
+        "src/hmt_edge_robot/resident.py"
+      ],
+      "tests": [
+        "tests/test_resident_analytics.py::test_classical_ml_fit_inference_and_determinism"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-HMT-02",
+      "kind": "functional",
+      "acceptance": "Bind bounded model context to policy, schema, profile and real evidence hashes",
+      "source": [
+        "src/hmt_edge_robot/resident.py"
+      ],
+      "tests": [
+        "tests/test_resident_analytics.py::test_resident_context_tools_and_bounds"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-HMT-03",
+      "kind": "functional",
+      "acceptance": "Reject malformed or unsupported proposals; model has no actuator tool",
+      "source": [
+        "src/hmt_edge_robot/resident.py"
+      ],
+      "tests": [
+        "tests/test_resident_analytics.py::test_resident_invalid_provider_holds"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-HMT-04",
+      "kind": "functional",
+      "acceptance": "Explicit provider qualification, no retries, bounded time/body/budget and usage certainty",
+      "source": [
+        "src/hmt_edge_robot/resident.py"
+      ],
+      "tests": [
+        "tests/test_resident_analytics.py::test_paid_adapter_incomplete_or_uncertain_usage_holds"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-UI-01",
+      "kind": "functional",
+      "acceptance": "Authenticated FastAPI operator flow uses strict JSON wire contracts",
+      "source": [
+        "src/hmt_edge_robot/api.py"
+      ],
+      "tests": [
+        "tests/test_api_cli.py::test_api_full_operator_flow"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-UI-02",
+      "kind": "functional",
+      "acceptance": "CLI demo, read-only replay, analytics and export compose the same runtime",
+      "source": [
+        "src/hmt_edge_robot/cli.py"
+      ],
+      "tests": [
+        "tests/test_ingress_replay.py::test_read_only_queries_do_not_recover_pending_tasks"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-SYS-01",
+      "kind": "functional",
+      "acceptance": "Nominal coupled mission yields consistent terminal state and evidence",
+      "source": [
+        "src/hmt_edge_robot/runtime.py"
+      ],
+      "tests": [
+        "tests/test_orchestration_ledger.py::test_nominal_outcome_chain"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-NFR-01",
+      "kind": "nonfunctional",
+      "acceptance": "Strict, frozen, extra-forbidden finite contracts at domain seams",
+      "source": [
+        "tools/validate.py"
+      ],
+      "tests": [
+        "tests/test_contracts_geometry.py::test_contracts_forbid_unknown_mutation_coercion"
+      ],
+      "gate": "G-SCHEMA-002",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-NFR-02",
+      "kind": "nonfunctional",
+      "acceptance": "Bounded request bodies, receive deadlines and process rate window",
+      "source": [
+        "tools/validate.py"
+      ],
+      "tests": [
+        "tests/test_ingress_replay.py::test_global_body_and_rate_bounds"
+      ],
+      "gate": "G-AUTH-003",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-NFR-03",
+      "kind": "nonfunctional",
+      "acceptance": "Queue, session, sensor and context capacities enforced",
+      "source": [
+        "tools/validate.py"
+      ],
+      "tests": [
+        "tests/test_orchestration_ledger.py::test_queue_backpressure_and_cancel"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-NFR-04",
+      "kind": "nonfunctional",
+      "acceptance": "Replay detects payload corruption and never mutates pending state",
+      "source": [
+        "tools/validate.py"
+      ],
+      "tests": [
+        "tests/test_ingress_replay.py::test_read_only_queries_do_not_recover_pending_tasks"
+      ],
+      "gate": "G-REPLAY-005",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-NFR-05",
+      "kind": "nonfunctional",
+      "acceptance": "Evidence failures stop execution before first side effect",
+      "source": [
+        "tools/validate.py"
+      ],
+      "tests": [
+        "tests/test_orchestration_ledger.py::test_evidence_failure_stops_before_side_effect"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-NFR-06",
+      "kind": "nonfunctional",
+      "acceptance": "Observed SIL p95 cycle below 100 ms and Linux host peak RSS below 512 MiB",
+      "source": [
+        "tools/validate.py"
+      ],
+      "tests": [
+        "tests/test_orchestration_ledger.py::test_nominal_outcome_chain"
+      ],
+      "gate": "G-PERF-006",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-NFR-07",
+      "kind": "nonfunctional",
+      "acceptance": "Functions <=60 physical lines; security lint and locked reproducible dependencies",
+      "source": [
+        "tools/validate.py"
+      ],
+      "tests": [
+        "tests/test_contracts_geometry.py::test_nonfinite_boundary_rejected"
+      ],
+      "gate": "G-STATIC-007",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-NFR-08",
+      "kind": "nonfunctional",
+      "acceptance": "Every declared requirement has implementation/test binding; every contract field has ontology binding",
+      "source": [
+        "tools/validate.py"
+      ],
+      "tests": [
+        "tests/test_contracts_geometry.py::test_contracts_forbid_unknown_mutation_coercion"
+      ],
+      "gate": "G-ARCH-001",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-NFR-09",
+      "kind": "nonfunctional",
+      "acceptance": "Resident proposals remain advisory; unknown tools and cloud defaults blocked",
+      "source": [
+        "tools/validate.py"
+      ],
+      "tests": [
+        "tests/test_resident_analytics.py::test_resident_context_tools_and_bounds"
+      ],
+      "gate": "G-AUTH-003",
+      "scope": "supervisory/SIL"
+    },
+    {
+      "id": "REQ-NFR-10",
+      "kind": "nonfunctional",
+      "acceptance": "Full offline suite passes with >=90% combined line/branch coverage",
+      "source": [
+        "tools/validate.py"
+      ],
+      "tests": [
+        "tests/test_orchestration_ledger.py::test_nominal_outcome_chain"
+      ],
+      "gate": "G-RUNTIME-004",
+      "scope": "supervisory/SIL"
+    }
+  ]
+}

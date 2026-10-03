@@ -1,0 +1,25 @@
+{
+  "timestamp_utc": "2026-10-03T01:10:02.605733Z",
+  "software_status": "PASS",
+  "external_deployment_status": "HOLD",
+  "coverage": {
+    "covered_lines": 1176,
+    "num_statements": 1195,
+    "percent_covered": 97.38780977896852,
+    "percent_covered_display": "97",
+    "missing_lines": 19,
+    "excluded_lines": 14,
+    "percent_statements_covered": 98.41004184100419,
+    "percent_statements_covered_display": "98",
+    "num_branches": 298,
+    "num_partial_branches": 20,
+    "covered_branches": 278,
+    "missing_branches": 20,
+    "percent_branches_covered": 93.28859060402685,
+    "percent_branches_covered_display": "93"
+  },
+  "gate_columns": 7,
+  "rrca_columns": 7,
+  "ledger_semantics": "append-only observations; current run retests all software gates",
+  "test_cases": 78
+}

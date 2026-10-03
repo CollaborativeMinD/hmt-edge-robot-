@@ -9,7 +9,7 @@ import os
 import secrets
 from pathlib import Path
 
-from .contracts import MotionRequest, Policy, canonical
+from .contracts import MotionRequest, Policy
 from .resident import OpenAICompatibleProvider
 from .runtime import RobotCell
 from .vision import synthetic_frame
@@ -21,25 +21,43 @@ def demonstrate(cell: RobotCell, token: str) -> dict:
     candidates = cell.vision.candidates(synthetic_frame())
     cell.ledger.append("vision", "demo", "grasp_observation", candidates[0].model_dump(mode="json"))
     now = cell.clock()
-    request = MotionRequest(request_id="demo-" + secrets.token_hex(8), operator_id="operator", session_id=session,
-                            policy_epoch=cell.policy.policy_epoch, target_mm=candidates[0].target_mm, speed_mps=0.1,
-                            issued_at=now, expires_at=now + cell.policy.max_command_age_sec)
+    request = MotionRequest(
+        request_id="demo-" + secrets.token_hex(8),
+        operator_id="operator",
+        session_id=session,
+        policy_epoch=cell.policy.policy_epoch,
+        target_mm=candidates[0].target_mm,
+        speed_mps=0.1,
+        issued_at=now,
+        expires_at=now + cell.policy.max_command_age_sec,
+    )
     planned = cell.orchestrator.submit(request)
     outcome = cell.orchestrator.run_next()
     resident = asyncio.run(cell.resident.ask(cell.status(), "Inspect the mission outcome."))
     baseline = tuple((4.05 + (i % 7) * 0.01, 44.0 + (i % 5) * 0.3) for i in range(32))
     cell.resident.health_model.fit(baseline)
     health = cell.resident.health_model.predict(3.2, 90.0)
-    cell.ledger.append("resident", "demo", "ml_diagnostic", {"classification": "SYNTHETIC_SIL_BASELINE", "result": health})
-    return {"mode": "SIL", "planned": planned.model_dump(mode="json"),
-            "outcome": outcome.model_dump(mode="json") if outcome else None,
-            "resident": resident.model_dump(mode="json"), "health_model": health,
-            "verified_events": cell.ledger.verify()}
+    cell.ledger.append(
+        "resident",
+        "demo",
+        "ml_diagnostic",
+        {"classification": "SYNTHETIC_SIL_BASELINE", "result": health},
+    )
+    return {
+        "mode": "SIL",
+        "planned": planned.model_dump(mode="json"),
+        "outcome": outcome.model_dump(mode="json") if outcome else None,
+        "resident": resident.model_dump(mode="json"),
+        "health_model": health,
+        "verified_events": cell.ledger.verify(),
+    }
 
 
 def parser() -> argparse.ArgumentParser:
     result = argparse.ArgumentParser(description=__doc__)
-    result.add_argument("command", choices=("demo", "replay", "analytics", "export", "resident", "serve"))
+    result.add_argument(
+        "command", choices=("demo", "replay", "analytics", "export", "resident", "serve")
+    )
     result.add_argument("--database", type=Path, default=Path("runtime/cell.db"))
     result.add_argument("--output", type=Path, default=Path("runtime/evidence.parquet"))
     result.add_argument("--question", default="Inspect current evidence.")
@@ -57,15 +75,22 @@ def main() -> None:
     if args.command in ("serve", "resident") and (token is None or len(token) < 16):
         raise SystemExit("HMT_OPERATOR_TOKEN must contain at least 16 characters")
     token = token or secrets.token_hex(32)
-    cell = RobotCell(args.database, token, policy)
+    read_only = args.command in ("replay", "analytics", "export")
+    cell = RobotCell(args.database, token, policy, read_only=read_only)
     try:
         if args.model_url or args.model_id:
+            if read_only:
+                raise SystemExit("Read-only commands cannot activate a model")
             if not (args.model_url and args.model_id):
                 raise SystemExit("Both --model-url and --model-id are required")
-            provider = OpenAICompatibleProvider(args.model_url, args.model_id, policy, os.environ.get("HMT_MODEL_KEY"))
-            receipt = asyncio.run(provider.qualify(cell.resident.context(cell.status())))
-            cell.ledger.append("resident", provider.model_id, "model_qualification", {"artifact_hash": receipt})
+            provider = OpenAICompatibleProvider(
+                args.model_url, args.model_id, policy, os.environ.get("HMT_MODEL_KEY")
+            )
             cell.resident.provider = provider
+            receipt = asyncio.run(provider.qualify(cell.resident.context(cell.status())))
+            cell.ledger.append(
+                "resident", provider.model_id, "model_qualification", {"artifact_hash": receipt}
+            )
         dispatch(args, cell, token)
     finally:
         cell.close()
@@ -77,13 +102,23 @@ def dispatch(args: argparse.Namespace, cell: RobotCell, token: str) -> None:
     elif args.command == "replay":
         output = {"verified_events": cell.ledger.verify(), "tail": cell.ledger.recent()}
     elif args.command == "analytics":
-        output = {"event_summary": cell.analytics.summary(), "sensor_trends": cell.analytics.sensor_trends()}
+        output = {
+            "event_summary": cell.analytics.summary(),
+            "sensor_trends": cell.analytics.sensor_trends(),
+        }
     elif args.command == "export":
-        output = {"exported_records": cell.analytics.export_parquet(args.output), "path": str(args.output)}
+        output = {
+            "exported_records": cell.analytics.export_parquet(args.output),
+            "path": str(args.output),
+        }
     elif args.command == "resident":
         session = cell.access.login("operator", token, cell.clock())
         receipt = asyncio.run(cell.resident.ask(cell.status(), args.question))
-        tool = cell.resident_tool(receipt.proposal.action, session, "operator") if receipt.proposal else None
+        tool = (
+            cell.resident_tool(receipt.proposal.action, session, "operator")
+            if receipt.proposal
+            else None
+        )
         output = {"receipt": receipt.model_dump(mode="json"), "tool_result": tool}
     else:
         serve(args, cell)

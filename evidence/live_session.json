@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "model_id": "openai/gpt-4.1-mini",
+  "provider": "OpenRouter; OpenAI only",
+  "attempted_inference_calls": 8,
+  "successful_final_campaign_calls": 4,
+  "successful_usage_cost_usd": 0.0011476,
+  "conservative_session_reserved_upper_bound_usd": 0.0191584,
+  "limit_usd": 1.0,
+  "accounting": "Earlier failed direct attempts and first OpenRouter integration attempt retained at full reservation; final four calls also retained at full reservation. No missing usage treated as free.",
+  "driver_moves": 0,
+  "qualification_scope": "Contract and stopped-policy canary only",
+  "results": [
+    "evidence/live_direct_1.json",
+    "evidence/live_direct_2.json",
+    "evidence/live_openrouter_1.json",
+    "evidence/live_openrouter_validated.json"
+  ],
+  "metadata_probe": "OpenAI and Anthropic credentials returned401; OpenRouter and Gemini metadata checks returned200. No secret values retrieved."
+}

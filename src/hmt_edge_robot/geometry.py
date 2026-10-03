@@ -28,7 +28,9 @@ def gp(a: Array, b: Array) -> Array:
 
 
 def reverse(a: Array) -> Array:
-    return np.array([v * (-1) ** (i.bit_count() * (i.bit_count() - 1) // 2) for i, v in enumerate(a)])
+    return np.array(
+        [v * (-1) ** (i.bit_count() * (i.bit_count() - 1) // 2) for i, v in enumerate(a)]
+    )
 
 
 def basis(mask: int) -> Array:
@@ -39,9 +41,13 @@ def basis(mask: int) -> Array:
 
 def motor(yaw_rad: float, translation_mm: Vector3) -> Array:
     rotor = math.cos(yaw_rad / 2) * basis(0) - math.sin(yaw_rad / 2) * basis(6)
-    translator = basis(0) + sum(0.5 * t * basis(1 | (1 << (i + 1))) for i, t in enumerate(translation_mm))
+    translator = basis(0) + sum(
+        0.5 * t * basis(1 | (1 << (i + 1))) for i, t in enumerate(translation_mm)
+    )
     result = gp(translator, rotor)
-    if not np.isfinite(result).all() or not np.allclose(gp(result, reverse(result)), basis(0), atol=1e-10):
+    if not np.isfinite(result).all() or not np.allclose(
+        gp(result, reverse(result)), basis(0), atol=1e-10
+    ):
         raise ValueError("MOTOR_NORM_INVALID")
     return result
 
@@ -52,7 +58,11 @@ def transform(point_mm: Vector3, pose: Array) -> Vector3:
     result = gp(gp(pose, point), reverse(pose))
     if abs(result[14]) < 1e-12 or not np.isfinite(result).all():
         raise ValueError("POINT_TRANSFORM_INVALID")
-    return (float(result[13] / result[14]), float(-result[11] / result[14]), float(result[7] / result[14]))
+    return (
+        float(result[13] / result[14]),
+        float(-result[11] / result[14]),
+        float(result[7] / result[14]),
+    )
 
 
 class Calibration(Contract):
@@ -63,4 +73,7 @@ class Calibration(Contract):
 
     def pixel_to_base(self, x: float, y: float) -> Vector3:
         """FF-PGA-01; reference parity: FF-V6-XFORM-01 coordinate composition."""
-        return transform((x * self.pixel_to_mm, y * self.pixel_to_mm, 0.0), motor(self.yaw_rad, self.translation_mm))
+        return transform(
+            (x * self.pixel_to_mm, y * self.pixel_to_mm, 0.0),
+            motor(self.yaw_rad, self.translation_mm),
+        )

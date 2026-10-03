@@ -1,0 +1,524 @@
+[
+  {
+    "contract": "GraspObservation",
+    "field": "target_mm",
+    "subtype": "MechanicalMetricField",
+    "basis": "Measured or planned geometric quantity in declared units"
+  },
+  {
+    "contract": "GraspObservation",
+    "field": "angle_deg",
+    "subtype": "MechanicalMetricField",
+    "basis": "Measured or planned geometric quantity in declared units"
+  },
+  {
+    "contract": "GraspObservation",
+    "field": "primary_eigenvalue",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "GraspObservation",
+    "field": "secondary_eigenvalue",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "GraspObservation",
+    "field": "ambiguity_ratio",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "GraspObservation",
+    "field": "calibration_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "GraspObservation",
+    "field": "frame_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "MotionRequest",
+    "field": "request_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "MotionRequest",
+    "field": "operator_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "MotionRequest",
+    "field": "session_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "MotionRequest",
+    "field": "policy_epoch",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "MotionRequest",
+    "field": "target_mm",
+    "subtype": "MechanicalMetricField",
+    "basis": "Measured or planned geometric quantity in declared units"
+  },
+  {
+    "contract": "MotionRequest",
+    "field": "speed_mps",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "MotionRequest",
+    "field": "issued_at",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Sequence or clock-domain freshness constraint"
+  },
+  {
+    "contract": "MotionRequest",
+    "field": "expires_at",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Sequence or clock-domain freshness constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "policy_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "Policy",
+    "field": "policy_epoch",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "workspace_min_mm",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "workspace_max_mm",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "max_speed_mps",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "max_observation_age_sec",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "max_command_age_sec",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "session_timeout_sec",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "heartbeat_timeout_sec",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "verification_tolerance_mm",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "min_separation_m",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "full_speed_separation_m",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "reaction_time_sec",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "stop_time_sec",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "braking_distance_m",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "human_approach_mps",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "uncertainty_m",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "nominal_voltage_v",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "safe_voltage_v",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "max_temp_c",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "recovery_hysteresis_v",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "max_queue_size",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "max_history_records",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "driver_timeout_sec",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "Policy",
+    "field": "allow_cloud",
+    "subtype": "ControlConstraintField",
+    "basis": "Named operator-selected supervisory policy constraint"
+  },
+  {
+    "contract": "PositionPacket",
+    "field": "position_mm",
+    "subtype": "MechanicalMetricField",
+    "basis": "Measured or planned geometric quantity in declared units"
+  },
+  {
+    "contract": "PositionPacket",
+    "field": "frame_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "PositionPacket",
+    "field": "monotonic_seq",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Sequence or clock-domain freshness constraint"
+  },
+  {
+    "contract": "PositionPacket",
+    "field": "observed_at",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Sequence or clock-domain freshness constraint"
+  },
+  {
+    "contract": "ResidentProposal",
+    "field": "action",
+    "subtype": "RuntimeStateStatusField",
+    "basis": "Closed runtime state, lane, or advisory action vocabulary"
+  },
+  {
+    "contract": "ResidentProposal",
+    "field": "explanation",
+    "subtype": "DomainDescriptorField",
+    "basis": "Domain-specific reason or advisory explanation"
+  },
+  {
+    "contract": "ResidentProposal",
+    "field": "evidence_refs",
+    "subtype": "EvidenceReferenceField",
+    "basis": "References to validated evidence records"
+  },
+  {
+    "contract": "ResidentReceipt",
+    "field": "decision",
+    "subtype": "ValidationStatusField",
+    "basis": "Admission or validity result with declared bounds"
+  },
+  {
+    "contract": "ResidentReceipt",
+    "field": "proposal",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "ResidentReceipt",
+    "field": "model_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "ResidentReceipt",
+    "field": "context_hash",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Integrity receipt for the declared artifact or payload"
+  },
+  {
+    "contract": "ResidentReceipt",
+    "field": "rejection_reason",
+    "subtype": "DomainDescriptorField",
+    "basis": "Domain-specific reason or advisory explanation"
+  },
+  {
+    "contract": "ResidentReceipt",
+    "field": "evidence_id",
+    "subtype": "EvidenceReferenceField",
+    "basis": "References to validated evidence records"
+  },
+  {
+    "contract": "SafetyAssessment",
+    "field": "admitted",
+    "subtype": "ValidationStatusField",
+    "basis": "Admission or validity result with declared bounds"
+  },
+  {
+    "contract": "SafetyAssessment",
+    "field": "scale_factor",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "SafetyAssessment",
+    "field": "human_distance_m",
+    "subtype": "MechanicalMetricField",
+    "basis": "Measured or planned geometric quantity in declared units"
+  },
+  {
+    "contract": "SafetyAssessment",
+    "field": "protective_distance_m",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "SafetyAssessment",
+    "field": "rejection_reason",
+    "subtype": "DomainDescriptorField",
+    "basis": "Domain-specific reason or advisory explanation"
+  },
+  {
+    "contract": "SensorAssessment",
+    "field": "pace_lane",
+    "subtype": "RuntimeStateStatusField",
+    "basis": "Closed runtime state, lane, or advisory action vocabulary"
+  },
+  {
+    "contract": "SensorAssessment",
+    "field": "poll_interval_sec",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "SensorAssessment",
+    "field": "data_valid",
+    "subtype": "ValidationStatusField",
+    "basis": "Admission or validity result with declared bounds"
+  },
+  {
+    "contract": "SensorAssessment",
+    "field": "accepted_temp_c",
+    "subtype": "ThermalMetricField",
+    "basis": "Observed or accepted temperature; invalid observations remain gaps"
+  },
+  {
+    "contract": "SensorAssessment",
+    "field": "accepted_signal_dbm",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "SensorAssessment",
+    "field": "battery_margin",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "SensorAssessment",
+    "field": "flush_required",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "SensorAssessment",
+    "field": "rejection_reason",
+    "subtype": "DomainDescriptorField",
+    "basis": "Domain-specific reason or advisory explanation"
+  },
+  {
+    "contract": "SensorSample",
+    "field": "monotonic_seq",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Sequence or clock-domain freshness constraint"
+  },
+  {
+    "contract": "SensorSample",
+    "field": "observed_at",
+    "subtype": "TelemetryIntegrityField",
+    "basis": "Sequence or clock-domain freshness constraint"
+  },
+  {
+    "contract": "SensorSample",
+    "field": "voltage_v",
+    "subtype": "PowerMetricField",
+    "basis": "Observed electrical quantity with finite units"
+  },
+  {
+    "contract": "SensorSample",
+    "field": "temp_c",
+    "subtype": "ThermalMetricField",
+    "basis": "Observed or accepted temperature; invalid observations remain gaps"
+  },
+  {
+    "contract": "SensorSample",
+    "field": "signal_dbm",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "TaskReceipt",
+    "field": "request_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "TaskReceipt",
+    "field": "state",
+    "subtype": "RuntimeStateStatusField",
+    "basis": "Closed runtime state, lane, or advisory action vocabulary"
+  },
+  {
+    "contract": "TaskReceipt",
+    "field": "pace_lane",
+    "subtype": "RuntimeStateStatusField",
+    "basis": "Closed runtime state, lane, or advisory action vocabulary"
+  },
+  {
+    "contract": "TaskReceipt",
+    "field": "rejection_reason",
+    "subtype": "DomainDescriptorField",
+    "basis": "Domain-specific reason or advisory explanation"
+  },
+  {
+    "contract": "TaskReceipt",
+    "field": "evidence_id",
+    "subtype": "EvidenceReferenceField",
+    "basis": "References to validated evidence records"
+  },
+  {
+    "contract": "Calibration",
+    "field": "calibration_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "Calibration",
+    "field": "pixel_to_mm",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "Calibration",
+    "field": "yaw_rad",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "Calibration",
+    "field": "translation_mm",
+    "subtype": "PhysicalBoundField",
+    "basis": "Typed robotics quantity bounded by the declaring contract"
+  },
+  {
+    "contract": "Login",
+    "field": "operator_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "Login",
+    "field": "proof",
+    "subtype": "TrustRootField",
+    "basis": "Provisioned identity credential; excluded from evidence payloads"
+  },
+  {
+    "contract": "Question",
+    "field": "session_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "Question",
+    "field": "operator_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "Question",
+    "field": "question",
+    "subtype": "DomainDescriptorField",
+    "basis": "Untrusted resident question bounded by its wire contract"
+  },
+  {
+    "contract": "SessionRequest",
+    "field": "session_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  },
+  {
+    "contract": "SessionRequest",
+    "field": "operator_id",
+    "subtype": "ArtifactIdentifierField",
+    "basis": "Identifier scoped by its declaring domain contract"
+  }
+]

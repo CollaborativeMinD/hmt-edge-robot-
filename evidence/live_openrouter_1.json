@@ -1,0 +1,12 @@
+{
+  "run_url": "https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/runs/37084317036",
+  "source_commit": "4e3cf78bdea88b9c43dabe80d5fef33f7181a50b",
+  "result": {
+    "status": "HOLD",
+    "rejection_reason": "ValidationError",
+    "calls": 2,
+    "reserved_upper_bound_usd": 0.0045472,
+    "limit_usd": 1,
+    "session_reserved_upper_bound_usd": 0.0090008
+  }
+}

@@ -1,0 +1,32 @@
+name: Bounded live resident campaign
+on:
+  workflow_dispatch:
+    inputs:
+      authorization:
+        description: 'Type AUTHORIZE_NEW_095_USD_CAMPAIGN to authorize a new bounded campaign'
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: authorized-live-resident-once
+  cancel-in-progress: false
+jobs:
+  live:
+    if: inputs.authorization == 'AUTHORIZE_NEW_095_USD_CAMPAIGN'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+        with:
+          version: 0.9.7
+      - run: uv sync --frozen --extra dev
+      - run: uv run --no-sync python tools/live_llm_campaign.py
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: live-resident-evidence
+          path: evidence/live_llm_campaign.json

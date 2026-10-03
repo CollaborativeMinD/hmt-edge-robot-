@@ -1,0 +1,223 @@
+{
+  "objective": "OBJ-EDGE-01",
+  "sources": [
+    {
+      "source": "system_prompt_baseline.xml",
+      "sha256": "77e1ccb6ec1710fbe63a3c361cd10ae3b26aa8c8595164a14208715ecf43ba42",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "tooling_normalization.xml",
+      "sha256": "2680756ab5bbe5ce5dbb89338aa5bdc6be42745ade289949edbcf019f8526202",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "knowledge_base.md",
+      "sha256": "0f282e6f0507a0482ac53ed774f1d303154486e711ff5579d01cece9ff08f66e",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "CyberImpl_Deploy_EvidenceRelease.xml",
+      "sha256": "1b4e6a4c1e0e494270e9a1062c62180ad8398a9b7cb074c4619251a379bb7981",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "CyberImpl_Compliance_EnforceMISRA.xml",
+      "sha256": "f0c81eb9a6814c756727b009a935cdd77611ab2db768e2e3e81d198d3b1e665e",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "CyberImpl_Behavior_BlockUndefined.xml",
+      "sha256": "13ac67eb21408379ef46fc1a54e2b100e341d0a327604f5fdbd0bda3f215b7b1",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "CyberImpl_Memory_BlockDynamic.xml",
+      "sha256": "38fafd7cfb640fc41d0c9ebd111521d21d3523a29e951e73918525b22f877377",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "CyberImpl_Trace_BindArchitecture.xml",
+      "sha256": "ec13e44e111c45956c469d6d118243fd4241f70f1611ddd2de25f313f276257d",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "Ontology_MachineHandoff_Example.json",
+      "sha256": "ebdcd7b5652be4ba82709ff0c8cf914c6877afe7a958d8abd3e22de0dccf72ef",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "Ontology_MachineHandoff_Schema.json",
+      "sha256": "916f5a82442a85b18c941c760ee058bdc8b64a797667f088de4f92ac4beb3142",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "Ontology_FederatedBaseline_SubtypeCore.ttl",
+      "sha256": "2de2b0ad9cd705946926e659a5ed34ca478b9d7ed00df5ad381d05d99f7f7861",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "Ontology_FederatedBaseline_Core.ttl",
+      "sha256": "d01595e2f9e549f51556964dc91a0ee7629d6fba3744fc78d86a5e3855c918f3",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "team_context.xml",
+      "sha256": "0673c2ee8f30ad8bd829a50708c78505da870528224a0824970a58112e8afd19",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "sentinel_core_kernel_release.zip",
+      "sha256": "0202a18f8f89d2221544c90b7e1d97c23fb24863e7aa8bcf02458a42f111da74",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "digital_twin_ssot_mission_threads_screens.zip",
+      "sha256": "b64259e51cdb5f75e1dfbd610d4b9c12df44246a7c4245b54ffb9202aaf1faad",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "Geometric_Algebra_PGA_GC_Mobile_Field_Card_v1.py",
+      "sha256": "aa59bfb38c5f391167d0da5e1bd8b83fda0b4312036926a57023ad6255a24355",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "Classical_Calculus_Lin_Algebra_Mobile_Field_Card_v6.py",
+      "sha256": "55b739d4ce49d05bcc1686432faa302da1542ff5ea3123216b8dfe4c67566d90",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "white_board.html",
+      "sha256": "4b2e57379bf7f00f6733ffd283b6106c489c7cb98c4d945e3fbd9586b15068e5",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "rrca_verification_and_validation_v4.md",
+      "sha256": "9e40b6b088a8196f959fba170403d0b6da8340a27ab1fe04a5843004e234076d",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "scratch_pad.py",
+      "sha256": "fb7a7282579cec0bf20ba80a3da771e3510086892e7e0d5f923d9249f248ee56",
+      "disposition": "REFERENCED_OR_ADAPTED; inherited file excluded"
+    },
+    {
+      "source": "01-228495.png",
+      "sha256": "7cf926976612a7429eeef499ae14173de7ec5b158c6193c633ed96c91a63cd71",
+      "disposition": "ARCHITECTURE_INPUT"
+    },
+    {
+      "source": "02-228498.png",
+      "sha256": "749b75652978468772c91059e81c74387148de549614845361cbc873522df38a",
+      "disposition": "ARCHITECTURE_INPUT"
+    },
+    {
+      "source": "03-228501.png",
+      "sha256": "f4131a3d9196a78d0eb74d361ed6d6b8d13750b1e81b279d94cc228982415cbd",
+      "disposition": "ARCHITECTURE_INPUT"
+    },
+    {
+      "source": "physical_edge_robotics(1).zip",
+      "sha256": "47a0040037f5f56cc4fea8802b87d86b05c7a64507531c65f9429e677d99ed97",
+      "disposition": "INHERITED_BASELINE_EXCLUDED"
+    }
+  ],
+  "upstream_subtype_classes": [
+    "CanonicalField",
+    "FieldSemanticSubtype",
+    "RejectedGenericField",
+    "IdentifierField",
+    "ArtifactIdentifierField",
+    "StateIdentifierField",
+    "EventIdentifierField",
+    "TransitionIdentifierField",
+    "GateIdentifierField",
+    "ConstraintIdentifierField",
+    "RiskIdentifierField",
+    "ScenarioIdentifierField",
+    "SignalIdentifierField",
+    "FaultIdentifierField",
+    "BusIdentifierField",
+    "TrustIdentifierField",
+    "DatasetIdentifierField",
+    "BuildIdentifierField",
+    "InterfaceIdentifierField",
+    "StatusField",
+    "ApprovalStatusField",
+    "ValidationStatusField",
+    "ReviewStatusField",
+    "RuntimeStateStatusField",
+    "RiskStatusField",
+    "DriftStatusField",
+    "MappingDispositionField",
+    "ReferenceField",
+    "ArtifactReferenceField",
+    "ConstraintReferenceField",
+    "TopologyReferenceField",
+    "ArchitectureReferenceField",
+    "EvidenceReferenceField",
+    "ConstraintField",
+    "GraphConstraintField",
+    "ControlConstraintField",
+    "SafetyConstraintField",
+    "ThermalConstraintField",
+    "PowerConstraintField",
+    "DeploymentConstraintField",
+    "EnvelopeConstraintField",
+    "TrustConstraintField",
+    "RuntimeControlField",
+    "StateControlField",
+    "TransitionControlField",
+    "RecoveryControlField",
+    "SafeStateControlField",
+    "EvidenceField",
+    "ProvenanceField",
+    "EvidenceLocatorField",
+    "EvidenceQualityField",
+    "PhysicalMetricField",
+    "AerospaceMetricField",
+    "ThermalMetricField",
+    "PowerMetricField",
+    "MechanicalMetricField",
+    "PerformanceMetricField",
+    "RiskField",
+    "HazardField",
+    "FailureModeField",
+    "SeverityField",
+    "BlastRadiusField",
+    "DivergenceRiskField",
+    "OntologyField",
+    "VocabularyBindingField",
+    "MappingGovernanceField",
+    "ProvenanceGovernanceField",
+    "TwinField",
+    "TwinTopologyField",
+    "TwinFidelityField",
+    "TwinReplayField",
+    "TwinStateField",
+    "IntegrityField",
+    "TrustRootField",
+    "TelemetryIntegrityField",
+    "ElectricalIntegrityField",
+    "BusIntegrityField",
+    "ReviewField",
+    "ReviewDecisionField",
+    "ApprovalActorField",
+    "DeploymentField",
+    "ReleaseLifecycleField",
+    "ArtifactContextField",
+    "ArtifactClassificationField",
+    "MiscField",
+    "OperationalParameterField",
+    "PhysicalBoundField",
+    "ComparativeAnalysisField",
+    "DomainDescriptorField"
+  ],
+  "reuse": {
+    "geometry.py": "GA/PGA field-card fixed algebra adapted; classical parity tests",
+    "ledger.py": "Sentinel historian concept adapted with hard failure and transactional intent",
+    "safety.py": "Kinematic, bounded integration and guard families adapted",
+    "contracts.py": "Federated field semantics specialized; original schema/ontology hashes retained",
+    "runtime.py": "Five physical edge subsystem concepts composed with corrected authority and verification"
+  }
+}

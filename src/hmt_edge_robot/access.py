@@ -54,16 +54,33 @@ class AccessManager:
         self._clock(now)
         permissions = self.provider.authenticate(operator_id, proof)
         if not permissions:
-            self.ledger.append("access", operator_id, "login_denied", {"rejection_reason": "IDENTITY_NOT_VERIFIED"})
+            self.ledger.append(
+                "access", operator_id, "login_denied", {"rejection_reason": "IDENTITY_NOT_VERIFIED"}
+            )
             raise PermissionError("IDENTITY_NOT_VERIFIED")
-        expired = [key for key, session in self.sessions.items() if now - session.created_at >= self.policy.session_timeout_sec]
+        expired = [
+            key
+            for key, session in self.sessions.items()
+            if now - session.created_at >= self.policy.session_timeout_sec
+        ]
         for key in expired:
             self.revoke(key)
         if len(self.sessions) >= self.policy.max_queue_size:
             raise PermissionError("SESSION_CAPACITY_EXHAUSTED")
         session_id = secrets.token_hex(16)
-        self.ledger.append("access", operator_id, "session_created", {"session_id": session_id, "permissions": permissions, "policy_epoch": self.policy.policy_epoch})
-        self.sessions[session_id] = Session(session_id, operator_id, permissions, now, now, self.policy.policy_epoch)
+        self.ledger.append(
+            "access",
+            operator_id,
+            "session_created",
+            {
+                "session_id": session_id,
+                "permissions": permissions,
+                "policy_epoch": self.policy.policy_epoch,
+            },
+        )
+        self.sessions[session_id] = Session(
+            session_id, operator_id, permissions, now, now, self.policy.policy_epoch
+        )
         return session_id
 
     def authorize(self, session_id: str, operator_id: str, permission: str, now: float) -> bool:
@@ -83,7 +100,14 @@ class AccessManager:
         if session is None or not self.authorize(session_id, operator_id, "inspect", now):
             return False
         self.ledger.append("access", operator_id, "presence_confirmed", {"session_id": session_id})
-        self.sessions[session_id] = Session(session_id, operator_id, session.permissions, session.created_at, now, session.policy_epoch)
+        self.sessions[session_id] = Session(
+            session_id,
+            operator_id,
+            session.permissions,
+            session.created_at,
+            now,
+            session.policy_epoch,
+        )
         return True
 
     def revoke(self, session_id: str) -> None:
