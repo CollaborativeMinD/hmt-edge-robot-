@@ -1,0 +1,2 @@
+{"status": "FAIL", "reason_codes": ["QUALIFIED_SOURCE_DIGEST_MISMATCH:tools/artifact_probe.py"], "notification": "CI_ADMISSION_FAIL", "alert": true}
+::error::CI admission failed; inspect evidence/ci/admission.json

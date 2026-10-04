@@ -44,11 +44,11 @@ artifact. Re-running an existing release refuses to overwrite attached assets.
 
 ## One-time signing setup
 
-The Environment does not exist yet. Automatic approval review rejected its creation
-until the exact deployment protection settings are approved. Proposed configuration:
-`appliance-release`, custom branch policies allowing branch `main` and tags `v*`,
-no other refs; require a designated release reviewer where the GitHub plan supports
-it. Source ancestry remains enforced inside the workflow as well.
+The owner has configured `appliance-release`; its custom branch policies were
+verified to allow only branch `main` and tags `v*`. The integration cannot list
+Environment secrets or variables, so their values are verified by the publisher.
+Require a designated release reviewer where the GitHub plan supports it. Source
+ancestry remains enforced inside the workflow as well.
 
 Generate an encrypted 3072- or 4096-bit RSA private key offline. Keep a recoverable
 owner-controlled copy; never commit it. For example:

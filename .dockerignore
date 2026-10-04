@@ -12,6 +12,9 @@
 !deploy/
 !deploy/stage4/
 !deploy/stage4/Dockerfile
+!tools/
+!tools/runtime_*.py
+!tools/appliance_process.py
 **/__pycache__
 **/*.pyc
 **/.venv

@@ -50,7 +50,8 @@ def assess(root: Path, commit: str) -> dict:
     scans(data["sbom.spdx.json"], data["vulnerabilities.json"], data["container.json"], (root / "uv.lock").read_bytes())
     archive_digest = archive_hash(archive)
     inputs = {name: digest(confined(root, "evidence/cd/stage4/" + name)) for name in FILES}
-    inputs.update({name: digest(root / name) for name in ("uv.lock", "pyproject.toml", "deploy/stage4/Dockerfile", ".dockerignore")})
+    inputs.update({name: digest(root / name) for name in ("uv.lock", "pyproject.toml", "deploy/stage4/Dockerfile", ".dockerignore",
+        "tools/runtime_rootfs.py", "tools/runtime_elf.py", "tools/runtime_inventory.py", "tools/appliance_process.py")})
     return {"status": "PASS", "source_commit": commit, "image_digest": image,
         "archive_sha256": archive_digest, "inputs": inputs, "platform": "linux/arm64",
         "qualification": "HOLD", "signed_provenance": "HOLD", "deployment": "HOLD", "hardware": "HOLD",

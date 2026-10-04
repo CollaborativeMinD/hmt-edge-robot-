@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "mode": "SIL",
+  "cycles": 32,
+  "events": 256,
+  "parquet_records": 256,
+  "p95_cycle_ms": 0.6405260010069469,
+  "median_cycle_ms": 0.5472349994306569,
+  "peak_host_rss_mib": 258.23828125,
+  "limits": {
+    "p95_ms": 100,
+    "host_rss_mib": 512
+  },
+  "scope": "Observed Linux host campaign; not worst-case execution time or target firmware proof"
+}

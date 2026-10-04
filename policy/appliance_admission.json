@@ -15,7 +15,7 @@
     "deploy/appliance/smoke-test.sh": "2a478fd5907803073c69337c8130f6c4a43d5c082400295779cde2fe2ada9ee9",
     "docs/cd/appliance-release-notes.md": "df6e9621baf6edfabb0edcf1561546b3c8e28789f9a4f1e7c29316f93ece2fae",
     "docs/cd/appliance-requirements.json": "0e30a5f0cceabf9459767a77328fc5d770ed33962c3d33b45b78aa28822fa3f0",
-    "docs/cd/appliance.md": "fef9b101bb1dd3a66b4c889cec9e7cf411391058a9045c1b4b71395ceeeadcb4",
+    "docs/cd/appliance.md": "a467222d0b1358688d7c09dd1b1c3b44a6ed2d0f83f3669f9d4ba9612230e6b2",
     "tests/test_appliance_node.py": "980b5dbfb54eb33a33740059ac8c956c5075642e9e55316d0d95e2a749cacb9d",
     "tests/test_appliance_pipeline.py": "78eb3ea62a72b6be2829c31efc5db73f4c4eabbaeff4ca60b72ef7b146256f2b",
     "tests/test_appliance_release.py": "49f99327d8c1fee3062bd5a85cddefa0aa2b42421c8994b9cdb169c0799e2cb9",

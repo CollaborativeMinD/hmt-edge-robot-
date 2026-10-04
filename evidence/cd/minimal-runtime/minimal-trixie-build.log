@@ -1,0 +1,70 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.29kB done
+#1 WARN: InvalidDefaultArgInFrom: Default value for ARG ${UV_IMAGE} results in empty or invalid base image name (line 3)
+#1 WARN: InvalidDefaultArgInFrom: Default value for ARG ${PYTHON_IMAGE} results in empty or invalid base image name (line 4)
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/astral-sh/uv@sha256:ba4857bf2a068e9bc0e64eed8563b065908a4cd6bfb66b531a9c424c8e25e142
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python@sha256:02108f5d322dd89f1c9e552442c25acb0543dfdbc455693a5599624f20d9155d
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 396B done
+#4 DONE 0.0s
+
+#5 [uv 1/1] FROM ghcr.io/astral-sh/uv@sha256:ba4857bf2a068e9bc0e64eed8563b065908a4cd6bfb66b531a9c424c8e25e142
+#5 DONE 0.0s
+
+#6 [builder  1/10] FROM docker.io/library/python@sha256:02108f5d322dd89f1c9e552442c25acb0543dfdbc455693a5599624f20d9155d
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 301.97kB 0.1s done
+#7 DONE 0.1s
+
+#8 [builder  5/10] COPY vendor/qualified/scaffoldctl ./vendor/qualified/scaffoldctl
+#8 CACHED
+
+#9 [builder  7/10] COPY src ./src
+#9 CACHED
+
+#10 [builder  2/10] COPY --from=uv /uv /usr/local/bin/uv
+#10 CACHED
+
+#11 [builder  3/10] WORKDIR /build
+#11 CACHED
+
+#12 [builder  4/10] COPY pyproject.toml uv.lock ./
+#12 CACHED
+
+#13 [builder  6/10] COPY vendor/qualified/truth-serum ./vendor/qualified/truth-serum
+#13 CACHED
+
+#14 [builder  8/10] RUN --mount=type=secret,id=proxy_ca     if [ -f /run/secrets/proxy_ca ]; then export SSL_CERT_FILE=/run/secrets/proxy_ca; fi;     uv lock --check && uv sync --locked --no-dev --no-editable --no-cache
+#14 CACHED
+
+#15 [builder  9/10] COPY tools/runtime_*.py tools/appliance_process.py /build-tools/
+#15 DONE 2.1s
+
+#16 [builder 10/10] RUN python /build-tools/runtime_rootfs.py
+#16 DONE 5.6s
+
+#17 [runtime 1/2] COPY --from=builder /runtime-root/ /
+#17 CACHED
+
+#18 [runtime 2/2] WORKDIR /data
+#18 CACHED
+
+#19 exporting to image
+#19 exporting layers done
+#19 writing image sha256:ecfc5114686cb168e3d51a270ee314e89b498c60e40453b154ab38cefe76c972 done
+#19 naming to docker.io/library/hmt-edge:minimal-trixie done
+#19 DONE 0.0s
+
+ [33m2 warnings found (use docker --debug to expand):
+[0m - InvalidDefaultArgInFrom: Default value for ARG ${UV_IMAGE} results in empty or invalid base image name (line 3)
+ - InvalidDefaultArgInFrom: Default value for ARG ${PYTHON_IMAGE} results in empty or invalid base image name (line 4)

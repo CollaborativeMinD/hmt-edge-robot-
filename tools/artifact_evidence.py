@@ -30,6 +30,8 @@ def scans(sbom: dict, scan: dict, probe: dict, lock: bytes) -> None:
             raise ValueError("IMAGE_SECRET_DETECTED")
     if probe.get("status") != "PASS" or probe.get("platform") != "aarch64" or probe.get("uid") != 10001:
         raise ValueError("NATIVE_CONTAINER_QUALIFICATION_FAILED")
+    if probe.get("minimal_runtime") is not True or probe.get("native_features") != "PASS":
+        raise ValueError("MINIMAL_RUNTIME_QUALIFICATION_FAILED")
     if probe.get("paid_calls") != 0 or probe.get("resident_stopped") is not True:
         raise ValueError("RESIDENT_BOUNDARY_FAILED")
     if probe.get("events", 0) <= 0 or probe["events"] != probe.get("replayed"):

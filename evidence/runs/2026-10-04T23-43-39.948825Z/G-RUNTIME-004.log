@@ -1,0 +1,35 @@
+........................................................................ [ 19%]
+........................................................................ [ 39%]
+............................F........................................... [ 59%]
+........................................................................ [ 79%]
+........................................................................ [ 99%]
+...                                                                      [100%]
+=================================== FAILURES ===================================
+_________________ test_ci_admission_and_candidates_remain_hold _________________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-27/test_ci_admission_and_candidat0')
+
+    def test_ci_admission_and_candidates_remain_hold(tmp_path: Path) -> None:
+        root = copy_admission(tmp_path)
+>       assert main(root) == 0
+E       AssertionError: assert 1 == 0
+E        +  where 1 = main(PosixPath('/tmp/pytest-of-agent/pytest-27/test_ci_admission_and_candidat0'))
+
+tests/test_ci_admission.py:27: AssertionError
+----------------------------- Captured stdout call -----------------------------
+{"status": "FAIL", "reason_codes": ["QUALIFIED_SOURCE_DIGEST_MISMATCH:tools/artifact_probe.py"], "notification": "CI_ADMISSION_FAIL", "alert": true}
+::error::CI admission failed; inspect evidence/ci/admission.json
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /workspace/hmt-edge-robot/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.14-final-0 _______________
+
+Coverage JSON written to file evidence/coverage.json
+Required test coverage of 90.0% reached. Total coverage: 97.74%
+=========================== short test summary info ============================
+FAILED tests/test_ci_admission.py::test_ci_admission_and_candidates_remain_hold
+1 failed, 362 passed, 1 warning in 10.70s
