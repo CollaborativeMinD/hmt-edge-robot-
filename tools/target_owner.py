@@ -35,6 +35,13 @@ class OwnerNode(Closed):
     tailscale_ipv4: Text
     screenshots: tuple[ImageReference, ...] = Field(min_length=2, max_length=2)
 
+    @field_validator("userspace_bits", "zram_bytes", mode="before")
+    @classmethod
+    def exact_integers(cls, value: object) -> object:
+        if type(value) is not int:
+            raise ValueError("OWNER_INTEGER_REQUIRED")
+        return value
+
     @field_validator("screenshots", mode="before")
     @classmethod
     def json_array(cls, value: object) -> object:

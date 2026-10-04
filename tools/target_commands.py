@@ -52,7 +52,11 @@ async def run_command(name: str) -> Probe:
                 os.killpg(proc.pid, signal.SIGKILL)
             except ProcessLookupError:
                 pass
-        await asyncio.wait_for(proc.wait(), 5)
+        async with asyncio.timeout(5):
+            if proc.stdout is not None:
+                while await proc.stdout.read(4096):
+                    pass
+            await proc.wait()
     return Probe.model_validate({"name": name, "status": "PASS" if reason == "COMMAND_COMPLETED" else "FAIL", "output": data.decode("utf-8", errors="replace"), "reason_code": reason})
 
 

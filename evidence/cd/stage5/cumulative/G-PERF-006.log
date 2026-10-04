@@ -4,9 +4,9 @@
   "cycles": 32,
   "events": 256,
   "parquet_records": 256,
-  "p95_cycle_ms": 0.6816700006311294,
-  "median_cycle_ms": 0.5945730008534156,
-  "peak_host_rss_mib": 262.42578125,
+  "p95_cycle_ms": 0.6895330006955191,
+  "median_cycle_ms": 0.564237999242323,
+  "peak_host_rss_mib": 264.2109375,
   "limits": {
     "p95_ms": 100,
     "host_rss_mib": 512

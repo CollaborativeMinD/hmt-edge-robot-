@@ -29,7 +29,7 @@ def collect(root: Path, destination: Path) -> int:
         capture = Capture(schema_version=1, origin="LOCAL_READ_ONLY_COLLECTOR", policy_hash=digest(root / "policy/target.json"), collector_hash=collector_hash, baseline_commit=policy.baseline_commit, started_at=started, finished_at=datetime.now(timezone.utc), boot_id=boot, probes=probes, snapshot=host, deployment="HOLD")
         atomic_write(destination, capture.model_dump(mode="json"))
         return 0
-    except (ValueError, OSError, KeyError, TypeError, IndexError):
+    except (ValueError, OSError, KeyError, TypeError, IndexError, TimeoutError):
         failure: dict[str, Any] = {"status": "FAIL", "deployment": "HOLD", "reason_codes": ["TARGET_COLLECTION_FAILED"], "alert": True}
         atomic_write(destination, failure)
         return 1

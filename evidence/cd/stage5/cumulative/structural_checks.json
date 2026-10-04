@@ -2238,6 +2238,11 @@
       "physical_lines": 4
     },
     {
+      "path": "tests/test_target_handoff.py",
+      "function": "test_owner_numbers_are_not_coerced",
+      "physical_lines": 7
+    },
+    {
       "path": "tests/test_ci_support.py",
       "function": "support_copy",
       "physical_lines": 9
@@ -2344,6 +2349,11 @@
     },
     {
       "path": "tools/target_owner.py",
+      "function": "exact_integers",
+      "physical_lines": 6
+    },
+    {
+      "path": "tools/target_owner.py",
       "function": "json_array",
       "physical_lines": 4
     },
@@ -2390,7 +2400,7 @@
     {
       "path": "tools/target_commands.py",
       "function": "run_command",
-      "physical_lines": 30
+      "physical_lines": 34
     },
     {
       "path": "tools/target_commands.py",

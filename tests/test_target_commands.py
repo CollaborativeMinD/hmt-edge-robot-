@@ -8,7 +8,7 @@ import pytest
 import target_commands
 
 
-@pytest.mark.parametrize("script,reason", [("print('ok')", "COMMAND_COMPLETED"), ("raise SystemExit(3)", "COMMAND_FAILED"), ("print('x'*70000)", "COMMAND_OUTPUT_LIMIT"), ("import time;time.sleep(10)", "COMMAND_TIMEOUT")])
+@pytest.mark.parametrize("script,reason", [("print('ok')", "COMMAND_COMPLETED"), ("raise SystemExit(3)", "COMMAND_FAILED"), ("print('x'*70000)", "COMMAND_OUTPUT_LIMIT"), ("print('x'*10000000)", "COMMAND_OUTPUT_LIMIT"), ("import time;time.sleep(10)", "COMMAND_TIMEOUT")])
 def test_command_bounds(monkeypatch: pytest.MonkeyPatch, script: str, reason: str) -> None:
     monkeypatch.setitem(target_commands.COMMANDS, "test", (sys.executable, "-c", script))
     monkeypatch.setattr(target_commands, "TIMEOUT_SECONDS", 0.2)

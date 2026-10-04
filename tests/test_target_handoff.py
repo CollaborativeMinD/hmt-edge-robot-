@@ -9,6 +9,7 @@ import target_bindings
 from deployment_receipts import content_hash
 from target_admission import evaluate
 from target_io import bind
+from target_owner import OwnerNode
 from target_receipts import Outcome
 from target_test_support import NOW, captures, make_root
 from test_target_io import rebind
@@ -53,3 +54,12 @@ def test_unbound_field_is_rejected(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setitem(target_bindings.GROUPS, "IdentifierField", set())
     with pytest.raises(ValueError):
         target_bindings.bindings()
+
+
+@pytest.mark.parametrize("field,value", [("userspace_bits", 64.0), ("zram_bytes", 2147483648.0)])
+def test_owner_numbers_are_not_coerced(field: str, value: float) -> None:
+    from target_test_support import ROOT
+
+    owner = json.loads((ROOT / "docs/cd/owner-inventory.json").read_text())["nodes"][0]
+    with pytest.raises(ValueError):
+        OwnerNode.model_validate_json(json.dumps({**owner, field: value}))
