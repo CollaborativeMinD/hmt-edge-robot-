@@ -1,0 +1,1 @@
+{"status": "PASS", "owner_inventory": "BOUND", "target_qualification": "HOLD", "deployment": "HOLD", "policy_hash": "20b2127de9fadfd8e76a06700646f830dcdcdfc0e5841c9d1804c106f8028cfb", "collector_hash": "f1ff8104d061e834222a36e3499b3f859778c52c1ff447e8efd0d9542effdb7a", "reason_codes": ["HOST_BASELINE_BOUND", "LIVE_TARGET_CAPTURE_REQUIRED", "RUNTIME_TRIALS_REQUIRED"]}

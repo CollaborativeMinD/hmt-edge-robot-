@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "scope": "READ_ONLY_TARGET_QUALIFICATION",
+  "files": {
+    "tools/target_admission.py": "48e44d078917bd63a6307596657657c1760cfb6938e0617126a0512bf52f258b",
+    "tools/target_bindings.py": "dbb2abdf64691afece1483cfae7da0797b4869729244b68926cfeff16f0fee42",
+    "tools/target_campaign.py": "db9344ab2f161186d7f42a32a4c497c4798e26d02f8a5dca93a3039b4be9699a",
+    "tools/target_collect.py": "e51bad92dcd23dc53b0dcb1391bb4968e989b61f0cdc73de5a66a36825a3c05f",
+    "tools/target_commands.py": "9bef70f590463e0b05627c9d7bfba3975bcb0a2b1ef928c8820936d04b71efb8",
+    "tools/target_contracts.py": "03314b466206752ce02595bc44d00b316d753219af3cadf9980609c554075f9b",
+    "tools/target_gate.py": "847f90f428f2d37f7978921d82e3d402935be3ef379d70b88b7624d56f86452d",
+    "tools/target_io.py": "2e90ba516e2d2508c11142a277d2a377753b589582889d6af97a514feff4d636",
+    "tools/target_owner.py": "74eb96c1b6c8db0abfd6b237094b33a3f0694b9e293dbc9282a7d092f87353b8",
+    "tools/target_profile.py": "053717a345b4a5140b04b406e627e979444c50f17087a4f18e05437ec2eb7835",
+    "tools/target_receipts.py": "3ddf04b24682977f1b82f246c1964ae72c3bfa6a3cfa8c78c01f61da32f66d40",
+    "tools/target_snapshot.py": "e6fcda6d3f14486736c6bcf4de3736d483389fdb185f5675664dea39e89160d1",
+    "policy/target.json": "20b2127de9fadfd8e76a06700646f830dcdcdfc0e5841c9d1804c106f8028cfb",
+    "docs/cd/target-policy.schema.json": "e23400d824c33d31bbd9cf283d8df3aa7bf1e42d624eb19a29fc87b1f3769a77",
+    "docs/cd/target-capture.schema.json": "cb759ec96f83f3c6805dae1d8e2ba8adf7d79be11b3ac366c59ff4ba3ea67ac5",
+    "docs/cd/owner-inventory.schema.json": "1e48e9b4f6c6035bb3a7ab8d0a3a108d755b46783d57b49fa0e6c79fc4ca07c1",
+    "docs/cd/stage5.md": "e122607f139df6f769855d150b2633627f693109910e10c3efca9cf2e2dff8bb",
+    "docs/cd/owner-inventory.json": "22f98348176ba80daa87b48f2573288373f00b234853b6ff4350861b5c802490",
+    "docs/cd/target-receipt.schema.json": "f04eae9c41ca59c497ada6e0ecfe810c8c28bb031f948073c2dd07f82b73d4b4",
+    "docs/cd/target-field-bindings.json": "48424fa12c3529c520cc31f0c99fe56d60fb57df8f5e01969b8fa3fb4d05c424"
+  }
+}

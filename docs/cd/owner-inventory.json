@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "origin": "OWNER_SCREENSHOT_TRANSCRIPTION",
+  "supplied_date": "2026-10-04",
+  "capture_timestamp": null,
+  "nodes": [
+    {
+      "hostname": "forge-pi-01",
+      "kernel": "6.18.34+rpt-rpi-2712",
+      "os_full_version": "13.5",
+      "architecture": "aarch64",
+      "userspace_bits": 64,
+      "disk_bytes": 63864569856,
+      "root_partition_bytes": 63319310336,
+      "root_fstype": "ext4",
+      "memory_reported": "7.9Gi",
+      "memory_available_reported": "7.3Gi",
+      "root_available_reported": "49G",
+      "root_used_percent_reported": 14,
+      "zram_bytes": 2147483648,
+      "tailscale_version": "1.102.2",
+      "tailscale_ipv4": "100.100.189.70",
+      "screenshots": [
+        {
+          "filename": "229024.png",
+          "sha256": "8db1325def93a24697dc5937d9ccc183fd9f5b1f32f3a6df17f49a50975e427c"
+        },
+        {
+          "filename": "229008.png",
+          "sha256": "f31e03fff9fa0cfeda6c862dddd5b20c7bea1070464268c1f1c64ddfe9817895"
+        }
+      ]
+    },
+    {
+      "hostname": "forge-pi-02",
+      "kernel": "6.18.34+rpt-rpi-v8",
+      "os_full_version": "13.5",
+      "architecture": "aarch64",
+      "userspace_bits": 64,
+      "disk_bytes": 127999672320,
+      "root_partition_bytes": 127454412800,
+      "root_fstype": "ext4",
+      "memory_reported": "7.6Gi",
+      "memory_available_reported": "7.1Gi",
+      "root_available_reported": "98G",
+      "root_used_percent_reported": 14,
+      "zram_bytes": 2147483648,
+      "tailscale_version": "1.102.4",
+      "tailscale_ipv4": "100.116.120.120",
+      "screenshots": [
+        {
+          "filename": "229021.png",
+          "sha256": "51d53102d30d8ad392d22d4a37bcbb2d5b4953b4c4ce73f4289e57ca813bb922"
+        },
+        {
+          "filename": "229012.png",
+          "sha256": "b230380aa9fcfb0906df41d606134349bc6a40c39931a6a1dfc0329541921224"
+        }
+      ]
+    },
+    {
+      "hostname": "forge-pi-03",
+      "kernel": "6.12.47+rpt-rpi-v8",
+      "os_full_version": "13.2",
+      "architecture": "aarch64",
+      "userspace_bits": 64,
+      "disk_bytes": 127999672320,
+      "root_partition_bytes": 127454412800,
+      "root_fstype": "ext4",
+      "memory_reported": "7.6Gi",
+      "memory_available_reported": "7.1Gi",
+      "root_available_reported": "95G",
+      "root_used_percent_reported": 16,
+      "zram_bytes": 2147483648,
+      "tailscale_version": "1.102.2",
+      "tailscale_ipv4": "100.101.109.84",
+      "screenshots": [
+        {
+          "filename": "229018.png",
+          "sha256": "273631217010bb37c7a46e677d2f1a1550fb58f72878a93e178f99047ff7cda4"
+        },
+        {
+          "filename": "229015.png",
+          "sha256": "e256890841fe936706b759fb16cd1c2a49810d35012c9925b76ad216798591ed"
+        }
+      ]
+    }
+  ],
+  "target_qualification": "HOLD",
+  "deployment": "HOLD"
+}

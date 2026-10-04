@@ -1,0 +1,201 @@
+{
+  "$defs": {
+    "ImageReference": {
+      "additionalProperties": false,
+      "properties": {
+        "filename": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Filename",
+          "type": "string"
+        },
+        "sha256": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "filename",
+        "sha256"
+      ],
+      "title": "ImageReference",
+      "type": "object"
+    },
+    "OwnerNode": {
+      "additionalProperties": false,
+      "properties": {
+        "hostname": {
+          "enum": [
+            "forge-pi-01",
+            "forge-pi-02",
+            "forge-pi-03"
+          ],
+          "title": "Hostname",
+          "type": "string"
+        },
+        "kernel": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Kernel",
+          "type": "string"
+        },
+        "os_full_version": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Os Full Version",
+          "type": "string"
+        },
+        "architecture": {
+          "const": "aarch64",
+          "title": "Architecture",
+          "type": "string"
+        },
+        "userspace_bits": {
+          "const": 64,
+          "title": "Userspace Bits",
+          "type": "integer"
+        },
+        "disk_bytes": {
+          "exclusiveMinimum": 0,
+          "title": "Disk Bytes",
+          "type": "integer"
+        },
+        "root_partition_bytes": {
+          "exclusiveMinimum": 0,
+          "title": "Root Partition Bytes",
+          "type": "integer"
+        },
+        "root_fstype": {
+          "const": "ext4",
+          "title": "Root Fstype",
+          "type": "string"
+        },
+        "memory_reported": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Memory Reported",
+          "type": "string"
+        },
+        "memory_available_reported": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Memory Available Reported",
+          "type": "string"
+        },
+        "root_available_reported": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Root Available Reported",
+          "type": "string"
+        },
+        "root_used_percent_reported": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Root Used Percent Reported",
+          "type": "integer"
+        },
+        "zram_bytes": {
+          "const": 2147483648,
+          "title": "Zram Bytes",
+          "type": "integer"
+        },
+        "tailscale_version": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Tailscale Version",
+          "type": "string"
+        },
+        "tailscale_ipv4": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Tailscale Ipv4",
+          "type": "string"
+        },
+        "screenshots": {
+          "items": {
+            "$ref": "#/$defs/ImageReference"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "title": "Screenshots",
+          "type": "array"
+        }
+      },
+      "required": [
+        "hostname",
+        "kernel",
+        "os_full_version",
+        "architecture",
+        "userspace_bits",
+        "disk_bytes",
+        "root_partition_bytes",
+        "root_fstype",
+        "memory_reported",
+        "memory_available_reported",
+        "root_available_reported",
+        "root_used_percent_reported",
+        "zram_bytes",
+        "tailscale_version",
+        "tailscale_ipv4",
+        "screenshots"
+      ],
+      "title": "OwnerNode",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "origin": {
+      "const": "OWNER_SCREENSHOT_TRANSCRIPTION",
+      "title": "Origin",
+      "type": "string"
+    },
+    "supplied_date": {
+      "const": "2026-10-04",
+      "title": "Supplied Date",
+      "type": "string"
+    },
+    "capture_timestamp": {
+      "title": "Capture Timestamp",
+      "type": "null"
+    },
+    "nodes": {
+      "items": {
+        "$ref": "#/$defs/OwnerNode"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Nodes",
+      "type": "array"
+    },
+    "target_qualification": {
+      "const": "HOLD",
+      "title": "Target Qualification",
+      "type": "string"
+    },
+    "deployment": {
+      "const": "HOLD",
+      "title": "Deployment",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "origin",
+    "supplied_date",
+    "capture_timestamp",
+    "nodes",
+    "target_qualification",
+    "deployment"
+  ],
+  "title": "OwnerInventory",
+  "type": "object"
+}

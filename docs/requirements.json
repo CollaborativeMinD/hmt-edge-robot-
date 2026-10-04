@@ -1269,6 +1269,89 @@
       ],
       "gate": "G-ARTIFACT-NEGATIVE-020",
       "scope": "hosted ARM64 software artifact qualification"
+    },
+    {
+      "id": "REQ-CD5-01",
+      "kind": "functional",
+      "acceptance": "Bind the exact owner-assigned three-node heterogeneous microSD lab without granting runtime authority",
+      "source": [
+        "tools/target_profile.py",
+        "tools/target_owner.py",
+        "policy/target.json",
+        "docs/cd/owner-inventory.json"
+      ],
+      "tests": [
+        "tests/test_target_contracts.py::test_inventory_does_not_grant_runtime_authority",
+        "tests/test_target_admission.py::test_owner_transcription_and_strict_schema"
+      ],
+      "gate": "G-TARGET-BASELINE-021",
+      "scope": "read-only target qualification"
+    },
+    {
+      "id": "REQ-CD5-02",
+      "kind": "functional",
+      "acceptance": "Fixed read-only host probes have bounded output/deadlines, reboot detection and fail-closed capture persistence",
+      "source": [
+        "tools/target_collect.py",
+        "tools/target_commands.py",
+        "tools/target_snapshot.py"
+      ],
+      "tests": [
+        "tests/test_target_commands.py::test_command_bounds",
+        "tests/test_target_collection.py::test_collector_invalidates_prior_success",
+        "tests/test_target_snapshot.py::test_snapshot_uses_real_units_and_root_storage"
+      ],
+      "gate": "G-TARGET-NEGATIVE-022",
+      "scope": "read-only target qualification"
+    },
+    {
+      "id": "REQ-CD5-03",
+      "kind": "functional",
+      "acceptance": "Strict source-bound fresh inventory and typed receipts reject stale, forged, incomplete or contradictory evidence",
+      "source": [
+        "tools/target_admission.py",
+        "tools/target_io.py",
+        "tools/target_receipts.py",
+        "tools/target_gate.py"
+      ],
+      "tests": [
+        "tests/test_target_admission.py::test_identity_binding",
+        "tests/test_target_contracts.py::test_inventory_does_not_grant_runtime_authority",
+        "tests/test_target_collection.py::test_assessment_replaces_stale_pass_and_cli",
+        "tests/test_target_handoff.py::test_receipt_contract"
+      ],
+      "gate": "G-TARGET-NEGATIVE-022",
+      "scope": "read-only target qualification"
+    },
+    {
+      "id": "REQ-CD5-04",
+      "kind": "nonfunctional",
+      "acceptance": "MicroSD target policy preserves Tailscale and all independent runtime/deployment/physical HOLDs with governed field bindings",
+      "source": [
+        "tools/target_contracts.py",
+        "tools/target_bindings.py",
+        "docs/cd/stage5.md"
+      ],
+      "tests": [
+        "tests/test_target_contracts.py::test_profile_rejects_authority_and_coercion",
+        "tests/test_target_handoff.py::test_governed_binding_drift"
+      ],
+      "gate": "G-TARGET-BASELINE-021",
+      "scope": "read-only target qualification"
+    },
+    {
+      "id": "REQ-CD5-05",
+      "kind": "nonfunctional",
+      "acceptance": "Cumulative regression and target adversarial campaign exceed 90 percent branch-aware coverage and invalidate stale success before spawn",
+      "source": [
+        "tools/target_campaign.py",
+        "tools/validate.py"
+      ],
+      "tests": [
+        "tests/test_target_campaign.py::test_campaign_invalidation"
+      ],
+      "gate": "G-TARGET-NEGATIVE-022",
+      "scope": "read-only target qualification"
     }
   ]
 }

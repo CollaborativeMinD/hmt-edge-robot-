@@ -1,0 +1,24 @@
+........................................................................ [ 76%]
+......................                                                   [100%]
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.14-final-0 _______________
+
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+tools/target_admission.py      61      0     32      0   100%
+tools/target_bindings.py       25      0     10      0   100%
+tools/target_campaign.py       35      1      2      1    95%   42
+tools/target_collect.py        37      1      6      1    95%   46
+tools/target_commands.py       39      1     12      1    96%   36
+tools/target_contracts.py      87      2     20      2    96%   43, 96
+tools/target_gate.py           26      1      2      1    93%   35
+tools/target_io.py             73      1     32      1    98%   22
+tools/target_owner.py          59      1      8      1    97%   74
+tools/target_profile.py        55      0     12      1    99%   50->56
+tools/target_receipts.py       44      0      4      0   100%
+tools/target_snapshot.py       48      0     18      0   100%
+-----------------------------------------------------------------------
+TOTAL                         589      8    158      9    98%
+Coverage JSON written to file /workspace/scratch/5bc1f9a99ad9/hmt-edge-robot/evidence/cd/stage5/coverage.json
+Required test coverage of 90% reached. Total coverage: 97.72%
+94 passed in 2.84s

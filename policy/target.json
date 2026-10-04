@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "stage": 5,
+  "baseline_commit": "783b5f39f02e2fabe3d25130edfb5bc729627d5a",
+  "scope": "read_only_target_qualification",
+  "source": "OWNER_SCREENSHOT_TRANSCRIPTION",
+  "supplied_date": "2026-10-04",
+  "storage_medium": "microSD",
+  "topology": "single_server_lab",
+  "ledger_gib": 8,
+  "disk_reserve_bytes": 8589934592,
+  "minimum_memory_kib": 7340032,
+  "capture_max_age_seconds": 900,
+  "preserve_tailscale": true,
+  "bootstrap": "HOLD",
+  "deployment": "HOLD",
+  "physical_actuation": "HOLD",
+  "nodes": [
+    {
+      "hostname": "forge-pi-01",
+      "model_family": "Raspberry Pi 5",
+      "role": "control_plane",
+      "disk_bytes": 63864569856,
+      "root_partition_bytes": 63319310336,
+      "baseline_kernel": "6.18.34+rpt-rpi-2712",
+      "baseline_os_full_version": "13.5",
+      "baseline_tailscale_version": "1.102.2",
+      "tailscale_ipv4": "100.100.189.70"
+    },
+    {
+      "hostname": "forge-pi-02",
+      "model_family": "Raspberry Pi 4 Model B",
+      "role": "application_ledger",
+      "disk_bytes": 127999672320,
+      "root_partition_bytes": 127454412800,
+      "baseline_kernel": "6.18.34+rpt-rpi-v8",
+      "baseline_os_full_version": "13.5",
+      "baseline_tailscale_version": "1.102.4",
+      "tailscale_ipv4": "100.116.120.120"
+    },
+    {
+      "hostname": "forge-pi-03",
+      "model_family": "Raspberry Pi 4 Model B",
+      "role": "backup_restore",
+      "disk_bytes": 127999672320,
+      "root_partition_bytes": 127454412800,
+      "baseline_kernel": "6.12.47+rpt-rpi-v8",
+      "baseline_os_full_version": "13.2",
+      "baseline_tailscale_version": "1.102.2",
+      "tailscale_ipv4": "100.101.109.84"
+    }
+  ]
+}
