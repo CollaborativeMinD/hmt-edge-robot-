@@ -96,4 +96,4 @@ remains HOLD.
 
 **Artifact promotion: HOLD.** Native ARM64 build and installed SIL pass; remaining
 OS vulnerability findings and private-repository signing eligibility block promotion.
-See [the current campaign receipt](evidence/cd/stage4/final_campaign_receipt.json).
+See [the current campaign receipt](evidence/cd/stage4/final_campaign_receipt.json) and [the signed Pi appliance runbook](docs/cd/appliance.md).

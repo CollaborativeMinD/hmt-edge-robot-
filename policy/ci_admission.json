@@ -20,17 +20,17 @@
     "tools/policy_promotion.py": "c78413b55b1aae0ccbc2c9de656241b7c930347134e06f0bcd99bb3a5917acc0",
     "tools/profile_witnesses.py": "e7cf1c74688af43635f0f66cfac334f0d95e0f4a86716aa4f39df689aa353e95",
     "tools/tool_qualification.py": "459ad6c183c00aa0a1676669222ab7fec8b0eb36e74fa4a4265dcfff4ddf41bb",
-    "tools/validate.py": "155bfc1dbc59e5ecec23782cc643fc8baa8d5f162c43b875b26eadbc2c88413d",
+    "tools/validate.py": "eaea7d6ab49d8bff06dbd2569ea4974bda28b4ae8c08af9e20884a8cbebd7028",
     "tools/validate_base.py": "5370d03a4dcfe9bb6997c3d57a93bf751762f682ceeb46b0e7a26011dda54e38",
     "tools/validate_execution.py": "bf41ff932d7135981c7253695b21744bbf788cd61eedb12eb063d9ae117397d1",
     "tools/validate_incidents.py": "00b620a6a4426a0c83db52b96c00c12c4ed6d0b61999c914d4274cb847533aa7",
     "tools/validate_ledger.py": "28937439e709f38ce204805986214b302c546b975fd69e1d68e8b7d7c9ee61f6",
     "tools/validate_regression.py": "9c3be2c874b0c9f1c9417cf684d9e366c61f3318d514723f8117369f538c7df6",
     "tools/validate_report.py": "6075e90956abf851a91d36379c50954860f5cb21aba1794e713fb10793bffe06",
-    "tools/validate_structure.py": "dee4faa972382d188aae4c736f586754e4c1329c45deb506a811bee1c6d5b47c",
+    "tools/validate_structure.py": "af13deaeb6f3fbe45080cd0f190037f217bab0f2d8fcdb57d03e4bd9c056687b",
     "uv.lock": "b1ce60e49dc526e19077ddc69fb91fc142f551e123c746a4ffbb88433d98998b",
     "policy/deployment_admission.json": "79880a4c21a63d148d47461a08e0b204b6de49b3c1b5be1abad569024b1c9a2b",
-    "policy/artifact_admission.json": "24c0a8f0b53ead02fe1c6785dddcf854f9fea2a5243baee36f15f3ab4c3ad558"
+    "policy/artifact_admission.json": "6ee7dc7da92d5b5a3127833e3f1c015dc38fa71d3c84d15c090f313a10c67264"
   },
   "tools": {
     "pyrefly": "1.3.2",

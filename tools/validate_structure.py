@@ -32,6 +32,8 @@ def structural_checks() -> dict:
                     if size > 60:
                         raise ValueError(f"FUNCTION_LINE_CAP: {path.name}:{node.name}:{size}")
     requirements = json.loads((ROOT / "docs/requirements.json").read_text())["requirements"]
+    appliance = json.loads((ROOT / "docs/cd/appliance-requirements.json").read_text())
+    requirements += appliance["requirements"]
     if len({r["id"] for r in requirements}) != len(requirements):
         raise ValueError("DUPLICATE_REQUIREMENT")
     for requirement in requirements:
@@ -44,6 +46,7 @@ def structural_checks() -> dict:
                 raise ValueError("REQUIREMENT_TEST_MISSING")
     ontology_checks()
     trace = json.loads((ROOT / "docs/implementation_traceability.json").read_text())
+    trace += appliance["traceability"]
     if {r["req_id"] for r in trace} != {r["id"] for r in requirements}:
         raise ValueError("IMPLEMENTATION_TRACE_INCOMPLETE")
     fields = {

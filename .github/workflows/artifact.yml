@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_call:
 permissions:
   contents: read
 concurrency:
@@ -14,10 +15,6 @@ jobs:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 40
-    permissions:
-      contents: read
-      id-token: write
-      attestations: write
     env:
       UV_PYTHON: '3.12'
       UV_NO_PROGRESS: '1'
@@ -91,14 +88,8 @@ jobs:
           PYSCAN
       - name: Qualify image, scanner and installed software before signing
         run: uv run --no-sync python tools/artifact_preflight.py "$GITHUB_SHA"
-      - name: Enforce private signing backend admission
-        run: uv run --no-sync python -c 'from pathlib import Path; import sys; sys.path.insert(0,"tools"); from artifact_gate import check_signing; check_signing(Path("."))'
-      - uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a
-        with:
-          subject-path: evidence/cd/stage4/image.oci.tar
-      - name: Verify signed provenance and issue source-bound qualification receipt
-        run: |
-          uv run --no-sync python tools/artifact_gate.py "$GITHUB_SHA"
+      - name: Record signing continuation
+        run: echo 'Unsigned prequalification complete. Private signing and publication require the appliance-release Environment in release.yml.'
       - name: Surface artifact rejection
         if: failure()
         run: echo '::error::ARM64 artifact qualification rejected. Deployment and hardware remain HOLD. Inspect stage4 evidence.'

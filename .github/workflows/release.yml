@@ -1,0 +1,151 @@
+name: Signed Pi appliance release
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: appliance-release
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
+jobs:
+  source:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Require a reviewed main revision
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          SOURCE: ${{ github.sha }}
+          REF: ${{ github.ref }}
+        run: |
+          [[ "$REF" == refs/tags/v* || "$REF" == refs/heads/main ]]
+          status=$(gh api "repos/$REPOSITORY/compare/$SOURCE...main" --jq .status)
+          [[ "$status" == identical || "$status" == ahead ]]
+  qualify:
+    needs: source
+    uses: ./.github/workflows/artifact.yml
+  assemble:
+    needs: qualify
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: arm64-artifact-${{ github.sha }}
+          path: evidence/cd/stage4
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+        with:
+          version: 0.9.7
+          enable-cache: false
+      - name: Install image assembly tools and frozen Python environment
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends skopeo parted e2fsprogs dosfstools xz-utils zstd
+          uv lock --check
+          uv sync --locked --extra dev
+      - name: Recheck artifact and stage offline files
+        run: |
+          uv run --no-sync python tools/appliance_prepare.py
+          uv run --no-sync python tools/appliance_fetch.py
+      - name: Exercise offline import, readiness, persistent storage and restart in native hosted k3s
+        run: bash deploy/appliance/smoke-test.sh "$PWD" 2>&1 | tee build/smoke.log
+      - name: Assemble the flashable Raspberry Pi OS image
+        run: sudo bash deploy/appliance/build-image.sh "$PWD" 2>&1 | tee build/image-build.log
+      - name: Retain build and qualification evidence
+        run: |
+          tar -czf build/evidence.tar.gz --exclude=image.oci.tar evidence/cd/stage4 build/smoke.json build/smoke.log build/smoke-base.json build/image-build.log build/appliance-vulnerabilities.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: unsigned-appliance-${{ github.sha }}
+          path: |
+            build/hmt-edge-robot.img.xz
+            build/evidence.tar.gz
+          compression-level: 0
+          retention-days: 7
+          if-no-files-found: error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: failure()
+        with:
+          name: appliance-failure-${{ github.run_id }}
+          path: |
+            build/*.log
+            build/smoke*.json
+            build/appliance-vulnerabilities.json
+          if-no-files-found: warn
+  publish:
+    needs: assemble
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 25
+    environment: appliance-release
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: arm64-artifact-${{ github.sha }}
+          path: evidence/cd/stage4
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: unsigned-appliance-${{ github.sha }}
+          path: build
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+        with:
+          version: 0.9.7
+          enable-cache: false
+      - name: Install release tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends skopeo
+          uv lock --check
+          uv sync --locked --extra dev
+      - name: Sign and independently verify the complete release
+        env:
+          HMT_SIGNING_PRIVATE_KEY: ${{ secrets.HMT_SIGNING_PRIVATE_KEY }}
+          HMT_SIGNING_PASSWORD: ${{ secrets.HMT_SIGNING_PASSWORD }}
+          HMT_SIGNING_PUBLIC_KEY: ${{ vars.HMT_SIGNING_PUBLIC_KEY }}
+          HMT_SIGNING_PUBLIC_KEY_SHA256: ${{ vars.HMT_SIGNING_PUBLIC_KEY_SHA256 }}
+        run: uv run --no-sync python tools/appliance_release.py
+      - name: Publish the exact qualified OCI image with digest preservation
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REGISTRY_USER: ${{ github.actor }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          auth="$RUNNER_TEMP/hmt-registry-auth.json"
+          trap 'rm -f "$auth"' EXIT
+          printf '%s' "$GH_TOKEN" | skopeo login --authfile "$auth" --username "$REGISTRY_USER" --password-stdin ghcr.io
+          image="ghcr.io/${REPOSITORY,,}"
+          skopeo copy --authfile "$auth" --all --preserve-digests oci-archive:evidence/cd/stage4/image.oci.tar "docker://$image:sha-$GITHUB_SHA"
+          expected=$(python3 -c 'import json; print(json.load(open("build/release/release.json"))["image_digest"])')
+          actual=$(skopeo inspect --authfile "$auth" --override-arch arm64 --override-os linux --format '{{.Digest}}' "docker://$image@$expected")
+          [[ "$actual" == "$expected" ]]
+          printf 'Pull: `%s@%s`\n' "$image" "$expected" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: signed-pi-appliance-${{ github.sha }}
+          path: build/release
+          compression-level: 0
+          retention-days: 90
+          if-no-files-found: error
+      - name: Attach signed boot image and evidence to a draft GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          if ! gh release view "$RELEASE_TAG" --repo "$REPOSITORY" >/dev/null 2>&1; then
+            gh release create "$RELEASE_TAG" --repo "$REPOSITORY" --verify-tag --draft --title "$RELEASE_TAG Pi SIL appliance" --notes-file docs/cd/appliance-release-notes.md
+          fi
+          gh release upload "$RELEASE_TAG" build/release/* --repo "$REPOSITORY"

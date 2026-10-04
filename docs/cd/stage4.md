@@ -37,11 +37,14 @@ stopping, real-time timing, and native Pi acceptance are separate HOLD gates.
    HIGH, CRITICAL, UNKNOWN severity, missing coverage, or any secret rejects.
    LOW/MEDIUM findings remain recorded, explicitly admitted only for this artifact
    qualification scope. No ignore-unfixed switch, waiver, or hidden allowlist exists.
-9. Generate GitHub-signed build provenance for the archive. The receipt gate itself
+9. Historical backend: generate GitHub-signed build provenance for the archive. The receipt gate itself
    invokes `/usr/bin/gh attestation verify` with fixed repository/workflow identity,
    source digest, and deadline. Saved JSON cannot substitute for successful verification.
-10. Emit the hash-bound qualification receipt, archive, inventories, raw scanner
-    evidence, and verified statement bundle as an Actions artifact retained 30 days.
+10. Emit the unsigned prequalification report, archive, inventories, raw scanner
+    evidence as an Actions artifact retained 30 days. The owner-selected private
+    signing continuation is `release.yml`; see `appliance.md`. PR CI never receives
+    the release key. `artifact_gate.py` retains the historical native verifier;
+    private releases do not impersonate a GitHub attestation or rewrite old receipts.
 
 ## Gates and failure handling
 
@@ -69,8 +72,9 @@ archive SHA identify different objects and must never be interchanged.
 An artifact PASS remains deployment/HW HOLD. Stage 5 qualifies Pi/OS/K3s/Flux,
 storage/CNI/private access, mission readiness, single-owner stop/restart, resource
 budgets, and restore. Stage 6 requires protected human promotion before SIL deploy.
-No stage-3 template is activated here. The archive is not published to GHCR and
-no production tag is assigned. Actions retention is finite: the later release lane
+No stage-3 template is activated here. Stage-4 prequalification alone publishes no GHCR image and assigns no production
+tag. The owner-authorized private appliance release lane is documented in
+`appliance.md`; it preserves and rechecks the qualified OCI object before signing. Actions retention is finite: the later release lane
 must preserve the exact qualified OCI object before promotion or retention expiry.
 
 ## Sources
@@ -94,8 +98,9 @@ Unsigned prequalification is a separate observed result. It checks image/source,
 loaded/scanned identities, installed package/behavior, SBOM completeness, and the
 security threshold before attempting signing. It can PASS while final qualification
 remains HOLD. The signed final gate still requires live cryptographic verification;
-it cannot adopt the unsigned result. The hosted artifact job remains unsuccessful
-until a supported signing backend is qualified. A trusted owner-provisioned private
+it cannot adopt the unsigned result. This describes the historical GitHub-native final qualification job. The current
+artifact job ends at unsigned prequalification; the separate private release lane
+still requires real signature verification before publication. A trusted owner-provisioned private
 signer or owner-selected supported repository arrangement is a later closure input.
 
 ## Base-image rejection and bounded reselection

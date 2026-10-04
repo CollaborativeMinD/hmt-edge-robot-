@@ -1,0 +1,16 @@
+[Unit]
+Description=Import exact HMT image and start the SIL workload
+Requires=k3s.service
+After=k3s.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/libexec/hmt-runtime-start
+RemainAfterExit=yes
+TimeoutStartSec=600
+Restart=on-failure
+RestartSec=15
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

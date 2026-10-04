@@ -1,0 +1,14 @@
+[Unit]
+Description=Provision unique HMT node identity from local boot configuration
+After=local-fs.target
+Before=k3s.service
+ConditionPathExists=!/etc/hmt/provisioned
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/libexec/hmt-firstboot.py
+RemainAfterExit=yes
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

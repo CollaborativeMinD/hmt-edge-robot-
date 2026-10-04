@@ -25,6 +25,7 @@ from validate_structure import structural_checks as structural_checks
 async def main() -> None:
     db = database()
     commands = [
+        ("G-APPLIANCE-DESIGN-022", "REQ-APPLIANCE-01/02/03", [sys.executable, "tools/appliance_design.py"]),
         ("G-CI-013", "REQ-CI-01", [sys.executable, "tools/ci_admission.py"]),
         ("G-POLICY-014", "REQ-CI2-01", [sys.executable, "tools/policy_evaluation.py"]),
         ("G-ARTIFACT-DESIGN-019", "REQ-CD4-01", [sys.executable, "tools/artifact_design.py"]),
