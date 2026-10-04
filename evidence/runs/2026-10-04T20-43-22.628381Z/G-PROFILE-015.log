@@ -1,0 +1,2 @@
+{"status": "FAIL", "reason_codes": ["SCAFFOLD_DOCUMENT_REJECTED:README.md"], "alert": true, "notification": "CI_SUPPORT_PROFILES_FAIL"}
+::error::CI support interface rejected input; inspect profiles.json

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "platform": "linux/arm64",
+  "image_size_gib": 12,
+  "os": {
+    "url": "https://downloads.raspberrypi.com/raspios_lite_arm64/images/raspios_lite_arm64-2026-09-15/2026-09-15-raspios-trixie-arm64-lite.img.xz",
+    "sha256": "cdf4f3bfac35ae947b46e4e767f935453810549779ac3290e05a6754aee627e5"
+  },
+  "k3s": {
+    "version": "v1.37.1+k3s1",
+    "binary": {
+      "url": "https://github.com/k3s-io/k3s/releases/download/v1.37.1%2Bk3s1/k3s-arm64",
+      "sha256": "a1561ca4aef8b99f5588a840d4468ac39c8c1cd92470bbcb9634823fa221741a"
+    },
+    "airgap": {
+      "url": "https://github.com/k3s-io/k3s/releases/download/v1.37.1%2Bk3s1/k3s-airgap-images-arm64.tar.zst",
+      "sha256": "b3bd28d3a20144927b25ebb1d255a16ce55bb050b9af5e63abd1bf91c0838fe5"
+    }
+  }
+}

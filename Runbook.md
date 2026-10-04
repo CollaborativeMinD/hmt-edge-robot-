@@ -219,3 +219,9 @@ and G-ARTIFACT-NEGATIVE-020. Review the ARM64 artifact qualification Actions job
 Download `arm64-artifact-<commit>` and inspect `qualification.json`, the OCI archive,
 SBOM, vulnerability report, base locks, installed-container report and signed provenance.
 Stop on failed/absent evidence. Artifact PASS never admits cluster or physical operation.
+
+## Docker/k3s appliance release
+
+Follow [the appliance runbook](docs/cd/appliance.md) for protected private signing,
+GHCR digest pulls, signed Pi microSD images, per-device first boot and recovery.
+A successful hosted build does not replace native Pi or physical acceptance.

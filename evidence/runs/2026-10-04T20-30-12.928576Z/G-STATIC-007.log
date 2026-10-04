@@ -1,0 +1,209 @@
+S603 `subprocess` call: check for execution of untrusted input
+  --> tools/appliance_fetch.py:20:5
+   |
+18 |     if url.scheme != "https" or url.hostname not in {"downloads.raspberrypi.com", "github.com"} or url.username or url.password:
+19 |         raise ValueError("ASSET_ORIGIN_NOT_ADMITTED")
+20 |     subprocess.run(["curl", "--fail", "--location", "--proto", "=https", "--proto-redir", "=https",
+   |     ^^^^^^^^^^^^^^
+21 |                     "--retry", "3", "--max-time", "900", "--output", str(destination), asset["url"]], check=True, timeout=1000)
+22 |     if archive_hash(destination) != asset["sha256"]:
+   |
+
+S607 Starting a process with a partial executable path
+  --> tools/appliance_fetch.py:20:20
+   |
+18 |       if url.scheme != "https" or url.hostname not in {"downloads.raspberrypi.com", "github.com"} or url.username or url.password:
+19 |           raise ValueError("ASSET_ORIGIN_NOT_ADMITTED")
+20 |       subprocess.run(["curl", "--fail", "--location", "--proto", "=https", "--proto-redir", "=https",
+   |  ____________________^
+21 | |                     "--retry", "3", "--max-time", "900", "--output", str(destination), asset["url"]], check=True, timeout=1000)
+   | |____________________________________________________________________________________________________^
+22 |       if archive_hash(destination) != asset["sha256"]:
+23 |           destination.unlink()
+   |
+
+S603 `subprocess` call: check for execution of untrusted input
+  --> tools/appliance_firstboot.py:28:5
+   |
+26 |     config = node_config(value)
+27 |     write(str(saved), json.dumps(value))
+28 |     subprocess.run(["hostnamectl", "set-hostname", value["name"]], check=True)
+   |     ^^^^^^^^^^^^^^
+29 |     if subprocess.run(["id", "edgeadmin"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode:
+30 |         subprocess.run(["useradd", "--create-home", "--shell", "/bin/bash", "edgeadmin"], check=True)
+   |
+
+S607 Starting a process with a partial executable path
+  --> tools/appliance_firstboot.py:28:20
+   |
+26 |     config = node_config(value)
+27 |     write(str(saved), json.dumps(value))
+28 |     subprocess.run(["hostnamectl", "set-hostname", value["name"]], check=True)
+   |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+29 |     if subprocess.run(["id", "edgeadmin"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode:
+30 |         subprocess.run(["useradd", "--create-home", "--shell", "/bin/bash", "edgeadmin"], check=True)
+   |
+
+S607 Starting a process with a partial executable path
+  --> tools/appliance_firstboot.py:29:23
+   |
+27 |     write(str(saved), json.dumps(value))
+28 |     subprocess.run(["hostnamectl", "set-hostname", value["name"]], check=True)
+29 |     if subprocess.run(["id", "edgeadmin"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode:
+   |                       ^^^^^^^^^^^^^^^^^^^
+30 |         subprocess.run(["useradd", "--create-home", "--shell", "/bin/bash", "edgeadmin"], check=True)
+31 |     subprocess.run(["usermod", "--password", "*", "edgeadmin"], check=True)
+   |
+
+S607 Starting a process with a partial executable path
+  --> tools/appliance_firstboot.py:30:24
+   |
+28 |     subprocess.run(["hostnamectl", "set-hostname", value["name"]], check=True)
+29 |     if subprocess.run(["id", "edgeadmin"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode:
+30 |         subprocess.run(["useradd", "--create-home", "--shell", "/bin/bash", "edgeadmin"], check=True)
+   |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+31 |     subprocess.run(["usermod", "--password", "*", "edgeadmin"], check=True)
+32 |     write("/home/edgeadmin/.ssh/authorized_keys", value["ssh_key"] + "\n")
+   |
+
+S607 Starting a process with a partial executable path
+  --> tools/appliance_firstboot.py:31:20
+   |
+29 |     if subprocess.run(["id", "edgeadmin"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode:
+30 |         subprocess.run(["useradd", "--create-home", "--shell", "/bin/bash", "edgeadmin"], check=True)
+31 |     subprocess.run(["usermod", "--password", "*", "edgeadmin"], check=True)
+   |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+32 |     write("/home/edgeadmin/.ssh/authorized_keys", value["ssh_key"] + "\n")
+33 |     subprocess.run(["chown", "-R", "edgeadmin:edgeadmin", "/home/edgeadmin/.ssh"], check=True)
+   |
+
+S607 Starting a process with a partial executable path
+  --> tools/appliance_firstboot.py:33:20
+   |
+31 |     subprocess.run(["usermod", "--password", "*", "edgeadmin"], check=True)
+32 |     write("/home/edgeadmin/.ssh/authorized_keys", value["ssh_key"] + "\n")
+33 |     subprocess.run(["chown", "-R", "edgeadmin:edgeadmin", "/home/edgeadmin/.ssh"], check=True)
+   |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+34 |     Path("/home/edgeadmin/.ssh").chmod(0o700)
+35 |     write("/etc/sudoers.d/hmt-edgeadmin", "edgeadmin ALL=(ALL) NOPASSWD: ALL\n")
+   |
+
+S607 Starting a process with a partial executable path
+  --> tools/appliance_firstboot.py:38:20
+   |
+36 |     Path("/etc/sudoers.d/hmt-edgeadmin").chmod(0o440)
+37 |     write("/etc/ssh/sshd_config.d/hmt.conf", "PasswordAuthentication no\nPermitRootLogin no\n")
+38 |     subprocess.run(["ssh-keygen", "-A"], check=True)
+   |                    ^^^^^^^^^^^^^^^^^^^^
+39 |     write("/etc/rancher/k3s/config.yaml", json.dumps(config))
+40 |     write("/etc/hmt/role", value["role"] + "\n")
+   |
+
+S607 Starting a process with a partial executable path
+  --> tools/appliance_firstboot.py:48:20
+   |
+46 |             "metadata": {"name": "hmt-edge-runtime", "namespace": "hmt-edge-robot-sil"},
+47 |             "type": "Opaque", "stringData": {"api_token": secrets.token_hex(32), "operator_token": secrets.token_hex(32)}}))
+48 |     subprocess.run(["systemctl", "enable", "--now", "ssh"], check=True)
+   |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+49 |     boot.unlink(missing_ok=True)
+50 |     write("/etc/hmt/provisioned", value["name"] + "\n")
+   |
+
+S603 `subprocess` call: check for execution of untrusted input
+  --> tools/appliance_prepare.py:26:5
+   |
+24 |     (destination / "image-ref").write_text(reference + "\n")
+25 |     (destination / "image-tag").write_text(tag + "\n")
+26 |     subprocess.run(["skopeo", "copy", "--preserve-digests", "--override-arch", "arm64", "--override-os", "linux",
+   |     ^^^^^^^^^^^^^^
+27 |         "oci-archive:" + str(root / "evidence/cd/stage4/image.oci.tar"),
+28 |         "oci-archive:" + str(destination / "runtime.oci.tar") + ":" + tag], check=True, timeout=300)
+   |
+
+S607 Starting a process with a partial executable path
+  --> tools/appliance_prepare.py:26:20
+   |
+24 |       (destination / "image-ref").write_text(reference + "\n")
+25 |       (destination / "image-tag").write_text(tag + "\n")
+26 |       subprocess.run(["skopeo", "copy", "--preserve-digests", "--override-arch", "arm64", "--override-os", "linux",
+   |  ____________________^
+27 | |         "oci-archive:" + str(root / "evidence/cd/stage4/image.oci.tar"),
+28 | |         "oci-archive:" + str(destination / "runtime.oci.tar") + ":" + tag], check=True, timeout=300)
+   | |__________________________________________________________________________^
+29 |       (destination / "prequalification.json").write_text(json.dumps(report, indent=2) + "\n")
+30 |       return report
+   |
+
+S603 `subprocess` call: check for execution of untrusted input
+  --> tools/appliance_release.py:39:9
+   |
+37 |         private.write_text(os.environ["HMT_SIGNING_PRIVATE_KEY"])
+38 |         private.chmod(0o600)
+39 |         subprocess.run(["openssl", "dgst", "-sha256", "-sign", str(private), "-passin",
+   |         ^^^^^^^^^^^^^^
+40 |                         "env:HMT_SIGNING_PASSWORD", "-out", str(directory / "release.sig"),
+41 |                         str(directory / "release.json")], check=True, capture_output=True, timeout=10)
+   |
+
+S607 Starting a process with a partial executable path
+  --> tools/appliance_release.py:39:24
+   |
+37 |           private.write_text(os.environ["HMT_SIGNING_PRIVATE_KEY"])
+38 |           private.chmod(0o600)
+39 |           subprocess.run(["openssl", "dgst", "-sha256", "-sign", str(private), "-passin",
+   |  ________________________^
+40 | |                         "env:HMT_SIGNING_PASSWORD", "-out", str(directory / "release.sig"),
+41 | |                         str(directory / "release.json")], check=True, capture_output=True, timeout=10)
+   | |________________________________________________________^
+42 |       verify(directory, public, fingerprint, commit)
+43 |       return directory
+   |
+
+S603 `subprocess` call: check for execution of untrusted input
+  --> tools/appliance_signature.py:15:14
+   |
+13 |     if not re.fullmatch(r"[0-9a-f]{64}", expected) or archive_hash(path) != expected:
+14 |         raise ValueError("SIGNING_KEY_FINGERPRINT_MISMATCH")
+15 |     result = subprocess.run(["openssl", "pkey", "-pubin", "-in", str(path), "-text", "-noout"],
+   |              ^^^^^^^^^^^^^^
+16 |                             check=True, capture_output=True, timeout=10).stdout.decode()
+17 |     if not re.search(r"Public-Key: \((3072|4096) bit\)", result) or "Modulus:" not in result:
+   |
+
+S607 Starting a process with a partial executable path
+  --> tools/appliance_signature.py:15:29
+   |
+13 |     if not re.fullmatch(r"[0-9a-f]{64}", expected) or archive_hash(path) != expected:
+14 |         raise ValueError("SIGNING_KEY_FINGERPRINT_MISMATCH")
+15 |     result = subprocess.run(["openssl", "pkey", "-pubin", "-in", str(path), "-text", "-noout"],
+   |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+16 |                             check=True, capture_output=True, timeout=10).stdout.decode()
+17 |     if not re.search(r"Public-Key: \((3072|4096) bit\)", result) or "Modulus:" not in result:
+   |
+
+S603 `subprocess` call: check for execution of untrusted input
+  --> tools/appliance_signature.py:24:5
+   |
+22 |     public_key(key, fingerprint)
+23 |     manifest = directory / "release.json"
+24 |     subprocess.run(["openssl", "dgst", "-sha256", "-verify", str(key), "-signature",
+   |     ^^^^^^^^^^^^^^
+25 |                     str(directory / "release.sig"), str(manifest)], check=True, capture_output=True, timeout=10)
+26 |     value = json.loads(manifest.read_text())
+   |
+
+S607 Starting a process with a partial executable path
+  --> tools/appliance_signature.py:24:20
+   |
+22 |       public_key(key, fingerprint)
+23 |       manifest = directory / "release.json"
+24 |       subprocess.run(["openssl", "dgst", "-sha256", "-verify", str(key), "-signature",
+   |  ____________________^
+25 | |                     str(directory / "release.sig"), str(manifest)], check=True, capture_output=True, timeout=10)
+   | |__________________________________________________________________^
+26 |       value = json.loads(manifest.read_text())
+27 |       if not re.fullmatch(r"[0-9a-f]{40}", commit) or value.get("source_commit") != commit:
+   |
+
+Found 18 errors.

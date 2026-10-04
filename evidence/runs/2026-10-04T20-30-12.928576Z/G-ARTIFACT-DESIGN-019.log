@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/workspace/hmt-edge-robot/tools/artifact_design.py", line 27, in <module>
+    print(json.dumps(evaluate(ROOT)))
+                     ^^^^^^^^^^^^^^
+  File "/workspace/hmt-edge-robot/tools/artifact_design.py", line 20, in evaluate
+    raise ValueError("ARTIFACT_INPUT_DRIFT")
+ValueError: ARTIFACT_INPUT_DRIFT

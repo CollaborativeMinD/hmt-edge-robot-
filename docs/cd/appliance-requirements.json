@@ -1,0 +1,120 @@
+{
+  "requirements": [
+    {
+      "id": "REQ-APPLIANCE-01",
+      "kind": "functional",
+      "acceptance": "The same checked ARM64 OCI digest is used for registry publication and offline k3s boot; only forge-pi-02 owns the retained SIL ledger.",
+      "source": [
+        "tools/appliance_workload.py",
+        "tools/appliance_prepare.py",
+        "deploy/appliance/runtime-start.sh"
+      ],
+      "tests": [
+        "tests/test_appliance_node.py::test_workload_has_one_writer_no_public_api_and_a_retained_ledger"
+      ],
+      "gate": "G-APPLIANCE-DESIGN-022/G-RUNTIME-004",
+      "scope": "software-appliance/SIL"
+    },
+    {
+      "id": "REQ-APPLIANCE-02",
+      "kind": "functional",
+      "acceptance": "A protected private RSA signer binds all release assets and the source commit; altered bytes, keys, authority or source reject.",
+      "source": [
+        "tools/appliance_signature.py",
+        "tools/appliance_release.py",
+        ".github/workflows/release.yml"
+      ],
+      "tests": [
+        "tests/test_appliance_signing.py::test_real_signature_and_content_verification",
+        "tests/test_appliance_signing.py::test_signed_contradictions_are_rejected"
+      ],
+      "gate": "G-APPLIANCE-DESIGN-022/G-RUNTIME-004",
+      "scope": "software-appliance/SIL"
+    },
+    {
+      "id": "REQ-APPLIANCE-03",
+      "kind": "functional",
+      "acceptance": "Every reviewed input is hash-bound; PR CI has no release key; first boot requires unique validated per-device identity.",
+      "source": [
+        "tools/appliance_design.py",
+        "tools/appliance_node.py",
+        "tools/appliance_firstboot.py"
+      ],
+      "tests": [
+        "tests/test_appliance_pipeline.py::test_appliance_catalog_requires_every_reviewed_input",
+        "tests/test_appliance_pipeline.py::test_release_secrets_only_enter_the_protected_publisher",
+        "tests/test_appliance_node.py::test_changed_or_injected_node_identity_is_rejected"
+      ],
+      "gate": "G-APPLIANCE-DESIGN-022/G-RUNTIME-004",
+      "scope": "software-appliance/SIL"
+    }
+  ],
+  "traceability": [
+    {
+      "req_id": "REQ-APPLIANCE-01",
+      "module_id": "tools/appliance_workload.py",
+      "runtime_partition": "software-appliance/SIL",
+      "source_path": [
+        "tools/appliance_workload.py",
+        "tools/appliance_prepare.py",
+        "deploy/appliance/runtime-start.sh"
+      ],
+      "contract_id": "ApplianceWorkload/ImageDigest",
+      "safety_constraint_id": [
+        "NO_PHYSICAL_AUTHORITY",
+        "ONE_LEDGER_OWNER",
+        "PRIVATE_RELEASE_SIGNING"
+      ],
+      "test_id": [
+        "tests/test_appliance_node.py::test_workload_has_one_writer_no_public_api_and_a_retained_ledger"
+      ],
+      "analysis_id": "G-APPLIANCE-DESIGN-022/G-RUNTIME-004",
+      "evidence_id": "evidence/validation.json"
+    },
+    {
+      "req_id": "REQ-APPLIANCE-02",
+      "module_id": "tools/appliance_signature.py",
+      "runtime_partition": "software-appliance/SIL",
+      "source_path": [
+        "tools/appliance_signature.py",
+        "tools/appliance_release.py",
+        ".github/workflows/release.yml"
+      ],
+      "contract_id": "SignedRelease/AssetClosure",
+      "safety_constraint_id": [
+        "NO_PHYSICAL_AUTHORITY",
+        "ONE_LEDGER_OWNER",
+        "PRIVATE_RELEASE_SIGNING"
+      ],
+      "test_id": [
+        "tests/test_appliance_signing.py::test_real_signature_and_content_verification",
+        "tests/test_appliance_signing.py::test_signed_contradictions_are_rejected"
+      ],
+      "analysis_id": "G-APPLIANCE-DESIGN-022/G-RUNTIME-004",
+      "evidence_id": "evidence/validation.json"
+    },
+    {
+      "req_id": "REQ-APPLIANCE-03",
+      "module_id": "tools/appliance_design.py",
+      "runtime_partition": "software-appliance/SIL",
+      "source_path": [
+        "tools/appliance_design.py",
+        "tools/appliance_node.py",
+        "tools/appliance_firstboot.py"
+      ],
+      "contract_id": "ApplianceAdmission/NodeIdentity",
+      "safety_constraint_id": [
+        "NO_PHYSICAL_AUTHORITY",
+        "ONE_LEDGER_OWNER",
+        "PRIVATE_RELEASE_SIGNING"
+      ],
+      "test_id": [
+        "tests/test_appliance_pipeline.py::test_appliance_catalog_requires_every_reviewed_input",
+        "tests/test_appliance_pipeline.py::test_release_secrets_only_enter_the_protected_publisher",
+        "tests/test_appliance_node.py::test_changed_or_injected_node_identity_is_rejected"
+      ],
+      "analysis_id": "G-APPLIANCE-DESIGN-022/G-RUNTIME-004",
+      "evidence_id": "evidence/validation.json"
+    }
+  ]
+}

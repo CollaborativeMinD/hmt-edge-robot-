@@ -270,5 +270,21 @@
     "remediation": "Pin package upgrade to10.46-1~deb13u3 and rerun installed/native/scanner evidence; keep unresolved vulnerabilities and signing entitlement held; no severity suppression or ignore-unfixed",
     "validation_test": "tests/test_artifact_evidence.py::test_scan_and_runtime_contradictions_are_rejected",
     "external_boundary": true
+  },
+  {
+    "incident_id": "RRCA-APPLIANCE-01",
+    "observed_state": "Container-only artifact workflow cannot produce a signed bootable Pi disk image or registry release",
+    "causal_evidence": "Inspected main commit 5e2924e: stage4 exports an unsigned OCI archive; the selected GitHub attestation backend is unavailable for the private user-owned repository; the official Pi OS image also enables conflicting cloud-init and userconfig provisioning",
+    "remediation": "Add independently admitted OS/k3s appliance assembly, offline native hosted k3s restart checks, owner-selected private RSA signatures and digest-preserving GHCR publication; disable competing first-boot provisioners",
+    "validation_test": "tests/test_appliance_pipeline.py::test_release_secrets_only_enter_the_protected_publisher",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-APPLIANCE-02",
+    "observed_state": "Private release signer Environment is absent and cannot be provisioned in this turn",
+    "causal_evidence": "Read-only GitHub Environment listing is empty; secret listing returns404; automatic approval review rejected creating persistent Environment protections without explicit configuration approval",
+    "remediation": "Owner must approve appliance-release restricted to main branch and v* tags and provide/provision the protected RSA signer; no key is shipped, no target is flashed, no release is marked operational",
+    "validation_test": "tests/test_appliance_signing.py::test_real_signature_and_content_verification",
+    "external_boundary": true
   }
 ]

@@ -1,0 +1,52 @@
+........................................................................ [ 20%]
+........................................................................ [ 40%]
+..........................................F............................. [ 60%]
+........................................................................ [ 80%]
+......................................................................   [100%]
+=================================== FAILURES ===================================
+__________________ test_support_reuse_replay_and_no_promotion __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-13/test_support_reuse_replay_and_0')
+
+    def test_support_reuse_replay_and_no_promotion(tmp_path: Path) -> None:
+        root = support_copy(tmp_path)
+>       first = evaluate(root)
+                ^^^^^^^^^^^^^^
+
+tests/test_ci_support.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tools/ci_profiles.py:23: in evaluate
+    witnesses = [document_witness(root, profile), evidence_witness(root, claims)]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/tmp/pytest-of-agent/pytest-13/test_support_reuse_replay_and_0')
+profile = SupportProfile(schema_version=1, profile_id='HMT-CI-SUPPORT-02', scope='managed_ci_support', docker_build='HOLD', depl...f9a156b4f18', 'evidence/ci/phase2/truth-seal.log': '8d59f5e791c8b70be873edc6110e76a192e4f1b1c8babb62b66545a9a2dfd931'})
+
+    def document_witness(root: Path, profile: SupportProfile) -> dict[str, Any]:
+        snapshot = WorktreeSnapshot(root)
+        documents = []
+        artifacts = []
+        for name, headings in profile.documents.items():
+            rule = PolicyDocumentRule(canonicalRelativePath=name, maximumLineCountExclusive=100,
+                                      requiredHeadings=tuple(headings))
+            finding, artifact = validate_document(snapshot, ".", rule, ("__SCAFFOLDCTL_",), 65536)
+            if not finding.admitted or artifact is None:
+>               raise ValueError("SCAFFOLD_DOCUMENT_REJECTED:" + name)
+E               ValueError: SCAFFOLD_DOCUMENT_REJECTED:README.md
+
+tools/profile_witnesses.py:27: ValueError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /workspace/hmt-edge-robot/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.14-final-0 _______________
+
+Coverage JSON written to file evidence/coverage.json
+Required test coverage of 90.0% reached. Total coverage: 97.74%
+=========================== short test summary info ============================
+FAILED tests/test_ci_support.py::test_support_reuse_replay_and_no_promotion
+1 failed, 357 passed, 1 warning in 10.63s

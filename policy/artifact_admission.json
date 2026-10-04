@@ -3,9 +3,9 @@
   "scope": "ARM64_ARTIFACT_QUALIFICATION_ONLY",
   "files": {
     ".dockerignore": "2de2621e318712804c80b77f825c9b3648b9e940d135fbb56ff3c82fe5642dc6",
-    ".github/workflows/artifact.yml": "fc43403eba6f82b7c8c2106fa71607638ea975c8f455a20b9a8f7c854198417f",
+    ".github/workflows/artifact.yml": "c79e73ad7051077bd864454f459d3ceb03945364963e1abdd3c55e1e3249f481",
     "deploy/stage4/Dockerfile": "95106d5c7925fcf55cd9f049632d0df36add15b25882192aac5303217611d176",
-    "docs/cd/stage4.md": "1fd48a0d7676d468862808e70f153ca222f8c50b8dcebde406221afc4434d40e",
+    "docs/cd/stage4.md": "ba7fc9729c0f870058208cc9eb05efff79ca717a62df13f27c0fbe2410433e91",
     "tools/artifact_campaign.py": "ea5371ab938d9c031520d7a9f4418f83885b8b8b522bd7b9520c45882b2a1eab",
     "tools/artifact_contracts.py": "bd0ef7b5f0e260f47afbdce830286c00eb00ee4c1ca05d2c6275c78c0f1395a4",
     "tools/artifact_design.py": "450e2ed39d61b07adea115877f06d90357aeb92aff949f31df73b67fb6d4024f",

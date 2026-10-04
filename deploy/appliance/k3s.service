@@ -1,0 +1,21 @@
+[Unit]
+Description=HMT offline k3s node
+Wants=network-online.target
+Requires=hmt-firstboot.service
+After=network-online.target hmt-firstboot.service
+
+[Service]
+Type=notify
+ExecStart=/usr/local/libexec/hmt-k3s-start
+KillMode=process
+Delegate=yes
+LimitNOFILE=1048576
+LimitNPROC=infinity
+LimitCORE=infinity
+TasksMax=infinity
+TimeoutStartSec=0
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

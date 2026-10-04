@@ -1,0 +1,7 @@
+{
+  "name": "forge-pi-01",
+  "role": "server",
+  "server": "https://192.168.1.10:6443",
+  "token": "REPLACE_WITH_ONE_NEW_RANDOM_CLUSTER_TOKEN_SHARED_BY_THIS_FLEET",
+  "ssh_key": "ssh-ed25519 REPLACE_WITH_YOUR_ADMIN_PUBLIC_KEY"
+}

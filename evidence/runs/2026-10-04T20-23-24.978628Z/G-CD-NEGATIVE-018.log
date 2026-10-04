@@ -1,0 +1,1 @@
+{"status": "PASS", "release_decision": "HOLD", "docker_execution": "HOLD", "cluster_deployment": "HOLD", "notification": "STAGE3_NEGATIVE_TESTS_PASS", "alert": false}
