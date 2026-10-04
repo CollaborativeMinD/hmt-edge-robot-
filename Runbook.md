@@ -219,3 +219,25 @@ and G-ARTIFACT-NEGATIVE-020. Review the ARM64 artifact qualification Actions job
 Download `arm64-artifact-<commit>` and inspect `qualification.json`, the OCI archive,
 SBOM, vulnerability report, base locks, installed-container report and signed provenance.
 Stop on failed/absent evidence. Artifact PASS never admits cluster or physical operation.
+
+## Stage 5 — host inventory and microSD lab qualification
+
+Follow the node-by-node operator SOP in `docs/cd/stage5.md`. The Pi 5 control
+plane is forge-pi-01; forge-pi-02 owns the future single application/ledger writer;
+forge-pi-03 owns backup/isolated restore. Existing Tailscale enrollment stays intact.
+The owner screenshots are hash-referenced in `docs/cd/owner-inventory.json`.
+`policy/target.json` separately binds the reviewed microSD lab baseline.
+
+From the reviewed checkout and locked environment, run `uv run --no-sync python
+tools/target_owner.py`, `uv run --no-sync python tools/target_campaign.py`, and
+`uv run --no-sync python tools/validate.py`. For actual local host collection and
+three-file admission, use the exact commands in `docs/cd/stage5.md`; ordinary CI
+never contacts the cluster. Generated captures/receipts stay beneath
+`evidence/cd/stage5/`. A stale or incomplete run cannot retain prior PASS evidence.
+
+Inventory PASS does not clear the Stage-4 vulnerability/signing HOLDs. Nor does it
+prove CNI enforcement, runtime readiness, writer exclusion, disk-pressure behavior,
+backup/restore, authenticated private access, or native workload capacity. These
+require actual target trials before bootstrap/deployment promotion. Historical
+stage-3 manifests and evidence remain intact. Do not apply dormant resources based
+on host inventory, an active systemd service, or an ordinary health response.

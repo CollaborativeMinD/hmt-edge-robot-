@@ -270,5 +270,37 @@
     "remediation": "Pin package upgrade to10.46-1~deb13u3 and rerun installed/native/scanner evidence; keep unresolved vulnerabilities and signing entitlement held; no severity suppression or ignore-unfixed",
     "validation_test": "tests/test_artifact_evidence.py::test_scan_and_runtime_contradictions_are_rejected",
     "external_boundary": true
+  },
+  {
+    "incident_id": "RRCA-CD5-JSON-TRANSPORT",
+    "observed_state": "Valid target JSON arrays/timestamps rejected by strict Pydantic boundary",
+    "causal_evidence": "Inherited before validator materializes JSON containers before tuple/datetime validation; reproduced with three-node policy and captures",
+    "remediation": "Explicit array and ISO timestamp transport adapters retain strict primitive types, UTC, time bounds and extra-field rejection",
+    "validation_test": "tests/test_target_contracts.py::test_inventory_does_not_grant_runtime_authority; tests/test_target_contracts.py::test_capture_rejects_origin_and_time",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CD5-RECEIPT-ORDER",
+    "observed_state": "Same three captures in a different input order changed receipt hash",
+    "causal_evidence": "Service HOLD list appended in caller order while capture hash map was canonicalized; reproduction compares reversed paths",
+    "remediation": "Sort captures by hostname before appending service HOLDs; preserve deterministic payload and receipt",
+    "validation_test": "tests/test_target_contracts.py::test_inventory_does_not_grant_runtime_authority",
+    "external_boundary": false
+  },
+  {
+    "incident_id": "RRCA-CD5-TARGET-BOUNDARY",
+    "observed_state": "Stage 5 runtime qualification cannot close from owner screenshots or hosted software CI",
+    "causal_evidence": "Screenshots show host inventory only; no K3s/CNI/runtime/fencing/restore/private-access/resource trial evidence is supplied, and Stage 4 scan still rejects",
+    "remediation": "Bind owner inventory separately; ship read-only collector and typed inventory receipts; retain explicit target/operator trial and independent artifact HOLDs",
+    "validation_test": "tests/test_target_contracts.py::test_inventory_does_not_grant_runtime_authority",
+    "external_boundary": true
+  },
+  {
+    "incident_id": "RRCA-CD5-CHECKOUT-MODES",
+    "observed_state": "Recovered source snapshot failed executable delivery-adapter regression",
+    "causal_evidence": "Blob reconstruction retained all content hashes but lost 100755 modes on two inherited scaffoldctl adapters; GitHub tree confirms executable modes",
+    "remediation": "Restore exact upstream modes locally; run cumulative verification through uv run so pinned checker executables are on PATH; no inherited source bytes changed",
+    "validation_test": "vendor/qualified/scaffoldctl/tests/test_package_contract.py::test_delivery_adapters_are_present_and_executable; G-QUALIFY-016",
+    "external_boundary": false
   }
 ]

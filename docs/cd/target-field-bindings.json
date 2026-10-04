@@ -1,0 +1,622 @@
+{
+  "bindings": [
+    {
+      "contract": "Capture",
+      "field": "schema_version",
+      "subtype": "VocabularyBindingField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Capture",
+      "field": "origin",
+      "subtype": "ProvenanceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Capture",
+      "field": "policy_hash",
+      "subtype": "TelemetryIntegrityField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Capture",
+      "field": "collector_hash",
+      "subtype": "TelemetryIntegrityField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Capture",
+      "field": "baseline_commit",
+      "subtype": "ArtifactReferenceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Capture",
+      "field": "started_at",
+      "subtype": "EvidenceQualityField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Capture",
+      "field": "finished_at",
+      "subtype": "EvidenceQualityField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Capture",
+      "field": "boot_id",
+      "subtype": "ProvenanceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Capture",
+      "field": "probes",
+      "subtype": "EvidenceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Capture",
+      "field": "snapshot",
+      "subtype": "EvidenceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Capture",
+      "field": "deployment",
+      "subtype": "DeploymentConstraintField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Probe",
+      "field": "name",
+      "subtype": "IdentifierField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Probe",
+      "field": "status",
+      "subtype": "ValidationStatusField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Probe",
+      "field": "output",
+      "subtype": "EvidenceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Probe",
+      "field": "reason_code",
+      "subtype": "ValidationStatusField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "hostname",
+      "subtype": "IdentifierField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "model",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "kernel",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "architecture",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "userspace_bits",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "os_id",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "os_version",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "os_full_version",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "memory_total_kib",
+      "subtype": "PhysicalMetricField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "disk_bytes",
+      "subtype": "PhysicalMetricField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "root_partition_bytes",
+      "subtype": "PhysicalMetricField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "root_total_bytes",
+      "subtype": "PhysicalMetricField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "root_available_bytes",
+      "subtype": "PhysicalMetricField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "root_device",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "root_fstype",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "var_on_root",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "tailscale_version",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Snapshot",
+      "field": "tailscale_ipv4",
+      "subtype": "TopologyReferenceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "ImageReference",
+      "field": "filename",
+      "subtype": "EvidenceReferenceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "ImageReference",
+      "field": "sha256",
+      "subtype": "TelemetryIntegrityField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerInventory",
+      "field": "schema_version",
+      "subtype": "VocabularyBindingField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerInventory",
+      "field": "origin",
+      "subtype": "ProvenanceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerInventory",
+      "field": "supplied_date",
+      "subtype": "ProvenanceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerInventory",
+      "field": "capture_timestamp",
+      "subtype": "EvidenceQualityField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerInventory",
+      "field": "nodes",
+      "subtype": "TopologyReferenceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerInventory",
+      "field": "target_qualification",
+      "subtype": "ValidationStatusField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerInventory",
+      "field": "deployment",
+      "subtype": "DeploymentConstraintField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "hostname",
+      "subtype": "IdentifierField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "kernel",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "os_full_version",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "architecture",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "userspace_bits",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "disk_bytes",
+      "subtype": "PhysicalMetricField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "root_partition_bytes",
+      "subtype": "PhysicalMetricField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "root_fstype",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "memory_reported",
+      "subtype": "PhysicalMetricField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "memory_available_reported",
+      "subtype": "PhysicalMetricField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "root_available_reported",
+      "subtype": "PhysicalMetricField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "root_used_percent_reported",
+      "subtype": "PhysicalMetricField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "zram_bytes",
+      "subtype": "PhysicalMetricField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "tailscale_version",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "tailscale_ipv4",
+      "subtype": "TopologyReferenceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "OwnerNode",
+      "field": "screenshots",
+      "subtype": "EvidenceReferenceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Node",
+      "field": "hostname",
+      "subtype": "IdentifierField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Node",
+      "field": "model_family",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Node",
+      "field": "role",
+      "subtype": "RuntimeControlField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Node",
+      "field": "disk_bytes",
+      "subtype": "PhysicalMetricField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Node",
+      "field": "root_partition_bytes",
+      "subtype": "PhysicalMetricField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Node",
+      "field": "baseline_kernel",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Node",
+      "field": "baseline_os_full_version",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Node",
+      "field": "baseline_tailscale_version",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Node",
+      "field": "tailscale_ipv4",
+      "subtype": "TopologyReferenceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "schema_version",
+      "subtype": "VocabularyBindingField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "stage",
+      "subtype": "RuntimeControlField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "baseline_commit",
+      "subtype": "ArtifactReferenceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "scope",
+      "subtype": "DeploymentConstraintField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "source",
+      "subtype": "ProvenanceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "supplied_date",
+      "subtype": "ProvenanceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "storage_medium",
+      "subtype": "DomainDescriptorField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "topology",
+      "subtype": "TopologyReferenceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "ledger_gib",
+      "subtype": "PhysicalBoundField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "disk_reserve_bytes",
+      "subtype": "PhysicalBoundField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "minimum_memory_kib",
+      "subtype": "PhysicalBoundField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "capture_max_age_seconds",
+      "subtype": "PhysicalBoundField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "preserve_tailscale",
+      "subtype": "DeploymentConstraintField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "bootstrap",
+      "subtype": "DeploymentConstraintField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "deployment",
+      "subtype": "DeploymentConstraintField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "physical_actuation",
+      "subtype": "DeploymentConstraintField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "TargetPolicy",
+      "field": "nodes",
+      "subtype": "TopologyReferenceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "InventoryReceipt",
+      "field": "schema_version",
+      "subtype": "VocabularyBindingField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "InventoryReceipt",
+      "field": "inventory_status",
+      "subtype": "ValidationStatusField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "InventoryReceipt",
+      "field": "target_qualification",
+      "subtype": "ValidationStatusField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "InventoryReceipt",
+      "field": "deployment",
+      "subtype": "DeploymentConstraintField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "InventoryReceipt",
+      "field": "physical_actuation",
+      "subtype": "DeploymentConstraintField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "InventoryReceipt",
+      "field": "authority",
+      "subtype": "DeploymentConstraintField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "InventoryReceipt",
+      "field": "assessed_at",
+      "subtype": "EvidenceQualityField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "InventoryReceipt",
+      "field": "policy_hash",
+      "subtype": "TelemetryIntegrityField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "InventoryReceipt",
+      "field": "collector_hash",
+      "subtype": "TelemetryIntegrityField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "InventoryReceipt",
+      "field": "captures",
+      "subtype": "EvidenceField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "InventoryReceipt",
+      "field": "reason_codes",
+      "subtype": "ValidationStatusField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "InventoryReceipt",
+      "field": "alert",
+      "subtype": "ValidationStatusField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "InventoryReceipt",
+      "field": "receipt_hash",
+      "subtype": "TelemetryIntegrityField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Rejection",
+      "field": "inventory_status",
+      "subtype": "ValidationStatusField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Rejection",
+      "field": "target_qualification",
+      "subtype": "ValidationStatusField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Rejection",
+      "field": "deployment",
+      "subtype": "DeploymentConstraintField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Rejection",
+      "field": "physical_actuation",
+      "subtype": "DeploymentConstraintField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Rejection",
+      "field": "reason_codes",
+      "subtype": "ValidationStatusField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    },
+    {
+      "contract": "Rejection",
+      "field": "alert",
+      "subtype": "ValidationStatusField",
+      "basis": "Strict target contract; no actuation or deployment authority"
+    }
+  ]
+}

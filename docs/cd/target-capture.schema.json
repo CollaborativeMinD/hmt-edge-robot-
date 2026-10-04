@@ -1,0 +1,259 @@
+{
+  "$defs": {
+    "Probe": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "output": {
+          "maxLength": 65536,
+          "title": "Output",
+          "type": "string"
+        },
+        "reason_code": {
+          "enum": [
+            "COMMAND_COMPLETED",
+            "COMMAND_FAILED",
+            "COMMAND_UNAVAILABLE",
+            "COMMAND_TIMEOUT",
+            "COMMAND_OUTPUT_LIMIT"
+          ],
+          "title": "Reason Code",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "status",
+        "output",
+        "reason_code"
+      ],
+      "title": "Probe",
+      "type": "object"
+    },
+    "Snapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "hostname": {
+          "enum": [
+            "forge-pi-01",
+            "forge-pi-02",
+            "forge-pi-03"
+          ],
+          "title": "Hostname",
+          "type": "string"
+        },
+        "model": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Model",
+          "type": "string"
+        },
+        "kernel": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Kernel",
+          "type": "string"
+        },
+        "architecture": {
+          "const": "aarch64",
+          "title": "Architecture",
+          "type": "string"
+        },
+        "userspace_bits": {
+          "const": 64,
+          "title": "Userspace Bits",
+          "type": "integer"
+        },
+        "os_id": {
+          "const": "debian",
+          "title": "Os Id",
+          "type": "string"
+        },
+        "os_version": {
+          "const": "13",
+          "title": "Os Version",
+          "type": "string"
+        },
+        "os_full_version": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Os Full Version",
+          "type": "string"
+        },
+        "memory_total_kib": {
+          "maximum": 1125899906842624,
+          "minimum": 1,
+          "title": "Memory Total Kib",
+          "type": "integer"
+        },
+        "disk_bytes": {
+          "maximum": 1125899906842624,
+          "minimum": 1,
+          "title": "Disk Bytes",
+          "type": "integer"
+        },
+        "root_partition_bytes": {
+          "maximum": 1125899906842624,
+          "minimum": 1,
+          "title": "Root Partition Bytes",
+          "type": "integer"
+        },
+        "root_total_bytes": {
+          "maximum": 1125899906842624,
+          "minimum": 1,
+          "title": "Root Total Bytes",
+          "type": "integer"
+        },
+        "root_available_bytes": {
+          "maximum": 1125899906842624,
+          "minimum": 0,
+          "title": "Root Available Bytes",
+          "type": "integer"
+        },
+        "root_device": {
+          "const": "/dev/mmcblk0p2",
+          "title": "Root Device",
+          "type": "string"
+        },
+        "root_fstype": {
+          "const": "ext4",
+          "title": "Root Fstype",
+          "type": "string"
+        },
+        "var_on_root": {
+          "const": true,
+          "title": "Var On Root",
+          "type": "boolean"
+        },
+        "tailscale_version": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Tailscale Version",
+          "type": "string"
+        },
+        "tailscale_ipv4": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Tailscale Ipv4",
+          "type": "string"
+        }
+      },
+      "required": [
+        "hostname",
+        "model",
+        "kernel",
+        "architecture",
+        "userspace_bits",
+        "os_id",
+        "os_version",
+        "os_full_version",
+        "memory_total_kib",
+        "disk_bytes",
+        "root_partition_bytes",
+        "root_total_bytes",
+        "root_available_bytes",
+        "root_device",
+        "root_fstype",
+        "var_on_root",
+        "tailscale_version",
+        "tailscale_ipv4"
+      ],
+      "title": "Snapshot",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "origin": {
+      "const": "LOCAL_READ_ONLY_COLLECTOR",
+      "title": "Origin",
+      "type": "string"
+    },
+    "policy_hash": {
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+      "title": "Policy Hash",
+      "type": "string"
+    },
+    "collector_hash": {
+      "maxLength": 64,
+      "minLength": 64,
+      "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+      "title": "Collector Hash",
+      "type": "string"
+    },
+    "baseline_commit": {
+      "maxLength": 40,
+      "minLength": 40,
+      "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+      "title": "Baseline Commit",
+      "type": "string"
+    },
+    "started_at": {
+      "format": "date-time",
+      "title": "Started At",
+      "type": "string"
+    },
+    "finished_at": {
+      "format": "date-time",
+      "title": "Finished At",
+      "type": "string"
+    },
+    "boot_id": {
+      "pattern": "^[a-f0-9-]{36}$",
+      "title": "Boot Id",
+      "type": "string"
+    },
+    "probes": {
+      "items": {
+        "$ref": "#/$defs/Probe"
+      },
+      "maxItems": 16,
+      "minItems": 1,
+      "title": "Probes",
+      "type": "array"
+    },
+    "snapshot": {
+      "$ref": "#/$defs/Snapshot"
+    },
+    "deployment": {
+      "const": "HOLD",
+      "title": "Deployment",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "origin",
+    "policy_hash",
+    "collector_hash",
+    "baseline_commit",
+    "started_at",
+    "finished_at",
+    "boot_id",
+    "probes",
+    "snapshot",
+    "deployment"
+  ],
+  "title": "Capture",
+  "type": "object"
+}

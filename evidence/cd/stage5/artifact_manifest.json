@@ -1,0 +1,364 @@
+{
+  "baseline_commit": "783b5f39f02e2fabe3d25130edfb5bc729627d5a",
+  "promotion_base_commit": "5e2924e2ac0b29f8adbc1f709b9edcd3910e44dd",
+  "provenance_id": "d4cb43b6b815c33415859ba51a16c6abdfcd184993c3825ae0a00fdb81fcd64c",
+  "inherited_files": "Excluded from delta; retained through GitHub base tree",
+  "self_hash_exclusion": "artifact_manifest.json excluded to avoid recursive hash",
+  "files": [
+    {
+      "path": "Agents.md",
+      "disposition": "modified",
+      "sha256": "acd64d4b850f3a7708946446a3904d84768e53c06fbe4e97452a149a422f6d2e"
+    },
+    {
+      "path": "Runbook.md",
+      "disposition": "modified",
+      "sha256": "6f5cacc896755a014485c31bfc03eb375bf4d995a714363d2ba9b367f663f609"
+    },
+    {
+      "path": "docs/cd/owner-inventory.json",
+      "disposition": "new",
+      "sha256": "22f98348176ba80daa87b48f2573288373f00b234853b6ff4350861b5c802490"
+    },
+    {
+      "path": "docs/cd/owner-inventory.schema.json",
+      "disposition": "new",
+      "sha256": "1e48e9b4f6c6035bb3a7ab8d0a3a108d755b46783d57b49fa0e6c79fc4ca07c1"
+    },
+    {
+      "path": "docs/cd/stage5.md",
+      "disposition": "modified",
+      "sha256": "e122607f139df6f769855d150b2633627f693109910e10c3efca9cf2e2dff8bb"
+    },
+    {
+      "path": "docs/cd/target-capture.schema.json",
+      "disposition": "new",
+      "sha256": "cb759ec96f83f3c6805dae1d8e2ba8adf7d79be11b3ac366c59ff4ba3ea67ac5"
+    },
+    {
+      "path": "docs/cd/target-field-bindings.json",
+      "disposition": "new",
+      "sha256": "48424fa12c3529c520cc31f0c99fe56d60fb57df8f5e01969b8fa3fb4d05c424"
+    },
+    {
+      "path": "docs/cd/target-policy.schema.json",
+      "disposition": "new",
+      "sha256": "e23400d824c33d31bbd9cf283d8df3aa7bf1e42d624eb19a29fc87b1f3769a77"
+    },
+    {
+      "path": "docs/cd/target-receipt.schema.json",
+      "disposition": "new",
+      "sha256": "f04eae9c41ca59c497ada6e0ecfe810c8c28bb031f948073c2dd07f82b73d4b4"
+    },
+    {
+      "path": "docs/implementation_traceability.json",
+      "disposition": "modified",
+      "sha256": "d0acef917e3c34219e63858297f42c00562acff7276867bff8fe0a98d711b246"
+    },
+    {
+      "path": "docs/incidents.json",
+      "disposition": "modified",
+      "sha256": "2919cfafe5c56779ad474af76fe0dc94962f023c79b052219d10875010d4f8b4"
+    },
+    {
+      "path": "docs/requirements.json",
+      "disposition": "modified",
+      "sha256": "4f7ee9794c20eaa0241153b37fbe43728f70c9de87112eca7183ebb3aac2faa1"
+    },
+    {
+      "path": "docs/requirements.md",
+      "disposition": "modified",
+      "sha256": "6d50fedc9369631d0bf410684cc23ce8a43ad5ab1c4ed0b69832c911dee6a682"
+    },
+    {
+      "path": "evidence/cd/stage5/campaign.json",
+      "disposition": "new",
+      "sha256": "b5b923f3e76e447249f9ffefec65a2edf57427ba145fc9b565d97d8445581b8f"
+    },
+    {
+      "path": "evidence/cd/stage5/coverage.json",
+      "disposition": "new",
+      "sha256": "281723cd9f0dfa6d92ffd8c8396481ca3e5c85ee2b9539394bf783f5196d4744"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-ARTIFACT-DESIGN-019.log",
+      "disposition": "new",
+      "sha256": "da8f1b1a2d5733953414364c2a727c2b4738dd96d3941c10a39220c06e9e140b"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-ARTIFACT-NEGATIVE-020.log",
+      "disposition": "new",
+      "sha256": "aba91995a8d5170698d0276bee0171d4591837bae2449b6fcac938eafa5df663"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-CD-CONTRACT-017.log",
+      "disposition": "new",
+      "sha256": "a1c7bb071511670c5a46b5083ed5d3e52c531a2f2f1b31a56f0e43cbcf61aee4"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-CD-NEGATIVE-018.log",
+      "disposition": "new",
+      "sha256": "729764f70ae420a4ad3e9ca8517319d7bf69d0cd1e0fe1cd1c627658bf182ea1"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-CI-013.log",
+      "disposition": "new",
+      "sha256": "9aff3338110e9fa587672b9a7d88aae6970e3c5ae2a7fcea661ae1af2662821f"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-NOTEBOOK-008.log",
+      "disposition": "new",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-PERF-006.log",
+      "disposition": "new",
+      "sha256": "046de3645e52398aaf146ed52f38bfd4a519e21f61a5c86802788374d8d21ea8"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-POLICY-014.log",
+      "disposition": "new",
+      "sha256": "c307edd31612e9a032d42349eac1bcbd88e25218454e539d97c00cf914df4123"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-PROFILE-015.log",
+      "disposition": "new",
+      "sha256": "9c801a7e96284236d2d654ecf650eb3f2996bc33340c8530885abe2b4fd65e86"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-QUALIFY-016.log",
+      "disposition": "new",
+      "sha256": "54c18f9d9746a8df3060619a1a4e9062cf32d3127958d32af9d7ea82335a05d7"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-RUNTIME-004.log",
+      "disposition": "new",
+      "sha256": "8b9cf2d123af1b6e7214f899703b713ecf8913ea58ecb31d9140df79269daf47"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-STATIC-007.log",
+      "disposition": "new",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-TARGET-BASELINE-021.log",
+      "disposition": "new",
+      "sha256": "7794356abbfb45f7e2e4343e27f9658814e04f43eac69fc3e5f54263e6d5f36f"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-TARGET-NEGATIVE-022.log",
+      "disposition": "new",
+      "sha256": "05fa4491b73a7a693f03559a1b1472cb76bece476f7291c9869fd477122fa82e"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-TRIAD-011.log",
+      "disposition": "new",
+      "sha256": "5e5ba590641c608c755d0b1f3c05986b572e1349fabfc825569196ff2b261df5"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/G-TYPES-012.log",
+      "disposition": "new",
+      "sha256": "fefba75fa0a91256f9f771c1c85c382e0851294ff3410e8d5a5d36ed1cbb25f2"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/structural_checks.json",
+      "disposition": "new",
+      "sha256": "b8ee46ac8030aac58829ad59e9a602cd155a01864740c25584fe455a5a5dc95f"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative/tests.xml",
+      "disposition": "new",
+      "sha256": "adacf2ad8e3ca03172b8cb1078da5d3ba075603d0b740545649f0decf0012104"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative_gate_ledger.csv",
+      "disposition": "new",
+      "sha256": "bdb897bcbf24aa584a0d8dcf908b3bbfb2ac9f8508a8c77e0ab6b27147352d62"
+    },
+    {
+      "path": "evidence/cd/stage5/cumulative_validation.json",
+      "disposition": "new",
+      "sha256": "556b8e1adcd74cc441555c215e0ddcbbf984e5708f2603aed35201a22e68f787"
+    },
+    {
+      "path": "evidence/cd/stage5/ledgers.sqlite",
+      "disposition": "new",
+      "sha256": "5cfa03b8afd0e92d0be8986495cb58782c495da7cb2e37013fbe6a0240acd425"
+    },
+    {
+      "path": "evidence/cd/stage5/machine_handoff.json",
+      "disposition": "new",
+      "sha256": "cd568b5cdddebeb042e8f8a94f4d91002cd79eb1dbaaa70397990f6d37982ffa"
+    },
+    {
+      "path": "evidence/cd/stage5/negative_tests.log",
+      "disposition": "new",
+      "sha256": "c0d8238f8921bab039080fd20f3cd833adedad0419ce1373dec42c7536b7cc10"
+    },
+    {
+      "path": "evidence/cd/stage5/reverse_rca_ledger.csv",
+      "disposition": "new",
+      "sha256": "f868aae81683e3ef630da08b0ee59ce83c3783b87e260c56c61a28a85e564640"
+    },
+    {
+      "path": "evidence/cd/stage5/runtime_coverage.json",
+      "disposition": "new",
+      "sha256": "72181047756377d5ea51c587b39d221f8fdf047652c39d3966a382e83609751e"
+    },
+    {
+      "path": "evidence/cd/stage5/runtime_tests.xml",
+      "disposition": "new",
+      "sha256": "adacf2ad8e3ca03172b8cb1078da5d3ba075603d0b740545649f0decf0012104"
+    },
+    {
+      "path": "evidence/cd/stage5/structural_checks.json",
+      "disposition": "new",
+      "sha256": "2bc99d8fdb435deec69ec5ac0bc46aa98f7e124427e04d0dcd503cb13032b163"
+    },
+    {
+      "path": "evidence/cd/stage5/tests.xml",
+      "disposition": "new",
+      "sha256": "c400a89c788249ffd016b1dc9c624bbc236ea171a1ac4d801eb942b951a2733c"
+    },
+    {
+      "path": "evidence/cd/stage5/validation_receipt.json",
+      "disposition": "new",
+      "sha256": "36332dea574c34b001172d0ac28982a5e8b54bcc8494d339cbb15e4cf81ed24f"
+    },
+    {
+      "path": "policy/ci_admission.json",
+      "disposition": "modified",
+      "sha256": "72ce5444d035a9af49fc4798d9ad9b7ef8eb957fca13c5adc1818066477098fe"
+    },
+    {
+      "path": "policy/deployment_admission.json",
+      "disposition": "modified",
+      "sha256": "116f00ee1d404892f2585d3560062ae12326f999e67750be1a78a542730040d1"
+    },
+    {
+      "path": "policy/target.json",
+      "disposition": "new",
+      "sha256": "20b2127de9fadfd8e76a06700646f830dcdcdfc0e5841c9d1804c106f8028cfb"
+    },
+    {
+      "path": "policy/target_admission.json",
+      "disposition": "new",
+      "sha256": "fdbf1e140f173d34d2cffb5cf08f087708adcfd94a998914de41cf4406eb032e"
+    },
+    {
+      "path": "tests/target_test_support.py",
+      "disposition": "new",
+      "sha256": "d826d07482d2b7d95c9ebbe565ea55cfb092238207e502b2ca34338cf6d0a797"
+    },
+    {
+      "path": "tests/test_target_admission.py",
+      "disposition": "new",
+      "sha256": "2e202d7279f67c48a630a63d0d545d5c5be360b414d35ad74ef5aa2037506254"
+    },
+    {
+      "path": "tests/test_target_campaign.py",
+      "disposition": "new",
+      "sha256": "4e0fa2fe43044949f4be45c026d3f93464c72ddd0354e5c2fe35ccad7773d5a5"
+    },
+    {
+      "path": "tests/test_target_collection.py",
+      "disposition": "new",
+      "sha256": "446eb8193ba300f6a45bf6aaa445b66aff69c4c58c8000401cf1dbf72101e290"
+    },
+    {
+      "path": "tests/test_target_commands.py",
+      "disposition": "new",
+      "sha256": "961cbe0a3218ff0d649393590d60f68c0fa5d639ce4af9bd0ce7511583730d95"
+    },
+    {
+      "path": "tests/test_target_contracts.py",
+      "disposition": "new",
+      "sha256": "964821764e38ce81b1fc4d834deafd7a7e1f7829061a40f6d01f9ea9471c3474"
+    },
+    {
+      "path": "tests/test_target_handoff.py",
+      "disposition": "new",
+      "sha256": "ffc99d82b2cb969948a078ffd9978cfcf5e6c775a2020d818f0f848e6c666674"
+    },
+    {
+      "path": "tests/test_target_io.py",
+      "disposition": "new",
+      "sha256": "6fc5f5cedec1622edb164005f2646fec9b9e1f75698521ef4eee787a178d399f"
+    },
+    {
+      "path": "tests/test_target_snapshot.py",
+      "disposition": "new",
+      "sha256": "455b89f68a68cc029ec487b737dd7588b8aa003b49d5a7bd5bd993c244805c38"
+    },
+    {
+      "path": "tools/target_admission.py",
+      "disposition": "new",
+      "sha256": "48e44d078917bd63a6307596657657c1760cfb6938e0617126a0512bf52f258b"
+    },
+    {
+      "path": "tools/target_bindings.py",
+      "disposition": "new",
+      "sha256": "dbb2abdf64691afece1483cfae7da0797b4869729244b68926cfeff16f0fee42"
+    },
+    {
+      "path": "tools/target_campaign.py",
+      "disposition": "new",
+      "sha256": "db9344ab2f161186d7f42a32a4c497c4798e26d02f8a5dca93a3039b4be9699a"
+    },
+    {
+      "path": "tools/target_collect.py",
+      "disposition": "new",
+      "sha256": "7b939e29ddace2fa07b77978b6e16e53cbc81428349d4cd9b6657ebe04796965"
+    },
+    {
+      "path": "tools/target_commands.py",
+      "disposition": "new",
+      "sha256": "72ea04c633906c241d7a48cce5d0f925e4e2b604ce602dd52cffa4692e4cc5d6"
+    },
+    {
+      "path": "tools/target_contracts.py",
+      "disposition": "new",
+      "sha256": "03314b466206752ce02595bc44d00b316d753219af3cadf9980609c554075f9b"
+    },
+    {
+      "path": "tools/target_gate.py",
+      "disposition": "new",
+      "sha256": "847f90f428f2d37f7978921d82e3d402935be3ef379d70b88b7624d56f86452d"
+    },
+    {
+      "path": "tools/target_io.py",
+      "disposition": "new",
+      "sha256": "2e90ba516e2d2508c11142a277d2a377753b589582889d6af97a514feff4d636"
+    },
+    {
+      "path": "tools/target_owner.py",
+      "disposition": "new",
+      "sha256": "d3ac581d48114b6cb3cdb4e8305b9d5e85227fc3eac3d2d226f0400e04d5e504"
+    },
+    {
+      "path": "tools/target_profile.py",
+      "disposition": "new",
+      "sha256": "053717a345b4a5140b04b406e627e979444c50f17087a4f18e05437ec2eb7835"
+    },
+    {
+      "path": "tools/target_receipts.py",
+      "disposition": "new",
+      "sha256": "3ddf04b24682977f1b82f246c1964ae72c3bfa6a3cfa8c78c01f61da32f66d40"
+    },
+    {
+      "path": "tools/target_snapshot.py",
+      "disposition": "new",
+      "sha256": "e6fcda6d3f14486736c6bcf4de3736d483389fdb185f5675664dea39e89160d1"
+    },
+    {
+      "path": "tools/validate.py",
+      "disposition": "modified",
+      "sha256": "160e91a0040d3a525018e5be5b815e827584fa2ebdcdc89b69ec91885e1bbfb2"
+    },
+    {
+      "path": "evidence/cd/stage5/provenance_ledger.json",
+      "disposition": "new",
+      "sha256": "eac394a61aba6c65d2e1ff74d417d0599c46cc2c3c2f20c0a3a4ba8d0792775d"
+    }
+  ]
+}

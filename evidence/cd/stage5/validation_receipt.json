@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "software_status": "PASS",
+  "target_qualification": "HOLD",
+  "deployment": "HOLD",
+  "physical_actuation": "HOLD",
+  "validated_at": "2026-10-04T19:25:13.067657Z",
+  "baseline_commit": "783b5f39f02e2fabe3d25130edfb5bc729627d5a",
+  "promotion_base_commit": "5e2924e2ac0b29f8adbc1f709b9edcd3910e44dd",
+  "test_cases": 428,
+  "runtime_coverage_percent": 97.73851590106007,
+  "target_tests": 97,
+  "target_branch_aware_coverage_percent": 97.64089121887287,
+  "owner_inventory": "BOUND",
+  "actual_pi_captures": "NOT_COLLECTED",
+  "requirements": [
+    "REQ-CD5-01",
+    "REQ-CD5-02",
+    "REQ-CD5-03",
+    "REQ-CD5-04",
+    "REQ-CD5-05"
+  ],
+  "formula_family": "FF-V6-LOGIC-01",
+  "equation_id": "LOGIC-EQ-04",
+  "provenance_id": "d4cb43b6b815c33415859ba51a16c6abdfcd184993c3825ae0a00fdb81fcd64c",
+  "unresolved": [
+    "Stage 4 vulnerability admission and private signing",
+    "Fresh operator-custodied host captures",
+    "K3s cluster/CNI/readiness/native resource trials",
+    "Writer fencing/disk pressure/backup restore/private access trials",
+    "Protected promotion and physical gates"
+  ]
+}

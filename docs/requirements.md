@@ -77,3 +77,13 @@ Scope: system software. Physical deployment verification is deferred. The normat
 CI/CD phase 1 adds REQ-CI-01, REQ-CI-02 and REQ-CI-NFR-01. See `docs/requirements.json`, `docs/ci_cd.md` and G-CI-013 evidence.
 
 Phase 2 adds REQ-CI2-01..04 for policy assessment, read-only reuse, qualification, and rejection behavior. See `docs/ci_phase2.md`.
+
+## Stage 5 target qualification
+
+| Requirement | Acceptance | Gate |
+|---|---|---|
+| REQ-CD5-01 | Bind the exact owner-assigned three-node heterogeneous microSD lab without granting runtime authority | G-TARGET-BASELINE-021 |
+| REQ-CD5-02 | Fixed read-only host probes have bounded output/deadlines, reboot detection and fail-closed capture persistence | G-TARGET-NEGATIVE-022 |
+| REQ-CD5-03 | Strict source-bound fresh inventory and typed receipts reject stale, forged, incomplete or contradictory evidence | G-TARGET-NEGATIVE-022 |
+| REQ-CD5-04 | MicroSD target policy preserves Tailscale and all independent runtime/deployment/physical HOLDs with governed field bindings | G-TARGET-BASELINE-021 |
+| REQ-CD5-05 | Cumulative regression and target adversarial campaign exceed 90 percent branch-aware coverage and invalidate stale success before spawn | G-TARGET-NEGATIVE-022 |

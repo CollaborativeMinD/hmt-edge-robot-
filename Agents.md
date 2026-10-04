@@ -77,3 +77,12 @@ Stage 4 is independently admitted by `policy/artifact_admission.json`; follow
 are now in scope. Stage-3 contracts never grant this authority. Require frozen
 packages, digest-bound OCI closure, complete scans and fresh cryptographic provenance
 verification. Keep every Pi/cluster/deployment/physical gate HOLD. Preserve old seals.
+
+Stage 5: follow `docs/cd/stage5.md` and the separate `policy/target.json` microSD
+lab profile. Bind all three owner inventories while preserving Pi 03's kernel/OS
+difference and existing Tailscale enrollment. Ordinary CI proves only target-tool
+contracts and negative cases; it never runs the collector against a Pi. Explicit
+operator collection writes bounded local evidence only. Inventory consistency
+cannot admit bootstrap, image promotion, CNI/readiness, fencing, restore, private
+access, measured workload bounds, or actuation. Keep those HOLDs independent;
+never rewrite historical stage-3 evidence or dormant manifests to manufacture PASS.

@@ -1,0 +1,9 @@
+{
+  "alert": false,
+  "deployment": "HOLD",
+  "reason_codes": [
+    "TARGET_SOFTWARE_TESTS_PASS"
+  ],
+  "status": "PASS",
+  "target_qualification": "HOLD"
+}

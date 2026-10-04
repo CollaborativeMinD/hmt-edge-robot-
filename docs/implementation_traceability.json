@@ -1839,5 +1839,133 @@
     ],
     "analysis_id": "G-ARTIFACT-NEGATIVE-020",
     "evidence_id": "evidence/cd/stage4"
+  },
+  {
+    "req_id": "REQ-CD5-01",
+    "module_id": "tools/target_profile.py",
+    "runtime_partition": "supervisory/SIL-read-only qualification",
+    "source_path": [
+      "tools/target_profile.py",
+      "tools/target_owner.py",
+      "policy/target.json",
+      "docs/cd/owner-inventory.json"
+    ],
+    "contract_id": "TargetPolicy/Snapshot/Capture/InventoryReceipt",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_target_contracts.py::test_inventory_does_not_grant_runtime_authority",
+      "tests/test_target_admission.py::test_owner_transcription_and_strict_schema"
+    ],
+    "analysis_id": "G-TARGET-BASELINE-021",
+    "evidence_id": "evidence/cd/stage5/validation_receipt.json"
+  },
+  {
+    "req_id": "REQ-CD5-02",
+    "module_id": "tools/target_collect.py",
+    "runtime_partition": "supervisory/SIL-read-only qualification",
+    "source_path": [
+      "tools/target_collect.py",
+      "tools/target_commands.py",
+      "tools/target_snapshot.py"
+    ],
+    "contract_id": "TargetPolicy/Snapshot/Capture/InventoryReceipt",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_target_commands.py::test_command_bounds",
+      "tests/test_target_collection.py::test_collector_invalidates_prior_success",
+      "tests/test_target_snapshot.py::test_snapshot_uses_real_units_and_root_storage"
+    ],
+    "analysis_id": "G-TARGET-NEGATIVE-022",
+    "evidence_id": "evidence/cd/stage5/validation_receipt.json"
+  },
+  {
+    "req_id": "REQ-CD5-03",
+    "module_id": "tools/target_admission.py",
+    "runtime_partition": "supervisory/SIL-read-only qualification",
+    "source_path": [
+      "tools/target_admission.py",
+      "tools/target_io.py",
+      "tools/target_receipts.py",
+      "tools/target_gate.py"
+    ],
+    "contract_id": "TargetPolicy/Snapshot/Capture/InventoryReceipt",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_target_admission.py::test_identity_binding",
+      "tests/test_target_contracts.py::test_inventory_does_not_grant_runtime_authority",
+      "tests/test_target_collection.py::test_assessment_replaces_stale_pass_and_cli",
+      "tests/test_target_handoff.py::test_receipt_contract"
+    ],
+    "analysis_id": "G-TARGET-NEGATIVE-022",
+    "evidence_id": "evidence/cd/stage5/validation_receipt.json"
+  },
+  {
+    "req_id": "REQ-CD5-04",
+    "module_id": "tools/target_contracts.py",
+    "runtime_partition": "supervisory/SIL-read-only qualification",
+    "source_path": [
+      "tools/target_contracts.py",
+      "tools/target_bindings.py",
+      "docs/cd/stage5.md"
+    ],
+    "contract_id": "TargetPolicy/Snapshot/Capture/InventoryReceipt",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_target_contracts.py::test_profile_rejects_authority_and_coercion",
+      "tests/test_target_handoff.py::test_governed_binding_drift"
+    ],
+    "analysis_id": "G-TARGET-BASELINE-021",
+    "evidence_id": "evidence/cd/stage5/validation_receipt.json"
+  },
+  {
+    "req_id": "REQ-CD5-05",
+    "module_id": "tools/target_campaign.py",
+    "runtime_partition": "supervisory/SIL-read-only qualification",
+    "source_path": [
+      "tools/target_campaign.py",
+      "tools/validate.py"
+    ],
+    "contract_id": "TargetPolicy/Snapshot/Capture/InventoryReceipt",
+    "safety_constraint_id": [
+      "INV-01",
+      "INV-02",
+      "INV-03",
+      "INV-04",
+      "INV-05",
+      "INV-06"
+    ],
+    "test_id": [
+      "tests/test_target_campaign.py::test_campaign_invalidation"
+    ],
+    "analysis_id": "G-TARGET-NEGATIVE-022",
+    "evidence_id": "evidence/cd/stage5/validation_receipt.json"
   }
 ]

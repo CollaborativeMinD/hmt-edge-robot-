@@ -1,0 +1,199 @@
+{
+  "$defs": {
+    "Node": {
+      "additionalProperties": false,
+      "properties": {
+        "hostname": {
+          "enum": [
+            "forge-pi-01",
+            "forge-pi-02",
+            "forge-pi-03"
+          ],
+          "title": "Hostname",
+          "type": "string"
+        },
+        "model_family": {
+          "enum": [
+            "Raspberry Pi 5",
+            "Raspberry Pi 4 Model B"
+          ],
+          "title": "Model Family",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "control_plane",
+            "application_ledger",
+            "backup_restore"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "disk_bytes": {
+          "maximum": 1125899906842624,
+          "minimum": 1,
+          "title": "Disk Bytes",
+          "type": "integer"
+        },
+        "root_partition_bytes": {
+          "maximum": 1125899906842624,
+          "minimum": 1,
+          "title": "Root Partition Bytes",
+          "type": "integer"
+        },
+        "baseline_kernel": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Baseline Kernel",
+          "type": "string"
+        },
+        "baseline_os_full_version": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Baseline Os Full Version",
+          "type": "string"
+        },
+        "baseline_tailscale_version": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Baseline Tailscale Version",
+          "type": "string"
+        },
+        "tailscale_ipv4": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Tailscale Ipv4",
+          "type": "string"
+        }
+      },
+      "required": [
+        "hostname",
+        "model_family",
+        "role",
+        "disk_bytes",
+        "root_partition_bytes",
+        "baseline_kernel",
+        "baseline_os_full_version",
+        "baseline_tailscale_version",
+        "tailscale_ipv4"
+      ],
+      "title": "Node",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "stage": {
+      "const": 5,
+      "title": "Stage",
+      "type": "integer"
+    },
+    "baseline_commit": {
+      "maxLength": 40,
+      "minLength": 40,
+      "pattern": "^[a-f0-9]*[a-f1-9][a-f0-9]*$",
+      "title": "Baseline Commit",
+      "type": "string"
+    },
+    "scope": {
+      "const": "read_only_target_qualification",
+      "title": "Scope",
+      "type": "string"
+    },
+    "source": {
+      "const": "OWNER_SCREENSHOT_TRANSCRIPTION",
+      "title": "Source",
+      "type": "string"
+    },
+    "supplied_date": {
+      "const": "2026-10-04",
+      "title": "Supplied Date",
+      "type": "string"
+    },
+    "storage_medium": {
+      "const": "microSD",
+      "title": "Storage Medium",
+      "type": "string"
+    },
+    "topology": {
+      "const": "single_server_lab",
+      "title": "Topology",
+      "type": "string"
+    },
+    "ledger_gib": {
+      "const": 8,
+      "title": "Ledger Gib",
+      "type": "integer"
+    },
+    "disk_reserve_bytes": {
+      "const": 8589934592,
+      "title": "Disk Reserve Bytes",
+      "type": "integer"
+    },
+    "minimum_memory_kib": {
+      "const": 7340032,
+      "title": "Minimum Memory Kib",
+      "type": "integer"
+    },
+    "capture_max_age_seconds": {
+      "const": 900,
+      "title": "Capture Max Age Seconds",
+      "type": "integer"
+    },
+    "preserve_tailscale": {
+      "const": true,
+      "title": "Preserve Tailscale",
+      "type": "boolean"
+    },
+    "bootstrap": {
+      "const": "HOLD",
+      "title": "Bootstrap",
+      "type": "string"
+    },
+    "deployment": {
+      "const": "HOLD",
+      "title": "Deployment",
+      "type": "string"
+    },
+    "physical_actuation": {
+      "const": "HOLD",
+      "title": "Physical Actuation",
+      "type": "string"
+    },
+    "nodes": {
+      "items": {
+        "$ref": "#/$defs/Node"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Nodes",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "stage",
+    "baseline_commit",
+    "scope",
+    "source",
+    "supplied_date",
+    "storage_medium",
+    "topology",
+    "ledger_gib",
+    "disk_reserve_bytes",
+    "minimum_memory_kib",
+    "capture_max_age_seconds",
+    "preserve_tailscale",
+    "bootstrap",
+    "deployment",
+    "physical_actuation",
+    "nodes"
+  ],
+  "title": "TargetPolicy",
+  "type": "object"
+}
