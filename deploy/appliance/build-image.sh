@@ -8,7 +8,10 @@ image="$work/hmt-edge-robot.img"
 root="$work/mount-root"
 boot="$work/mount-boot"
 loop=''
+# shellcheck source=chroot-mounts.sh
+source "$repo/deploy/appliance/chroot-mounts.sh"
 cleanup() {
+  chroot_unmounts "$root"
   mountpoint -q "$boot" && umount "$boot"
   mountpoint -q "$root" && umount "$root"
   if [[ -n "$loop" ]]; then losetup -d "$loop"; fi
@@ -28,9 +31,11 @@ e2fsck -fy "${loop}p2" || [[ $? == 1 ]]
 resize2fs "${loop}p2"
 mount "${loop}p2" "$root"
 mount "${loop}p1" "$boot"
+chroot_mounts "$root" "$boot"
 [[ -f "$root/usr/lib/systemd/systemd" && -f "$root/usr/bin/python3" ]]
 python3 "$repo/tools/appliance_host.py" "$root"
 python3 "$repo/tools/host_hardening.py" "$root"
+chroot_unmounts "$root"
 install -Dm755 "$work/inputs/k3s-arm64" "$root/usr/local/bin/k3s"
 install -Dm755 "$repo/deploy/appliance/k3s-start.sh" "$root/usr/local/libexec/hmt-k3s-start"
 install -Dm755 "$repo/deploy/appliance/runtime-start.sh" "$root/usr/local/libexec/hmt-runtime-start"

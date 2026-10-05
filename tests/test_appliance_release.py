@@ -64,7 +64,8 @@ def test_publisher_recomputes_host_receipt_and_image_binding(tmp_path: Path, tam
     (path.parent / 'inputs.json').write_text(json.dumps(config))
     hardened = {**hardening, 'removed_packages': {}, 'status': 'PASS', 'architecture': 'arm64',
         'policy_sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
-        'packages': [{'name': name, 'version': version, 'architecture': 'arm64'}]}
+        'packages': [{'name': name, 'version': version, 'architecture': 'arm64'}],
+        'boot': {'status': 'PASS', 'module_policy': 'most', 'images': {'v8': {}, '2712': {}}}}
     finding = dict(zip(('VulnerabilityID', 'PkgName', 'InstalledVersion', 'Severity'), entry.values(), strict=True))
     scan = {'SchemaVersion': 2, 'ArtifactType': 'filesystem', 'Metadata': {'OS': {'Family': 'debian', 'Name': '13.7'}},
         'Results': [{'Class': 'os-pkgs', 'Packages': [{'Name': name, 'Version': upstream, 'Release': revision, 'Arch': 'arm64'}], 'Vulnerabilities': [finding]}]}

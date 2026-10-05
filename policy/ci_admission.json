@@ -287,13 +287,14 @@
     "tools/artifact_contracts.py": "0797aba12af85dd4164b83c27edff4cf653bd9f04fe4a32af6a03c09302788fd",
     "tools/artifact_design.py": "450e2ed39d61b07adea115877f06d90357aeb92aff949f31df73b67fb6d4024f",
     "tools/artifact_preflight.py": "f5b1c0f17f85873e1bb25314675bfee39b5acc4b3e034834555ec763b07b89bc",
-    "tools/host_hardening.py": "cfd8fb27b346b4b35bc9b239de3439b159b960cad9840775340f964c43a814f4",
+    "tools/host_hardening.py": "4ce4d3f1242f233313a12d341d2168018f46032e1c0a84d141510fd524d6aa62",
     "tools/host_policy.py": "e3ef560355d562d530327b165196238cb17eb4bb5c8772270239ab9d59caa0c7",
-    "tools/host_evidence.py": "afd89f87fb7680b2b0544ec321122b59a7da097566f795527197463663289acd",
+    "tools/host_evidence.py": "0608660cce9e651a34770ec2e3361b6165b467c2440c4f2dd8c581da00e97c1a",
     "policy/host_vulnerability_waivers.json": "dca87f1eb349138f801c35ff7a3d5ebe8a233d2141b1a0ff37ba21f986e13a4d",
     "deploy/appliance/hardening.json": "2837645b1ab757325567cf1bc053ff2017879625dbd6012f49952b43dc820c71",
     "evidence/cd/host-risk/assessment.json": "d1735e15a84ed3a9cc89e0f62258fcec14bbccc3f7577766ed0c311e641557cd",
     "tests/test_host_admission.py": "699401baae458ef53d782ade65e72664c62138d5490f099c4a9baf43e1fd8909",
-    "docs/cd/host-risk.md": "bfe660ff8cbd579ac9c53ab647c65c6ae6b2f0fb916a6d8af28767900a6d5dbe"
+    "docs/cd/host-risk.md": "e02534779abc63dc6a30731dae998c810d042c0baa9eb741ef9efe80f9ad4996",
+    "deploy/appliance/chroot-mounts.sh": "7cb619eb826ad521c21ccd2b00e775f536ac3779c7f97fc29bdb9fd0d55228d6"
   }
 }

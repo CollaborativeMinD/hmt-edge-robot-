@@ -15,6 +15,23 @@ REQUIRED = {'systemd', 'udev', 'network-manager', 'wpasupplicant', 'rpi-swap', '
     'sudo', 'python3', 'linux-image-rpi-v8', 'linux-image-rpi-2712'}
 
 
+def boot(root: Path, command: list[str]) -> dict:
+    images = {}
+    for flavour, name in (('v8', 'initramfs8'), ('2712', 'initramfs_2712')):
+        paths = list((root / 'boot').glob(f'initrd.img-*-rpi-{flavour}'))
+        if len(paths) != 1 or digest(paths[0]) != digest(root / 'boot/firmware' / name):
+            raise ValueError('HOST_BOOT_PARTITION_INITRAMFS_MISMATCH')
+        listing = run([*command, '/usr/bin/lsinitramfs', '/boot/' + paths[0].name], timeout=60).decode()
+        if not any(line.endswith('etc/modprobe.d/90-hmt-restricted.conf') for line in listing.splitlines()):
+            raise ValueError('HOST_INITRAMFS_MITIGATION_MISSING')
+        version = paths[0].name.removeprefix('initrd.img-')
+        config = root / 'boot' / ('config-' + version)
+        if any(f'{option}=y' not in config.read_text().splitlines() for option in ('CONFIG_EXT4_FS', 'CONFIG_MMC', 'CONFIG_MMC_SDHCI', 'CONFIG_MMC_BCM2835')):
+            raise ValueError('HOST_PI_BOOT_DRIVER_MISSING')
+        images[flavour] = {'kernel': version, 'initramfs_sha256': digest(paths[0]), 'config_sha256': digest(config)}
+    return {'status': 'PASS', 'module_policy': 'most', 'images': images}
+
+
 def reduce(root: Path, repo: Path = ROOT) -> dict:
     if platform.machine() != 'aarch64' or root.is_symlink() or root.resolve() != repo / 'build/mount-root' or not root.is_mount():
         raise ValueError('HOST_REDUCTION_DISPOSABLE_ARM64_REQUIRED')
@@ -26,6 +43,18 @@ def reduce(root: Path, repo: Path = ROOT) -> dict:
     actual = {line.split('\t')[0]: line.split('\t')[1] for line in output.splitlines()}
     if actual != removals or any(line.endswith('\tyes') for line in output.splitlines()) or REQUIRED & removals.keys():
         raise ValueError('HOST_REDUCTION_PACKAGE_DRIFT_OR_ESSENTIAL')
+    for unit in policy['masked_services']:
+        target = root / 'etc/systemd/system' / unit
+        target.unlink(missing_ok=True)
+        target.symlink_to('/dev/null')
+    text = ''.join(f'install {name} /bin/false\nblacklist {name}\n' for name in policy['blocked_modules'])
+    (root / 'etc/modprobe.d/90-hmt-restricted.conf').write_text(text)
+    for name in ('mount', 'umount'):
+        file = root / 'usr/bin' / name
+        file.chmod(file.stat().st_mode & 0o1777)
+    ssh = 'PasswordAuthentication no\nPermitRootLogin no\nAllowUsers edgeadmin\nGSSAPIAuthentication no\nDisableForwarding yes\nPermitTunnel no\n'
+    (root / 'etc/ssh/sshd_config.d/00-hmt-hardening.conf').write_text(ssh)
+    (root / 'etc/initramfs-tools/conf.d/99-hmt-portable').write_text('MODULES=most\n')
     guard = root / 'usr/sbin/policy-rc.d'
     if guard.exists() or guard.is_symlink():
         raise ValueError('HOST_REDUCTION_SERVICE_POLICY_EXISTS')
@@ -41,17 +70,6 @@ def reduce(root: Path, repo: Path = ROOT) -> dict:
         raise
     finally:
         guard.unlink(missing_ok=True)
-    for unit in policy['masked_services']:
-        target = root / 'etc/systemd/system' / unit
-        target.unlink(missing_ok=True)
-        target.symlink_to('/dev/null')
-    text = ''.join(f'install {name} /bin/false\nblacklist {name}\n' for name in policy['blocked_modules'])
-    (root / 'etc/modprobe.d/90-hmt-restricted.conf').write_text(text)
-    for name in ('mount', 'umount'):
-        file = root / 'usr/bin' / name
-        file.chmod(file.stat().st_mode & 0o1777)
-    ssh = 'PasswordAuthentication no\nPermitRootLogin no\nAllowUsers edgeadmin\nGSSAPIAuthentication no\nDisableForwarding yes\nPermitTunnel no\n'
-    (root / 'etc/ssh/sshd_config.d/00-hmt-hardening.conf').write_text(ssh)
     inventory = run([*command, '/usr/bin/dpkg-query', '-W', '-f=${Package}\t${Version}\t${Architecture}\t${db:Status-Status}\n']).decode()
     packages = [dict(zip(('name', 'version', 'architecture'), line.split('\t')[:3], strict=True)) for line in inventory.splitlines() if line.endswith('\tinstalled')]
     names = {p['name'] for p in packages}
@@ -59,7 +77,8 @@ def reduce(root: Path, repo: Path = ROOT) -> dict:
         raise ValueError('HOST_REDUCTION_READBACK_FAILED')
     report = {'status': 'PASS', 'scope': policy['scope'], 'architecture': 'arm64',
         'policy_sha256': digest(path), 'removed_packages': removals, 'packages': packages,
-        'masked_services': policy['masked_services'], 'blocked_modules': policy['blocked_modules']}
+        'masked_services': policy['masked_services'], 'blocked_modules': policy['blocked_modules'],
+        'boot': boot(root, command)}
     (root / 'usr/share/hmt/host-hardening.json').write_text(json.dumps(report, indent=2) + '\n')
     return report
 

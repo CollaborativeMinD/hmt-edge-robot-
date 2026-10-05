@@ -28,7 +28,7 @@ removed. Official camera libraries and supported firmware remain.
 
 The planned removal eliminates 462 blocking package matches (432 HIGH, nine
 CRITICAL, 21 UNKNOWN) and 61 vulnerability IDs. Native dpkg purge, dependency
-audit, required-package readback and a new complete rootfs scan verify the actual
+audit, portable initramfs regeneration for both vendor kernels, required-package readback and a new complete rootfs scan verify the actual
 result. A failed purge or new finding stops the pipeline. Removing ack would
 remove vendor rpi-swap, so ack stays. Removing busybox/dracut-install, essential
 system libraries, or either Pi kernel would compromise supported boot or
@@ -71,3 +71,8 @@ changed receipts, and includes accepted findings and hashes in the signed
 manifest. The image and evidence bundle themselves are hash-bound by that
 manifest. Full green PR checks and signed image publication are required;
 physical Pi boot/storage acceptance remains a separate NOT_RUN/HOLD gate.
+
+Offline maintscripts run with temporary minimal device nodes, read-only proc/sys
+views and the real FAT boot partition bound into the chroot. MODULES=most
+replaces hardware-dependent module discovery so both Pi variants retain their
+boot drivers. Temporary mounts are removed before scanning and compression.

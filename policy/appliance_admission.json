@@ -3,7 +3,7 @@
   "scope": "PI_SIL_SOFTWARE_APPLIANCE",
   "files": {
     ".github/workflows/release.yml": "ed992a36fc99442c9199cfa2c92845011c83f2259bb3652e45e5679e40c7b73f",
-    "deploy/appliance/build-image.sh": "9fce8779e5e8abb88df359dc656b1e72579dc7f9b83b266ab6b3cc9edf51b0a0",
+    "deploy/appliance/build-image.sh": "8c0a3d78dbedb9010caad72067867ecec26108bf982ee7f678e4bbd005f6d3fa",
     "deploy/appliance/hmt-firstboot.service": "8700504303d7cad35fe21878b4b0abdedbf3d2e2e340f986fed7384581b37db1",
     "deploy/appliance/hmt-runtime.service": "61a3d6492630b1f418dfdf71e996521c7f0d183716647e488eefe94fa1f4dc4e",
     "deploy/appliance/inputs.json": "3780eb4f71cc4b517e48ad5fe5e368077be3f255e675193dda48004f7a3f4ed7",
@@ -18,9 +18,9 @@
     "docs/cd/appliance.md": "d8da7790a67a96dce55e679240c27247e1698173c95e2f3395fb9d9a2e96cc63",
     "tests/test_appliance_node.py": "44c0c11834aa009e7e3b418f97431899affe7844af0042821a4b1138adbc2783",
     "tests/test_appliance_pipeline.py": "bf041dd1cc0b1389384b9a5b5982aca41663fde33ca85f42f5c86a91f67d4a70",
-    "tests/test_appliance_release.py": "a72918616bc302b6e361ad685dc94122ba4ef56b212b2d41e9ae62b7ba3ab975",
+    "tests/test_appliance_release.py": "3f890a32c7097b1f75610cba5c8a29b467843f019b76fdc1a095652080a04fda",
     "tests/test_appliance_signing.py": "0b430e77ded1e026551d6033ab28b01162b216d1676655031c527a6817e16cc1",
-    "tools/appliance_design.py": "a519c5b8847e81437279ba25e7ab3053fab00be7a368aa18259133d7fb4a6235",
+    "tools/appliance_design.py": "2ad1f24f8397291f93cab8180576db2913db69dbc0ca72044ea510ee844a0b97",
     "tools/appliance_fetch.py": "0f66709d6fc9f44833464486b906f20541ddd9ceff1fc07a3919f0b88c2066b4",
     "tools/appliance_firstboot.py": "4bfacc2f33cf116ad49e09396425ce9728604580756255918d2f43098db9d6e5",
     "tools/appliance_node.py": "a73ef71374241a09c22f9278f95cb326db392681cf3971d50fa57e0554655aaf",
@@ -30,15 +30,16 @@
     "tools/appliance_signature.py": "a092bb3ea5d2bf00d47a7ca07eb4e5a2c5f5900f930ff57ccc00d53d37596c00",
     "tools/appliance_workload.py": "158f0b663a4a9e5478b7e2a99e77cedd65c57396d7357b2b93f7d85740331d4d",
     "tools/appliance_host.py": "cb1779aae7fed3da59d8ed624af3341e4b32ea8725482e5de1977868102dfc43",
-    "deploy/appliance/qualify-host.sh": "da18467a4509862c86e04bda1c02780501d2f72bc2e0dff4cbad0e94837d1d45",
+    "deploy/appliance/qualify-host.sh": "0bb05d676aed84055e54551da8e4c4f1e2bcd1888621a6a947fd099fd42cf720",
     "tests/test_appliance_host.py": "9f14a7d38f21218380b67fb94e26206b778e8a0bdf2f7e5cb84a01bc4a5d440b",
-    "tools/host_hardening.py": "cfd8fb27b346b4b35bc9b239de3439b159b960cad9840775340f964c43a814f4",
+    "tools/host_hardening.py": "4ce4d3f1242f233313a12d341d2168018f46032e1c0a84d141510fd524d6aa62",
     "tools/host_policy.py": "e3ef560355d562d530327b165196238cb17eb4bb5c8772270239ab9d59caa0c7",
-    "tools/host_evidence.py": "afd89f87fb7680b2b0544ec321122b59a7da097566f795527197463663289acd",
+    "tools/host_evidence.py": "0608660cce9e651a34770ec2e3361b6165b467c2440c4f2dd8c581da00e97c1a",
     "policy/host_vulnerability_waivers.json": "dca87f1eb349138f801c35ff7a3d5ebe8a233d2141b1a0ff37ba21f986e13a4d",
     "deploy/appliance/hardening.json": "2837645b1ab757325567cf1bc053ff2017879625dbd6012f49952b43dc820c71",
     "evidence/cd/host-risk/assessment.json": "d1735e15a84ed3a9cc89e0f62258fcec14bbccc3f7577766ed0c311e641557cd",
     "tests/test_host_admission.py": "699401baae458ef53d782ade65e72664c62138d5490f099c4a9baf43e1fd8909",
-    "docs/cd/host-risk.md": "bfe660ff8cbd579ac9c53ab647c65c6ae6b2f0fb916a6d8af28767900a6d5dbe"
+    "docs/cd/host-risk.md": "e02534779abc63dc6a30731dae998c810d042c0baa9eb741ef9efe80f9ad4996",
+    "deploy/appliance/chroot-mounts.sh": "7cb619eb826ad521c21ccd2b00e775f536ac3779c7f97fc29bdb9fd0d55228d6"
   }
 }

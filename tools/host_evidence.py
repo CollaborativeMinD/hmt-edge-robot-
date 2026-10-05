@@ -33,6 +33,9 @@ def assess(repo: Path, values: dict[str, bytes], commit: str) -> dict:
         raise ValueError('HOST_UPDATE_INVENTORY_DRIFT')
     if versions.keys() & reduction['remove_packages'].keys():
         raise ValueError('HOST_REMOVED_PACKAGE_PRESENT')
+    boot = hardened.get('boot', {})
+    if boot.get('status') != 'PASS' or boot.get('module_policy') != 'most' or set(boot.get('images', {})) != {'v8', '2712'}:
+        raise ValueError('HOST_BOOT_QUALIFICATION_INCOMPLETE')
     accepted = admit(scan, policy, hardened['packages'])
     return {'schema_version': 1, 'status': 'PASS', 'source_commit': commit,
         'scope': policy['scope'], 'architecture': 'arm64', 'disposition': policy['disposition'],
@@ -41,7 +44,7 @@ def assess(repo: Path, values: dict[str, bytes], commit: str) -> dict:
         'image_sha256': digest(repo / 'build/hmt-edge-robot.img.xz') if (repo / 'build/hmt-edge-robot.img.xz').is_file() else None,
         'inputs': {name: hashlib.sha256(values[name]).hexdigest() for name in NAMES},
         'accepted_findings': accepted, 'accepted_count': len(accepted),
-        'distinct_vulnerability_ids': len({x['vulnerability_id'] for x in accepted})}
+        'distinct_vulnerability_ids': len({x['vulnerability_id'] for x in accepted}), 'boot': boot}
 
 
 def from_bundle(repo: Path, commit: str) -> dict:
