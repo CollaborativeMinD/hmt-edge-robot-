@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/home/runner/work/hmt-edge-robot-/hmt-edge-robot-/tools/assurance_campaign.py", line 63, in <module>
+    main()
+  File "/home/runner/work/hmt-edge-robot-/hmt-edge-robot-/tools/assurance_campaign.py", line 56, in main
+    report = asyncio.run(campaign(Path(directory)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/runner/work/hmt-edge-robot-/hmt-edge-robot-/tools/assurance_campaign.py", line 37, in campaign
+    grant = cell.assurance.issue_grant(plan, "quarantine", "stale-0000", session, "operator")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/hmt-edge-robot-/hmt-edge-robot-/src/hmt_edge_robot/assurance/system.py", line 43, in issue_grant
+    raise PermissionError("RECLAMATION_AUTHORITY_NOT_ADMITTED")
+PermissionError: RECLAMATION_AUTHORITY_NOT_ADMITTED
