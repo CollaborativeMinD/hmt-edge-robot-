@@ -1,0 +1,13 @@
+{
+  "failed_release_run": 37281024424,
+  "source_commit": "56c22025b98b3ee1ac791294d93af44fbda0ad26",
+  "assembly": "PASS",
+  "image_sha256": "569dbf6b31decb6264a96d56fcc28bff4fcf2fe610daf9a3b790d09cc639cf3e",
+  "unsigned_artifact_id": 11332349278,
+  "publication": "FAIL_CLOSED_SIGNING_KEY_FINGERPRINT_MISMATCH",
+  "public_key_issue": "GitHub variable contains only base64 body; restoring standard PUBLIC KEY armor exactly matches existing pinned SHA256 and parses as RSA3072",
+  "existing_public_pin": "3009bca55a338a009d6431c9da5d862cea89bdaff1cefd60e7b3a32b2e063a80",
+  "key_material_changed": false,
+  "pin_changed": false,
+  "private_key_inspected": false
+}

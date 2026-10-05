@@ -159,3 +159,8 @@ host failure, consistent backup/restore and physical acceptance remain explicit
 target evidence requirements. The open target-qualification PR is independent.
 The pipeline can produce/publish a release only when all actual software scans and
 the hosted k3s test pass and the owner provisions the protected private signer.
+
+Public and encrypted private PEM values may include their complete armor or the
+base64 body. The publisher restores missing armor and normalizes CRLF; the
+public key must still match the independently configured SHA-256 fingerprint.
+No key replacement or fingerprint override occurs.
