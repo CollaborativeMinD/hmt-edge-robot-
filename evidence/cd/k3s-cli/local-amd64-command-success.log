@@ -1,0 +1,55 @@
+Client Version: v1.37.1+k3s1
+Kustomize Version: v5.8.1
+NAME:
+   ctr - 
+                 __
+           _____/ /______
+          / ___/ __/ ___/
+         / /__/ /_/ /
+         \___/\__/_/
+
+         containerd CLI
+
+
+USAGE:
+   ctr [global options] command [command options]
+
+VERSION:
+   v2.3.4-k3s1
+
+DESCRIPTION:
+   
+   ctr is an unsupported debug and administrative client for interacting
+   with the containerd daemon. Because it is unsupported, the commands,
+   options, and operations are not guaranteed to be backward compatible or
+   stable from release to release of the containerd project.
+
+COMMANDS:
+   plugins, plugin            Provides information about containerd plugins
+   version                    Print the client and server versions
+   containers, c, container   Manage containers
+   content                    Manage content
+   events, event              Display containerd events
+   images, image, i           Manage images
+   leases                     Manage leases
+   namespaces, namespace, ns  Manage namespaces
+   pprof                      Provide golang pprof outputs for containerd
+   run                        Run a container
+   snapshots, snapshot        Manage snapshots
+   tasks, t, task             Manage tasks
+   install                    Install a new package
+   oci                        OCI tools
+   sandboxes, sandbox, sb, s  Manage sandboxes
+   info                       Print the server info
+   deprecations               
+   shim                       Interact with a shim directly
+   help, h                    Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --debug                      Enable debug output in logs (default: false)
+   --address value, -a value    Address for containerd's GRPC server (default: "/run/k3s/containerd/containerd.sock") [$CONTAINERD_ADDRESS]
+   --timeout value              Total timeout for ctr commands (default: 0s)
+   --connect-timeout value      Timeout for connecting to containerd (default: 0s)
+   --namespace value, -n value  Namespace to use with commands (default: "k8s.io") [$CONTAINERD_NAMESPACE]
+   --help, -h                   Show help
+   --version, -v                Print the version

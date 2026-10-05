@@ -12,7 +12,7 @@
     "deploy/appliance/node.example.json": "a2c7a87e59ee319242b05f81af941df54848ab41774c4abe85b4b9ce9b4d8a8f",
     "deploy/appliance/readiness.py": "e88b30ed786577fdb1b90fdb4a69f26a6388670b3aaca85a8fcbca11bf2d75d0",
     "deploy/appliance/runtime-start.sh": "9b84587459d49229462bde9066295f24832e99d3d8faa71f9f992b60026f0165",
-    "deploy/appliance/smoke-test.sh": "e341e64459d71f3a629446ff1cc752154ab6d87eb264b5f70d914ba952412426",
+    "deploy/appliance/smoke-test.sh": "1320bb05807390f62d4e92f3bc9c07962da0c3f10d6131010fca373300cce543",
     "docs/cd/appliance-release-notes.md": "df6e9621baf6edfabb0edcf1561546b3c8e28789f9a4f1e7c29316f93ece2fae",
     "docs/cd/appliance-requirements.json": "0e30a5f0cceabf9459767a77328fc5d770ed33962c3d33b45b78aa28822fa3f0",
     "docs/cd/appliance.md": "d8da7790a67a96dce55e679240c27247e1698173c95e2f3395fb9d9a2e96cc63",
