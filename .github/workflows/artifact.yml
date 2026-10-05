@@ -121,8 +121,10 @@ jobs:
           PYSCAN
       - name: Qualify image, scanner and installed software before signing
         run: uv run --no-sync python tools/artifact_preflight.py "$GITHUB_SHA"
-      - name: Record signing continuation
-        run: echo 'Unsigned prequalification complete. Private signing and publication require the appliance-release Environment in release.yml.'
+      - name: Stage the qualified OCI image for offline import and record signing continuation
+        run: |
+          uv run --no-sync python tools/appliance_prepare.py
+          echo 'Unsigned prequalification complete. Private signing and publication require the appliance-release Environment in release.yml.'
       - name: Surface artifact rejection
         if: failure()
         run: echo '::error::ARM64 artifact qualification rejected. Deployment and hardware remain HOLD. Inspect stage4 evidence.'

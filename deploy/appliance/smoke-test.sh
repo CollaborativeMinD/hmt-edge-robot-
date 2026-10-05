@@ -19,9 +19,9 @@ done
 docker exec "$name" mkdir -p /var/lib/hmt/ledger
 docker exec "$name" chown 10001:10001 /var/lib/hmt/ledger
 docker cp "$work/payload/runtime.oci.tar" "$name:/tmp/runtime.oci.tar"
-docker exec "$name" k3s ctr images import --digests /tmp/runtime.oci.tar
 image_tag=$(cat "$work/payload/image-tag")
 image_ref=$(cat "$work/payload/image-ref")
+docker exec "$name" k3s ctr images import --digests --base-name "${image_tag%:*}" /tmp/runtime.oci.tar
 docker exec "$name" k3s ctr images tag --force "$image_tag" "$image_ref"
 docker exec -i "$name" k3s kubectl apply -f - < "$work/payload/namespace.json"
 # These ephemeral test tokens are never used on devices or stored in the image.

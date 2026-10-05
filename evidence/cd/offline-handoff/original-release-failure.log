@@ -1,0 +1,28 @@
+assemble	Recheck artifact and stage offline files	﻿2026-10-05T05:54:36.3013974Z ##[group]Run uv run --no-sync python tools/appliance_prepare.py
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:36.3014529Z [36;1muv run --no-sync python tools/appliance_prepare.py[0m
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:36.3014897Z [36;1muv run --no-sync python tools/appliance_fetch.py[0m
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:36.3050945Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:36.3051269Z env:
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:36.3051486Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:36.3051764Z ##[endgroup]
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5655699Z Traceback (most recent call last):
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5662355Z   File "/home/runner/work/hmt-edge-robot-/hmt-edge-robot-/tools/appliance_prepare.py", line 34, in <module>
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5663019Z     prepare(ROOT, os.environ["GITHUB_SHA"], ROOT / "build/payload")
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5663629Z   File "/home/runner/work/hmt-edge-robot-/hmt-edge-robot-/tools/appliance_prepare.py", line 26, in prepare
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5664322Z     run(["/usr/bin/skopeo", "copy", "--preserve-digests", "--override-arch", "arm64", "--override-os", "linux",
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5665193Z   File "/home/runner/work/hmt-edge-robot-/hmt-edge-robot-/tools/appliance_process.py", line 27, in run
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5665675Z     return asyncio.run(execute(args, timeout))
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5665966Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5666308Z   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5861693Z     return runner.run(main)
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5862001Z            ^^^^^^^^^^^^^^^^
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5862387Z   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5862746Z     return self._loop.run_until_complete(task)
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5863026Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5863478Z   File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5959350Z     return future.result()
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5960089Z            ^^^^^^^^^^^^^^^
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5960925Z   File "/home/runner/work/hmt-edge-robot-/hmt-edge-robot-/tools/appliance_process.py", line 20, in execute
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5961759Z     raise subprocess.CalledProcessError(process.returncode or 1, args[0])
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.5962428Z subprocess.CalledProcessError: Command '/usr/bin/skopeo' returned non-zero exit status 1.
+assemble	Recheck artifact and stage offline files	2026-10-05T05:54:37.6113579Z ##[error]Process completed with exit code 1.

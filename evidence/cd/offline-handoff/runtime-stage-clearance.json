@@ -1,0 +1,82 @@
+{
+  "scan": {
+    "severity_counts": {
+      "MEDIUM": 35,
+      "LOW": 18,
+      "UNKNOWN": 1
+    },
+    "reported_high_critical_unknown_findings": [
+      {
+        "VulnerabilityID": "TEMP-1147318-639065",
+        "PkgName": "liblzma5",
+        "InstalledVersion": "5.8.1-1+deb13u1",
+        "FixedVersion": null,
+        "Severity": "UNKNOWN"
+      }
+    ]
+  },
+  "qualification": {
+    "status": "PASS",
+    "source_commit": "612f045f9c779e79de5e6d56dbe910f78aa2d5bf",
+    "image_digest": "sha256:35d4b3540db8a3b92454dd541175e65c0cda4d69f12eb8bd1aee74ade1f1ec40",
+    "archive_sha256": "e1687a46dd49708d46af6e82385244750403300c8b22dc21c8fc8d86e14fe28c",
+    "inputs": {
+      "base-lock.json": "0bfe207c78abcd3018d92a9ab828ea388c4ee86edbf1edb69b98658df6af5277",
+      "sbom.spdx.json": "2320fd3aceec6e03378569fa158ab6f3b4e39d5e5f650e5f321e7bd6d9e9e96b",
+      "vulnerabilities.json": "426b90a8ff52dfa24f030db3cee386891aef42f684308d172e97c8835b4235c3",
+      "container.json": "cab7d6f3cc8b76305f89050c1c998d17249b34b00fa1310910e42cf335da4bf8",
+      "build-metadata.json": "7c88c008de70908bc39fa7eaab153618f2e3b303ffb3c6a793aa864f6e4ab2ad",
+      "loaded-image.json": "978db2d828deab5aeb4a02872e894062937a253113d56d0e1028272f5f6412c2",
+      "scan-input.json": "c9a3771e94377d6da704cc48b6d1288f84b47413b7db31038cbd2ae28131bd8a",
+      "uv.lock": "b1ce60e49dc526e19077ddc69fb91fc142f551e123c746a4ffbb88433d98998b",
+      "pyproject.toml": "4aa07a6619e1c55b5887c46041f38646ed0405d41cfcc6c4cb8d062ba751e3b6",
+      "deploy/stage4/Dockerfile": "665c1114a6927a4523b3861eaebda02b1f78a2f771303afdf4839cfef8d7bbed",
+      ".dockerignore": "0bcb3ff655516e2cd9f7cfcff9c0d0a74df90382e2f5cd890a86838013f1c899",
+      "tools/runtime_rootfs.py": "1e1410127f61a1d17dd71a7f4bb2ae50f0a524da1437564031634c3ae34cff9b",
+      "tools/runtime_elf.py": "7f1fb2ca200089799929a1ed73271cdbec17346f9a7ff82dcc41a22b40aaf9f1",
+      "tools/runtime_inventory.py": "1a12a5b509f97ce51217c1af1e78fdf231be09bfcdc702c38128942bd78a1455",
+      "tools/appliance_process.py": "f08a85f28bd93b92713a2e3c337e71b1416593bd609275c783bf111aa852d717",
+      "tools/artifact_waivers.py": "90d2cbfcae9642b8c8386d5fc51778f86a19fe168eeac7816dabeff3c8c7d9bc",
+      "policy/artifact_vulnerability_waiver.json": "191bb942cc91af0d39f6e7403fde62963326af710d305cab02b71af7cf22ff01"
+    },
+    "platform": "linux/arm64",
+    "qualification": "HOLD",
+    "signed_provenance": "HOLD",
+    "deployment": "HOLD",
+    "hardware": "HOLD",
+    "notification": "UNSIGNED_ARTIFACT_PREQUALIFIED",
+    "alert": false,
+    "vulnerability_exceptions": [
+      {
+        "schema_version": 1,
+        "scope": "ARM64_RUNTIME_CONTAINER_ONLY",
+        "approved_by": "repository_owner",
+        "approved_at": "2026-10-05",
+        "approval_reference": "Owner instruction: waive the final finding for the personal homelab, document it, observe green PR checks, and continue the build.",
+        "rationale": "The owner accepts this exact unresolved UNKNOWN finding for personal homelab operation. This records risk acceptance, not a fix or a claim of non-applicability. Host image findings are outside this approval.",
+        "exception": {
+          "vulnerability_id": "TEMP-1147318-639065",
+          "package": "liblzma5",
+          "installed_version": "5.8.1-1+deb13u1",
+          "severity": "UNKNOWN",
+          "os_family": "debian",
+          "os_major": 13,
+          "architecture": "arm64",
+          "fix_available": false
+        },
+        "disposition": "OWNER_ACCEPTED_RISK_NOT_FIXED"
+      }
+    ]
+  },
+  "pr": 14,
+  "pr_head": "5601b6d2408beafe4f3c68e2b058abd59db0df20",
+  "checks": {
+    "verify": "SUCCESS",
+    "qualify": "SUCCESS",
+    "host_updates": "SUCCESS"
+  },
+  "software_run": 37269017813,
+  "native_run": 37269017811,
+  "merge_commit": "1370856ebbe3762bdaadbb4cd44427cc61ed6170",
+  "release_run": 37269334036
+}

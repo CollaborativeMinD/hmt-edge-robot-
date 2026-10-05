@@ -142,7 +142,7 @@ are usable; it does not mean the mission, sensors or hardware are ready.
 
 ## Update and rollback
 
-Pull the runtime through `ghcr.io/collaborativemind/hmt-edge-robot-@sha256:<digest>`
+Pull the runtime through `ghcr.io/collaborativemind/hmt-edge-robot@sha256:<digest>`
 from the signed receipt. GHCR is private; provision a read-only pull credential
 locally for online updates, or import the signed offline OCI archive and tag its
 runtime manifest reference with `k3s ctr`. Stop the old replica, verify/backup its

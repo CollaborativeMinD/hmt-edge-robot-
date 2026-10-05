@@ -1,0 +1,14 @@
+Getting image source signatures
+Copying blob sha256:7f9858c53c1f145683baa5f09b4c27f2e81ffbe4a84d0eab67d8968966909f15
+Copying blob sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef
+Copying config sha256:ecfc5114686cb168e3d51a270ee314e89b498c60e40453b154ab38cefe76c972
+Writing manifest to image destination
+ghcr.io/collaborativemind/hmt edge robot	saved	
+application/vnd.oci.image.index.v1+json sha256:c8203bcc7e53a5b06a836de1325ce43c8b8d1a6ecf4b1c03290a1b54efb0e9fa
+Importing	elapsed: 6.2 s	total:   0.0 B	(0.0 B/s)	
+ghcr.io/collaborativemind/hmt edge robot	saved	
+ghcr.io/collaborativemind/hmt edge robot	saved	
+application/vnd.oci.image.index.v1+json sha256:c8203bcc7e53a5b06a836de1325ce43c8b8d1a6ecf4b1c03290a1b54efb0e9fa
+application/vnd.oci.image.manifest.v1+json sha256:84e2ce99fe91e51f59fe0f1e74632e9d0088904d87723efbc3af7cadd52e0c10
+Importing	elapsed: 6.2 s	total:   0.0 B	(0.0 B/s)	
+ghcr.io/collaborativemind/hmt-edge-robot@sha256:84e2ce99fe91e51f59fe0f1e74632e9d0088904d87723efbc3af7cadd52e0c10
