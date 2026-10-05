@@ -11,6 +11,7 @@ from appliance_process import run
 from appliance_signature import public_key, verify
 from artifact_preflight import archive_hash, assess
 from ci_admission import ROOT
+from host_evidence import from_bundle
 
 
 def release(root: Path, commit: str) -> Path:
@@ -20,6 +21,9 @@ def release(root: Path, commit: str) -> Path:
     directory.mkdir(parents=True, exist_ok=True)
     (directory / "release.json").write_text('{"status":"FAIL","reason":"RELEASE_INCOMPLETE"}\n')
     report = assess(root, commit)
+    host = from_bundle(root, commit)
+    if host["image_sha256"] != archive_hash(root / "build/hmt-edge-robot.img.xz"):
+        raise ValueError("HOST_IMAGE_BINDING_MISSING")
     for source, name in ((root / "build/hmt-edge-robot.img.xz", "hmt-edge-robot.img.xz"),
                          (root / "evidence/cd/stage4/image.oci.tar", "image.oci.tar"),
                          (root / "build/evidence.tar.gz", "evidence.tar.gz"),
@@ -36,6 +40,7 @@ def release(root: Path, commit: str) -> Path:
         "native_pi_acceptance": "NOT_RUN", "image_digest": report["image_digest"],
         "archive_sha256": report["archive_sha256"], "signing_key_sha256": fingerprint,
         "vulnerability_exceptions": report["vulnerability_exceptions"],
+        "host_vulnerability_acceptance": host,
         "files": {p.name: archive_hash(p) for p in sorted(directory.iterdir()) if p.name not in {"release.json", "release.sig"}}}
     (directory / "release.json").write_text(json.dumps(manifest, indent=2) + "\n")
     with tempfile.TemporaryDirectory(prefix="hmt-sign-") as temporary:

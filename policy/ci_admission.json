@@ -30,7 +30,7 @@
     "tools/validate_structure.py": "af13deaeb6f3fbe45080cd0f190037f217bab0f2d8fcdb57d03e4bd9c056687b",
     "uv.lock": "b1ce60e49dc526e19077ddc69fb91fc142f551e123c746a4ffbb88433d98998b",
     "policy/deployment_admission.json": "79880a4c21a63d148d47461a08e0b204b6de49b3c1b5be1abad569024b1c9a2b",
-    "policy/artifact_admission.json": "5e248657534f155f1e163574178da13668d357429091fe1a461f86d4c900d2ad"
+    "policy/artifact_admission.json": "578983d8dc5cf4dba7a376bbf3790996abad5f91c9659335517eb1f313571c81"
   },
   "tools": {
     "pyrefly": "1.3.2",
@@ -286,6 +286,15 @@
     "tools/artifact_campaign.py": "ea5371ab938d9c031520d7a9f4418f83885b8b8b522bd7b9520c45882b2a1eab",
     "tools/artifact_contracts.py": "0797aba12af85dd4164b83c27edff4cf653bd9f04fe4a32af6a03c09302788fd",
     "tools/artifact_design.py": "450e2ed39d61b07adea115877f06d90357aeb92aff949f31df73b67fb6d4024f",
-    "tools/artifact_preflight.py": "f5b1c0f17f85873e1bb25314675bfee39b5acc4b3e034834555ec763b07b89bc"
+    "tools/artifact_preflight.py": "f5b1c0f17f85873e1bb25314675bfee39b5acc4b3e034834555ec763b07b89bc",
+    "tools/host_hardening.py": "4ce4d3f1242f233313a12d341d2168018f46032e1c0a84d141510fd524d6aa62",
+    "tools/host_policy.py": "df1bcdedca34092d814b33facb2147eee9a7a590612a3540b3ecb8fb6f8e68ed",
+    "tools/host_evidence.py": "0608660cce9e651a34770ec2e3361b6165b467c2440c4f2dd8c581da00e97c1a",
+    "policy/host_vulnerability_waivers.json": "dca87f1eb349138f801c35ff7a3d5ebe8a233d2141b1a0ff37ba21f986e13a4d",
+    "deploy/appliance/hardening.json": "2837645b1ab757325567cf1bc053ff2017879625dbd6012f49952b43dc820c71",
+    "evidence/cd/host-risk/assessment.json": "d1735e15a84ed3a9cc89e0f62258fcec14bbccc3f7577766ed0c311e641557cd",
+    "tests/test_host_admission.py": "9ba53cf45da81a7c481b2f0ea72689e4577884b2eceeee948856d60491340f13",
+    "docs/cd/host-risk.md": "e02534779abc63dc6a30731dae998c810d042c0baa9eb741ef9efe80f9ad4996",
+    "deploy/appliance/chroot-mounts.sh": "7cb619eb826ad521c21ccd2b00e775f536ac3779c7f97fc29bdb9fd0d55228d6"
   }
 }

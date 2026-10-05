@@ -1,0 +1,14 @@
+Get:1 https://deb.debian.org/debian trixie InRelease [140 kB]
+Get:2 https://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+Get:3 https://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+Get:4 https://deb.debian.org/debian trixie/contrib arm64 Packages [58.0 kB]
+Get:5 https://deb.debian.org/debian trixie/non-free arm64 Packages [91.6 kB]
+Get:6 https://deb.debian.org/debian trixie/main arm64 Packages [13.2 MB]
+Get:7 https://deb.debian.org/debian trixie/non-free-firmware arm64 Packages [7078 B]
+Get:8 https://deb.debian.org/debian trixie-updates/main arm64 Packages [4424 B]
+Get:9 https://deb.debian.org/debian-security trixie-security/main arm64 Packages [265 kB]
+Get:10 https://deb.debian.org/debian-security trixie-security/contrib arm64 Packages [3144 B]
+Get:11 https://archive.raspberrypi.com/debian trixie InRelease [54.9 kB]
+Get:12 https://archive.raspberrypi.com/debian trixie/main arm64 Packages [490 kB]
+Fetched 14.4 MB in 2s (7787 kB/s)
+Reading package lists...

@@ -15,7 +15,8 @@ FILES = {".github/workflows/release.yml", "deploy/appliance/inputs.json", "deplo
     "tools/appliance_release.py", "tools/appliance_design.py", "tests/test_appliance_node.py",
     "tests/test_appliance_signing.py", "tests/test_appliance_pipeline.py", "tests/test_appliance_release.py", "docs/cd/appliance.md",
     "docs/cd/appliance-requirements.json", "docs/cd/appliance-release-notes.md", "tools/appliance_host.py",
-    "deploy/appliance/qualify-host.sh", "tests/test_appliance_host.py"}
+    "deploy/appliance/qualify-host.sh", "tests/test_appliance_host.py",
+    "tools/host_hardening.py", "tools/host_policy.py", "tools/host_evidence.py", "policy/host_vulnerability_waivers.json", "deploy/appliance/hardening.json", "evidence/cd/host-risk/assessment.json", "tests/test_host_admission.py", "docs/cd/host-risk.md", "deploy/appliance/chroot-mounts.sh"}
 
 
 def evaluate(root: Path) -> dict:

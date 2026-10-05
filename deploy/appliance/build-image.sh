@@ -8,7 +8,10 @@ image="$work/hmt-edge-robot.img"
 root="$work/mount-root"
 boot="$work/mount-boot"
 loop=''
+# shellcheck source=chroot-mounts.sh
+source "$repo/deploy/appliance/chroot-mounts.sh"
 cleanup() {
+  chroot_unmounts "$root"
   mountpoint -q "$boot" && umount "$boot"
   mountpoint -q "$root" && umount "$root"
   if [[ -n "$loop" ]]; then losetup -d "$loop"; fi
@@ -28,8 +31,11 @@ e2fsck -fy "${loop}p2" || [[ $? == 1 ]]
 resize2fs "${loop}p2"
 mount "${loop}p2" "$root"
 mount "${loop}p1" "$boot"
+chroot_mounts "$root" "$boot"
 [[ -f "$root/usr/lib/systemd/systemd" && -f "$root/usr/bin/python3" ]]
 python3 "$repo/tools/appliance_host.py" "$root"
+python3 "$repo/tools/host_hardening.py" "$root"
+chroot_unmounts "$root"
 install -Dm755 "$work/inputs/k3s-arm64" "$root/usr/local/bin/k3s"
 install -Dm755 "$repo/deploy/appliance/k3s-start.sh" "$root/usr/local/libexec/hmt-k3s-start"
 install -Dm755 "$repo/deploy/appliance/runtime-start.sh" "$root/usr/local/libexec/hmt-runtime-start"
@@ -45,6 +51,7 @@ for unit in k3s hmt-firstboot hmt-runtime; do
 done
 # This appliance owns provisioning; do not run the vendor interactive user dialog
 # or cloud-init metadata alongside its identity and credential setup.
+mkdir -p "$root/etc/cloud"
 touch "$root/etc/cloud/cloud-init.disabled"
 ln -sf /dev/null "$root/etc/systemd/system/userconfig.service"
 # Rootfs expansion remains in the vendor boot path. Add memory cgroups for k3s.
@@ -68,17 +75,10 @@ sync
 trivy=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["trivy"])' "$repo/evidence/cd/stage4/base-lock.json")
 docker run --rm --mount "type=bind,src=$root,dst=/scan,readonly" --mount "type=bind,src=$work,dst=/out" \
   "$trivy" rootfs --scanners vuln,secret --list-all-pkgs --format json --output /out/appliance-vulnerabilities.json --timeout 10m /scan
-python3 - "$work/appliance-vulnerabilities.json" <<'PY'
-import json, sys
-scan = json.load(open(sys.argv[1]))
-if scan.get('SchemaVersion') != 2 or not any(r.get('Class') == 'os-pkgs' for r in scan.get('Results', [])):
-    raise SystemExit('Pi OS scan coverage is incomplete')
-for result in scan['Results']:
-    if result.get('Secrets') or any(v.get('Severity') not in ('LOW', 'MEDIUM') for v in result.get('Vulnerabilities') or []):
-        raise SystemExit('Pi OS vulnerability or secret scan rejected release')
-PY
+python3 "$repo/tools/host_evidence.py" "$GITHUB_SHA"
 cleanup
 loop=''
 trap - EXIT
 xz --threads=2 -1 --keep "$image"
 chmod 644 "$image.xz"
+python3 "$repo/tools/host_evidence.py" "$GITHUB_SHA"

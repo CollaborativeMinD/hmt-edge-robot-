@@ -1,0 +1,37 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following packages will be upgraded:
+  libpcre2-16-0 libpcre2-8-0 libpng16-16t64 libssl3t64 mkvtoolnix openssl
+  openssl-provider-legacy raspi-config raspi-config-core raspi-firmware
+  rpi-connect-lite rpi-eeprom rsync wpasupplicant
+14 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Inst openssl-provider-legacy [3.5.7-1~deb13u2+rpt1] (3.5.7-1~deb13u3+rpt1 Raspberry Pi Foundation:stable [arm64])
+Conf openssl-provider-legacy (3.5.7-1~deb13u3+rpt1 Raspberry Pi Foundation:stable [arm64])
+Inst libssl3t64 [3.5.7-1~deb13u2+rpt1] (3.5.7-1~deb13u3+rpt1 Raspberry Pi Foundation:stable [arm64])
+Conf libssl3t64 (3.5.7-1~deb13u3+rpt1 Raspberry Pi Foundation:stable [arm64])
+Inst rsync [3.4.1+ds1-5+deb13u4] (3.5.0+ds1-0+deb13u1 Debian-Security:13/stable-security [arm64])
+Inst raspi-firmware [1:1.20260907-1] (1:1.20260915-1 Raspberry Pi Foundation:stable [all])
+Inst libpcre2-8-0 [10.46-1~deb13u2] (10.46-1~deb13u3 Debian-Security:13/stable-security [arm64])
+Conf libpcre2-8-0 (10.46-1~deb13u3 Debian-Security:13/stable-security [arm64])
+Inst libpcre2-16-0 [10.46-1~deb13u2] (10.46-1~deb13u3 Debian-Security:13/stable-security [arm64])
+Inst libpng16-16t64 [1.6.48-1+deb13u5] (1.6.48-1+deb13u6 Debian-Security:13/stable-security [arm64])
+Inst mkvtoolnix [92.0-1] (92.0-1+deb13u1 Debian-Security:13/stable-security [arm64])
+Inst openssl [3.5.7-1~deb13u2+rpt1] (3.5.7-1~deb13u3+rpt1 Raspberry Pi Foundation:stable [arm64])
+Inst raspi-config-core [20260730] (20261026 Raspberry Pi Foundation:stable [all])
+Inst raspi-config [20260730] (20261026 Raspberry Pi Foundation:stable [all])
+Inst rpi-connect-lite [2.12.2] (2.13.0 Raspberry Pi Foundation:stable [arm64])
+Inst rpi-eeprom [28.31-1] (28.33-1 Raspberry Pi Foundation:stable [all])
+Inst wpasupplicant [2:2.10-24] (2:2.10-24+rpt3 Raspberry Pi Foundation:stable [arm64])
+Conf rsync (3.5.0+ds1-0+deb13u1 Debian-Security:13/stable-security [arm64])
+Conf raspi-firmware (1:1.20260915-1 Raspberry Pi Foundation:stable [all])
+Conf libpcre2-16-0 (10.46-1~deb13u3 Debian-Security:13/stable-security [arm64])
+Conf libpng16-16t64 (1.6.48-1+deb13u6 Debian-Security:13/stable-security [arm64])
+Conf mkvtoolnix (92.0-1+deb13u1 Debian-Security:13/stable-security [arm64])
+Conf openssl (3.5.7-1~deb13u3+rpt1 Raspberry Pi Foundation:stable [arm64])
+Conf raspi-config-core (20261026 Raspberry Pi Foundation:stable [all])
+Conf raspi-config (20261026 Raspberry Pi Foundation:stable [all])
+Conf rpi-connect-lite (2.13.0 Raspberry Pi Foundation:stable [arm64])
+Conf rpi-eeprom (28.33-1 Raspberry Pi Foundation:stable [all])
+Conf wpasupplicant (2:2.10-24+rpt3 Raspberry Pi Foundation:stable [arm64])

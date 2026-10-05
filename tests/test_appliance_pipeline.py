@@ -42,3 +42,4 @@ def test_release_secrets_only_enter_the_protected_publisher() -> None:
     assert "compare/" in jobs["source"] and "refs/heads/main" in jobs["source"]
     artifact = (ROOT / ".github/workflows/artifact.yml").read_text()
     assert "secrets." not in artifact and "workflow_call:" in artifact
+    assert "defaults:\n  run:\n    shell: bash" in artifact
