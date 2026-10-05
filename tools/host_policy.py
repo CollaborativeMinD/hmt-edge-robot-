@@ -33,6 +33,18 @@ def validate(policy: dict, today: date | None = None) -> set[tuple[str, ...]]:
     return identities
 
 
+def package_identity(package: dict) -> tuple[str, str, str]:
+    epoch = package.get('Epoch', 0)
+    if type(epoch) is not int or epoch < 0:
+        raise ValueError('HOST_SCAN_EPOCH_INVALID')
+    version = (str(epoch) + ':' if epoch else '') + package['Version']
+    if package.get('Release'):
+        version += '-' + package['Release']
+    if package.get('ID') != package['Name'] + '@' + version:
+        raise ValueError('HOST_SCAN_PACKAGE_ID_INVALID')
+    return package['Name'], version, package['Arch']
+
+
 def admit(scan: dict, policy: dict, inventory: list[dict]) -> list[dict]:
     allowed = validate(policy)
     os = scan.get('Metadata', {}).get('OS', {})
@@ -41,7 +53,7 @@ def admit(scan: dict, policy: dict, inventory: list[dict]) -> list[dict]:
         raise ValueError('HOST_SCAN_SCOPE_INVALID')
     expected = {(p['name'], p['version'], p['architecture']) for p in inventory}
     packages = [p for r in results if r.get('Class') == 'os-pkgs' for p in r.get('Packages', [])]
-    actual = {(p['Name'], p['Version'] + ('-' + p['Release'] if p.get('Release') else ''), p['Arch']) for p in packages}
+    actual = {package_identity(p) for p in packages}
     if not expected or expected != actual or any(p[2] not in ('arm64', 'all') for p in expected):
         raise ValueError('HOST_SCAN_INVENTORY_MISMATCH')
     accepted = []

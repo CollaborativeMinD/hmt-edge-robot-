@@ -56,6 +56,7 @@ def test_publisher_recomputes_host_receipt_and_image_binding(tmp_path: Path, tam
     entry = policy['exceptions'][0]
     name, version = entry['package'], entry['installed_version']
     upstream, revision = version.rsplit('-', 1)
+    epoch, upstream = (upstream.split(':', 1) if ':' in upstream else ('0', upstream))
     config = {'packages': [{'name': name, 'version': version}]}
     hardening = {'remove_packages': {}, 'masked_services': [], 'blocked_modules': []}
     path = tmp_path / 'deploy/appliance/hardening.json'
@@ -68,7 +69,7 @@ def test_publisher_recomputes_host_receipt_and_image_binding(tmp_path: Path, tam
         'boot': {'status': 'PASS', 'module_policy': 'most', 'images': {'v8': {}, '2712': {}}}}
     finding = dict(zip(('VulnerabilityID', 'PkgName', 'InstalledVersion', 'Severity'), entry.values(), strict=True))
     scan = {'SchemaVersion': 2, 'ArtifactType': 'filesystem', 'Metadata': {'OS': {'Family': 'debian', 'Name': '13.7'}},
-        'Results': [{'Class': 'os-pkgs', 'Packages': [{'Name': name, 'Version': upstream, 'Release': revision, 'Arch': 'arm64'}], 'Vulnerabilities': [finding]}]}
+        'Results': [{'Class': 'os-pkgs', 'Packages': [{'ID': name + '@' + version, 'Name': name, 'Version': upstream, 'Release': revision, 'Epoch': int(epoch), 'Arch': 'arm64'}], 'Vulnerabilities': [finding]}]}
     updates = {'status': 'PASS', 'scope': 'OFFICIAL_HOST_PACKAGE_INSTALL_ONLY', **config}
     values = {k: json.dumps(v).encode() for k, v in zip(('appliance-vulnerabilities', 'host-updates', 'host-hardening'), (scan, updates, hardened), strict=True)}
     build = tmp_path / 'build'

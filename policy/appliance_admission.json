@@ -18,7 +18,7 @@
     "docs/cd/appliance.md": "d8da7790a67a96dce55e679240c27247e1698173c95e2f3395fb9d9a2e96cc63",
     "tests/test_appliance_node.py": "44c0c11834aa009e7e3b418f97431899affe7844af0042821a4b1138adbc2783",
     "tests/test_appliance_pipeline.py": "bf041dd1cc0b1389384b9a5b5982aca41663fde33ca85f42f5c86a91f67d4a70",
-    "tests/test_appliance_release.py": "3f890a32c7097b1f75610cba5c8a29b467843f019b76fdc1a095652080a04fda",
+    "tests/test_appliance_release.py": "20a6647d19a52def7b494103ae16e25d0b939f8dc56b2ef938ca44913884c3c7",
     "tests/test_appliance_signing.py": "0b430e77ded1e026551d6033ab28b01162b216d1676655031c527a6817e16cc1",
     "tools/appliance_design.py": "2ad1f24f8397291f93cab8180576db2913db69dbc0ca72044ea510ee844a0b97",
     "tools/appliance_fetch.py": "0f66709d6fc9f44833464486b906f20541ddd9ceff1fc07a3919f0b88c2066b4",
@@ -33,12 +33,12 @@
     "deploy/appliance/qualify-host.sh": "0bb05d676aed84055e54551da8e4c4f1e2bcd1888621a6a947fd099fd42cf720",
     "tests/test_appliance_host.py": "9f14a7d38f21218380b67fb94e26206b778e8a0bdf2f7e5cb84a01bc4a5d440b",
     "tools/host_hardening.py": "4ce4d3f1242f233313a12d341d2168018f46032e1c0a84d141510fd524d6aa62",
-    "tools/host_policy.py": "e3ef560355d562d530327b165196238cb17eb4bb5c8772270239ab9d59caa0c7",
+    "tools/host_policy.py": "df1bcdedca34092d814b33facb2147eee9a7a590612a3540b3ecb8fb6f8e68ed",
     "tools/host_evidence.py": "0608660cce9e651a34770ec2e3361b6165b467c2440c4f2dd8c581da00e97c1a",
     "policy/host_vulnerability_waivers.json": "dca87f1eb349138f801c35ff7a3d5ebe8a233d2141b1a0ff37ba21f986e13a4d",
     "deploy/appliance/hardening.json": "2837645b1ab757325567cf1bc053ff2017879625dbd6012f49952b43dc820c71",
     "evidence/cd/host-risk/assessment.json": "d1735e15a84ed3a9cc89e0f62258fcec14bbccc3f7577766ed0c311e641557cd",
-    "tests/test_host_admission.py": "699401baae458ef53d782ade65e72664c62138d5490f099c4a9baf43e1fd8909",
+    "tests/test_host_admission.py": "9ba53cf45da81a7c481b2f0ea72689e4577884b2eceeee948856d60491340f13",
     "docs/cd/host-risk.md": "e02534779abc63dc6a30731dae998c810d042c0baa9eb741ef9efe80f9ad4996",
     "deploy/appliance/chroot-mounts.sh": "7cb619eb826ad521c21ccd2b00e775f536ac3779c7f97fc29bdb9fd0d55228d6"
   }

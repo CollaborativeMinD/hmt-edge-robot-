@@ -19,10 +19,11 @@ def fixture() -> tuple[dict, dict, list[dict]]:
     entry = policy['exceptions'][0]
     name, version = entry['package'], entry['installed_version']
     upstream, release = version.rsplit('-', 1)
+    epoch, upstream = (upstream.split(':', 1) if ':' in upstream else ('0', upstream))
     inventory = [{'name': name, 'version': version, 'architecture': 'arm64'}]
     finding = dict(zip(('VulnerabilityID', 'PkgName', 'InstalledVersion', 'Severity'), (entry[k] for k in FIELDS), strict=True))
     scan = {'SchemaVersion': 2, 'ArtifactType': 'filesystem', 'Metadata': {'OS': {'Family': 'debian', 'Name': '13.7'}},
-        'Results': [{'Class': 'os-pkgs', 'Packages': [{'Name': name, 'Version': upstream, 'Release': release, 'Arch': 'arm64'}], 'Vulnerabilities': [finding]}]}
+        'Results': [{'Class': 'os-pkgs', 'Packages': [{'ID': name + '@' + version, 'Name': name, 'Version': upstream, 'Release': release, 'Epoch': int(epoch), 'Arch': 'arm64'}], 'Vulnerabilities': [finding]}]}
     return scan, policy, inventory
 
 
@@ -86,3 +87,10 @@ def test_bundle_rejects_duplicate_members_without_extracting(tmp_path: Path) -> 
         bundle.add(source, arcname='build/appliance-vulnerabilities.json')
     with pytest.raises(ValueError, match='MEMBER_INVALID'):
         from_bundle(tmp_path, '1' * 40)
+
+
+def test_changed_epoch_or_self_inconsistent_package_identity_fails() -> None:
+    scan, policy, inventory = fixture()
+    scan['Results'][0]['Packages'][0]['Epoch'] += 1
+    with pytest.raises(ValueError, match='PACKAGE_ID_INVALID'):
+        admit(scan, policy, inventory)

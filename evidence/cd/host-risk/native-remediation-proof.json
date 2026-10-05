@@ -1,0 +1,34 @@
+{
+  "status": "LOCAL_REANALYSIS_PASS_OF_NATIVE_CI_EVIDENCE",
+  "native_run": "https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/runs/37279459119",
+  "artifact_id": 11331423809,
+  "native_source_commit": "59a4482d37388cfb606550c8058f311702f53543",
+  "raw_scan_sha256": "74943148c53fd0d9b30c266b02c804c9d0d2d765c9d43b15cccf2b12b836a624",
+  "packages_removed": 42,
+  "installed_packages": 591,
+  "blocking_matches": 579,
+  "distinct_vulnerability_ids": 103,
+  "severity_counts": {
+    "UNKNOWN": 23,
+    "HIGH": 544,
+    "CRITICAL": 12
+  },
+  "secret_findings": 0,
+  "boot": {
+    "status": "PASS",
+    "module_policy": "most",
+    "images": {
+      "v8": {
+        "kernel": "6.18.50+rpt-rpi-v8",
+        "initramfs_sha256": "636a7d3d4ea344e785f78b285efa1240f79b8e2fdd09ce368378fd7f206e432e",
+        "config_sha256": "545260efb824b8999548ce483bce856bb60e72718ced820fbd951c025689c746"
+      },
+      "2712": {
+        "kernel": "6.18.50+rpt-rpi-2712",
+        "initramfs_sha256": "e371080c9fd3edae7b780e102e5d310758fac6453c47c6982c2fe1d072c462e3",
+        "config_sha256": "8914d802785a04fbb68a00e88e90774db7aa2ec33b9fa1e28f3296be3ebbcff8"
+      }
+    }
+  },
+  "ci_result": "FAIL_CLOSED_ON_EPOCH_REPRESENTATION_MISMATCH; FIXED_REANALYSIS_LOCAL_ONLY; NEW_FULL_PR_REQUIRED"
+}
