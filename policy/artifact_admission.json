@@ -3,7 +3,7 @@
   "scope": "ARM64_ARTIFACT_QUALIFICATION_ONLY",
   "files": {
     ".dockerignore": "0bcb3ff655516e2cd9f7cfcff9c0d0a74df90382e2f5cd890a86838013f1c899",
-    ".github/workflows/artifact.yml": "c79e73ad7051077bd864454f459d3ceb03945364963e1abdd3c55e1e3249f481",
+    ".github/workflows/artifact.yml": "54e684f2268ba2f901c6b8f9ee1c70afd05d9658427f6194f85c4897d55b5fb1",
     "deploy/stage4/Dockerfile": "665c1114a6927a4523b3861eaebda02b1f78a2f771303afdf4839cfef8d7bbed",
     "docs/cd/stage4.md": "556d4e9009216d5064f5fb0a18f1fb8fd37fa87a774b99bc25b4a98142e24975",
     "tools/artifact_campaign.py": "ea5371ab938d9c031520d7a9f4418f83885b8b8b522bd7b9520c45882b2a1eab",
@@ -21,6 +21,6 @@
     "tools/runtime_inventory.py": "1a12a5b509f97ce51217c1af1e78fdf231be09bfcdc702c38128942bd78a1455",
     "tools/appliance_process.py": "f08a85f28bd93b92713a2e3c337e71b1416593bd609275c783bf111aa852d717",
     "tests/test_runtime_rootfs.py": "1da50ba16310d22d1cce442955425425667b1825872f4cfc4f32ac9edd9bf14e",
-    "docs/cd/minimal-runtime.md": "2f50cb1756feaad6d33ee5f024920d39af3fb119bb56ff6094b670825a034468"
+    "docs/cd/minimal-runtime.md": "59d665a477ec0520a5008367af75479409bd1e26bd90b65955a446262857562a"
   }
 }

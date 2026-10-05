@@ -11,6 +11,39 @@ concurrency:
   group: artifact-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
+  host_updates:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Admit appliance design and fetch pinned official host updates
+        run: |
+          python3 tools/appliance_design.py
+          python3 tools/appliance_host.py --fetch
+          python3 - <<'PY'
+          import json, sys
+          from pathlib import Path
+          sys.path.insert(0, 'tools')
+          from appliance_fetch import fetch
+          fetch(json.loads(Path('deploy/appliance/inputs.json').read_text())['os'], Path('build/inputs/base.img.xz'))
+          PY
+      - name: Install into a disposable Pi OS image and verify native package state
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends xz-utils e2fsprogs
+          sudo bash deploy/appliance/qualify-host.sh "$PWD" 2>&1 | tee build/host-update-install.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: host-updates-${{ github.sha }}
+          path: |
+            build/host-updates.json
+            build/host-update-install.log
+          retention-days: 30
+          if-no-files-found: warn
   qualify:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-24.04-arm

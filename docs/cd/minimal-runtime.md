@@ -45,14 +45,35 @@ The inspected official Pi image contains all 18 affected package names. Its
 systemd/networking/filesystem/package-maintenance dependencies prevent safely
 removing the affected library families from this host design.
 
-The remaining work is to adopt and requalify official supported fixes when they
-exist. Update `deploy/appliance/inputs.json` to an official patched Pi OS image
-and independently verified checksum, refresh its admission hash, and rerun the
-native release lane and full mounted-rootfs scan. An alternative package update
-procedure must pin signed official repository inputs and package versions before
-it becomes part of image construction. The current builder does not perform an
-unrecorded `apt upgrade` during assembly. Do not mix unstable packages, patch
-installed version metadata, or remove required boot components.
+The full stock-host scan also found issues beyond those ten runtime identifiers:
+1003 HIGH, 21 CRITICAL and 46 UNKNOWN package findings, often repeated matches
+against the same source package. There were no secret findings. This baseline is
+not a scan of the final appliance. Its raw report is retained in the workspace;
+a compact summary and signed-repository update plan are committed as evidence.
+
+Eight official ARM64 updates are now pinned by package name, exact version, URL
+and SHA256 from signature-verified Debian/Raspberry Pi APT metadata: both PCRE2
+libraries, PNG, rsync, mkvtoolnix and the Raspberry Pi OpenSSL library, executable
+and legacy provider. APT's simulation against the actual Pi dpkg database selects
+eight upgrades without additional installs or removals. These address 29 of the
+baseline package findings; the final rootfs scan must verify the outcome.
+
+`appliance_host.py` rechecks archive bytes, package identity and ARM64 architecture
+before installation. It permits chroot installation only at the disposable mounted
+`build/mount-root`, prevents service startup, audits package configuration and
+reads back exact installed versions. It retains a host-update manifest and removes
+the temporary .deb files. A separate native ARM64 Actions job checks installation
+and Python/OpenSSL behavior even while runtime security admission is blocked.
+Image assembly performs the same installation before its existing full rootfs
+scan; the signed release includes the input pins and installation evidence.
+
+The remaining work is to adopt and requalify official supported fixes for unresolved
+issues. For future updates, refresh the package pins from verified official APT
+metadata or select a new official Pi OS image and independently verified checksum,
+refresh admission hashes, and rerun native qualification and the full rootfs scan.
+There is no unrecorded `apt upgrade`. Do not mix unstable packages, patch installed
+version metadata, or remove required boot components. Package-install PASS does
+not grant security admission; outstanding HIGH/CRITICAL/UNKNOWN findings hold release.
 
 Sources: https://downloads.raspberrypi.com/raspios_lite_arm64/images/ and
 https://security-tracker.debian.org/tracker/data/json; native package repository
