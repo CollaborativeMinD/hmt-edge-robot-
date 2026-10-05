@@ -1,0 +1,64 @@
+{
+  "verified_events": 2,
+  "tail": [
+    {
+      "monotonic_seq": 1,
+      "timestamp_utc": "2026-10-05T06:30:46.058452Z",
+      "producer_id": "edge",
+      "request_id": "0",
+      "packet_type": "sensor_assessment",
+      "payload": {
+        "assessment": {
+          "accepted_signal_dbm": -50.0,
+          "accepted_temp_c": 45.0,
+          "battery_margin": 1.0,
+          "data_valid": true,
+          "flush_required": false,
+          "pace_lane": "PRIMARY",
+          "poll_interval_sec": 1.0,
+          "rejection_reason": "VALID"
+        },
+        "sample": {
+          "monotonic_seq": 0,
+          "observed_at": 304.690624757,
+          "signal_dbm": -50.0,
+          "temp_c": 45.0,
+          "voltage_v": 4.1
+        }
+      },
+      "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "determinism_hash": "453bc0feb7dc666fa23f8a067d59ce53d5d05938bd995164785edfdf2b9078bd"
+    },
+    {
+      "monotonic_seq": 2,
+      "timestamp_utc": "2026-10-05T06:30:46.059548Z",
+      "producer_id": "safety",
+      "request_id": "0",
+      "packet_type": "spatial_observation",
+      "payload": {
+        "human": {
+          "frame_id": "robot-base",
+          "monotonic_seq": 0,
+          "observed_at": 304.690624757,
+          "position_mm": [
+            3000.0,
+            0.0,
+            0.0
+          ]
+        },
+        "robot": {
+          "frame_id": "robot-base",
+          "monotonic_seq": 0,
+          "observed_at": 304.690624757,
+          "position_mm": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "previous_hash": "453bc0feb7dc666fa23f8a067d59ce53d5d05938bd995164785edfdf2b9078bd",
+      "determinism_hash": "e44d0a781d9b31ef52d8585f84616abfa600796dc1ce600b77820fc60ca05c9d"
+    }
+  ]
+}

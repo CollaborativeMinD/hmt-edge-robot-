@@ -1,0 +1,77 @@
+[
+    {
+        "Id": "sha256:9ef91591ba2b1a07146f334abcfbb1fd6f77bb75bdfc375561e158cdf2ab97aa",
+        "RepoTags": [
+            "rancher/k3s:v1.37.1-k3s1"
+        ],
+        "RepoDigests": [
+            "rancher/k3s@sha256:ca7f37d993d82ef0dcdcfecb2e0e2618ea541dbaffc620c8cedebe01a82acd0d"
+        ],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-09-30T16:10:12.495564877Z",
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/var/lib/rancher/k3s/data/cni:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/bin/aux",
+                "CRI_CONFIG_FILE=/var/lib/rancher/k3s/agent/etc/crictl.yaml"
+            ],
+            "Cmd": [
+                "agent"
+            ],
+            "ArgsEscaped": true,
+            "Image": "",
+            "Volumes": {
+                "/var/lib/cni": {},
+                "/var/lib/kubelet": {},
+                "/var/lib/rancher/k3s": {},
+                "/var/log": {}
+            },
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "/bin/k3s"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "org.opencontainers.image.created": "2026-09-30T16:09:42.799Z",
+                "org.opencontainers.image.description": "Lightweight Kubernetes",
+                "org.opencontainers.image.licenses": "Apache-2.0",
+                "org.opencontainers.image.revision": "356c025475bbefaa09cf0d7e48e8e2adbbde57db",
+                "org.opencontainers.image.source": "https://github.com/k3s-io/k3s",
+                "org.opencontainers.image.title": "k3s",
+                "org.opencontainers.image.url": "https://github.com/k3s-io/k3s",
+                "org.opencontainers.image.version": "v1.37.1-k3s1"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 265267030,
+        "GraphDriver": {
+            "Data": {
+                "MergedDir": "/var/lib/docker/overlay2/6da4d40696b3d56c5d315699b85ca8d00fd9e331d03391e72362b2befb408af0/merged",
+                "UpperDir": "/var/lib/docker/overlay2/6da4d40696b3d56c5d315699b85ca8d00fd9e331d03391e72362b2befb408af0/diff",
+                "WorkDir": "/var/lib/docker/overlay2/6da4d40696b3d56c5d315699b85ca8d00fd9e331d03391e72362b2befb408af0/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:1b62a80df8eabba45f2fa3f27b64191d1c67bdac71d09fde4e64249257b0fdaf"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]

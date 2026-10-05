@@ -1,0 +1,374 @@
+﻿2026-10-05T06:26:21.2231691Z Current runner version: '2.337.0'
+2026-10-05T06:26:21.2255051Z ##[group]Runner Image Provisioner
+2026-10-05T06:26:21.2255784Z Hosted Compute Agent
+2026-10-05T06:26:21.2256336Z Version: 20260901.588
+2026-10-05T06:26:21.2256915Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-05T06:26:21.2257532Z Build Date: 2026-09-01T19:56:44Z
+2026-10-05T06:26:21.2258148Z Worker ID: {ebfbef11-295d-4904-b209-5d3455b1bb69}
+2026-10-05T06:26:21.2258755Z Azure Region: westcentralus
+2026-10-05T06:26:21.2259331Z ##[endgroup]
+2026-10-05T06:26:21.2260635Z ##[group]Operating System
+2026-10-05T06:26:21.2261164Z Ubuntu
+2026-10-05T06:26:21.2261674Z 24.04.5
+2026-10-05T06:26:21.2262113Z LTS
+2026-10-05T06:26:21.2262542Z ##[endgroup]
+2026-10-05T06:26:21.2263091Z ##[group]Runner Image
+2026-10-05T06:26:21.2263620Z Image: ubuntu-24.04
+2026-10-05T06:26:21.2264126Z Version: 20260927.320.1
+2026-10-05T06:26:21.2265217Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-05T06:26:21.2266562Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-05T06:26:21.2267373Z ##[endgroup]
+2026-10-05T06:26:21.2268358Z ##[group]GITHUB_TOKEN Permissions
+2026-10-05T06:26:21.2270136Z Contents: read
+2026-10-05T06:26:21.2270803Z Metadata: read
+2026-10-05T06:26:21.2271286Z ##[endgroup]
+2026-10-05T06:26:21.2273031Z Secret source: Actions
+2026-10-05T06:26:21.2273892Z Cache mode: write
+2026-10-05T06:26:21.2274504Z Prepare workflow directory
+2026-10-05T06:26:21.2647099Z Prepare all required actions
+2026-10-05T06:26:21.2686224Z Getting action download info
+2026-10-05T06:26:21.5342477Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-05T06:26:21.6640322Z Download action repository 'astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e' (SHA:d0cc045d04ccac9d8b7881df0226f9e82c39688e)
+2026-10-05T06:26:22.5013744Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-05T06:26:22.8126587Z Complete job name: verify
+2026-10-05T06:26:22.8826018Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-10-05T06:26:22.8827080Z with:
+2026-10-05T06:26:22.8827663Z   persist-credentials: false
+2026-10-05T06:26:22.8828334Z   repository: CollaborativeMinD/hmt-edge-robot-
+2026-10-05T06:26:22.8831768Z   token: ***
+2026-10-05T06:26:22.8832348Z   ssh-strict: true
+2026-10-05T06:26:22.8832905Z   ssh-user: git
+2026-10-05T06:26:22.8833448Z   clean: true
+2026-10-05T06:26:22.8834011Z   sparse-checkout-cone-mode: true
+2026-10-05T06:26:22.8834641Z   fetch-depth: 1
+2026-10-05T06:26:22.8835191Z   fetch-tags: false
+2026-10-05T06:26:22.8835807Z   show-progress: true
+2026-10-05T06:26:22.8836371Z   lfs: false
+2026-10-05T06:26:22.8836905Z   submodules: false
+2026-10-05T06:26:22.8837470Z   set-safe-directory: true
+2026-10-05T06:26:22.8838079Z   allow-unsafe-pr-checkout: false
+2026-10-05T06:26:22.8838892Z env:
+2026-10-05T06:26:22.8839425Z   UV_PYTHON: 3.12
+2026-10-05T06:26:22.8840075Z   UV_NO_PROGRESS: 1
+2026-10-05T06:26:22.8840679Z ##[endgroup]
+2026-10-05T06:26:22.9877693Z Syncing repository: CollaborativeMinD/hmt-edge-robot-
+2026-10-05T06:26:22.9904208Z ##[group]Getting Git version info
+2026-10-05T06:26:22.9905926Z Working directory is '/home/runner/work/hmt-edge-robot-/hmt-edge-robot-'
+2026-10-05T06:26:22.9908541Z [command]/usr/bin/git version
+2026-10-05T06:26:23.0382733Z git version 2.55.0
+2026-10-05T06:26:23.0422018Z ##[endgroup]
+2026-10-05T06:26:23.0453102Z Temporarily overriding HOME='/home/runner/work/_temp/30b43586-3555-4a51-b358-4bcc45d8cdd5' before making global git config changes
+2026-10-05T06:26:23.0471270Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-05T06:26:23.0484614Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/hmt-edge-robot-/hmt-edge-robot-
+2026-10-05T06:26:23.0601775Z Deleting the contents of '/home/runner/work/hmt-edge-robot-/hmt-edge-robot-'
+2026-10-05T06:26:23.0615483Z ##[group]Initializing the repository
+2026-10-05T06:26:23.0624533Z [command]/usr/bin/git init /home/runner/work/hmt-edge-robot-/hmt-edge-robot-
+2026-10-05T06:26:23.1027990Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-05T06:26:23.1029791Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-05T06:26:23.1032861Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-05T06:26:23.1035675Z hint: call:
+2026-10-05T06:26:23.1036787Z hint:
+2026-10-05T06:26:23.1037887Z hint: 	git config --global init.defaultBranch <name>
+2026-10-05T06:26:23.1039051Z hint:
+2026-10-05T06:26:23.1040404Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-05T06:26:23.1042490Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-05T06:26:23.1043981Z hint:
+2026-10-05T06:26:23.1044946Z hint: 	git branch -m <name>
+2026-10-05T06:26:23.1046025Z hint:
+2026-10-05T06:26:23.1047211Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-05T06:26:23.1049171Z Initialized empty Git repository in /home/runner/work/hmt-edge-robot-/hmt-edge-robot-/.git/
+2026-10-05T06:26:23.1053003Z [command]/usr/bin/git remote add origin https://github.com/CollaborativeMinD/hmt-edge-robot-
+2026-10-05T06:26:23.1111341Z ##[endgroup]
+2026-10-05T06:26:23.1112671Z ##[group]Disabling automatic garbage collection
+2026-10-05T06:26:23.1113753Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-05T06:26:23.1154113Z ##[endgroup]
+2026-10-05T06:26:23.1155812Z ##[group]Setting up auth
+2026-10-05T06:26:23.1160070Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-05T06:26:23.1195054Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-05T06:26:23.1573575Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-05T06:26:23.1614189Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-05T06:26:23.1828444Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-05T06:26:23.1857321Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-05T06:26:23.2100392Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-05T06:26:23.2513128Z ##[endgroup]
+2026-10-05T06:26:23.2517124Z ##[group]Fetching the repository
+2026-10-05T06:26:23.2530026Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f7566a46cc7e8ff8b9dbff18c70408eeaf286f93:refs/remotes/pull/16/merge
+2026-10-05T06:26:24.5107081Z From https://github.com/CollaborativeMinD/hmt-edge-robot-
+2026-10-05T06:26:24.5113352Z  * [new ref]         f7566a46cc7e8ff8b9dbff18c70408eeaf286f93 -> pull/16/merge
+2026-10-05T06:26:24.5123162Z ##[endgroup]
+2026-10-05T06:26:24.5124415Z ##[group]Determining the checkout info
+2026-10-05T06:26:24.5125883Z ##[endgroup]
+2026-10-05T06:26:24.5128604Z [command]/usr/bin/git sparse-checkout disable
+2026-10-05T06:26:24.5191483Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-05T06:26:24.5240590Z ##[group]Checking out the ref
+2026-10-05T06:26:24.5241653Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/16/merge
+2026-10-05T06:26:24.5868828Z Note: switching to 'refs/remotes/pull/16/merge'.
+2026-10-05T06:26:24.5869693Z 
+2026-10-05T06:26:24.5870641Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-05T06:26:24.5872205Z changes and commit them, and you can discard any commits you make in this
+2026-10-05T06:26:24.5874217Z state without impacting any branches by switching back to a branch.
+2026-10-05T06:26:24.5875160Z 
+2026-10-05T06:26:24.5875813Z If you want to create a new branch to retain commits you create, you may
+2026-10-05T06:26:24.5877212Z do so (now or later) by using -c with the switch command. Example:
+2026-10-05T06:26:24.5877996Z 
+2026-10-05T06:26:24.5878254Z   git switch -c <new-branch-name>
+2026-10-05T06:26:24.5878672Z 
+2026-10-05T06:26:24.5878877Z Or undo this operation with:
+2026-10-05T06:26:24.5879243Z 
+2026-10-05T06:26:24.5879411Z   git switch -
+2026-10-05T06:26:24.5879738Z 
+2026-10-05T06:26:24.5881030Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-05T06:26:24.5882513Z 
+2026-10-05T06:26:24.5883869Z HEAD is now at f7566a4 Merge b7c2500919f7f5e0b82a8024aa1e2b94336c62f2 into 15671882aed68db224eebc1a927584692e36b6b1
+2026-10-05T06:26:24.5888177Z ##[endgroup]
+2026-10-05T06:26:24.5931045Z [command]/usr/bin/git log -1 --format=%H
+2026-10-05T06:26:24.5958392Z f7566a46cc7e8ff8b9dbff18c70408eeaf286f93
+2026-10-05T06:26:24.5966528Z ##[group]Removing auth
+2026-10-05T06:26:24.6055354Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-05T06:26:24.6059424Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-05T06:26:24.6254997Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-05T06:26:24.6394610Z http.https://github.com/.extraheader
+2026-10-05T06:26:24.6401445Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-05T06:26:24.6438643Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-05T06:26:24.6659248Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-05T06:26:24.6683008Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-05T06:26:24.6898913Z ##[endgroup]
+2026-10-05T06:26:24.7108393Z ##[group]Run python3 tools/ci_admission.py
+2026-10-05T06:26:24.7109295Z [36;1mpython3 tools/ci_admission.py[0m
+2026-10-05T06:26:24.7336779Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-05T06:26:24.7337689Z env:
+2026-10-05T06:26:24.7338117Z   UV_PYTHON: 3.12
+2026-10-05T06:26:24.7338598Z   UV_NO_PROGRESS: 1
+2026-10-05T06:26:24.7339090Z ##[endgroup]
+2026-10-05T06:26:24.8586593Z {"status": "PASS", "reason_codes": ["CI_TOOLCHAIN_ADMITTED"], "policy_sha256": "fa5be309e277e80f202d84344de9d6f0536f282651711b135603846f66803b5a", "lock_sha256": "b1ce60e49dc526e19077ddc69fb91fc142f551e123c746a4ffbb88433d98998b", "target": {"os": "linux", "architecture": "aarch64", "orchestrator": "k3s", "deployment": "HOLD"}, "tools": {"pyrefly": "1.3.2", "ruff": "0.16.10", "pytest": "9.1.1", "pytest-cov": "7.1.0", "marimo": "0.25.1"}, "candidates": [{"name": "scaffoldctl", "path": "vendor/admission/scaffoldctl-verify-0.3.0.zip", "sha256": "9cc8fef8c572d1ef1580a3298fe323821ee73cc2ca956cd3c4f1fe251c5c48b6", "status": "HOLD", "reason": "UPSTREAM_AND_HOST_INTEGRATION_REQUALIFICATION_REQUIRED"}, {"name": "truth-serum", "path": "vendor/admission/truth-serum-1.0.0.zip", "sha256": "3ba0cffead4e042445b2cb2a7eb1438bd0d5189c25be8e8807c999f8d1d9f3e1", "status": "HOLD", "reason": "UPSTREAM_AND_HOST_INTEGRATION_REQUALIFICATION_REQUIRED"}], "notification": "CI_ADMISSION_PASS", "alert": false}
+2026-10-05T06:26:24.8809246Z ##[group]Run astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+2026-10-05T06:26:24.8810367Z with:
+2026-10-05T06:26:24.8810785Z   version: 0.9.7
+2026-10-05T06:26:24.8811259Z   enable-cache: false
+2026-10-05T06:26:24.8811789Z   activate-environment: false
+2026-10-05T06:26:24.8814496Z   working-directory: /home/runner/work/hmt-edge-robot-/hmt-edge-robot-
+2026-10-05T06:26:24.8815738Z   server-url: https://github.com
+2026-10-05T06:26:24.8827453Z   github-token: ***
+2026-10-05T06:26:24.8829032Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-10-05T06:26:24.8830777Z   restore-cache: true
+2026-10-05T06:26:24.8831279Z   save-cache: true
+2026-10-05T06:26:24.8831752Z   prune-cache: true
+2026-10-05T06:26:24.8832266Z   ignore-nothing-to-cache: false
+2026-10-05T06:26:24.8832909Z   ignore-empty-workdir: false
+2026-10-05T06:26:24.8833510Z   add-problem-matchers: true
+2026-10-05T06:26:24.8834107Z env:
+2026-10-05T06:26:24.8834522Z   UV_PYTHON: 3.12
+2026-10-05T06:26:24.8834989Z   UV_NO_PROGRESS: 1
+2026-10-05T06:26:24.8835448Z ##[endgroup]
+2026-10-05T06:26:25.0592042Z (node:2169) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-05T06:26:25.0611171Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-05T06:26:25.1121564Z manifest-file not provided, reading from local file.
+2026-10-05T06:26:25.1151823Z manifest-file does not contain version 0.9.7, arch x86_64, platform unknown-linux-gnu. Falling back to GitHub releases.
+2026-10-05T06:26:25.1172066Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.9.7/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-10-05T06:26:25.7018252Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/1db7c98a-d8a4-4a94-a6f2-b5d0ac540541 -f /home/runner/work/_temp/605cf677-8c48-45e5-8ec4-196134fedaa2
+2026-10-05T06:26:26.5821986Z Added /home/runner/.local/bin to the path
+2026-10-05T06:26:26.5823053Z Added /opt/hostedtoolcache/uv/0.9.7/x86_64 to the path
+2026-10-05T06:26:26.5860667Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2026-10-05T06:26:26.5861181Z Successfully installed uv version 0.9.7
+2026-10-05T06:26:26.5934915Z ##[group]Run uv lock --check
+2026-10-05T06:26:26.5935202Z [36;1muv lock --check[0m
+2026-10-05T06:26:26.5935418Z [36;1muv sync --locked --extra dev[0m
+2026-10-05T06:26:26.5993888Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-05T06:26:26.5994192Z env:
+2026-10-05T06:26:26.5994366Z   UV_PYTHON: 3.12
+2026-10-05T06:26:26.5994570Z   UV_NO_PROGRESS: 1
+2026-10-05T06:26:26.5994794Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-05T06:26:26.5995057Z ##[endgroup]
+2026-10-05T06:26:26.6498966Z Using CPython 3.12.3 interpreter at: /usr/bin/python3.12
+2026-10-05T06:26:26.6557447Z Resolved 71 packages in 1ms
+2026-10-05T06:26:26.6633012Z Using CPython 3.12.3 interpreter at: /usr/bin/python3.12
+2026-10-05T06:26:26.6633918Z Creating virtual environment at: .venv
+2026-10-05T06:26:26.6697012Z Resolved 71 packages in 1ms
+2026-10-05T06:26:26.6895268Z    Building hmt-truth-serum-lanes @ file:///home/runner/work/hmt-edge-robot-/hmt-edge-robot-/vendor/qualified/truth-serum
+2026-10-05T06:26:26.6920990Z    Building scaffoldctl @ file:///home/runner/work/hmt-edge-robot-/hmt-edge-robot-/vendor/qualified/scaffoldctl
+2026-10-05T06:26:26.6922016Z    Building hmt-edge-robot @ file:///home/runner/work/hmt-edge-robot-/hmt-edge-robot-
+2026-10-05T06:26:26.7435533Z Downloading scikit-learn (8.7MiB)
+2026-10-05T06:26:26.7700434Z Downloading jedi (4.7MiB)
+2026-10-05T06:26:26.7701853Z Downloading ruff (9.9MiB)
+2026-10-05T06:26:26.7710575Z Downloading numpy (15.9MiB)
+2026-10-05T06:26:26.7726469Z Downloading scipy (33.7MiB)
+2026-10-05T06:26:26.7727002Z Downloading duckdb (20.6MiB)
+2026-10-05T06:26:26.7727396Z Downloading polars-runtime-32 (47.6MiB)
+2026-10-05T06:26:26.7760961Z Downloading pydantic-core (2.0MiB)
+2026-10-05T06:26:26.7761705Z Downloading pygments (1.2MiB)
+2026-10-05T06:26:26.7766444Z Downloading cryptography (4.3MiB)
+2026-10-05T06:26:26.7768190Z Downloading pyrefly (14.7MiB)
+2026-10-05T06:26:26.7770995Z Downloading marimo (48.5MiB)
+2026-10-05T06:26:26.7773164Z Downloading loro (3.4MiB)
+2026-10-05T06:26:26.7775144Z Downloading opencv-python-headless (58.4MiB)
+2026-10-05T06:26:27.5500728Z       Built hmt-truth-serum-lanes @ file:///home/runner/work/hmt-edge-robot-/hmt-edge-robot-/vendor/qualified/truth-serum
+2026-10-05T06:26:27.7350945Z  Downloading pydantic-core
+2026-10-05T06:26:27.7842824Z       Built hmt-edge-robot @ file:///home/runner/work/hmt-edge-robot-/hmt-edge-robot-
+2026-10-05T06:26:27.7854045Z       Built scaffoldctl @ file:///home/runner/work/hmt-edge-robot-/hmt-edge-robot-/vendor/qualified/scaffoldctl
+2026-10-05T06:26:27.8252015Z  Downloading pygments
+2026-10-05T06:26:27.9087704Z  Downloading loro
+2026-10-05T06:26:28.0371543Z  Downloading cryptography
+2026-10-05T06:26:28.5026345Z  Downloading scikit-learn
+2026-10-05T06:26:28.5673298Z  Downloading ruff
+2026-10-05T06:26:28.8551395Z  Downloading pyrefly
+2026-10-05T06:26:28.9986327Z  Downloading numpy
+2026-10-05T06:26:29.1639748Z  Downloading duckdb
+2026-10-05T06:26:29.7984651Z  Downloading scipy
+2026-10-05T06:26:30.2828801Z  Downloading polars-runtime-32
+2026-10-05T06:26:30.3901017Z  Downloading marimo
+2026-10-05T06:26:30.4030856Z  Downloading opencv-python-headless
+2026-10-05T06:26:30.4772203Z  Downloading jedi
+2026-10-05T06:26:30.5164130Z Prepared 70 packages in 3.84s
+2026-10-05T06:26:32.5103153Z Installed 70 packages in 1.99s
+2026-10-05T06:26:32.5103752Z  + annotated-doc==0.0.5
+2026-10-05T06:26:32.5104199Z  + annotated-types==0.8.0
+2026-10-05T06:26:32.5104667Z  + anyio==4.15.1
+2026-10-05T06:26:32.5105068Z  + attrs==26.1.0
+2026-10-05T06:26:32.5105449Z  + certifi==2026.7.22
+2026-10-05T06:26:32.5105835Z  + cffi==2.1.1
+2026-10-05T06:26:32.5106225Z  + click==8.5.0
+2026-10-05T06:26:32.5106609Z  + cloudpickle==3.1.2
+2026-10-05T06:26:32.5107020Z  + coverage==7.16.2
+2026-10-05T06:26:32.5107414Z  + cryptography==46.0.7
+2026-10-05T06:26:32.5107831Z  + defusedxml==0.7.1
+2026-10-05T06:26:32.5108228Z  + docutils==0.23
+2026-10-05T06:26:32.5108608Z  + duckdb==1.5.6
+2026-10-05T06:26:32.5108982Z  + fastapi==0.142.2
+2026-10-05T06:26:32.5109717Z  + h11==0.16.0
+2026-10-05T06:26:32.5110562Z  + hmt-edge-robot==1.0.0 (from file:///home/runner/work/hmt-edge-robot-/hmt-edge-robot-)
+2026-10-05T06:26:32.5111592Z  + hmt-truth-serum-lanes==1.0.0 (from file:///home/runner/work/hmt-edge-robot-/hmt-edge-robot-/vendor/qualified/truth-serum)
+2026-10-05T06:26:32.5112460Z  + httpcore==1.0.9
+2026-10-05T06:26:32.5112870Z  + httpx==0.28.1
+2026-10-05T06:26:32.5113246Z  + idna==3.20
+2026-10-05T06:26:32.5113670Z  + iniconfig==2.3.0
+2026-10-05T06:26:32.5114019Z  + itsdangerous==2.2.0
+2026-10-05T06:26:32.5114370Z  + jedi==0.20.0
+2026-10-05T06:26:32.5114699Z  + joblib==1.6.0
+2026-10-05T06:26:32.5115032Z  + jsonschema==4.26.0
+2026-10-05T06:26:32.5115412Z  + jsonschema-specifications==2025.9.1
+2026-10-05T06:26:32.5115828Z  + loro==1.16.2
+2026-10-05T06:26:32.5116171Z  + marimo==0.25.1
+2026-10-05T06:26:32.5116494Z  + markdown==3.11
+2026-10-05T06:26:32.5116816Z  + msgspec==0.22.0
+2026-10-05T06:26:32.5117150Z  + narwhals==2.26.0
+2026-10-05T06:26:32.5117486Z  + numpy==2.5.3
+2026-10-05T06:26:32.5118027Z  + opencv-python-headless==5.0.0.93
+2026-10-05T06:26:32.5118453Z  + opentelemetry-api==1.45.0
+2026-10-05T06:26:32.5118861Z  + packaging==26.3
+2026-10-05T06:26:32.5119190Z  + parso==0.8.7
+2026-10-05T06:26:32.5119513Z  + pluggy==1.6.0
+2026-10-05T06:26:32.5119844Z  + polars==1.44.2
+2026-10-05T06:26:32.5120366Z  + polars-runtime-32==1.44.2
+2026-10-05T06:26:32.5120745Z  + psutil==7.2.2
+2026-10-05T06:26:32.5121078Z  + pycparser==3.0
+2026-10-05T06:26:32.5121416Z  + pydantic==2.13.5
+2026-10-05T06:26:32.5121762Z  + pydantic-core==2.46.5
+2026-10-05T06:26:32.5122124Z  + pygments==2.21.0
+2026-10-05T06:26:32.5122480Z  + pymdown-extensions==11.0.2
+2026-10-05T06:26:32.5122880Z  + pyparsing==3.3.3
+2026-10-05T06:26:32.5123218Z  + pyrefly==1.3.2
+2026-10-05T06:26:32.5123540Z  + pytest==9.1.1
+2026-10-05T06:26:32.5123872Z  + pytest-cov==7.1.0
+2026-10-05T06:26:32.5124230Z  + python-multipart==0.0.32
+2026-10-05T06:26:32.5124607Z  + pyyaml==6.0.3
+2026-10-05T06:26:32.5124906Z  + pyzmq==27.2.0
+2026-10-05T06:26:32.5125447Z  + rdflib==7.6.0
+2026-10-05T06:26:32.5125766Z  + referencing==0.37.0
+2026-10-05T06:26:32.5126117Z  + rpds-py==2026.6.3
+2026-10-05T06:26:32.5126442Z  + ruff==0.16.10
+2026-10-05T06:26:32.5127069Z  + scaffoldctl==0.3.0 (from file:///home/runner/work/hmt-edge-robot-/hmt-edge-robot-/vendor/qualified/scaffoldctl)
+2026-10-05T06:26:32.5127754Z  + scikit-learn==1.9.1
+2026-10-05T06:26:32.5128077Z  + scipy==1.18.1
+2026-10-05T06:26:32.5128381Z  + six==1.17.0
+2026-10-05T06:26:32.5128691Z  + starlette==1.7.0
+2026-10-05T06:26:32.5129034Z  + threadpoolctl==3.7.0
+2026-10-05T06:26:32.5129391Z  + tomlkit==0.15.1
+2026-10-05T06:26:32.5129754Z  + transitions==0.9.3
+2026-10-05T06:26:32.5130565Z  + types-defusedxml==0.7.0.20260504
+2026-10-05T06:26:32.5131011Z  + types-jsonschema==4.26.0.20260518
+2026-10-05T06:26:32.5131426Z  + typing-extensions==4.16.0
+2026-10-05T06:26:32.5131792Z  + typing-inspection==0.4.4
+2026-10-05T06:26:32.5132124Z  + uvicorn==0.54.0
+2026-10-05T06:26:32.5132420Z  + websockets==17.1
+2026-10-05T06:26:32.5602836Z ##[group]Run uv run --no-sync python tools/validate.py
+2026-10-05T06:26:32.5603425Z [36;1muv run --no-sync python tools/validate.py[0m
+2026-10-05T06:26:32.5683450Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-05T06:26:32.5683955Z env:
+2026-10-05T06:26:32.5684222Z   UV_PYTHON: 3.12
+2026-10-05T06:26:32.5684498Z   UV_NO_PROGRESS: 1
+2026-10-05T06:26:32.5684839Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-05T06:26:32.5685209Z ##[endgroup]
+2026-10-05T06:26:37.1213935Z G-APPLIANCE-DESIGN-022 PASS
+2026-10-05T06:26:37.2364437Z G-CI-013 PASS
+2026-10-05T06:26:37.6249466Z G-POLICY-014 PASS
+2026-10-05T06:26:37.6610367Z G-ARTIFACT-DESIGN-019 PASS
+2026-10-05T06:26:43.3233374Z G-ARTIFACT-NEGATIVE-020 PASS
+2026-10-05T06:26:43.5121672Z G-CD-CONTRACT-017 PASS
+2026-10-05T06:26:50.1509150Z G-CD-NEGATIVE-018 PASS
+2026-10-05T06:26:50.5275965Z G-PROFILE-015 PASS
+2026-10-05T06:27:15.1463989Z G-QUALIFY-016 PASS
+2026-10-05T06:27:16.2267182Z G-TYPES-012 PASS
+2026-10-05T06:27:16.4158592Z G-STATIC-007 PASS
+2026-10-05T06:27:38.4273031Z G-RUNTIME-004 PASS
+2026-10-05T06:27:40.0062353Z G-PERF-006 PASS
+2026-10-05T06:27:42.6292107Z G-TRIAD-011 FAIL
+2026-10-05T06:27:45.8615179Z G-NOTEBOOK-008 PASS
+2026-10-05T06:27:46.5943369Z ##[error]Process completed with exit code 1.
+2026-10-05T06:27:46.5988666Z ##[group]Run echo '::error::Software admission failed. Deployment remains HOLD. Inspect cumulative-verification.'
+2026-10-05T06:27:46.5989299Z [36;1mecho '::error::Software admission failed. Deployment remains HOLD. Inspect cumulative-verification.'[0m
+2026-10-05T06:27:46.6044800Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-05T06:27:46.6045083Z env:
+2026-10-05T06:27:46.6045246Z   UV_PYTHON: 3.12
+2026-10-05T06:27:46.6045424Z   UV_NO_PROGRESS: 1
+2026-10-05T06:27:46.6045638Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-05T06:27:46.6045894Z ##[endgroup]
+2026-10-05T06:27:46.6124202Z ##[error]Software admission failed. Deployment remains HOLD. Inspect cumulative-verification.
+2026-10-05T06:27:46.6171069Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-10-05T06:27:46.6171394Z with:
+2026-10-05T06:27:46.6171572Z   name: cumulative-verification
+2026-10-05T06:27:46.6171777Z   path: evidence/
+2026-10-05T06:27:46.6171950Z   retention-days: 30
+2026-10-05T06:27:46.6172134Z   if-no-files-found: error
+2026-10-05T06:27:46.6172329Z   compression-level: 6
+2026-10-05T06:27:46.6172523Z   overwrite: false
+2026-10-05T06:27:46.6172705Z   include-hidden-files: false
+2026-10-05T06:27:46.6172903Z env:
+2026-10-05T06:27:46.6173064Z   UV_PYTHON: 3.12
+2026-10-05T06:27:46.6173239Z   UV_NO_PROGRESS: 1
+2026-10-05T06:27:46.6173455Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-05T06:27:46.6173700Z ##[endgroup]
+2026-10-05T06:27:46.7527927Z (node:3867) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-05T06:27:46.7529209Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-05T06:27:46.9229402Z With the provided path, there will be 587 files uploaded
+2026-10-05T06:27:46.9230429Z Artifact name is valid!
+2026-10-05T06:27:46.9230834Z Root directory input is valid!
+2026-10-05T06:27:47.2101284Z Beginning upload of artifact content to blob storage
+2026-10-05T06:27:47.6775017Z (node:3867) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-05T06:27:48.1661622Z Uploaded bytes 1051578
+2026-10-05T06:27:48.3721301Z Finished uploading artifact content to blob storage!
+2026-10-05T06:27:48.3722458Z SHA256 digest of uploaded artifact zip is ab3f97f94bfcb5fd4dd005f530bad373622b332a5c82f3ff925b3cde7a625427
+2026-10-05T06:27:48.3724056Z Finalizing artifact upload
+2026-10-05T06:27:48.6244935Z Artifact cumulative-verification.zip successfully finalized. Artifact ID 11329220876
+2026-10-05T06:27:48.6246142Z Artifact cumulative-verification has been successfully uploaded! Final size is 1051578 bytes. Artifact ID is 11329220876
+2026-10-05T06:27:48.6252503Z Artifact download URL: https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/runs/37272410098/artifacts/11329220876
+2026-10-05T06:27:48.6482392Z Post job cleanup.
+2026-10-05T06:27:48.7260513Z [command]/usr/bin/git version
+2026-10-05T06:27:48.7328029Z git version 2.55.0
+2026-10-05T06:27:48.7395073Z Temporarily overriding HOME='/home/runner/work/_temp/07f7ae47-11e1-4740-a492-f1c8b7eb6985' before making global git config changes
+2026-10-05T06:27:48.7396244Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-05T06:27:48.7397304Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/hmt-edge-robot-/hmt-edge-robot-
+2026-10-05T06:27:48.7462800Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-05T06:27:48.7511325Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-05T06:27:48.7781095Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-05T06:27:48.7841918Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-05T06:27:48.8140804Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-05T06:27:48.8237063Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-05T06:27:48.8699405Z Cleaning up orphan processes
+2026-10-05T06:27:48.8911944Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02, astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

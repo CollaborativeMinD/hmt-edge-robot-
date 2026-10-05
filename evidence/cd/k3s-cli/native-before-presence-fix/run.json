@@ -1,0 +1,8 @@
+{
+  "run_id": 37272410218,
+  "source_commit": "f7566a46cc7e8ff8b9dbff18c70408eeaf286f93",
+  "status": "PASS",
+  "scope": "HOSTED_ARM64_K3S_SIL",
+  "native_pi": "NOT_RUN",
+  "artifact_id": 11329590775
+}

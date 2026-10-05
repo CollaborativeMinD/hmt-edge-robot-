@@ -124,7 +124,15 @@ jobs:
       - name: Stage the qualified OCI image for offline import and record signing continuation
         run: |
           uv run --no-sync python tools/appliance_prepare.py
+          K3S_VERSION=$(python3 -c 'import json; print(json.load(open("deploy/appliance/inputs.json"))["k3s"]["version"].replace("+", "-"))')
+          docker pull "rancher/k3s:$K3S_VERSION"
+          docker run --rm --entrypoint kubectl "rancher/k3s:$K3S_VERSION" version --client
+          docker run --rm --entrypoint ctr "rancher/k3s:$K3S_VERSION" --help
           echo 'Unsigned prequalification complete. Private signing and publication require the appliance-release Environment in release.yml.'
+      - name: Verify offline k3s deployment and ledger persistence before merge
+        run: |
+          uv run --no-sync python tools/appliance_fetch.py
+          bash deploy/appliance/smoke-test.sh "$PWD" 2>&1 | tee build/smoke.log
       - name: Surface artifact rejection
         if: failure()
         run: echo '::error::ARM64 artifact qualification rejected. Deployment and hardware remain HOLD. Inspect stage4 evidence.'
@@ -135,3 +143,13 @@ jobs:
           path: evidence/cd/stage4/
           retention-days: 30
           if-no-files-found: error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: k3s-smoke-${{ github.sha }}
+          path: |
+            build/*.log
+            build/smoke*.json
+            build/replay-*.json
+          retention-days: 14
+          if-no-files-found: warn

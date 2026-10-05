@@ -1,0 +1,29 @@
+v1.37.1-k3s1: Pulling from rancher/k3s
+Digest: sha256:ca7f37d993d82ef0dcdcfecb2e0e2618ea541dbaffc620c8cedebe01a82acd0d
+Status: Image is up to date for rancher/k3s:v1.37.1-k3s1
+docker.io/rancher/k3s:v1.37.1-k3s1
+4c0e7c77178cb406b0d7e4431f27028b42fe424bb6e16f046960c631e18b20b8
+ghcr.io/collaborativemind/hmt edge robot	saved	
+application/vnd.oci.image.index.v1+json sha256:bec033b976536c5e985b6533615b78d501abbd042631cee6770f41adc2e4a457
+Importing	elapsed: 7.1 s	total:   0.0 B	(0.0 B/s)	
+ghcr.io/collaborativemind/hmt edge robot	saved	
+ghcr.io/collaborativemind/hmt edge robot	saved	
+application/vnd.oci.image.index.v1+json sha256:bec033b976536c5e985b6533615b78d501abbd042631cee6770f41adc2e4a457
+application/vnd.oci.image.manifest.v1+json sha256:3725f1e126c52789ce94bb408395e1163c7bb8a8230d2f61b5dca75461b0f96f
+Importing	elapsed: 7.1 s	total:   0.0 B	(0.0 B/s)	
+ghcr.io/collaborativemind/hmt-edge-robot@sha256:3725f1e126c52789ce94bb408395e1163c7bb8a8230d2f61b5dca75461b0f96f
+namespace/hmt-edge-robot-sil created
+secret/hmt-edge-runtime created
+persistentvolume/hmt-edge-ledger created
+persistentvolumeclaim/hmt-edge-ledger created
+serviceaccount/hmt-edge-runtime created
+configmap/hmt-edge-runtime-policy created
+networkpolicy.networking.k8s.io/hmt-edge-deny-all created
+deployment.apps/hmt-edge-robot created
+Waiting for deployment spec update to be observed...
+Waiting for deployment "hmt-edge-robot" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "hmt-edge-robot" rollout to finish: 0 of 1 updated replicas are available...
+deployment "hmt-edge-robot" successfully rolled out
+pod "hmt-edge-robot-7d898fb89-lmfb8" deleted from hmt-edge-robot-sil namespace
+Waiting for deployment "hmt-edge-robot" rollout to finish: 0 of 1 updated replicas are available...
+deployment "hmt-edge-robot" successfully rolled out
