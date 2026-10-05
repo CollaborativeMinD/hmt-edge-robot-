@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import platform
+import subprocess
 import sys
 from pathlib import Path
 
@@ -34,6 +35,10 @@ def reduce(root: Path, repo: Path = ROOT) -> dict:
         print(run([*command, '/usr/bin/dpkg', '--purge', *removals], timeout=300).decode())
         if run([*command, '/usr/bin/dpkg', '--audit']).strip():
             raise ValueError('HOST_REDUCTION_AUDIT_FAILED')
+    except subprocess.CalledProcessError as error:
+        print((error.output or b'').decode(errors='replace'))
+        print((error.stderr or b'').decode(errors='replace'), file=sys.stderr)
+        raise
     finally:
         guard.unlink(missing_ok=True)
     for unit in policy['masked_services']:

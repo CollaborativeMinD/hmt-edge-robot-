@@ -11,15 +11,15 @@ async def execute(args: list[str], timeout: int) -> bytes:
     process = await asyncio.create_subprocess_exec(*args, stdout=asyncio.subprocess.PIPE,
                                                    stderr=asyncio.subprocess.PIPE)
     try:
-        output, _ = await asyncio.wait_for(process.communicate(), timeout)
+        output, error = await asyncio.wait_for(process.communicate(), timeout)
     except TimeoutError:
         process.kill()
         await asyncio.wait_for(process.wait(), 5)
         raise
-    if process.returncode != 0:
-        raise subprocess.CalledProcessError(process.returncode or 1, args[0])
-    if len(output) > 2**20:
+    if len(output) > 2**20 or len(error) > 2**20:
         raise ValueError("PROCESS_OUTPUT_TOO_LARGE")
+    if process.returncode != 0:
+        raise subprocess.CalledProcessError(process.returncode or 1, args[0], output=output, stderr=error)
     return output
 
 
