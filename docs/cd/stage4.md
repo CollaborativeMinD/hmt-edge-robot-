@@ -123,7 +123,8 @@ The later [minimal runtime](minimal-runtime.md) replaces this full-base candidat
 with an ELF dependency closure assembled into scratch from the same Trixie
 builder. It excludes the PCRE-dependent administration tools, preserving genuine
 metadata for shipped libraries. Its scan threshold is unchanged; the remaining
-LZMA UNKNOWN finding and unpatched host packages continue to block release.
+LZMA UNKNOWN finding is covered by the later [owner acceptance](runtime-lzma-waiver.md)
+for the runtime alone. Unpatched host packages continue to block the full release.
 The OS patch is installed through the base's signed Debian repository; its version
 and bytes are retained by the image digest and SBOM. Python package pins do not change.
 

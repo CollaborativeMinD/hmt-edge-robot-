@@ -58,11 +58,13 @@ def fixture(root: Path) -> Path:
     for name, value in values.items():
         (destination / name).write_text(json.dumps(value))
     for name in ("pyproject.toml", "deploy/stage4/Dockerfile", ".dockerignore", "tools/runtime_rootfs.py",
-                 "tools/runtime_elf.py", "tools/runtime_inventory.py", "tools/appliance_process.py"):
+                 "tools/runtime_elf.py", "tools/runtime_inventory.py", "tools/appliance_process.py", "tools/artifact_waivers.py"):
         path = root / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text("fixture")
     (root / "policy").mkdir(exist_ok=True)
+    waiver = Path(__file__).resolve().parents[1] / "policy/artifact_vulnerability_waiver.json"
+    (root / "policy/artifact_vulnerability_waiver.json").write_bytes(waiver.read_bytes())
     (root / "policy/artifact_signing.json").write_text(json.dumps({"backend": "github_native_private_sigstore", "status": "ADMITTED"}))
     (root / "uv.lock").write_text('[[package]]\nname="hmt-edge-robot"\nversion="1.0.0"\n')
     return destination

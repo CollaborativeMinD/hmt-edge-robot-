@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "scope": "ARM64_RUNTIME_CONTAINER_ONLY",
+  "approved_by": "repository_owner",
+  "approved_at": "2026-10-05",
+  "approval_reference": "Owner instruction: waive the final finding for the personal homelab, document it, observe green PR checks, and continue the build.",
+  "rationale": "The owner accepts this exact unresolved UNKNOWN finding for personal homelab operation. This records risk acceptance, not a fix or a claim of non-applicability. Host image findings are outside this approval.",
+  "exception": {
+    "vulnerability_id": "TEMP-1147318-639065",
+    "package": "liblzma5",
+    "installed_version": "5.8.1-1+deb13u1",
+    "severity": "UNKNOWN",
+    "os_family": "debian",
+    "os_major": 13,
+    "architecture": "arm64",
+    "fix_available": false
+  }
+}

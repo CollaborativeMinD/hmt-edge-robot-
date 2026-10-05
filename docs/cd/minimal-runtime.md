@@ -30,10 +30,16 @@ had no HIGH, CRITICAL or secret findings and one UNKNOWN finding:
 `TEMP-1147318-639065`, `liblzma5=5.8.1-1+deb13u1`. It remains a release blocker.
 This local result does not substitute for native ARM64 Actions qualification.
 
+On 2026-10-05 the owner explicitly accepted that exact remaining runtime risk for
+the homelab. The [documented waiver](runtime-lzma-waiver.md) changes admission for
+that one identity while retaining the raw finding and recording the approval in
+qualification and signed release evidence. Other runtime findings, secrets and
+host findings retain their existing thresholds. Fresh green PR checks are required.
+
 A minimal Bookworm candidate was rejected after its scan found SQLite and zlib
 CRITICAL findings plus SQLite/OpenSSL HIGH findings. It is not the selected base.
-No vulnerabilities are waived, no severities are remapped, and scanner package
-metadata is not discarded to manufacture a pass.
+The only runtime exception is the owner's explicitly approved LZMA identity.
+No severities are remapped and scanner package metadata remains truthful.
 
 ## Official host fixes
 

@@ -4,6 +4,8 @@ from __future__ import annotations
 import tomllib
 from typing import Any
 
+from artifact_waivers import admit
+
 
 def dictionaries(value: object) -> list[dict[str, Any]]:
     if isinstance(value, dict):
@@ -13,7 +15,7 @@ def dictionaries(value: object) -> list[dict[str, Any]]:
     return []
 
 
-def scans(sbom: dict, scan: dict, probe: dict, lock: bytes) -> None:
+def scans(sbom: dict, scan: dict, probe: dict, lock: bytes, waiver: dict | None = None) -> list[dict]:
     if sbom.get("spdxVersion") != "SPDX-2.3" or not sbom.get("packages"):
         raise ValueError("SBOM_INCOMPLETE")
     if scan.get("SchemaVersion") != 2 or scan.get("ArtifactType") != "container_image":
@@ -21,13 +23,7 @@ def scans(sbom: dict, scan: dict, probe: dict, lock: bytes) -> None:
     results = scan.get("Results")
     if not isinstance(results, list) or not {"os-pkgs", "lang-pkgs"} <= {r.get("Class") for r in results}:
         raise ValueError("SCAN_COVERAGE_INCOMPLETE")
-    for result in results:
-        for vulnerability in result.get("Vulnerabilities") or []:
-            severity = vulnerability.get("Severity")
-            if severity not in ("LOW", "MEDIUM"):
-                raise ValueError("VULNERABILITY_NOT_ADMITTED")
-        if result.get("Secrets"):
-            raise ValueError("IMAGE_SECRET_DETECTED")
+    exceptions = admit(scan, waiver)
     if probe.get("status") != "PASS" or probe.get("platform") != "aarch64" or probe.get("uid") != 10001:
         raise ValueError("NATIVE_CONTAINER_QUALIFICATION_FAILED")
     if probe.get("minimal_runtime") is not True or probe.get("native_features") != "PASS":
@@ -46,6 +42,7 @@ def scans(sbom: dict, scan: dict, probe: dict, lock: bytes) -> None:
     names = {p["name"].lower().replace("_", "-"): p.get("versionInfo") for p in sbom["packages"]}
     if any(names.get(name) != version for name, version in installed.items() if name not in ("pip", "setuptools")):
         raise ValueError("SBOM_RUNTIME_PACKAGE_DIVERGED")
+    return exceptions
 
 
 def provenance(value: object, archive_hash: str, commit: str) -> None:

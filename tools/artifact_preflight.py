@@ -47,15 +47,17 @@ def assess(root: Path, commit: str) -> dict:
     metadata = data["build-metadata.json"]
     if metadata.get("containerimage.digest") != root_digest(archive):
         raise ValueError("BUILD_METADATA_OCI_ROOT_MISMATCH")
-    scans(data["sbom.spdx.json"], data["vulnerabilities.json"], data["container.json"], (root / "uv.lock").read_bytes())
+    waiver = json.loads(confined(root, "policy/artifact_vulnerability_waiver.json").read_text())
+    exceptions = scans(data["sbom.spdx.json"], data["vulnerabilities.json"], data["container.json"], (root / "uv.lock").read_bytes(), waiver)
     archive_digest = archive_hash(archive)
     inputs = {name: digest(confined(root, "evidence/cd/stage4/" + name)) for name in FILES}
     inputs.update({name: digest(root / name) for name in ("uv.lock", "pyproject.toml", "deploy/stage4/Dockerfile", ".dockerignore",
-        "tools/runtime_rootfs.py", "tools/runtime_elf.py", "tools/runtime_inventory.py", "tools/appliance_process.py")})
+        "tools/runtime_rootfs.py", "tools/runtime_elf.py", "tools/runtime_inventory.py", "tools/appliance_process.py",
+        "tools/artifact_waivers.py", "policy/artifact_vulnerability_waiver.json")})
     return {"status": "PASS", "source_commit": commit, "image_digest": image,
         "archive_sha256": archive_digest, "inputs": inputs, "platform": "linux/arm64",
         "qualification": "HOLD", "signed_provenance": "HOLD", "deployment": "HOLD", "hardware": "HOLD",
-        "notification": "UNSIGNED_ARTIFACT_PREQUALIFIED", "alert": False}
+        "notification": "UNSIGNED_ARTIFACT_PREQUALIFIED", "alert": False, "vulnerability_exceptions": exceptions}
 
 def main(root: Path, commit: str) -> int:
     from artifact_gate import persist

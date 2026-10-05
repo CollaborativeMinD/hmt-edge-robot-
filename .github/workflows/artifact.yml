@@ -117,7 +117,7 @@ jobs:
           import json, collections
           data = json.load(open('evidence/cd/stage4/vulnerabilities.json'))
           findings = [v for r in data.get('Results',[]) for v in (r.get('Vulnerabilities') or [])]
-          print(json.dumps({'severity_counts':dict(collections.Counter(v.get('Severity') for v in findings)), 'blocking_findings':[{k:v.get(k) for k in ('VulnerabilityID','PkgName','InstalledVersion','FixedVersion','Severity')} for v in findings if v.get('Severity') not in ('LOW','MEDIUM')]}))
+          print(json.dumps({'severity_counts':dict(collections.Counter(v.get('Severity') for v in findings)), 'reported_high_critical_unknown_findings':[{k:v.get(k) for k in ('VulnerabilityID','PkgName','InstalledVersion','FixedVersion','Severity')} for v in findings if v.get('Severity') not in ('LOW','MEDIUM')]}))
           PYSCAN
       - name: Qualify image, scanner and installed software before signing
         run: uv run --no-sync python tools/artifact_preflight.py "$GITHUB_SHA"

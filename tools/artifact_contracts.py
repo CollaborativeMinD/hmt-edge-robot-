@@ -21,7 +21,8 @@ class ArtifactReceipt(Closed):
     authority: Literal["ARTIFACT_QUALIFICATION_ONLY"]
     deployment: Literal["HOLD"]
     hardware: Literal["HOLD"]
-    vulnerability_disposition: Literal["NO_HIGH_CRITICAL_OR_SECRETS;LOW_MEDIUM_RECORDED"]
+    vulnerability_disposition: Literal["NO_HIGH_CRITICAL_OR_SECRETS;LOW_MEDIUM_RECORDED", "NO_HIGH_CRITICAL_OR_SECRETS;OWNER_ACCEPTED_UNKNOWN_RECORDED"]
+    vulnerability_exceptions: list[dict] = Field(default_factory=list, max_length=1)
     notification: Literal["ARM64_ARTIFACT_QUALIFIED_DEPLOYMENT_HELD"]
     alert: Literal[False]
     receipt_hash: Hash

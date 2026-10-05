@@ -26,7 +26,7 @@
     "tools/appliance_node.py": "a73ef71374241a09c22f9278f95cb326db392681cf3971d50fa57e0554655aaf",
     "tools/appliance_prepare.py": "a243ddf41b2423575b86d7e43e067e0ca32092e26069719f8a91f193e456799d",
     "tools/appliance_process.py": "f08a85f28bd93b92713a2e3c337e71b1416593bd609275c783bf111aa852d717",
-    "tools/appliance_release.py": "506cba60a655f6e15b10924fd0248d13a7b85b62b99afabc5224e962857938cf",
+    "tools/appliance_release.py": "928836c9570b5d8916b857888f9551e508aa19a2f686e4618bf648415972dad4",
     "tools/appliance_signature.py": "a092bb3ea5d2bf00d47a7ca07eb4e5a2c5f5900f930ff57ccc00d53d37596c00",
     "tools/appliance_workload.py": "158f0b663a4a9e5478b7e2a99e77cedd65c57396d7357b2b93f7d85740331d4d",
     "tools/appliance_host.py": "cb1779aae7fed3da59d8ed624af3341e4b32ea8725482e5de1977868102dfc43",

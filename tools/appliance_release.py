@@ -35,6 +35,7 @@ def release(root: Path, commit: str) -> Path:
         "source_commit": commit, "platform": "linux/arm64", "hardware": "HOLD",
         "native_pi_acceptance": "NOT_RUN", "image_digest": report["image_digest"],
         "archive_sha256": report["archive_sha256"], "signing_key_sha256": fingerprint,
+        "vulnerability_exceptions": report["vulnerability_exceptions"],
         "files": {p.name: archive_hash(p) for p in sorted(directory.iterdir()) if p.name not in {"release.json", "release.sig"}}}
     (directory / "release.json").write_text(json.dumps(manifest, indent=2) + "\n")
     with tempfile.TemporaryDirectory(prefix="hmt-sign-") as temporary:

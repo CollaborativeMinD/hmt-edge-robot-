@@ -32,7 +32,8 @@ def evaluate(root: Path, commit: str) -> ArtifactReceipt:
         "image_digest": report["image_digest"], "archive_sha256": report["archive_sha256"], "inputs": inputs,
         "platform": "linux/arm64", "authority": "ARTIFACT_QUALIFICATION_ONLY",
         "deployment": "HOLD", "hardware": "HOLD",
-        "vulnerability_disposition": "NO_HIGH_CRITICAL_OR_SECRETS;LOW_MEDIUM_RECORDED",
+        "vulnerability_disposition": "NO_HIGH_CRITICAL_OR_SECRETS;OWNER_ACCEPTED_UNKNOWN_RECORDED" if report["vulnerability_exceptions"] else "NO_HIGH_CRITICAL_OR_SECRETS;LOW_MEDIUM_RECORDED",
+        "vulnerability_exceptions": report["vulnerability_exceptions"],
         "notification": "ARM64_ARTIFACT_QUALIFIED_DEPLOYMENT_HELD", "alert": False}
     return ArtifactReceipt.model_validate({**payload, "receipt_hash": content_hash(payload)})
 
