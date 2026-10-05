@@ -126,7 +126,7 @@ jobs:
           auth="$RUNNER_TEMP/hmt-registry-auth.json"
           trap 'rm -f "$auth"' EXIT
           printf '%s' "$GH_TOKEN" | skopeo login --authfile "$auth" --username "$REGISTRY_USER" --password-stdin ghcr.io
-          image="ghcr.io/${REPOSITORY,,}"
+          image=$(uv run --no-sync python -c 'import os; print("ghcr.io/" + os.environ["REPOSITORY"].lower().rstrip("._-"))')
           skopeo copy --authfile "$auth" --all --preserve-digests oci-archive:evidence/cd/stage4/image.oci.tar "docker://$image:sha-$GITHUB_SHA"
           expected=$(python3 -c 'import json; print(json.load(open("build/release/release.json"))["image_digest"])')
           actual=$(skopeo inspect --authfile "$auth" --override-arch arm64 --override-os linux --format '{{.Digest}}' "docker://$image@$expected")

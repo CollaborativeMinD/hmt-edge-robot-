@@ -41,7 +41,7 @@ def test_unknown_node_fields_are_rejected() -> None:
 
 
 def test_workload_has_one_writer_no_public_api_and_a_retained_ledger() -> None:
-    image = "ghcr.io/collaborativemind/hmt-edge-robot-@sha256:" + "1" * 64
+    image = "ghcr.io/collaborativemind/hmt-edge-robot@sha256:" + "1" * 64
     items = {item["kind"]: item for item in manifests(ROOT, image)["items"]}
     spec = items["Deployment"]["spec"]
     assert spec["replicas"] == 1 and spec["strategy"]["type"] == "Recreate"
@@ -53,4 +53,4 @@ def test_workload_has_one_writer_no_public_api_and_a_retained_ledger() -> None:
     assert "Service" not in items and "Ingress" not in items
     assert "api_token" not in items["ConfigMap"]["data"]
     with pytest.raises(ValueError):
-        manifests(ROOT, "ghcr.io/collaborativemind/hmt-edge-robot-:latest")
+        manifests(ROOT, "ghcr.io/collaborativemind/hmt-edge-robot:latest")
