@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 from appliance_process import run
-from appliance_signature import public_key, verify
+from appliance_signature import pem, public_key, verify
 from artifact_preflight import archive_hash
 
 COMMIT = "1" * 40
@@ -74,3 +74,37 @@ def test_missing_signature_and_linked_content_are_rejected(signed: tuple[Path, P
     (directory / "release.sig").unlink()
     with pytest.raises(subprocess.CalledProcessError):
         verify(directory, public, fingerprint, COMMIT)
+
+
+@pytest.mark.parametrize('encoding', ['complete', 'body', 'crlf'])
+def test_public_pem_transport_preserves_the_existing_pin(signed: tuple[Path, Path, str], encoding: str) -> None:
+    _, public, fingerprint = signed
+    original = public.read_text()
+    value = '\n'.join(original.splitlines()[1:-1]) if encoding == 'body' else original
+    if encoding == 'crlf':
+        value = value.replace('\n', '\r\n')
+    public.write_text(pem(value, 'PUBLIC KEY'))
+    assert public.read_text() == original
+    public_key(public, fingerprint)
+    with pytest.raises(ValueError, match='FINGERPRINT'):
+        public_key(public, '0' * 64)
+    with pytest.raises(ValueError, match='ENCODING'):
+        pem('not a key', 'PUBLIC KEY')
+
+
+def test_encrypted_private_body_roundtrip_signs_only_with_matching_key(tmp_path: Path) -> None:
+    original = run(['/usr/bin/openssl', 'genpkey', '-algorithm', 'RSA', '-pkeyopt', 'rsa_keygen_bits:3072',
+        '-aes-256-cbc', '-pass', 'pass:synthetic-test-only']).decode()
+    private = tmp_path / 'encrypted.pem'
+    private.write_text(pem('\n'.join(original.splitlines()[1:-1]), 'ENCRYPTED PRIVATE KEY'))
+    private.chmod(0o600)
+    assert private.read_text() == original
+    public = tmp_path / 'public.pem'
+    public.write_bytes(run(['/usr/bin/openssl', 'pkey', '-in', str(private), '-passin', 'pass:synthetic-test-only', '-pubout']))
+    data = tmp_path / 'manifest'
+    data.write_bytes(b'synthetic signing roundtrip')
+    signature = tmp_path / 'signature'
+    run(['/usr/bin/openssl', 'dgst', '-sha256', '-sign', str(private), '-passin', 'pass:synthetic-test-only', '-out', str(signature), str(data)])
+    assert run(['/usr/bin/openssl', 'dgst', '-sha256', '-verify', str(public), '-signature', str(signature), str(data)]) == b'Verified OK\n'
+    with pytest.raises(subprocess.CalledProcessError):
+        run(['/usr/bin/openssl', 'pkey', '-in', str(private), '-passin', 'pass:incorrect', '-noout'])

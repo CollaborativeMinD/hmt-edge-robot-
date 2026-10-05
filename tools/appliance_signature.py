@@ -9,6 +9,17 @@ from appliance_process import run
 from artifact_preflight import archive_hash
 
 
+def pem(value: str, label: str) -> str:
+    text = value.replace('\r\n', '\n').strip()
+    if label not in ('PUBLIC KEY', 'ENCRYPTED PRIVATE KEY') or not text:
+        raise ValueError('SIGNING_PEM_ENCODING_INVALID')
+    if not text.startswith('-----BEGIN '):
+        if not re.fullmatch(r'[A-Za-z0-9+/=\n]+', text):
+            raise ValueError('SIGNING_PEM_ENCODING_INVALID')
+        text = f'-----BEGIN {label}-----\n{text}\n-----END {label}-----'
+    return text + '\n'
+
+
 def public_key(path: Path, expected: str) -> None:
     if not re.fullmatch(r"[0-9a-f]{64}", expected) or archive_hash(path) != expected:
         raise ValueError("SIGNING_KEY_FINGERPRINT_MISMATCH")

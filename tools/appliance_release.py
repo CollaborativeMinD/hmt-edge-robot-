@@ -8,7 +8,7 @@ import tempfile
 from pathlib import Path
 
 from appliance_process import run
-from appliance_signature import public_key, verify
+from appliance_signature import pem, public_key, verify
 from artifact_preflight import archive_hash, assess
 from ci_admission import ROOT
 from host_evidence import from_bundle
@@ -31,7 +31,7 @@ def release(root: Path, commit: str) -> Path:
         shutil.copyfile(source, directory / name)
     fingerprint = os.environ["HMT_SIGNING_PUBLIC_KEY_SHA256"]
     public = directory / "signing-public.pem"
-    public.write_text(os.environ["HMT_SIGNING_PUBLIC_KEY"].strip() + "\n")
+    public.write_text(pem(os.environ["HMT_SIGNING_PUBLIC_KEY"], "PUBLIC KEY"))
     public_key(public, fingerprint)
     if (directory / "hmt-edge-robot.img.xz").stat().st_size >= 2**31:
         raise ValueError("GITHUB_RELEASE_ASSET_TOO_LARGE")
@@ -45,7 +45,7 @@ def release(root: Path, commit: str) -> Path:
     (directory / "release.json").write_text(json.dumps(manifest, indent=2) + "\n")
     with tempfile.TemporaryDirectory(prefix="hmt-sign-") as temporary:
         private = Path(temporary) / "key.pem"
-        private.write_text(os.environ["HMT_SIGNING_PRIVATE_KEY"])
+        private.write_text(pem(os.environ["HMT_SIGNING_PRIVATE_KEY"], "ENCRYPTED PRIVATE KEY"))
         private.chmod(0o600)
         run(["/usr/bin/openssl", "dgst", "-sha256", "-sign", str(private), "-passin",
                         "env:HMT_SIGNING_PASSWORD", "-out", str(directory / "release.sig"),
