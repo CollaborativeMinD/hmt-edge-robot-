@@ -34,13 +34,16 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends xz-utils e2fsprogs
-          sudo bash deploy/appliance/qualify-host.sh "$PWD" 2>&1 | tee build/host-update-install.log
+          sudo --preserve-env=GITHUB_SHA bash deploy/appliance/qualify-host.sh "$PWD" 2>&1 | tee build/host-update-install.log
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
           name: host-updates-${{ github.sha }}
           path: |
             build/host-updates.json
+            build/host-hardening.json
+            build/host-admission.json
+            build/appliance-vulnerabilities.json
             build/host-update-install.log
           retention-days: 30
           if-no-files-found: warn

@@ -65,6 +65,12 @@
       "version": "3.5.7-1~deb13u3+rpt1",
       "url": "https://archive.raspberrypi.com/debian/pool/main/o/openssl/openssl_3.5.7-1%7edeb13u3%2brpt1_arm64.deb",
       "sha256": "44e8c1dfca6347e6a10bc5e93003af6d9097ed39b072ec621ad8fc743aca3b58"
+    },
+    {
+      "name": "wpasupplicant",
+      "version": "2:2.10-24+rpt3",
+      "url": "https://archive.raspberrypi.com/debian/pool/main/w/wpa/wpasupplicant_2.10-24%2brpt3_arm64.deb",
+      "sha256": "bc6eab874f737b31608ed4f8869974d9883d8b6aab91b64c894249df25a7488e"
     }
   ]
 }

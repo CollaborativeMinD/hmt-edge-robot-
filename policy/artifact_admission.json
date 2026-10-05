@@ -3,7 +3,7 @@
   "scope": "ARM64_ARTIFACT_QUALIFICATION_ONLY",
   "files": {
     ".dockerignore": "0bcb3ff655516e2cd9f7cfcff9c0d0a74df90382e2f5cd890a86838013f1c899",
-    ".github/workflows/artifact.yml": "d6b01ec6300e2441903639a82ff531085475cf0bd7e3cf1577387bc42a8d121a",
+    ".github/workflows/artifact.yml": "5b436e9894e201d5b0f3a9b11e6061facf21c74e5ea58b75b129db83c00081d5",
     "deploy/stage4/Dockerfile": "665c1114a6927a4523b3861eaebda02b1f78a2f771303afdf4839cfef8d7bbed",
     "docs/cd/stage4.md": "0fd6cddc8f33d56069fc88b103273b6e081996aa8c8714b66063b2e9f36fa479",
     "tools/artifact_campaign.py": "ea5371ab938d9c031520d7a9f4418f83885b8b8b522bd7b9520c45882b2a1eab",

@@ -18,5 +18,12 @@ udevadm settle
 [[ $(blkid -o value -s TYPE "${loop}p2") == ext4 ]]
 mount "${loop}p2" "$root"
 python3 "$repo/tools/appliance_host.py" "$root"
+python3 "$repo/tools/host_hardening.py" "$root"
 chroot "$root" /usr/bin/python3 -c 'import ssl; print(ssl.OPENSSL_VERSION)'
 chroot "$root" /usr/bin/openssl version
+trivy=aquasec/trivy:0.69.3
+docker pull "$trivy"
+trivy=$(docker image inspect "$trivy" --format '{{index .RepoDigests 0}}')
+docker run --rm --mount "type=bind,src=$root,dst=/scan,readonly" --mount "type=bind,src=$work,dst=/out" \
+  "$trivy" rootfs --scanners vuln,secret --list-all-pkgs --format json --output /out/appliance-vulnerabilities.json --timeout 10m /scan
+python3 "$repo/tools/host_evidence.py" "$GITHUB_SHA"
