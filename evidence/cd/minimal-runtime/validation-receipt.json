@@ -1,0 +1,43 @@
+{
+  "software_status": "PASS",
+  "tests": 373,
+  "coverage_percent": 97.73851590106007,
+  "local_platform": "x86_64",
+  "local_runtime_checks": "PASS",
+  "native_arm64": "EXPANDED_RUNTIME_PROBE_PASS;SECURITY_HOLD_ON_ONE_UNKNOWN_LZMA_FINDING",
+  "image_id": "sha256:ecfc5114686cb168e3d51a270ee314e89b498c60e40453b154ab38cefe76c972",
+  "image_bytes": 660481306,
+  "base_images": {
+    "python": "python@sha256:02108f5d322dd89f1c9e552442c25acb0543dfdbc455693a5599624f20d9155d",
+    "uv": "ghcr.io/astral-sh/uv@sha256:ba4857bf2a068e9bc0e64eed8563b065908a4cd6bfb66b531a9c424c8e25e142",
+    "trivy": "aquasec/trivy@sha256:bcc376de8d77cfe086a917230e818dc9f8528e3c852f7b1aff648949b6258d1c"
+  },
+  "scan_counts": {
+    "MEDIUM": 35,
+    "LOW": 18,
+    "UNKNOWN": 1
+  },
+  "blocking_findings": [
+    {
+      "VulnerabilityID": "TEMP-1147318-639065",
+      "PkgName": "liblzma5",
+      "InstalledVersion": "5.8.1-1+deb13u1",
+      "FixedVersion": null,
+      "Severity": "UNKNOWN"
+    }
+  ],
+  "runtime_admission": "HOLD",
+  "host_fixes": "EIGHT_SIGNED_OFFICIAL_REPOSITORY_UPDATES_PINNED;NATIVE_INSTALL_PENDING",
+  "release": "HOLD",
+  "source_worktree_sha256": {
+    "deploy/stage4/Dockerfile": "665c1114a6927a4523b3861eaebda02b1f78a2f771303afdf4839cfef8d7bbed",
+    ".dockerignore": "0bcb3ff655516e2cd9f7cfcff9c0d0a74df90382e2f5cd890a86838013f1c899",
+    "tools/runtime_rootfs.py": "1e1410127f61a1d17dd71a7f4bb2ae50f0a524da1437564031634c3ae34cff9b",
+    "tools/runtime_elf.py": "7f1fb2ca200089799929a1ed73271cdbec17346f9a7ff82dcc41a22b40aaf9f1",
+    "tools/runtime_inventory.py": "1a12a5b509f97ce51217c1af1e78fdf231be09bfcdc702c38128942bd78a1455",
+    "tools/artifact_probe.py": "131fdea0c13452525be7c7b76fd003985297d205ba5aaf4c131cd108ab5e4e7f",
+    "tools/appliance_process.py": "f08a85f28bd93b92713a2e3c337e71b1416593bd609275c783bf111aa852d717"
+  },
+  "native_run": "https://github.com/CollaborativeMinD/hmt-edge-robot-/actions/runs/37245223617",
+  "host_install": "PENDING_ACTIONS"
+}

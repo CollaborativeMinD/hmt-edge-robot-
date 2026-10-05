@@ -26,6 +26,17 @@ def test_failed_prequalification_invalidates_old_final_pass(tmp_path: Path) -> N
     assert json.loads((directory / "qualification.json").read_text())["status"] == "FAIL"
 
 
+def test_missing_minimal_runtime_proof_rejects_release(tmp_path: Path) -> None:
+    directory = fixture(tmp_path)
+    path = directory / "container.json"
+    probe = json.loads(path.read_text())
+    probe.pop("native_features")
+    path.write_text(json.dumps(probe))
+    assert main(tmp_path, COMMIT) == 1
+    report = json.loads((directory / "prequalification.json").read_text())
+    assert report["reason_codes"] == ["MINIMAL_RUNTIME_QUALIFICATION_FAILED"]
+
+
 def test_signing_policy_hold_cannot_promote_qualified_unsigned_image(tmp_path: Path) -> None:
     from artifact_gate import main as final_gate
     fixture(tmp_path)

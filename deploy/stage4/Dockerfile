@@ -9,16 +9,18 @@ COPY pyproject.toml uv.lock ./
 COPY vendor/qualified/scaffoldctl ./vendor/qualified/scaffoldctl
 COPY vendor/qualified/truth-serum ./vendor/qualified/truth-serum
 COPY src ./src
-RUN uv lock --check && uv sync --locked --no-dev --no-editable --no-cache
-FROM ${PYTHON_IMAGE} AS runtime
+RUN --mount=type=secret,id=proxy_ca \
+    if [ -f /run/secrets/proxy_ca ]; then export SSL_CERT_FILE=/run/secrets/proxy_ca; fi; \
+    uv lock --check && uv sync --locked --no-dev --no-editable --no-cache
+COPY tools/runtime_*.py tools/appliance_process.py /build-tools/
+RUN python /build-tools/runtime_rootfs.py
+FROM scratch AS runtime
 ARG SOURCE_COMMIT
-RUN apt-get update && apt-get install -y --no-install-recommends libpcre2-8-0=10.46-1~deb13u3 && rm -rf /var/lib/apt/lists/*
 LABEL org.opencontainers.image.source="https://github.com/CollaborativeMinD/hmt-edge-robot-" \
       org.opencontainers.image.revision=${SOURCE_COMMIT}
-ENV PATH="/opt/venv/bin:$PATH" PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \
+ENV PATH="/opt/venv/bin:/usr/local/bin" PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \
     TMPDIR=/run/hmt-scratch OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
-COPY --from=builder /opt/venv /opt/venv
-RUN mkdir -p /data /run/hmt-scratch && chown 10001:10001 /data /run/hmt-scratch
+COPY --from=builder /runtime-root/ /
 USER 10001:10001
 WORKDIR /data
 CMD ["hmt-edge-robot", "serve", "--database", "/data/cell.db", "--policy", "/etc/hmt/runtime-policy.json"]

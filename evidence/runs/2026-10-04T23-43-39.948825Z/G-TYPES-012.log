@@ -1,0 +1,8 @@
+ INFO Checking project configured at `/workspace/hmt-edge-robot/pyproject.toml`
+ WARN Cannot find type stubs for module `scipy.linalg` [untyped-import]
+  --> tools/artifact_probe.py:66:5
+   |
+66 |     from scipy.linalg import solve
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Hint: install the `scipy-stubs` package
+ INFO 1 diagnostic

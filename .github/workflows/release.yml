@@ -60,7 +60,7 @@ jobs:
         run: sudo bash deploy/appliance/build-image.sh "$PWD" 2>&1 | tee build/image-build.log
       - name: Retain build and qualification evidence
         run: |
-          tar -czf build/evidence.tar.gz --exclude=image.oci.tar evidence/cd/stage4 build/smoke.json build/smoke.log build/smoke-base.json build/image-build.log build/appliance-vulnerabilities.json
+          tar -czf build/evidence.tar.gz --exclude=image.oci.tar evidence/cd/stage4 build/smoke.json build/smoke.log build/smoke-base.json build/image-build.log build/host-updates.json build/appliance-vulnerabilities.json
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: unsigned-appliance-${{ github.sha }}
@@ -78,6 +78,7 @@ jobs:
             build/*.log
             build/smoke*.json
             build/appliance-vulnerabilities.json
+            build/host-updates.json
           if-no-files-found: warn
   publish:
     needs: assemble

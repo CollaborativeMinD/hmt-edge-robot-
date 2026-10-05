@@ -1,0 +1,1 @@
+{"status": "PASS", "scope": "ARM64_ARTIFACT_QUALIFICATION_ONLY", "deployment": "HOLD", "hardware": "HOLD", "artifact_runtime_qualification": "PENDING_ACTIONS", "catalog_sha256": "827e45ecdd8c6f9b84f26f1b5ed81809360b1c5bc306caa558fd1eac7505df0b"}

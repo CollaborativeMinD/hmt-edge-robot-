@@ -1,0 +1,110 @@
+libpcre2-16-0:arm64:
+  Installed: (none)
+  Candidate: 10.46-1~deb13u3
+  Version table:
+     10.46-1~deb13u3 500
+        500 http://deb.debian.org/debian-security trixie-security/main arm64 Packages
+     10.46-1~deb13u2 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+libpcre2-8-0:arm64:
+  Installed: (none)
+  Candidate: 10.46-1~deb13u3
+  Version table:
+     10.46-1~deb13u3 500
+        500 http://deb.debian.org/debian-security trixie-security/main arm64 Packages
+     10.46-1~deb13u2 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+libpng16-16t64:arm64:
+  Installed: (none)
+  Candidate: 1.6.48-1+deb13u6
+  Version table:
+     1.6.48-1+deb13u6 500
+        500 http://deb.debian.org/debian-security trixie-security/main arm64 Packages
+     1.6.48-1+deb13u5 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+libssl3t64:arm64:
+  Installed: (none)
+  Candidate: 3.5.7-1~deb13u3+rpt1
+  Version table:
+     3.5.7-1~deb13u3+rpt1 500
+        500 http://archive.raspberrypi.com/debian trixie/main arm64 Packages
+     3.5.7-1~deb13u3 500
+        500 http://deb.debian.org/debian-security trixie-security/main arm64 Packages
+     3.5.7-1~deb13u2 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+openssl:arm64:
+  Installed: (none)
+  Candidate: 3.5.7-1~deb13u3+rpt1
+  Version table:
+     3.5.7-1~deb13u3+rpt1 500
+        500 http://archive.raspberrypi.com/debian trixie/main arm64 Packages
+     3.5.7-1~deb13u3 500
+        500 http://deb.debian.org/debian-security trixie-security/main arm64 Packages
+     3.5.7-1~deb13u2 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+openssl-provider-legacy:arm64:
+  Installed: (none)
+  Candidate: 3.5.7-1~deb13u3+rpt1
+  Version table:
+     3.5.7-1~deb13u3+rpt1 500
+        500 http://archive.raspberrypi.com/debian trixie/main arm64 Packages
+     3.5.7-1~deb13u3 500
+        500 http://deb.debian.org/debian-security trixie-security/main arm64 Packages
+     3.5.7-1~deb13u2 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+mkvtoolnix:arm64:
+  Installed: (none)
+  Candidate: 92.0-1+deb13u1
+  Version table:
+     92.0-1+deb13u1 500
+        500 http://deb.debian.org/debian-security trixie-security/main arm64 Packages
+     92.0-1 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+rsync:arm64:
+  Installed: (none)
+  Candidate: 3.5.0+ds1-0+deb13u1
+  Version table:
+     3.5.0+ds1-0+deb13u1 500
+        500 http://deb.debian.org/debian-security trixie-security/main arm64 Packages
+     3.4.1+ds1-5+deb13u4 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be upgraded:
+  libpcre2-16-0 libpcre2-8-0 libpng16-16t64 libssl3t64 mkvtoolnix openssl
+  openssl-provider-legacy rsync
+8 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.
+Inst openssl-provider-legacy [3.5.7-1~deb13u2+rpt1] (3.5.7-1~deb13u3+rpt1 Raspberry Pi Foundation:stable [arm64])
+Conf openssl-provider-legacy (3.5.7-1~deb13u3+rpt1 Raspberry Pi Foundation:stable [arm64])
+Inst libssl3t64 [3.5.7-1~deb13u2+rpt1] (3.5.7-1~deb13u3+rpt1 Raspberry Pi Foundation:stable [arm64])
+Conf libssl3t64 (3.5.7-1~deb13u3+rpt1 Raspberry Pi Foundation:stable [arm64])
+Inst rsync [3.4.1+ds1-5+deb13u4] (3.5.0+ds1-0+deb13u1 Debian-Security:13/stable-security [arm64])
+Inst libpcre2-8-0 [10.46-1~deb13u2] (10.46-1~deb13u3 Debian-Security:13/stable-security [arm64])
+Conf libpcre2-8-0 (10.46-1~deb13u3 Debian-Security:13/stable-security [arm64])
+Inst libpcre2-16-0 [10.46-1~deb13u2] (10.46-1~deb13u3 Debian-Security:13/stable-security [arm64])
+Inst libpng16-16t64 [1.6.48-1+deb13u5] (1.6.48-1+deb13u6 Debian-Security:13/stable-security [arm64])
+Inst mkvtoolnix [92.0-1] (92.0-1+deb13u1 Debian-Security:13/stable-security [arm64])
+Inst openssl [3.5.7-1~deb13u2+rpt1] (3.5.7-1~deb13u3+rpt1 Raspberry Pi Foundation:stable [arm64])
+Conf rsync (3.5.0+ds1-0+deb13u1 Debian-Security:13/stable-security [arm64])
+Conf libpcre2-16-0 (10.46-1~deb13u3 Debian-Security:13/stable-security [arm64])
+Conf libpng16-16t64 (1.6.48-1+deb13u6 Debian-Security:13/stable-security [arm64])
+Conf mkvtoolnix (92.0-1+deb13u1 Debian-Security:13/stable-security [arm64])
+Conf openssl (3.5.7-1~deb13u3+rpt1 Raspberry Pi Foundation:stable [arm64])
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be upgraded:
+  libpcre2-16-0 libpcre2-8-0 libpng16-16t64 libssl3t64 mkvtoolnix openssl
+  openssl-provider-legacy rsync
+8 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.
+Need to get 12.1 MB of archives.
+After this operation, 127 kB of additional disk space will be used.
+'http://deb.debian.org/debian-security/pool/updates/main/r/rsync/rsync_3.5.0%2bds1-0%2bdeb13u1_arm64.deb' rsync_3.5.0+ds1-0+deb13u1_arm64.deb 479564 
+'http://deb.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.46-1%7edeb13u3_arm64.deb' libpcre2-8-0_10.46-1~deb13u3_arm64.deb 262648 
+'http://deb.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-16-0_10.46-1%7edeb13u3_arm64.deb' libpcre2-16-0_10.46-1~deb13u3_arm64.deb 247336 
+'http://deb.debian.org/debian-security/pool/updates/main/libp/libpng1.6/libpng16-16t64_1.6.48-1%2bdeb13u6_arm64.deb' libpng16-16t64_1.6.48-1+deb13u6_arm64.deb 275220 
+'http://deb.debian.org/debian-security/pool/updates/main/m/mkvtoolnix/mkvtoolnix_92.0-1%2bdeb13u1_arm64.deb' mkvtoolnix_92.0-1+deb13u1_arm64.deb 5478012 
+'http://archive.raspberrypi.com/debian/pool/main/o/openssl/openssl-provider-legacy_3.5.7-1%7edeb13u3%2brpt1_arm64.deb' openssl-provider-legacy_3.5.7-1~deb13u3+rpt1_arm64.deb 325126 MD5Sum:cb822ff1688987654f9167d7a3d64d67
+'http://archive.raspberrypi.com/debian/pool/main/o/openssl/libssl3t64_3.5.7-1%7edeb13u3%2brpt1_arm64.deb' libssl3t64_3.5.7-1~deb13u3+rpt1_arm64.deb 3447484 MD5Sum:f6aef17017246bd936d013fe1f5ae39c
+'http://archive.raspberrypi.com/debian/pool/main/o/openssl/openssl_3.5.7-1%7edeb13u3%2brpt1_arm64.deb' openssl_3.5.7-1~deb13u3+rpt1_arm64.deb 1571574 MD5Sum:356632447eed67cafeb10b0b0ee322c2

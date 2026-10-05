@@ -1,0 +1,58 @@
+bsdutils:arm64:
+  Installed: (none)
+  Candidate: 1:2.41.5-0+deb13u1
+  Version table:
+     1:2.41.5-0+deb13u1 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+        500 http://deb.debian.org/debian-security trixie-security/main arm64 Packages
+libacl1:arm64:
+  Installed: (none)
+  Candidate: 2.3.2-2+b1
+  Version table:
+     2.3.2-2+b1 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+libblkid1:arm64:
+  Installed: (none)
+  Candidate: 2.41.5-0+deb13u1
+  Version table:
+     2.41.5-0+deb13u1 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+        500 http://deb.debian.org/debian-security trixie-security/main arm64 Packages
+liblzma5:arm64:
+  Installed: (none)
+  Candidate: 5.8.1-1+deb13u1
+  Version table:
+     5.8.1-1+deb13u1 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+libncursesw6:arm64:
+  Installed: (none)
+  Candidate: 6.5+20250216-2
+  Version table:
+     6.5+20250216-2 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+libsystemd0:arm64:
+  Installed: (none)
+  Candidate: 257.13-1~deb13u1
+  Version table:
+     257.13-1~deb13u1 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+libudev1:arm64:
+  Installed: (none)
+  Candidate: 257.13-1~deb13u1
+  Version table:
+     257.13-1~deb13u1 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+perl-base:arm64:
+  Installed: (none)
+  Candidate: 5.40.1-6+deb13u1
+  Version table:
+     5.40.1-6+deb13u1 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages
+libpcre2-8-0:arm64:
+  Installed: (none)
+  Candidate: 10.46-1~deb13u3
+  Version table:
+     10.46-1~deb13u3 500
+        500 http://deb.debian.org/debian-security trixie-security/main arm64 Packages
+     10.46-1~deb13u2 500
+        500 http://deb.debian.org/debian trixie/main arm64 Packages

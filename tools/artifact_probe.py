@@ -54,5 +54,39 @@ def run(directory: Path) -> dict:
         "packages": packages, "resident_stopped": True}
 
 
+def features(directory: Path) -> dict:
+    import importlib
+    import lzma
+    import socket
+    import ssl
+    import uuid
+
+    import cv2
+    import joblib
+    import numpy as np
+    from sklearn.linear_model import LinearRegression
+
+    payload = b"HMT compressed ledger fixture"
+    if lzma.decompress(lzma.compress(payload)) != payload:
+        raise ValueError("RUNTIME_LZMA_FAILED")
+    for value in (uuid.uuid1(), uuid.uuid4(), uuid.uuid5(uuid.NAMESPACE_DNS, "localhost")):
+        if uuid.UUID(str(value)) != value:
+            raise ValueError("RUNTIME_UUID_FAILED")
+    path = directory / "model.xz"
+    joblib.dump({"data": payload}, path, compress=("xz", 1))
+    if joblib.load(path) != {"data": payload}:
+        raise ValueError("RUNTIME_JOBLIB_FAILED")
+    x = np.array([[0.0], [1.0], [2.0]])
+    solve = importlib.import_module("scipy.linalg").solve
+    model = LinearRegression().fit(x, np.array([0.0, 2.0, 4.0]))
+    if not np.allclose(model.predict([[3.0]]), [6.0]) or not np.allclose(solve(np.eye(2), np.ones(2)), np.ones(2)):
+        raise ValueError("RUNTIME_SCIENTIFIC_LIBRARIES_FAILED")
+    if not cv2.imencode(".png", np.zeros((8, 8), dtype=np.uint8))[0]:
+        raise ValueError("RUNTIME_OPENCV_FAILED")
+    if not socket.getaddrinfo("localhost", 0) or ssl.create_default_context().cert_store_stats()["x509_ca"] == 0:
+        raise ValueError("RUNTIME_NETWORK_CONFIGURATION_FAILED")
+    return {"native_features": "PASS", "minimal_runtime": not any(Path(p).exists() for p in ("/bin/sh", "/usr/bin/perl", "/usr/bin/apt", "/usr/bin/mount"))}
+
+
 if __name__ == "__main__":
-    print(json.dumps(run(Path("/data")), allow_nan=False))
+    print(json.dumps(run(Path("/data")) | features(Path("/data")), allow_nan=False))

@@ -29,6 +29,7 @@ resize2fs "${loop}p2"
 mount "${loop}p2" "$root"
 mount "${loop}p1" "$boot"
 [[ -f "$root/usr/lib/systemd/systemd" && -f "$root/usr/bin/python3" ]]
+python3 "$repo/tools/appliance_host.py" "$root"
 install -Dm755 "$work/inputs/k3s-arm64" "$root/usr/local/bin/k3s"
 install -Dm755 "$repo/deploy/appliance/k3s-start.sh" "$root/usr/local/libexec/hmt-k3s-start"
 install -Dm755 "$repo/deploy/appliance/runtime-start.sh" "$root/usr/local/libexec/hmt-runtime-start"

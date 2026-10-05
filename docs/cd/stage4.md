@@ -118,6 +118,13 @@ then independently binds the loaded/scanned config digest to the runtime manifes
 Trixie run 37152171398 eliminated CRITICAL findings but reported 45 HIGH and two
 UNKNOWN findings. The one listed fix is pinned in the runtime recipe:
 `libpcre2-8-0=10.46-1~deb13u3`. Remaining no-fix findings remain blockers, not waivers.
+
+The later [minimal runtime](minimal-runtime.md) replaces this full-base candidate
+with an ELF dependency closure assembled into scratch from the same Trixie
+builder. It excludes the PCRE-dependent administration tools, preserving genuine
+metadata for shipped libraries. Its scan threshold is unchanged; the remaining
+LZMA UNKNOWN finding is covered by the later [owner acceptance](runtime-lzma-waiver.md)
+for the runtime alone. Unpatched host packages continue to block the full release.
 The OS patch is installed through the base's signed Debian repository; its version
 and bytes are retained by the image digest and SBOM. Python package pins do not change.
 

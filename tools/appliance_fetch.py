@@ -15,7 +15,7 @@ def fetch(asset: dict, destination: Path) -> None:
     if set(asset) != {"url", "sha256"} or not re.fullmatch(r"[0-9a-f]{64}", asset["sha256"]):
         raise ValueError("ASSET_CHECKSUM_REQUIRED")
     url = urlsplit(asset["url"])
-    if url.scheme != "https" or url.hostname not in {"downloads.raspberrypi.com", "github.com"} or url.username or url.password:
+    if url.scheme != "https" or url.hostname not in {"downloads.raspberrypi.com", "github.com", "deb.debian.org", "archive.raspberrypi.com"} or url.username or url.password:
         raise ValueError("ASSET_ORIGIN_NOT_ADMITTED")
     run(["/usr/bin/curl", "--fail", "--location", "--proto", "=https", "--proto-redir", "=https",
                     "--retry", "3", "--max-time", "900", "--output", str(destination), asset["url"]], timeout=1000)
@@ -31,6 +31,8 @@ def main() -> None:
     for asset, name in ((config["os"], "base.img.xz"), (config["k3s"]["binary"], "k3s-arm64"),
                         (config["k3s"]["airgap"], "k3s-airgap-images-arm64.tar.zst")):
         fetch(asset, destination / name)
+    from appliance_host import fetch_updates
+    fetch_updates(config)
 
 
 if __name__ == "__main__":
